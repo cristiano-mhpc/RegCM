@@ -1,3 +1,4 @@
+module rrtmg_lw_k_g
 !     path:      $Source: /storm/rc1/cvsroot/rc/rrtmg_lw/src/rrtmg_lw_k_g.f90,v $
 !     author:    $Author: mike $
 !     revision:  $Revision: 1.4 $
@@ -12,6 +13,12 @@
 ! |                       (http://www.rtweb.aer.com/)                        |
 ! |                                                                          |
 !  --------------------------------------------------------------------------
+
+  public :: lw_kgb01 , lw_kgb02 , lw_kgb03 , lw_kgb04 , lw_kgb05 , &
+    lw_kgb06 , lw_kgb07 , lw_kgb08 , lw_kgb09 , lw_kgb10 , lw_kgb11 , &
+    lw_kgb12 , lw_kgb13 , lw_kgb14 , lw_kgb15
+
+  contains
 
 ! **************************************************************************
 !      subroutine lw_kgbnn
@@ -33,10 +40,10 @@
       subroutine lw_kgb01
 ! **************************************************************************
 
-      use parkind, only : im => kind_im, rb => kind_rb
+      use parkind, only : rb => kind_rb
       use rrlw_kg01, only : fracrefao, fracrefbo, kao, kbo, kao_mn2, kbo_mn2, &
                             selfrefo, forrefo
-      use rrlw_vsn, only: hvrkg, hnamkg
+      use rrlw_vsn, only: hvrkg
 
       implicit none
       save
@@ -2248,7 +2255,7 @@
       subroutine lw_kgb02
 ! **************************************************************************
 
-      use parkind, only : im => kind_im, rb => kind_rb
+      use parkind, only : rb => kind_rb
       use rrlw_kg02, only : fracrefao, fracrefbo, kao, kbo, selfrefo, forrefo
 
       implicit none
@@ -4298,7 +4305,7 @@
       subroutine lw_kgb03
 ! **************************************************************************
 
-      use parkind, only : im => kind_im, rb => kind_rb
+      use parkind, only : rb => kind_rb
       use rrlw_kg03, only : fracrefao, fracrefbo, kao, kbo, kao_mn2o, &
                             kbo_mn2o, selfrefo, forrefo
 
@@ -16273,7 +16280,7 @@
       subroutine lw_kgb04
 ! **************************************************************************
 
-      use parkind, only : im => kind_im, rb => kind_rb
+      use parkind, only : rb => kind_rb
       use rrlw_kg04, only : fracrefao, fracrefbo, kao, kbo, selfrefo, forrefo
 
       implicit none
@@ -27100,7 +27107,7 @@
       subroutine lw_kgb05
 ! **************************************************************************
 
-      use parkind, only : im => kind_im, rb => kind_rb
+      use parkind, only : rb => kind_rb
       use rrlw_kg05, only : fracrefao, fracrefbo, kao, kbo, kao_mo3, &
                             selfrefo, forrefo, ccl4o
 
@@ -38670,7 +38677,7 @@
       subroutine lw_kgb06
 ! **************************************************************************
 
-      use parkind, only : im => kind_im, rb => kind_rb
+      use parkind, only : rb => kind_rb
       use rrlw_kg06, only : fracrefao, kao, kao_mco2, selfrefo, forrefo, &
                             cfc11adjo, cfc12o
 
@@ -39306,7 +39313,7 @@
       subroutine lw_kgb07
 ! **************************************************************************
 
-      use parkind, only : im => kind_im, rb => kind_rb
+      use parkind, only : rb => kind_rb
       use rrlw_kg07, only : fracrefao, fracrefbo, kao, kbo, kao_mco2, &
                             kbo_mco2, selfrefo, forrefo
 
@@ -44918,7 +44925,7 @@
       subroutine lw_kgb08
 ! **************************************************************************
 
-      use parkind, only : im => kind_im, rb => kind_rb
+      use parkind, only : rb => kind_rb
       use rrlw_kg08, only : fracrefao, fracrefbo, kao, kao_mco2, kao_mn2o, &
                             kao_mo3, kbo, kbo_mco2, kbo_mn2o, selfrefo, forrefo, &
                             cfc12o, cfc22adjo
@@ -47405,7 +47412,7 @@
       subroutine lw_kgb09
 ! **************************************************************************
 
-      use parkind, only : im => kind_im, rb => kind_rb
+      use parkind, only : rb => kind_rb
       use rrlw_kg09, only : fracrefao, fracrefbo, kao, kbo, kao_mn2o, &
                             kbo_mn2o, selfrefo, forrefo
 
@@ -53017,7 +53024,7 @@
       subroutine lw_kgb10
 ! **************************************************************************
 
-      use parkind, only : im => kind_im, rb => kind_rb
+      use parkind, only : rb => kind_rb
       use rrlw_kg10, only : fracrefao, fracrefbo, kao, kbo, selfrefo, forrefo
 
       implicit none
@@ -55067,7 +55074,7 @@
       subroutine lw_kgb11
 ! **************************************************************************
 
-      use parkind, only : im => kind_im, rb => kind_rb
+      use parkind, only : rb => kind_rb
       use rrlw_kg11, only : fracrefao, fracrefbo, kao, kbo, kao_mo2, &
                             kbo_mo2, selfrefo, forrefo
 
@@ -57292,7 +57299,7 @@
       subroutine lw_kgb12
 ! **************************************************************************
 
-      use parkind, only : im => kind_im, rb => kind_rb
+      use parkind, only : rb => kind_rb
       use rrlw_kg12, only : fracrefao, kao, selfrefo, forrefo
 
       implicit none
@@ -60559,7 +60566,7 @@
       subroutine lw_kgb13
 ! **************************************************************************
 
-      use parkind, only : im => kind_im, rb => kind_rb
+      use parkind, only : rb => kind_rb
       use rrlw_kg13, only : fracrefao, fracrefbo, kao, kao_mco2, kao_mco, &
                             kbo_mo3, selfrefo, forrefo
 
@@ -65375,7 +65382,7 @@
       subroutine lw_kgb14
 ! **************************************************************************
 
-      use parkind, only : im => kind_im, rb => kind_rb
+      use parkind, only : rb => kind_rb
       use rrlw_kg14, only : fracrefao, fracrefbo, kao, kbo, selfrefo, forrefo
 
       implicit none
@@ -67431,7 +67438,7 @@
       subroutine lw_kgb15
 ! **************************************************************************
 
-      use parkind, only : im => kind_im, rb => kind_rb
+      use parkind, only : rb => kind_rb
       use rrlw_kg15, only : fracrefao, kao, kao_mn2, selfrefo, forrefo
 
       implicit none
@@ -71431,7 +71438,7 @@
       subroutine lw_kgb16
 ! **************************************************************************
 
-      use parkind, only : im => kind_im, rb => kind_rb
+      use parkind, only : rb => kind_rb
       use rrlw_kg16, only : fracrefao, fracrefbo, kao, kbo, selfrefo, forrefo
 
       implicit none
@@ -76216,4 +76223,5 @@
      & 5.38186e-03_rb, 5.02023e-03_rb, 4.68290e-03_rb, 4.36823e-03_rb, 4.07471e-03_rb/)
 
       end subroutine lw_kgb16
+end module rrtmg_lw_k_g
 ! vim: tabstop=8 expandtab shiftwidth=2 softtabstop=2
