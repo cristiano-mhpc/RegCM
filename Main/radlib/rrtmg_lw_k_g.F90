@@ -55,7 +55,7 @@
       use parkind, only : im => kind_im, rb => kind_rb
       use rrlw_kg01, only : fracrefao, fracrefbo, kao, kbo, kao_mn2, kbo_mn2, &
                             selfrefo, forrefo
-      use rrlw_vsn, only: hvrkg, hnamkg
+      use rrlw_vsn, only: hvrkg
 
       implicit none
       save
