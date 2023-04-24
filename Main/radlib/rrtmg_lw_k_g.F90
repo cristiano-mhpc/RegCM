@@ -55,7 +55,7 @@
       use parkind, only : im => kind_im, rb => kind_rb
       use rrlw_kg01, only : fracrefao, fracrefbo, kao, kbo, kao_mn2, kbo_mn2, &
                             selfrefo, forrefo
-      use rrlw_vsn, only: hvrkg, hnamkg
+      use rrlw_vsn, only: hvrkg
 
       implicit none
       save
@@ -76235,5 +76235,4 @@
      & 5.38186e-03_rb, 5.02023e-03_rb, 4.68290e-03_rb, 4.36823e-03_rb, 4.07471e-03_rb/)
 
       end subroutine lw_kgb16
-
 ! vim: tabstop=8 expandtab shiftwidth=2 softtabstop=2
