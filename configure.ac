@@ -781,16 +781,16 @@ else
     fi
     if eval "test x"$USE_OPENACC" = x3"; then
       FCFLAGS="$FCFLAGS -acc=gpu \
-          -gpu=$PGI_GPU_ARCH,lineinfo,mem:managed -Minfo=accel"
+          -gpu=$PGI_GPU_ARCH,lineinfo,managed -Minfo=accel"
       NOOPTFC="$NOOPTFC -acc=gpu \
-          -gpu=$PGI_GPU_ARCH,lineinfo,mem:managed -Minfo=accel"
+          -gpu=$PGI_GPU_ARCH,lineinfo,managed -Minfo=accel"
       LDFLAGS="$LDFLAGS -traceback -cudalib=nvtx"
     fi
     if eval "test x"$USE_OPENACC" = x4"; then
       FCFLAGS="$FCFLAGS -stdpar=gpu \
-          -gpu=$PGI_GPU_ARCH,lineinfo,mem:unified -Minfo=accel"
+          -gpu=$PGI_GPU_ARCH,lineinfo,managed -Minfo=accel"
       NOOPTFC="$NOOPTFC -stdpar=gpu \
-          -gpu=$PGI_GPU_ARCH,lineinfo,mem:unified -Minfo=accel"
+          -gpu=$PGI_GPU_ARCH,lineinfo,managed -Minfo=accel"
       LDFLAGS="$LDFLAGS -traceback -cudalib=nvtx"
     fi
     AC_SUBST(FCFLAGS)
