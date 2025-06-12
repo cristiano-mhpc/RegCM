@@ -7,7 +7,7 @@
 !
 !         https://opensource.org/licenses/MIT.
 !
-!    ICTP RegCM is distributed in the hope that it will be useful,
+!    ICTP RegCM is distributed in the hope that it will be useful, 
 !    but WITHOUT ANY WARRANTY; without even the implied warranty of
 !    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
 !
@@ -47,54 +47,54 @@ module mod_regcm_interface
   implicit none
 
   private
-  public :: RCM_initialize
-  public :: RCM_run
-  public :: RCM_finalize
-  public :: atm_model
+  public:: RCM_initialize
+  public:: RCM_run
+  public:: RCM_finalize
+  public:: atm_model
 
-  real(rk8) :: extime
+  real(rk8):: extime
 
   type atm_model
-    character(len=5) :: model_name = 'RegCM'
-    character(len=31) :: model_longname = 'The ICTP Regional Climate Model'
+    character(len = 5):: model_name = 'RegCM'
+    character(len = 31):: model_longname = 'The ICTP Regional Climate Model'
   end type atm_model
 
-  data extime /0.0_rk8/
+  data extime/0.0_rk8/
   contains
 
   subroutine RCM_initialize(mpiCommunicator)
     implicit none
-    integer, intent(in), optional :: mpiCommunicator
-    real(rkx), allocatable, dimension(:,:) :: rcemip_noise
-    integer(ik4) :: ierr, k
-    real(rkx) :: rnl
+    integer, intent(in), optional:: mpiCommunicator
+    real(rkx), allocatable, dimension(:,:):: rcemip_noise
+    integer(ik4):: ierr, k
+    real(rkx):: rnl
     !
     ! MPI Initialization
     !
     if (present(mpiCommunicator)) then
-      call mpi_comm_dup(mpiCommunicator,mycomm,ierr)
+      call mpi_comm_dup(mpiCommunicator, mycomm, ierr)
       if ( ierr /= 0 ) then
-        call fatal(__FILE__,__LINE__,'Cannot get communicator!')
+        call fatal(__FILE__, __LINE__, 'Cannot get communicator!')
       end if
     else
-      call mpi_comm_dup(MPI_COMM_WORLD,mycomm,ierr)
+      call mpi_comm_dup(MPI_COMM_WORLD, mycomm, ierr)
       if ( ierr /= 0 ) then
-        call fatal(__FILE__,__LINE__,'Cannot get communicator!')
+        call fatal(__FILE__, __LINE__, 'Cannot get communicator!')
       end if
     end if
     call mpi_comm_rank(mycomm, myid, ierr)
     if ( ierr /= 0 ) then
-      call fatal(__FILE__,__LINE__,'mpi_comm_rank Failure!')
+      call fatal(__FILE__, __LINE__, 'mpi_comm_rank Failure!')
     end if
     call mpi_comm_size(mycomm, nproc, ierr)
     if ( ierr /= 0 ) then
-      call fatal(__FILE__,__LINE__,'mpi_comm_size Failure!')
+      call fatal(__FILE__, __LINE__, 'mpi_comm_size Failure!')
     end if
 #ifndef MPI_SERIAL
 #ifdef DEBUG
     call mpi_comm_set_errhandler(mycomm, mpi_errors_return, ierr)
     if ( ierr /= 0 ) then
-      call fatal(__FILE__,__LINE__,'mpi_comm_set_errhandler Failure!')
+      call fatal(__FILE__, __LINE__, 'mpi_comm_set_errhandler Failure!')
     end if
 #endif
 #endif
@@ -112,8 +112,8 @@ module mod_regcm_interface
     ! Read input global namelist
     !
     if ( myid == iocpu ) then
-      call get_command_argument(0,value=prgname)
-      call get_command_argument(1,value=namelistfile)
+      call get_command_argument(0, value = prgname)
+      call get_command_argument(1, value = namelistfile)
       call initparam(namelistfile, ierr)
       if ( ierr /= 0 ) then
         write ( 6, * ) 'Parameter initialization not completed'
@@ -130,7 +130,7 @@ module mod_regcm_interface
 
     call memory_init
 
-    call header(myid,nproc)
+    call header(myid, nproc)
 #ifdef OASIS
     call oasisxregcm_header
 #endif
@@ -184,23 +184,23 @@ module mod_regcm_interface
     !
     if ( irceideal == 1 ) then
       if ( lrcemip_perturb ) then
-        allocate(rcemip_noise(njcross,nicross))
+        allocate(rcemip_noise(njcross, nicross))
         if ( idynamic == 3 ) then
-          do k = kz, kz - 5, -1
-            rnl = mo_atm%t(jci1,ici1,k)
+          do k = kz, kz-5, -1
+            rnl = mo_atm%t(jci1, ici1, k)
             rcemip_noise(:,:) = rnl
             rnl =  lrcemip_noise_level * (1.0 - (kz-k)/6.0_rkx)
-            call randify(rcemip_noise,rnl,nicross,njcross)
-            mo_atm%t(jce1:jce2,ice1:ice2,k) = rcemip_noise(jce1:jce2,ice1:ice2)
+            call randify(rcemip_noise, rnl, nicross, njcross)
+            mo_atm%t(jce1:jce2, ice1:ice2, k) = rcemip_noise(jce1:jce2, ice1:ice2)
           end do
         else
-          do k = kz, kz - 5, -1
-            rnl = atm1%t(jci1,ici1,k)/sfs%psb(jci1,ici1)
+          do k = kz, kz-5, -1
+            rnl = atm1%t(jci1, ici1, k)/sfs%psb(jci1, ici1)
             rcemip_noise(:,:) = rnl
             rnl =  lrcemip_noise_level * (1.0 - (kz-k)/6.0_rkx)
-            call randify(rcemip_noise,rnl,nicross,njcross)
-            atm1%t(jce1:jce2,ice1:ice2,k) = &
-              rcemip_noise(jce1:jce2,ice1:ice2)*sfs%psb(jce1:jce2,ice1:ice2)
+            call randify(rcemip_noise, rnl, nicross, njcross)
+            atm1%t(jce1:jce2, ice1:ice2, k) = &
+              rcemip_noise(jce1:jce2, ice1:ice2)*sfs%psb(jce1:jce2, ice1:ice2)
           end do
         end if
         deallocate(rcemip_noise)
@@ -214,7 +214,7 @@ module mod_regcm_interface
     ! Clean up and logging
     !
 #ifdef DEBUG
-    call time_print(6,'inizialization phase')
+    call time_print(6, 'inizialization phase')
     call time_reset()
 #endif
   end subroutine RCM_initialize
@@ -228,8 +228,8 @@ module mod_regcm_interface
   !
   subroutine RCM_run(timestr, timeend)
     implicit none
-    real(rk8), intent(in) :: timestr   ! starting time-step
-    real(rk8), intent(in) :: timeend   ! ending   time-step
+    real(rk8), intent(in):: timestr   ! starting time-step
+    real(rk8), intent(in):: timeend   ! ending   time-step
 
     do while ( extime >= timestr .and. extime < timeend )
       !
@@ -247,10 +247,10 @@ module mod_regcm_interface
       !
 #ifdef OASIS
       if ( ioasiscpl == 1 ) then
-        if ( oasis_sync_lag > 0 .and. int(extime,ik4) == 0 ) then
-          call oasisxregcm_sync_wait(int(extime,ik4))
+        if ( oasis_sync_lag > 0 .and. int(extime, ik4) == 0 ) then
+          call oasisxregcm_sync_wait(int(extime, ik4))
         end if
-        call oasisxregcm_rcv_all(int(extime,ik4)+oasis_lag)
+        call oasisxregcm_rcv_all(int(extime, ik4)+oasis_lag)
       end if
 #endif
       !
@@ -266,9 +266,9 @@ module mod_regcm_interface
       !
 #ifdef OASIS
       if ( ioasiscpl == 1 ) then
-        call oasisxregcm_snd_all(int(extime,ik4)+oasis_lag)
+        call oasisxregcm_snd_all(int(extime, ik4)+oasis_lag)
         if ( oasis_sync_lag < 0 .and. rcmtimer%reached_endtime) then
-          call oasisxregcm_sync_wait(int(extime,ik4))
+          call oasisxregcm_sync_wait(int(extime, ik4))
         end if
       end if
 #endif
@@ -304,17 +304,17 @@ module mod_regcm_interface
       !
       ! Increment execution time and boundary time
       !
-      extime = extime + real(dtsec,rk8)
+      extime = extime+real(dtsec, rk8)
       if ( debug_level > 3 ) then
         if ( myid == italk ) then
-          write(6,'(a,a,f12.2)') 'Simulation time: ', rcmtimer%str( )
+          write(6, '(a, a, f12.2)') 'Simulation time: ', rcmtimer%str( )
         end if
       end if
 
     end do
 
 #ifdef DEBUG
-    call time_print(6,'evolution phase')
+    call time_print(6, 'evolution phase')
     call stop_debug()
 #endif
 
@@ -324,14 +324,14 @@ module mod_regcm_interface
     implicit none
 
     if ( myid == italk ) then
-      write(stdout,*) 'Final time ', trim(rcmtimer%str( )), ' reached.'
+      write(stdout, *) 'Final time ', trim(rcmtimer%str( )), ' reached.'
     end if
 
     call close_icbc
     if ( ichem == 1 ) call close_chbc( )
     call dispose_output_streams
-    call checktime(myid,trim(dirout)//pthsep//trim(prestr)//trim(domname)// &
-                       '.'//tochar10(lastout),'final timeslice')
+    call checktime(myid, trim(dirout)//pthsep//trim(prestr)//trim(domname)// &
+                       '.'//tochar10(lastout), 'final timeslice')
 #ifdef CLM
     call t_prf('timing_all',mpicom)
     call t_finalizef()
@@ -359,27 +359,54 @@ module mod_regcm_interface
 #endif
 
     if ( myid == italk ) then
-      write(stdout,*) 'RegCM V5 simulation successfully reached end'
+      write(stdout, *) 'RegCM V5 simulation successfully reached end'
     end if
   end subroutine RCM_finalize
 
 #ifdef OPENACC
+  ! subroutine setup_openacc(mpi_rank)
+  !   use openacc, only: acc_device_default, acc_device_kind, &
+  !                 acc_get_device_type, acc_get_num_devices, &
+  !                 acc_set_device_num, acc_init
+  !   implicit none
+  !   integer, intent(in):: mpi_rank
+  !   integer(ik4):: idev, ndev
+  !   integer(acc_device_kind):: dev_type
+
+  !   dev_type = acc_get_device_type()
+  !   ndev = acc_get_num_devices(acc_device_default)
+  !   idev = mod(mpi_rank, ndev)
+  !   call acc_set_device_num(idev, dev_type)
+  !   call acc_init(dev_type)
+  ! end subroutine setup_openacc
   subroutine setup_openacc(mpi_rank)
     use openacc, only: acc_device_default, acc_device_kind, &
-                  acc_get_device_type, acc_get_num_devices, &
-                  acc_set_device_num, acc_init
+                     acc_get_device_type, acc_get_num_devices, &
+                     acc_set_device_num, acc_init
     implicit none
-    integer, intent(in) :: mpi_rank
-    integer(ik4) :: idev, ndev
-    integer(acc_device_kind) :: dev_type
+    integer, intent(in):: mpi_rank
+    integer(ik4):: idev, ndev
+    integer(acc_device_kind):: dev_type
+    character(len = 16):: env
+    integer:: status
 
-    dev_type = acc_get_device_type()
-    ndev = acc_get_num_devices(acc_device_default)
-    idev = mod(mpi_rank, ndev)
-    call acc_set_device_num(idev, dev_type)
+    dev_type = acc_get_device_type()  ! Uses the device type set in the environment via ACC_DEVICE_TYPE
     call acc_init(dev_type)
+  
+    call get_environment_variable("ACC_DEVICE_NUM", env, status)
+    if (status == 0) then
+       read(env, *) idev
+    else
+       ! Assumes all devices are visible.
+       ndev = acc_get_num_devices(acc_device_default)
+       idev = mod(mpi_rank, ndev)
+    end if
+
+    print *, 'MPI Rank:', mpi_rank, ' using device:', idev
+
+    call acc_set_device_num(idev, dev_type)
   end subroutine setup_openacc
 #endif
 
 end module mod_regcm_interface
-! vim: tabstop=8 expandtab shiftwidth=2 softtabstop=2
+! vim: tabstop = 8 expandtab shiftwidth = 2 softtabstop = 2
