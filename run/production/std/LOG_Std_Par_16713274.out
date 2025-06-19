@@ -1,0 +1,345 @@
+Loading netcdf-c/4.9.2--openmpi--4.1.6--nvhpc--23.11
+  Loading requirement: bzip2/1.0.8--gcc--12.2.0-cc63fjd
+    lz4/1.9.4--nvhpc--23.11-5h5hoio snappy/1.1.10--nvhpc--23.11-ozr5mpq
+    zstd/1.5.5--gcc--12.2.0-h6hxgmk c-blosc/1.21.5--nvhpc--23.11-k6qwhp7
+    libaec/1.0.6--nvhpc--23.11-mpahyfr
+[Wrapper][Rank 2][Local 2] on lrdn0465.leonardo.local: CUDA_VISIBLE_DEVICES=2
+[Wrapper][Rank 0][Local 0] on lrdn0465.leonardo.local: CUDA_VISIBLE_DEVICES=0
+[Wrapper][Rank 1][Local 1] on lrdn0465.leonardo.local: CUDA_VISIBLE_DEVICES=1
+[Wrapper][Rank 3][Local 3] on lrdn0465.leonardo.local: CUDA_VISIBLE_DEVICES=3
+[Wrapper][Rank 4][Local 0] on lrdn1777.leonardo.local: CUDA_VISIBLE_DEVICES=0
+[Wrapper][Rank 5][Local 1] on lrdn1777.leonardo.local: CUDA_VISIBLE_DEVICES=1
+[Wrapper][Rank 6][Local 2] on lrdn1777.leonardo.local: CUDA_VISIBLE_DEVICES=2
+[Wrapper][Rank 7][Local 3] on lrdn1777.leonardo.local: CUDA_VISIBLE_DEVICES=3
+
+  This is RegCM development version
+   GIT Revision: 5.0.0-944-g5801-dirty compiled at: data : Jun 10 2025  time: 16:15:29
+
+ : this run start at  : 2025-06-14 19:42:28+0200
+ : it is submitted by : 
+ : it is running on   : lrdn0465.leonardo.local
+ : it is using        :             8   processors
+ : in directory       : 
+ /leonardo/home/userexternal/ctica000/MS_thesis/RegCM/run
+                       
+ CPUS DIM1 =             4
+ CPUS DIM2 =             2
+ 
+ Reading model namelist file
+ Using default microphysical parameter.
+ Initial date of the global simulation:  1900-01-01 00:00:00 UTC        
+ Initial date of this run             :  1900-01-01 00:00:00 UTC        
+ Final date of this run               :  1900-01-11 00:00:00 UTC        
+ Total simulation length              :           240  hours
+ Timestep in seconds =   30.000000
+ Advection timestep =    10.000 (factor  3)
+ Max. Courant number for horizontal advection =    1.0607
+ Sound waves timestep =     2.000 (factor  5)
+ Courant number of horizontal sound waves =    0.5017
+ Setting IPCC scenario to CONST   
+ Selected value at year          1900
+ Create SAV files :   F
+ Create ATM files :   F
+ Create RAD files :   F
+ Create SRF files :   F
+ Create STS files :   F
+ Create SHF files :   F
+ Monthly new files are created
+ Monthly SAV files are written
+ Frequency in hours to create ATM :    3.0
+ Frequency in hours to create RAD :    3.0
+ Frequency in hours to create SRF :    3.0
+ Physical Parameterizations
+  Lateral Boundary conditions :  0
+  Semi-Lagrangian Advection   :  0
+  Land cumulus conv. scheme   :  0
+  Ocean cumulus conv. scheme  :  0
+  Moisture schem              :  2
+  Ocean Flux scheme           :  2
+  Zeng roughness formula      :  1
+  Zeng roughness method       :  1
+  Coupling with ocean         :  0
+  Coupling with wave          :  0
+  Coupling with COP           :  0
+  Pressure gradient force     :  0
+  Prescribed LW emissivity    :  0
+  Lake model in BATS          :  0
+  Simulate diurnal sst cycle  :  0
+  Simulate sea ice cover      :  0
+  Enable chem/aerosol model   :  0
+  Large scale LWP as convect. :  0
+  Cloud fraction scheme       :  7
+  Marine stratocumulus        :  0
+  Climate O3 dataset          :  0
+  Climate Aerosol dataset     :  0
+ Model Timestep Pameterizations
+  time step for dynamical model in seconds :          30.000000
+  time step for surface   model in seconds :         600.000000
+  time step for cumulus   model in seconds :         300.000000
+  time step for radiation model in seconds :        1800.000000
+  time step for emission  model in seconds :       64800.000000
+Vertical level height profile: 
+  1    46.60
+  2   149.01
+  3   265.05
+  4   396.54
+  5   545.55
+  6   714.39
+  7   905.71
+  8  1122.51
+  9  1368.17
+ 10  1646.54
+ 11  1961.98
+ 12  2319.42
+ 13  2724.45
+ 14  3183.41
+ 15  3703.47
+ 16  4292.79
+ 17  4960.57
+ 18  5717.27
+ 19  6574.71
+ 20  7546.33
+ 21  8647.32
+ 22  9894.90
+ 23 11308.59
+ 24 12910.51
+ 25 14725.73
+ 26 16782.64
+ 27 19113.43
+ 28 21754.55
+ 29 24747.34
+ 30 28138.62
+ Model top at     30000.00000000000       m
+ Domain grid parameters:
+  Map Projection        : NORMER
+  Dot Grid Full Extent  :  100x  50x 30
+  Model Grid Spacing    :    2.000000 km
+  Proj Center Latitude  :    0.000000 deg
+  Proj Center longitude :   90.000000 deg
+ Holtslag PBL Scheme
+  ricr_ocn     =    0.250000
+  ricr_lnd     =    0.250000
+  zhnew_fac    =    0.250000
+  ifaholt      =  0
+  ifaholtth10  =  2
+  holtth10iter =    1
+ Cloud fraction schemes parameters
+  # of bottom no cloud model levels :  1
+  Maximum relative humidity         :    1.010000
+  Minimum relative humidity         :    0.010000
+  Maximum total cloud cover for rad :    1.000000
+  Conv. CF UMF factor deep cumulus  :    0.140000
+  Conv. CF UMF factor deep cumulus  :    0.140000
+  Conv. CF UMF factor k2            :  500.000000
+  Surface radiation hack            :           F
+  Vavrus-Waliser Arctic cloud fix   :           T
+ Convective Cloud Cover parameters after resolution scaling
+  Maximum Convective Cloud Cover :    1.000000
+  Convective Cloud Water         :    0.000300
+ The surface energy budget is used to calculate the ground temperature.
+ The radiation is computed every   30. minutes.
+ The lateral boundary conditions are fixed.
+ Successfully read in surface temperature.
+  # Ozone profile #
+    0.170E-04  0.141E-04  0.725E-05  0.207E-05  0.296E-06  0.195E-07  0.612E-09
+    0.108E-10  0.100E-11  0.100E-11  0.100E-11  0.100E-11  0.100E-11  0.100E-11
+    0.100E-11  0.100E-11  0.100E-11  0.100E-11  0.100E-11  0.100E-11  0.100E-11
+    0.100E-11  0.100E-11  0.100E-11  0.100E-11  0.100E-11  0.100E-11  0.100E-11
+    0.100E-11  0.100E-11  0.100E-11  0.100E-11
+ At  1900-01-01 00:00:00 UTC        
+ JDay      0.00000 solar zenith angle = 42.05 degrees
+                   solar TSI irradiance    =     340.0000 W/m^2
+ $$$  1900-01-01 03:00:00 UTC        
+ $$$ max, min of ps (mb) =  1017.08 1017.07
+ $$$  1900-01-01 06:00:00 UTC        
+ $$$ max, min of ps (mb) =  1017.63 1017.63
+ $$$  1900-01-01 09:00:00 UTC        
+ $$$ max, min of ps (mb) =  1018.18 1018.18
+ $$$  1900-01-01 12:00:00 UTC        
+ $$$ max, min of ps (mb) =  1018.72 1018.72
+ $$$  1900-01-01 15:00:00 UTC        
+ $$$ max, min of ps (mb) =  1019.27 1019.27
+ $$$  1900-01-01 18:00:00 UTC        
+ $$$ max, min of ps (mb) =  1019.81 1019.79
+ $$$  1900-01-01 21:00:00 UTC        
+ $$$ max, min of ps (mb) =  1020.36 1020.20
+ At  1900-01-02 00:00:00 UTC        
+ JDay      1.00000 solar zenith angle = 42.05 degrees
+                   solar TSI irradiance    =     340.0000 W/m^2
+ $$$  1900-01-02 00:00:00 UTC        
+ $$$ max, min of ps (mb) =  1020.69 1020.48
+ $$$  1900-01-02 03:00:00 UTC        
+ $$$ max, min of ps (mb) =  1021.15 1021.02
+ $$$  1900-01-02 06:00:00 UTC        
+ $$$ max, min of ps (mb) =  1021.67 1021.54
+ $$$  1900-01-02 09:00:00 UTC        
+ $$$ max, min of ps (mb) =  1022.25 1022.05
+ $$$  1900-01-02 12:00:00 UTC        
+ $$$ max, min of ps (mb) =  1022.68 1022.46
+ $$$  1900-01-02 15:00:00 UTC        
+ $$$ max, min of ps (mb) =  1022.97 1022.64
+ $$$  1900-01-02 18:00:00 UTC        
+ $$$ max, min of ps (mb) =  1023.21 1022.94
+ $$$  1900-01-02 21:00:00 UTC        
+ $$$ max, min of ps (mb) =  1023.58 1023.33
+ At  1900-01-03 00:00:00 UTC        
+ JDay      2.00000 solar zenith angle = 42.05 degrees
+                   solar TSI irradiance    =     340.0000 W/m^2
+ $$$  1900-01-03 00:00:00 UTC        
+ $$$ max, min of ps (mb) =  1023.97 1023.57
+ $$$  1900-01-03 03:00:00 UTC        
+ $$$ max, min of ps (mb) =  1024.29 1023.83
+ $$$  1900-01-03 06:00:00 UTC        
+ $$$ max, min of ps (mb) =  1024.69 1024.29
+ $$$  1900-01-03 09:00:00 UTC        
+ $$$ max, min of ps (mb) =  1025.02 1024.76
+ $$$  1900-01-03 12:00:00 UTC        
+ $$$ max, min of ps (mb) =  1025.47 1025.04
+ $$$  1900-01-03 15:00:00 UTC        
+ $$$ max, min of ps (mb) =  1025.81 1025.61
+ $$$  1900-01-03 18:00:00 UTC        
+ $$$ max, min of ps (mb) =  1026.14 1025.49
+ $$$  1900-01-03 21:00:00 UTC        
+ $$$ max, min of ps (mb) =  1026.39 1025.52
+ At  1900-01-04 00:00:00 UTC        
+ JDay      3.00000 solar zenith angle = 42.05 degrees
+                   solar TSI irradiance    =     340.0000 W/m^2
+ $$$  1900-01-04 00:00:00 UTC        
+ $$$ max, min of ps (mb) =  1026.57 1025.78
+ $$$  1900-01-04 03:00:00 UTC        
+ $$$ max, min of ps (mb) =  1026.85 1026.45
+ $$$  1900-01-04 06:00:00 UTC        
+ $$$ max, min of ps (mb) =  1027.22 1026.79
+ $$$  1900-01-04 09:00:00 UTC        
+ $$$ max, min of ps (mb) =  1027.61 1027.15
+ $$$  1900-01-04 12:00:00 UTC        
+ $$$ max, min of ps (mb) =  1028.04 1027.64
+ $$$  1900-01-04 15:00:00 UTC        
+ $$$ max, min of ps (mb) =  1028.46 1027.59
+ $$$  1900-01-04 18:00:00 UTC        
+ $$$ max, min of ps (mb) =  1028.86 1027.98
+ $$$  1900-01-04 21:00:00 UTC        
+ $$$ max, min of ps (mb) =  1029.16 1028.13
+ At  1900-01-05 00:00:00 UTC        
+ JDay      4.00000 solar zenith angle = 42.05 degrees
+                   solar TSI irradiance    =     340.0000 W/m^2
+ $$$  1900-01-05 00:00:00 UTC        
+ $$$ max, min of ps (mb) =  1029.59 1028.75
+ $$$  1900-01-05 03:00:00 UTC        
+ $$$ max, min of ps (mb) =  1029.80 1029.24
+ $$$  1900-01-05 06:00:00 UTC        
+ $$$ max, min of ps (mb) =  1030.11 1029.56
+ $$$  1900-01-05 09:00:00 UTC        
+ $$$ max, min of ps (mb) =  1030.59 1029.95
+ $$$  1900-01-05 12:00:00 UTC        
+ $$$ max, min of ps (mb) =  1030.84 1030.32
+ $$$  1900-01-05 15:00:00 UTC        
+ $$$ max, min of ps (mb) =  1031.21 1030.63
+ $$$  1900-01-05 18:00:00 UTC        
+ $$$ max, min of ps (mb) =  1031.55 1030.89
+ $$$  1900-01-05 21:00:00 UTC        
+ $$$ max, min of ps (mb) =  1031.85 1030.97
+ At  1900-01-06 00:00:00 UTC        
+ JDay      5.00000 solar zenith angle = 42.05 degrees
+                   solar TSI irradiance    =     340.0000 W/m^2
+ $$$  1900-01-06 00:00:00 UTC        
+ $$$ max, min of ps (mb) =  1032.34 1031.64
+ $$$  1900-01-06 03:00:00 UTC        
+ $$$ max, min of ps (mb) =  1032.63 1031.76
+ $$$  1900-01-06 06:00:00 UTC        
+ $$$ max, min of ps (mb) =  1032.92 1032.33
+ $$$  1900-01-06 09:00:00 UTC        
+ $$$ max, min of ps (mb) =  1033.29 1032.44
+ $$$  1900-01-06 12:00:00 UTC        
+ $$$ max, min of ps (mb) =  1033.66 1033.12
+ $$$  1900-01-06 15:00:00 UTC        
+ $$$ max, min of ps (mb) =  1034.09 1033.54
+ $$$  1900-01-06 18:00:00 UTC        
+ $$$ max, min of ps (mb) =  1034.40 1033.74
+ $$$  1900-01-06 21:00:00 UTC        
+ $$$ max, min of ps (mb) =  1034.81 1034.10
+ At  1900-01-07 00:00:00 UTC        
+ JDay      6.00000 solar zenith angle = 42.05 degrees
+                   solar TSI irradiance    =     340.0000 W/m^2
+ $$$  1900-01-07 00:00:00 UTC        
+ $$$ max, min of ps (mb) =  1035.29 1034.40
+ $$$  1900-01-07 03:00:00 UTC        
+ $$$ max, min of ps (mb) =  1035.51 1034.73
+ $$$  1900-01-07 06:00:00 UTC        
+ $$$ max, min of ps (mb) =  1035.95 1035.24
+ $$$  1900-01-07 09:00:00 UTC        
+ $$$ max, min of ps (mb) =  1036.15 1035.26
+ $$$  1900-01-07 12:00:00 UTC        
+ $$$ max, min of ps (mb) =  1036.56 1035.71
+ $$$  1900-01-07 15:00:00 UTC        
+ $$$ max, min of ps (mb) =  1036.84 1036.02
+ $$$  1900-01-07 18:00:00 UTC        
+ $$$ max, min of ps (mb) =  1037.16 1036.48
+ $$$  1900-01-07 21:00:00 UTC        
+ $$$ max, min of ps (mb) =  1037.54 1036.75
+ At  1900-01-08 00:00:00 UTC        
+ JDay      7.00000 solar zenith angle = 42.05 degrees
+                   solar TSI irradiance    =     340.0000 W/m^2
+ $$$  1900-01-08 00:00:00 UTC        
+ $$$ max, min of ps (mb) =  1037.97 1037.34
+ $$$  1900-01-08 03:00:00 UTC        
+ $$$ max, min of ps (mb) =  1038.33 1037.80
+ $$$  1900-01-08 06:00:00 UTC        
+ $$$ max, min of ps (mb) =  1038.62 1038.15
+ $$$  1900-01-08 09:00:00 UTC        
+ $$$ max, min of ps (mb) =  1039.00 1038.22
+ $$$  1900-01-08 12:00:00 UTC        
+ $$$ max, min of ps (mb) =  1039.58 1038.20
+ $$$  1900-01-08 15:00:00 UTC        
+ $$$ max, min of ps (mb) =  1039.82 1038.97
+ $$$  1900-01-08 18:00:00 UTC        
+ $$$ max, min of ps (mb) =  1040.18 1039.03
+ $$$  1900-01-08 21:00:00 UTC        
+ $$$ max, min of ps (mb) =  1040.46 1039.68
+ At  1900-01-09 00:00:00 UTC        
+ JDay      8.00000 solar zenith angle = 42.05 degrees
+                   solar TSI irradiance    =     340.0000 W/m^2
+ $$$  1900-01-09 00:00:00 UTC        
+ $$$ max, min of ps (mb) =  1040.91 1040.05
+ $$$  1900-01-09 03:00:00 UTC        
+ $$$ max, min of ps (mb) =  1041.23 1040.48
+ $$$  1900-01-09 06:00:00 UTC        
+ $$$ max, min of ps (mb) =  1041.60 1040.65
+ $$$  1900-01-09 09:00:00 UTC        
+ $$$ max, min of ps (mb) =  1042.19 1040.78
+ $$$  1900-01-09 12:00:00 UTC        
+ $$$ max, min of ps (mb) =  1042.46 1041.31
+ $$$  1900-01-09 15:00:00 UTC        
+ $$$ max, min of ps (mb) =  1042.62 1041.22
+ $$$  1900-01-09 18:00:00 UTC        
+ $$$ max, min of ps (mb) =  1042.99 1041.75
+ $$$  1900-01-09 21:00:00 UTC        
+ $$$ max, min of ps (mb) =  1043.20 1042.30
+ At  1900-01-10 00:00:00 UTC        
+ JDay      9.00000 solar zenith angle = 42.05 degrees
+                   solar TSI irradiance    =     340.0000 W/m^2
+ $$$  1900-01-10 00:00:00 UTC        
+ $$$ max, min of ps (mb) =  1043.46 1042.84
+ $$$  1900-01-10 03:00:00 UTC        
+ $$$ max, min of ps (mb) =  1043.85 1043.06
+ $$$  1900-01-10 06:00:00 UTC        
+ $$$ max, min of ps (mb) =  1044.30 1043.30
+ $$$  1900-01-10 09:00:00 UTC        
+ $$$ max, min of ps (mb) =  1044.60 1043.37
+ $$$  1900-01-10 12:00:00 UTC        
+ $$$ max, min of ps (mb) =  1045.14 1043.92
+ $$$  1900-01-10 15:00:00 UTC        
+ $$$ max, min of ps (mb) =  1045.35 1044.58
+ $$$  1900-01-10 18:00:00 UTC        
+ $$$ max, min of ps (mb) =  1045.57 1045.06
+ $$$  1900-01-10 21:00:00 UTC        
+ $$$ max, min of ps (mb) =  1045.88 1045.43
+ At  1900-01-11 00:00:00 UTC        
+ JDay     10.00000 solar zenith angle = 42.05 degrees
+                   solar TSI irradiance    =     340.0000 W/m^2
+ Final time  1900-01-11 00:00:00 UTC reached.
+ Elapsed seconds of run for this final timeslice :     2662.640    
+ : this run stops at  : 2025-06-14 20:26:50+0200
+ : Run has been completed using             8  processors.
+ : Total elapsed seconds of run :     2662.648401021957     
+ RegCM V5 simulation successfully reached end
