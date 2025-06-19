@@ -17,15 +17,6 @@ source /leonardo/home/userexternal/ctica000/MS_thesis/RegCM/modules_cuda
 
 cd /leonardo/home/userexternal/ctica000/MS_thesis/RegCM/run
 
-# One GPU per MPI rank
-# export CUDA_VISIBLE_DEVICES=${SLURM_LOCALID}
-# export ACC_DEVICE_TYPE=nvidia
-# export ACC_DEVICE_NUM=0  # Only one device visible to each rank
-
-# Optional diagnostic
-# echo "Rank ${SLURM_PROCID} sees GPU: $CUDA_VISIBLE_DEVICES"
-
-
 # Launch
 srun ./STD_launch_per_rank.sh
 

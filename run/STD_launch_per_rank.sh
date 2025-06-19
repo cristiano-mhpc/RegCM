@@ -15,7 +15,11 @@ fi
 export CUDA_VISIBLE_DEVICES=$RANK
 export ACC_DEVICE_TYPE=nvidia
 export ACC_DEVICE_NUM=$SLURM_LOCALID
+export BINDIR=/leonardo/home/userexternal/ctica000/MS_thesis/RegCM/bin
+
+echo "[Wrapper][Rank $SLURM_PROCID][Local $SLURM_LOCALID] on $(hostname): CUDA_VISIBLE_DEVICES=$CUDA_VISIBLE_DEVICES"
+
 
 # Launch the binary
-exec /leonardo/home/userexternal/ctica000/MS_thesis/RegCM/bin/regcmMPIOPENACC_STDPAR_RCEMIP isc24_small.in
+exec $BINDIR/regcmMPIOPENACC_STDPAR_RCEMIP isc24_small.in
 
