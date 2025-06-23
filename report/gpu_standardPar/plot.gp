@@ -8,7 +8,6 @@ set style fill solid border -1
 set boxwidth 0.9
 set datafile missing '---'
 
-set logscale y
 
 set xlabel "Problem Size"
 set ylabel "Time (s)"
