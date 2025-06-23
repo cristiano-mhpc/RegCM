@@ -1,12 +1,14 @@
 set terminal pngcairo size 1000,600 enhanced font 'Arial,12'
 set output 'timing_bar_plot.png'
 
-set title "Timing for Different GPU + MPI Configurations"
+set title "Performance for Different GPU + MPI Configurations"
 set style data histogram
 set style histogram cluster gap 1
 set style fill solid border -1
 set boxwidth 0.9
 set datafile missing '---'
+
+set logscale y
 
 set xlabel "Problem Size"
 set ylabel "Time (s)"
