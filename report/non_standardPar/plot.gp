@@ -7,6 +7,7 @@ set style histogram cluster gap 1
 set style fill solid border -1
 set boxwidth 0.9
 set datafile missing '---'
+set yrange [0:80000]
 
 
 set xlabel "Problem Size"
