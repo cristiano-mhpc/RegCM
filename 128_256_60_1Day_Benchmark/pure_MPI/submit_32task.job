@@ -1,0 +1,22 @@
+#!/bin/bash 
+
+#SBATCH --account=ICT25_MHPC_0
+#SBATCH --out=./production/LOG_%x_%j.out
+#SBATCH --err=./production/LOG_%x_%j.err
+#SBATCH --job-name stdpar_1gpu_1task
+#SBATCH --ntasks-per-node=32
+#SBATCH --cpus-per-task=1
+#SBATCH --partition=boost_usr_prod
+#SBATCH --nodes=1
+#SBATCH --mem=128G
+#SBATCH --time=10:00:00
+
+source /leonardo/home/userexternal/ctica000/MS_thesis/RegCM/modules_cuda  
+
+cd /leonardo/home/userexternal/ctica000/MS_thesis/RegCM/128_256_60_1Day_Benchmark/pure_MPI
+
+# Launch
+srun ./STD_launch_per_rank.sh
+
+
+
