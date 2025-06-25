@@ -1,0 +1,29 @@
+#!/bin/bash 
+
+#SBATCH --account=ICT25_MHPC_0
+#SBATCH --out=./debug/LOG_%x_%j.out
+#SBATCH --err=./debug/LOG_%x_%j.err
+#SBATCH --job-name stdpar_32tasks_4cores
+#SBATCH --ntasks-per-node=8
+#SBATCH --cpus-per-task=4 
+#SBATCH --partition=boost_usr_prod
+#SBATCH --nodes=4
+#SBATCH --mem=128G
+#SBATCH --time=1-00:00:00
+
+export ACC_DEVICE_NUM=$SLURM_LOCALID
+
+export BINDIR=/leonardo/home/userexternal/ctica000/MS_thesis/RegCM/bin
+
+export OMP_NUM_THREADS=$SLURM_CPUS_PER_TASK 
+
+source /leonardo/home/userexternal/ctica000/MS_thesis/RegCM/modules_cuda  
+
+cd /leonardo/home/userexternal/ctica000/MS_thesis/RegCM/Benchmarking/standardPar 
+
+# Launch
+srun $BINDIR/regcmMPIOPENACC_MULTICORE_RCEMIP isc24_small.in
+
+
+
+
