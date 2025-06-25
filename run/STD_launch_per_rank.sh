@@ -21,5 +21,5 @@ echo "[Wrapper][Rank $SLURM_PROCID][Local $SLURM_LOCALID] on $(hostname): CUDA_V
 
 
 # Launch the binary
-exec $BINDIR/regcmMPIOPENACC_STDPAR_RCEMIP isc24_small.in
+exec $BINDIR/regcmMPIOPENACC_GPU_STDPAR_RCEMIP isc24_small.in
 

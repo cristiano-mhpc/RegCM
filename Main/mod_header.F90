@@ -7,7 +7,7 @@
 !
 !         https://opensource.org/licenses/MIT.
 !
-!    ICTP RegCM is distributed in the hope that it will be useful,
+!    ICTP RegCM is distributed in the hope that it will be useful, 
 !    but WITHOUT ANY WARRANTY; without even the implied warranty of
 !    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
 !
@@ -27,39 +27,39 @@ module mod_header
 
   private
 
-  public :: whoami, header, checktime, finaltime
+  public:: whoami, header, checktime, finaltime
 
-  character (len=32) :: cdata='?'
-  character (len=5) :: czone='?'
-  integer(ik4), dimension(8) :: tval
-  real(rk4) :: start_time, last_time
+  character (len = 32):: cdata='?'
+  character (len = 5):: czone='?'
+  integer(ik4), dimension(8):: tval
+  real(rk4):: start_time, last_time
 
   contains
 
   subroutine whoami(myid)
     implicit none
-    integer(ik4), intent(in) :: myid
-    character(len=*), parameter :: f99001 = &
-        '(2x," GIT Revision: ",a," compiled at: data : ",a,"  time: ",a,/)'
+    integer(ik4), intent(in):: myid
+    character(len=*), parameter:: f99001 = &
+        '(2x, " GIT Revision: ",a, " compiled at: data : ",a, "  time: ",a, /)'
 
     if ( myid == iocpu ) then
       call cpu_time(start_time)
       last_time = start_time
-      write (stdout,"(/,2x,'This is RegCM development version')")
-      write (stdout,f99001)  GIT_VER, __DATE__, __TIME__
+      write (stdout, "(/,2x, 'This is RegCM development version')")
+      write (stdout, f99001)  GIT_VER, __DATE__, __TIME__
     end if
 
   end subroutine whoami
 
-  subroutine header(myid,nproc)
+  subroutine header(myid, nproc)
     implicit none
-    integer(ik4), intent(in) :: myid, nproc
-    integer(ik4) :: ihost, idir
-    integer(ik4) :: hostnm
-    integer(ik4) :: getcwd
-    character (len=32) :: hostname='?'
-    character (len=32) :: user='?'
-    character (len=256) :: directory='?'
+    integer(ik4), intent(in):: myid, nproc
+    integer(ik4):: ihost, idir
+    integer(ik4):: hostnm
+    integer(ik4):: getcwd
+    character (len = 32):: hostname='?'
+    character (len = 32):: user='?'
+    character (len = 256):: directory='?'
 
     if ( myid == iocpu )  then
 #ifdef IBM
@@ -70,32 +70,32 @@ module mod_header
       call getlog(user)
 #endif
       idir = getcwd(directory)
-      call date_and_time(zone=czone,values=tval)
-      write(cdata,'(i0.4,"-",i0.2,"-",i0.2," ",i0.2,":",i0.2,":",i0.2,a)') &
+      call date_and_time(zone = czone, values = tval)
+      write(cdata, '(i0.4, "-",i0.2, "-",i0.2, " ",i0.2, ":",i0.2, ":",i0.2, a)') &
             tval(1), tval(2), tval(3), tval(5), tval(6), tval(7), czone
-      write (stdout,*) ": this run start at  : ",trim(cdata)
-      write (stdout,*) ": it is submitted by : ",trim(user)
-      write (stdout,*) ": it is running on   : ",trim(hostname)
-      write (stdout,*) ": it is using        : ",nproc, &
+      write (stdout, *) ": this run start at  : ",trim(cdata)
+      write (stdout, *) ": it is submitted by : ",trim(user)
+      write (stdout, *) ": it is running on   : ",trim(hostname)
+      write (stdout, *) ": it is using        : ",nproc, &
                        '  processors'
-      write (stdout,*) ": in directory       : ",trim(directory)
-      write (stdout,*) "                      "
+      write (stdout, *) ": in directory       : ",trim(directory)
+      write (stdout, *) "                      "
     end if
   end subroutine header
 
-  subroutine checktime(myid,ctime,period)
+  subroutine checktime(myid, ctime, period)
     implicit none
-    integer(ik4), intent(in) :: myid
-    character(len=*), intent(in) :: ctime, period
-    integer(ik4) :: iunit
-    real(rk4) :: check_time
+    integer(ik4), intent(in):: myid
+    character(len=*), intent(in):: ctime, period
+    integer(ik4):: iunit
+    real(rk4):: check_time
     if ( myid == iocpu ) then
       call cpu_time(check_time)
-      write (stdout,*) 'Elapsed seconds of run for this ',trim(period), &
+      write (stdout, *) 'Elapsed seconds of run for this ',trim(period), &
             ' : ', (check_time-last_time)
-      open(newunit=iunit,file=trim(ctime)//'.txt',form='formatted', &
+      open(newunit = iunit, file = trim(ctime)//'.txt',form='formatted', &
            status='replace',action='write')
-      write(iunit,*) 'Elapsed seconds of run for this ',trim(period), &
+      write(iunit, *) 'Elapsed seconds of run for this ',trim(period), &
             ' : ', (check_time-last_time)
       close(iunit)
       last_time = check_time
@@ -104,20 +104,20 @@ module mod_header
 
   subroutine finaltime(myid)
     implicit none
-    integer(ik4), intent (in) :: myid
-    real(rkx) :: finish_time
+    integer(ik4), intent (in):: myid
+    real(rkx):: finish_time
 
     if ( myid == iocpu ) then
       call cpu_time(finish_time)
-      call date_and_time(zone=czone,values=tval)
-      write(cdata,'(i0.4,"-",i0.2,"-",i0.2," ",i0.2,":",i0.2,":",i0.2,a)') &
+      call date_and_time(zone = czone, values = tval)
+      write(cdata, '(i0.4, "-",i0.2, "-",i0.2, " ",i0.2, ":",i0.2, ":",i0.2, a)') &
             tval(1), tval(2), tval(3), tval(5), tval(6), tval(7), czone
-      write (stdout,*) ': this run stops at  : ', trim(cdata)
-      write (stdout,*) ': Run has been completed using ', nproc, ' processors.'
-      write (stdout,*) ': Total elapsed seconds of run : ', &
-                (finish_time - start_time)
+      write (stdout, *) ': this run stops at  : ', trim(cdata)
+      write (stdout, *) ': Run has been completed using ', nproc, ' processors.'
+      write (stdout, *) ': Total elapsed seconds of run : ', &
+                (finish_time-start_time)
     end if
   end subroutine finaltime
 
 end module mod_header
-! vim: tabstop=8 expandtab shiftwidth=2 softtabstop=2
+! vim: tabstop = 8 expandtab shiftwidth = 2 softtabstop = 2

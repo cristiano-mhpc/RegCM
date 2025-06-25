@@ -167,13 +167,36 @@ if eval "test x"$USE_OPENACC" = x3"; then
   AC_SUBST(AM_CPPFLAGS)
 fi
 
+
 AC_ARG_ENABLE(openacc-stdpar,
   AC_HELP_STRING([--enable-openacc-stdpar],
                  [Compile OpenACC directives with stdpar (only for PGI fortran compilation)]),
                  [USE_OPENACC="4"]
 )
 if eval "test x"$USE_OPENACC" = x4"; then
-  AM_CPPFLAGS="\$(DEFINE)OPENACC $AM_CPPFLAGS -DSTDPAR"
+  AM_CPPFLAGS="\$(DEFINE)OPENACC \$(DEFINE)GPU $AM_CPPFLAGS -DSTDPAR"
+  AC_SUBST(AM_CPPFLAGS)
+fi
+
+
+AC_ARG_ENABLE(openacc-multicore,
+  AC_HELP_STRING([--enable-openacc-multicore],
+                 [Compile with multicore CPU target]),
+                 [USE_OPENACC="5"]
+)
+if eval "test x"$USE_OPENACC" = x5"; then
+  AM_CPPFLAGS="\$(DEFINE)OPENACC  \$(DEFINE)MULTICORE $AM_CPPFLAGS"
+  AC_SUBST(AM_CPPFLAGS)
+fi
+
+
+AC_ARG_ENABLE(openacc-host,
+  AC_HELP_STRING([--enable-openacc-host],
+                 [Compile for CPU target in serial mode]),
+                 [USE_OPENACC="6"]
+)
+if eval "test x"$USE_OPENACC" = x6"; then
+  AM_CPPFLAGS="\$(DEFINE)OPENACC $\$(DEFINE)HOST CAM_CPPFLAGS"
   AC_SUBST(AM_CPPFLAGS)
 fi
 
@@ -793,6 +816,22 @@ else
           -gpu=$PGI_GPU_ARCH,lineinfo,managed -Minfo=accel"
       LDFLAGS="$LDFLAGS -traceback -cudalib=nvtx"
     fi
+    if eval "test x"$USE_OPENACC" = x5"; then
+      FCFLAGS="$FCFLAGS -stdpar=multicore \
+          -Minfo=accel"
+      NOOPTFC="$NOOPTFC -stdpar=multicore \
+          -Minfo=accel"
+      LDFLAGS="$LDFLAGS -traceback -cudalib=nvtx"
+    fi
+    if eval "test x"$USE_OPENACC" = x6"; then
+      FCFLAGS="$FCFLAGS -stdpar=host \
+          -Minfo=accel"
+      NOOPTFC="$NOOPTFC -stdpar=host \
+          -Minfo=accel"
+      LDFLAGS="$LDFLAGS -traceback -cudalib=nvtx"
+    fi
+    AC_SUBST(FCFLAGS)
+    AC_SUBST(FCFLAGS)
     AC_SUBST(FCFLAGS)
     AC_SUBST(NOOPTFC)
   fi

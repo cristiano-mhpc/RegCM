@@ -1,5 +1,5 @@
 set terminal pngcairo size 1000,600 enhanced font 'Arial,12'
-set output 'bar_plot.png'
+set output 'timing_bar_plot.png'
 set title "Performance for -acc=gpu"
 set style data histogram
 set style histogram cluster gap 1
@@ -15,8 +15,8 @@ set key outside top right
 set xtics rotate by -30
 
 plot 'timing.dat' using 2:xtic(1) title '1GPU+1MPI', \
-     '' using 3 title '2MPIx16th(1node)', \
-     '' using 4 title '4MPIx8th(1node)', \
-     '' using 5 title '8MPIx8th(2nodes)', \
-     '' using 6 title '16MPIx8th(4nodes)'
+     '' using 3 title '2GPU+2MPI', \
+     '' using 4 title '4GPU+4MPI', \
+     '' using 5 title '8GPU+8MPI', \
+     '' using 6 title '16GPU+16MPI'
 
