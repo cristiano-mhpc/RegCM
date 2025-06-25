@@ -1,0 +1,25 @@
+#!/bin/bash 
+
+#SBATCH --account=ICT25_MHPC_0
+#SBATCH --qos=boost_qos_dbg
+#SBATCH --out=./debug/LOG_%x_%j.out
+#SBATCH --err=./debug/LOG_%x_%j.err
+#SBATCH --job-name stdpar_8gpu_8task
+#SBATCH --ntasks-per-node=4
+#SBATCH --cpus-per-task=8 
+#SBATCH --partition=boost_usr_prod
+#SBATCH --nodes=2
+#SBATCH --gres=gpu:4
+#SBATCH --mem=123000
+
+source /leonardo/home/userexternal/ctica000/MS_thesis/RegCM/modules_cuda  
+
+# export BINDIR=/leonardo/home/userexternal/ctica000/MS_thesis/RegCM/bin
+
+cd /leonardo/home/userexternal/ctica000/MS_thesis/RegCM/Benchmarking/standardPar 
+
+# Launch
+srun ./STD_launch_per_rank.sh
+
+
+
