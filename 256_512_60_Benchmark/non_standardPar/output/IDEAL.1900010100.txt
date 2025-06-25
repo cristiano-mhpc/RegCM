@@ -1,0 +1,1 @@
+ Elapsed seconds of run for this final timeslice :     6888.288    

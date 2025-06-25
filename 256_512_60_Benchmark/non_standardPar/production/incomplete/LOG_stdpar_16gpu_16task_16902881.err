@@ -1,0 +1,302 @@
+ WHUUUUBBBASAAAGASDDWD!!!!!!!!!!!!!!!!
+ No more atmosphere here....
+ CFL violation detected, so model STOP
+ #####################################
+ #            DECREASE DT !!!!       #
+ #####################################
+ -------------- FATAL CALLED ---------------
+ WHUUUUBBBASAAAGASDDWD!!!!!!!!!!!!!!!!
+ WHUUUUBBBASAAAGASDDWD!!!!!!!!!!!!!!!!
+ No more atmosphere here....
+ CFL violation detected, so model STOP
+ #####################################
+ #            DECREASE DT !!!!       #
+ #####################################
+ WHUUUUBBBASAAAGASDDWD!!!!!!!!!!!!!!!!
+ WHUUUUBBBASAAAGASDDWD!!!!!!!!!!!!!!!!
+ No more atmosphere here....
+ CFL violation detected, so model STOP
+ #####################################
+ #            DECREASE DT !!!!       #
+ #####################################
+ No more atmosphere here....
+ WHUUUUBBBASAAAGASDDWD!!!!!!!!!!!!!!!!
+ No more atmosphere here....
+ WHUUUUBBBASAAAGASDDWD!!!!!!!!!!!!!!!!
+ No more atmosphere here....
+ WHUUUUBBBASAAAGASDDWD!!!!!!!!!!!!!!!!
+ No more atmosphere here....
+ CFL violation detected, so model STOP
+ #####################################
+ #            DECREASE DT !!!!       #
+ #####################################
+ CFL violation detected, so model STOP
+ CFL violation detected, so model STOP
+ #####################################
+ #            DECREASE DT !!!!       #
+ #####################################
+ No more atmosphere here....
+ CFL violation detected, so model STOP
+ #####################################
+ #            DECREASE DT !!!!       #
+ #####################################
+ WHUUUUBBBASAAAGASDDWD!!!!!!!!!!!!!!!!
+ No more atmosphere here....
+ CFL violation detected, so model STOP
+ #####################################
+ #            DECREASE DT !!!!       #
+ #####################################
+ #####################################
+ -------------- FATAL CALLED ---------------
+ CFL violation detected, so model STOP
+ #####################################
+ #            DECREASE DT !!!!       #
+ #####################################
+ -------------- FATAL CALLED ---------------
+ #            DECREASE DT !!!!       #
+  Fatal in file: mod_moloch.F90 at line:      605
+ CFL VIOLATION
+ -------------------------------------------
+ mod_moloch.F90 :      605:             1
+ WHUUUUBBBASAAAGASDDWD!!!!!!!!!!!!!!!!
+ -------------- FATAL CALLED ---------------
+ #####################################
+  Fatal in file: mod_moloch.F90 at line:      605
+ CFL VIOLATION
+ -------------------------------------------
+ No more atmosphere here....
+ -------------- FATAL CALLED ---------------
+ -------------- FATAL CALLED ---------------
+ Abort called by computing node             0 at 2025-06-22 10:55:28.391 +0200
+ Execution terminated because of runtime error
+ CFL violation detected, so model STOP
+ #####################################
+ #            DECREASE DT !!!!       #
+ #####################################
+ WHUUUUBBBASAAAGASDDWD!!!!!!!!!!!!!!!!
+ No more atmosphere here....
+ CFL violation detected, so model STOP
+ #####################################
+ #            DECREASE DT !!!!       #
+ #####################################
+ WHUUUUBBBASAAAGASDDWD!!!!!!!!!!!!!!!!
+ No more atmosphere here....
+ CFL violation detected, so model STOP
+ #####################################
+ #            DECREASE DT !!!!       #
+ #####################################
+ -------------- FATAL CALLED ---------------
+ -------------- FATAL CALLED ---------------
+ -------------- FATAL CALLED ---------------
+ -------------- FATAL CALLED ---------------
+ WHUUUUBBBASAAAGASDDWD!!!!!!!!!!!!!!!!
+ No more atmosphere here....
+  Fatal in file: mod_moloch.F90 at line:      605
+ CFL VIOLATION
+ -------------- FATAL CALLED ---------------
+  Fatal in file: mod_moloch.F90 at line:      605
+ CFL VIOLATION
+ -------------------------------------------
+ CFL violation detected, so model STOP
+ #####################################
+ #            DECREASE DT !!!!       #
+ #####################################
+ -------------------------------------------
+ WHUUUUBBBASAAAGASDDWD!!!!!!!!!!!!!!!!
+ No more atmosphere here....
+ CFL violation detected, so model STOP
+ #####################################
+ #            DECREASE DT !!!!       #
+ #####################################
+ -------------- FATAL CALLED ---------------
+  Fatal in file: mod_moloch.F90 at line:      605
+ CFL VIOLATION
+ -------------------------------------------
+ -------------- FATAL CALLED ---------------
+ Abort called by computing node             2 at 2025-06-22 10:55:28.391 +0200
+ -------------- FATAL CALLED ---------------
+  Fatal in file: mod_moloch.F90 at line:      605
+  Fatal in file: mod_moloch.F90 at line:      605
+ CFL VIOLATION
+ Execution terminated because of runtime error
+  Fatal in file: mod_moloch.F90 at line:      605
+ CFL VIOLATION
+ -------------------------------------------
+ CFL VIOLATION
+ -------------------------------------------
+ Abort called by computing node             3 at 2025-06-22 10:55:28.391 +0200
+  Fatal in file: mod_moloch.F90 at line:      605
+ CFL VIOLATION
+ -------------------------------------------
+ -------------------------------------------
+ WHUUUUBBBASAAAGASDDWD!!!!!!!!!!!!!!!!
+ No more atmosphere here....
+ CFL violation detected, so model STOP
+ Execution terminated because of runtime error
+  Fatal in file: mod_moloch.F90 at line:      605
+  Fatal in file: mod_moloch.F90 at line:      605
+ #####################################
+ #            DECREASE DT !!!!       #
+ #####################################
+ WHUUUUBBBASAAAGASDDWD!!!!!!!!!!!!!!!!
+ No more atmosphere here....
+ CFL violation detected, so model STOP
+ #####################################
+ #            DECREASE DT !!!!       #
+ #####################################
+ -------------- FATAL CALLED ---------------
+  Fatal in file: mod_moloch.F90 at line:      605
+ CFL VIOLATION
+ -------------------------------------------
+ CFL VIOLATION
+ -------------------------------------------
+ CFL VIOLATION
+ -------------------------------------------
+  Fatal in file: mod_moloch.F90 at line:      605
+ CFL VIOLATION
+ -------------------------------------------
+ Abort called by computing node             1 at 2025-06-22 10:55:28.391 +0200
+ Execution terminated because of runtime error
+ Abort called by computing node            15 at 2025-06-22 10:55:28.392 +0200
+ Execution terminated because of runtime error
+ Abort called by computing node             4 at 2025-06-22 10:55:28.392 +0200
+ -------------- FATAL CALLED ---------------
+ Abort called by computing node            14 at 2025-06-22 10:55:28.392 +0200
+ Execution terminated because of runtime error
+  Fatal in file: mod_moloch.F90 at line:      605
+ CFL VIOLATION
+ Execution terminated because of runtime error
+ Abort called by computing node             7 at 2025-06-22 10:55:28.391 +0200
+ -------------------------------------------
+ Abort called by computing node            12 at 2025-06-22 10:55:28.392 +0200
+ Execution terminated because of runtime error
+  Fatal in file: mod_moloch.F90 at line:      605
+ CFL VIOLATION
+ Abort called by computing node             6 at 2025-06-22 10:55:28.392 +0200
+ Execution terminated because of runtime error
+ -------------------------------------------
+ Abort called by computing node             5 at 2025-06-22 10:55:28.391 +0200
+ Abort called by computing node             9 at 2025-06-22 10:55:28.392 +0200
+ Execution terminated because of runtime error
+ Execution terminated because of runtime error
+ Execution terminated because of runtime error
+ Abort called by computing node             8 at 2025-06-22 10:55:28.392 +0200
+ Execution terminated because of runtime error
+  Fatal in file: mod_moloch.F90 at line:      605
+ CFL VIOLATION
+ Abort called by computing node            10 at 2025-06-22 10:55:28.392 +0200
+ Execution terminated because of runtime error
+ -------------------------------------------
+ Abort called by computing node            11 at 2025-06-22 10:55:28.392 +0200
+ Abort called by computing node            13 at 2025-06-22 10:55:28.393 +0200
+ Execution terminated because of runtime error
+ Execution terminated because of runtime error
+--------------------------------------------------------------------------
+MPI_ABORT was invoked on rank 7 in communicator MPI COMMUNICATOR 3 DUP FROM 0
+with errorcode 1.
+
+NOTE: invoking MPI_ABORT causes Open MPI to kill all MPI processes.
+You may or may not see output from other processes, depending on
+exactly when Open MPI kills them.
+--------------------------------------------------------------------------
+--------------------------------------------------------------------------
+MPI_ABORT was invoked on rank 4 in communicator MPI COMMUNICATOR 3 DUP FROM 0
+with errorcode 1.
+
+NOTE: invoking MPI_ABORT causes Open MPI to kill all MPI processes.
+You may or may not see output from other processes, depending on
+exactly when Open MPI kills them.
+--------------------------------------------------------------------------
+--------------------------------------------------------------------------
+MPI_ABORT was invoked on rank 5 in communicator MPI COMMUNICATOR 3 DUP FROM 0
+with errorcode 1.
+
+NOTE: invoking MPI_ABORT causes Open MPI to kill all MPI processes.
+You may or may not see output from other processes, depending on
+exactly when Open MPI kills them.
+--------------------------------------------------------------------------
+--------------------------------------------------------------------------
+MPI_ABORT was invoked on rank 6 in communicator MPI COMMUNICATOR 3 DUP FROM 0
+with errorcode 1.
+
+NOTE: invoking MPI_ABORT causes Open MPI to kill all MPI processes.
+You may or may not see output from other processes, depending on
+exactly when Open MPI kills them.
+--------------------------------------------------------------------------
+--------------------------------------------------------------------------
+MPI_ABORT was invoked on rank 9 in communicator MPI COMMUNICATOR 3 DUP FROM 0
+with errorcode 1.
+
+NOTE: invoking MPI_ABORT causes Open MPI to kill all MPI processes.
+You may or may not see output from other processes, depending on
+exactly when Open MPI kills them.
+--------------------------------------------------------------------------
+--------------------------------------------------------------------------
+MPI_ABORT was invoked on rank 15 in communicator MPI COMMUNICATOR 3 DUP FROM 0
+with errorcode 1.
+
+NOTE: invoking MPI_ABORT causes Open MPI to kill all MPI processes.
+You may or may not see output from other processes, depending on
+exactly when Open MPI kills them.
+--------------------------------------------------------------------------
+--------------------------------------------------------------------------
+MPI_ABORT was invoked on rank 8 in communicator MPI COMMUNICATOR 3 DUP FROM 0
+with errorcode 1.
+
+NOTE: invoking MPI_ABORT causes Open MPI to kill all MPI processes.
+You may or may not see output from other processes, depending on
+exactly when Open MPI kills them.
+--------------------------------------------------------------------------
+--------------------------------------------------------------------------
+MPI_ABORT was invoked on rank 11 in communicator MPI COMMUNICATOR 3 DUP FROM 0
+with errorcode 1.
+
+NOTE: invoking MPI_ABORT causes Open MPI to kill all MPI processes.
+You may or may not see output from other processes, depending on
+exactly when Open MPI kills them.
+--------------------------------------------------------------------------
+--------------------------------------------------------------------------
+MPI_ABORT was invoked on rank 13 in communicator MPI COMMUNICATOR 3 DUP FROM 0
+with errorcode 1.
+
+NOTE: invoking MPI_ABORT causes Open MPI to kill all MPI processes.
+You may or may not see output from other processes, depending on
+exactly when Open MPI kills them.
+--------------------------------------------------------------------------
+--------------------------------------------------------------------------
+MPI_ABORT was invoked on rank 12 in communicator MPI COMMUNICATOR 3 DUP FROM 0
+with errorcode 1.
+
+NOTE: invoking MPI_ABORT causes Open MPI to kill all MPI processes.
+You may or may not see output from other processes, depending on
+exactly when Open MPI kills them.
+--------------------------------------------------------------------------
+--------------------------------------------------------------------------
+MPI_ABORT was invoked on rank 10 in communicator MPI COMMUNICATOR 3 DUP FROM 0
+with errorcode 1.
+
+NOTE: invoking MPI_ABORT causes Open MPI to kill all MPI processes.
+You may or may not see output from other processes, depending on
+exactly when Open MPI kills them.
+--------------------------------------------------------------------------
+--------------------------------------------------------------------------
+MPI_ABORT was invoked on rank 14 in communicator MPI COMMUNICATOR 3 DUP FROM 0
+with errorcode 1.
+
+NOTE: invoking MPI_ABORT causes Open MPI to kill all MPI processes.
+You may or may not see output from other processes, depending on
+exactly when Open MPI kills them.
+--------------------------------------------------------------------------
+slurmstepd: error: *** STEP 16902881.0 ON lrdn0148 CANCELLED AT 2025-06-22T10:55:28 ***
+srun: Job step aborted: Waiting up to 92 seconds for job step to finish.
+srun: error: lrdn1761: tasks 8,10: Killed
+srun: error: lrdn1761: task 9: Exited with exit code 1
+srun: error: lrdn0148: tasks 1-3: Killed
+srun: error: lrdn1904: tasks 13-14: Killed
+srun: error: lrdn1904: task 15: Exited with exit code 1
+srun: error: lrdn1904: task 12: Killed
+srun: error: lrdn1609: tasks 4,6: Killed
+srun: error: lrdn1609: task 7: Exited with exit code 1
+srun: error: lrdn0148: task 0: Killed
+srun: error: lrdn1761: task 11: Killed
+srun: error: lrdn1609: task 5: Killed
