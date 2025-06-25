@@ -1,0 +1,5 @@
+FIO/stdio: No such file or directory
+FIO-F-/OPEN/unit=-16/error code returned by host stdio - 2.
+ File name = output//IDEAL.1900010100.txt
+ In source file mod_header.F90, at line number 96
+srun: error: lrdn2971: task 0: Exited with exit code 127
