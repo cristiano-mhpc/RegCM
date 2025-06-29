@@ -1,0 +1,5 @@
+#size         1processx32threads     2processx16threads     4processx8threads     8processx8threads   16processx8threads
+128x256x60    11757.098   10190.980   ---    9880.975      8098.930 
+256x512x60    ---    ---    ---    ---       ---
+512x1024x60   ---    ---    ---    ---       ---
+                        
