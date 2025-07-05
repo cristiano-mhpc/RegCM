@@ -1,5 +1,5 @@
 set terminal pngcairo size 1000,600 enhanced font 'Arial,12'
-set output 'plot_log.png'
+set output 'timing_plot_log.png'
 
 set title "Hybrid Configurations RegCMnoIO"
 set style data histogram
