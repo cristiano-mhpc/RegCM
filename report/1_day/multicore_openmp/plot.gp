@@ -21,5 +21,7 @@ plot 'timing.dat' using 2:xtic(1) title '1procx32thr', \
      '' using 3 title '2procx16thr', \
      '' using 4 title '4procx8thr', \
      '' using 5 title '8procx8thr', \
-     '' using 6 title '16procx8thr'
+     '' using 6 title '16procx8thr', \
+     '' using 7 title '32procx8thr', \
+     '' using 8 title '64procx8thr'
 
