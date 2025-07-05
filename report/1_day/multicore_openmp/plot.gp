@@ -1,5 +1,5 @@
 set terminal pngcairo size 1000,600 enhanced font 'Arial,12'
-set output 'timing.png'
+set output 'plot_log.png'
 
 set title "Hybrid Configurations RegCMnoIO"
 set style data histogram
@@ -7,9 +7,9 @@ set style histogram cluster gap 1
 set style fill solid border -1
 set boxwidth 0.9
 set datafile missing '---'
-set yrange [0:90000]
+set yrange [1000:90000]
 
-# set logscale y 
+set logscale y 
 
 
 set xlabel "Problem Size"
