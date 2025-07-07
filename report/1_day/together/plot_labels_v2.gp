@@ -1,5 +1,5 @@
 set terminal pngcairo size 1000,600 enhanced font 'Arial,12'
-set output 'comparev2.png'
+set output 'compare2.png'
 
 set title "Comparative Performance for RegCMnoIO"
 set style data histogram
@@ -16,7 +16,7 @@ set xtics rotate by -30
 set bmargin 6
 
 # Plot only MPI and GPU bars, with GPU labels
-plot 'timing_v2.dat' using 2:xtic(1) title 'Pure MPI (256 proc)', \
+plot 'timing_v2.dat' using 2:xtic(1) title 'Pure MPI(256proc)', \
      '' using 3 title '-stdpar=gpu', \
      '' using ($0 + 0.25):3:4 with labels offset 0,1 notitle
 
