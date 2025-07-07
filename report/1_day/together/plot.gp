@@ -15,7 +15,7 @@ set key outside top right
 set xtics rotate by -30
 set bmargin 6
 
-plot 'timing.dat' using 2:xtic(1) title '-acc=gpu(16GPU+16MPI)', \
-     '' using 3 title '-stdpar=gpu(2GPU+2MPI)', \
-     '' using 4 title '-stdpar=multicore(16MPIx8Th(4nodes))' 
+plot 'timing.dat' using 2:xtic(1) title 'Pure MPI(256proc)', \
+     '' using 3 title '-stdpar=gpu', \
+     '' using 4 title '-stdpar=multicore' 
 
