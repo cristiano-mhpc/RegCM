@@ -1,5 +1,5 @@
-set terminal pngcairo size 1000,600 enhanced font 'Arial,12'
-set output 'compare2.png'
+set terminal pngcairo size 1000,600 enhanced font 'Arial,11'
+set output 'pureMPI_vs_gpu.png'
 
 set title "Comparative Performance for RegCMnoIO"
 set style data histogram

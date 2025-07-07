@@ -1,5 +1,5 @@
 set terminal pngcairo size 1000,600 enhanced font 'Arial,10'
-set output 'compare_plot.png'
+set output 'compare.png'
 
 set title "Comparative Performance for RegCMnoIO"
 set style data histogram
