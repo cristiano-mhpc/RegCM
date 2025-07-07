@@ -1,5 +1,5 @@
 set terminal pngcairo size 1000,600 enhanced font 'Arial,12'
-set output 'timing_log.png'
+set output 'timing.png'
 
 set title "Performance for various MPI Configurations"
 set style data histogram
@@ -7,12 +7,12 @@ set style histogram cluster gap 1
 set style fill solid border -1
 set boxwidth 0.9
 set datafile missing '---'
-set yrange [0:8000]
+set yrange [0:80000]
 
 # set logscale y 
 
 set xlabel "Problem Size"
-set ylabel "Time (s) (log scale)" 
+set ylabel "Time (s)" 
 set key outside top right
 set xtics rotate by -30
 
