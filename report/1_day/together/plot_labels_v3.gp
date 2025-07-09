@@ -16,7 +16,7 @@ set key outside top right
 set bmargin 6
 
 # Plot only MPI and GPU bars, with GPU labels
-plot 'timing_v2.dat' using 2:xtic(1) title 'Pure MPI(256proc)', \
+plot 'timing_v3.dat' using 2:xtic(1) title 'Pure MPI(256proc)', \
      '' using 3 title '-stdpar=gpu', \
      '' using ($0 + 0.25):3:4 with labels offset 0,1 notitle
 
