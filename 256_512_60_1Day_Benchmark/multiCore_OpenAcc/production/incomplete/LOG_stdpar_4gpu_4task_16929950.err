@@ -1,5 +1,0 @@
-slurmstepd: error: Detected 1 oom-kill event(s) in StepId=16929950.0. Some of your processes may have been killed by the cgroup out-of-memory handler.
-srun: error: lrdn2148: task 2: Out Of Memory
-slurmstepd: error:  mpi/pmix_v3: _errhandler: lrdn2148 [0]: pmixp_client_v2.c:212: Error handler invoked: status = -25, source = [slurm.pmix.16929950.0:2]
-slurmstepd: error: *** STEP 16929950.0 ON lrdn2148 CANCELLED AT 2025-06-23T07:36:26 ***
-srun: Job step aborted: Waiting up to 92 seconds for job step to finish.

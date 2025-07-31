@@ -1,5 +1,5 @@
 #size         MPI        GPU         LabelGPU   
-128x256x60    189.84     278.30      "2proc+2GPU"           
+128x256x60    189.84     278.30      "16procx8th"
 256x512x60    927.53     333.17      "8proc+8GPU"           
 512x1024x60   5795.80    488.89      "16proc+16GPU"    
 

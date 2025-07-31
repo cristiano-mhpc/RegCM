@@ -1,0 +1,12 @@
+srun: error: Munge decode failed: Expired credential
+srun: auth/munge: _print_cred: ENCODED: Wed Jul 23 17:58:20 2025
+srun: auth/munge: _print_cred: DECODED: Wed Jul 23 18:03:43 2025
+srun: error: slurm_unpack_received_msg: [[10.128.255.221]:58906] auth_g_verify: SRUN_NODE_FAIL has authentication error: Unspecified error
+srun: error: slurm_unpack_received_msg: [[10.128.255.221]:58906] Protocol authentication error
+srun: error: Munge decode failed: Expired credential
+srun: auth/munge: _print_cred: ENCODED: Wed Jul 23 17:58:20 2025
+srun: auth/munge: _print_cred: DECODED: Wed Jul 23 18:17:55 2025
+srun: error: slurm_unpack_received_msg: [[10.128.255.221]:58918] auth_g_verify: SRUN_JOB_COMPLETE has authentication error: Unspecified error
+srun: error: slurm_unpack_received_msg: [[10.128.255.221]:58918] Protocol authentication error
+slurmstepd: error: Detected 1 oom_kill event in StepId=17908689.0. Some of the step tasks have been OOM Killed.
+srun: error: lrdn3452: task 0: Out Of Memory

@@ -8,11 +8,11 @@
 #SBATCH --partition=boost_usr_prod
 #SBATCH --nodes=1
 #SBATCH --gres=gpu:1
-#SBATCH --time=06:00:00
+#SBATCH --time=02:00:00
 
 source /leonardo/home/userexternal/ctica000/MS_thesis/RegCM/modules_cuda  
 
-cd /leonardo/home/userexternal/ctica000/MS_thesis/RegCM/256_512_60_Benchmark/gpu_standardPar 
+cd /leonardo/home/userexternal/ctica000/MS_thesis/RegCM/256_512_60_1Day_Benchmark/gpu_standardPar 
 
 # Launch
 srun ./STD_launch_per_rank.sh

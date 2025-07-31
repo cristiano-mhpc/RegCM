@@ -1,0 +1,25 @@
+#!/bin/bash 
+
+#SBATCH --account=ICT25_MHPC
+#SBATCH --out=./production/LOG_%x_%j.out
+#SBATCH --err=./production/LOG_%x_%j.err
+#SBATCH --job-name stdpar_128task
+#SBATCH --ntasks-per-node=32
+#SBATCH --cpus-per-task=1 
+#SBATCH --partition=dcgp_usr_prod
+#SBATCH --gres=tmpfs:10g
+#SBATCH --nodes=4
+#SBATCH --mem=128G
+#SBATCH --gres=tmpfs:10g
+#SBATCH --time=01:00:00
+
+source /leonardo/home/userexternal/ctica000/MS_thesis/RegCM/modules_cuda  
+
+
+cd /leonardo/home/userexternal/ctica000/MS_thesis/RegCM/256_512_60_1Day_Benchmark/MPI_CPU_partition 
+
+# Launch
+srun ./STD_launch_per_rank.sh
+
+
+

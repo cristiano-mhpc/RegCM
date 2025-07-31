@@ -1,0 +1,25 @@
+Loading netcdf-c/4.9.2--openmpi--4.1.6--nvhpc--23.11
+  Loading requirement: bzip2/1.0.8--gcc--12.2.0-cc63fjd
+    lz4/1.9.4--nvhpc--23.11-5h5hoio snappy/1.1.10--nvhpc--23.11-ozr5mpq
+    zstd/1.5.5--gcc--12.2.0-h6hxgmk c-blosc/1.21.5--nvhpc--23.11-k6qwhp7
+    libaec/1.0.6--nvhpc--23.11-mpahyfr
+[Rank 3] on lrdn2335.leonardo.local: GPU=3, TMPDIR=/leonardo/home/userexternal/ctica000/MS_thesis/tmp_nsys/rank_3
+[Rank 1] on lrdn2335.leonardo.local: GPU=1, TMPDIR=/leonardo/home/userexternal/ctica000/MS_thesis/tmp_nsys/rank_1
+[Rank 0] on lrdn2335.leonardo.local: GPU=0, TMPDIR=/leonardo/home/userexternal/ctica000/MS_thesis/tmp_nsys/rank_0
+[Rank 2] on lrdn2335.leonardo.local: GPU=2, TMPDIR=/leonardo/home/userexternal/ctica000/MS_thesis/tmp_nsys/rank_2
+Filesystem      Size  Used Avail Use% Mounted on
+tmpfs            10G     0   10G   0% /tmp
+Filesystem      Size  Used Avail Use% Mounted on
+tmpfs            10G     0   10G   0% /tmp
+Filesystem      Size  Used Avail Use% Mounted on
+tmpfs            10G     0   10G   0% /tmp
+Filesystem      Size  Used Avail Use% Mounted on
+tmpfs            10G     0   10G   0% /tmp
+Filesystem                                           Size  Used Avail Use% Mounted on
+10.128.80.1@o2ib:10.128.80.2@o2ib:/lhomefs/leonardo   50G   50G     0 100% /leonardo
+Filesystem                                           Size  Used Avail Use% Mounted on
+10.128.80.1@o2ib:10.128.80.2@o2ib:/lhomefs/leonardo   50G   50G     0 100% /leonardo
+Filesystem                                           Size  Used Avail Use% Mounted on
+10.128.80.1@o2ib:10.128.80.2@o2ib:/lhomefs/leonardo   50G   50G     0 100% /leonardo
+Filesystem                                           Size  Used Avail Use% Mounted on
+10.128.80.1@o2ib:10.128.80.2@o2ib:/lhomefs/leonardo   50G   50G     0 100% /leonardo

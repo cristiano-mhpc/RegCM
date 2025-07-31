@@ -1,0 +1,22 @@
+#!/bin/bash 
+
+#SBATCH --account=ICT25_MHPC_0
+#SBATCH --out=./profile/LOG_%x_%j.out
+#SBATCH --err=./profile/LOG_%x_%j.err
+#SBATCH --job-name stdpar_4gpu_4task
+#SBATCH --ntasks-per-node=4
+#SBATCH --partition=boost_usr_prod
+#SBATCH --nodes=1
+#SBATCH --mem=0G
+#SBATCH --gres=gpu:4
+#SBATCH --time=04:00:00
+
+source /leonardo/home/userexternal/ctica000/MS_thesis/RegCM/modules_cuda  
+
+cd /leonardo/home/userexternal/ctica000/MS_thesis/RegCM/256_512_60_1Day_Benchmark/gpu_standardPar 
+
+# Launch
+srun ./profile_STD_launch_per_rank.sh
+
+
+

@@ -1,6 +1,0 @@
-Loading netcdf-c/4.9.2--openmpi--4.1.6--nvhpc--23.11
-  Loading requirement: bzip2/1.0.8--gcc--12.2.0-cc63fjd
-    lz4/1.9.4--nvhpc--23.11-5h5hoio snappy/1.1.10--nvhpc--23.11-ozr5mpq
-    zstd/1.5.5--gcc--12.2.0-h6hxgmk c-blosc/1.21.5--nvhpc--23.11-k6qwhp7
-    libaec/1.0.6--nvhpc--23.11-mpahyfr
-[Wrapper][Rank 0][Local 0] on lrdn1716.leonardo.local: CUDA_VISIBLE_DEVICES=0

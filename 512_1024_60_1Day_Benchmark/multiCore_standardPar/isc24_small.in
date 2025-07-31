@@ -30,7 +30,7 @@
  ifrest  = .false. ,
  mdate0  = 1900010100,
  mdate1  = 1900010100,
- mdate2  = 1900011100,
+ mdate2  = 1900010200,
  /
  &timeparam
  dt      =    30.,

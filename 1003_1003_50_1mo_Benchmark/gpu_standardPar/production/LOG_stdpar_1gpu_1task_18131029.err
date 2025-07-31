@@ -1,0 +1,17 @@
+/var/spool/slurmd/job18131029/slurm_script: line 15: cd: /leonardo/home/userexternal/ctica000/MS_thesis/RegCM/1003_1003_1mo_Benchmark/gpu_standardPar: No such file or directory
+ NetCDF: Attribute not found                                                     
+ mod_nchelper.F90 : 
+     1345:Error reading attribute initialized_soil_temperature:           -43
+ Abort called by computing node             0 at 2025-07-31 12:33:03.537 +0200
+ Execution terminated because of runtime error
+--------------------------------------------------------------------------
+MPI_ABORT was invoked on rank 0 in communicator MPI COMMUNICATOR 3 DUP FROM 0
+with errorcode 1.
+
+NOTE: invoking MPI_ABORT causes Open MPI to kill all MPI processes.
+You may or may not see output from other processes, depending on
+exactly when Open MPI kills them.
+--------------------------------------------------------------------------
+slurmstepd: error: *** STEP 18131029.0 ON lrdn3294 CANCELLED AT 2025-07-31T12:33:03 ***
+srun: Job step aborted: Waiting up to 92 seconds for job step to finish.
+srun: error: lrdn3294: task 0: Exited with exit code 1
