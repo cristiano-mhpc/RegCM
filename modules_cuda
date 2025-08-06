@@ -1,5 +1,13 @@
-module load llvm
-module load netcdf-fortran/4.6.1--hpcx-mpi--2.19--nvhpc--24.5
+module load profile/meteo
+module load cuda/12.2
 module load nvhpc/24.5
+module load netcdf-fortran/4.6.1--hpcx-mpi--2.19--nvhpc--24.5
+module load parallel-netcdf/1.12.3--hpcx-mpi--2.19--nvhpc--24.5
+
+
+export MYLOCAL=/leonardo/pub/userexternal/ggiulian/nvhpc
+export PATH=$MYLOCAL/bin:${PATH}
+export LD_LIBRARY_PATH=$MYLOCAL/lib:$MYLOCAL/lib64:${LD_LIBRARY_PATH}
+export PKG_CONFIG_PATH=$MYLOCAL/lib/pkgconfig:${PKG_CONFIG_PATH}
 
 export PS1="\[\033[38;5;2m\]\u@leon:\W\[\]\[\033[38;5;15m\] CUDA \$ \[\]"
