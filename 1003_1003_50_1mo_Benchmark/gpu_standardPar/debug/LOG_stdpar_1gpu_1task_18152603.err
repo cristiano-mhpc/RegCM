@@ -1,0 +1,4 @@
+/var/spool/slurmd/job18152603/slurm_script: line 15: cd: /leonardo/home/userexternal/ctica000/MS_thesis/RegCM/1003_1003_1mo_Benchmark/gpu_standardPar: No such file or directory
+slurmstepd: error: *** JOB 18152603 ON lrdn3455 CANCELLED AT 2025-08-01T12:41:57 DUE TO TIME LIMIT ***
+srun: Job step aborted: Waiting up to 92 seconds for job step to finish.
+slurmstepd: error: *** STEP 18152603.0 ON lrdn3455 CANCELLED AT 2025-08-01T12:41:57 DUE TO TIME LIMIT ***

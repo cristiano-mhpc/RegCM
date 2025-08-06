@@ -1,0 +1,4 @@
+/var/spool/slurmd/job18198560/slurm_script: line 34: cd: /leonardo/home/userexternal/ctica000/MS_thesis/RegCM/1003_10003_50_1mo_Benchmark/gpu_standardPar: No such file or directory
+srun: Job step aborted: Waiting up to 92 seconds for job step to finish.
+slurmstepd: error: *** STEP 18198560.0 ON lrdn2675 CANCELLED AT 2025-08-02T19:15:42 ***
+slurmstepd: error: *** JOB 18198560 ON lrdn2675 CANCELLED AT 2025-08-02T19:15:42 ***

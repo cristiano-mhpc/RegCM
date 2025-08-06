@@ -1,0 +1,41 @@
+#!/bin/bash
+
+#SBATCH --account=ICT25_MHPC_0
+#SBATCH --out=./production/LOG_%x_%j.out
+#SBATCH --err=./production/LOG_%x_%j.err
+#SBATCH --job-name=mps_1gpu_16ranks
+#SBATCH --ntasks-per-node=16
+#SBATCH --partition=boost_usr_prod
+#SBATCH --nodes=1
+#SBATCH --gpus-per-node=1
+#SBATCH --mem=123000
+#SBATCH --time=01-00:00:00
+
+source /leonardo/home/userexternal/ctica000/MS_thesis/RegCM/modules_cuda  
+
+export CUDA_MPS_PIPE_DIRECTORY=$SCRATCH/tmp/mps_${SLURM_JOBID}
+
+export CUDA_MPS_LOG_DIRECTORY=$SCRATCH/tmp/mps_log_${SLURM_JOBID}
+
+mkdir -p $CUDA_MPS_PIPE_DIRECTORY $CUDA_MPS_LOG_DIRECTORY
+
+# Start the MPS daemon
+nvidia-cuda-mps-control -d
+
+echo "MPS daemon started."
+
+# Let MPS initialize fully
+sleep 3
+
+# Optional: Enable persistence mode (only needs to be done once per boot)
+nvidia-smi -pm 1
+
+# Launch program
+cd /leonardo/home/userexternal/ctica000/MS_thesis/RegCM/1003_1003_50_1mo_Benchmark/MPS/1gpu_16proc
+
+srun ./MPS_STD_launch_per_rank.sh
+
+# Cleanup: Stop MPS
+echo quit | nvidia-cuda-mps-control
+rm -rf $CUDA_MPS_PIPE_DIRECTORY $CUDA_MPS_LOG_DIRECTORY
+

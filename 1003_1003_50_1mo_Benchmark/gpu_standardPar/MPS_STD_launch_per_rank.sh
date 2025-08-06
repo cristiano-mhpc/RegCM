@@ -21,5 +21,5 @@ echo "[Wrapper][Rank $SLURM_PROCID][Local $RANK] using GPU $GPU_ID on $(hostname
 
 
 # Launch the binary 
-exec $BINDIR/regcmMPIOPENACC_GPU_STDPAR_RCEMIP isc24_small.in
+exec $BINDIR/regcmMPICLM45_OPENACC_GPU_STDPAR EURR-3_namelist.in 
 

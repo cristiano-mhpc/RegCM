@@ -1,0 +1,19 @@
+ Permission denied                                                               
+ mod_clm_nchelper.F90 : 
+      277:Error creating NetCDF output output//EURR-3.clm.regcm.h1.20091001_03600.nc
+ :            13
+ Abort called by computing node             0 at 2025-08-03 08:55:02.278 +0200
+ Execution terminated because of runtime error
+--------------------------------------------------------------------------
+MPI_ABORT was invoked on rank 0 in communicator MPI COMMUNICATOR 3 DUP FROM 0
+with errorcode 1.
+
+NOTE: invoking MPI_ABORT causes Open MPI to kill all MPI processes.
+You may or may not see output from other processes, depending on
+exactly when Open MPI kills them.
+--------------------------------------------------------------------------
+srun: Job step aborted: Waiting up to 92 seconds for job step to finish.
+slurmstepd: error: *** STEP 18200183.0 ON lrdn3064 CANCELLED AT 2025-08-03T08:55:02 ***
+srun: error: lrdn3064: tasks 2-3: Killed
+srun: error: lrdn3064: task 1: Killed
+srun: error: lrdn3064: task 0: Exited with exit code 1

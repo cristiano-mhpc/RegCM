@@ -1,0 +1,24 @@
+ Permission denied                                                               
+ In File mod_ncstream.F90 at line:           377
+ nc_stream : Cannot create or open file output//EURR-3_ATM.2009100100.nc:  
+            1
+ Abort called by computing node             0 at 2025-08-02 16:55:19.421 +0200
+ Execution terminated because of runtime error
+--------------------------------------------------------------------------
+MPI_ABORT was invoked on rank 0 in communicator MPI COMMUNICATOR 3 DUP FROM 0
+with errorcode 1.
+
+NOTE: invoking MPI_ABORT causes Open MPI to kill all MPI processes.
+You may or may not see output from other processes, depending on
+exactly when Open MPI kills them.
+--------------------------------------------------------------------------
+srun: Job step aborted: Waiting up to 92 seconds for job step to finish.
+slurmstepd: error: *** STEP 18187585.0 ON lrdn3370 CANCELLED AT 2025-08-02T16:55:19 ***
+slurmstepd: error: *** STEP 18187585.0 ON lrdn3370 CANCELLED AT 2025-08-02T16:55:19 ***
+srun: error: lrdn3370: tasks 11,15: Killed
+srun: error: lrdn3370: tasks 1,13: Killed
+srun: error: lrdn3370: tasks 2,4,12,14: Killed
+srun: error: lrdn3370: tasks 3,5,7: Killed
+srun: error: lrdn3370: tasks 8-10: Killed
+srun: error: lrdn3370: task 6: Killed
+srun: error: lrdn3370: task 0: Exited with exit code 1

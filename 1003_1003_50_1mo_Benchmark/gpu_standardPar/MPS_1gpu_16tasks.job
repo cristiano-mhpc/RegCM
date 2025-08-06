@@ -9,7 +9,7 @@
 #SBATCH --nodes=1
 #SBATCH --gpus-per-node=1
 #SBATCH --mem=123000
-#SBATCH --time=04:00:00
+#SBATCH --time=01-00:00:00
 
 source /leonardo/home/userexternal/ctica000/MS_thesis/RegCM/modules_cuda  
 
@@ -31,7 +31,7 @@ sleep 3
 nvidia-smi -pm 1
 
 # Launch program
-cd /leonardo/home/userexternal/ctica000/MS_thesis/RegCM/512_1024_60_1Day_Benchmark/gpu_standardPar 
+cd /leonardo/home/userexternal/ctica000/MS_thesis/RegCM/1003_1003_50_1mo_Benchmark/gpu_standardPar 
 
 srun ./MPS_STD_launch_per_rank.sh
 

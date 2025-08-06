@@ -1,0 +1,96 @@
+Failing in Thread:1
+Accelerator Fatal Error: call to cuStreamSynchronize returned error 700 (CUDA_ERROR_ILLEGAL_ADDRESS): Illegal address during kernel execution
+ File: /leonardo/home/userexternal/ctica000/MS_thesis/RegCM/Main/radlib/mod_rad_radiation.F90
+ Function: radclw:4398
+ Line: 4575
+
+Failing in Thread:1
+Accelerator Fatal Error: call to cuStreamSynchronize returned error 700 (CUDA_ERROR_ILLEGAL_ADDRESS): Illegal address during kernel execution
+ File: /leonardo/home/userexternal/ctica000/MS_thesis/RegCM/Main/radlib/mod_rad_radiation.F90
+ Function: radclw:4398
+ Line: 4728
+
+Failing in Thread:1
+Accelerator Fatal Error: call to cuStreamSynchronize returned error 700 (CUDA_ERROR_ILLEGAL_ADDRESS): Illegal address during kernel execution
+ File: /leonardo/home/userexternal/ctica000/MS_thesis/RegCM/Main/radlib/mod_rad_radiation.F90
+ Function: radclw:4398
+ Line: 4575
+
+Failing in Thread:1
+Accelerator Fatal Error: call to cuStreamSynchronize returned error 700 (CUDA_ERROR_ILLEGAL_ADDRESS): Illegal address during kernel execution
+ File: /leonardo/home/userexternal/ctica000/MS_thesis/RegCM/Main/radlib/mod_rad_radiation.F90
+ Function: radclw:4398
+ Line: 4629
+
+Failing in Thread:1
+Accelerator Fatal Error: call to cuStreamSynchronize returned error 700 (CUDA_ERROR_ILLEGAL_ADDRESS): Illegal address during kernel execution
+ File: /leonardo/home/userexternal/ctica000/MS_thesis/RegCM/Main/radlib/mod_rad_radiation.F90
+ Function: radclw:4398
+ Line: 4629
+
+Failing in Thread:1
+Accelerator Fatal Error: call to cuStreamSynchronize returned error 700 (CUDA_ERROR_ILLEGAL_ADDRESS): Illegal address during kernel execution
+ File: /leonardo/home/userexternal/ctica000/MS_thesis/RegCM/Main/radlib/mod_rad_radiation.F90
+ Function: radclw:4398
+ Line: 4575
+
+Failing in Thread:1
+Accelerator Fatal Error: call to cuStreamSynchronize returned error 700 (CUDA_ERROR_ILLEGAL_ADDRESS): Illegal address during kernel execution
+ File: /leonardo/home/userexternal/ctica000/MS_thesis/RegCM/Main/radlib/mod_rad_radiation.F90
+ Function: radclw:4398
+ Line: 4728
+
+Failing in Thread:1
+Accelerator Fatal Error: call to cuStreamSynchronize returned error 700 (CUDA_ERROR_ILLEGAL_ADDRESS): Illegal address during kernel execution
+ File: /leonardo/home/userexternal/ctica000/MS_thesis/RegCM/Main/radlib/mod_rad_radiation.F90
+ Function: radclw:4398
+ Line: 4629
+
+Failing in Thread:1
+Accelerator Fatal Error: call to cuStreamSynchronize returned error 700 (CUDA_ERROR_ILLEGAL_ADDRESS): Illegal address during kernel execution
+ File: /leonardo/home/userexternal/ctica000/MS_thesis/RegCM/Main/radlib/mod_rad_radiation.F90
+ Function: radclw:4398
+ Line: 4629
+
+Failing in Thread:1
+Accelerator Fatal Error: call to cuStreamSynchronize returned error 700 (CUDA_ERROR_ILLEGAL_ADDRESS): Illegal address during kernel execution
+ File: /leonardo/home/userexternal/ctica000/MS_thesis/RegCM/Main/radlib/mod_rad_radiation.F90
+ Function: radclw:4398
+ Line: 4746
+
+Failing in Thread:1
+Accelerator Fatal Error: call to cuStreamSynchronize returned error 700 (CUDA_ERROR_ILLEGAL_ADDRESS): Illegal address during kernel execution
+ File: /leonardo/home/userexternal/ctica000/MS_thesis/RegCM/Main/radlib/mod_rad_radiation.F90
+ Function: radclw:4398
+ Line: 4629
+
+Failing in Thread:1
+Accelerator Fatal Error: call to cuStreamSynchronize returned error 700 (CUDA_ERROR_ILLEGAL_ADDRESS): Illegal address during kernel execution
+ File: /leonardo/home/userexternal/ctica000/MS_thesis/RegCM/Main/radlib/mod_rad_radiation.F90
+ Function: radclw:4398
+ Line: 4575
+
+Failing in Thread:1
+Accelerator Fatal Error: call to cuStreamSynchronize returned error 700 (CUDA_ERROR_ILLEGAL_ADDRESS): Illegal address during kernel execution
+ File: /leonardo/home/userexternal/ctica000/MS_thesis/RegCM/Main/radlib/mod_rad_radiation.F90
+ Function: radclw:4398
+ Line: 4769
+
+Failing in Thread:1
+Accelerator Fatal Error: call to cuStreamSynchronize returned error 700 (CUDA_ERROR_ILLEGAL_ADDRESS): Illegal address during kernel execution
+ File: /leonardo/home/userexternal/ctica000/MS_thesis/RegCM/Main/radlib/mod_rad_radiation.F90
+ Function: radclw:4398
+ Line: 4629
+
+Failing in Thread:1
+Accelerator Fatal Error: call to cuStreamSynchronize returned error 700 (CUDA_ERROR_ILLEGAL_ADDRESS): Illegal address during kernel execution
+ File: /leonardo/home/userexternal/ctica000/MS_thesis/RegCM/Main/radlib/mod_rad_radiation.F90
+ Function: radclw:4398
+ Line: 4575
+
+slurmstepd: error: Detected 1 oom_kill event in StepId=18187382.0. Some of the step tasks have been OOM Killed.
+srun: error: lrdn3423: task 0: Out Of Memory
+slurmstepd: error:  mpi/pmix_v3: _errhandler: lrdn3423 [0]: pmixp_client_v2.c:212: Error handler invoked: status = -25, source = [slurm.pmix.18187382.0:0]
+srun: Job step aborted: Waiting up to 92 seconds for job step to finish.
+slurmstepd: error: *** STEP 18187382.0 ON lrdn3423 CANCELLED AT 2025-08-02T16:37:09 ***
+slurmstepd: error: *** STEP 18187382.0 ON lrdn3423 CANCELLED AT 2025-08-02T16:37:09 ***

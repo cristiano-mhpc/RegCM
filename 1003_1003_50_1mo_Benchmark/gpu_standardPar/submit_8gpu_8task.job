@@ -9,11 +9,11 @@
 #SBATCH --nodes=2
 #SBATCH --gres=gpu:4
 #SBATCH --mem=123000
-#SBATCH --time=1:00:00
+#SBATCH --time=01-00:00:00
 
 source /leonardo/home/userexternal/ctica000/MS_thesis/RegCM/modules_cuda  
 
-cd /leonardo/home/userexternal/ctica000/MS_thesis/RegCM/512_1024_60_1Day_Benchmark/gpu_standardPar 
+cd /leonardo/home/userexternal/ctica000/MS_thesis/RegCM/1003_1003_50_1mo_Benchmark/gpu_standardPar 
 
 # Launch
 srun ./STD_launch_per_rank.sh
