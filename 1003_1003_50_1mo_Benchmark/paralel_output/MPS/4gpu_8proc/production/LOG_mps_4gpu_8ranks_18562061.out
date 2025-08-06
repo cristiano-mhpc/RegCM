@@ -1,0 +1,18 @@
+MPS daemon started.
+Persistence mode is already Enabled for GPU 00000000:1D:00.0.
+Persistence mode is already Enabled for GPU 00000000:56:00.0.
+Persistence mode is already Enabled for GPU 00000000:8F:00.0.
+Persistence mode is already Enabled for GPU 00000000:C8:00.0.
+All done.
+[Wrapper][Rank 7][Local 7] using GPU 3 on lrdn1373.leonardo.local
+[Wrapper][Rank 6][Local 6] using GPU 2 on lrdn1373.leonardo.local
+[Wrapper][Rank 3][Local 3] using GPU 3 on lrdn1373.leonardo.local
+[Wrapper][Rank 2][Local 2] using GPU 2 on lrdn1373.leonardo.local
+[Wrapper][Rank 1][Local 1] using GPU 1 on lrdn1373.leonardo.local
+[Wrapper][Rank 5][Local 5] using GPU 1 on lrdn1373.leonardo.local
+[Wrapper][Rank 4][Local 4] using GPU 0 on lrdn1373.leonardo.local
+[Wrapper][Rank 0][Local 0] using GPU 0 on lrdn1373.leonardo.local
+
+  This is RegCM development version
+   GIT Revision: 5.0.0-944-g5801-dirty compiled at: data : Aug  6 2025  time: 12:26:44
+

@@ -1,0 +1,5 @@
+slurmstepd: error: Detected 1 oom_kill event in StepId=18292605.0. Some of the step tasks have been OOM Killed.
+srun: error: lrdn2715: task 0: Out Of Memory
+slurmstepd: error:  mpi/pmix_v3: _errhandler: lrdn2715 [0]: pmixp_client_v2.c:212: Error handler invoked: status = -25, source = [slurm.pmix.18292605.0:0]
+srun: Job step aborted: Waiting up to 92 seconds for job step to finish.
+slurmstepd: error: *** STEP 18292605.0 ON lrdn2715 CANCELLED AT 2025-08-04T20:01:46 ***
