@@ -1,0 +1,29 @@
+Loading cuda/12.2
+  Loading requirement: libiconv/1.17-nhc3mhm xz/5.4.6-xxxg42c
+    zlib-ng/2.1.6-jkgunjc libxml2/2.10.3-zbbe7lm
+Loading netcdf-fortran/4.6.1--hpcx-mpi--2.19--nvhpc--24.5
+  Loading requirement: glibc/2.28--gcc--12.2.0-gi6mmti bzip2/1.0.8-ib3znej
+    gcc-runtime/12.2.0--gcc--12.2.0-dqfwf7y lz4/1.9.4--gcc--12.2.0-dcavnmi
+    snappy/1.1.10--gcc--12.2.0-gagtosp zstd/1.5.6-uq5yyux
+    c-blosc/1.21.5--gcc--12.2.0-buk7w2l hpcx-mpi/2.19 pkgconf/2.2.0
+    hdf5/1.14.3--hpcx-mpi--2.19--nvhpc--24.5 libaec/1.0.6--gcc--12.2.0-blqbmai
+    parallel-netcdf/1.12.3--hpcx-mpi--2.19--nvhpc--24.5
+    netcdf-c/4.9.2--hpcx-mpi--2.19--nvhpc--24.5
+MPS daemon started.
+Persistence mode is already Enabled for GPU 00000000:1D:00.0.
+Persistence mode is already Enabled for GPU 00000000:56:00.0.
+Persistence mode is already Enabled for GPU 00000000:8F:00.0.
+Persistence mode is already Enabled for GPU 00000000:C8:00.0.
+All done.
+[Wrapper][Rank 5][Local 5] using GPU 1 on lrdn1330.leonardo.local
+[Wrapper][Rank 2][Local 2] using GPU 2 on lrdn1330.leonardo.local
+[Wrapper][Rank 6][Local 6] using GPU 2 on lrdn1330.leonardo.local
+[Wrapper][Rank 4][Local 4] using GPU 0 on lrdn1330.leonardo.local
+[Wrapper][Rank 1][Local 1] using GPU 1 on lrdn1330.leonardo.local
+[Wrapper][Rank 7][Local 7] using GPU 3 on lrdn1330.leonardo.local
+[Wrapper][Rank 3][Local 3] using GPU 3 on lrdn1330.leonardo.local
+[Wrapper][Rank 0][Local 0] using GPU 0 on lrdn1330.leonardo.local
+
+  This is RegCM development version
+   GIT Revision: 5.0.0-944-g5801-dirty compiled at: data : Aug  6 2025  time: 12:26:44
+

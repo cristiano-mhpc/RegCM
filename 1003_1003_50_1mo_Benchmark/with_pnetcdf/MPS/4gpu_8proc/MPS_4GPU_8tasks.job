@@ -1,6 +1,7 @@
 #!/bin/bash
 
 #SBATCH --account=ICT25_MHPC_0
+#SBATCH --qos=boost_qos_dbg
 #SBATCH --out=./production/LOG_%x_%j.out
 #SBATCH --err=./production/LOG_%x_%j.err
 #SBATCH --job-name=mps_4gpu_8ranks
@@ -9,7 +10,7 @@
 #SBATCH --nodes=1
 #SBATCH --gpus-per-node=4
 #SBATCH --mem=123000
-#SBATCH --time=01-00:00:00
+## SBATCH --time=01-00:00:00
 
 source /leonardo/home/userexternal/ctica000/MS_thesis/RegCM/modules_cuda  
 
