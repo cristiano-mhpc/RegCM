@@ -27,6 +27,8 @@ LT_INIT
 AC_PROG_CC
 AC_PROG_FC
 
+AC_PROG_RANLIB
+
 AC_LANG([Fortran])
 
 AC_ARG_WITH([netcdf],
@@ -355,8 +357,10 @@ AX_PROG_NF_CONFIG([NF_PREFIX=`nf-config --prefix`; NFAUTO="yes"],
 AX_PROG_NC_CONFIG([NC_PREFIX=`nc-config --prefix`; NCAUTO="yes"],
                   [NC_PREFIX="${NETCDF}"; NCAUTO="no"])
 
+NC_CC="$CC"
 if eval "test x$NFAUTO = xyes"; then
   if eval "test x$NCAUTO = xyes"; then
+    NC_CC="`nc-config --cc`"
     NC_INCLUDES="`nc-config --cflags` `nf-config --fflags`"
     NC_LDFLAGS="-L`nf-config --prefix`/lib -L`nc-config --prefix`/lib"
     NC_LIBS="`nc-config --libs` `nf-config --flibs`"
@@ -383,6 +387,7 @@ else
   fi
 fi
 
+AC_SUBST(NC_CC)
 AC_SUBST(NC_PREFIX)
 AC_SUBST(NF_PREFIX)
 AC_SUBST(NC_INCLUDES)
@@ -553,7 +558,7 @@ if test -z "$COMPILER_INTEL_LLVM_TRUE"; then
   if eval "test x$DEBUG = x1"; then
     OMPFLAGS=""
   else
-    OMPFLAGS="-qopenmp -qopt-report -DSTDPAR"
+    OMPFLAGS="-qopenmp -qopt-report"
   fi
   FCFLAGS="$FCFLAGS -convert big_endian -assume byterecl \
            -heap-arrays -fPIC $OMPFLAGS"
@@ -793,28 +798,28 @@ else
     if eval "test x"$USE_OPENACC" = x1"; then
       FCFLAGS="$FCFLAGS -acc=gpu -gpu=$PGI_GPU_ARCH,lineinfo -Minfo=accel"
       NOOPTFC="$NOOPTFC -acc=gpu -gpu=$PGI_GPU_ARCH,lineinfo -Minfo=accel"
-      LDFLAGS="$LDFLAGS -traceback -cudalib=nvtx"
+      LDFLAGS="$LDFLAGS -traceback -cudalib=nvtx,cusparse"
     fi
     if eval "test x"$USE_OPENACC" = x2"; then
       FCFLAGS="$NOOPTFC -acc=gpu \
           -gpu="${PGI_GPU_ARCH}",autocompare -Minfo=accel"
       NOOPTFC="$NOOPTFC -acc=gpu \
           -gpu="${PGI_GPU_ARCH}",autocompare -Minfo=accel"
-      LDFLAGS="$LDFLAGS -traceback -cudalib=nvtx"
+      LDFLAGS="$LDFLAGS -traceback -cudalib=nvtx,cusparse"
     fi
     if eval "test x"$USE_OPENACC" = x3"; then
       FCFLAGS="$FCFLAGS -acc=gpu \
           -gpu=$PGI_GPU_ARCH,lineinfo,managed -Minfo=accel"
       NOOPTFC="$NOOPTFC -acc=gpu \
-          -gpu=$PGI_GPU_ARCH,lineinfo,managed -Minfo=accel"
-      LDFLAGS="$LDFLAGS -traceback -cudalib=nvtx"
+          -gpu=$PGI_GPU_ARCH,lineinfo,mem:managed -Minfo=accel"
+      LDFLAGS="$LDFLAGS -traceback -cudalib=nvtx,cusparse"
     fi
     if eval "test x"$USE_OPENACC" = x4"; then
       FCFLAGS="$FCFLAGS -stdpar=gpu \
           -gpu=$PGI_GPU_ARCH,lineinfo,managed -Minfo=accel"
       NOOPTFC="$NOOPTFC -stdpar=gpu \
-          -gpu=$PGI_GPU_ARCH,lineinfo,managed -Minfo=accel"
-      LDFLAGS="$LDFLAGS -traceback -cudalib=nvtx"
+          -gpu=$PGI_GPU_ARCH,lineinfo,mem:unified -Minfo=accel"
+      LDFLAGS="$LDFLAGS -traceback -cudalib=nvtx,cusparse"
     fi
     if eval "test x"$USE_OPENACC" = x5"; then
       FCFLAGS="$FCFLAGS -stdpar=multicore \

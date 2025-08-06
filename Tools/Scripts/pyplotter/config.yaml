@@ -14,6 +14,7 @@ plot:
                 years: [1980]
                 name: MED-12 non coupled
                 dpi: 100
+                bounds: None
                 seasons: [ "DJF", "MAM", "JJA", "SON" ]
                 variables:
                         tas:
@@ -28,6 +29,7 @@ plot:
                 years: [1980]
                 name: MED-12 non coupled
                 dpi: 100
+                bounds: None
                 variables:
                         pr:
                                 obs: [ "EOBS", "CPC" ]

@@ -5,6 +5,7 @@ import os
 import glob
 import yaml
 import xarray as xr
+import xesmf as xe
 from pathlib import Path
 
 def season_string_to_monthlist(str):
@@ -22,7 +23,7 @@ def season_string_to_monthlist(str):
 
 def load_model_data(files):
     nds = xr.open_mfdataset(files, combine='nested',
-            concat_dim="time", chunks={"time": 100}).unify_chunks()
+                concat_dim="time", chunks={"time": 100}).unify_chunks()
     try:
         nds = nds.rename({"xlat": "lat", "xlon": "lon"})
     except:
@@ -30,7 +31,12 @@ def load_model_data(files):
     return nds
 
 def load_obs_data(files):
-    return xr.open_mfdataset(files, combine='by_coords', chunks={"time": 100})
+    if ( len(files) > 1 ):
+        return xr.open_mfdataset(files, combine='by_coords',
+                                 chunks={"time": 100})
+    else:
+        return xr.open_dataset(files[0], engine='netcdf4',
+                                 chunks={"time": 100})
 
 class data_processor:
 
@@ -90,6 +96,8 @@ class observation_reader:
         elif obs == "ERA5":
             names = (os.path.join(path,"monthly",
                 y,fvname+"_"+y+"_[0-1][0-9].nc") for y in cyears)
+        elif obs == "EURO4M":
+            names = (os.path.join(path,'EURO4M-APGD-1971-2008.nc'),)
         else:
             names = [ ]
         self.files = sorted(glob.glob(n) for n in names)[0]
@@ -109,31 +117,32 @@ class observation_reader:
         return self.files
 
     def load_data(self,newgrid=None):
-        oname = self.config[self.obs][self.var]["var_ds"]
-        ds = load_obs_data(self.files).rename({oname: self.var})
         factor = self.config[self.obs][self.var]["factor"]
         offset = self.config[self.obs][self.var]["offset"]
-        nds = ds[self.var].sel(time=ds.time.dt.year.isin(self.years))
-        nds *= factor
-        nds += offset
-        if self.obs == 'CPC' or self.obs == 'ERA5' or self.obs == "EOBS":
+        oname = self.config[self.obs][self.var]["var_ds"]
+        ds = load_obs_data(self.files).rename({oname: self.var})
+        if self.obs == 'CPC' or self.obs == 'ERA5' or self.obs == 'EOBS':
             try:
-                nds = nds.rename({"latitude": "lat", "longitude": "lon"})
+                ds = ds.rename({"latitude": "lat", "longitude": "lon"})
             except:
                 pass
-            nds = nds.assign_coords(
-                        lon=((nds.lon + 180) % 360) - 180).sortby("lon")
+            ds = ds.assign_coords(
+                        lon=((ds.lon + 180) % 360) - 180).sortby("lon")
         if newgrid is not None:
-            method = "linear"
-            if self.var == "pr":
-                method = "nearest"
-            nds = nds.interp(lat = newgrid["lat"],
-                             lon = newgrid["lon"], method=method)
+            method = "bilinear"
+            method = "nearest_s2d"
+            regridder = xe.Regridder(ds, newgrid, method)
+            dr = ds[self.var].sel(time=ds.time.dt.year.isin(self.years))
+            nds = regridder(dr, keep_attrs=True)
+        else:
+            nds = ds[self.var].sel(time=ds.time.dt.year.isin(self.years))
+        nds *= factor
+        nds += offset
         return nds
 
     def seasonal_data(self,seasons,newgrid=None):
         fname = (self.dom+"_"+self.obs + "_" + self.var +
-                '.' + "-".join((str(x) for x in self.years)))
+            '.' + "-".join((str(x) for x in (self.years[0],self.years[-1]))))
         fseas = [ ]
         for seas in seasons:
             fseas.append(fname+"_"+seas+".nc")
@@ -152,7 +161,7 @@ class observation_reader:
 
     def quantile_data(self,q=99,newgrid=None):
         fname = (self.dom+'_'+self.obs + "_q" + repr(q) + "_" + self.var +
-                '.' + "-".join((str(x) for x in self.years))+".nc")
+         '.' + "-".join((str(x) for x in (self.years[0],self.years[-1])))+".nc")
         ds = self.cache.retrieve(fname)
         if ds is None:
             proc = data_processor(self.load_data(newgrid))
@@ -245,7 +254,7 @@ class model_reader:
 
     def seasonal_data(self,seasons):
         fname = (self.sid + "_" + self.var +
-                '.' + "-".join((str(x) for x in self.years)))
+           '.' + "-".join((str(x) for x in (self.years[0],self.years[-1]))))
         fseas = [ ]
         for seas in seasons:
             fseas.append(fname+"_"+seas+".nc")
@@ -263,7 +272,7 @@ class model_reader:
 
     def quantile_data(self,q=99):
         fname = (self.sid + "_q" + repr(q) + "_" + self.var +
-                '.' + "-".join((str(x) for x in self.years))+".nc")
+         '.' + "-".join((str(x) for x in (self.years[0],self.years[-1])))+".nc")
         ds = self.cache.retrieve(fname)
         if ds is None:
             proc = data_processor(self.load_data())
