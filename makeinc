@@ -1,6 +1,5 @@
 #::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
-#
-#    This file is part of ICTP RegCM.
+# #    This file is part of ICTP RegCM.
 #    
 #    Use of this source code is governed by an MIT-style license that can
 #    be found in the LICENSE file or at
@@ -59,7 +58,7 @@ scppfla := $(filter-out $(DEFINE)NETCDF_CDF5,$(scppfla))
 scppfla := $(filter-out $(DEFINE)NETCDF4_COMPRESS,$(scppfla))
 scppfla := $(filter-out $(DEFINE)NETCDF4_HDF5,$(scppfla))
 scppfla := $(filter-out $(DEFINE)PNETCDF_IN_NETCDF,$(scppfla))
-scppfla := $(filter-out $(DEFINE)PNETCDF,$(scppfla))
+# scppfla := $(filter-out $(DEFINE)PNETCDF,$(scppfla))
 scppfla := $(filter-out $(DEFINE)SKL,$(scppfla))
 scppfla := $(filter-out $(DEFINE)NCFILTERS_AVAIL,$(scppfla))
 scppfla := $(strip $(scppfla))

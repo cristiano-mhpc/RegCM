@@ -7,7 +7,7 @@
 !
 !         https://opensource.org/licenses/MIT.
 !
-!    ICTP RegCM is distributed in the hope that it will be useful,
+!    ICTP RegCM is distributed in the hope that it will be useful, 
 !    but WITHOUT ANY WARRANTY; without even the implied warranty of
 !    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
 !
@@ -35,76 +35,76 @@ module mod_ncstream
 
   private
 
-  integer(ik4) :: ncstat
-  logical, parameter :: nocopy = .false.
-  type(rcm_time_and_date), save :: reference_date
-  integer(ik4), dimension(ncmaxdims) :: id_dim
-  integer(ik4), dimension(ncmaxdims) :: len_dim
+  integer(ik4):: ncstat
+  logical, parameter:: nocopy = .false.
+  type(rcm_time_and_date), save:: reference_date
+  integer(ik4), dimension(ncmaxdims):: id_dim
+  integer(ik4), dimension(ncmaxdims):: len_dim
 
-  integer(ik4), parameter :: cordexvtype = nf90_float
+  integer(ik4), parameter:: cordexvtype = nf90_float
 
   interface outstream_addrec
     module procedure outstream_addrec_date
     module procedure outstream_addrec_value
   end interface
 
-  public :: ncoutstream_params
-  public :: nc_output_stream
-  public :: ncvariable0d_char
-  public :: ncvariable_standard
-  public :: ncvariable0d_real
-  public :: ncvariable0d_double
-  public :: ncvariable0d_mixed
-  public :: ncvariable0d_integer
-  public :: ncvariable1d_real
-  public :: ncvariable1d_double
-  public :: ncvariable1d_mixed
-  public :: ncvariable1d_integer
-  public :: ncvariable2d_real
-  public :: ncvariable2d_double
-  public :: ncvariable2d_mixed
-  public :: ncvariable2d_integer
-  public :: ncvariable3d_real
-  public :: ncvariable3d_double
-  public :: ncvariable3d_mixed
-  public :: ncvariable3d_integer
-  public :: ncvariable4d_real
-  public :: ncvariable4d_double
-  public :: ncvariable4d_mixed
-  public :: ncvariable4d_integer
+  public:: ncoutstream_params
+  public:: nc_output_stream
+  public:: ncvariable0d_char
+  public:: ncvariable_standard
+  public:: ncvariable0d_real
+  public:: ncvariable0d_double
+  public:: ncvariable0d_mixed
+  public:: ncvariable0d_integer
+  public:: ncvariable1d_real
+  public:: ncvariable1d_double
+  public:: ncvariable1d_mixed
+  public:: ncvariable1d_integer
+  public:: ncvariable2d_real
+  public:: ncvariable2d_double
+  public:: ncvariable2d_mixed
+  public:: ncvariable2d_integer
+  public:: ncvariable3d_real
+  public:: ncvariable3d_double
+  public:: ncvariable3d_mixed
+  public:: ncvariable3d_integer
+  public:: ncvariable4d_real
+  public:: ncvariable4d_double
+  public:: ncvariable4d_mixed
+  public:: ncvariable4d_integer
 
-  public :: ncattribute_string
-  public :: ncattribute_logical
-  public :: ncattribute_integer
-  public :: ncattribute_real4
-  public :: ncattribute_real8
-  public :: ncattribute_real4_array
-  public :: ncattribute_real8_array
+  public:: ncattribute_string
+  public:: ncattribute_logical
+  public:: ncattribute_integer
+  public:: ncattribute_real4
+  public:: ncattribute_real8
+  public:: ncattribute_real4_array
+  public:: ncattribute_real8_array
 
-  public :: outstream_setup
-  public :: outstream_enable, outstream_dispose
-  public :: outstream_addvar, outstream_addatt
-  public :: outstream_addvaratt
-  public :: outstream_writevar
-  public :: outstream_addrec
-  public :: outstream_sync
+  public:: outstream_setup
+  public:: outstream_enable, outstream_dispose
+  public:: outstream_addvar, outstream_addatt
+  public:: outstream_addvaratt
+  public:: outstream_writevar
+  public:: outstream_addrec
+  public:: outstream_sync
 
-  public :: nc_input_stream
-  public :: ncinstream_params
-  public :: instream_setup, instream_dispose
-  public :: instream_findrec
-  public :: instream_readvar
+  public:: nc_input_stream
+  public:: ncinstream_params
+  public:: instream_setup, instream_dispose
+  public:: instream_findrec
+  public:: instream_readvar
 
   contains
 
-    subroutine instream_setup(ncin,params)
+    subroutine instream_setup(ncin, params)
       implicit none
-      type(nc_input_stream), intent(inout) :: ncin
-      type(ncinstream_params), intent(in) :: params
-      type(ncinstream), pointer :: stream
-      integer(ik4) :: imode = nf90_nowrite
-      integer(ik4) :: dimtime, i
-      type(rcm_time_and_date) :: tt
+      type(nc_input_stream), intent(inout):: ncin
+      type(ncinstream_params), intent(in):: params
+      type(ncinstream), pointer:: stream
+      integer(ik4):: imode = nf90_nowrite
+      integer(ik4):: dimtime, i
+      type(rcm_time_and_date):: tt
 
       if ( associated(ncin%ncp%xs) ) call instream_dispose(ncin)
       allocate(ncin%ncp%xs)
@@ -112,13 +112,13 @@ module mod_ncstream
       stream%filename = params%fname
 #ifdef NETCDF4_HDF5
       if ( params%mpi_comm /= -1 ) then
-        imode = ior(nf90_nowrite,nf90_share)
-        ncstat = nf90_open(stream%filename,imode, &
-          stream%id,comm=params%mpi_comm,info=params%mpi_info)
+        imode = ior(nf90_nowrite, nf90_share)
+        ncstat = nf90_open(stream%filename, imode, &
+          stream%id, comm = params%mpi_comm, info = params%mpi_info)
         stream%l_parallel = .true.
       else
-        imode = ior(nf90_nowrite,nf90_share)
-        ncstat = nf90_open(stream%filename,imode,stream%id)
+        imode = ior(nf90_nowrite, nf90_share)
+        ncstat = nf90_open(stream%filename, imode, stream%id)
       end if
 #else
       if ( params%mpi_comm /= -1 ) then
@@ -129,29 +129,29 @@ module mod_ncstream
         stream%l_parallel = .true.
 #else
 #ifdef PNETCDF_IN_NETCDF
-        imode = ior(nf90_nowrite,ior(nf90_share,nf90_pnetcdf))
-        ncstat = nf90_open(stream%filename,imode, &
-          stream%id,comm=params%mpi_comm,info=params%mpi_info)
+        imode = ior(nf90_nowrite, ior(nf90_share, nf90_pnetcdf))
+        ncstat = nf90_open(stream%filename, imode, &
+          stream%id, comm = params%mpi_comm, info = params%mpi_info)
         stream%l_parallel = .true.
 #else
-        imode = ior(nf90_nowrite,nf90_share)
-        ncstat = nf90_open(stream%filename,imode,stream%id)
+        imode = ior(nf90_nowrite, nf90_share)
+        ncstat = nf90_open(stream%filename, imode, stream%id)
 #endif
 #endif
       else
 #ifdef PNETCDF
         imode = nf90_nowrite
-        ncstat = nf90mpi_open(mpi_comm_self,stream%filename, &
+        ncstat = nf90mpi_open(mpi_comm_self, stream%filename, &
                               imode, mpi_info_null, stream%id)
 #else
-        ncstat = nf90_open(stream%filename,imode,stream%id)
+        ncstat = nf90_open(stream%filename, imode, stream%id)
 #endif
       end if
 #endif
       if ( ncstat /= nf90_noerr ) then
         call printerror
-        write(stderr,*) 'In File ',__FILE__,' at line: ',__LINE__
-        call die('nc_stream','Cannot open file '//trim(stream%filename),1)
+        write(stderr, *) 'In File ',__FILE__, ' at line: ',__LINE__
+        call die('nc_stream','Cannot open file '//trim(stream%filename), 1)
       end if
       if ( stream%l_parallel ) then
         stream%jparbound(1) = params%global_jstart
@@ -163,80 +163,80 @@ module mod_ncstream
         stream%parsize = stream%global_ni*stream%global_nj
 #ifdef DEBUG
         if ( myid == 0 ) then
-          write(stdout,*) 'Parallel I/O enabled.'
+          write(stdout, *) 'Parallel I/O enabled.'
         end if
 #endif
       end if
 #ifdef PNETCDF
-      ncstat = nf90mpi_inq_dimid(stream%id,'time',dimtime)
+      ncstat = nf90mpi_inq_dimid(stream%id, 'time',dimtime)
 #else
-      ncstat = nf90_inq_dimid(stream%id,'time',dimtime)
+      ncstat = nf90_inq_dimid(stream%id, 'time',dimtime)
 #endif
       if ( ncstat == nf90_noerr ) then
 #ifdef PNETCDF
-        ncstat = nf90mpi_inquire_dimension(stream%id,dimtime,len=stream%nrec)
+        ncstat = nf90mpi_inquire_dimension(stream%id, dimtime, len = stream%nrec)
 #else
-        ncstat = nf90_inquire_dimension(stream%id,dimtime,len=stream%nrec)
+        ncstat = nf90_inquire_dimension(stream%id, dimtime, len = stream%nrec)
 #endif
         if ( ncstat /= nf90_noerr ) then
           call printerror
-          write(stderr,*) 'In File ',__FILE__,' at line: ',__LINE__
+          write(stderr, *) 'In File ',__FILE__, ' at line: ',__LINE__
           call die('nc_stream','Error reading time dimension in '// &
-            trim(stream%filename),1)
+            trim(stream%filename), 1)
         end if
         if ( stream%nrec > 0 ) then
 #ifdef PNETCDF
-          ncstat = nf90mpi_inq_varid(stream%id,'time',stream%timeid)
+          ncstat = nf90mpi_inq_varid(stream%id, 'time',stream%timeid)
 #else
-          ncstat = nf90_inq_varid(stream%id,'time',stream%timeid)
+          ncstat = nf90_inq_varid(stream%id, 'time',stream%timeid)
 #endif
           if ( ncstat /= nf90_noerr ) then
             call printerror
-            write(stderr,*) 'In File ',__FILE__,' at line: ',__LINE__
+            write(stderr, *) 'In File ',__FILE__, ' at line: ',__LINE__
             call die('nc_stream','Error reading time variable in '// &
-              trim(stream%filename),1)
+              trim(stream%filename), 1)
           end if
 #ifdef PNETCDF
-          ncstat = nf90mpi_get_att(stream%id,stream%timeid,'units',stream%tunit)
+          ncstat = nf90mpi_get_att(stream%id, stream%timeid, 'units',stream%tunit)
 #else
-          ncstat = nf90_get_att(stream%id,stream%timeid,'units',stream%tunit)
+          ncstat = nf90_get_att(stream%id, stream%timeid, 'units',stream%tunit)
 #endif
           if ( ncstat /= nf90_noerr ) then
             call printerror
-            write(stderr,*) 'In File ',__FILE__,' at line: ',__LINE__
-            write(stderr,*) 'Assuming hours since 1950-01-01 00:00:00 UTC'
-            write(stderr,*) 'for file ',trim(stream%filename)
+            write(stderr, *) 'In File ',__FILE__, ' at line: ',__LINE__
+            write(stderr, *) 'Assuming hours since 1950-01-01 00:00:00 UTC'
+            write(stderr, *) 'for file ',trim(stream%filename)
             stream%tunit = 'hours since 1950-01-01 00:00:00 UTC'
           end if
 #ifdef PNETCDF
-          ncstat = nf90mpi_get_att(stream%id,stream%timeid, &
+          ncstat = nf90mpi_get_att(stream%id, stream%timeid, &
                                    'calendar',stream%tcal)
 #else
-          ncstat = nf90_get_att(stream%id,stream%timeid,'calendar',stream%tcal)
+          ncstat = nf90_get_att(stream%id, stream%timeid, 'calendar',stream%tcal)
 #endif
           if ( ncstat /= nf90_noerr ) then
             call printerror
-            write(stderr,*) 'In File ',__FILE__,' at line: ',__LINE__
-            write(stderr,*) 'Assuming gregorian calendar'
-            write(stderr,*) 'for file ',trim(stream%filename)
+            write(stderr, *) 'In File ',__FILE__, ' at line: ',__LINE__
+            write(stderr, *) 'Assuming gregorian calendar'
+            write(stderr, *) 'for file ',trim(stream%filename)
             stream%tcal = 'gregorian'
           end if
-          stream%refdate = timeval2date(0.0_rkx,stream%tunit,stream%tcal)
+          stream%refdate = timeval2date(0.0_rkx, stream%tunit, stream%tcal)
           stream%istart(1) = 1
           stream%icount(1) = stream%nrec
           stream%istride(1) = stream%nrec-1
 #ifdef PNETCDF
-          ncstat = nf90mpi_get_var(stream%id,stream%timeid,stream%xtime, &
-            stream%istart(1:1),stream%icount(1:1),stream%istride(1:1))
+          ncstat = nf90mpi_get_var(stream%id, stream%timeid, stream%xtime, &
+            stream%istart(1:1), stream%icount(1:1), stream%istride(1:1))
 #else
-          ncstat = nf90_get_var(stream%id,stream%timeid,stream%xtime, &
-            stream%istart(1:1),stream%icount(1:1),stream%istride(1:1))
+          ncstat = nf90_get_var(stream%id, stream%timeid, stream%xtime, &
+            stream%istart(1:1), stream%icount(1:1), stream%istride(1:1))
 #endif
           ! Transform to hours since refdate
-          tt = timeval2date(stream%xtime(1),stream%tunit,stream%tcal)
-          stream%xtime(1) = hourdiff(tt,stream%refdate)
-          tt = timeval2date(stream%xtime(2),stream%tunit,stream%tcal)
-          stream%xtime(2) = hourdiff(tt,stream%refdate)
+          tt = timeval2date(stream%xtime(1), stream%tunit, stream%tcal)
+          stream%xtime(1) = hourdiff(tt, stream%refdate)
+          tt = timeval2date(stream%xtime(2), stream%tunit, stream%tcal)
+          stream%xtime(2) = hourdiff(tt, stream%refdate)
           ! Slight inprecision if unit is in "months since", as
           ! we here assume a regular increment in time computed as hours
           ! from the reference day.
@@ -244,30 +244,30 @@ module mod_ncstream
         end if
       end if
 #ifdef PNETCDF
-      ncstat = nf90mpi_inquire(stream%id,nDimensions=stream%ndims)
+      ncstat = nf90mpi_inquire(stream%id, nDimensions = stream%ndims)
 #else
-      ncstat = nf90_inquire(stream%id,nDimensions=stream%ndims)
+      ncstat = nf90_inquire(stream%id, nDimensions = stream%ndims)
 #endif
       if ( ncstat /= nf90_noerr ) then
         call printerror
-        write(stderr,*) 'In File ',__FILE__,' at line: ',__LINE__
-        write(stderr,*) 'Cannot get dimensional infos for file '// &
+        write(stderr, *) 'In File ',__FILE__, ' at line: ',__LINE__
+        write(stderr, *) 'Cannot get dimensional infos for file '// &
           trim(stream%filename)
-        call die('nc_stream','Cannot setup file '//trim(stream%filename),1)
+        call die('nc_stream','Cannot setup file '//trim(stream%filename), 1)
       end if
       allocate(stream%len_dims(stream%ndims))
       do i = 1, stream%ndims
 #ifdef PNETCDF
-        ncstat = nf90mpi_inquire_dimension(stream%id,i,len=stream%len_dims(i))
+        ncstat = nf90mpi_inquire_dimension(stream%id, i, len = stream%len_dims(i))
 #else
-        ncstat = nf90_inquire_dimension(stream%id,i,len=stream%len_dims(i))
+        ncstat = nf90_inquire_dimension(stream%id, i, len = stream%len_dims(i))
 #endif
         if ( ncstat /= nf90_noerr ) then
           call printerror
-          write(stderr,*) 'In File ',__FILE__,' at line: ',__LINE__
-          write(stderr,*) 'Cannot get dimensional infos for file '// &
+          write(stderr, *) 'In File ',__FILE__, ' at line: ',__LINE__
+          write(stderr, *) 'Cannot get dimensional infos for file '// &
             trim(stream%filename)
-          call die('nc_stream','Cannot setup file '//trim(stream%filename),1)
+          call die('nc_stream','Cannot setup file '//trim(stream%filename), 1)
         end if
       end do
       allocate(ncin%ibp%xb)
@@ -275,13 +275,13 @@ module mod_ncstream
       allocate(ncin%ibp%xb%intbuff(8192))
     end subroutine instream_setup
 
-    subroutine outstream_setup(ncout,params)
+    subroutine outstream_setup(ncout, params)
       implicit none
-      type(nc_output_stream), intent(inout) :: ncout
-      type(ncoutstream_params), intent(in) :: params
-      type(ncoutstream), pointer :: stream
-      type(rcm_time_and_date) :: tt
-      integer(ik4) :: imode
+      type(nc_output_stream), intent(inout):: ncout
+      type(ncoutstream_params), intent(in):: params
+      type(ncoutstream), pointer:: stream
+      type(rcm_time_and_date):: tt
+      integer(ik4):: imode
 
       if ( associated(ncout%ncp%xs) ) call outstream_dispose(ncout)
       ! Allocate all space
@@ -295,88 +295,88 @@ module mod_ncstream
         stream%l_keep = params%l_keep
 #ifdef NETCDF4_HDF5
         if ( params%mpi_comm /= -1 ) then
-          imode = ior(params%mpi_iotype,nf90_write)
-          ncstat = nf90_open(stream%filename,imode, &
-             stream%id,comm=params%mpi_comm,info=params%mpi_info)
+          imode = ior(params%mpi_iotype, nf90_write)
+          ncstat = nf90_open(stream%filename, imode, &
+             stream%id, comm = params%mpi_comm, info = params%mpi_info)
           stream%l_parallel = .true.
         else
-          ncstat = nf90_open(stream%filename,nf90_write,stream%id)
+          ncstat = nf90_open(stream%filename, nf90_write, stream%id)
         end if
 #else
         if ( params%mpi_comm /= -1 ) then
 #ifdef PNETCDF
           imode = nf90_write
-          ncstat = nf90mpi_open(params%mpi_comm,stream%filename,imode, &
-                                params%mpi_info,stream%id)
+          ncstat = nf90mpi_open(params%mpi_comm, stream%filename, imode, &
+                                params%mpi_info, stream%id)
           stream%l_parallel = .true.
 #else
 #ifdef PNETCDF_IN_NETCDF
-          imode = ior(params%mpi_iotype,nf90_write)
-          ncstat = nf90_open_par(stream%filename,imode, &
-                          params%mpi_comm,params%mpi_info,stream%id)
+          imode = ior(params%mpi_iotype, nf90_write)
+          ncstat = nf90_open_par(stream%filename, imode, &
+                          params%mpi_comm, params%mpi_info, stream%id)
           stream%l_parallel = .true.
 #else
-          ncstat = nf90_open(stream%filename,nf90_write,stream%id)
+          ncstat = nf90_open(stream%filename, nf90_write, stream%id)
 #endif
 #endif
         else
 #ifdef PNETCDF
-          ncstat = nf90mpi_open(mpi_comm_self,stream%filename, &
-                                nf90_write,mpi_info_null,stream%id)
+          ncstat = nf90mpi_open(mpi_comm_self, stream%filename, &
+                                nf90_write, mpi_info_null, stream%id)
 #else
-          ncstat = nf90_open(stream%filename,nf90_write,stream%id)
+          ncstat = nf90_open(stream%filename, nf90_write, stream%id)
 #endif
         end if
 #endif
       else
 #ifdef NETCDF4_HDF5
         if ( params%mpi_comm /= -1 ) then
-          imode = ior(params%mpi_iotype,iomode)
-          if ( params%l_sync ) imode = ior(imode,nf90_share)
-          ncstat = nf90_create(stream%filename,imode, &
-                    comm=params%mpi_comm,info=params%mpi_info,ncid=stream%id)
+          imode = ior(params%mpi_iotype, iomode)
+          if ( params%l_sync ) imode = ior(imode, nf90_share)
+          ncstat = nf90_create(stream%filename, imode, &
+                    comm = params%mpi_comm, info = params%mpi_info, ncid = stream%id)
           stream%l_parallel = .true.
         else
-          ncstat = nf90_create(stream%filename,iomode,stream%id)
+          ncstat = nf90_create(stream%filename, iomode, stream%id)
         end if
 #else
         if ( params%mpi_comm /= -1 ) then
 #ifdef PNETCDF
           imode = ior(nf90_clobber, nf90_64bit_offset)
-          if ( params%l_sync ) imode = ior(imode,nf90_share)
-          ncstat = nf90mpi_create(params%mpi_comm,stream%filename, &
-                                  imode,params%mpi_info,stream%id)
+          if ( params%l_sync ) imode = ior(imode, nf90_share)
+          ncstat = nf90mpi_create(params%mpi_comm, stream%filename, &
+                                  imode, params%mpi_info, stream%id)
           stream%l_parallel = .true.
 #else
 #ifdef PNETCDF_IN_NETCDF
-          imode = ior(params%mpi_iotype,iomode)
-          if ( params%l_sync ) imode = ior(imode,nf90_share)
-          ncstat = nf90_create_par(stream%filename,imode, &
-                    params%mpi_comm,params%mpi_info,stream%id)
+          imode = ior(params%mpi_iotype, iomode)
+          if ( params%l_sync ) imode = ior(imode, nf90_share)
+          ncstat = nf90_create_par(stream%filename, imode, &
+                    params%mpi_comm, params%mpi_info, stream%id)
           stream%l_parallel = .true.
 #else
-          if ( params%l_sync ) imode = ior(iomode,nf90_share)
-          ncstat = nf90_create(stream%filename,imode,stream%id)
+          if ( params%l_sync ) imode = ior(iomode, nf90_share)
+          ncstat = nf90_create(stream%filename, imode, stream%id)
 #endif
 #endif
         else
 #ifdef PNETCDF
-          imode = ior(nf90_clobber, nf90_64bit_offset)
-          if ( params%l_sync ) imode = ior(imode,nf90_share)
-          ncstat = nf90mpi_create(mpi_comm_self,stream%filename, &
-                                  imode,mpi_info_null,stream%id)
+          imode = ior(nf90_clobber, nf90_64bit_data)
+          if ( params%l_sync ) imode = ior(imode, nf90_share)
+          ncstat = nf90mpi_create(mpi_comm_self, stream%filename, &
+                                  imode, mpi_info_null, stream%id)
 #else
-          if ( params%l_sync ) imode = ior(iomode,nf90_share)
-          ncstat = nf90_create(stream%filename,imode,stream%id)
+          if ( params%l_sync ) imode = ior(iomode, nf90_share)
+          ncstat = nf90_create(stream%filename, imode, stream%id)
 #endif
         end if
 #endif
       end if
       if ( ncstat /= nf90_noerr ) then
         call printerror
-        write(stderr,*) 'In File ',__FILE__,' at line: ',__LINE__
+        write(stderr, *) 'In File ',__FILE__, ' at line: ',__LINE__
         call die('nc_stream', &
-                 'Cannot create or open file '//trim(stream%filename),1)
+                 'Cannot create or open file '//trim(stream%filename), 1)
       end if
       if ( stream%l_parallel ) then
         stream%jparbound(1) = params%global_jstart
@@ -388,16 +388,16 @@ module mod_ncstream
         stream%parsize = stream%global_ni*stream%global_nj
 #ifdef DEBUG
         if ( myid == 0 ) then
-          write(stdout,*) 'Parallel I/O enabled.'
+          write(stdout, *) 'Parallel I/O enabled.'
         end if
 #endif
       end if
       stream%progname     = params%pname
       tt = params%zero_date
       reference_date      = 1950010100
-      call setcal(reference_date,ical)
-      call setcal(tt,reference_date)
-      stream%zero_time     = hourdiff(tt,reference_date)
+      call setcal(reference_date, ical)
+      call setcal(tt, reference_date)
+      stream%zero_time     = hourdiff(tt, reference_date)
       stream%l_bound       = params%l_bound
       stream%l_band        = params%l_band
       stream%l_crm         = params%l_crm
@@ -413,8 +413,8 @@ module mod_ncstream
 
     subroutine instream_dispose(ncin)
       implicit none
-      type(nc_input_stream), intent(inout) :: ncin
-      type(ncinstream), pointer :: stream
+      type(nc_input_stream), intent(inout):: ncin
+      type(ncinstream), pointer:: stream
 
       if ( .not. associated(ncin%ncp%xs) ) return
       stream => ncin%ncp%xs
@@ -425,15 +425,15 @@ module mod_ncstream
         ncstat = nf90_close(stream%id)
 #endif
         if ( ncstat /= nf90_noerr ) then
-          write(stderr,*) 'In File ',__FILE__,' at line: ',__LINE__
+          write(stderr, *) 'In File ',__FILE__, ' at line: ',__LINE__
           call printerror
-          call die('nc_stream','Cannot close file '//trim(stream%filename),1)
+          call die('nc_stream','Cannot close file '//trim(stream%filename), 1)
         end if
       end if
       if ( allocated(stream%len_dims) ) deallocate(stream%len_dims)
       call deallocate_ibuffer(ncin%ibp%xb)
 #ifdef DEBUG
-      write(stdout,*) 'Closed input stream ',trim(stream%filename)
+      write(stdout, *) 'Closed input stream ',trim(stream%filename)
 #endif
       deallocate(ncin%ncp%xs)
       deallocate(ncin%ibp%xb)
@@ -441,8 +441,8 @@ module mod_ncstream
 
     subroutine outstream_dispose(ncout)
       implicit none
-      type(nc_output_stream), intent(inout) :: ncout
-      type(ncoutstream), pointer :: stream
+      type(nc_output_stream), intent(inout):: ncout
+      type(ncoutstream), pointer:: stream
 
       if ( .not. associated(ncout%ncp%xs) ) return
       stream => ncout%ncp%xs
@@ -453,14 +453,14 @@ module mod_ncstream
         ncstat = nf90_close(stream%id)
 #endif
         if ( ncstat /= nf90_noerr ) then
-          write(stderr,*) 'In File ',__FILE__,' at line: ',__LINE__
+          write(stderr, *) 'In File ',__FILE__, ' at line: ',__LINE__
           call printerror
-          call die('nc_stream','Cannot close file '//trim(stream%filename),1)
+          call die('nc_stream','Cannot close file '//trim(stream%filename), 1)
         end if
       end if
       call deallocate_obuffer(ncout%obp%xb)
 #ifdef DEBUG
-      write(stdout,*) 'Closed output stream ',trim(stream%filename)
+      write(stdout, *) 'Closed output stream ',trim(stream%filename)
 #endif
       deallocate(ncout%ncp%xs)
       deallocate(ncout%obp%xb)
@@ -469,7 +469,7 @@ module mod_ncstream
 
     subroutine deallocate_obuffer(xbf)
       implicit none
-      type(internal_obuffer), pointer :: xbf
+      type(internal_obuffer), pointer:: xbf
       if ( .not. associated(xbf) ) return
       if ( allocated(xbf%intbuff) )  deallocate(xbf%intbuff)
       if ( allocated(xbf%realbuff) ) deallocate(xbf%realbuff)
@@ -478,32 +478,32 @@ module mod_ncstream
 
     subroutine deallocate_ibuffer(xbf)
       implicit none
-      type(internal_ibuffer), pointer :: xbf
+      type(internal_ibuffer), pointer:: xbf
       if ( .not. associated(xbf) ) return
       if ( allocated(xbf%intbuff) )  deallocate(xbf%intbuff)
       if ( allocated(xbf%realbuff) ) deallocate(xbf%realbuff)
       if ( allocated(xbf%doublebuff) ) deallocate(xbf%doublebuff)
     end subroutine deallocate_ibuffer
 
-    subroutine outstream_enable(ncout,sigma)
+    subroutine outstream_enable(ncout, sigma)
       implicit none
-      type(nc_output_stream), intent(inout) :: ncout
-      real(rkx), dimension(:), pointer, contiguous, intent(in) :: sigma
-      real(rkx), dimension(size(sigma)) :: zita
+      type(nc_output_stream), intent(inout):: ncout
+      real(rkx), dimension(:), pointer, contiguous, intent(in):: sigma
+      real(rkx), dimension(size(sigma)):: zita
 
-      type(ncoutstream), pointer :: stream
-      type(internal_obuffer), pointer :: buffer
-      type(basic_variables), pointer :: stvar
-      integer(ik4) :: maxnum_int, maxnum_real, maxnum_double, i
+      type(ncoutstream), pointer:: stream
+      type(internal_obuffer), pointer:: buffer
+      type(basic_variables), pointer:: stvar
+      integer(ik4):: maxnum_int, maxnum_real, maxnum_double, i
 #ifdef CLM45
-      integer(ik4) :: nl
+      integer(ik4):: nl
 #endif
-      character(len=16), dimension(8) :: tempstr
-      real(rkx) :: xds, x0
-      real(rk8) :: rlat0, rlon0
-      type(ncattribute_string) :: attc
-      type(ncattribute_real8) :: attr
-      type(ncattribute_real8_array) :: attra
+      character(len = 16), dimension(8):: tempstr
+      real(rkx):: xds, x0
+      real(rk8):: rlat0, rlon0
+      type(ncattribute_string):: attc
+      type(ncattribute_real8):: attr
+      type(ncattribute_real8_array):: attra
 
       if ( .not. associated(ncout%ncp%xs) ) return
       stream => ncout%ncp%xs
@@ -517,71 +517,71 @@ module mod_ncstream
         stvar%time_var%long_name = 'time'
         stvar%time_var%standard_name = 'time'
         stvar%time_var%lrecords = .true.
-        call outstream_addvar(ncout,stvar%time_var)
+        call outstream_addvar(ncout, stvar%time_var)
         attc%aname = 'calendar'
         attc%theval = calendar
-        call add_attribute(stream,attc,stvar%time_var%id,stvar%time_var%vname)
+        call add_attribute(stream, attc, stvar%time_var%id, stvar%time_var%vname)
         if ( stream%l_hastbound ) then
           attc%aname = 'bounds'
           attc%theval = 'time_bnds'
-          call add_attribute(stream,attc,stvar%time_var%id,stvar%time_var%vname)
+          call add_attribute(stream, attc, stvar%time_var%id, stvar%time_var%vname)
           stvar%tbound_var%vname = 'time_bnds'
           stvar%tbound_var%vunit = ''
           stvar%tbound_var%axis = 'b'
           stvar%tbound_var%long_name = ''
           stvar%tbound_var%standard_name = ''
           stvar%tbound_var%lrecords = .true.
-          call outstream_addvar(ncout,stvar%tbound_var)
+          call outstream_addvar(ncout, stvar%tbound_var)
         end if
       end if
       if ( stream%l_hasgrid ) then
-        x0 = -ds*1000.0_rkx/2.0_rkx ! Cross grid
+        x0 = -ds*1000.0_rkx/2.0_rkx  ! Cross grid
         stvar%map_var%vname = 'crs'
         stvar%map_var%vunit = ''
         stvar%map_var%long_name = ''
         stvar%map_var%standard_name = ''
-        call outstream_addvar(ncout,stvar%map_var)
+        call outstream_addvar(ncout, stvar%map_var)
         select case (iproj)
           case('LAMCON')
             attc%aname = 'proj4_params'
-            write(tempstr(1),'(f7.2)') truelatl
-            write(tempstr(2),'(f7.2)') truelath
-            write(tempstr(3),'(f7.2)') clat
-            write(tempstr(4),'(f7.2)') clon
-            write(tempstr(5),'(f10.0)') x0
-            write(tempstr(6),'(f10.0)') x0
-            write(tempstr(7),'(f9.0)') earthrad
-            write(tempstr(8),'(f9.0)') earthrad
-            attc%theval = '+proj=lcc +lat_1='//trim(adjustl(tempstr(1)))// &
+            write(tempstr(1), '(f7.2)') truelatl
+            write(tempstr(2), '(f7.2)') truelath
+            write(tempstr(3), '(f7.2)') clat
+            write(tempstr(4), '(f7.2)') clon
+            write(tempstr(5), '(f10.0)') x0
+            write(tempstr(6), '(f10.0)') x0
+            write(tempstr(7), '(f9.0)') earthrad
+            write(tempstr(8), '(f9.0)') earthrad
+            attc%theval = '+proj = lcc+lat_1='//trim(adjustl(tempstr(1)))// &
               ' +lat_2='//trim(adjustl(tempstr(2)))// &
               ' +lat_0='//trim(adjustl(tempstr(3)))// &
               ' +lon_0='//trim(adjustl(tempstr(4)))// &
               ' +x_0='//trim(adjustl(tempstr(5)))// &
               ' +y_0='//trim(adjustl(tempstr(6)))// &
-              ' +ellps=sphere +a='//trim(adjustl(tempstr(7)))// &
-              ' +b='//trim(adjustl(tempstr(8)))//' +units=m +no_defs'
-            call add_attribute(stream,attc,stvar%map_var%id,stvar%map_var%vname)
+              ' +ellps = sphere+a='//trim(adjustl(tempstr(7)))// &
+              ' +b='//trim(adjustl(tempstr(8)))//' +units = m+no_defs'
+            call add_attribute(stream, attc, stvar%map_var%id, stvar%map_var%vname)
             attc%aname = 'grid_mapping_name'
             attc%theval = 'lambert_conformal_conic'
-            call add_attribute(stream,attc,stvar%map_var%id,stvar%map_var%vname)
+            call add_attribute(stream, attc, stvar%map_var%id, stvar%map_var%vname)
             attra%aname = 'standard_parallel'
             attra%theval(1) = truelatl
             attra%theval(2) = truelath
             attra%numval = 2
-            call add_attribute(stream,attra,stvar%map_var%id, &
+            call add_attribute(stream, attra, stvar%map_var%id, &
               stvar%map_var%vname)
             attr%aname = 'longitude_of_central_meridian'
             attr%theval = clon
-            call add_attribute(stream,attr,stvar%map_var%id,stvar%map_var%vname)
+            call add_attribute(stream, attr, stvar%map_var%id, stvar%map_var%vname)
             attr%aname = 'latitude_of_projection_origin'
             attr%theval = clat
-            call add_attribute(stream,attr,stvar%map_var%id,stvar%map_var%vname)
+            call add_attribute(stream, attr, stvar%map_var%id, stvar%map_var%vname)
             attr%aname = 'false_easting'
             attr%theval = x0
-            call add_attribute(stream,attr,stvar%map_var%id,stvar%map_var%vname)
+            call add_attribute(stream, attr, stvar%map_var%id, stvar%map_var%vname)
             attr%aname = 'false_northing'
             attr%theval = x0
-            call add_attribute(stream,attr,stvar%map_var%id,stvar%map_var%vname)
+            call add_attribute(stream, attr, stvar%map_var%id, stvar%map_var%vname)
             attc%aname = 'crs_wkt'
             attc%theval = 'PROJCS["unnamed",'//NEW_LINE('A')//                 &
                 '    GEOGCS["Normal Sphere (r='//                              &
@@ -606,40 +606,40 @@ module mod_ncstream
                 '    PARAMETER["false_northing",'//                            &
                 trim(adjustl(tempstr(6)))//'],'//NEW_LINE('A')//               &
                 '    UNIT["Meter",1]]'//NEW_LINE('A')
-            call add_attribute(stream,attc,stvar%map_var%id,stvar%map_var%vname)
+            call add_attribute(stream, attc, stvar%map_var%id, stvar%map_var%vname)
           case('POLSTR')
             attc%aname = 'proj4_params'
-            write(tempstr(1),'(f7.2)') clat
-            write(tempstr(2),'(f7.2)') clon
-            write(tempstr(3),'(f10.0)') x0
-            write(tempstr(4),'(f10.0)') x0
-            write(tempstr(5),'(f9.0)') earthrad
-            write(tempstr(6),'(f9.0)') earthrad
-            attc%theval = '+proj=stere +lat_0='//trim(adjustl(tempstr(1)))// &
+            write(tempstr(1), '(f7.2)') clat
+            write(tempstr(2), '(f7.2)') clon
+            write(tempstr(3), '(f10.0)') x0
+            write(tempstr(4), '(f10.0)') x0
+            write(tempstr(5), '(f9.0)') earthrad
+            write(tempstr(6), '(f9.0)') earthrad
+            attc%theval = '+proj = stere+lat_0='//trim(adjustl(tempstr(1)))// &
               ' +lon_0='//trim(adjustl(tempstr(2)))// &
               ' +x_0='//trim(adjustl(tempstr(3)))// &
               ' +y_0='//trim(adjustl(tempstr(4)))// &
-              ' +ellps=sphere +a='//trim(adjustl(tempstr(5)))// &
-              ' +b='//trim(adjustl(tempstr(6)))//' +units=m +no_defs'
-            call add_attribute(stream,attc,stvar%map_var%id,stvar%map_var%vname)
+              ' +ellps = sphere+a='//trim(adjustl(tempstr(5)))// &
+              ' +b='//trim(adjustl(tempstr(6)))//' +units = m+no_defs'
+            call add_attribute(stream, attc, stvar%map_var%id, stvar%map_var%vname)
             attc%aname = 'grid_mapping_name'
             attc%theval = 'stereographic'
-            call add_attribute(stream,attc,stvar%map_var%id,stvar%map_var%vname)
+            call add_attribute(stream, attc, stvar%map_var%id, stvar%map_var%vname)
             attr%aname = 'latitude_of_projection_origin'
             attr%theval = clat
-            call add_attribute(stream,attr,stvar%map_var%id,stvar%map_var%vname)
+            call add_attribute(stream, attr, stvar%map_var%id, stvar%map_var%vname)
             attr%aname = 'longitude_of_projection_origin'
             attr%theval = clon
-            call add_attribute(stream,attr,stvar%map_var%id,stvar%map_var%vname)
+            call add_attribute(stream, attr, stvar%map_var%id, stvar%map_var%vname)
             attr%aname = 'scale_factor_at_projection_origin'
             attr%theval = 1.0
-            call add_attribute(stream,attr,stvar%map_var%id,stvar%map_var%vname)
+            call add_attribute(stream, attr, stvar%map_var%id, stvar%map_var%vname)
             attr%aname = 'false_easting'
             attr%theval = x0
-            call add_attribute(stream,attr,stvar%map_var%id,stvar%map_var%vname)
+            call add_attribute(stream, attr, stvar%map_var%id, stvar%map_var%vname)
             attr%aname = 'false_northing'
             attr%theval = x0
-            call add_attribute(stream,attr,stvar%map_var%id,stvar%map_var%vname)
+            call add_attribute(stream, attr, stvar%map_var%id, stvar%map_var%vname)
             attc%aname = 'crs_wkt'
             attc%theval = 'PROJCS["unnamed",'//NEW_LINE('A')//                 &
                 '    GEOGCS["Normal Sphere (r='//                              &
@@ -661,43 +661,43 @@ module mod_ncstream
                 '    PARAMETER["false_northing",'//                            &
                 trim(adjustl(tempstr(4)))//'],'//NEW_LINE('A')//               &
                 '    UNIT["Meter",1]]'//NEW_LINE('A')
-            call add_attribute(stream,attc,stvar%map_var%id,stvar%map_var%vname)
+            call add_attribute(stream, attc, stvar%map_var%id, stvar%map_var%vname)
           case('ROTLLR')
             attc%aname = 'proj4_params'
-            write(tempstr(1),'(f7.2)') clat
-            write(tempstr(2),'(f7.2)') clon
-            write(tempstr(3),'(f10.0)') x0
-            write(tempstr(4),'(f10.0)') x0
-            write(tempstr(5),'(f9.0)') earthrad
-            write(tempstr(6),'(f7.2)') plat
-            write(tempstr(7),'(f7.2)') plon
-            attc%theval = '+proj=ob_tran +o_proj=longlat'// &
+            write(tempstr(1), '(f7.2)') clat
+            write(tempstr(2), '(f7.2)') clon
+            write(tempstr(3), '(f10.0)') x0
+            write(tempstr(4), '(f10.0)') x0
+            write(tempstr(5), '(f9.0)') earthrad
+            write(tempstr(6), '(f7.2)') plat
+            write(tempstr(7), '(f7.2)') plon
+            attc%theval = '+proj = ob_tran+o_proj = longlat'// &
               ' +o_lat_p='//trim(adjustl(tempstr(6)))// &
               ' +o_lon_p='//trim(adjustl(tempstr(7)))// &
               ' +R='//trim(adjustl(tempstr(5)))// &
-              ' +lon_0=180.0 +to_meter=0.01745329'
-            call add_attribute(stream,attc,stvar%map_var%id,stvar%map_var%vname)
+              ' +lon_0 = 180.0+to_meter = 0.01745329'
+            call add_attribute(stream, attc, stvar%map_var%id, stvar%map_var%vname)
             attc%aname = 'grid_mapping_name'
             attc%theval = 'rotated_latitude_longitude'
-            call add_attribute(stream,attc,stvar%map_var%id,stvar%map_var%vname)
+            call add_attribute(stream, attc, stvar%map_var%id, stvar%map_var%vname)
             attr%aname = 'latitude_of_projection_origin'
             attr%theval = clat
-            call add_attribute(stream,attr,stvar%map_var%id,stvar%map_var%vname)
+            call add_attribute(stream, attr, stvar%map_var%id, stvar%map_var%vname)
             attr%aname = 'longitude_of_projection_origin'
             attr%theval = clon
-            call add_attribute(stream,attr,stvar%map_var%id,stvar%map_var%vname)
+            call add_attribute(stream, attr, stvar%map_var%id, stvar%map_var%vname)
             attr%aname = 'grid_north_pole_latitude'
             attr%theval = plat
-            call add_attribute(stream,attr,stvar%map_var%id,stvar%map_var%vname)
+            call add_attribute(stream, attr, stvar%map_var%id, stvar%map_var%vname)
             attr%aname = 'grid_north_pole_longitude'
             attr%theval = plon
-            call add_attribute(stream,attr,stvar%map_var%id,stvar%map_var%vname)
+            call add_attribute(stream, attr, stvar%map_var%id, stvar%map_var%vname)
             attr%aname = 'false_easting'
             attr%theval = x0
-            call add_attribute(stream,attr,stvar%map_var%id,stvar%map_var%vname)
+            call add_attribute(stream, attr, stvar%map_var%id, stvar%map_var%vname)
             attr%aname = 'false_northing'
             attr%theval = x0
-            call add_attribute(stream,attr,stvar%map_var%id,stvar%map_var%vname)
+            call add_attribute(stream, attr, stvar%map_var%id, stvar%map_var%vname)
             attc%aname = 'crs_wkt'
             attc%theval = 'PROJCS["unnamed",'//NEW_LINE('A')//                 &
                 '    GEOGCS["Normal Sphere (r='//                              &
@@ -722,37 +722,37 @@ module mod_ncstream
                 '    PARAMETER["false_northing",'//                            &
                 trim(adjustl(tempstr(4)))//'],'//NEW_LINE('A')//               &
                 '    UNIT["Meter",1]]'//NEW_LINE('A')
-            call add_attribute(stream,attc,stvar%map_var%id,stvar%map_var%vname)
+            call add_attribute(stream, attc, stvar%map_var%id, stvar%map_var%vname)
           case('NORMER')
             attc%aname = 'proj4_params'
-            write(tempstr(1),'(f7.2)') clat
-            write(tempstr(2),'(f7.2)') clon
-            write(tempstr(3),'(f10.0)') x0
-            write(tempstr(4),'(f10.0)') x0
-            write(tempstr(5),'(f9.0)') earthrad
-            write(tempstr(6),'(f9.0)') earthrad
-            attc%theval = '+proj=merc +lat_ts='//trim(adjustl(tempstr(1)))// &
+            write(tempstr(1), '(f7.2)') clat
+            write(tempstr(2), '(f7.2)') clon
+            write(tempstr(3), '(f10.0)') x0
+            write(tempstr(4), '(f10.0)') x0
+            write(tempstr(5), '(f9.0)') earthrad
+            write(tempstr(6), '(f9.0)') earthrad
+            attc%theval = '+proj = merc+lat_ts='//trim(adjustl(tempstr(1)))// &
               ' +lon_0='//trim(adjustl(tempstr(2)))// &
               ' +x_0='//trim(adjustl(tempstr(3)))// &
               ' +y_0='//trim(adjustl(tempstr(4)))// &
-              ' +ellps=sphere +a='//trim(adjustl(tempstr(5)))// &
-              ' +b='//trim(adjustl(tempstr(6)))//' +units=m +no_defs'
-            call add_attribute(stream,attc,stvar%map_var%id,stvar%map_var%vname)
+              ' +ellps = sphere+a='//trim(adjustl(tempstr(5)))// &
+              ' +b='//trim(adjustl(tempstr(6)))//' +units = m+no_defs'
+            call add_attribute(stream, attc, stvar%map_var%id, stvar%map_var%vname)
             attc%aname = 'grid_mapping_name'
             attc%theval = 'mercator'
-            call add_attribute(stream,attc,stvar%map_var%id,stvar%map_var%vname)
+            call add_attribute(stream, attc, stvar%map_var%id, stvar%map_var%vname)
             attr%aname = 'standard_parallel'
             attr%theval = clat
-            call add_attribute(stream,attr,stvar%map_var%id,stvar%map_var%vname)
+            call add_attribute(stream, attr, stvar%map_var%id, stvar%map_var%vname)
             attr%aname = 'longitude_of_projection_origin'
             attr%theval = clon
-            call add_attribute(stream,attr,stvar%map_var%id,stvar%map_var%vname)
+            call add_attribute(stream, attr, stvar%map_var%id, stvar%map_var%vname)
             attr%aname = 'false_easting'
             attr%theval = x0
-            call add_attribute(stream,attr,stvar%map_var%id,stvar%map_var%vname)
+            call add_attribute(stream, attr, stvar%map_var%id, stvar%map_var%vname)
             attr%aname = 'false_northing'
             attr%theval = x0
-            call add_attribute(stream,attr,stvar%map_var%id,stvar%map_var%vname)
+            call add_attribute(stream, attr, stvar%map_var%id, stvar%map_var%vname)
             attc%aname = 'crs_wkt'
             attc%theval = 'PROJCS["unnamed",'//NEW_LINE('A')//                 &
                 '    GEOGCS["Normal Sphere (r='//                              &
@@ -773,43 +773,43 @@ module mod_ncstream
                 '    PARAMETER["false_northing",'//                            &
                 trim(adjustl(tempstr(4)))//'],'//NEW_LINE('A')//               &
                 '    UNIT["Meter",1]]'//NEW_LINE('A')
-            call add_attribute(stream,attc,stvar%map_var%id,stvar%map_var%vname)
+            call add_attribute(stream, attc, stvar%map_var%id, stvar%map_var%vname)
           case('ROTMER')
             attc%aname = 'proj4_params'
-            write(tempstr(1),'(f7.2)') plat
-            write(tempstr(2),'(f7.2)') plon
-            write(tempstr(3),'(f10.0)') x0
-            write(tempstr(4),'(f10.0)') x0
-            write(tempstr(5),'(f9.0)') earthrad
-            write(tempstr(6),'(f9.0)') earthrad
-            attc%theval = '+proj=omerc +lat_0='//trim(adjustl(tempstr(1)))// &
-              ' +alpha=89.999999 +lonc='//trim(adjustl(tempstr(2)))// &
+            write(tempstr(1), '(f7.2)') plat
+            write(tempstr(2), '(f7.2)') plon
+            write(tempstr(3), '(f10.0)') x0
+            write(tempstr(4), '(f10.0)') x0
+            write(tempstr(5), '(f9.0)') earthrad
+            write(tempstr(6), '(f9.0)') earthrad
+            attc%theval = '+proj = omerc+lat_0='//trim(adjustl(tempstr(1)))// &
+              ' +alpha = 89.999999+lonc='//trim(adjustl(tempstr(2)))// &
               ' +x_0='//trim(adjustl(tempstr(3)))// &
               ' +y_0='//trim(adjustl(tempstr(4)))// &
-              ' +ellps=sphere +a='//trim(adjustl(tempstr(5)))// &
-              ' +b='//trim(adjustl(tempstr(6)))//' +units=m +no_defs'
-            call add_attribute(stream,attc,stvar%map_var%id,stvar%map_var%vname)
+              ' +ellps = sphere+a='//trim(adjustl(tempstr(5)))// &
+              ' +b='//trim(adjustl(tempstr(6)))//' +units = m+no_defs'
+            call add_attribute(stream, attc, stvar%map_var%id, stvar%map_var%vname)
             attc%aname = 'grid_mapping_name'
             attc%theval = 'oblique_mercator'
-            call add_attribute(stream,attc,stvar%map_var%id,stvar%map_var%vname)
+            call add_attribute(stream, attc, stvar%map_var%id, stvar%map_var%vname)
             attr%aname = 'latitude_of_projection_origin'
             attr%theval = plat
-            call add_attribute(stream,attr,stvar%map_var%id,stvar%map_var%vname)
+            call add_attribute(stream, attr, stvar%map_var%id, stvar%map_var%vname)
             attr%aname = 'longitude_of_projection_origin'
             attr%theval = plon
-            call add_attribute(stream,attr,stvar%map_var%id,stvar%map_var%vname)
+            call add_attribute(stream, attr, stvar%map_var%id, stvar%map_var%vname)
             attr%aname = 'scale_factor_at_projection_origin'
             attr%theval = 1.0
-            call add_attribute(stream,attr,stvar%map_var%id,stvar%map_var%vname)
+            call add_attribute(stream, attr, stvar%map_var%id, stvar%map_var%vname)
             attr%aname = 'azimuth_of_central_line'
             attr%theval = 89.999999
-            call add_attribute(stream,attr,stvar%map_var%id,stvar%map_var%vname)
+            call add_attribute(stream, attr, stvar%map_var%id, stvar%map_var%vname)
             attr%aname = 'false_easting'
             attr%theval = x0
-            call add_attribute(stream,attr,stvar%map_var%id,stvar%map_var%vname)
+            call add_attribute(stream, attr, stvar%map_var%id, stvar%map_var%vname)
             attr%aname = 'false_northing'
             attr%theval = x0
-            call add_attribute(stream,attr,stvar%map_var%id,stvar%map_var%vname)
+            call add_attribute(stream, attr, stvar%map_var%id, stvar%map_var%vname)
             attc%aname = 'crs_wkt'
             attc%theval = 'PROJCS["unnamed",'//NEW_LINE('A')//                 &
                 '    GEOGCS["Normal Sphere (r='//                              &
@@ -834,29 +834,29 @@ module mod_ncstream
                 '    PARAMETER["false_northing",'//                            &
                 trim(adjustl(tempstr(4)))//'],'//NEW_LINE('A')//               &
                 '    UNIT["Meter",1]]'//NEW_LINE('A')
-            call add_attribute(stream,attc,stvar%map_var%id,stvar%map_var%vname)
+            call add_attribute(stream, attc, stvar%map_var%id, stvar%map_var%vname)
         end select
         attr%aname = 'semi_major_axis'
         attr%theval = earthrad
-        call add_attribute(stream,attr,stvar%map_var%id,stvar%map_var%vname)
+        call add_attribute(stream, attr, stvar%map_var%id, stvar%map_var%vname)
         attr%aname = 'semi_minor_axis'
         attr%theval = earthrad
-        call add_attribute(stream,attr,stvar%map_var%id,stvar%map_var%vname)
+        call add_attribute(stream, attr, stvar%map_var%id, stvar%map_var%vname)
         attr%aname = 'inverse_flattening'
         attr%theval = 0.0
-        call add_attribute(stream,attr,stvar%map_var%id,stvar%map_var%vname)
+        call add_attribute(stream, attr, stvar%map_var%id, stvar%map_var%vname)
         attr%aname = 'false_easting'
         attr%theval = x0
-        call add_attribute(stream,attr,stvar%map_var%id,stvar%map_var%vname)
+        call add_attribute(stream, attr, stvar%map_var%id, stvar%map_var%vname)
         attr%aname = 'false_northing'
         attr%theval = x0
-        call add_attribute(stream,attr,stvar%map_var%id,stvar%map_var%vname)
+        call add_attribute(stream, attr, stvar%map_var%id, stvar%map_var%vname)
         attc%aname = 'CoordinateTransformType'
         attc%theval = 'Projection'
-        call add_attribute(stream,attc,stvar%map_var%id,stvar%map_var%vname)
+        call add_attribute(stream, attc, stvar%map_var%id, stvar%map_var%vname)
         attc%aname = 'CoordinateAxisTypes'
         attc%theval = 'GeoX GeoY'
-        call add_attribute(stream,attc,stvar%map_var%id,stvar%map_var%vname)
+        call add_attribute(stream, attc, stvar%map_var%id, stvar%map_var%vname)
       end if
       if ( stream%l_has2mlev ) then
         stvar%lev2m_var%vname = 'm2'
@@ -865,7 +865,7 @@ module mod_ncstream
         stvar%lev2m_var%long_name = 'Height level'
         stvar%lev2m_var%standard_name = 'height'
         stvar%lev2m_var%lrecords = .false.
-        call outstream_addvar(ncout,stvar%lev2m_var)
+        call outstream_addvar(ncout, stvar%lev2m_var)
       end if
       if ( stream%l_has10mlev ) then
         stvar%lev10m_var%vname = 'm10'
@@ -874,7 +874,7 @@ module mod_ncstream
         stvar%lev10m_var%long_name = 'Height level'
         stvar%lev10m_var%standard_name = 'height'
         stvar%lev10m_var%lrecords = .false.
-        call outstream_addvar(ncout,stvar%lev10m_var)
+        call outstream_addvar(ncout, stvar%lev10m_var)
       end if
       if ( stream%l_has50mlev ) then
         stvar%lev50m_var%vname = 'm50'
@@ -883,7 +883,7 @@ module mod_ncstream
         stvar%lev50m_var%long_name = 'Height level'
         stvar%lev50m_var%standard_name = 'height'
         stvar%lev50m_var%lrecords = .false.
-        call outstream_addvar(ncout,stvar%lev50m_var)
+        call outstream_addvar(ncout, stvar%lev50m_var)
       end if
       if ( stream%l_has100mlev ) then
         stvar%lev100m_var%vname = 'm100'
@@ -892,7 +892,7 @@ module mod_ncstream
         stvar%lev100m_var%long_name = 'Height level'
         stvar%lev100m_var%standard_name = 'height'
         stvar%lev100m_var%lrecords = .false.
-        call outstream_addvar(ncout,stvar%lev100m_var)
+        call outstream_addvar(ncout, stvar%lev100m_var)
       end if
       if ( stream%l_has150mlev ) then
         stvar%lev150m_var%vname = 'm150'
@@ -901,7 +901,7 @@ module mod_ncstream
         stvar%lev150m_var%long_name = 'Height level'
         stvar%lev150m_var%standard_name = 'height'
         stvar%lev150m_var%lrecords = .false.
-        call outstream_addvar(ncout,stvar%lev150m_var)
+        call outstream_addvar(ncout, stvar%lev150m_var)
       end if
       if ( stream%l_hassoillev ) then
         stvar%levsoil_var%vname = 'soil_layer'
@@ -910,10 +910,10 @@ module mod_ncstream
         stvar%levsoil_var%long_name = 'Soil layer level'
         stvar%levsoil_var%standard_name = 'depth'
         stvar%levsoil_var%lrecords = .false.
-        call outstream_addvar(ncout,stvar%levsoil_var)
+        call outstream_addvar(ncout, stvar%levsoil_var)
         attc%aname = 'bounds'
         attc%theval = 'soil_bounds'
-        call add_attribute(stream,attc,stvar%levsoil_var%id, &
+        call add_attribute(stream, attc, stvar%levsoil_var%id, &
                            stvar%levsoil_var%vname)
         stvar%levsoilbound_var%vname = 'soil_bounds'
         stvar%levsoilbound_var%vunit = 'm'
@@ -921,7 +921,7 @@ module mod_ncstream
         stvar%levsoilbound_var%long_name = 'Soil layer level bounds'
         stvar%levsoilbound_var%standard_name = 'depth'
         stvar%levsoilbound_var%lrecords = .false.
-        call outstream_addvar(ncout,stvar%levsoilbound_var)
+        call outstream_addvar(ncout, stvar%levsoilbound_var)
       end if
       if ( stream%l_hasspectral ) then
         stvar%spectral_var%vname = 'wavelen'
@@ -930,7 +930,7 @@ module mod_ncstream
         stvar%spectral_var%long_name = 'Spectral intervals'
         stvar%spectral_var%standard_name = 'radiation_wavelength'
         stvar%spectral_var%lrecords = .false.
-        call outstream_addvar(ncout,stvar%spectral_var)
+        call outstream_addvar(ncout, stvar%spectral_var)
       end if
       if ( .not. stream%l_keep ) then
 #ifdef PNETCDF
@@ -939,9 +939,9 @@ module mod_ncstream
         ncstat = nf90_enddef(stream%id)
 #endif
         if ( ncstat /= nf90_noerr ) then
-          write(stderr,*) 'In File ',__FILE__,' at line: ',__LINE__
+          write(stderr, *) 'In File ',__FILE__, ' at line: ',__LINE__
           call printerror
-          call die('nc_stream','Cannot enable file '//trim(stream%filename),1)
+          call die('nc_stream','Cannot enable file '//trim(stream%filename), 1)
         end if
       end if
       !
@@ -952,31 +952,31 @@ module mod_ncstream
       maxnum_double = buffer%max1d_double(1)
 
       if ( buffer%lhas2dint ) then
-        maxnum_int = max(product(buffer%max2d_int),maxnum_int)
+        maxnum_int = max(product(buffer%max2d_int), maxnum_int)
       end if
       if ( buffer%lhas2dreal ) then
-        maxnum_real = max(product(buffer%max2d_real),maxnum_real)
+        maxnum_real = max(product(buffer%max2d_real), maxnum_real)
       end if
       if ( buffer%lhas2ddouble ) then
-        maxnum_double = max(product(buffer%max2d_double),maxnum_double)
+        maxnum_double = max(product(buffer%max2d_double), maxnum_double)
       end if
       if ( buffer%lhas3dint ) then
-        maxnum_int = max(product(buffer%max3d_int),maxnum_int)
+        maxnum_int = max(product(buffer%max3d_int), maxnum_int)
       end if
       if ( buffer%lhas3dreal ) then
-        maxnum_real = max(product(buffer%max3d_real),maxnum_real)
+        maxnum_real = max(product(buffer%max3d_real), maxnum_real)
       end if
       if ( buffer%lhas3ddouble ) then
-        maxnum_double = max(product(buffer%max3d_double),maxnum_double)
+        maxnum_double = max(product(buffer%max3d_double), maxnum_double)
       end if
       if ( buffer%lhas4dint ) then
-        maxnum_int = max(product(buffer%max4d_int),maxnum_int)
+        maxnum_int = max(product(buffer%max4d_int), maxnum_int)
       end if
       if ( buffer%lhas4dreal ) then
-        maxnum_real = max(product(buffer%max4d_real),maxnum_real)
+        maxnum_real = max(product(buffer%max4d_real), maxnum_real)
       end if
       if ( buffer%lhas4ddouble ) then
-        maxnum_double = max(product(buffer%max4d_double),maxnum_double)
+        maxnum_double = max(product(buffer%max4d_double), maxnum_double)
       end if
       if ( maxnum_int > 0 ) allocate(buffer%intbuff(maxnum_int))
       if ( maxnum_real > 0 ) allocate(buffer%realbuff(maxnum_real))
@@ -984,98 +984,98 @@ module mod_ncstream
       stream%l_enabled = .true.
 #ifdef DEBUG
       if ( myid == 0 ) then
-        write(stdout,*) 'Enabled netCDF output stream ',trim(stream%filename)
+        write(stdout, *) 'Enabled netCDF output stream ',trim(stream%filename)
         if ( allocated(buffer%intbuff) ) &
-          write(stdout,*) 'Total buffer integer size :', &
+          write(stdout, *) 'Total buffer integer size :', &
             size(buffer%intbuff)*4
         if ( allocated(buffer%realbuff) ) &
-          write(stdout,*) 'Total buffer float size   :', &
+          write(stdout, *) 'Total buffer float size   :', &
             size(buffer%realbuff)*4
           if ( allocated(buffer%doublebuff) ) &
-            write(stdout,*) 'Total buffer double size   :', &
+            write(stdout, *) 'Total buffer double size   :', &
             size(buffer%doublebuff)*4
         end if
 #endif
       ! Put "basic" information in the file
       if ( stream%l_subgrid ) then
-        xds = ds/real(nsg,rkx)
+        xds = ds/real(nsg, rkx)
       else
         xds = ds
       end if
       if ( iproj /= 'ROTLLR' ) then
         buffer%doublebuff(1) = &
-          -real(((real(stream%len_dims(jx_dim),rkx)-d_one)/d_two) * &
-                    xds * d_1000,rk8)
+          -real(((real(stream%len_dims(jx_dim), rkx)-d_one)/d_two) * &
+                    xds*d_1000, rk8)
         do i = 2, stream%len_dims(jx_dim)
           buffer%doublebuff(i) = &
-            real(real(buffer%doublebuff(i-1),rkx)+xds*d_1000,rk8)
+            real(real(buffer%doublebuff(i-1), rkx)+xds*d_1000, rk8)
         end do
-        call outstream_writevar(ncout,stvar%jx_var,nocopy)
+        call outstream_writevar(ncout, stvar%jx_var, nocopy)
         buffer%doublebuff(1) = &
-          -real(((real(stream%len_dims(iy_dim),rkx)-d_one)/d_two) * &
-                    xds * d_1000,rk8)
+          -real(((real(stream%len_dims(iy_dim), rkx)-d_one)/d_two) * &
+                    xds*d_1000, rk8)
         do i = 2, stream%len_dims(iy_dim)
           buffer%doublebuff(i) = &
-            real(real(buffer%doublebuff(i-1),rkx)+xds*d_1000,rk8)
+            real(real(buffer%doublebuff(i-1), rkx)+xds*d_1000, rk8)
         end do
-        call outstream_writevar(ncout,stvar%iy_var,nocopy)
+        call outstream_writevar(ncout, stvar%iy_var, nocopy)
       else
         xds = xds/erkm*raddeg
-        call compute_zero_rotated(rlat0,rlon0)
+        call compute_zero_rotated(rlat0, rlon0)
         buffer%doublebuff(1) = rlon0 - &
-          real(((real(stream%len_dims(jx_dim),rkx)-d_one)/d_two)*xds,rk8)
+          real(((real(stream%len_dims(jx_dim), rkx)-d_one)/d_two)*xds, rk8)
         do i = 2, stream%len_dims(jx_dim)
           buffer%doublebuff(i) = &
-            real(real(buffer%doublebuff(i-1),rkx)+xds,rk8)
+            real(real(buffer%doublebuff(i-1), rkx)+xds, rk8)
         end do
         where ( buffer%doublebuff(1:stream%len_dims(jx_dim)) > 180.0 )
           buffer%doublebuff(1:stream%len_dims(jx_dim)) = &
-            360.0_rk8 - buffer%doublebuff(1:stream%len_dims(jx_dim))
+            360.0_rk8-buffer%doublebuff(1:stream%len_dims(jx_dim))
         end where
         where ( buffer%doublebuff(1:stream%len_dims(jx_dim)) < -180.0 )
           buffer%doublebuff(1:stream%len_dims(jx_dim)) = &
-            360.0_rk8 + buffer%doublebuff(1:stream%len_dims(jx_dim))
+            360.0_rk8+buffer%doublebuff(1:stream%len_dims(jx_dim))
         end where
-        call outstream_writevar(ncout,stvar%jx_var,nocopy)
+        call outstream_writevar(ncout, stvar%jx_var, nocopy)
         buffer%doublebuff(1) = rlat0 - &
-          real(((real(stream%len_dims(iy_dim),rkx)-d_one)/d_two)*xds,rk8)
+          real(((real(stream%len_dims(iy_dim), rkx)-d_one)/d_two)*xds, rk8)
         do i = 2, stream%len_dims(iy_dim)
           buffer%doublebuff(i) = &
-            real(real(buffer%doublebuff(i-1),rkx)+xds,rk8)
+            real(real(buffer%doublebuff(i-1), rkx)+xds, rk8)
         end do
-        call outstream_writevar(ncout,stvar%iy_var,nocopy)
+        call outstream_writevar(ncout, stvar%iy_var, nocopy)
       end if
-      buffer%doublebuff(1:size(sigma)) = real(sigma,rk8)
-      call outstream_writevar(ncout,stvar%sigma_var,nocopy)
+      buffer%doublebuff(1:size(sigma)) = real(sigma, rk8)
+      call outstream_writevar(ncout, stvar%sigma_var, nocopy)
       if ( .not. stream%l_plev ) then
         if ( idynamic < 3 ) then
-          stvar%ptop_var%rval(1) = real(ptop*10.0_rkx,rk8)
-          call outstream_writevar(ncout,stvar%ptop_var)
+          stvar%ptop_var%rval(1) = real(ptop*10.0_rkx, rk8)
+          call outstream_writevar(ncout, stvar%ptop_var)
         else
-          zita = zitasigma(sigma,mo_ztop)
-          buffer%doublebuff(1:size(sigma)) = md_ak(zita,mo_ztop,mo_h)
-          call outstream_writevar(ncout,stvar%ak_var,nocopy)
-          buffer%doublebuff(1:size(sigma)) = md_bk(zita,mo_ztop,mo_a0)
-          call outstream_writevar(ncout,stvar%bk_var,nocopy)
+          zita = zitasigma(sigma, mo_ztop)
+          buffer%doublebuff(1:size(sigma)) = md_ak(zita, mo_ztop, mo_h)
+          call outstream_writevar(ncout, stvar%ak_var, nocopy)
+          buffer%doublebuff(1:size(sigma)) = md_bk(zita, mo_ztop, mo_a0)
+          call outstream_writevar(ncout, stvar%bk_var, nocopy)
         end if
       end if
       if ( stream%l_has2mlev ) then
         buffer%doublebuff(1) = 2.0_rk8
-        call outstream_writevar(ncout,stvar%lev2m_var,nocopy)
+        call outstream_writevar(ncout, stvar%lev2m_var, nocopy)
       end if
       if ( stream%l_has10mlev ) then
         buffer%doublebuff(1) = 10.0_rk8
-        call outstream_writevar(ncout,stvar%lev10m_var,nocopy)
+        call outstream_writevar(ncout, stvar%lev10m_var, nocopy)
       end if
       if ( stream%l_has100mlev ) then
         buffer%doublebuff(1) = 100.0_rk8
-        call outstream_writevar(ncout,stvar%lev100m_var,nocopy)
+        call outstream_writevar(ncout, stvar%lev100m_var, nocopy)
       end if
       if ( stream%l_hassoillev ) then
 #ifdef CLM45
         do nl = 1, num_soil_layers
           buffer%doublebuff(nl) = real(scalez*(exp(0.5_rkx * &
-            (real(nl,rkx)-0.5_rkx))-1._rkx),rk8)
+            (real(nl, rkx)-0.5_rkx))-1._rkx), rk8)
         end do
 #else
         ! Here is not precise, as the depth of levels is function of the
@@ -1084,24 +1084,24 @@ module mod_ncstream
         buffer%doublebuff(2) = 0.95_rk8
         buffer%doublebuff(3) = 3.00_rk8
 #endif
-        call outstream_writevar(ncout,stvar%levsoil_var,nocopy)
+        call outstream_writevar(ncout, stvar%levsoil_var, nocopy)
 #ifdef CLM45
         buffer%doublebuff(1) = 0.0_rk8
         do nl = 2, num_soil_layers
           buffer%doublebuff(2*nl-1) = 0.5_rk8 * &
             (real(scalez*(exp(0.5_rkx * &
-                         (real(nl-1,rkx)-0.5_rkx))-1.0_rkx),rk8) + &
+                         (real(nl-1, rkx)-0.5_rkx))-1.0_rkx), rk8) + &
              real(scalez*(exp(0.5_rkx * &
-                         (real(nl,rkx)-0.5_rkx))-1.0_rkx),rk8))
+                         (real(nl, rkx)-0.5_rkx))-1.0_rkx), rk8))
         end do
         do nl = 1, num_soil_layers
           buffer%doublebuff(2*nl) = buffer%doublebuff(2*nl+1)
         end do
         buffer%doublebuff(2*num_soil_layers) = 0.5_rk8 * &
           (real(scalez*(exp(0.5_rkx * &
-                 (real(num_soil_layers,rkx)-0.5_rkx))-1.0_rkx),rk8) + &
+                 (real(num_soil_layers, rkx)-0.5_rkx))-1.0_rkx), rk8) + &
            real(scalez*(exp(0.5_rkx * &
-                 (real(num_soil_layers+1,rkx)-0.5_rkx))-1.0_rkx),rk8))
+                 (real(num_soil_layers+1, rkx)-0.5_rkx))-1.0_rkx), rk8))
 #else
         buffer%doublebuff(1) = 0.0_rk8
         buffer%doublebuff(3) = 0.1_rk8
@@ -1110,7 +1110,7 @@ module mod_ncstream
         buffer%doublebuff(4) = 2.0_rk8
         buffer%doublebuff(6) = 4.0_rk8
 #endif
-        call outstream_writevar(ncout,stvar%levsoilbound_var,nocopy)
+        call outstream_writevar(ncout, stvar%levsoilbound_var, nocopy)
       end if
       if ( stream%l_hasspectral ) then
         buffer%doublebuff(1) = 0.00000025_rk8
@@ -1121,21 +1121,21 @@ module mod_ncstream
         buffer%doublebuff(6) = 0.00000119_rk8
         buffer%doublebuff(7) = 0.00000238_rk8
         buffer%doublebuff(8) = 0.00000400_rk8
-        call outstream_writevar(ncout,stvar%spectral_var,nocopy)
+        call outstream_writevar(ncout, stvar%spectral_var, nocopy)
       end if
       contains
 
-      subroutine compute_zero_rotated(rlat0,rlon0)
+      subroutine compute_zero_rotated(rlat0, rlon0)
         implicit none
-        real(rk8), intent(out) :: rlat0, rlon0
-        real(rk8) :: pphi, plam
-        real(rk8) :: cphi, clam
+        real(rk8), intent(out):: rlat0, rlon0
+        real(rk8):: pphi, plam
+        real(rk8):: cphi, clam
         pphi = degrad*plat
         plam = degrad*plon
         if ( plam < 0.0_rk8 ) then
-          plam = plam + mathpi
+          plam = plam+mathpi
         else if ( plam > 0.0_rk8 ) then
-          plam = plam - mathpi
+          plam = plam-mathpi
         else
           plam = 0.0_rk8
         end if
@@ -1147,16 +1147,16 @@ module mod_ncstream
           pphi = 0.0_rk8
         end if
         if ( clat >  deg90 ) then
-          cphi = degrad*(deg90 - clat)
+          cphi = degrad*(deg90-clat)
         else if ( clat < -deg90 ) then
-          cphi = degrad*(clat + deg90)
+          cphi = degrad*(clat+deg90)
         else
           cphi = degrad*clat
         end if
         if ( clon >  deg180 ) then
-          clam = degrad*(clon - deg360)
+          clam = degrad*(clon-deg360)
         else if ( clon < -deg180 ) then
-          clam = degrad*(clon + deg360)
+          clam = degrad*(clon+deg360)
         else
           clam = degrad*clon
         end if
@@ -1185,8 +1185,8 @@ module mod_ncstream
 
     subroutine outstream_sync(ncout)
       implicit none
-      type(nc_output_stream), intent(in) :: ncout
-      type(ncoutstream), pointer :: stream
+      type(nc_output_stream), intent(in):: ncout
+      type(ncoutstream), pointer:: stream
       if ( .not. associated(ncout%ncp%xs) ) return
       stream => ncout%ncp%xs
       if ( .not. stream%l_enabled ) return
@@ -1197,7 +1197,7 @@ module mod_ncstream
         ncstat = nf90_sync(stream%id)
 #endif
         if ( ncstat /= nf90_noerr ) then
-          write(stderr,*) 'In File ',__FILE__,' at line: ',__LINE__
+          write(stderr, *) 'In File ',__FILE__, ' at line: ',__LINE__
           call printerror
           call die('nc_stream', &
                    'Cannot sync file '//trim(stream%filename), 1)
@@ -1205,18 +1205,18 @@ module mod_ncstream
       end if
     end subroutine outstream_sync
 
-    subroutine instream_findrec(ncin,dtime,record)
+    subroutine instream_findrec(ncin, dtime, record)
       implicit none
-      type(nc_input_stream), intent(inout) :: ncin
-      type(rcm_time_and_date), intent(in) :: dtime
-      real(rk8), intent(out) :: record
-      type(ncinstream), pointer :: stream
-      real(rk8) :: search
+      type(nc_input_stream), intent(inout):: ncin
+      type(rcm_time_and_date), intent(in):: dtime
+      real(rk8), intent(out):: record
+      type(ncinstream), pointer:: stream
+      real(rk8):: search
       record = -1.0_rkx
       if ( .not. associated(ncin%ncp%xs) ) return
       stream => ncin%ncp%xs
       if ( stream%nrec > 0 ) then
-        search = hourdiff(dtime,stream%refdate)
+        search = hourdiff(dtime, stream%refdate)
         if ( search < stream%xtime(1) .or. search > stream%xtime(2) ) then
           return
         end if
@@ -1224,48 +1224,48 @@ module mod_ncstream
       end if
     end subroutine instream_findrec
 
-    subroutine outstream_addrec_date(ncout,dtime)
+    subroutine outstream_addrec_date(ncout, dtime)
       implicit none
-      type(nc_output_stream), intent(inout) :: ncout
-      type(rcm_time_and_date), intent(in) :: dtime
-      real(rk8) :: val
-      val = hourdiff(dtime,reference_date)
-      call outstream_addrec_value(ncout,val)
+      type(nc_output_stream), intent(inout):: ncout
+      type(rcm_time_and_date), intent(in):: dtime
+      real(rk8):: val
+      val = hourdiff(dtime, reference_date)
+      call outstream_addrec_value(ncout, val)
     end subroutine outstream_addrec_date
 
-    subroutine outstream_addrec_value(ncout,val)
+    subroutine outstream_addrec_value(ncout, val)
       implicit none
-      type(nc_output_stream), intent(inout) :: ncout
-      real(rk8), intent(in) :: val
-      type(ncoutstream), pointer :: stream
-      type(basic_variables), pointer :: stvar
-      type(internal_obuffer), pointer :: buffer
+      type(nc_output_stream), intent(inout):: ncout
+      real(rk8), intent(in):: val
+      type(ncoutstream), pointer:: stream
+      type(basic_variables), pointer:: stvar
+      type(internal_obuffer), pointer:: buffer
       if ( .not. associated(ncout%ncp%xs) ) return
       stream => ncout%ncp%xs
       stvar  => ncout%svp%xv
       buffer => ncout%obp%xb
       if ( .not. stream%l_enabled ) return
       stream%irec = stream%irec+1
-      stvar%time_var%rval = real(val,rk8)
-      call outstream_writevar(ncout,stvar%time_var)
+      stvar%time_var%rval = real(val, rk8)
+      call outstream_writevar(ncout, stvar%time_var)
       if ( stream%l_hastbound ) then
-        buffer%doublebuff(1) = real(stream%zero_time,rk8)
-        buffer%doublebuff(2) = real(val,rk8)
-        call outstream_writevar(ncout,stvar%tbound_var,nocopy)
-        stream%zero_time = real(val,rk8)
+        buffer%doublebuff(1) = real(stream%zero_time, rk8)
+        buffer%doublebuff(2) = real(val, rk8)
+        call outstream_writevar(ncout, stvar%tbound_var, nocopy)
+        stream%zero_time = real(val, rk8)
       end if
     end subroutine outstream_addrec_value
 
-    subroutine add_dimension(stream,dname)
+    subroutine add_dimension(stream, dname)
       implicit none
-      type(ncoutstream), pointer, intent(inout) :: stream
-      character(len=*), intent(in) :: dname
-      character(len=16) :: the_name, in_name
+      type(ncoutstream), pointer, intent(inout):: stream
+      character(len=*), intent(in):: dname
+      character(len = 16):: the_name, in_name
 #ifdef PNETCDF
-      integer(ik4) :: pdim = -1
-      integer(kind=mpi_offset_kind) :: num
+      integer(ik4):: pdim = -1
+      integer(kind = mpi_offset_kind):: num
 #else
-      integer(ik4) :: pdim = -1, num
+      integer(ik4):: pdim = -1, num
 #endif
       if ( stream%l_enabled ) return
       if ( stream%id < 0 ) return
@@ -1277,7 +1277,7 @@ module mod_ncstream
             num = jx
           else
             ! this is the number of cross points WITHOUT bondary
-            num = jx - 3
+            num = jx-3
           end if
           ! In subgrid, multiply for the number of points
           if ( stream%l_subgrid ) num = num*nsg
@@ -1289,7 +1289,7 @@ module mod_ncstream
             num = iy
           else
             ! this is the number of cross points WITHOUT bondary
-            num = iy - 3
+            num = iy-3
           end if
           ! In subgrid, multiply for the number of points
           if ( stream%l_subgrid ) num = num*nsg
@@ -1301,7 +1301,7 @@ module mod_ncstream
           else
             if ( stream%l_full_sigma ) then
               ! this is the number of FULL sigma levels
-              num = kz + 1
+              num = kz+1
             else
               ! this is the number of HALF sigma levels
               num = kz
@@ -1370,25 +1370,25 @@ module mod_ncstream
           pdim = spectral_b_dim
           stream%l_hasspectral = .true.
         case default
-          write(stderr,*) 'In File ',__FILE__,' at line: ',__LINE__
+          write(stderr, *) 'In File ',__FILE__, ' at line: ',__LINE__
           call die('nc_stream', 'Cannot add dimension to file '// &
             trim(stream%filename)//': Undefined in add_dimension', 1)
       end select
       if ( stream%l_keep ) then
 #ifdef PNETCDF
-        ncstat = nf90mpi_inq_dimid(stream%id,the_name,stream%id_dims(pdim))
+        ncstat = nf90mpi_inq_dimid(stream%id, the_name, stream%id_dims(pdim))
 #else
-        ncstat = nf90_inq_dimid(stream%id,the_name,stream%id_dims(pdim))
+        ncstat = nf90_inq_dimid(stream%id, the_name, stream%id_dims(pdim))
 #endif
       else
 #ifdef PNETCDF
-        ncstat = nf90mpi_def_dim(stream%id,the_name,num,stream%id_dims(pdim))
+        ncstat = nf90mpi_def_dim(stream%id, the_name, num, stream%id_dims(pdim))
 #else
-        ncstat = nf90_def_dim(stream%id,the_name,num,stream%id_dims(pdim))
+        ncstat = nf90_def_dim(stream%id, the_name, num, stream%id_dims(pdim))
 #endif
       end if
       if ( ncstat /= nf90_noerr ) then
-        write(stderr,*) 'In File ',__FILE__,' at line: ',__LINE__
+        write(stderr, *) 'In File ',__FILE__, ' at line: ',__LINE__
         call printerror
         call die('nc_stream', &
           'Cannot add or find dimension '//trim(the_name)//' to file '// &
@@ -1397,32 +1397,32 @@ module mod_ncstream
       stream%len_dims(pdim) = num
     end subroutine add_dimension
 
-    subroutine outstream_addatt(ncout,att)
+    subroutine outstream_addatt(ncout, att)
       implicit none
-      type(nc_output_stream), intent(inout) :: ncout
-      class(ncattribute_standard), intent(in) :: att
+      type(nc_output_stream), intent(inout):: ncout
+      class(ncattribute_standard), intent(in):: att
       if ( .not. associated(ncout%ncp%xs) ) return
-      call add_attribute(ncout%ncp%xs,att)
+      call add_attribute(ncout%ncp%xs, att)
     end subroutine outstream_addatt
 
-    subroutine outstream_addvaratt(ncout,var,att)
+    subroutine outstream_addvaratt(ncout, var, att)
       implicit none
-      type(nc_output_stream), intent(in) :: ncout
-      class(ncvariable_standard), intent(in) :: var
-      class(ncattribute_standard), intent(in) :: att
+      type(nc_output_stream), intent(in):: ncout
+      class(ncvariable_standard), intent(in):: var
+      class(ncattribute_standard), intent(in):: att
       if ( .not. associated(ncout%ncp%xs) ) return
-      call add_attribute(ncout%ncp%xs,att,var%id,var%vname)
+      call add_attribute(ncout%ncp%xs, att, var%id, var%vname)
     end subroutine outstream_addvaratt
 
-    subroutine add_attribute(stream,att,iloc,vname)
+    subroutine add_attribute(stream, att, iloc, vname)
       implicit none
-      type(ncoutstream), pointer, intent(in) :: stream
-      class(ncattribute_standard), intent(in) :: att
-      integer(ik4), optional :: iloc
-      character(len=4) :: cdum
-      character(len=*), optional :: vname
-      character(len=32) :: the_name
-      integer(ik4) :: iv
+      type(ncoutstream), pointer, intent(in):: stream
+      class(ncattribute_standard), intent(in):: att
+      integer(ik4), optional:: iloc
+      character(len = 4):: cdum
+      character(len=*), optional:: vname
+      character(len = 32):: the_name
+      integer(ik4):: iv
       if ( stream%l_enabled ) return
       if ( stream%id < 0 ) return
       if ( present(iloc) ) then
@@ -1435,119 +1435,119 @@ module mod_ncstream
         class is (ncattribute_string)
           if ( stream%l_keep ) then
 #ifdef PNETCDF
-            ncstat = nf90mpi_inquire_attribute(stream%id,iv,att%aname)
+            ncstat = nf90mpi_inquire_attribute(stream%id, iv, att%aname)
 #else
-            ncstat = nf90_inquire_attribute(stream%id,iv,att%aname)
+            ncstat = nf90_inquire_attribute(stream%id, iv, att%aname)
 #endif
           else
 #ifdef PNETCDF
-            ncstat = nf90mpi_put_att(stream%id,iv,att%aname,att%theval)
+            ncstat = nf90mpi_put_att(stream%id, iv, att%aname, att%theval)
 #else
-            ncstat = nf90_put_att(stream%id,iv,att%aname,att%theval)
+            ncstat = nf90_put_att(stream%id, iv, att%aname, att%theval)
 #endif
           end if
         class is (ncattribute_logical)
           if ( stream%l_keep ) then
 #ifdef PNETCDF
-            ncstat = nf90mpi_inquire_attribute(stream%id,iv,att%aname)
+            ncstat = nf90mpi_inquire_attribute(stream%id, iv, att%aname)
 #else
-            ncstat = nf90_inquire_attribute(stream%id,iv,att%aname)
+            ncstat = nf90_inquire_attribute(stream%id, iv, att%aname)
 #endif
           else
-            call cdumlogical(cdum,att%theval)
+            call cdumlogical(cdum, att%theval)
 #ifdef PNETCDF
-            ncstat = nf90mpi_put_att(stream%id,iv,att%aname,cdum)
+            ncstat = nf90mpi_put_att(stream%id, iv, att%aname, cdum)
 #else
-            ncstat = nf90_put_att(stream%id,iv,att%aname,cdum)
+            ncstat = nf90_put_att(stream%id, iv, att%aname, cdum)
 #endif
           end if
         class is (ncattribute_integer)
           if ( stream%l_keep ) then
 #ifdef PNETCDF
-            ncstat = nf90mpi_inquire_attribute(stream%id,iv,att%aname)
+            ncstat = nf90mpi_inquire_attribute(stream%id, iv, att%aname)
 #else
-            ncstat = nf90_inquire_attribute(stream%id,iv,att%aname)
+            ncstat = nf90_inquire_attribute(stream%id, iv, att%aname)
 #endif
           else
 #ifdef PNETCDF
-            ncstat = nf90mpi_put_att(stream%id,iv,att%aname,att%theval)
+            ncstat = nf90mpi_put_att(stream%id, iv, att%aname, att%theval)
 #else
-            ncstat = nf90_put_att(stream%id,iv,att%aname,att%theval)
+            ncstat = nf90_put_att(stream%id, iv, att%aname, att%theval)
 #endif
           end if
         class is (ncattribute_real4)
           if ( stream%l_keep ) then
 #ifdef PNETCDF
-            ncstat = nf90mpi_inquire_attribute(stream%id,iv,att%aname)
+            ncstat = nf90mpi_inquire_attribute(stream%id, iv, att%aname)
 #else
-            ncstat = nf90_inquire_attribute(stream%id,iv,att%aname)
+            ncstat = nf90_inquire_attribute(stream%id, iv, att%aname)
 #endif
           else
 #ifdef PNETCDF
-            ncstat = nf90mpi_put_att(stream%id,iv,att%aname,att%theval)
+            ncstat = nf90mpi_put_att(stream%id, iv, att%aname, att%theval)
 #else
-            ncstat = nf90_put_att(stream%id,iv,att%aname,att%theval)
+            ncstat = nf90_put_att(stream%id, iv, att%aname, att%theval)
 #endif
           end if
         class is (ncattribute_real8)
           if ( stream%l_keep ) then
 #ifdef PNETCDF
-            ncstat = nf90mpi_inquire_attribute(stream%id,iv,att%aname)
+            ncstat = nf90mpi_inquire_attribute(stream%id, iv, att%aname)
 #else
-            ncstat = nf90_inquire_attribute(stream%id,iv,att%aname)
+            ncstat = nf90_inquire_attribute(stream%id, iv, att%aname)
 #endif
           else
 #ifdef PNETCDF
-            ncstat = nf90mpi_put_att(stream%id,iv,att%aname,att%theval)
+            ncstat = nf90mpi_put_att(stream%id, iv, att%aname, att%theval)
 #else
-            ncstat = nf90_put_att(stream%id,iv,att%aname,att%theval)
+            ncstat = nf90_put_att(stream%id, iv, att%aname, att%theval)
 #endif
           end if
         class is (ncattribute_real4_array)
           if ( stream%l_keep ) then
 #ifdef PNETCDF
-            ncstat = nf90mpi_inquire_attribute(stream%id,iv,att%aname)
+            ncstat = nf90mpi_inquire_attribute(stream%id, iv, att%aname)
 #else
-            ncstat = nf90_inquire_attribute(stream%id,iv,att%aname)
+            ncstat = nf90_inquire_attribute(stream%id, iv, att%aname)
 #endif
           else
 #ifdef PNETCDF
-            ncstat = nf90mpi_put_att(stream%id,iv, &
-                      att%aname,att%theval(1:att%numval))
+            ncstat = nf90mpi_put_att(stream%id, iv, &
+                      att%aname, att%theval(1:att%numval))
 #else
-            ncstat = nf90_put_att(stream%id,iv, &
-                      att%aname,att%theval(1:att%numval))
+            ncstat = nf90_put_att(stream%id, iv, &
+                      att%aname, att%theval(1:att%numval))
 #endif
           end if
         class is (ncattribute_real8_array)
           if ( stream%l_keep ) then
 #ifdef PNETCDF
-            ncstat = nf90mpi_inquire_attribute(stream%id,iv,att%aname)
+            ncstat = nf90mpi_inquire_attribute(stream%id, iv, att%aname)
 #else
-            ncstat = nf90_inquire_attribute(stream%id,iv,att%aname)
+            ncstat = nf90_inquire_attribute(stream%id, iv, att%aname)
 #endif
           else
 #ifdef PNETCDF
-            ncstat = nf90mpi_put_att(stream%id,iv, &
-                       att%aname,att%theval(1:att%numval))
+            ncstat = nf90mpi_put_att(stream%id, iv, &
+                       att%aname, att%theval(1:att%numval))
 #else
-            ncstat = nf90_put_att(stream%id,iv, &
-                       att%aname,att%theval(1:att%numval))
+            ncstat = nf90_put_att(stream%id, iv, &
+                       att%aname, att%theval(1:att%numval))
 #endif
           end if
         class default
-          write(stderr,*) 'In File ',__FILE__,' at line: ',__LINE__
+          write(stderr, *) 'In File ',__FILE__, ' at line: ',__LINE__
           call die('nc_stream', 'Cannot add attribute of unknow type',1)
       end select
       if ( ncstat /= nf90_noerr ) then
         call printerror
         if ( present(iloc) ) then
-          write(stderr,*) 'In File ',__FILE__,' at line: ',__LINE__
+          write(stderr, *) 'In File ',__FILE__, ' at line: ',__LINE__
           call die('nc_stream', &
             'Cannot add attribute '//trim(att%aname)//'to variable '// &
             trim(the_name)//' in file '//trim(stream%filename), 1)
         else
-          write(stderr,*) 'In File ',__FILE__,' at line: ',__LINE__
+          write(stderr, *) 'In File ',__FILE__, ' at line: ',__LINE__
           call die('nc_stream', &
             'Cannot add global attribute '//trim(att%aname)// &
             ' in file '//trim(stream%filename), 1)
@@ -1555,27 +1555,27 @@ module mod_ncstream
       end if
     end subroutine add_attribute
 
-    subroutine add_varatts(stream,var)
+    subroutine add_varatts(stream, var)
       implicit none
-      type(ncoutstream), pointer, intent(inout) :: stream
-      class(ncvariable_standard), intent(in) :: var
-      character(len=*), parameter :: coords_cross = 'xlat xlon'
-      character(len=*), parameter :: coords_depth = 'soil_layer xlat xlon'
-      character(len=*), parameter :: coords_dot   = 'dlat dlon'
-      character(len=*), parameter :: coords_udot  = 'ulat ulon'
-      character(len=*), parameter :: coords_vdot  = 'vlat vlon'
+      type(ncoutstream), pointer, intent(inout):: stream
+      class(ncvariable_standard), intent(in):: var
+      character(len=*), parameter:: coords_cross = 'xlat xlon'
+      character(len=*), parameter:: coords_depth = 'soil_layer xlat xlon'
+      character(len=*), parameter:: coords_dot   = 'dlat dlon'
+      character(len=*), parameter:: coords_udot  = 'ulat ulon'
+      character(len=*), parameter:: coords_vdot  = 'vlat vlon'
       if ( len_trim(var%long_name) > 0 ) &
         call add_attribute(stream, &
-          ncattribute_string('long_name',var%long_name),var%id,var%vname)
+          ncattribute_string('long_name',var%long_name), var%id, var%vname)
       if ( len_trim(var%standard_name) > 0 ) &
         call add_attribute(stream, &
-         ncattribute_string('standard_name',var%standard_name),var%id,var%vname)
+         ncattribute_string('standard_name',var%standard_name), var%id, var%vname)
       if ( len_trim(var%vunit) > 0 ) &
         call add_attribute(stream, &
-          ncattribute_string('units',var%vunit),var%id,var%vname)
+          ncattribute_string('units',var%vunit), var%id, var%vname)
       if ( len_trim(var%notes) > 0 ) &
         call add_attribute(stream, &
-          ncattribute_string('notes',var%notes),var%id,var%vname)
+          ncattribute_string('notes',var%notes), var%id, var%vname)
       if ( var%lgridded ) then
         if ( var%vname(2:5) /= 'lat' .and. var%vname(2:5) /= 'lon' ) then
           if ( stream%l_bound ) then
@@ -1583,48 +1583,48 @@ module mod_ncstream
               if (var%vname == 'u' .or. var%vname == 'v') then
                 call add_attribute(stream, &
                         ncattribute_string('coordinates', &
-                        coords_dot),var%id,var%vname)
+                        coords_dot), var%id, var%vname)
               else
                 call add_attribute(stream, &
                         ncattribute_string('coordinates', &
-                        coords_cross),var%id,var%vname)
+                        coords_cross), var%id, var%vname)
               end if
             else
               if ( var%vname == 'u' ) then
                 call add_attribute(stream, &
                         ncattribute_string('coordinates', &
-                        coords_udot),var%id,var%vname)
+                        coords_udot), var%id, var%vname)
               else if ( var%vname == 'v') then
                 call add_attribute(stream, &
                         ncattribute_string('coordinates', &
-                        coords_vdot),var%id,var%vname)
+                        coords_vdot), var%id, var%vname)
               else
                 call add_attribute(stream, &
                         ncattribute_string('coordinates', &
-                        coords_cross),var%id,var%vname)
+                        coords_cross), var%id, var%vname)
               end if
             end if
           else
             if ( var%vname == 'mrsol' .or. var%vname == 'tsl' ) then
               call add_attribute(stream, &
-                ncattribute_string('coordinates',coords_depth),var%id,var%vname)
+                ncattribute_string('coordinates',coords_depth), var%id, var%vname)
             else
               call add_attribute(stream, &
-                ncattribute_string('coordinates',coords_cross),var%id,var%vname)
+                ncattribute_string('coordinates',coords_cross), var%id, var%vname)
             end if
           end if
           call add_attribute(stream, &
-            ncattribute_string('grid_mapping','crs'),var%id,var%vname)
+            ncattribute_string('grid_mapping','crs'), var%id, var%vname)
           stream%l_hasgrid = .true.
         end if
       end if
       if ( var%laddmethod .and. var%vname(1:4) /= 'time' ) then
         call add_attribute(stream, &
-          ncattribute_string('cell_methods',var%cell_method),var%id,var%vname)
-        if ( (verify(var%cell_method(1:9),'time: mea') == 0 .or.    &
-              verify(var%cell_method(1:9),'time: max') == 0 .or. &
-              verify(var%cell_method(1:9),'time: min') == 0 .or. &
-              verify(var%cell_method(1:9),'time: sum') == 0) .and.   &
+          ncattribute_string('cell_methods',var%cell_method), var%id, var%vname)
+        if ( (verify(var%cell_method(1:9), 'time: mea') == 0 .or.    &
+              verify(var%cell_method(1:9), 'time: max') == 0 .or. &
+              verify(var%cell_method(1:9), 'time: min') == 0 .or. &
+              verify(var%cell_method(1:9), 'time: sum') == 0) .and.   &
               .not. stream%l_hastbound ) then
           stream%l_hastbound = .true.
         end if
@@ -1632,42 +1632,42 @@ module mod_ncstream
       if ( var%lfillvalue ) then
         if ( var%nctype == nf90_real ) then
           call add_attribute(stream, &
-            ncattribute_real4('_FillValue',var%rmissval),var%id,var%vname)
+            ncattribute_real4('_FillValue',var%rmissval), var%id, var%vname)
         else if ( var%nctype == nf90_double ) then
           call add_attribute(stream, &
-            ncattribute_real8('_FillValue',var%rmissval),var%id,var%vname)
+            ncattribute_real8('_FillValue',var%rmissval), var%id, var%vname)
         else
           call add_attribute(stream, &
-            ncattribute_real4('_FillValue',var%imissval),var%id,var%vname)
+            ncattribute_real4('_FillValue',var%imissval), var%id, var%vname)
         end if
       end if
     end subroutine add_varatts
 
-    subroutine add_variable(ncout,var,ndims)
+    subroutine add_variable(ncout, var, ndims)
       implicit none
-      type(nc_output_stream), intent(inout) :: ncout
-      class(ncvariable_standard), intent(inout) :: var
-      integer(ik4), intent(in) :: ndims
-      type(ncoutstream), pointer :: stream
+      type(nc_output_stream), intent(inout):: ncout
+      class(ncvariable_standard), intent(inout):: var
+      integer(ik4), intent(in):: ndims
+      type(ncoutstream), pointer:: stream
       if ( .not. associated(ncout%ncp%xs) ) return
       stream => ncout%ncp%xs
       if ( stream%l_enabled ) return
       if ( ndims == 0 ) then
         if ( stream%l_keep ) then
 #ifdef PNETCDF
-          ncstat = nf90mpi_inq_varid(stream%id,var%vname,var%id)
+          ncstat = nf90mpi_inq_varid(stream%id, var%vname, var%id)
 #else
-          ncstat = nf90_inq_varid(stream%id,var%vname,var%id)
+          ncstat = nf90_inq_varid(stream%id, var%vname, var%id)
 #endif
         else
 #ifdef PNETCDF
-          ncstat = nf90mpi_def_var(stream%id,var%vname,var%nctype,var%id)
+          ncstat = nf90mpi_def_var(stream%id, var%vname, var%nctype, var%id)
 #else
-          ncstat = nf90_def_var(stream%id,var%vname,var%nctype,var%id)
+          ncstat = nf90_def_var(stream%id, var%vname, var%nctype, var%id)
 #endif
         end if
         if ( ncstat /= nf90_noerr ) then
-          write(stderr,*) 'In File ',__FILE__,' at line: ',__LINE__
+          write(stderr, *) 'In File ',__FILE__, ' at line: ',__LINE__
           call printerror
           call die('nc_stream', &
             'Cannot add variable '//trim(var%vname)//' to file '// &
@@ -1676,22 +1676,22 @@ module mod_ncstream
       else
         if ( stream%l_keep ) then
 #ifdef PNETCDF
-          ncstat = nf90mpi_inq_varid(stream%id,var%vname,var%id)
+          ncstat = nf90mpi_inq_varid(stream%id, var%vname, var%id)
 #else
-          ncstat = nf90_inq_varid(stream%id,var%vname,var%id)
+          ncstat = nf90_inq_varid(stream%id, var%vname, var%id)
 #endif
         else
 #ifdef PNETCDF
-          ncstat = nf90mpi_def_var(stream%id,var%vname,var%nctype, &
-                                id_dim(1:ndims),var%id)
+          ncstat = nf90mpi_def_var(stream%id, var%vname, var%nctype, &
+                                id_dim(1:ndims), var%id)
 #else
-          ncstat = nf90_def_var(stream%id,trim(var%vname),var%nctype, &
-                                id_dim(1:ndims),var%id)
+          ncstat = nf90_def_var(stream%id, trim(var%vname), var%nctype, &
+                                id_dim(1:ndims), var%id)
 #endif
         end if
         if ( ncstat /= nf90_noerr ) then
-          write(stderr,*) 'In File ',__FILE__,' at line: ',__LINE__
-          write(stderr,*) 'ID: ', var%id
+          write(stderr, *) 'In File ',__FILE__, ' at line: ',__LINE__
+          write(stderr, *) 'ID: ', var%id
           call printerror
           call die('nc_stream', &
             'Cannot define variable '//trim(var%vname)// &
@@ -1702,13 +1702,13 @@ module mod_ncstream
 #if defined (NETCDF4_COMPRESS)
         if ( ndims > 3 ) then
           if ( stream%l_keep ) then
-            ncstat = nf90_inq_varid(stream%id,var%vname,var%id)
+            ncstat = nf90_inq_varid(stream%id, var%vname, var%id)
           else
             if ( .not. stream%l_parallel ) then
-              ncstat = nf90_def_var_filter(stream%id,var%id, &
-                  ncfilter,ncfilter_nparams,ncfilter_params)
+              ncstat = nf90_def_var_filter(stream%id, var%id, &
+                  ncfilter, ncfilter_nparams, ncfilter_params)
               if ( ncstat /= nf90_noerr ) then
-                write(stderr,*) 'In File ',__FILE__,' at line: ',__LINE__
+                write(stderr, *) 'In File ',__FILE__, ' at line: ',__LINE__
                 call printerror
                 call die('nc_stream', &
                   'Cannot set compression on variable '//trim(var%vname)// &
@@ -1721,9 +1721,9 @@ module mod_ncstream
 #endif
         ! This forces collective I/O on time dependent variables.
         if ( stream%l_parallel .and. var%lrecords ) then
-          ncstat = nf90_var_par_access(stream%id,var%id,nf90_collective)
+          ncstat = nf90_var_par_access(stream%id, var%id, nf90_collective)
           if ( ncstat /= nf90_noerr ) then
-            write(stderr,*) 'In File ',__FILE__,' at line: ',__LINE__
+            write(stderr, *) 'In File ',__FILE__, ' at line: ',__LINE__
             call printerror
             call die('nc_stream', &
               'Cannot set correct mode (collective) for variable I/O'// &
@@ -1733,16 +1733,16 @@ module mod_ncstream
         end if
 #endif
       end if
-      call add_varatts(stream,var)
+      call add_varatts(stream, var)
     end subroutine add_variable
 
-    subroutine outstream_addvar(ncout,var)
+    subroutine outstream_addvar(ncout, var)
       implicit none
-      type(nc_output_stream), intent(inout) :: ncout
-      class(ncvariable_standard) :: var
-      type(ncoutstream), pointer :: stream
-      type(internal_obuffer), pointer :: buffer
-      integer(ik4) :: nd
+      type(nc_output_stream), intent(inout):: ncout
+      class(ncvariable_standard):: var
+      type(ncoutstream), pointer:: stream
+      type(internal_obuffer), pointer:: buffer
+      integer(ik4):: nd
       if ( .not. associated(ncout%ncp%xs) ) return
       stream => ncout%ncp%xs
       buffer => ncout%obp%xb
@@ -1792,7 +1792,7 @@ module mod_ncstream
         class is (ncvariable4d_integer)
           var%nctype = nf90_int
         class default
-          write(stderr,*) 'In File ',__FILE__,' at line: ',__LINE__
+          write(stderr, *) 'In File ',__FILE__, ' at line: ',__LINE__
           call die('nc_stream', 'Cannot add variable of unknown type',1)
       end select
       select type(var)
@@ -1801,234 +1801,234 @@ module mod_ncstream
           if ( var%lrecords ) then
             nd = 1
             stream%l_hasrec = .true.
-            call dimlist(stream,'t')
+            call dimlist(stream, 't')
           else
             nd = 0
             var%laddmethod = .false.
           end if
-          call add_variable(ncout,var,nd)
+          call add_variable(ncout, var, nd)
         class is (ncvariable_1d)
           var%lgridded = .false.
           if ( var%lrecords ) then
             nd = 2
             stream%l_hasrec = .true.
-            call dimlist(stream,var%axis//'t')
+            call dimlist(stream, var%axis//'t')
           else
             nd = 1
             var%laddmethod = .false.
-            call dimlist(stream,var%axis)
+            call dimlist(stream, var%axis)
           end if
-          call add_variable(ncout,var,nd)
+          call add_variable(ncout, var, nd)
           var%nval(1) = len_dim(1)
           var%totsize = product(var%nval)
         class is (ncvariable_2d)
-          if ( scan(var%axis,'x') > 0 .and. scan(var%axis,'y') > 0 ) then
+          if ( scan(var%axis, 'x') > 0 .and. scan(var%axis, 'y') > 0 ) then
             var%lgridded = .true.
           end if
           if ( var%lrecords ) then
             nd = 3
             stream%l_hasrec = .true.
-            call dimlist(stream,var%axis//'t')
+            call dimlist(stream, var%axis//'t')
           else
             nd = 2
             var%laddmethod = .false.
-            call dimlist(stream,var%axis)
+            call dimlist(stream, var%axis)
           end if
-          call add_variable(ncout,var,nd)
+          call add_variable(ncout, var, nd)
           var%nval(1) = len_dim(1)
           var%nval(2) = len_dim(2)
           var%totsize = product(var%nval)
         class is (ncvariable_3d)
-          if ( scan(var%axis,'x') > 0 .and. scan(var%axis,'y') > 0 ) then
+          if ( scan(var%axis, 'x') > 0 .and. scan(var%axis, 'y') > 0 ) then
             var%lgridded = .true.
           end if
           if ( var%lrecords ) then
             nd = 4
             stream%l_hasrec = .true.
-            call dimlist(stream,var%axis//'t')
+            call dimlist(stream, var%axis//'t')
           else
             nd = 3
             var%laddmethod = .false.
-            call dimlist(stream,var%axis)
+            call dimlist(stream, var%axis)
           end if
-          call add_variable(ncout,var,nd)
+          call add_variable(ncout, var, nd)
           var%nval(1) = len_dim(1)
           var%nval(2) = len_dim(2)
           var%nval(3) = len_dim(3)
           var%totsize = product(var%nval)
         class is (ncvariable_4d)
-          if ( scan(var%axis,'x') > 0 .and. scan(var%axis,'y') > 0 ) then
+          if ( scan(var%axis, 'x') > 0 .and. scan(var%axis, 'y') > 0 ) then
             var%lgridded = .true.
           end if
           if ( var%lrecords ) then
             nd = 5
             stream%l_hasrec = .true.
-            call dimlist(stream,var%axis//'t')
+            call dimlist(stream, var%axis//'t')
           else
             nd = 4
             var%laddmethod = .false.
-            call dimlist(stream,var%axis)
+            call dimlist(stream, var%axis)
           end if
-          call add_variable(ncout,var,nd)
+          call add_variable(ncout, var, nd)
           var%nval(1) = len_dim(1)
           var%nval(2) = len_dim(2)
           var%nval(3) = len_dim(3)
           var%nval(4) = len_dim(4)
           var%totsize = product(var%nval)
         class default
-          write(stderr,*) 'In File ',__FILE__,' at line: ',__LINE__
+          write(stderr, *) 'In File ',__FILE__, ' at line: ',__LINE__
           call die('nc_stream', 'Cannot add variable of unknown type',1)
       end select
       select type(var)
         class is (ncvariable1d_double)
           buffer%lhas1ddouble = .true.
-          buffer%max1d_double(1) = max(buffer%max1d_double(1),len_dim(1))
+          buffer%max1d_double(1) = max(buffer%max1d_double(1), len_dim(1))
         class is (ncvariable2d_double)
           buffer%lhas2ddouble = .true.
           if ( stream%l_parallel .and. var%lgridded ) then
             buffer%max2d_double(1) = &
-               max(buffer%max2d_double(1),stream%global_nj)
+               max(buffer%max2d_double(1), stream%global_nj)
             buffer%max2d_double(2) = &
-               max(buffer%max2d_double(2),stream%global_ni)
+               max(buffer%max2d_double(2), stream%global_ni)
           else
-            buffer%max2d_double(1) = max(buffer%max2d_double(1),len_dim(1))
-            buffer%max2d_double(2) = max(buffer%max2d_double(2),len_dim(2))
+            buffer%max2d_double(1) = max(buffer%max2d_double(1), len_dim(1))
+            buffer%max2d_double(2) = max(buffer%max2d_double(2), len_dim(2))
           end if
         class is (ncvariable3d_double)
           buffer%lhas3ddouble = .true.
           if ( stream%l_parallel .and. var%lgridded ) then
             buffer%max3d_double(1) = &
-               max(buffer%max3d_double(1),stream%global_nj)
+               max(buffer%max3d_double(1), stream%global_nj)
             buffer%max3d_double(2) = &
-               max(buffer%max3d_double(2),stream%global_ni)
+               max(buffer%max3d_double(2), stream%global_ni)
           else
-            buffer%max3d_double(1) = max(buffer%max3d_double(1),len_dim(1))
-            buffer%max3d_double(2) = max(buffer%max3d_double(2),len_dim(2))
+            buffer%max3d_double(1) = max(buffer%max3d_double(1), len_dim(1))
+            buffer%max3d_double(2) = max(buffer%max3d_double(2), len_dim(2))
           end if
-          buffer%max3d_double(3) = max(buffer%max3d_double(3),len_dim(3))
+          buffer%max3d_double(3) = max(buffer%max3d_double(3), len_dim(3))
         class is (ncvariable4d_double)
           buffer%lhas4ddouble = .true.
           if ( stream%l_parallel .and. var%lgridded ) then
             buffer%max4d_double(1) = &
-               max(buffer%max4d_double(1),stream%global_nj)
+               max(buffer%max4d_double(1), stream%global_nj)
             buffer%max4d_double(2) = &
-               max(buffer%max4d_double(2),stream%global_ni)
+               max(buffer%max4d_double(2), stream%global_ni)
           else
-            buffer%max4d_double(1) = max(buffer%max4d_double(1),len_dim(1))
-            buffer%max4d_double(2) = max(buffer%max4d_double(2),len_dim(2))
+            buffer%max4d_double(1) = max(buffer%max4d_double(1), len_dim(1))
+            buffer%max4d_double(2) = max(buffer%max4d_double(2), len_dim(2))
           end if
-          buffer%max4d_double(3) = max(buffer%max4d_double(3),len_dim(3))
-          buffer%max4d_double(4) = max(buffer%max4d_double(4),len_dim(4))
+          buffer%max4d_double(3) = max(buffer%max4d_double(3), len_dim(3))
+          buffer%max4d_double(4) = max(buffer%max4d_double(4), len_dim(4))
         class is (ncvariable1d_real)
           buffer%lhas1dreal = .true.
-          buffer%max1d_real(1) = max(buffer%max1d_real(1),len_dim(1))
+          buffer%max1d_real(1) = max(buffer%max1d_real(1), len_dim(1))
         class is (ncvariable1d_mixed)
           buffer%lhas1dreal = .true.
-          buffer%max1d_real(1) = max(buffer%max1d_real(1),len_dim(1))
+          buffer%max1d_real(1) = max(buffer%max1d_real(1), len_dim(1))
         class is (ncvariable2d_real)
           buffer%lhas2dreal = .true.
           if ( stream%l_parallel .and. var%lgridded ) then
-            buffer%max2d_real(1) = max(buffer%max2d_real(1),stream%global_nj)
-            buffer%max2d_real(2) = max(buffer%max2d_real(2),stream%global_ni)
+            buffer%max2d_real(1) = max(buffer%max2d_real(1), stream%global_nj)
+            buffer%max2d_real(2) = max(buffer%max2d_real(2), stream%global_ni)
           else
-            buffer%max2d_real(1) = max(buffer%max2d_real(1),len_dim(1))
-            buffer%max2d_real(2) = max(buffer%max2d_real(2),len_dim(2))
+            buffer%max2d_real(1) = max(buffer%max2d_real(1), len_dim(1))
+            buffer%max2d_real(2) = max(buffer%max2d_real(2), len_dim(2))
           end if
         class is (ncvariable2d_mixed)
           buffer%lhas2dreal = .true.
           if ( stream%l_parallel .and. var%lgridded ) then
-            buffer%max2d_real(1) = max(buffer%max2d_real(1),stream%global_nj)
-            buffer%max2d_real(2) = max(buffer%max2d_real(2),stream%global_ni)
+            buffer%max2d_real(1) = max(buffer%max2d_real(1), stream%global_nj)
+            buffer%max2d_real(2) = max(buffer%max2d_real(2), stream%global_ni)
           else
-            buffer%max2d_real(1) = max(buffer%max2d_real(1),len_dim(1))
-            buffer%max2d_real(2) = max(buffer%max2d_real(2),len_dim(2))
+            buffer%max2d_real(1) = max(buffer%max2d_real(1), len_dim(1))
+            buffer%max2d_real(2) = max(buffer%max2d_real(2), len_dim(2))
           end if
         class is (ncvariable3d_real)
           buffer%lhas3dreal = .true.
           if ( stream%l_parallel .and. var%lgridded ) then
-            buffer%max3d_real(1) = max(buffer%max3d_real(1),stream%global_nj)
-            buffer%max3d_real(2) = max(buffer%max3d_real(2),stream%global_ni)
+            buffer%max3d_real(1) = max(buffer%max3d_real(1), stream%global_nj)
+            buffer%max3d_real(2) = max(buffer%max3d_real(2), stream%global_ni)
           else
-            buffer%max3d_real(1) = max(buffer%max3d_real(1),len_dim(1))
-            buffer%max3d_real(2) = max(buffer%max3d_real(2),len_dim(2))
+            buffer%max3d_real(1) = max(buffer%max3d_real(1), len_dim(1))
+            buffer%max3d_real(2) = max(buffer%max3d_real(2), len_dim(2))
           end if
-          buffer%max3d_real(3) = max(buffer%max3d_real(3),len_dim(3))
+          buffer%max3d_real(3) = max(buffer%max3d_real(3), len_dim(3))
         class is (ncvariable3d_mixed)
           buffer%lhas3dreal = .true.
           if ( stream%l_parallel .and. var%lgridded ) then
-            buffer%max3d_real(1) = max(buffer%max3d_real(1),stream%global_nj)
-            buffer%max3d_real(2) = max(buffer%max3d_real(2),stream%global_ni)
+            buffer%max3d_real(1) = max(buffer%max3d_real(1), stream%global_nj)
+            buffer%max3d_real(2) = max(buffer%max3d_real(2), stream%global_ni)
           else
-            buffer%max3d_real(1) = max(buffer%max3d_real(1),len_dim(1))
-            buffer%max3d_real(2) = max(buffer%max3d_real(2),len_dim(2))
+            buffer%max3d_real(1) = max(buffer%max3d_real(1), len_dim(1))
+            buffer%max3d_real(2) = max(buffer%max3d_real(2), len_dim(2))
           end if
-          buffer%max3d_real(3) = max(buffer%max3d_real(3),len_dim(3))
+          buffer%max3d_real(3) = max(buffer%max3d_real(3), len_dim(3))
         class is (ncvariable4d_real)
           buffer%lhas4dreal = .true.
           if ( stream%l_parallel .and. var%lgridded ) then
-            buffer%max4d_real(1) = max(buffer%max4d_real(1),stream%global_nj)
-            buffer%max4d_real(2) = max(buffer%max4d_real(2),stream%global_ni)
+            buffer%max4d_real(1) = max(buffer%max4d_real(1), stream%global_nj)
+            buffer%max4d_real(2) = max(buffer%max4d_real(2), stream%global_ni)
           else
-            buffer%max4d_real(1) = max(buffer%max4d_real(1),len_dim(1))
-            buffer%max4d_real(2) = max(buffer%max4d_real(2),len_dim(2))
+            buffer%max4d_real(1) = max(buffer%max4d_real(1), len_dim(1))
+            buffer%max4d_real(2) = max(buffer%max4d_real(2), len_dim(2))
           end if
-          buffer%max4d_real(3) = max(buffer%max4d_real(3),len_dim(3))
-          buffer%max4d_real(4) = max(buffer%max4d_real(4),len_dim(4))
+          buffer%max4d_real(3) = max(buffer%max4d_real(3), len_dim(3))
+          buffer%max4d_real(4) = max(buffer%max4d_real(4), len_dim(4))
         class is (ncvariable4d_mixed)
           buffer%lhas4dreal = .true.
           if ( stream%l_parallel .and. var%lgridded ) then
-            buffer%max4d_real(1) = max(buffer%max4d_real(1),stream%global_nj)
-            buffer%max4d_real(2) = max(buffer%max4d_real(2),stream%global_ni)
+            buffer%max4d_real(1) = max(buffer%max4d_real(1), stream%global_nj)
+            buffer%max4d_real(2) = max(buffer%max4d_real(2), stream%global_ni)
           else
-            buffer%max4d_real(1) = max(buffer%max4d_real(1),len_dim(1))
-            buffer%max4d_real(2) = max(buffer%max4d_real(2),len_dim(2))
+            buffer%max4d_real(1) = max(buffer%max4d_real(1), len_dim(1))
+            buffer%max4d_real(2) = max(buffer%max4d_real(2), len_dim(2))
           end if
-          buffer%max4d_real(3) = max(buffer%max4d_real(3),len_dim(3))
-          buffer%max4d_real(4) = max(buffer%max4d_real(4),len_dim(4))
+          buffer%max4d_real(3) = max(buffer%max4d_real(3), len_dim(3))
+          buffer%max4d_real(4) = max(buffer%max4d_real(4), len_dim(4))
         class is (ncvariable1d_integer)
           buffer%lhas1dint = .true.
-          buffer%max1d_int(1) =  max(buffer%max1d_int(1),len_dim(1))
+          buffer%max1d_int(1) =  max(buffer%max1d_int(1), len_dim(1))
         class is (ncvariable2d_integer)
           buffer%lhas2dint = .true.
           if ( stream%l_parallel .and. var%lgridded ) then
-            buffer%max2d_int(1) = max(buffer%max2d_int(1),len_dim(1))
-            buffer%max2d_int(2) = max(buffer%max2d_int(2),len_dim(2))
+            buffer%max2d_int(1) = max(buffer%max2d_int(1), len_dim(1))
+            buffer%max2d_int(2) = max(buffer%max2d_int(2), len_dim(2))
           else
-            buffer%max2d_int(1) = max(buffer%max2d_int(1),stream%global_nj)
-            buffer%max2d_int(2) = max(buffer%max2d_int(2),stream%global_ni)
+            buffer%max2d_int(1) = max(buffer%max2d_int(1), stream%global_nj)
+            buffer%max2d_int(2) = max(buffer%max2d_int(2), stream%global_ni)
           end if
         class is (ncvariable3d_integer)
           buffer%lhas3dint = .true.
           if ( stream%l_parallel .and. var%lgridded ) then
-            buffer%max3d_int(1) = max(buffer%max3d_int(1),len_dim(1))
-            buffer%max3d_int(2) = max(buffer%max3d_int(2),len_dim(2))
+            buffer%max3d_int(1) = max(buffer%max3d_int(1), len_dim(1))
+            buffer%max3d_int(2) = max(buffer%max3d_int(2), len_dim(2))
           else
-            buffer%max3d_int(1) = max(buffer%max3d_int(1),stream%global_nj)
-            buffer%max3d_int(2) = max(buffer%max3d_int(2),stream%global_ni)
+            buffer%max3d_int(1) = max(buffer%max3d_int(1), stream%global_nj)
+            buffer%max3d_int(2) = max(buffer%max3d_int(2), stream%global_ni)
           end if
-          buffer%max3d_int(3) = max(buffer%max3d_int(3),len_dim(3))
+          buffer%max3d_int(3) = max(buffer%max3d_int(3), len_dim(3))
         class is (ncvariable4d_integer)
           buffer%lhas4dint = .true.
           if ( stream%l_parallel .and. var%lgridded ) then
-            buffer%max4d_int(1) = max(buffer%max4d_int(1),len_dim(1))
-            buffer%max4d_int(2) = max(buffer%max4d_int(2),len_dim(2))
+            buffer%max4d_int(1) = max(buffer%max4d_int(1), len_dim(1))
+            buffer%max4d_int(2) = max(buffer%max4d_int(2), len_dim(2))
           else
-            buffer%max4d_int(1) = max(buffer%max4d_int(1),stream%global_nj)
-            buffer%max4d_int(2) = max(buffer%max4d_int(2),stream%global_ni)
+            buffer%max4d_int(1) = max(buffer%max4d_int(1), stream%global_nj)
+            buffer%max4d_int(2) = max(buffer%max4d_int(2), stream%global_ni)
           end if
-          buffer%max4d_int(3) = max(buffer%max4d_int(3),len_dim(3))
-          buffer%max4d_int(4) = max(buffer%max4d_int(4),len_dim(4))
+          buffer%max4d_int(3) = max(buffer%max4d_int(3), len_dim(3))
+          buffer%max4d_int(4) = max(buffer%max4d_int(4), len_dim(4))
         class default
           continue
       end select
     end subroutine outstream_addvar
 
-    subroutine dimlist(stream,code)
+    subroutine dimlist(stream, code)
       implicit none
-      type(ncoutstream), intent(inout), pointer :: stream
-      character(len=*), intent(in) :: code
-      character(len=ncmaxdims) :: safecode
-      integer(ik4) :: ic
+      type(ncoutstream), intent(inout), pointer:: stream
+      character(len=*), intent(in):: code
+      character(len = ncmaxdims):: safecode
+      integer(ik4):: ic
 
       do ic = 1, ncmaxdims
         safecode(ic:ic) = ' '
@@ -2039,121 +2039,121 @@ module mod_ncstream
         select case (safecode(ic:ic))
           case ('x')
             if ( stream%id_dims(jx_dim) < 0 ) then
-              call add_dimension(stream,'jx')
+              call add_dimension(stream, 'jx')
             end if
             id_dim(ic) = stream%id_dims(jx_dim)
             len_dim(ic) = stream%len_dims(jx_dim)
           case ('y')
             if ( stream%id_dims(iy_dim) < 0 ) then
-              call add_dimension(stream,'iy')
+              call add_dimension(stream, 'iy')
             end if
             id_dim(ic) = stream%id_dims(iy_dim)
             len_dim(ic) = stream%len_dims(iy_dim)
           case ('z')
             if ( stream%id_dims(kz_dim) < 0 ) then
-              call add_dimension(stream,'kz')
+              call add_dimension(stream, 'kz')
             end if
             id_dim(ic) = stream%id_dims(kz_dim)
             len_dim(ic) = stream%len_dims(kz_dim)
           case ('t')
             if ( stream%id_dims(time_dim) < 0 ) then
-              call add_dimension(stream,'time')
+              call add_dimension(stream, 'time')
             end if
             id_dim(ic) = stream%id_dims(time_dim)
             len_dim(ic) = stream%len_dims(time_dim)
           case ('b')
             if ( stream%id_dims(time_bound_dim) < 0 ) then
-              call add_dimension(stream,'time_bounds')
+              call add_dimension(stream, 'time_bounds')
             end if
             id_dim(ic) = stream%id_dims(time_bound_dim)
             len_dim(ic) = stream%len_dims(time_bound_dim)
           case ('T')
             if ( stream%id_dims(texture_dim) < 0 ) then
-              call add_dimension(stream,'ntex')
+              call add_dimension(stream, 'ntex')
             end if
             id_dim(ic) = stream%id_dims(texture_dim)
             len_dim(ic) = stream%len_dims(texture_dim)
           case ('2')
             if ( stream%id_dims(h2m_level_dim) < 0 ) then
-              call add_dimension(stream,'2m')
+              call add_dimension(stream, '2m')
             end if
             id_dim(ic) = stream%id_dims(h2m_level_dim)
             len_dim(ic) = stream%len_dims(h2m_level_dim)
           case ('w')
             if ( stream%id_dims(h10m_level_dim) < 0 ) then
-              call add_dimension(stream,'10m')
+              call add_dimension(stream, '10m')
             end if
             id_dim(ic) = stream%id_dims(h10m_level_dim)
             len_dim(ic) = stream%len_dims(h10m_level_dim)
           case ('q')
             if ( stream%id_dims(h50m_level_dim) < 0 ) then
-              call add_dimension(stream,'50m')
+              call add_dimension(stream, '50m')
             end if
             id_dim(ic) = stream%id_dims(h50m_level_dim)
             len_dim(ic) = stream%len_dims(h50m_level_dim)
           case ('W')
             if ( stream%id_dims(h100m_level_dim) < 0 ) then
-              call add_dimension(stream,'100m')
+              call add_dimension(stream, '100m')
             end if
             id_dim(ic) = stream%id_dims(h100m_level_dim)
             len_dim(ic) = stream%len_dims(h100m_level_dim)
           case ('Q')
             if ( stream%id_dims(h150m_level_dim) < 0 ) then
-              call add_dimension(stream,'150m')
+              call add_dimension(stream, '150m')
             end if
             id_dim(ic) = stream%id_dims(h150m_level_dim)
             len_dim(ic) = stream%len_dims(h150m_level_dim)
           case ('s')
             if ( stream%id_dims(soil_layer_dim) < 0 ) then
-              call add_dimension(stream,'nsoil')
+              call add_dimension(stream, 'nsoil')
             end if
             id_dim(ic) = stream%id_dims(soil_layer_dim)
             len_dim(ic) = stream%len_dims(soil_layer_dim)
           case ('d')
             if ( stream%id_dims(water_depth_dim) < 0 ) then
-              call add_dimension(stream,'depth')
+              call add_dimension(stream, 'depth')
             end if
             id_dim(ic) = stream%id_dims(water_depth_dim)
             len_dim(ic) = stream%len_dims(water_depth_dim)
           case ('M')
             if ( stream%id_dims(months_dim) < 0 ) then
-              call add_dimension(stream,'months')
+              call add_dimension(stream, 'months')
             end if
             id_dim(ic) = stream%id_dims(months_dim)
             len_dim(ic) = stream%len_dims(months_dim)
           case ('S')
             if ( stream%id_dims(spectral_dim) < 0 ) then
-              call add_dimension(stream,'spectral')
+              call add_dimension(stream, 'spectral')
             end if
             id_dim(ic) = stream%id_dims(spectral_dim)
             len_dim(ic) = stream%len_dims(spectral_dim)
           case ('B')
             if ( stream%id_dims(spectral_b_dim) < 0 ) then
-              call add_dimension(stream,'spectral_bound')
+              call add_dimension(stream, 'spectral_bound')
             end if
             id_dim(ic) = stream%id_dims(spectral_b_dim)
             len_dim(ic) = stream%len_dims(spectral_b_dim)
           case default
-            write(stderr,*) 'In File ',__FILE__,' at line: ',__LINE__
-            write(stderr,*) 'Not in list. Known dimension codes: xyztbT2wsd'
+            write(stderr, *) 'In File ',__FILE__, ' at line: ',__LINE__
+            write(stderr, *) 'Not in list. Known dimension codes: xyztbT2wsd'
             call die('nc_stream', &
               'Cannot select dimension '//safecode(ic:ic)//' on file '// &
               trim(stream%filename), 1)
         end select
-        ic = ic + 1
+        ic = ic+1
       end do
     end subroutine dimlist
 
-    subroutine outstream_writevar(ncout,var,lcopy,is)
+    subroutine outstream_writevar(ncout, var, lcopy, is)
       implicit none
-      type(nc_output_stream), intent(inout) :: ncout
-      class(ncvariable_standard), intent(inout) :: var
-      logical, intent(in), optional :: lcopy
-      integer(ik4), intent(in), optional :: is
-      type(ncoutstream), pointer :: stream
-      type(internal_obuffer), pointer :: buffer
-      integer(ik4) :: nd, totsize
-      logical :: docopy
+      type(nc_output_stream), intent(inout):: ncout
+      class(ncvariable_standard), intent(inout):: var
+      logical, intent(in), optional:: lcopy
+      integer(ik4), intent(in), optional:: is
+      type(ncoutstream), pointer:: stream
+      type(internal_obuffer), pointer:: buffer
+      integer(ik4):: nd, totsize
+      logical:: docopy
       if ( .not. associated(ncout%ncp%xs) ) return
       nd = 0
       docopy = .true.
@@ -2169,24 +2169,24 @@ module mod_ncstream
             stream%icount(1) = 1
             nd = 1
 #ifdef PNETCDF
-            ncstat = nf90mpi_put_var_all(stream%id,var%id,var%rval, &
-              stream%istart(1:nd),stream%icount(1:nd))
+            ncstat = nf90mpi_put_var_all(stream%id, var%id, var%rval, &
+              stream%istart(1:nd), stream%icount(1:nd))
 #else
-            ncstat = nf90_put_var(stream%id,var%id,var%rval, &
-              stream%istart(1:nd),stream%icount(1:nd))
+            ncstat = nf90_put_var(stream%id, var%id, var%rval, &
+              stream%istart(1:nd), stream%icount(1:nd))
 #endif
           else
 #ifdef PNETCDF
-            ncstat = nf90mpi_put_var_all(stream%id,var%id,var%rval(1))
+            ncstat = nf90mpi_put_var_all(stream%id, var%id, var%rval(1))
 #else
-            ncstat = nf90_put_var(stream%id,var%id,var%rval(1))
+            ncstat = nf90_put_var(stream%id, var%id, var%rval(1))
 #endif
           end if
         class is (ncvariable1d_double)
           if ( docopy ) then
             if ( .not. associated(var%rval) ) then
-              write(stderr,*) 'In File ',__FILE__,' at line: ',__LINE__
-              write(stderr,*) 'Unassociated pointer to variable'
+              write(stderr, *) 'In File ',__FILE__, ' at line: ',__LINE__
+              write(stderr, *) 'Unassociated pointer to variable'
               call die('nc_stream','Cannot write variable '//trim(var%vname)// &
                 ' in file '//trim(stream%filename), 1)
             end if
@@ -2201,11 +2201,11 @@ module mod_ncstream
             nd = 2
           end if
 #ifdef PNETCDF
-          ncstat = nf90mpi_put_var_all(stream%id,var%id, &
-            buffer%doublebuff,stream%istart(1:nd),stream%icount(1:nd))
+          ncstat = nf90mpi_put_var_all(stream%id, var%id, &
+            buffer%doublebuff, stream%istart(1:nd), stream%icount(1:nd))
 #else
-          ncstat = nf90_put_var(stream%id,var%id, &
-            buffer%doublebuff,stream%istart(1:nd),stream%icount(1:nd))
+          ncstat = nf90_put_var(stream%id, var%id, &
+            buffer%doublebuff, stream%istart(1:nd), stream%icount(1:nd))
 #endif
         class is (ncvariable2d_double)
           if ( stream%l_parallel .and. var%lgridded ) then
@@ -2224,17 +2224,17 @@ module mod_ncstream
           if ( docopy ) then
             if ( .not. associated(var%rval) .and. &
                  .not. associated(var%rval_slice) ) then
-              write(stderr,*) 'In File ',__FILE__,' at line: ',__LINE__
-              write(stderr,*) 'Unassociated pointer to variable'
+              write(stderr, *) 'In File ',__FILE__, ' at line: ',__LINE__
+              write(stderr, *) 'Unassociated pointer to variable'
               call die('nc_stream','Cannot write variable '//trim(var%vname)// &
                 ' in file '//trim(stream%filename), 1)
             end if
             if ( var%j1 > 0 .and. var%j2 > 0 ) then
               if ( (var%j2-var%j1+1) /= stream%icount(1) ) then
-                write(stderr,*) 'In File ',__FILE__,' at line: ',__LINE__
-                write(stderr,*) 'Internal indexes JX different from file'
-                write(stderr,*) 'file     : ', stream%icount(1)
-                write(stderr,*) 'internal : ', var%j2-var%j1+1
+                write(stderr, *) 'In File ',__FILE__, ' at line: ',__LINE__
+                write(stderr, *) 'Internal indexes JX different from file'
+                write(stderr, *) 'file     : ', stream%icount(1)
+                write(stderr, *) 'internal : ', var%j2-var%j1+1
                 call die('nc_stream','Cannot write variable '// &
                   trim(var%vname)//' in file '//trim(stream%filename), 1)
               end if
@@ -2244,8 +2244,8 @@ module mod_ncstream
             end if
             if ( var%i1 > 0 .and. var%i2 > 0 ) then
               if ( (var%i2-var%i1+1) /= stream%icount(2) ) then
-                write(stderr,*) 'In File ',__FILE__,' at line: ',__LINE__
-                write(stderr,*) 'Internal indexes IY different from file'
+                write(stderr, *) 'In File ',__FILE__, ' at line: ',__LINE__
+                write(stderr, *) 'Internal indexes IY different from file'
                 call die('nc_stream','Cannot write variable '// &
                   trim(var%vname)//' in file '//trim(stream%filename), 1)
               end if
@@ -2255,17 +2255,17 @@ module mod_ncstream
             end if
             if ( var%is_slice ) then
               if ( .not. present(is) ) then
-                write(stderr,*) 'In File ',__FILE__,' at line: ',__LINE__
-                write(stderr,*) 'Requesting slice without giving index...'
+                write(stderr, *) 'In File ',__FILE__, ' at line: ',__LINE__
+                write(stderr, *) 'Requesting slice without giving index...'
                 call die('nc_stream','Cannot write variable '// &
                   trim(var%vname)//' in file '//trim(stream%filename), 1)
               end if
               buffer%doublebuff(1:totsize) =  &
-                reshape(var%rval_slice(var%j1:var%j2,var%i1:var%i2,is), &
+                reshape(var%rval_slice(var%j1:var%j2, var%i1:var%i2, is), &
                 [totsize])
             else
               buffer%doublebuff(1:totsize) =  &
-                reshape(var%rval(var%j1:var%j2,var%i1:var%i2),[totsize])
+                reshape(var%rval(var%j1:var%j2, var%i1:var%i2), [totsize])
             end if
           end if
           nd = 2
@@ -2275,11 +2275,11 @@ module mod_ncstream
             nd = 3
           end if
 #ifdef PNETCDF
-          ncstat = nf90mpi_put_var_all(stream%id,var%id, &
-            buffer%doublebuff,stream%istart(1:nd),stream%icount(1:nd))
+          ncstat = nf90mpi_put_var_all(stream%id, var%id, &
+            buffer%doublebuff, stream%istart(1:nd), stream%icount(1:nd))
 #else
-          ncstat = nf90_put_var(stream%id,var%id, &
-            buffer%doublebuff,stream%istart(1:nd),stream%icount(1:nd))
+          ncstat = nf90_put_var(stream%id, var%id, &
+            buffer%doublebuff, stream%istart(1:nd), stream%icount(1:nd))
 #endif
         class is (ncvariable3d_double)
           if ( stream%l_parallel .and. var%lgridded ) then
@@ -2301,15 +2301,15 @@ module mod_ncstream
             if ( .not. associated(var%rval) .and. &
                  .not. associated(var%rval_level) .and. &
                  .not. associated(var%rval_slice) ) then
-              write(stderr,*) 'In File ',__FILE__,' at line: ',__LINE__
-              write(stderr,*) 'Unassociated pointer to variable'
+              write(stderr, *) 'In File ',__FILE__, ' at line: ',__LINE__
+              write(stderr, *) 'Unassociated pointer to variable'
               call die('nc_stream','Cannot write variable '//trim(var%vname)// &
                 ' in file '//trim(stream%filename), 1)
             end if
             if ( var%j1 > 0 .and. var%j2 > 0 ) then
               if ( (var%j2-var%j1+1) /= stream%icount(1) ) then
-                write(stderr,*) 'In File ',__FILE__,' at line: ',__LINE__
-                write(stderr,*) 'Internal indexes JX different from file'
+                write(stderr, *) 'In File ',__FILE__, ' at line: ',__LINE__
+                write(stderr, *) 'Internal indexes JX different from file'
                 call die('nc_stream','Cannot write variable '// &
                   trim(var%vname)//' in file '//trim(stream%filename), 1)
               end if
@@ -2319,8 +2319,8 @@ module mod_ncstream
             end if
             if ( var%i1 > 0 .and. var%i2 > 0 ) then
               if ( (var%i2-var%i1+1) /= stream%icount(2) ) then
-                write(stderr,*) 'In File ',__FILE__,' at line: ',__LINE__
-                write(stderr,*) 'Internal indexes IY different from file'
+                write(stderr, *) 'In File ',__FILE__, ' at line: ',__LINE__
+                write(stderr, *) 'Internal indexes IY different from file'
                 call die('nc_stream','Cannot write variable '// &
                   trim(var%vname)//' in file '//trim(stream%filename), 1)
               end if
@@ -2330,8 +2330,8 @@ module mod_ncstream
             end if
             if ( var%k1 > 0 .and. var%k2 > 0 ) then
               if ( (var%k2-var%k1+1) /= stream%icount(3) ) then
-                write(stderr,*) 'In File ',__FILE__,' at line: ',__LINE__
-                write(stderr,*) 'Internal indexes KZ different from file'
+                write(stderr, *) 'In File ',__FILE__, ' at line: ',__LINE__
+                write(stderr, *) 'Internal indexes KZ different from file'
                 call die('nc_stream','Cannot write variable '// &
                   trim(var%vname)//' in file '//trim(stream%filename), 1)
               end if
@@ -2341,18 +2341,18 @@ module mod_ncstream
             end if
             if ( var%is_slice ) then
               if ( .not. present(is) ) then
-                write(stderr,*) 'In File ',__FILE__,' at line: ',__LINE__
-                write(stderr,*) 'Requesting slice without giving index...'
+                write(stderr, *) 'In File ',__FILE__, ' at line: ',__LINE__
+                write(stderr, *) 'Requesting slice without giving index...'
                 call die('nc_stream','Cannot write variable '// &
                   trim(var%vname)//' in file '//trim(stream%filename), 1)
               end if
               buffer%doublebuff(1:totsize) = &
-                reshape(var%rval_slice(var%j1:var%j2,var%i1:var%i2, &
-                  var%k1:var%k2,is), [totsize])
+                reshape(var%rval_slice(var%j1:var%j2, var%i1:var%i2, &
+                  var%k1:var%k2, is), [totsize])
             else
               buffer%doublebuff(1:totsize) = &
-                reshape(var%rval(var%j1:var%j2,var%i1:var%i2, &
-                  var%k1:var%k2),[totsize])
+                reshape(var%rval(var%j1:var%j2, var%i1:var%i2, &
+                  var%k1:var%k2), [totsize])
             end if
           end if
           nd = 3
@@ -2362,11 +2362,11 @@ module mod_ncstream
             nd = 4
           end if
 #ifdef PNETCDF
-          ncstat = nf90mpi_put_var_all(stream%id,var%id, &
-            buffer%doublebuff,stream%istart(1:nd),stream%icount(1:nd))
+          ncstat = nf90mpi_put_var_all(stream%id, var%id, &
+            buffer%doublebuff, stream%istart(1:nd), stream%icount(1:nd))
 #else
-          ncstat = nf90_put_var(stream%id,var%id, &
-            buffer%doublebuff,stream%istart(1:nd),stream%icount(1:nd))
+          ncstat = nf90_put_var(stream%id, var%id, &
+            buffer%doublebuff, stream%istart(1:nd), stream%icount(1:nd))
 #endif
         class is (ncvariable4d_double)
           if ( stream%l_parallel .and. var%lgridded ) then
@@ -2388,15 +2388,15 @@ module mod_ncstream
           stream%icount(4) = var%nval(4)
           if ( docopy ) then
             if ( .not. associated(var%rval) ) then
-              write(stderr,*) 'In File ',__FILE__,' at line: ',__LINE__
-              write(stderr,*) 'Unassociated pointer to variable'
+              write(stderr, *) 'In File ',__FILE__, ' at line: ',__LINE__
+              write(stderr, *) 'Unassociated pointer to variable'
               call die('nc_stream','Cannot write variable '//trim(var%vname)// &
                 ' in file '//trim(stream%filename), 1)
             end if
             if ( var%j1 > 0 .and. var%j2 > 0 ) then
               if ( (var%j2-var%j1+1) /= stream%icount(1) ) then
-                write(stderr,*) 'In File ',__FILE__,' at line: ',__LINE__
-                write(stderr,*) 'Internal indexes JX different from file'
+                write(stderr, *) 'In File ',__FILE__, ' at line: ',__LINE__
+                write(stderr, *) 'Internal indexes JX different from file'
                 call die('nc_stream','Cannot write variable '// &
                   trim(var%vname)//' in file '//trim(stream%filename), 1)
               end if
@@ -2406,8 +2406,8 @@ module mod_ncstream
             end if
             if ( var%i1 > 0 .and. var%i2 > 0 ) then
               if ( (var%i2-var%i1+1) /= stream%icount(2) ) then
-                write(stderr,*) 'In File ',__FILE__,' at line: ',__LINE__
-                write(stderr,*) 'Internal indexes IY different from file'
+                write(stderr, *) 'In File ',__FILE__, ' at line: ',__LINE__
+                write(stderr, *) 'Internal indexes IY different from file'
                 call die('nc_stream','Cannot write variable '// &
                   trim(var%vname)//' in file '//trim(stream%filename), 1)
               end if
@@ -2417,8 +2417,8 @@ module mod_ncstream
             end if
             if ( var%k1 > 0 .and. var%k2 > 0 ) then
               if ( (var%k2-var%k1+1) /= stream%icount(3) ) then
-                write(stderr,*) 'In File ',__FILE__,' at line: ',__LINE__
-                write(stderr,*) 'Internal indexes KZ different from file'
+                write(stderr, *) 'In File ',__FILE__, ' at line: ',__LINE__
+                write(stderr, *) 'Internal indexes KZ different from file'
                 call die('nc_stream','Cannot write variable '// &
                   trim(var%vname)//' in file '//trim(stream%filename), 1)
               end if
@@ -2428,8 +2428,8 @@ module mod_ncstream
             end if
             if ( var%n1 > 0 .and. var%n2 > 0 ) then
               if ( (var%n2-var%n1+1) /= stream%icount(4) ) then
-                write(stderr,*) 'In File ',__FILE__,' at line: ',__LINE__
-                write(stderr,*) 'Internal indexes 4 different from file'
+                write(stderr, *) 'In File ',__FILE__, ' at line: ',__LINE__
+                write(stderr, *) 'Internal indexes 4 different from file'
                 call die('nc_stream','Cannot write variable '// &
                   trim(var%vname)//' in file '//trim(stream%filename), 1)
               end if
@@ -2438,14 +2438,14 @@ module mod_ncstream
               var%n2 = stream%icount(4)
             end if
             if ( .not. associated(var%rval) ) then
-              write(stderr,*) 'In File ',__FILE__,' at line: ',__LINE__
-              write(stderr,*) 'Unassociated pointer to variable'
+              write(stderr, *) 'In File ',__FILE__, ' at line: ',__LINE__
+              write(stderr, *) 'Unassociated pointer to variable'
               call die('nc_stream','Cannot write variable '//trim(var%vname)// &
                 ' in file '//trim(stream%filename), 1)
             end if
             buffer%doublebuff(1:totsize) = &
-              reshape(var%rval(var%j1:var%j2,var%i1:var%i2, &
-                var%k1:var%k2,var%n1:var%n2),[totsize])
+              reshape(var%rval(var%j1:var%j2, var%i1:var%i2, &
+                var%k1:var%k2, var%n1:var%n2), [totsize])
           end if
           nd = 4
           if ( var%lrecords ) then
@@ -2454,28 +2454,28 @@ module mod_ncstream
             nd = 5
           end if
 #ifdef PNETCDF
-          ncstat = nf90mpi_put_var_all(stream%id,var%id, &
-            buffer%doublebuff,stream%istart(1:nd),stream%icount(1:nd))
+          ncstat = nf90mpi_put_var_all(stream%id, var%id, &
+            buffer%doublebuff, stream%istart(1:nd), stream%icount(1:nd))
 #else
-          ncstat = nf90_put_var(stream%id,var%id, &
-            buffer%doublebuff,stream%istart(1:nd),stream%icount(1:nd))
+          ncstat = nf90_put_var(stream%id, var%id, &
+            buffer%doublebuff, stream%istart(1:nd), stream%icount(1:nd))
 #endif
         class is (ncvariable0d_real)
           if ( var%lrecords ) then
             stream%istart(1) = stream%irec
             stream%icount(1) = 1
 #ifdef PNETCDF
-            ncstat = nf90mpi_put_var_all(stream%id,var%id,var%rval, &
-              stream%istart(1:1),stream%icount(1:1))
+            ncstat = nf90mpi_put_var_all(stream%id, var%id, var%rval, &
+              stream%istart(1:1), stream%icount(1:1))
 #else
-            ncstat = nf90_put_var(stream%id,var%id,var%rval, &
-              stream%istart(1:1),stream%icount(1:1))
+            ncstat = nf90_put_var(stream%id, var%id, var%rval, &
+              stream%istart(1:1), stream%icount(1:1))
 #endif
           else
 #ifdef PNETCDF
-            ncstat = nf90mpi_put_var_all(stream%id,var%id,var%rval(1))
+            ncstat = nf90mpi_put_var_all(stream%id, var%id, var%rval(1))
 #else
-            ncstat = nf90_put_var(stream%id,var%id,var%rval(1))
+            ncstat = nf90_put_var(stream%id, var%id, var%rval(1))
 #endif
           end if
         class is (ncvariable0d_mixed)
@@ -2483,24 +2483,24 @@ module mod_ncstream
             stream%istart(1) = stream%irec
             stream%icount(1) = 1
 #ifdef PNETCDF
-            ncstat = nf90mpi_put_var_all(stream%id,var%id,var%rval, &
-              stream%istart(1:1),stream%icount(1:1))
+            ncstat = nf90mpi_put_var_all(stream%id, var%id, var%rval, &
+              stream%istart(1:1), stream%icount(1:1))
 #else
-            ncstat = nf90_put_var(stream%id,var%id,var%rval, &
-              stream%istart(1:1),stream%icount(1:1))
+            ncstat = nf90_put_var(stream%id, var%id, var%rval, &
+              stream%istart(1:1), stream%icount(1:1))
 #endif
           else
 #ifdef PNETCDF
-            ncstat = nf90mpi_put_var_all(stream%id,var%id,var%rval(1))
+            ncstat = nf90mpi_put_var_all(stream%id, var%id, var%rval(1))
 #else
-            ncstat = nf90_put_var(stream%id,var%id,var%rval(1))
+            ncstat = nf90_put_var(stream%id, var%id, var%rval(1))
 #endif
           end if
         class is (ncvariable1d_real)
           if ( docopy ) then
             if ( .not. associated(var%rval) ) then
-              write(stderr,*) 'In File ',__FILE__,' at line: ',__LINE__
-              write(stderr,*) 'Unassociated pointer to variable'
+              write(stderr, *) 'In File ',__FILE__, ' at line: ',__LINE__
+              write(stderr, *) 'Unassociated pointer to variable'
               call die('nc_stream','Cannot write variable '//trim(var%vname)// &
                 ' in file '//trim(stream%filename), 1)
             end if
@@ -2515,21 +2515,21 @@ module mod_ncstream
             nd = 2
           end if
 #ifdef PNETCDF
-          ncstat = nf90mpi_put_var_all(stream%id,var%id, &
-            buffer%realbuff,stream%istart(1:nd),stream%icount(1:nd))
+          ncstat = nf90mpi_put_var_all(stream%id, var%id, &
+            buffer%realbuff, stream%istart(1:nd), stream%icount(1:nd))
 #else
-          ncstat = nf90_put_var(stream%id,var%id, &
-            buffer%realbuff,stream%istart(1:nd),stream%icount(1:nd))
+          ncstat = nf90_put_var(stream%id, var%id, &
+            buffer%realbuff, stream%istart(1:nd), stream%icount(1:nd))
 #endif
         class is (ncvariable1d_mixed)
           if ( docopy ) then
             if ( .not. associated(var%rval) ) then
-              write(stderr,*) 'In File ',__FILE__,' at line: ',__LINE__
-              write(stderr,*) 'Unassociated pointer to variable'
+              write(stderr, *) 'In File ',__FILE__, ' at line: ',__LINE__
+              write(stderr, *) 'Unassociated pointer to variable'
               call die('nc_stream','Cannot write variable '//trim(var%vname)// &
                 ' in file '//trim(stream%filename), 1)
             end if
-            buffer%realbuff(1:var%nval(1)) = real(var%rval(1:var%nval(1)),rk4)
+            buffer%realbuff(1:var%nval(1)) = real(var%rval(1:var%nval(1)), rk4)
           end if
           stream%istart(1) = 1
           stream%icount(1) = var%nval(1)
@@ -2540,11 +2540,11 @@ module mod_ncstream
             nd = 2
           end if
 #ifdef PNETCDF
-          ncstat = nf90mpi_put_var_all(stream%id,var%id, &
-            buffer%realbuff,stream%istart(1:nd),stream%icount(1:nd))
+          ncstat = nf90mpi_put_var_all(stream%id, var%id, &
+            buffer%realbuff, stream%istart(1:nd), stream%icount(1:nd))
 #else
-          ncstat = nf90_put_var(stream%id,var%id, &
-            buffer%realbuff,stream%istart(1:nd),stream%icount(1:nd))
+          ncstat = nf90_put_var(stream%id, var%id, &
+            buffer%realbuff, stream%istart(1:nd), stream%icount(1:nd))
 #endif
         class is (ncvariable2d_real)
           if ( stream%l_parallel .and. var%lgridded ) then
@@ -2563,17 +2563,17 @@ module mod_ncstream
           if ( docopy ) then
             if ( .not. associated(var%rval) .and. &
                  .not. associated(var%rval_slice) ) then
-              write(stderr,*) 'In File ',__FILE__,' at line: ',__LINE__
-              write(stderr,*) 'Unassociated pointer to variable'
+              write(stderr, *) 'In File ',__FILE__, ' at line: ',__LINE__
+              write(stderr, *) 'Unassociated pointer to variable'
               call die('nc_stream','Cannot write variable '//trim(var%vname)// &
                 ' in file '//trim(stream%filename), 1)
             end if
             if ( var%j1 > 0 .and. var%j2 > 0 ) then
               if ( (var%j2-var%j1+1) /= stream%icount(1) ) then
-                write(stderr,*) 'In File ',__FILE__,' at line: ',__LINE__
-                write(stderr,*) 'Internal indexes JX different from file'
-                write(stderr,*) 'file     : ', stream%icount(1)
-                write(stderr,*) 'internal : ', var%j2-var%j1+1
+                write(stderr, *) 'In File ',__FILE__, ' at line: ',__LINE__
+                write(stderr, *) 'Internal indexes JX different from file'
+                write(stderr, *) 'file     : ', stream%icount(1)
+                write(stderr, *) 'internal : ', var%j2-var%j1+1
                 call die('nc_stream','Cannot write variable '// &
                   trim(var%vname)//' in file '//trim(stream%filename), 1)
               end if
@@ -2583,8 +2583,8 @@ module mod_ncstream
             end if
             if ( var%i1 > 0 .and. var%i2 > 0 ) then
               if ( (var%i2-var%i1+1) /= stream%icount(2) ) then
-                write(stderr,*) 'In File ',__FILE__,' at line: ',__LINE__
-                write(stderr,*) 'Internal indexes IY different from file'
+                write(stderr, *) 'In File ',__FILE__, ' at line: ',__LINE__
+                write(stderr, *) 'Internal indexes IY different from file'
                 call die('nc_stream','Cannot write variable '// &
                   trim(var%vname)//' in file '//trim(stream%filename), 1)
               end if
@@ -2594,17 +2594,17 @@ module mod_ncstream
             end if
             if ( var%is_slice ) then
               if ( .not. present(is) ) then
-                write(stderr,*) 'In File ',__FILE__,' at line: ',__LINE__
-                write(stderr,*) 'Requesting slice without giving index...'
+                write(stderr, *) 'In File ',__FILE__, ' at line: ',__LINE__
+                write(stderr, *) 'Requesting slice without giving index...'
                 call die('nc_stream','Cannot write variable '// &
                   trim(var%vname)//' in file '//trim(stream%filename), 1)
               end if
               buffer%realbuff(1:totsize) =                                   &
-                reshape(var%rval_slice(var%j1:var%j2,var%i1:var%i2,is), &
+                reshape(var%rval_slice(var%j1:var%j2, var%i1:var%i2, is), &
                 [totsize])
             else
               buffer%realbuff(1:totsize) =                          &
-                reshape(var%rval(var%j1:var%j2,var%i1:var%i2), &
+                reshape(var%rval(var%j1:var%j2, var%i1:var%i2), &
                 [totsize])
             end if
 #ifdef BITSHAVE
@@ -2619,11 +2619,11 @@ module mod_ncstream
             nd = 3
           end if
 #ifdef PNETCDF
-          ncstat = nf90mpi_put_var_all(stream%id,var%id, &
-            buffer%realbuff,stream%istart(1:nd),stream%icount(1:nd))
+          ncstat = nf90mpi_put_var_all(stream%id, var%id, &
+            buffer%realbuff, stream%istart(1:nd), stream%icount(1:nd))
 #else
-          ncstat = nf90_put_var(stream%id,var%id, &
-            buffer%realbuff,stream%istart(1:nd),stream%icount(1:nd))
+          ncstat = nf90_put_var(stream%id, var%id, &
+            buffer%realbuff, stream%istart(1:nd), stream%icount(1:nd))
 #endif
         class is (ncvariable2d_mixed)
           if ( stream%l_parallel .and. var%lgridded ) then
@@ -2642,17 +2642,17 @@ module mod_ncstream
           if ( docopy ) then
             if ( .not. associated(var%rval) .and. &
                  .not. associated(var%rval_slice) ) then
-              write(stderr,*) 'In File ',__FILE__,' at line: ',__LINE__
-              write(stderr,*) 'Unassociated pointer to variable'
+              write(stderr, *) 'In File ',__FILE__, ' at line: ',__LINE__
+              write(stderr, *) 'Unassociated pointer to variable'
               call die('nc_stream','Cannot write variable '//trim(var%vname)// &
                 ' in file '//trim(stream%filename), 1)
             end if
             if ( var%j1 > 0 .and. var%j2 > 0 ) then
               if ( (var%j2-var%j1+1) /= stream%icount(1) ) then
-                write(stderr,*) 'In File ',__FILE__,' at line: ',__LINE__
-                write(stderr,*) 'Internal indexes JX different from file'
-                write(stderr,*) 'file     : ', stream%icount(1)
-                write(stderr,*) 'internal : ', var%j2-var%j1+1
+                write(stderr, *) 'In File ',__FILE__, ' at line: ',__LINE__
+                write(stderr, *) 'Internal indexes JX different from file'
+                write(stderr, *) 'file     : ', stream%icount(1)
+                write(stderr, *) 'internal : ', var%j2-var%j1+1
                 call die('nc_stream','Cannot write variable '// &
                   trim(var%vname)//' in file '//trim(stream%filename), 1)
               end if
@@ -2662,8 +2662,8 @@ module mod_ncstream
             end if
             if ( var%i1 > 0 .and. var%i2 > 0 ) then
               if ( (var%i2-var%i1+1) /= stream%icount(2) ) then
-                write(stderr,*) 'In File ',__FILE__,' at line: ',__LINE__
-                write(stderr,*) 'Internal indexes IY different from file'
+                write(stderr, *) 'In File ',__FILE__, ' at line: ',__LINE__
+                write(stderr, *) 'Internal indexes IY different from file'
                 call die('nc_stream','Cannot write variable '// &
                   trim(var%vname)//' in file '//trim(stream%filename), 1)
               end if
@@ -2673,18 +2673,18 @@ module mod_ncstream
             end if
             if ( var%is_slice ) then
               if ( .not. present(is) ) then
-                write(stderr,*) 'In File ',__FILE__,' at line: ',__LINE__
-                write(stderr,*) 'Requesting slice without giving index...'
+                write(stderr, *) 'In File ',__FILE__, ' at line: ',__LINE__
+                write(stderr, *) 'Requesting slice without giving index...'
                 call die('nc_stream','Cannot write variable '// &
                   trim(var%vname)//' in file '//trim(stream%filename), 1)
               end if
               buffer%realbuff(1:totsize) =                                   &
-                real(reshape(var%rval_slice(var%j1:var%j2,var%i1:var%i2,is), &
-                [totsize]),rk4)
+                real(reshape(var%rval_slice(var%j1:var%j2, var%i1:var%i2, is), &
+                [totsize]), rk4)
             else
               buffer%realbuff(1:totsize) =                          &
-                real(reshape(var%rval(var%j1:var%j2,var%i1:var%i2), &
-                [totsize]),rk4)
+                real(reshape(var%rval(var%j1:var%j2, var%i1:var%i2), &
+                [totsize]), rk4)
             end if
 #ifdef BITSHAVE
             buffer%realbuff(1:totsize) = &
@@ -2698,11 +2698,11 @@ module mod_ncstream
             nd = 3
           end if
 #ifdef PNETCDF
-          ncstat = nf90mpi_put_var_all(stream%id,var%id, &
-            buffer%realbuff,stream%istart(1:nd),stream%icount(1:nd))
+          ncstat = nf90mpi_put_var_all(stream%id, var%id, &
+            buffer%realbuff, stream%istart(1:nd), stream%icount(1:nd))
 #else
-          ncstat = nf90_put_var(stream%id,var%id, &
-            buffer%realbuff,stream%istart(1:nd),stream%icount(1:nd))
+          ncstat = nf90_put_var(stream%id, var%id, &
+            buffer%realbuff, stream%istart(1:nd), stream%icount(1:nd))
 #endif
         class is (ncvariable3d_real)
           if ( stream%l_parallel .and. var%lgridded ) then
@@ -2724,15 +2724,15 @@ module mod_ncstream
             if ( .not. associated(var%rval) .and. &
                  .not. associated(var%rval_level) .and. &
                  .not. associated(var%rval_slice) ) then
-              write(stderr,*) 'In File ',__FILE__,' at line: ',__LINE__
-              write(stderr,*) 'Unassociated pointer to variable'
+              write(stderr, *) 'In File ',__FILE__, ' at line: ',__LINE__
+              write(stderr, *) 'Unassociated pointer to variable'
               call die('nc_stream','Cannot write variable '//trim(var%vname)// &
                 ' in file '//trim(stream%filename), 1)
             end if
             if ( var%j1 > 0 .and. var%j2 > 0 ) then
               if ( (var%j2-var%j1+1) /= stream%icount(1) ) then
-                write(stderr,*) 'In File ',__FILE__,' at line: ',__LINE__
-                write(stderr,*) 'Internal indexes JX different from file'
+                write(stderr, *) 'In File ',__FILE__, ' at line: ',__LINE__
+                write(stderr, *) 'Internal indexes JX different from file'
                 call die('nc_stream','Cannot write variable '// &
                   trim(var%vname)//' in file '//trim(stream%filename), 1)
               end if
@@ -2742,8 +2742,8 @@ module mod_ncstream
             end if
             if ( var%i1 > 0 .and. var%i2 > 0 ) then
               if ( (var%i2-var%i1+1) /= stream%icount(2) ) then
-                write(stderr,*) 'In File ',__FILE__,' at line: ',__LINE__
-                write(stderr,*) 'Internal indexes IY different from file'
+                write(stderr, *) 'In File ',__FILE__, ' at line: ',__LINE__
+                write(stderr, *) 'Internal indexes IY different from file'
                 call die('nc_stream','Cannot write variable '// &
                   trim(var%vname)//' in file '//trim(stream%filename), 1)
               end if
@@ -2753,8 +2753,8 @@ module mod_ncstream
             end if
             if ( var%k1 > 0 .and. var%k2 > 0 ) then
               if ( (var%k2-var%k1+1) /= stream%icount(3) ) then
-                write(stderr,*) 'In File ',__FILE__,' at line: ',__LINE__
-                write(stderr,*) 'Internal indexes KZ different from file'
+                write(stderr, *) 'In File ',__FILE__, ' at line: ',__LINE__
+                write(stderr, *) 'Internal indexes KZ different from file'
                 call die('nc_stream','Cannot write variable '// &
                   trim(var%vname)//' in file '//trim(stream%filename), 1)
               end if
@@ -2764,18 +2764,18 @@ module mod_ncstream
             end if
             if ( var%is_slice ) then
               if ( .not. present(is) ) then
-                write(stderr,*) 'In File ',__FILE__,' at line: ',__LINE__
-                write(stderr,*) 'Requesting slice without giving index...'
+                write(stderr, *) 'In File ',__FILE__, ' at line: ',__LINE__
+                write(stderr, *) 'Requesting slice without giving index...'
                 call die('nc_stream','Cannot write variable '// &
                   trim(var%vname)//' in file '//trim(stream%filename), 1)
               end if
               buffer%realbuff(1:totsize) = &
-                reshape(var%rval_slice(var%j1:var%j2,var%i1:var%i2, &
-                  var%k1:var%k2,is), [totsize])
+                reshape(var%rval_slice(var%j1:var%j2, var%i1:var%i2, &
+                  var%k1:var%k2, is), [totsize])
             else
               buffer%realbuff(1:totsize) = &
-                reshape(var%rval(var%j1:var%j2,var%i1:var%i2, &
-                  var%k1:var%k2),[totsize])
+                reshape(var%rval(var%j1:var%j2, var%i1:var%i2, &
+                  var%k1:var%k2), [totsize])
             end if
 #ifdef BITSHAVE
             buffer%realbuff(1:totsize) = &
@@ -2789,11 +2789,11 @@ module mod_ncstream
             nd = 4
           end if
 #ifdef PNETCDF
-          ncstat = nf90mpi_put_var_all(stream%id,var%id, &
-            buffer%realbuff,stream%istart(1:nd),stream%icount(1:nd))
+          ncstat = nf90mpi_put_var_all(stream%id, var%id, &
+            buffer%realbuff, stream%istart(1:nd), stream%icount(1:nd))
 #else
-          ncstat = nf90_put_var(stream%id,var%id, &
-            buffer%realbuff,stream%istart(1:nd),stream%icount(1:nd))
+          ncstat = nf90_put_var(stream%id, var%id, &
+            buffer%realbuff, stream%istart(1:nd), stream%icount(1:nd))
 #endif
         class is (ncvariable3d_mixed)
           if ( stream%l_parallel .and. var%lgridded ) then
@@ -2815,15 +2815,15 @@ module mod_ncstream
             if ( .not. associated(var%rval) .and. &
                  .not. associated(var%rval_level) .and. &
                  .not. associated(var%rval_slice) ) then
-              write(stderr,*) 'In File ',__FILE__,' at line: ',__LINE__
-              write(stderr,*) 'Unassociated pointer to variable'
+              write(stderr, *) 'In File ',__FILE__, ' at line: ',__LINE__
+              write(stderr, *) 'Unassociated pointer to variable'
               call die('nc_stream','Cannot write variable '//trim(var%vname)// &
                 ' in file '//trim(stream%filename), 1)
             end if
             if ( var%j1 > 0 .and. var%j2 > 0 ) then
               if ( (var%j2-var%j1+1) /= stream%icount(1) ) then
-                write(stderr,*) 'In File ',__FILE__,' at line: ',__LINE__
-                write(stderr,*) 'Internal indexes JX different from file'
+                write(stderr, *) 'In File ',__FILE__, ' at line: ',__LINE__
+                write(stderr, *) 'Internal indexes JX different from file'
                 call die('nc_stream','Cannot write variable '// &
                   trim(var%vname)//' in file '//trim(stream%filename), 1)
               end if
@@ -2833,8 +2833,8 @@ module mod_ncstream
             end if
             if ( var%i1 > 0 .and. var%i2 > 0 ) then
               if ( (var%i2-var%i1+1) /= stream%icount(2) ) then
-                write(stderr,*) 'In File ',__FILE__,' at line: ',__LINE__
-                write(stderr,*) 'Internal indexes IY different from file'
+                write(stderr, *) 'In File ',__FILE__, ' at line: ',__LINE__
+                write(stderr, *) 'Internal indexes IY different from file'
                 call die('nc_stream','Cannot write variable '// &
                   trim(var%vname)//' in file '//trim(stream%filename), 1)
               end if
@@ -2844,8 +2844,8 @@ module mod_ncstream
             end if
             if ( var%k1 > 0 .and. var%k2 > 0 ) then
               if ( (var%k2-var%k1+1) /= stream%icount(3) ) then
-                write(stderr,*) 'In File ',__FILE__,' at line: ',__LINE__
-                write(stderr,*) 'Internal indexes KZ different from file'
+                write(stderr, *) 'In File ',__FILE__, ' at line: ',__LINE__
+                write(stderr, *) 'Internal indexes KZ different from file'
                 call die('nc_stream','Cannot write variable '// &
                   trim(var%vname)//' in file '//trim(stream%filename), 1)
               end if
@@ -2855,18 +2855,18 @@ module mod_ncstream
             end if
             if ( var%is_slice ) then
               if ( .not. present(is) ) then
-                write(stderr,*) 'In File ',__FILE__,' at line: ',__LINE__
-                write(stderr,*) 'Requesting slice without giving index...'
+                write(stderr, *) 'In File ',__FILE__, ' at line: ',__LINE__
+                write(stderr, *) 'Requesting slice without giving index...'
                 call die('nc_stream','Cannot write variable '// &
                   trim(var%vname)//' in file '//trim(stream%filename), 1)
               end if
               buffer%realbuff(1:totsize) = &
-                real(reshape(var%rval_slice(var%j1:var%j2,var%i1:var%i2, &
-                  var%k1:var%k2,is), [totsize]),rk4)
+                real(reshape(var%rval_slice(var%j1:var%j2, var%i1:var%i2, &
+                  var%k1:var%k2, is), [totsize]), rk4)
             else
               buffer%realbuff(1:totsize) = &
-                real(reshape(var%rval(var%j1:var%j2,var%i1:var%i2, &
-                  var%k1:var%k2),[totsize]),rk4)
+                real(reshape(var%rval(var%j1:var%j2, var%i1:var%i2, &
+                  var%k1:var%k2), [totsize]), rk4)
             end if
 #ifdef BITSHAVE
             buffer%realbuff(1:totsize) = &
@@ -2880,11 +2880,11 @@ module mod_ncstream
             nd = 4
           end if
 #ifdef PNETCDF
-          ncstat = nf90mpi_put_var_all(stream%id,var%id, &
-            buffer%realbuff,stream%istart(1:nd),stream%icount(1:nd))
+          ncstat = nf90mpi_put_var_all(stream%id, var%id, &
+            buffer%realbuff, stream%istart(1:nd), stream%icount(1:nd))
 #else
-          ncstat = nf90_put_var(stream%id,var%id, &
-            buffer%realbuff,stream%istart(1:nd),stream%icount(1:nd))
+          ncstat = nf90_put_var(stream%id, var%id, &
+            buffer%realbuff, stream%istart(1:nd), stream%icount(1:nd))
 #endif
         class is (ncvariable4d_real)
           if ( stream%l_parallel .and. var%lgridded ) then
@@ -2906,15 +2906,15 @@ module mod_ncstream
           stream%icount(4) = var%nval(4)
           if ( docopy ) then
             if ( .not. associated(var%rval) ) then
-              write(stderr,*) 'In File ',__FILE__,' at line: ',__LINE__
-              write(stderr,*) 'Unassociated pointer to variable'
+              write(stderr, *) 'In File ',__FILE__, ' at line: ',__LINE__
+              write(stderr, *) 'Unassociated pointer to variable'
               call die('nc_stream','Cannot write variable '//trim(var%vname)// &
                 ' in file '//trim(stream%filename), 1)
             end if
             if ( var%j1 > 0 .and. var%j2 > 0 ) then
               if ( (var%j2-var%j1+1) /= stream%icount(1) ) then
-                write(stderr,*) 'In File ',__FILE__,' at line: ',__LINE__
-                write(stderr,*) 'Internal indexes JX different from file'
+                write(stderr, *) 'In File ',__FILE__, ' at line: ',__LINE__
+                write(stderr, *) 'Internal indexes JX different from file'
                 call die('nc_stream','Cannot write variable '// &
                   trim(var%vname)//' in file '//trim(stream%filename), 1)
               end if
@@ -2924,8 +2924,8 @@ module mod_ncstream
             end if
             if ( var%i1 > 0 .and. var%i2 > 0 ) then
               if ( (var%i2-var%i1+1) /= stream%icount(2) ) then
-                write(stderr,*) 'In File ',__FILE__,' at line: ',__LINE__
-                write(stderr,*) 'Internal indexes IY different from file'
+                write(stderr, *) 'In File ',__FILE__, ' at line: ',__LINE__
+                write(stderr, *) 'Internal indexes IY different from file'
                 call die('nc_stream','Cannot write variable '// &
                   trim(var%vname)//' in file '//trim(stream%filename), 1)
               end if
@@ -2935,8 +2935,8 @@ module mod_ncstream
             end if
             if ( var%k1 > 0 .and. var%k2 > 0 ) then
               if ( (var%k2-var%k1+1) /= stream%icount(3) ) then
-                write(stderr,*) 'In File ',__FILE__,' at line: ',__LINE__
-                write(stderr,*) 'Internal indexes KZ different from file'
+                write(stderr, *) 'In File ',__FILE__, ' at line: ',__LINE__
+                write(stderr, *) 'Internal indexes KZ different from file'
                 call die('nc_stream','Cannot write variable '// &
                   trim(var%vname)//' in file '//trim(stream%filename), 1)
               end if
@@ -2946,8 +2946,8 @@ module mod_ncstream
             end if
             if ( var%n1 > 0 .and. var%n2 > 0 ) then
               if ( (var%n2-var%n1+1) /= stream%icount(4) ) then
-                write(stderr,*) 'In File ',__FILE__,' at line: ',__LINE__
-                write(stderr,*) 'Internal indexes 4 different from file'
+                write(stderr, *) 'In File ',__FILE__, ' at line: ',__LINE__
+                write(stderr, *) 'Internal indexes 4 different from file'
                 call die('nc_stream','Cannot write variable '// &
                   trim(var%vname)//' in file '//trim(stream%filename), 1)
               end if
@@ -2956,14 +2956,14 @@ module mod_ncstream
               var%n2 = stream%icount(4)
             end if
             if ( .not. associated(var%rval) ) then
-              write(stderr,*) 'In File ',__FILE__,' at line: ',__LINE__
-              write(stderr,*) 'Unassociated pointer to variable'
+              write(stderr, *) 'In File ',__FILE__, ' at line: ',__LINE__
+              write(stderr, *) 'Unassociated pointer to variable'
               call die('nc_stream','Cannot write variable '//trim(var%vname)// &
                 ' in file '//trim(stream%filename), 1)
             end if
             buffer%realbuff(1:totsize) = &
-              reshape(var%rval(var%j1:var%j2,var%i1:var%i2, &
-                var%k1:var%k2,var%n1:var%n2),[totsize])
+              reshape(var%rval(var%j1:var%j2, var%i1:var%i2, &
+                var%k1:var%k2, var%n1:var%n2), [totsize])
 #ifdef BITSHAVE
             buffer%realbuff(1:totsize) = &
               bitshave_15(buffer%realbuff(1:totsize))
@@ -2976,11 +2976,11 @@ module mod_ncstream
             nd = 5
           end if
 #ifdef PNETCDF
-          ncstat = nf90mpi_put_var_all(stream%id,var%id, &
-            buffer%realbuff,stream%istart(1:nd),stream%icount(1:nd))
+          ncstat = nf90mpi_put_var_all(stream%id, var%id, &
+            buffer%realbuff, stream%istart(1:nd), stream%icount(1:nd))
 #else
-          ncstat = nf90_put_var(stream%id,var%id, &
-            buffer%realbuff,stream%istart(1:nd),stream%icount(1:nd))
+          ncstat = nf90_put_var(stream%id, var%id, &
+            buffer%realbuff, stream%istart(1:nd), stream%icount(1:nd))
 #endif
         class is (ncvariable4d_mixed)
           if ( stream%l_parallel .and. var%lgridded ) then
@@ -3002,15 +3002,15 @@ module mod_ncstream
           stream%icount(4) = var%nval(4)
           if ( docopy ) then
             if ( .not. associated(var%rval) ) then
-              write(stderr,*) 'In File ',__FILE__,' at line: ',__LINE__
-              write(stderr,*) 'Unassociated pointer to variable'
+              write(stderr, *) 'In File ',__FILE__, ' at line: ',__LINE__
+              write(stderr, *) 'Unassociated pointer to variable'
               call die('nc_stream','Cannot write variable '//trim(var%vname)// &
                 ' in file '//trim(stream%filename), 1)
             end if
             if ( var%j1 > 0 .and. var%j2 > 0 ) then
               if ( (var%j2-var%j1+1) /= stream%icount(1) ) then
-                write(stderr,*) 'In File ',__FILE__,' at line: ',__LINE__
-                write(stderr,*) 'Internal indexes JX different from file'
+                write(stderr, *) 'In File ',__FILE__, ' at line: ',__LINE__
+                write(stderr, *) 'Internal indexes JX different from file'
                 call die('nc_stream','Cannot write variable '// &
                   trim(var%vname)//' in file '//trim(stream%filename), 1)
               end if
@@ -3020,8 +3020,8 @@ module mod_ncstream
             end if
             if ( var%i1 > 0 .and. var%i2 > 0 ) then
               if ( (var%i2-var%i1+1) /= stream%icount(2) ) then
-                write(stderr,*) 'In File ',__FILE__,' at line: ',__LINE__
-                write(stderr,*) 'Internal indexes IY different from file'
+                write(stderr, *) 'In File ',__FILE__, ' at line: ',__LINE__
+                write(stderr, *) 'Internal indexes IY different from file'
                 call die('nc_stream','Cannot write variable '// &
                   trim(var%vname)//' in file '//trim(stream%filename), 1)
               end if
@@ -3031,8 +3031,8 @@ module mod_ncstream
             end if
             if ( var%k1 > 0 .and. var%k2 > 0 ) then
               if ( (var%k2-var%k1+1) /= stream%icount(3) ) then
-                write(stderr,*) 'In File ',__FILE__,' at line: ',__LINE__
-                write(stderr,*) 'Internal indexes KZ different from file'
+                write(stderr, *) 'In File ',__FILE__, ' at line: ',__LINE__
+                write(stderr, *) 'Internal indexes KZ different from file'
                 call die('nc_stream','Cannot write variable '// &
                   trim(var%vname)//' in file '//trim(stream%filename), 1)
               end if
@@ -3042,8 +3042,8 @@ module mod_ncstream
             end if
             if ( var%n1 > 0 .and. var%n2 > 0 ) then
               if ( (var%n2-var%n1+1) /= stream%icount(4) ) then
-                write(stderr,*) 'In File ',__FILE__,' at line: ',__LINE__
-                write(stderr,*) 'Internal indexes 4 different from file'
+                write(stderr, *) 'In File ',__FILE__, ' at line: ',__LINE__
+                write(stderr, *) 'Internal indexes 4 different from file'
                 call die('nc_stream','Cannot write variable '// &
                   trim(var%vname)//' in file '//trim(stream%filename), 1)
               end if
@@ -3052,14 +3052,14 @@ module mod_ncstream
               var%n2 = stream%icount(4)
             end if
             if ( .not. associated(var%rval) ) then
-              write(stderr,*) 'In File ',__FILE__,' at line: ',__LINE__
-              write(stderr,*) 'Unassociated pointer to variable'
+              write(stderr, *) 'In File ',__FILE__, ' at line: ',__LINE__
+              write(stderr, *) 'Unassociated pointer to variable'
               call die('nc_stream','Cannot write variable '//trim(var%vname)// &
                 ' in file '//trim(stream%filename), 1)
             end if
             buffer%realbuff(1:totsize) = &
-              real(reshape(var%rval(var%j1:var%j2,var%i1:var%i2, &
-                var%k1:var%k2,var%n1:var%n2),[totsize]),rk4)
+              real(reshape(var%rval(var%j1:var%j2, var%i1:var%i2, &
+                var%k1:var%k2, var%n1:var%n2), [totsize]), rk4)
 #ifdef BITSHAVE
             buffer%realbuff(1:totsize) = &
               bitshave_15(buffer%realbuff(1:totsize))
@@ -3072,35 +3072,35 @@ module mod_ncstream
             nd = 5
           end if
 #ifdef PNETCDF
-          ncstat = nf90mpi_put_var_all(stream%id,var%id, &
-            buffer%realbuff,stream%istart(1:nd),stream%icount(1:nd))
+          ncstat = nf90mpi_put_var_all(stream%id, var%id, &
+            buffer%realbuff, stream%istart(1:nd), stream%icount(1:nd))
 #else
-          ncstat = nf90_put_var(stream%id,var%id, &
-            buffer%realbuff,stream%istart(1:nd),stream%icount(1:nd))
+          ncstat = nf90_put_var(stream%id, var%id, &
+            buffer%realbuff, stream%istart(1:nd), stream%icount(1:nd))
 #endif
         class is (ncvariable0d_integer)
           if ( var%lrecords ) then
             stream%istart(1) = stream%irec
             stream%icount(1) = 1
 #ifdef PNETCDF
-            ncstat = nf90mpi_put_var_all(stream%id,var%id,var%ival, &
-              stream%istart(1:1),stream%icount(1:1))
+            ncstat = nf90mpi_put_var_all(stream%id, var%id, var%ival, &
+              stream%istart(1:1), stream%icount(1:1))
 #else
-            ncstat = nf90_put_var(stream%id,var%id,var%ival, &
-              stream%istart(1:1),stream%icount(1:1))
+            ncstat = nf90_put_var(stream%id, var%id, var%ival, &
+              stream%istart(1:1), stream%icount(1:1))
 #endif
           else
 #ifdef PNETCDF
-            ncstat = nf90mpi_put_var_all(stream%id,var%id,var%ival(1))
+            ncstat = nf90mpi_put_var_all(stream%id, var%id, var%ival(1))
 #else
-            ncstat = nf90_put_var(stream%id,var%id,var%ival(1))
+            ncstat = nf90_put_var(stream%id, var%id, var%ival(1))
 #endif
           end if
         class is (ncvariable1d_integer)
           if ( docopy ) then
             if ( .not. associated(var%ival) ) then
-              write(stderr,*) 'In File ',__FILE__,' at line: ',__LINE__
-              write(stderr,*) 'Unassociated pointer to variable'
+              write(stderr, *) 'In File ',__FILE__, ' at line: ',__LINE__
+              write(stderr, *) 'Unassociated pointer to variable'
               call die('nc_stream','Cannot write variable '//trim(var%vname)// &
                 ' in file '//trim(stream%filename), 1)
             end if
@@ -3115,11 +3115,11 @@ module mod_ncstream
             nd = 2
           end if
 #ifdef PNETCDF
-          ncstat = nf90mpi_put_var_all(stream%id,var%id, &
-            buffer%intbuff,stream%istart(1:nd),stream%icount(1:nd))
+          ncstat = nf90mpi_put_var_all(stream%id, var%id, &
+            buffer%intbuff, stream%istart(1:nd), stream%icount(1:nd))
 #else
-          ncstat = nf90_put_var(stream%id,var%id, &
-            buffer%intbuff,stream%istart(1:nd),stream%icount(1:nd))
+          ncstat = nf90_put_var(stream%id, var%id, &
+            buffer%intbuff, stream%istart(1:nd), stream%icount(1:nd))
 #endif
         class is (ncvariable2d_integer)
           if ( stream%l_parallel .and. var%lgridded ) then
@@ -3138,15 +3138,15 @@ module mod_ncstream
           if ( docopy ) then
             if ( .not. associated(var%ival) .and. &
                  .not. associated(var%ival_slice) ) then
-              write(stderr,*) 'In File ',__FILE__,' at line: ',__LINE__
-              write(stderr,*) 'Unassociated pointer to variable'
+              write(stderr, *) 'In File ',__FILE__, ' at line: ',__LINE__
+              write(stderr, *) 'Unassociated pointer to variable'
               call die('nc_stream','Cannot write variable '//trim(var%vname)// &
                 ' in file '//trim(stream%filename), 1)
             end if
             if ( var%j1 > 0 .and. var%j2 > 0 ) then
               if ( (var%j2-var%j1+1) /= stream%icount(1) ) then
-                write(stderr,*) 'In File ',__FILE__,' at line: ',__LINE__
-                write(stderr,*) 'Internal indexes JX different from file'
+                write(stderr, *) 'In File ',__FILE__, ' at line: ',__LINE__
+                write(stderr, *) 'Internal indexes JX different from file'
                 call die('nc_stream','Cannot write variable '// &
                   trim(var%vname)//' in file '//trim(stream%filename), 1)
               end if
@@ -3156,8 +3156,8 @@ module mod_ncstream
             end if
             if ( var%i1 > 0 .and. var%i2 > 0 ) then
               if ( (var%i2-var%i1+1) /= stream%icount(2) ) then
-                write(stderr,*) 'In File ',__FILE__,' at line: ',__LINE__
-                write(stderr,*) 'Internal indexes IY different from file'
+                write(stderr, *) 'In File ',__FILE__, ' at line: ',__LINE__
+                write(stderr, *) 'Internal indexes IY different from file'
                 call die('nc_stream','Cannot write variable '// &
                   trim(var%vname)//' in file '//trim(stream%filename), 1)
               end if
@@ -3167,17 +3167,17 @@ module mod_ncstream
             end if
             if ( var%is_slice ) then
               if ( .not. present(is) ) then
-                write(stderr,*) 'In File ',__FILE__,' at line: ',__LINE__
-                write(stderr,*) 'Requesting slice without giving index...'
+                write(stderr, *) 'In File ',__FILE__, ' at line: ',__LINE__
+                write(stderr, *) 'Requesting slice without giving index...'
                 call die('nc_stream','Cannot write variable '// &
                   trim(var%vname)//' in file '//trim(stream%filename), 1)
               end if
               buffer%intbuff(1:totsize) =                               &
-                reshape(var%ival_slice(var%j1:var%j2,var%i1:var%i2,is), &
+                reshape(var%ival_slice(var%j1:var%j2, var%i1:var%i2, is), &
                 [totsize])
             else
               buffer%intbuff(1:totsize) =                               &
-                reshape(var%ival(var%j1:var%j2,var%i1:var%i2),[totsize])
+                reshape(var%ival(var%j1:var%j2, var%i1:var%i2), [totsize])
             end if
           end if
           nd = 2
@@ -3187,11 +3187,11 @@ module mod_ncstream
             nd = 3
           end if
 #ifdef PNETCDF
-          ncstat = nf90mpi_put_var_all(stream%id,var%id, &
-            buffer%intbuff,stream%istart(1:nd),stream%icount(1:nd))
+          ncstat = nf90mpi_put_var_all(stream%id, var%id, &
+            buffer%intbuff, stream%istart(1:nd), stream%icount(1:nd))
 #else
-          ncstat = nf90_put_var(stream%id,var%id, &
-            buffer%intbuff,stream%istart(1:nd),stream%icount(1:nd))
+          ncstat = nf90_put_var(stream%id, var%id, &
+            buffer%intbuff, stream%istart(1:nd), stream%icount(1:nd))
 #endif
         class is (ncvariable3d_integer)
           if ( stream%l_parallel .and. var%lgridded ) then
@@ -3213,15 +3213,15 @@ module mod_ncstream
             if ( .not. associated(var%ival) .and. &
                  .not. associated(var%ival_slice) .and. &
                  .not. associated(var%ival_level) ) then
-              write(stderr,*) 'In File ',__FILE__,' at line: ',__LINE__
-              write(stderr,*) 'Unassociated pointer to variable'
+              write(stderr, *) 'In File ',__FILE__, ' at line: ',__LINE__
+              write(stderr, *) 'Unassociated pointer to variable'
               call die('nc_stream','Cannot write variable '//trim(var%vname)// &
                 ' in file '//trim(stream%filename), 1)
             end if
             if ( var%j1 > 0 .and. var%j2 > 0 ) then
               if ( (var%j2-var%j1+1) /= stream%icount(1) ) then
-                write(stderr,*) 'In File ',__FILE__,' at line: ',__LINE__
-                write(stderr,*) 'Internal indexes JX different from file'
+                write(stderr, *) 'In File ',__FILE__, ' at line: ',__LINE__
+                write(stderr, *) 'Internal indexes JX different from file'
                 call die('nc_stream','Cannot write variable '// &
                   trim(var%vname)//' in file '//trim(stream%filename), 1)
               end if
@@ -3231,8 +3231,8 @@ module mod_ncstream
             end if
             if ( var%i1 > 0 .and. var%i2 > 0 ) then
               if ( (var%i2-var%i1+1) /= stream%icount(2) ) then
-                write(stderr,*) 'In File ',__FILE__,' at line: ',__LINE__
-                write(stderr,*) 'Internal indexes IY different from file'
+                write(stderr, *) 'In File ',__FILE__, ' at line: ',__LINE__
+                write(stderr, *) 'Internal indexes IY different from file'
                 call die('nc_stream','Cannot write variable '// &
                   trim(var%vname)//' in file '//trim(stream%filename), 1)
               end if
@@ -3242,8 +3242,8 @@ module mod_ncstream
             end if
             if ( var%k1 > 0 .and. var%k2 > 0 ) then
               if ( (var%k2-var%k1+1) /= stream%icount(3) ) then
-                write(stderr,*) 'In File ',__FILE__,' at line: ',__LINE__
-                write(stderr,*) 'Internal indexes KZ different from file'
+                write(stderr, *) 'In File ',__FILE__, ' at line: ',__LINE__
+                write(stderr, *) 'Internal indexes KZ different from file'
                 call die('nc_stream','Cannot write variable '// &
                   trim(var%vname)//' in file '//trim(stream%filename), 1)
               end if
@@ -3253,18 +3253,18 @@ module mod_ncstream
             end if
             if ( var%is_slice ) then
               if ( .not. present(is) ) then
-                write(stderr,*) 'In File ',__FILE__,' at line: ',__LINE__
-                write(stderr,*) 'Requesting slice without giving index...'
+                write(stderr, *) 'In File ',__FILE__, ' at line: ',__LINE__
+                write(stderr, *) 'Requesting slice without giving index...'
                 call die('nc_stream','Cannot write variable '// &
                   trim(var%vname)//' in file '//trim(stream%filename), 1)
               end if
               buffer%intbuff(1:totsize) =                           &
-                reshape(var%ival_slice(var%j1:var%j2,var%i1:var%i2, &
-                  var%k1:var%k2,is), [totsize])
+                reshape(var%ival_slice(var%j1:var%j2, var%i1:var%i2, &
+                  var%k1:var%k2, is), [totsize])
             else
               buffer%realbuff(1:totsize) =                    &
-                reshape(var%ival(var%j1:var%j2,var%i1:var%i2, &
-                  var%k1:var%k2),[totsize])
+                reshape(var%ival(var%j1:var%j2, var%i1:var%i2, &
+                  var%k1:var%k2), [totsize])
             end if
           end if
           nd = 3
@@ -3274,11 +3274,11 @@ module mod_ncstream
             nd = 4
           end if
 #ifdef PNETCDF
-          ncstat = nf90mpi_put_var_all(stream%id,var%id, &
-            buffer%intbuff,stream%istart(1:nd),stream%icount(1:nd))
+          ncstat = nf90mpi_put_var_all(stream%id, var%id, &
+            buffer%intbuff, stream%istart(1:nd), stream%icount(1:nd))
 #else
-          ncstat = nf90_put_var(stream%id,var%id, &
-            buffer%intbuff,stream%istart(1:nd),stream%icount(1:nd))
+          ncstat = nf90_put_var(stream%id, var%id, &
+            buffer%intbuff, stream%istart(1:nd), stream%icount(1:nd))
 #endif
         class is (ncvariable4d_integer)
           if ( stream%l_parallel .and. var%lgridded ) then
@@ -3300,15 +3300,15 @@ module mod_ncstream
           stream%icount(4) = var%nval(4)
           if ( docopy ) then
             if ( .not. associated(var%ival) ) then
-              write(stderr,*) 'In File ',__FILE__,' at line: ',__LINE__
-              write(stderr,*) 'Unassociated pointer to variable'
+              write(stderr, *) 'In File ',__FILE__, ' at line: ',__LINE__
+              write(stderr, *) 'Unassociated pointer to variable'
               call die('nc_stream','Cannot write variable '//trim(var%vname)// &
                 ' in file '//trim(stream%filename), 1)
             end if
             if ( var%j1 > 0 .and. var%j2 > 0 ) then
               if ( (var%j2-var%j1+1) /= stream%icount(1) ) then
-                write(stderr,*) 'In File ',__FILE__,' at line: ',__LINE__
-                write(stderr,*) 'Internal indexes JX different from file'
+                write(stderr, *) 'In File ',__FILE__, ' at line: ',__LINE__
+                write(stderr, *) 'Internal indexes JX different from file'
                 call die('nc_stream','Cannot write variable '// &
                   trim(var%vname)//' in file '//trim(stream%filename), 1)
               end if
@@ -3318,8 +3318,8 @@ module mod_ncstream
             end if
             if ( var%i1 > 0 .and. var%i2 > 0 ) then
               if ( (var%i2-var%i1+1) /= stream%icount(2) ) then
-                write(stderr,*) 'In File ',__FILE__,' at line: ',__LINE__
-                write(stderr,*) 'Internal indexes IY different from file'
+                write(stderr, *) 'In File ',__FILE__, ' at line: ',__LINE__
+                write(stderr, *) 'Internal indexes IY different from file'
                 call die('nc_stream','Cannot write variable '// &
                   trim(var%vname)//' in file '//trim(stream%filename), 1)
               end if
@@ -3329,8 +3329,8 @@ module mod_ncstream
             end if
             if ( var%k1 > 0 .and. var%k2 > 0 ) then
               if ( (var%k2-var%k1+1) /= stream%icount(3) ) then
-                write(stderr,*) 'In File ',__FILE__,' at line: ',__LINE__
-                write(stderr,*) 'Internal indexes KZ different from file'
+                write(stderr, *) 'In File ',__FILE__, ' at line: ',__LINE__
+                write(stderr, *) 'Internal indexes KZ different from file'
                 call die('nc_stream','Cannot write variable '// &
                   trim(var%vname)//' in file '//trim(stream%filename), 1)
               end if
@@ -3340,8 +3340,8 @@ module mod_ncstream
             end if
             if ( var%n1 > 0 .and. var%n2 > 0 ) then
               if ( (var%n2-var%n1+1) /= stream%icount(4) ) then
-                write(stderr,*) 'In File ',__FILE__,' at line: ',__LINE__
-                write(stderr,*) 'Internal indexes 4 different from file'
+                write(stderr, *) 'In File ',__FILE__, ' at line: ',__LINE__
+                write(stderr, *) 'Internal indexes 4 different from file'
                 call die('nc_stream','Cannot write variable '// &
                   trim(var%vname)//' in file '//trim(stream%filename), 1)
               end if
@@ -3350,14 +3350,14 @@ module mod_ncstream
               var%n2 = stream%icount(4)
             end if
             if ( .not. associated(var%ival) ) then
-              write(stderr,*) 'In File ',__FILE__,' at line: ',__LINE__
-              write(stderr,*) 'Unassociated pointer to variable'
+              write(stderr, *) 'In File ',__FILE__, ' at line: ',__LINE__
+              write(stderr, *) 'Unassociated pointer to variable'
               call die('nc_stream','Cannot write variable '//trim(var%vname)// &
                 ' in file '//trim(stream%filename), 1)
             end if
             buffer%intbuff(1:totsize) = &
-              reshape(var%ival(var%j1:var%j2,var%i1:var%i2, &
-                var%k1:var%k2,var%n1:var%n2),[totsize])
+              reshape(var%ival(var%j1:var%j2, var%i1:var%i2, &
+                var%k1:var%k2, var%n1:var%n2), [totsize])
           end if
           nd = 4
           if ( var%lrecords ) then
@@ -3366,127 +3366,127 @@ module mod_ncstream
             nd = 5
           end if
 #ifdef PNETCDF
-          ncstat = nf90mpi_put_var_all(stream%id,var%id, &
-            buffer%intbuff,stream%istart(1:nd),stream%icount(1:nd))
+          ncstat = nf90mpi_put_var_all(stream%id, var%id, &
+            buffer%intbuff, stream%istart(1:nd), stream%icount(1:nd))
 #else
-          ncstat = nf90_put_var(stream%id,var%id, &
-            buffer%intbuff,stream%istart(1:nd),stream%icount(1:nd))
+          ncstat = nf90_put_var(stream%id, var%id, &
+            buffer%intbuff, stream%istart(1:nd), stream%icount(1:nd))
 #endif
         class default
-          write(stderr,*) 'In File ',__FILE__,' at line: ',__LINE__
+          write(stderr, *) 'In File ',__FILE__, ' at line: ',__LINE__
           call die('nc_stream', 'Cannot write variable of unknown type',1)
       end select
       if ( ncstat /= nf90_noerr ) then
-        write(stderr,*) 'In File ',__FILE__,' at line: ',__LINE__
+        write(stderr, *) 'In File ',__FILE__, ' at line: ',__LINE__
         call printerror
-        write(stderr,*) 'In file ',trim(stream%filename)
-        write(stderr,*) 'Cannot write variable '//trim(var%vname)
-        write(stderr,*) 'Bounds :',stream%istart(1:nd),stream%icount(1:nd)
+        write(stderr, *) 'In file ',trim(stream%filename)
+        write(stderr, *) 'Cannot write variable '//trim(var%vname)
+        write(stderr, *) 'Bounds :',stream%istart(1:nd), stream%icount(1:nd)
         call die('nc_stream','Cannot write variable '//trim(var%vname)// &
           ' in file '//trim(stream%filename), 1)
       end if
     end subroutine outstream_writevar
 
-    subroutine cdumlogical(cdum,yesno)
+    subroutine cdumlogical(cdum, yesno)
       implicit none
-      character(len=*), intent(out) :: cdum
-      logical, intent(in) :: yesno
+      character(len=*), intent(out):: cdum
+      logical, intent(in):: yesno
       if (yesno) then
-        write(cdum,'(a)') 'Yes'
+        write(cdum, '(a)') 'Yes'
       else
-        write(cdum,'(a)') 'No'
+        write(cdum, '(a)') 'No'
       end if
     end subroutine cdumlogical
 
     subroutine add_common_global_params(ncout)
       implicit none
-      type(nc_output_stream), intent(inout) :: ncout
-      type(ncoutstream), pointer :: stream
-      type(basic_variables), pointer :: stvar
-      character(256) :: history
-      integer(ik4), dimension(8) :: tvals
-      type(ncattribute_string) :: attc
-      type(ncattribute_real8) :: attr
-      type(ncattribute_integer) :: atti
-      type(ncattribute_real8_array) :: attra
+      type(nc_output_stream), intent(inout):: ncout
+      type(ncoutstream), pointer:: stream
+      type(basic_variables), pointer:: stvar
+      character(256):: history
+      integer(ik4), dimension(8):: tvals
+      type(ncattribute_string):: attc
+      type(ncattribute_real8):: attr
+      type(ncattribute_integer):: atti
+      type(ncattribute_real8_array):: attra
 
       stream => ncout%ncp%xs
       stvar  => ncout%svp%xv
       attc%aname = 'title'
       attc%theval = 'ICTP Regional Climatic model V5'
-      call add_attribute(stream,attc)
+      call add_attribute(stream, attc)
       attc%aname = 'institution'
       attc%theval = 'ICTP'
-      call add_attribute(stream,attc)
+      call add_attribute(stream, attc)
       attc%aname = 'source'
       attc%theval = 'RegCM Model output file'
-      call add_attribute(stream,attc)
+      call add_attribute(stream, attc)
       attc%aname = 'executable_date'
       attc%theval = __DATE__
-      call add_attribute(stream,attc)
+      call add_attribute(stream, attc)
       attc%aname = 'Conventions'
       attc%theval = 'CF-1.10'
-      call add_attribute(stream,attc)
+      call add_attribute(stream, attc)
       attc%aname = 'references'
       attc%theval = 'https://github.com/ICTP/RegCM'
-      call add_attribute(stream,attc)
+      call add_attribute(stream, attc)
       attc%aname = 'model_revision'
       attc%theval = GIT_VER
-      call add_attribute(stream,attc)
-      call date_and_time(values=tvals)
-      write(history,'(i0.4,a,i0.2,a,i0.2,a,i0.2,a,i0.2,a,i0.2,a)') &
+      call add_attribute(stream, attc)
+      call date_and_time(values = tvals)
+      write(history, '(i0.4, a, i0.2, a, i0.2, a, i0.2, a, i0.2, a, i0.2, a)') &
         tvals(1), '-', tvals(2), '-', tvals(3), ' ',          &
         tvals(5), ':', tvals(6), ':', tvals(7),                &
         ' : Created by RegCM '//trim(stream%progname)//' program'
       attc%aname = 'history'
       attc%theval = history
-      call add_attribute(stream,attc)
+      call add_attribute(stream, attc)
       attc%aname = 'experiment'
       attc%theval = domname
-      call add_attribute(stream,attc)
+      call add_attribute(stream, attc)
       attc%aname = 'projection'
       attc%theval = iproj
-      call add_attribute(stream,attc)
+      call add_attribute(stream, attc)
       if ( stream%l_subgrid ) then
         attr%aname = 'grid_size_in_meters'
-        attr%theval = (ds*d_1000)/real(nsg,rkx)
-        call add_attribute(stream,attr)
+        attr%theval = (ds*d_1000)/real(nsg, rkx)
+        call add_attribute(stream, attr)
         attc%aname = 'model_subgrid'
         attc%theval = 'Yes'
-        call add_attribute(stream,attc)
+        call add_attribute(stream, attc)
       else
         attr%aname = 'grid_size_in_meters'
         attr%theval = ds*d_1000
-        call add_attribute(stream,attr)
+        call add_attribute(stream, attr)
       end if
       attr%aname = 'latitude_of_projection_origin'
       attr%theval = clat
-      call add_attribute(stream,attr)
+      call add_attribute(stream, attr)
       attr%aname = 'longitude_of_projection_origin'
       attr%theval = clon
-      call add_attribute(stream,attr)
+      call add_attribute(stream, attr)
       attra%aname = 'index_of_projection_origin'
       attra%theval(1) = cntrj
       attra%theval(2) = cntri
       attra%numval = 2
-      call add_attribute(stream,attra)
+      call add_attribute(stream, attra)
       if ( iproj == 'ROTMER' .or. iproj == 'ROTLLR' ) then
         attr%aname = 'grid_north_pole_latitude'
         attr%theval = plat
-        call add_attribute(stream,attr)
+        call add_attribute(stream, attr)
         attr%aname = 'grid_north_pole_longitude'
         attr%theval = plon
-        call add_attribute(stream,attr)
+        call add_attribute(stream, attr)
       else if ( iproj == 'LAMCON' ) then
         attra%aname = 'standard_parallel'
         attra%theval(1) = truelatl
         attra%theval(2) = truelath
         attra%numval = 2
-        call add_attribute(stream,attra)
+        call add_attribute(stream, attra)
       end if
       attr%aname = 'grid_factor'
       attr%theval = xcone
-      call add_attribute(stream,attr)
+      call add_attribute(stream, attr)
       if ( iproj /= 'ROTLLR' ) then
         stvar%jx_var%vname = 'jx'
         stvar%jx_var%vunit = 'm'
@@ -3535,82 +3535,82 @@ module mod_ncstream
           stvar%ptop_var%vunit = 'hPa'
           stvar%ptop_var%long_name = "Pressure at model top"
           stvar%ptop_var%standard_name = 'air_pressure'
-          call outstream_addvar(ncout,stvar%ptop_var)
+          call outstream_addvar(ncout, stvar%ptop_var)
         else
           stvar%ak_var%vname = 'a'
           stvar%ak_var%vunit = 'm'
           stvar%ak_var%axis = 'z'
           stvar%ak_var%standard_name = "atmosphere_hybrid_height_coordinate"
           stvar%ak_var%long_name = "vertical coordinate formula term a(k)"
-          call outstream_addvar(ncout,stvar%ak_var)
+          call outstream_addvar(ncout, stvar%ak_var)
           stvar%bk_var%vname = 'b'
           stvar%bk_var%vunit = '1'
           stvar%bk_var%axis = 'z'
           stvar%bk_var%standard_name = "atmosphere_hybrid_height_coordinate"
           stvar%bk_var%long_name = "vertical coordinate formula term b(k)"
-          call outstream_addvar(ncout,stvar%bk_var)
+          call outstream_addvar(ncout, stvar%bk_var)
         end if
       end if
-      call outstream_addvar(ncout,stvar%jx_var)
-      call outstream_addvar(ncout,stvar%iy_var)
-      call outstream_addvar(ncout,stvar%sigma_var)
+      call outstream_addvar(ncout, stvar%jx_var)
+      call outstream_addvar(ncout, stvar%iy_var)
+      call outstream_addvar(ncout, stvar%sigma_var)
       attc%aname = 'axis'
       attc%theval = 'X'
-      call add_attribute(stream,attc,stvar%jx_var%id,stvar%jx_var%vname)
+      call add_attribute(stream, attc, stvar%jx_var%id, stvar%jx_var%vname)
       attc%theval = 'Y'
-      call add_attribute(stream,attc,stvar%iy_var%id,stvar%iy_var%vname)
+      call add_attribute(stream, attc, stvar%iy_var%id, stvar%iy_var%vname)
       attc%theval = 'Z'
-      call add_attribute(stream,attc,stvar%sigma_var%id,stvar%sigma_var%vname)
+      call add_attribute(stream, attc, stvar%sigma_var%id, stvar%sigma_var%vname)
       attc%aname = 'CoordinateAxisType'
       attc%theval = 'GeoX'
-      call add_attribute(stream,attc,stvar%jx_var%id,stvar%jx_var%vname)
+      call add_attribute(stream, attc, stvar%jx_var%id, stvar%jx_var%vname)
       attc%aname = 'CoordinateAxisType'
       attc%theval = 'GeoY'
-      call add_attribute(stream,attc,stvar%iy_var%id,stvar%iy_var%vname)
+      call add_attribute(stream, attc, stvar%iy_var%id, stvar%iy_var%vname)
       attc%aname = 'positive'
       attc%theval = 'down'
-      call add_attribute(stream,attc,stvar%sigma_var%id,stvar%sigma_var%vname)
+      call add_attribute(stream, attc, stvar%sigma_var%id, stvar%sigma_var%vname)
       if ( .not. stream%l_plev ) then
         if ( idynamic == 3 ) then
           attc%aname = 'formula'
-          attc%theval = 'z(k,j,i) = a(k) + topo(j,i) * b(k)'
+          attc%theval = 'z(k, j, i) = a(k) + topo(j, i) * b(k)'
         else if ( idynamic == 2 ) then
           attc%aname = 'formula'
-          attc%theval = 'p(n,k,j,i) = ptop + kz(k)*(p0(j,i)-ptop)+ppa(n,k,j,i)'
+          attc%theval = 'p(n, k, j, i) = ptop+kz(k)*(p0(j, i)-ptop)+ppa(n, k, j, i)'
         else
           attc%aname = 'formula'
-          attc%theval = 'p(n,k,j,i) = ptop + kz(k)*(ps(n,j,i)-ptop)'
+          attc%theval = 'p(n, k, j, i) = ptop+kz(k)*(ps(n, j, i)-ptop)'
         end if
-        call add_attribute(stream,attc,stvar%sigma_var%id,stvar%sigma_var%vname)
+        call add_attribute(stream, attc, stvar%sigma_var%id, stvar%sigma_var%vname)
       end if
       attc%aname = 'CoordinateAxisType'
       attc%theval = 'GeoZ'
-      call add_attribute(stream,attc,stvar%sigma_var%id,stvar%sigma_var%vname)
+      call add_attribute(stream, attc, stvar%sigma_var%id, stvar%sigma_var%vname)
       if ( idynamic == 3 ) then
         attr%aname = 'zita_factor_a0'
         attr%theval = mo_a0
-        call add_attribute(stream,attr)
+        call add_attribute(stream, attr)
         attr%aname = 'zita_height_top'
         attr%theval = mo_ztop
-        call add_attribute(stream,attr)
+        call add_attribute(stream, attr)
         attr%aname = 'zita_atmosphere_h'
         attr%theval = mo_h
-        call add_attribute(stream,attr)
+        call add_attribute(stream, attr)
       end if
       atti%aname = 'dynamical_core'
       atti%theval = idynamic
-      call add_attribute(stream,atti)
+      call add_attribute(stream, atti)
     end subroutine add_common_global_params
 
-    subroutine instream_readvar(ncin,var,irec,window)
+    subroutine instream_readvar(ncin, var, irec, window)
       implicit none
-      type(nc_input_stream), intent(inout) :: ncin
-      class(ncvariable_standard), intent(inout) :: var
-      integer(ik4), intent(in), optional :: irec
-      integer(ik4), dimension(:), intent(in), optional :: window
-      type(ncinstream), pointer :: stream
-      type(internal_ibuffer), pointer :: buffer
-      integer(ik4) :: ndims
+      type(nc_input_stream), intent(inout):: ncin
+      class(ncvariable_standard), intent(inout):: var
+      integer(ik4), intent(in), optional:: irec
+      integer(ik4), dimension(:), intent(in), optional:: window
+      type(ncinstream), pointer:: stream
+      type(internal_ibuffer), pointer:: buffer
+      integer(ik4):: ndims
 
       if ( .not. associated(ncin%ncp%xs) ) return
       stream => ncin%ncp%xs
@@ -3618,42 +3618,42 @@ module mod_ncstream
       if ( stream%id < 0 ) return
       if ( var%id < 0 ) then
 #ifdef PNETCDF
-        ncstat = nf90mpi_inq_varid(stream%id,var%vname,var%id)
+        ncstat = nf90mpi_inq_varid(stream%id, var%vname, var%id)
 #else
-        ncstat = nf90_inq_varid(stream%id,var%vname,var%id)
+        ncstat = nf90_inq_varid(stream%id, var%vname, var%id)
 #endif
         if ( ncstat /= nf90_noerr ) then
           call printerror
-          write(stderr,*) 'In File ',__FILE__,' at line: ',__LINE__
+          write(stderr, *) 'In File ',__FILE__, ' at line: ',__LINE__
           call die('nc_stream','Cannot find variable '//trim(var%vname)// &
-            ' in '//trim(stream%filename),1)
+            ' in '//trim(stream%filename), 1)
         end if
 #ifdef PNETCDF
-        ncstat = nf90mpi_inquire_variable(stream%id,var%id,ndims=var%ndims, &
-          dimids=var%idims)
+        ncstat = nf90mpi_inquire_variable(stream%id, var%id, ndims = var%ndims, &
+          dimids = var%idims)
 #else
-        ncstat = nf90_inquire_variable(stream%id,var%id,ndims=var%ndims, &
-          dimids=var%idims)
+        ncstat = nf90_inquire_variable(stream%id, var%id, ndims = var%ndims, &
+          dimids = var%idims)
 #endif
         if ( ncstat /= nf90_noerr ) then
           call printerror
-          write(stderr,*) 'In File ',__FILE__,' at line: ',__LINE__
+          write(stderr, *) 'In File ',__FILE__, ' at line: ',__LINE__
           call die('nc_stream','Cannot inquire variable '//trim(var%vname)// &
-            ' in '//trim(stream%filename),1)
+            ' in '//trim(stream%filename), 1)
         end if
       end if
       select type(var)
         class is (ncvariable0d_double)
 #ifdef PNETCDF
-          ncstat = nf90mpi_get_var(stream%id,var%id,var%rval)
+          ncstat = nf90mpi_get_var(stream%id, var%id, var%rval)
 #else
-          ncstat = nf90_get_var(stream%id,var%id,var%rval)
+          ncstat = nf90_get_var(stream%id, var%id, var%rval)
 #endif
         class is (ncvariable1d_double)
 #ifdef PNETCDF
-          ncstat = nf90mpi_get_var(stream%id,var%id,var%rval)
+          ncstat = nf90mpi_get_var(stream%id, var%id, var%rval)
 #else
-          ncstat = nf90_get_var(stream%id,var%id,var%rval)
+          ncstat = nf90_get_var(stream%id, var%id, var%rval)
 #endif
         class is (ncvariable2d_double)
           ndims = 2
@@ -3666,8 +3666,8 @@ module mod_ncstream
                  window(2) > stream%len_dims(var%idims(1)) .or. &
                  window(3) > stream%len_dims(var%idims(2)) .or. &
                  window(4) > stream%len_dims(var%idims(2)) ) then
-              write(stderr,*) 'In File ',__FILE__,' at line: ',__LINE__
-              write(stderr,*) 'Requested indexes out of range'
+              write(stderr, *) 'In File ',__FILE__, ' at line: ',__LINE__
+              write(stderr, *) 'Requested indexes out of range'
               call die('nc_stream','Cannot read variable '// &
                 trim(var%vname)//' in file '//trim(stream%filename), 1)
             end if
@@ -3679,8 +3679,8 @@ module mod_ncstream
                 ! We are not requested to read (out of our window)
                 return
               end if
-              stream%istart(1) = max(stream%jparbound(1),window(1))
-              stream%istart(2) = max(stream%iparbound(1),window(3))
+              stream%istart(1) = max(stream%jparbound(1), window(1))
+              stream%istart(2) = max(stream%iparbound(1), window(3))
               if ( stream%jparbound(2) > window(2) ) then
                 var%nval(1) = window(2)-stream%istart(1)+1
               else
@@ -3723,8 +3723,8 @@ module mod_ncstream
           stream%icount(2) = var%nval(2)
           if ( present(irec) ) then
             if ( var%ndims /= 3 ) then
-              write(stderr,*) 'In File ',__FILE__,' at line: ',__LINE__
-              write(stderr,*) 'Requested variable is not time dependent'
+              write(stderr, *) 'In File ',__FILE__, ' at line: ',__LINE__
+              write(stderr, *) 'Requested variable is not time dependent'
               call die('nc_stream','Cannot read variable '// &
                 trim(var%vname)//' in file '//trim(stream%filename), 1)
             end if
@@ -3737,26 +3737,26 @@ module mod_ncstream
             allocate(buffer%doublebuff(var%totsize))
           end if
 #ifdef PNETCDF
-          ncstat = nf90mpi_get_var(stream%id,var%id,buffer%doublebuff, &
-            stream%istart(1:ndims),stream%icount(1:ndims))
+          ncstat = nf90mpi_get_var(stream%id, var%id, buffer%doublebuff, &
+            stream%istart(1:ndims), stream%icount(1:ndims))
 #else
-          ncstat = nf90_get_var(stream%id,var%id,buffer%doublebuff, &
-            stream%istart(1:ndims),stream%icount(1:ndims))
+          ncstat = nf90_get_var(stream%id, var%id, buffer%doublebuff, &
+            stream%istart(1:ndims), stream%icount(1:ndims))
 #endif
           if ( var%j1 > 0 .and. var%j2 > 0 .and. &
                var%i1 > 0 .and. var%i2 > 0 ) then
             if ( (var%j2-var%j1+1) /= var%nval(1) .or. &
                  (var%i2-var%i1+1) /= var%nval(2) ) then
-              write(stderr,*) 'In File ',__FILE__,' at line: ',__LINE__
-              write(stderr,*) 'Requested indexes different from file'
+              write(stderr, *) 'In File ',__FILE__, ' at line: ',__LINE__
+              write(stderr, *) 'Requested indexes different from file'
               call die('nc_stream','Cannot read variable '// &
                 trim(var%vname)//' in file '//trim(stream%filename), 1)
             end if
-            var%rval(var%j1:var%j2,var%i1:var%i2) = &
-              reshape(buffer%doublebuff(1:var%totsize),stream%icount(1:2))
+            var%rval(var%j1:var%j2, var%i1:var%i2) = &
+              reshape(buffer%doublebuff(1:var%totsize), stream%icount(1:2))
           else
-            var%rval(1:var%nval(1),1:var%nval(2)) = &
-              reshape(buffer%doublebuff(1:var%totsize),stream%icount(1:2))
+            var%rval(1:var%nval(1), 1:var%nval(2)) = &
+              reshape(buffer%doublebuff(1:var%totsize), stream%icount(1:2))
           end if
         class is (ncvariable3d_double)
           ndims = 3
@@ -3773,8 +3773,8 @@ module mod_ncstream
                  window(4) > stream%len_dims(var%idims(2)) .or. &
                  window(5) > stream%len_dims(var%idims(3)) .or. &
                  window(6) > stream%len_dims(var%idims(3)) ) then
-              write(stderr,*) 'In File ',__FILE__,' at line: ',__LINE__
-              write(stderr,*) 'Requested indexes out of range'
+              write(stderr, *) 'In File ',__FILE__, ' at line: ',__LINE__
+              write(stderr, *) 'Requested indexes out of range'
               call die('nc_stream','Cannot read variable '// &
                 trim(var%vname)//' in file '//trim(stream%filename), 1)
             end if
@@ -3786,8 +3786,8 @@ module mod_ncstream
                 ! We are not requested to read (out of our window)
                 return
               end if
-              stream%istart(1) = max(stream%jparbound(1),window(1))
-              stream%istart(2) = max(stream%iparbound(1),window(3))
+              stream%istart(1) = max(stream%jparbound(1), window(1))
+              stream%istart(2) = max(stream%iparbound(1), window(3))
               if ( stream%jparbound(2) > window(2) ) then
                 var%nval(1) = window(2)-stream%istart(1)+1
               else
@@ -3839,8 +3839,8 @@ module mod_ncstream
           stream%icount(3) = var%nval(3)
           if ( present(irec) ) then
             if ( var%ndims /= 4 ) then
-              write(stderr,*) 'In File ',__FILE__,' at line: ',__LINE__
-              write(stderr,*) 'Requested variable is not time dependent'
+              write(stderr, *) 'In File ',__FILE__, ' at line: ',__LINE__
+              write(stderr, *) 'Requested variable is not time dependent'
               call die('nc_stream','Cannot read variable '// &
                 trim(var%vname)//' in file '//trim(stream%filename), 1)
             end if
@@ -3853,11 +3853,11 @@ module mod_ncstream
             allocate(buffer%doublebuff(var%totsize))
           end if
 #ifdef PNETCDF
-          ncstat = nf90mpi_get_var(stream%id,var%id,buffer%doublebuff, &
-            stream%istart(1:ndims),stream%icount(1:ndims))
+          ncstat = nf90mpi_get_var(stream%id, var%id, buffer%doublebuff, &
+            stream%istart(1:ndims), stream%icount(1:ndims))
 #else
-          ncstat = nf90_get_var(stream%id,var%id,buffer%doublebuff, &
-            stream%istart(1:ndims),stream%icount(1:ndims))
+          ncstat = nf90_get_var(stream%id, var%id, buffer%doublebuff, &
+            stream%istart(1:ndims), stream%icount(1:ndims))
 #endif
           if ( var%j1 > 0 .and. var%j2 > 0 .and. &
                var%i1 > 0 .and. var%i2 > 0 .and. &
@@ -3865,16 +3865,16 @@ module mod_ncstream
             if ( (var%j2-var%j1+1) /= var%nval(1) .or. &
                  (var%i2-var%i1+1) /= var%nval(2) .or. &
                  (var%k2-var%k1+1) /= var%nval(3) ) then
-              write(stderr,*) 'In File ',__FILE__,' at line: ',__LINE__
-              write(stderr,*) 'Requested indexes different from file'
+              write(stderr, *) 'In File ',__FILE__, ' at line: ',__LINE__
+              write(stderr, *) 'Requested indexes different from file'
               call die('nc_stream','Cannot read variable '// &
                 trim(var%vname)//' in file '//trim(stream%filename), 1)
             end if
-            var%rval(var%j1:var%j2,var%i1:var%i2,var%k1:var%k2) = &
-              reshape(buffer%doublebuff(1:var%totsize),stream%icount(1:3))
+            var%rval(var%j1:var%j2, var%i1:var%i2, var%k1:var%k2) = &
+              reshape(buffer%doublebuff(1:var%totsize), stream%icount(1:3))
           else
-            var%rval(1:var%nval(1),1:var%nval(2),1:var%nval(3)) = &
-              reshape(buffer%doublebuff(1:var%totsize),stream%icount(1:3))
+            var%rval(1:var%nval(1), 1:var%nval(2), 1:var%nval(3)) = &
+              reshape(buffer%doublebuff(1:var%totsize), stream%icount(1:3))
           end if
         class is (ncvariable4d_double)
           ndims = 4
@@ -3895,8 +3895,8 @@ module mod_ncstream
                  window(6) > stream%len_dims(var%idims(3)) .or. &
                  window(7) > stream%len_dims(var%idims(4)) .or. &
                  window(8) > stream%len_dims(var%idims(4)) ) then
-              write(stderr,*) 'In File ',__FILE__,' at line: ',__LINE__
-              write(stderr,*) 'Requested indexes out of range'
+              write(stderr, *) 'In File ',__FILE__, ' at line: ',__LINE__
+              write(stderr, *) 'Requested indexes out of range'
               call die('nc_stream','Cannot read variable '// &
                 trim(var%vname)//' in file '//trim(stream%filename), 1)
             end if
@@ -3908,8 +3908,8 @@ module mod_ncstream
                 ! We are not requested to read (out of our window)
                 return
               end if
-              stream%istart(1) = max(stream%jparbound(1),window(1))
-              stream%istart(2) = max(stream%iparbound(1),window(3))
+              stream%istart(1) = max(stream%jparbound(1), window(1))
+              stream%istart(2) = max(stream%iparbound(1), window(3))
               if ( stream%jparbound(2) > window(2) ) then
                 var%nval(1) = window(2)-stream%istart(1)+1
               else
@@ -3970,8 +3970,8 @@ module mod_ncstream
           stream%icount(4) = var%nval(4)
           if ( present(irec) ) then
             if ( var%ndims /= 5 ) then
-              write(stderr,*) 'In File ',__FILE__,' at line: ',__LINE__
-              write(stderr,*) 'Requested variable is not time dependent'
+              write(stderr, *) 'In File ',__FILE__, ' at line: ',__LINE__
+              write(stderr, *) 'Requested variable is not time dependent'
               call die('nc_stream','Cannot read variable '// &
                 trim(var%vname)//' in file '//trim(stream%filename), 1)
             end if
@@ -3984,11 +3984,11 @@ module mod_ncstream
             allocate(buffer%doublebuff(var%totsize))
           end if
 #ifdef PNETCDF
-          ncstat = nf90mpi_get_var(stream%id,var%id,buffer%doublebuff, &
-            stream%istart(1:ndims),stream%icount(1:ndims))
+          ncstat = nf90mpi_get_var(stream%id, var%id, buffer%doublebuff, &
+            stream%istart(1:ndims), stream%icount(1:ndims))
 #else
-          ncstat = nf90_get_var(stream%id,var%id,buffer%doublebuff, &
-            stream%istart(1:ndims),stream%icount(1:ndims))
+          ncstat = nf90_get_var(stream%id, var%id, buffer%doublebuff, &
+            stream%istart(1:ndims), stream%icount(1:ndims))
 #endif
           if ( var%j1 > 0 .and. var%j2 > 0 .and. &
                var%i1 > 0 .and. var%i2 > 0 .and. &
@@ -3998,30 +3998,30 @@ module mod_ncstream
                  (var%i2-var%i1+1) /= var%nval(2) .or. &
                  (var%k2-var%k1+1) /= var%nval(3) .or. &
                  (var%n2-var%n1+1) /= var%nval(4) ) then
-              write(stderr,*) 'In File ',__FILE__,' at line: ',__LINE__
-              write(stderr,*) 'Requested indexes different from file'
+              write(stderr, *) 'In File ',__FILE__, ' at line: ',__LINE__
+              write(stderr, *) 'Requested indexes different from file'
               call die('nc_stream','Cannot read variable '// &
                 trim(var%vname)//' in file '//trim(stream%filename), 1)
             end if
-            var%rval(var%j1:var%j2,var%i1:var%i2, &
-                     var%k1:var%k2,var%n1:var%n2) = &
-                 reshape(buffer%doublebuff(1:var%totsize),stream%icount(1:4))
+            var%rval(var%j1:var%j2, var%i1:var%i2, &
+                     var%k1:var%k2, var%n1:var%n2) = &
+                 reshape(buffer%doublebuff(1:var%totsize), stream%icount(1:4))
           else
-            var%rval(1:var%nval(1),1:var%nval(2), &
-                     1:var%nval(3),1:var%nval(4)) = &
-                 reshape(buffer%doublebuff(1:var%totsize),stream%icount(1:4))
+            var%rval(1:var%nval(1), 1:var%nval(2), &
+                     1:var%nval(3), 1:var%nval(4)) = &
+                 reshape(buffer%doublebuff(1:var%totsize), stream%icount(1:4))
           end if
         class is (ncvariable0d_real)
 #ifdef PNETCDF
-          ncstat = nf90mpi_get_var(stream%id,var%id,var%rval)
+          ncstat = nf90mpi_get_var(stream%id, var%id, var%rval)
 #else
-          ncstat = nf90_get_var(stream%id,var%id,var%rval)
+          ncstat = nf90_get_var(stream%id, var%id, var%rval)
 #endif
         class is (ncvariable1d_real)
 #ifdef PNETCDF
-          ncstat = nf90mpi_get_var(stream%id,var%id,var%rval)
+          ncstat = nf90mpi_get_var(stream%id, var%id, var%rval)
 #else
-          ncstat = nf90_get_var(stream%id,var%id,var%rval)
+          ncstat = nf90_get_var(stream%id, var%id, var%rval)
 #endif
         class is (ncvariable2d_real)
           ndims = 2
@@ -4034,8 +4034,8 @@ module mod_ncstream
                  window(2) > stream%len_dims(var%idims(1)) .or. &
                  window(3) > stream%len_dims(var%idims(2)) .or. &
                  window(4) > stream%len_dims(var%idims(2)) ) then
-              write(stderr,*) 'In File ',__FILE__,' at line: ',__LINE__
-              write(stderr,*) 'Requested indexes out of range'
+              write(stderr, *) 'In File ',__FILE__, ' at line: ',__LINE__
+              write(stderr, *) 'Requested indexes out of range'
               call die('nc_stream','Cannot read variable '// &
                 trim(var%vname)//' in file '//trim(stream%filename), 1)
             end if
@@ -4047,8 +4047,8 @@ module mod_ncstream
                 ! We are not requested to read (out of our window)
                 return
               end if
-              stream%istart(1) = max(stream%jparbound(1),window(1))
-              stream%istart(2) = max(stream%iparbound(1),window(3))
+              stream%istart(1) = max(stream%jparbound(1), window(1))
+              stream%istart(2) = max(stream%iparbound(1), window(3))
               if ( stream%jparbound(2) > window(2) ) then
                 var%nval(1) = window(2)-stream%istart(1)+1
               else
@@ -4091,8 +4091,8 @@ module mod_ncstream
           stream%icount(2) = var%nval(2)
           if ( present(irec) ) then
             if ( var%ndims /= 3 ) then
-              write(stderr,*) 'In File ',__FILE__,' at line: ',__LINE__
-              write(stderr,*) 'Requested variable is not time dependent'
+              write(stderr, *) 'In File ',__FILE__, ' at line: ',__LINE__
+              write(stderr, *) 'Requested variable is not time dependent'
               call die('nc_stream','Cannot read variable '// &
                 trim(var%vname)//' in file '//trim(stream%filename), 1)
             end if
@@ -4105,26 +4105,26 @@ module mod_ncstream
             allocate(buffer%realbuff(var%totsize))
           end if
 #ifdef PNETCDF
-          ncstat = nf90mpi_get_var(stream%id,var%id,buffer%realbuff, &
-            stream%istart(1:ndims),stream%icount(1:ndims))
+          ncstat = nf90mpi_get_var(stream%id, var%id, buffer%realbuff, &
+            stream%istart(1:ndims), stream%icount(1:ndims))
 #else
-          ncstat = nf90_get_var(stream%id,var%id,buffer%realbuff, &
-            stream%istart(1:ndims),stream%icount(1:ndims))
+          ncstat = nf90_get_var(stream%id, var%id, buffer%realbuff, &
+            stream%istart(1:ndims), stream%icount(1:ndims))
 #endif
           if ( var%j1 > 0 .and. var%j2 > 0 .and. &
                var%i1 > 0 .and. var%i2 > 0 ) then
             if ( (var%j2-var%j1+1) /= var%nval(1) .or. &
                  (var%i2-var%i1+1) /= var%nval(2) ) then
-              write(stderr,*) 'In File ',__FILE__,' at line: ',__LINE__
-              write(stderr,*) 'Requested indexes different from file'
+              write(stderr, *) 'In File ',__FILE__, ' at line: ',__LINE__
+              write(stderr, *) 'Requested indexes different from file'
               call die('nc_stream','Cannot read variable '// &
                 trim(var%vname)//' in file '//trim(stream%filename), 1)
             end if
-            var%rval(var%j1:var%j2,var%i1:var%i2) = &
-              reshape(buffer%realbuff(1:var%totsize),stream%icount(1:2))
+            var%rval(var%j1:var%j2, var%i1:var%i2) = &
+              reshape(buffer%realbuff(1:var%totsize), stream%icount(1:2))
           else
-            var%rval(1:var%nval(1),1:var%nval(2)) = &
-              reshape(buffer%realbuff(1:var%totsize),stream%icount(1:2))
+            var%rval(1:var%nval(1), 1:var%nval(2)) = &
+              reshape(buffer%realbuff(1:var%totsize), stream%icount(1:2))
           end if
         class is (ncvariable3d_real)
           ndims = 3
@@ -4141,8 +4141,8 @@ module mod_ncstream
                  window(4) > stream%len_dims(var%idims(2)) .or. &
                  window(5) > stream%len_dims(var%idims(3)) .or. &
                  window(6) > stream%len_dims(var%idims(3)) ) then
-              write(stderr,*) 'In File ',__FILE__,' at line: ',__LINE__
-              write(stderr,*) 'Requested indexes out of range'
+              write(stderr, *) 'In File ',__FILE__, ' at line: ',__LINE__
+              write(stderr, *) 'Requested indexes out of range'
               call die('nc_stream','Cannot read variable '// &
                 trim(var%vname)//' in file '//trim(stream%filename), 1)
             end if
@@ -4154,8 +4154,8 @@ module mod_ncstream
                 ! We are not requested to read (out of our window)
                 return
               end if
-              stream%istart(1) = max(stream%jparbound(1),window(1))
-              stream%istart(2) = max(stream%iparbound(1),window(3))
+              stream%istart(1) = max(stream%jparbound(1), window(1))
+              stream%istart(2) = max(stream%iparbound(1), window(3))
               if ( stream%jparbound(2) > window(2) ) then
                 var%nval(1) = window(2)-stream%istart(1)+1
               else
@@ -4207,8 +4207,8 @@ module mod_ncstream
           stream%icount(3) = var%nval(3)
           if ( present(irec) ) then
             if ( var%ndims /= 4 ) then
-              write(stderr,*) 'In File ',__FILE__,' at line: ',__LINE__
-              write(stderr,*) 'Requested variable is not time dependent'
+              write(stderr, *) 'In File ',__FILE__, ' at line: ',__LINE__
+              write(stderr, *) 'Requested variable is not time dependent'
               call die('nc_stream','Cannot read variable '// &
                 trim(var%vname)//' in file '//trim(stream%filename), 1)
             end if
@@ -4221,11 +4221,11 @@ module mod_ncstream
             allocate(buffer%realbuff(var%totsize))
           end if
 #ifdef PNETCDF
-          ncstat = nf90mpi_get_var(stream%id,var%id,buffer%realbuff, &
-            stream%istart(1:ndims),stream%icount(1:ndims))
+          ncstat = nf90mpi_get_var(stream%id, var%id, buffer%realbuff, &
+            stream%istart(1:ndims), stream%icount(1:ndims))
 #else
-          ncstat = nf90_get_var(stream%id,var%id,buffer%realbuff, &
-            stream%istart(1:ndims),stream%icount(1:ndims))
+          ncstat = nf90_get_var(stream%id, var%id, buffer%realbuff, &
+            stream%istart(1:ndims), stream%icount(1:ndims))
 #endif
           if ( var%j1 > 0 .and. var%j2 > 0 .and. &
                var%i1 > 0 .and. var%i2 > 0 .and. &
@@ -4233,16 +4233,16 @@ module mod_ncstream
             if ( (var%j2-var%j1+1) /= var%nval(1) .or. &
                  (var%i2-var%i1+1) /= var%nval(2) .or. &
                  (var%k2-var%k1+1) /= var%nval(3) ) then
-              write(stderr,*) 'In File ',__FILE__,' at line: ',__LINE__
-              write(stderr,*) 'Requested indexes different from file'
+              write(stderr, *) 'In File ',__FILE__, ' at line: ',__LINE__
+              write(stderr, *) 'Requested indexes different from file'
               call die('nc_stream','Cannot read variable '// &
                 trim(var%vname)//' in file '//trim(stream%filename), 1)
             end if
-            var%rval(var%j1:var%j2,var%i1:var%i2,var%k1:var%k2) = &
-              reshape(buffer%realbuff(1:var%totsize),stream%icount(1:3))
+            var%rval(var%j1:var%j2, var%i1:var%i2, var%k1:var%k2) = &
+              reshape(buffer%realbuff(1:var%totsize), stream%icount(1:3))
           else
-            var%rval(1:var%nval(1),1:var%nval(2),1:var%nval(3)) = &
-              reshape(buffer%realbuff(1:var%totsize),stream%icount(1:3))
+            var%rval(1:var%nval(1), 1:var%nval(2), 1:var%nval(3)) = &
+              reshape(buffer%realbuff(1:var%totsize), stream%icount(1:3))
           end if
         class is (ncvariable4d_real)
           ndims = 4
@@ -4263,8 +4263,8 @@ module mod_ncstream
                  window(6) > stream%len_dims(var%idims(3)) .or. &
                  window(7) > stream%len_dims(var%idims(4)) .or. &
                  window(8) > stream%len_dims(var%idims(4)) ) then
-              write(stderr,*) 'In File ',__FILE__,' at line: ',__LINE__
-              write(stderr,*) 'Requested indexes out of range'
+              write(stderr, *) 'In File ',__FILE__, ' at line: ',__LINE__
+              write(stderr, *) 'Requested indexes out of range'
               call die('nc_stream','Cannot read variable '// &
                 trim(var%vname)//' in file '//trim(stream%filename), 1)
             end if
@@ -4276,8 +4276,8 @@ module mod_ncstream
                 ! We are not requested to read (out of our window)
                 return
               end if
-              stream%istart(1) = max(stream%jparbound(1),window(1))
-              stream%istart(2) = max(stream%iparbound(1),window(3))
+              stream%istart(1) = max(stream%jparbound(1), window(1))
+              stream%istart(2) = max(stream%iparbound(1), window(3))
               if ( stream%jparbound(2) > window(2) ) then
                 var%nval(1) = window(2)-stream%istart(1)+1
               else
@@ -4338,8 +4338,8 @@ module mod_ncstream
           stream%icount(4) = var%nval(4)
           if ( present(irec) ) then
             if ( var%ndims /= 5 ) then
-              write(stderr,*) 'In File ',__FILE__,' at line: ',__LINE__
-              write(stderr,*) 'Requested variable is not time dependent'
+              write(stderr, *) 'In File ',__FILE__, ' at line: ',__LINE__
+              write(stderr, *) 'Requested variable is not time dependent'
               call die('nc_stream','Cannot read variable '// &
                 trim(var%vname)//' in file '//trim(stream%filename), 1)
             end if
@@ -4352,11 +4352,11 @@ module mod_ncstream
             allocate(buffer%realbuff(var%totsize))
           end if
 #ifdef PNETCDF
-          ncstat = nf90mpi_get_var(stream%id,var%id,buffer%realbuff, &
-            stream%istart(1:ndims),stream%icount(1:ndims))
+          ncstat = nf90mpi_get_var(stream%id, var%id, buffer%realbuff, &
+            stream%istart(1:ndims), stream%icount(1:ndims))
 #else
-          ncstat = nf90_get_var(stream%id,var%id,buffer%realbuff, &
-            stream%istart(1:ndims),stream%icount(1:ndims))
+          ncstat = nf90_get_var(stream%id, var%id, buffer%realbuff, &
+            stream%istart(1:ndims), stream%icount(1:ndims))
 #endif
           if ( var%j1 > 0 .and. var%j2 > 0 .and. &
                var%i1 > 0 .and. var%i2 > 0 .and. &
@@ -4366,30 +4366,30 @@ module mod_ncstream
                  (var%i2-var%i1+1) /= var%nval(2) .or. &
                  (var%k2-var%k1+1) /= var%nval(3) .or. &
                  (var%n2-var%n1+1) /= var%nval(4) ) then
-              write(stderr,*) 'In File ',__FILE__,' at line: ',__LINE__
-              write(stderr,*) 'Requested indexes different from file'
+              write(stderr, *) 'In File ',__FILE__, ' at line: ',__LINE__
+              write(stderr, *) 'Requested indexes different from file'
               call die('nc_stream','Cannot read variable '// &
                 trim(var%vname)//' in file '//trim(stream%filename), 1)
             end if
-            var%rval(var%j1:var%j2,var%i1:var%i2, &
-                     var%k1:var%k2,var%n1:var%n2) = &
-              reshape(buffer%realbuff(1:var%totsize),stream%icount(1:4))
+            var%rval(var%j1:var%j2, var%i1:var%i2, &
+                     var%k1:var%k2, var%n1:var%n2) = &
+              reshape(buffer%realbuff(1:var%totsize), stream%icount(1:4))
           else
-            var%rval(1:var%nval(1),1:var%nval(2), &
-                     1:var%nval(3),1:var%nval(4)) = &
-              reshape(buffer%realbuff(1:var%totsize),stream%icount(1:4))
+            var%rval(1:var%nval(1), 1:var%nval(2), &
+                     1:var%nval(3), 1:var%nval(4)) = &
+              reshape(buffer%realbuff(1:var%totsize), stream%icount(1:4))
           end if
         class is (ncvariable0d_mixed)
 #ifdef PNETCDF
-          ncstat = nf90mpi_get_var(stream%id,var%id,var%rval)
+          ncstat = nf90mpi_get_var(stream%id, var%id, var%rval)
 #else
-          ncstat = nf90_get_var(stream%id,var%id,var%rval)
+          ncstat = nf90_get_var(stream%id, var%id, var%rval)
 #endif
         class is (ncvariable1d_mixed)
 #ifdef PNETCDF
-          ncstat = nf90mpi_get_var(stream%id,var%id,var%rval)
+          ncstat = nf90mpi_get_var(stream%id, var%id, var%rval)
 #else
-          ncstat = nf90_get_var(stream%id,var%id,var%rval)
+          ncstat = nf90_get_var(stream%id, var%id, var%rval)
 #endif
         class is (ncvariable2d_mixed)
           ndims = 2
@@ -4402,8 +4402,8 @@ module mod_ncstream
                  window(2) > stream%len_dims(var%idims(1)) .or. &
                  window(3) > stream%len_dims(var%idims(2)) .or. &
                  window(4) > stream%len_dims(var%idims(2)) ) then
-              write(stderr,*) 'In File ',__FILE__,' at line: ',__LINE__
-              write(stderr,*) 'Requested indexes out of range'
+              write(stderr, *) 'In File ',__FILE__, ' at line: ',__LINE__
+              write(stderr, *) 'Requested indexes out of range'
               call die('nc_stream','Cannot read variable '// &
                 trim(var%vname)//' in file '//trim(stream%filename), 1)
             end if
@@ -4415,8 +4415,8 @@ module mod_ncstream
                 ! We are not requested to read (out of our window)
                 return
               end if
-              stream%istart(1) = max(stream%jparbound(1),window(1))
-              stream%istart(2) = max(stream%iparbound(1),window(3))
+              stream%istart(1) = max(stream%jparbound(1), window(1))
+              stream%istart(2) = max(stream%iparbound(1), window(3))
               if ( stream%jparbound(2) > window(2) ) then
                 var%nval(1) = window(2)-stream%istart(1)+1
               else
@@ -4459,8 +4459,8 @@ module mod_ncstream
           stream%icount(2) = var%nval(2)
           if ( present(irec) ) then
             if ( var%ndims /= 3 ) then
-              write(stderr,*) 'In File ',__FILE__,' at line: ',__LINE__
-              write(stderr,*) 'Requested variable is not time dependent'
+              write(stderr, *) 'In File ',__FILE__, ' at line: ',__LINE__
+              write(stderr, *) 'Requested variable is not time dependent'
               call die('nc_stream','Cannot read variable '// &
                 trim(var%vname)//' in file '//trim(stream%filename), 1)
             end if
@@ -4473,26 +4473,26 @@ module mod_ncstream
             allocate(buffer%realbuff(var%totsize))
           end if
 #ifdef PNETCDF
-          ncstat = nf90mpi_get_var(stream%id,var%id,buffer%realbuff, &
-            stream%istart(1:ndims),stream%icount(1:ndims))
+          ncstat = nf90mpi_get_var(stream%id, var%id, buffer%realbuff, &
+            stream%istart(1:ndims), stream%icount(1:ndims))
 #else
-          ncstat = nf90_get_var(stream%id,var%id,buffer%realbuff, &
-            stream%istart(1:ndims),stream%icount(1:ndims))
+          ncstat = nf90_get_var(stream%id, var%id, buffer%realbuff, &
+            stream%istart(1:ndims), stream%icount(1:ndims))
 #endif
           if ( var%j1 > 0 .and. var%j2 > 0 .and. &
                var%i1 > 0 .and. var%i2 > 0 ) then
             if ( (var%j2-var%j1+1) /= var%nval(1) .or. &
                  (var%i2-var%i1+1) /= var%nval(2) ) then
-              write(stderr,*) 'In File ',__FILE__,' at line: ',__LINE__
-              write(stderr,*) 'Requested indexes different from file'
+              write(stderr, *) 'In File ',__FILE__, ' at line: ',__LINE__
+              write(stderr, *) 'Requested indexes different from file'
               call die('nc_stream','Cannot read variable '// &
                 trim(var%vname)//' in file '//trim(stream%filename), 1)
             end if
-            var%rval(var%j1:var%j2,var%i1:var%i2) = &
-              reshape(buffer%realbuff(1:var%totsize),stream%icount(1:2))
+            var%rval(var%j1:var%j2, var%i1:var%i2) = &
+              reshape(buffer%realbuff(1:var%totsize), stream%icount(1:2))
           else
-            var%rval(1:var%nval(1),1:var%nval(2)) = &
-              reshape(buffer%realbuff(1:var%totsize),stream%icount(1:2))
+            var%rval(1:var%nval(1), 1:var%nval(2)) = &
+              reshape(buffer%realbuff(1:var%totsize), stream%icount(1:2))
           end if
         class is (ncvariable3d_mixed)
           ndims = 3
@@ -4509,8 +4509,8 @@ module mod_ncstream
                  window(4) > stream%len_dims(var%idims(2)) .or. &
                  window(5) > stream%len_dims(var%idims(3)) .or. &
                  window(6) > stream%len_dims(var%idims(3)) ) then
-              write(stderr,*) 'In File ',__FILE__,' at line: ',__LINE__
-              write(stderr,*) 'Requested indexes out of range'
+              write(stderr, *) 'In File ',__FILE__, ' at line: ',__LINE__
+              write(stderr, *) 'Requested indexes out of range'
               call die('nc_stream','Cannot read variable '// &
                 trim(var%vname)//' in file '//trim(stream%filename), 1)
             end if
@@ -4522,8 +4522,8 @@ module mod_ncstream
                 ! We are not requested to read (out of our window)
                 return
               end if
-              stream%istart(1) = max(stream%jparbound(1),window(1))
-              stream%istart(2) = max(stream%iparbound(1),window(3))
+              stream%istart(1) = max(stream%jparbound(1), window(1))
+              stream%istart(2) = max(stream%iparbound(1), window(3))
               if ( stream%jparbound(2) > window(2) ) then
                 var%nval(1) = window(2)-stream%istart(1)+1
               else
@@ -4575,8 +4575,8 @@ module mod_ncstream
           stream%icount(3) = var%nval(3)
           if ( present(irec) ) then
             if ( var%ndims /= 4 ) then
-              write(stderr,*) 'In File ',__FILE__,' at line: ',__LINE__
-              write(stderr,*) 'Requested variable is not time dependent'
+              write(stderr, *) 'In File ',__FILE__, ' at line: ',__LINE__
+              write(stderr, *) 'Requested variable is not time dependent'
               call die('nc_stream','Cannot read variable '// &
                 trim(var%vname)//' in file '//trim(stream%filename), 1)
             end if
@@ -4589,11 +4589,11 @@ module mod_ncstream
             allocate(buffer%realbuff(var%totsize))
           end if
 #ifdef PNETCDF
-          ncstat = nf90mpi_get_var(stream%id,var%id,buffer%realbuff, &
-            stream%istart(1:ndims),stream%icount(1:ndims))
+          ncstat = nf90mpi_get_var(stream%id, var%id, buffer%realbuff, &
+            stream%istart(1:ndims), stream%icount(1:ndims))
 #else
-          ncstat = nf90_get_var(stream%id,var%id,buffer%realbuff, &
-            stream%istart(1:ndims),stream%icount(1:ndims))
+          ncstat = nf90_get_var(stream%id, var%id, buffer%realbuff, &
+            stream%istart(1:ndims), stream%icount(1:ndims))
 #endif
           if ( var%j1 > 0 .and. var%j2 > 0 .and. &
                var%i1 > 0 .and. var%i2 > 0 .and. &
@@ -4601,16 +4601,16 @@ module mod_ncstream
             if ( (var%j2-var%j1+1) /= var%nval(1) .or. &
                  (var%i2-var%i1+1) /= var%nval(2) .or. &
                  (var%k2-var%k1+1) /= var%nval(3) ) then
-              write(stderr,*) 'In File ',__FILE__,' at line: ',__LINE__
-              write(stderr,*) 'Requested indexes different from file'
+              write(stderr, *) 'In File ',__FILE__, ' at line: ',__LINE__
+              write(stderr, *) 'Requested indexes different from file'
               call die('nc_stream','Cannot read variable '// &
                 trim(var%vname)//' in file '//trim(stream%filename), 1)
             end if
-            var%rval(var%j1:var%j2,var%i1:var%i2,var%k1:var%k2) = &
-              reshape(buffer%realbuff(1:var%totsize),stream%icount(1:3))
+            var%rval(var%j1:var%j2, var%i1:var%i2, var%k1:var%k2) = &
+              reshape(buffer%realbuff(1:var%totsize), stream%icount(1:3))
           else
-            var%rval(1:var%nval(1),1:var%nval(2),1:var%nval(3)) = &
-              reshape(buffer%realbuff(1:var%totsize),stream%icount(1:3))
+            var%rval(1:var%nval(1), 1:var%nval(2), 1:var%nval(3)) = &
+              reshape(buffer%realbuff(1:var%totsize), stream%icount(1:3))
           end if
         class is (ncvariable4d_mixed)
           ndims = 4
@@ -4631,8 +4631,8 @@ module mod_ncstream
                  window(6) > stream%len_dims(var%idims(3)) .or. &
                  window(7) > stream%len_dims(var%idims(4)) .or. &
                  window(8) > stream%len_dims(var%idims(4)) ) then
-              write(stderr,*) 'In File ',__FILE__,' at line: ',__LINE__
-              write(stderr,*) 'Requested indexes out of range'
+              write(stderr, *) 'In File ',__FILE__, ' at line: ',__LINE__
+              write(stderr, *) 'Requested indexes out of range'
               call die('nc_stream','Cannot read variable '// &
                 trim(var%vname)//' in file '//trim(stream%filename), 1)
             end if
@@ -4644,8 +4644,8 @@ module mod_ncstream
                 ! We are not requested to read (out of our window)
                 return
               end if
-              stream%istart(1) = max(stream%jparbound(1),window(1))
-              stream%istart(2) = max(stream%iparbound(1),window(3))
+              stream%istart(1) = max(stream%jparbound(1), window(1))
+              stream%istart(2) = max(stream%iparbound(1), window(3))
               if ( stream%jparbound(2) > window(2) ) then
                 var%nval(1) = window(2)-stream%istart(1)+1
               else
@@ -4706,8 +4706,8 @@ module mod_ncstream
           stream%icount(4) = var%nval(4)
           if ( present(irec) ) then
             if ( var%ndims /= 5 ) then
-              write(stderr,*) 'In File ',__FILE__,' at line: ',__LINE__
-              write(stderr,*) 'Requested variable is not time dependent'
+              write(stderr, *) 'In File ',__FILE__, ' at line: ',__LINE__
+              write(stderr, *) 'Requested variable is not time dependent'
               call die('nc_stream','Cannot read variable '// &
                 trim(var%vname)//' in file '//trim(stream%filename), 1)
             end if
@@ -4720,11 +4720,11 @@ module mod_ncstream
             allocate(buffer%realbuff(var%totsize))
           end if
 #ifdef PNETCDF
-          ncstat = nf90mpi_get_var(stream%id,var%id,buffer%realbuff, &
-            stream%istart(1:ndims),stream%icount(1:ndims))
+          ncstat = nf90mpi_get_var(stream%id, var%id, buffer%realbuff, &
+            stream%istart(1:ndims), stream%icount(1:ndims))
 #else
-          ncstat = nf90_get_var(stream%id,var%id,buffer%realbuff, &
-            stream%istart(1:ndims),stream%icount(1:ndims))
+          ncstat = nf90_get_var(stream%id, var%id, buffer%realbuff, &
+            stream%istart(1:ndims), stream%icount(1:ndims))
 #endif
           if ( var%j1 > 0 .and. var%j2 > 0 .and. &
                var%i1 > 0 .and. var%i2 > 0 .and. &
@@ -4734,30 +4734,30 @@ module mod_ncstream
                  (var%i2-var%i1+1) /= var%nval(2) .or. &
                  (var%k2-var%k1+1) /= var%nval(3) .or. &
                  (var%n2-var%n1+1) /= var%nval(4) ) then
-              write(stderr,*) 'In File ',__FILE__,' at line: ',__LINE__
-              write(stderr,*) 'Requested indexes different from file'
+              write(stderr, *) 'In File ',__FILE__, ' at line: ',__LINE__
+              write(stderr, *) 'Requested indexes different from file'
               call die('nc_stream','Cannot read variable '// &
                 trim(var%vname)//' in file '//trim(stream%filename), 1)
             end if
-            var%rval(var%j1:var%j2,var%i1:var%i2, &
-                     var%k1:var%k2,var%n1:var%n2) = &
-              reshape(buffer%realbuff(1:var%totsize),stream%icount(1:4))
+            var%rval(var%j1:var%j2, var%i1:var%i2, &
+                     var%k1:var%k2, var%n1:var%n2) = &
+              reshape(buffer%realbuff(1:var%totsize), stream%icount(1:4))
           else
-            var%rval(1:var%nval(1),1:var%nval(2), &
-                     1:var%nval(3),1:var%nval(4)) = &
-              reshape(buffer%realbuff(1:var%totsize),stream%icount(1:4))
+            var%rval(1:var%nval(1), 1:var%nval(2), &
+                     1:var%nval(3), 1:var%nval(4)) = &
+              reshape(buffer%realbuff(1:var%totsize), stream%icount(1:4))
           end if
         class is (ncvariable0d_integer)
 #ifdef PNETCDF
-          ncstat = nf90mpi_get_var(stream%id,var%id,var%ival)
+          ncstat = nf90mpi_get_var(stream%id, var%id, var%ival)
 #else
-          ncstat = nf90_get_var(stream%id,var%id,var%ival)
+          ncstat = nf90_get_var(stream%id, var%id, var%ival)
 #endif
         class is (ncvariable1d_integer)
 #ifdef PNETCDF
-          ncstat = nf90mpi_get_var(stream%id,var%id,var%ival)
+          ncstat = nf90mpi_get_var(stream%id, var%id, var%ival)
 #else
-          ncstat = nf90_get_var(stream%id,var%id,var%ival)
+          ncstat = nf90_get_var(stream%id, var%id, var%ival)
 #endif
         class is (ncvariable2d_integer)
           ndims = 2
@@ -4770,8 +4770,8 @@ module mod_ncstream
                  window(2) > stream%len_dims(var%idims(1)) .or. &
                  window(3) > stream%len_dims(var%idims(2)) .or. &
                  window(4) > stream%len_dims(var%idims(2)) ) then
-              write(stderr,*) 'In File ',__FILE__,' at line: ',__LINE__
-              write(stderr,*) 'Requested indexes out of range'
+              write(stderr, *) 'In File ',__FILE__, ' at line: ',__LINE__
+              write(stderr, *) 'Requested indexes out of range'
               call die('nc_stream','Cannot read variable '// &
                 trim(var%vname)//' in file '//trim(stream%filename), 1)
             end if
@@ -4783,8 +4783,8 @@ module mod_ncstream
                 ! We are not requested to read (out of our window)
                 return
               end if
-              stream%istart(1) = max(stream%jparbound(1),window(1))
-              stream%istart(2) = max(stream%iparbound(1),window(3))
+              stream%istart(1) = max(stream%jparbound(1), window(1))
+              stream%istart(2) = max(stream%iparbound(1), window(3))
               if ( stream%jparbound(2) > window(2) ) then
                 var%nval(1) = window(2)-stream%istart(1)+1
               else
@@ -4827,8 +4827,8 @@ module mod_ncstream
           stream%icount(2) = var%nval(2)
           if ( present(irec) ) then
             if ( var%ndims /= 3 ) then
-              write(stderr,*) 'In File ',__FILE__,' at line: ',__LINE__
-              write(stderr,*) 'Requested variable is not time dependent'
+              write(stderr, *) 'In File ',__FILE__, ' at line: ',__LINE__
+              write(stderr, *) 'Requested variable is not time dependent'
               call die('nc_stream','Cannot read variable '// &
                 trim(var%vname)//' in file '//trim(stream%filename), 1)
             end if
@@ -4841,26 +4841,26 @@ module mod_ncstream
             allocate(buffer%intbuff(var%totsize))
           end if
 #ifdef PNETCDF
-          ncstat = nf90mpi_get_var(stream%id,var%id,buffer%intbuff, &
-            stream%istart(1:ndims),stream%icount(1:ndims))
+          ncstat = nf90mpi_get_var(stream%id, var%id, buffer%intbuff, &
+            stream%istart(1:ndims), stream%icount(1:ndims))
 #else
-          ncstat = nf90_get_var(stream%id,var%id,buffer%intbuff, &
-            stream%istart(1:ndims),stream%icount(1:ndims))
+          ncstat = nf90_get_var(stream%id, var%id, buffer%intbuff, &
+            stream%istart(1:ndims), stream%icount(1:ndims))
 #endif
           if ( var%j1 > 0 .and. var%j2 > 0 .and. &
                var%i1 > 0 .and. var%i2 > 0 ) then
             if ( (var%j2-var%j1+1) /= var%nval(1) .or. &
                  (var%i2-var%i1+1) /= var%nval(2) ) then
-              write(stderr,*) 'In File ',__FILE__,' at line: ',__LINE__
-              write(stderr,*) 'Requested indexes different from file'
+              write(stderr, *) 'In File ',__FILE__, ' at line: ',__LINE__
+              write(stderr, *) 'Requested indexes different from file'
               call die('nc_stream','Cannot read variable '// &
                 trim(var%vname)//' in file '//trim(stream%filename), 1)
             end if
-            var%ival(var%j1:var%j2,var%i1:var%i2) = &
-              reshape(buffer%intbuff(1:var%totsize),stream%icount(1:2))
+            var%ival(var%j1:var%j2, var%i1:var%i2) = &
+              reshape(buffer%intbuff(1:var%totsize), stream%icount(1:2))
           else
-            var%ival(1:var%nval(1),1:var%nval(2)) = &
-              reshape(buffer%intbuff(1:var%totsize),stream%icount(1:2))
+            var%ival(1:var%nval(1), 1:var%nval(2)) = &
+              reshape(buffer%intbuff(1:var%totsize), stream%icount(1:2))
           end if
         class is (ncvariable3d_integer)
           ndims = 3
@@ -4877,8 +4877,8 @@ module mod_ncstream
                  window(4) > stream%len_dims(var%idims(2)) .or. &
                  window(5) > stream%len_dims(var%idims(3)) .or. &
                  window(6) > stream%len_dims(var%idims(3)) ) then
-              write(stderr,*) 'In File ',__FILE__,' at line: ',__LINE__
-              write(stderr,*) 'Requested indexes out of range'
+              write(stderr, *) 'In File ',__FILE__, ' at line: ',__LINE__
+              write(stderr, *) 'Requested indexes out of range'
               call die('nc_stream','Cannot read variable '// &
                 trim(var%vname)//' in file '//trim(stream%filename), 1)
             end if
@@ -4890,8 +4890,8 @@ module mod_ncstream
                 ! We are not requested to read (out of our window)
                 return
               end if
-              stream%istart(1) = max(stream%jparbound(1),window(1))
-              stream%istart(2) = max(stream%iparbound(1),window(3))
+              stream%istart(1) = max(stream%jparbound(1), window(1))
+              stream%istart(2) = max(stream%iparbound(1), window(3))
               if ( stream%jparbound(2) > window(2) ) then
                 var%nval(1) = window(2)-stream%istart(1)+1
               else
@@ -4943,8 +4943,8 @@ module mod_ncstream
           stream%icount(3) = var%nval(3)
           if ( present(irec) ) then
             if ( var%ndims /= 4 ) then
-              write(stderr,*) 'In File ',__FILE__,' at line: ',__LINE__
-              write(stderr,*) 'Requested variable is not time dependent'
+              write(stderr, *) 'In File ',__FILE__, ' at line: ',__LINE__
+              write(stderr, *) 'Requested variable is not time dependent'
               call die('nc_stream','Cannot read variable '// &
                 trim(var%vname)//' in file '//trim(stream%filename), 1)
             end if
@@ -4957,11 +4957,11 @@ module mod_ncstream
             allocate(buffer%intbuff(var%totsize))
           end if
 #ifdef PNETCDF
-          ncstat = nf90mpi_get_var(stream%id,var%id,buffer%intbuff, &
-            stream%istart(1:ndims),stream%icount(1:ndims))
+          ncstat = nf90mpi_get_var(stream%id, var%id, buffer%intbuff, &
+            stream%istart(1:ndims), stream%icount(1:ndims))
 #else
-          ncstat = nf90_get_var(stream%id,var%id,buffer%intbuff, &
-            stream%istart(1:ndims),stream%icount(1:ndims))
+          ncstat = nf90_get_var(stream%id, var%id, buffer%intbuff, &
+            stream%istart(1:ndims), stream%icount(1:ndims))
 #endif
           if ( var%j1 > 0 .and. var%j2 > 0 .and. &
                var%i1 > 0 .and. var%i2 > 0 .and. &
@@ -4969,16 +4969,16 @@ module mod_ncstream
             if ( (var%j2-var%j1+1) /= var%nval(1) .or. &
                  (var%i2-var%i1+1) /= var%nval(2) .or. &
                  (var%k2-var%k1+1) /= var%nval(3) ) then
-              write(stderr,*) 'In File ',__FILE__,' at line: ',__LINE__
-              write(stderr,*) 'Requested indexes different from file'
+              write(stderr, *) 'In File ',__FILE__, ' at line: ',__LINE__
+              write(stderr, *) 'Requested indexes different from file'
               call die('nc_stream','Cannot read variable '// &
                 trim(var%vname)//' in file '//trim(stream%filename), 1)
             end if
-            var%ival(var%j1:var%j2,var%i1:var%i2,var%k1:var%k2) = &
-              reshape(buffer%intbuff(1:var%totsize),stream%icount(1:3))
+            var%ival(var%j1:var%j2, var%i1:var%i2, var%k1:var%k2) = &
+              reshape(buffer%intbuff(1:var%totsize), stream%icount(1:3))
           else
-            var%ival(1:var%nval(1),1:var%nval(2),1:var%nval(3)) = &
-              reshape(buffer%intbuff(1:var%totsize),stream%icount(1:3))
+            var%ival(1:var%nval(1), 1:var%nval(2), 1:var%nval(3)) = &
+              reshape(buffer%intbuff(1:var%totsize), stream%icount(1:3))
           end if
         class is (ncvariable4d_integer)
           ndims = 4
@@ -4999,8 +4999,8 @@ module mod_ncstream
                  window(6) > stream%len_dims(var%idims(3)) .or. &
                  window(7) > stream%len_dims(var%idims(4)) .or. &
                  window(8) > stream%len_dims(var%idims(4)) ) then
-              write(stderr,*) 'In File ',__FILE__,' at line: ',__LINE__
-              write(stderr,*) 'Requested indexes out of range'
+              write(stderr, *) 'In File ',__FILE__, ' at line: ',__LINE__
+              write(stderr, *) 'Requested indexes out of range'
               call die('nc_stream','Cannot read variable '// &
                 trim(var%vname)//' in file '//trim(stream%filename), 1)
             end if
@@ -5012,8 +5012,8 @@ module mod_ncstream
                 ! We are not requested to read (out of our window)
                 return
               end if
-              stream%istart(1) = max(stream%jparbound(1),window(1))
-              stream%istart(2) = max(stream%iparbound(1),window(3))
+              stream%istart(1) = max(stream%jparbound(1), window(1))
+              stream%istart(2) = max(stream%iparbound(1), window(3))
               if ( stream%jparbound(2) > window(2) ) then
                 var%nval(1) = window(2)-stream%istart(1)+1
               else
@@ -5074,8 +5074,8 @@ module mod_ncstream
           stream%icount(4) = var%nval(4)
           if ( present(irec) ) then
             if ( var%ndims /= 5 ) then
-              write(stderr,*) 'In File ',__FILE__,' at line: ',__LINE__
-              write(stderr,*) 'Requested variable is not time dependent'
+              write(stderr, *) 'In File ',__FILE__, ' at line: ',__LINE__
+              write(stderr, *) 'Requested variable is not time dependent'
               call die('nc_stream','Cannot read variable '// &
                 trim(var%vname)//' in file '//trim(stream%filename), 1)
             end if
@@ -5088,11 +5088,11 @@ module mod_ncstream
             allocate(buffer%intbuff(var%totsize))
           end if
 #ifdef PNETCDF
-          ncstat = nf90mpi_get_var(stream%id,var%id,buffer%intbuff, &
-            stream%istart(1:ndims),stream%icount(1:ndims))
+          ncstat = nf90mpi_get_var(stream%id, var%id, buffer%intbuff, &
+            stream%istart(1:ndims), stream%icount(1:ndims))
 #else
-          ncstat = nf90_get_var(stream%id,var%id,buffer%intbuff, &
-            stream%istart(1:ndims),stream%icount(1:ndims))
+          ncstat = nf90_get_var(stream%id, var%id, buffer%intbuff, &
+            stream%istart(1:ndims), stream%icount(1:ndims))
 #endif
           if ( var%j1 > 0 .and. var%j2 > 0 .and. &
                var%i1 > 0 .and. var%i2 > 0 .and. &
@@ -5102,28 +5102,28 @@ module mod_ncstream
                  (var%i2-var%i1+1) /= var%nval(2) .or. &
                  (var%k2-var%k1+1) /= var%nval(3) .or. &
                  (var%n2-var%n1+1) /= var%nval(4) ) then
-              write(stderr,*) 'In File ',__FILE__,' at line: ',__LINE__
-              write(stderr,*) 'Requested indexes different from file'
+              write(stderr, *) 'In File ',__FILE__, ' at line: ',__LINE__
+              write(stderr, *) 'Requested indexes different from file'
               call die('nc_stream','Cannot read variable '// &
                 trim(var%vname)//' in file '//trim(stream%filename), 1)
             end if
-            var%ival(var%j1:var%j2,var%i1:var%i2, &
-                     var%k1:var%k2,var%n1:var%n2) = &
-              reshape(buffer%intbuff(1:var%totsize),stream%icount(1:4))
+            var%ival(var%j1:var%j2, var%i1:var%i2, &
+                     var%k1:var%k2, var%n1:var%n2) = &
+              reshape(buffer%intbuff(1:var%totsize), stream%icount(1:4))
           else
-            var%ival(1:var%nval(1),1:var%nval(2), &
-                     1:var%nval(3),1:var%nval(4)) = &
-              reshape(buffer%intbuff(1:var%totsize),stream%icount(1:4))
+            var%ival(1:var%nval(1), 1:var%nval(2), &
+                     1:var%nval(3), 1:var%nval(4)) = &
+              reshape(buffer%intbuff(1:var%totsize), stream%icount(1:4))
           end if
         class default
-          write(stderr,*) 'In File ',__FILE__,' at line: ',__LINE__
+          write(stderr, *) 'In File ',__FILE__, ' at line: ',__LINE__
           call die('nc_stream', 'Cannot read variable of unknown type',1)
       end select
       if ( ncstat /= nf90_noerr ) then
         call printerror
-        write(stderr,*) 'In File ',__FILE__,' at line: ',__LINE__
+        write(stderr, *) 'In File ',__FILE__, ' at line: ',__LINE__
         call die('nc_stream','Cannot read variable '//trim(var%vname)// &
-          ' in '//trim(stream%filename),1)
+          ' in '//trim(stream%filename), 1)
       end if
     end subroutine instream_readvar
 
@@ -5132,25 +5132,25 @@ module mod_ncstream
 #ifdef PNETCDF
       write(stderr, *) nf90mpi_strerror(ncstat)
 #else
-      write(stderr,*) nf90_strerror(ncstat)
+      write(stderr, *) nf90_strerror(ncstat)
 #endif
     end subroutine printerror
 
-    pure elemental real(rk4) function bitshave_nb(x,nb) result(y)
+    pure elemental real(rk4) function bitshave_nb(x, nb) result(y)
       implicit none
-      real(rk4), intent(in) :: x
-      integer(ik4), intent(in) :: nb
-      integer(ik4) :: mask
-      integer(ik4), parameter :: all_on = not(0_ik4)
-      mask = lshift(all_on,23-nb)
-      y = transfer(iand(transfer(x,0_ik4),mask),1.0_rk4)
+      real(rk4), intent(in):: x
+      integer(ik4), intent(in):: nb
+      integer(ik4):: mask
+      integer(ik4), parameter:: all_on = not(0_ik4)
+      mask = lshift(all_on, 23-nb)
+      y = transfer(iand(transfer(x, 0_ik4), mask), 1.0_rk4)
     end function bitshave_nb
 
     pure elemental real(rk4) function bitshave_15(x) result(y)
       implicit none
-      real(rk4), intent(in) :: x
-      integer(ik4), parameter :: mask = -256
-      y = transfer(iand(transfer(x,0_ik4),mask),1.0_rk4)
+      real(rk4), intent(in):: x
+      integer(ik4), parameter:: mask = -256
+      y = transfer(iand(transfer(x, 0_ik4), mask), 1.0_rk4)
     end function bitshave_15
 
 end module mod_ncstream
@@ -5167,27 +5167,27 @@ program test
   use mod_ncstream
   use mod_dynparam
 
-  type(nc_output_stream) :: ncout
-  type(nc_input_stream) :: ncin
-  type(ncoutstream_params) :: opar
-  type(ncinstream_params) :: ipar
+  type(nc_output_stream):: ncout
+  type(nc_input_stream):: ncin
+  type(ncoutstream_params):: opar
+  type(ncinstream_params):: ipar
 
-  type(rcm_time_and_date) :: idate
-  real(rkx) :: xrec
+  type(rcm_time_and_date):: idate
+  real(rkx):: xrec
 
-  type(ncvariable0d_integer) :: var0dint
-  type(ncvariable1d_real) :: var1dreal
-  type(ncvariable2d_real) :: var2dreal
-  type(ncvariable3d_real) :: var3dreal
+  type(ncvariable0d_integer):: var0dint
+  type(ncvariable1d_real):: var1dreal
+  type(ncvariable2d_real):: var2dreal
+  type(ncvariable3d_real):: var3dreal
 
-  type(ncvariable2d_real) :: var2read
+  type(ncvariable2d_real):: var2read
 
-  real(rkx), target, dimension(18) :: sigma
-  real(rkx), target, dimension(16,12) :: d2dvar
-  real(rkx), target, dimension(16,12,18) :: d3dvar
-  integer(ik4) :: i, k
+  real(rkx), target, dimension(18):: sigma
+  real(rkx), target, dimension(16, 12):: d2dvar
+  real(rkx), target, dimension(16, 12, 18):: d3dvar
+  integer(ik4):: i, k
 
-  data sigma /0.025_rkx, 0.075_rkx, 0.130_rkx, &
+  data sigma/0.025_rkx, 0.075_rkx, 0.130_rkx, &
               0.195_rkx, 0.270_rkx, 0.359_rkx, &
               0.430_rkx, 0.510_rkx, 0.590_rkx, &
               0.670_rkx, 0.750_rkx, 0.810_rkx, &
@@ -5241,68 +5241,68 @@ program test
   ! Setup an output stream
   opar%zero_date = 1979022200
   opar%l_bound = .true.
-  call outstream_setup(ncout,opar)
+  call outstream_setup(ncout, opar)
 
   ! Add variables with different dimensions. Can be in a loop !!
-  call outstream_addvar(ncout,var0dint)
-  call outstream_addvar(ncout,var1dreal)
-  call outstream_addvar(ncout,var2dreal)
-  call outstream_addvar(ncout,var3dreal)
+  call outstream_addvar(ncout, var0dint)
+  call outstream_addvar(ncout, var1dreal)
+  call outstream_addvar(ncout, var2dreal)
+  call outstream_addvar(ncout, var3dreal)
 
   ! Add some more attributes
-  call outstream_addatt(ncout,ncattribute_string('boundary_smoothing','No'))
-  call outstream_addatt(ncout,ncattribute_string('lake_fudging','No'))
+  call outstream_addatt(ncout, ncattribute_string('boundary_smoothing','No'))
+  call outstream_addatt(ncout, ncattribute_string('lake_fudging','No'))
   call outstream_addatt(ncout, &
     ncattribute_real8('minimum_h2o_pct_for_water',50.0_rkx))
 
   ! Enable the output stream for write
-  call outstream_enable(ncout,sigma)
+  call outstream_enable(ncout, sigma)
 
   var1dreal%rval => sigma
-  d2dvar(1:jx,1:iy) = 1.0_rkx
-  d2dvar(jx/2,iy/2) = 2.0_rkx
+  d2dvar(1:jx, 1:iy) = 1.0_rkx
+  d2dvar(jx/2, iy/2) = 2.0_rkx
   var2dreal%rval => d2dvar
 
   ! Write some static variables
-  call outstream_writevar(ncout,var1dreal)
-  call outstream_writevar(ncout,var2dreal)
+  call outstream_writevar(ncout, var1dreal)
+  call outstream_writevar(ncout, var2dreal)
 
   var0dint%ival(1) = 12
-  d3dvar(1:jx,1:iy,:) = 1.0_rkx
+  d3dvar(1:jx, 1:iy, :) = 1.0_rkx
   do k = 1, kz
-    d3dvar(jx/4,iy/4,k) = real(k,rkx)
+    d3dvar(jx/4, iy/4, k) = real(k, rkx)
   end do
   var3dreal%rval => d3dvar
 
   ! Write variables in the current record step
   idate = 1979022206
-  call outstream_addrec(ncout,idate)
-  call outstream_writevar(ncout,var0dint)
-  call outstream_writevar(ncout,var3dreal)
+  call outstream_addrec(ncout, idate)
+  call outstream_writevar(ncout, var0dint)
+  call outstream_writevar(ncout, var3dreal)
 
   var0dint%ival(1) = 13
-  d3dvar(1:jx,1:iy,:) = 1.0_rkx
+  d3dvar(1:jx, 1:iy, :) = 1.0_rkx
   do k = 1, kz
-    d3dvar(jx/4,iy/4,k) = real(k,rkx)*1.5_rkx
+    d3dvar(jx/4, iy/4, k) = real(k, rkx)*1.5_rkx
   end do
 
   ! Add a new record
   idate = 1979022212
-  call outstream_addrec(ncout,idate)
-  call outstream_writevar(ncout,var0dint)
-  call outstream_writevar(ncout,var3dreal)
+  call outstream_addrec(ncout, idate)
+  call outstream_writevar(ncout, var0dint)
+  call outstream_writevar(ncout, var3dreal)
 
   ! Finally, close the file and cleanup all
   call outstream_dispose(ncout)
 
   ipar%fname = opar%fname
-  call instream_setup(ncin,ipar)
+  call instream_setup(ncin, ipar)
 
   idate = 1979022207
 
-  call instream_findrec(ncin,idate,xrec)
+  call instream_findrec(ncin, idate, xrec)
 
-  print *, 'Record ',trim(tochar(idate)),' is at ', xrec
+  print *, 'Record ',trim(tochar(idate)), ' is at ', xrec
 
   d2dvar(:,:) = -1.0_rkx
   var2read%vname = 'real2dvar'
@@ -5313,7 +5313,7 @@ program test
   var2read%i1 = 1
   var2read%i2 = 7
 
-  call instream_readvar(ncin,var2read,window=[4,12,2,8])
+  call instream_readvar(ncin, var2read, window=[4, 12, 2, 8])
 
   do i = 1, iy
     print '(16i2)', int(d2dvar(:,i))
@@ -5323,4 +5323,4 @@ program test
 
 end program test
 #endif
-! vim: tabstop=8 expandtab shiftwidth=2 softtabstop=2
+! vim: tabstop = 8 expandtab shiftwidth = 2 softtabstop = 2
