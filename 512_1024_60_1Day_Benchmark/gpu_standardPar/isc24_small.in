@@ -33,7 +33,7 @@
  mdate2  = 1900010200,
  /
  &timeparam
- dt      =    30.,
+ dt      =    10.,
  /
  &outparam
  ifsave  = .false. ,
