@@ -1,0 +1,678 @@
+[LOG_CAT_MCAST] VMC Failed to join multicast, is_root 1. Unexpected event was received: event=13, str=RDMA_CM_EVENT_MULTICAST_ERROR, status=-22
+[LOG_CAT_MCAST] MCAST rank=0: Error in initializing vmc communicator
+[LOG_CAT_MCAST] MCAST rank=7: Error in initializing vmc communicator
+[LOG_CAT_P2P] Failed to create MCAST comm
+[LOG_CAT_MCAST] MCAST rank=15: Error in initializing vmc communicator
+[LOG_CAT_P2P] Failed to create MCAST comm
+[LOG_CAT_MCAST] MCAST rank=1: Error in initializing vmc communicator
+[LOG_CAT_P2P] Failed to create MCAST comm
+[LOG_CAT_MCAST] MCAST rank=2: Error in initializing vmc communicator
+[LOG_CAT_P2P] Failed to create MCAST comm
+[LOG_CAT_MCAST] MCAST rank=8: Error in initializing vmc communicator
+[LOG_CAT_P2P] Failed to create MCAST comm
+[LOG_CAT_MCAST] MCAST rank=3: Error in initializing vmc communicator
+[LOG_CAT_P2P] Failed to create MCAST comm
+[LOG_CAT_P2P] Failed to create MCAST comm
+[LOG_CAT_MCAST] MCAST rank=9: Error in initializing vmc communicator
+[LOG_CAT_P2P] Failed to create MCAST comm
+[LOG_CAT_MCAST] MCAST rank=11: Error in initializing vmc communicator
+[LOG_CAT_P2P] Failed to create MCAST comm
+[LOG_CAT_MCAST] MCAST rank=6: Error in initializing vmc communicator
+[LOG_CAT_P2P] Failed to create MCAST comm
+[LOG_CAT_MCAST] MCAST rank=13: Error in initializing vmc communicator
+[LOG_CAT_P2P] Failed to create MCAST comm
+[LOG_CAT_MCAST] MCAST rank=14: Error in initializing vmc communicator
+[LOG_CAT_P2P] Failed to create MCAST comm
+[LOG_CAT_MCAST] MCAST rank=4: Error in initializing vmc communicator
+[LOG_CAT_P2P] Failed to create MCAST comm
+[LOG_CAT_MCAST] MCAST rank=12: Error in initializing vmc communicator
+[LOG_CAT_P2P] Failed to create MCAST comm
+[LOG_CAT_MCAST] MCAST rank=5: Error in initializing vmc communicator
+[LOG_CAT_P2P] Failed to create MCAST comm
+[LOG_CAT_MCAST] MCAST rank=10: Error in initializing vmc communicator
+[LOG_CAT_P2P] Failed to create MCAST comm
+ Cannot enable savefile output//EURR-3_SAV.2009100500.nc
+ Cannot enable savefile output//EURR-3_SAV.2009100500.nc
+ Cannot enable savefile output//EURR-3_SAV.2009100500.nc
+ Cannot enable savefile output//EURR-3_SAV.2009100500.nc
+ Cannot enable savefile output//EURR-3_SAV.2009100500.nc
+ Cannot enable savefile output//EURR-3_SAV.2009100500.nc
+ Cannot enable savefile output//EURR-3_SAV.2009100500.nc
+ Cannot enable savefile output//EURR-3_SAV.2009100500.nc
+ Cannot enable savefile output//EURR-3_SAV.2009100500.nc
+ Cannot enable savefile output//EURR-3_SAV.2009100500.nc
+ Cannot enable savefile output//EURR-3_SAV.2009100500.nc
+ Cannot enable savefile output//EURR-3_SAV.2009100500.nc
+ Cannot enable savefile output//EURR-3_SAV.2009100500.nc
+ Cannot enable savefile output//EURR-3_SAV.2009100500.nc
+ Cannot enable savefile output//EURR-3_SAV.2009100500.nc
+ Cannot enable savefile output//EURR-3_SAV.2009100500.nc
+ Cannot enable savefile output//EURR-3_SAV.2009100500.nc
+ Cannot enable savefile output//EURR-3_SAV.2009100500.nc
+ Cannot enable savefile output//EURR-3_SAV.2009100500.nc
+ Cannot enable savefile output//EURR-3_SAV.2009100500.nc
+ Cannot enable savefile output//EURR-3_SAV.2009100500.nc
+ Cannot enable savefile output//EURR-3_SAV.2009100500.nc
+ Cannot enable savefile output//EURR-3_SAV.2009100500.nc
+ Cannot enable savefile output//EURR-3_SAV.2009100500.nc
+ Cannot enable savefile output//EURR-3_SAV.2009100500.nc
+ Cannot enable savefile output//EURR-3_SAV.2009100500.nc
+ Cannot enable savefile output//EURR-3_SAV.2009100500.nc
+ Cannot enable savefile output//EURR-3_SAV.2009100500.nc
+ Cannot enable savefile output//EURR-3_SAV.2009100500.nc
+ Cannot enable savefile output//EURR-3_SAV.2009100500.nc
+ Cannot enable savefile output//EURR-3_SAV.2009100500.nc
+ Cannot enable savefile output//EURR-3_SAV.2009100500.nc
+ Cannot enable savefile output//EURR-3_SAV.2009100500.nc
+ Cannot enable savefile output//EURR-3_SAV.2009100500.nc
+ Cannot enable savefile output//EURR-3_SAV.2009100500.nc
+ Cannot enable savefile output//EURR-3_SAV.2009100500.nc
+ Cannot enable savefile output//EURR-3_SAV.2009100500.nc
+ Cannot enable savefile output//EURR-3_SAV.2009100500.nc
+ Cannot enable savefile output//EURR-3_SAV.2009100500.nc
+ Cannot enable savefile output//EURR-3_SAV.2009100500.nc
+ Cannot enable savefile output//EURR-3_SAV.2009100500.nc
+ Cannot enable savefile output//EURR-3_SAV.2009100500.nc
+ Cannot enable savefile output//EURR-3_SAV.2009100500.nc
+ Cannot enable savefile output//EURR-3_SAV.2009100500.nc
+ Cannot enable savefile output//EURR-3_SAV.2009100500.nc
+ Cannot enable savefile output//EURR-3_SAV.2009100500.nc
+ Cannot enable savefile output//EURR-3_SAV.2009100500.nc
+ Cannot enable savefile output//EURR-3_SAV.2009100500.nc
+ Cannot enable savefile output//EURR-3_SAV.2009100500.nc
+ Cannot enable savefile output//EURR-3_SAV.2009100500.nc
+ Cannot enable savefile output//EURR-3_SAV.2009100500.nc
+ NetCDF: One or more variable sizes violate format constraints                   
+ Cannot enable savefile output//EURR-3_SAV.2009100500.nc
+ Cannot enable savefile output//EURR-3_SAV.2009100500.nc
+ Cannot enable savefile output//EURR-3_SAV.2009100500.nc
+ Cannot enable savefile output//EURR-3_SAV.2009100500.nc
+ Cannot enable savefile output//EURR-3_SAV.2009100500.nc
+ Cannot enable savefile output//EURR-3_SAV.2009100500.nc
+ Cannot enable savefile output//EURR-3_SAV.2009100500.nc
+ Cannot enable savefile output//EURR-3_SAV.2009100500.nc
+ Cannot enable savefile output//EURR-3_SAV.2009100500.nc
+ Cannot enable savefile output//EURR-3_SAV.2009100500.nc
+ NetCDF: One or more variable sizes violate format constraints                   
+ -------------- FATAL CALLED ---------------
+ Cannot enable savefile output//EURR-3_SAV.2009100500.nc
+ Cannot enable savefile output//EURR-3_SAV.2009100500.nc
+ Cannot enable savefile output//EURR-3_SAV.2009100500.nc
+ NetCDF: One or more variable sizes violate format constraints                   
+ -------------- FATAL CALLED ---------------
+ NetCDF: One or more variable sizes violate format constraints                   
+ -------------- FATAL CALLED ---------------
+ NetCDF: One or more variable sizes violate format constraints                   
+ NetCDF: One or more variable sizes violate format constraints                   
+ NetCDF: One or more variable sizes violate format constraints                   
+ -------------- FATAL CALLED ---------------
+ NetCDF: One or more variable sizes violate format constraints                   
+ -------------- FATAL CALLED ---------------
+ NetCDF: One or more variable sizes violate format constraints                   
+ -------------- FATAL CALLED ---------------
+ NetCDF: One or more variable sizes violate format constraints                   
+ NetCDF: One or more variable sizes violate format constraints                   
+ -------------- FATAL CALLED ---------------
+ NetCDF: One or more variable sizes violate format constraints                   
+ -------------- FATAL CALLED ---------------
+ NetCDF: One or more variable sizes violate format constraints                   
+ -------------- FATAL CALLED ---------------
+  Fatal in file: mod_savefile.F90 at line:     2004
+ NetCDF: One or more variable sizes violate format constraints                   
+ -------------- FATAL CALLED ---------------
+ NetCDF: One or more variable sizes violate format constraints                   
+ -------------- FATAL CALLED ---------------
+  Fatal in file: mod_savefile.F90 at line:     2004
+ NetCDF: One or more variable sizes violate format constraints                   
+ -------------- FATAL CALLED ---------------
+ -------------- FATAL CALLED ---------------
+ NetCDF: One or more variable sizes violate format constraints                   
+ -------------- FATAL CALLED ---------------
+ -------------- FATAL CALLED ---------------
+ NetCDF: One or more variable sizes violate format constraints                   
+ -------------- FATAL CALLED ---------------
+  Fatal in file: mod_savefile.F90 at line:     2004
+ SAVEFILE
+ -------------------------------------------
+ NetCDF: One or more variable sizes violate format constraints                   
+ -------------- FATAL CALLED ---------------
+ NetCDF: One or more variable sizes violate format constraints                   
+ -------------- FATAL CALLED ---------------
+  Fatal in file: mod_savefile.F90 at line:     2004
+ SAVEFILE
+ -------------------------------------------
+ NetCDF: One or more variable sizes violate format constraints                   
+ -------------- FATAL CALLED ---------------
+ NetCDF: One or more variable sizes violate format constraints                   
+ -------------- FATAL CALLED ---------------
+  Fatal in file: mod_savefile.F90 at line:     2004
+ NetCDF: One or more variable sizes violate format constraints                   
+ -------------- FATAL CALLED ---------------
+ NetCDF: One or more variable sizes violate format constraints                   
+  Fatal in file: mod_savefile.F90 at line:     2004
+ SAVEFILE
+ -------------------------------------------
+  Fatal in file: mod_savefile.F90 at line:     2004
+ SAVEFILE
+ -------------------------------------------
+  Fatal in file: mod_savefile.F90 at line:     2004
+ SAVEFILE
+ -------------------------------------------
+ -------------- FATAL CALLED ---------------
+ -------------- FATAL CALLED ---------------
+  Fatal in file: mod_savefile.F90 at line:     2004
+ SAVEFILE
+ NetCDF: One or more variable sizes violate format constraints                   
+ -------------- FATAL CALLED ---------------
+  Fatal in file: mod_savefile.F90 at line:     2004
+ SAVEFILE
+ -------------------------------------------
+ NetCDF: One or more variable sizes violate format constraints                   
+ -------------- FATAL CALLED ---------------
+ SAVEFILE
+ -------------------------------------------
+  Fatal in file: mod_savefile.F90 at line:     2004
+ SAVEFILE
+ -------------------------------------------
+ NetCDF: One or more variable sizes violate format constraints                   
+ -------------- FATAL CALLED ---------------
+  Fatal in file: mod_savefile.F90 at line:     2004
+ NetCDF: One or more variable sizes violate format constraints                   
+ -------------- FATAL CALLED ---------------
+  Fatal in file: mod_savefile.F90 at line:     2004
+ SAVEFILE
+ -------------------------------------------
+  Fatal in file: mod_savefile.F90 at line:     2004
+ SAVEFILE
+ -------------------------------------------
+ SAVEFILE
+ -------------------------------------------
+ NetCDF: One or more variable sizes violate format constraints                   
+ -------------- FATAL CALLED ---------------
+ -------------------------------------------
+  Fatal in file: mod_savefile.F90 at line:     2004
+ SAVEFILE
+ -------------------------------------------
+  Fatal in file: mod_savefile.F90 at line:     2004
+ SAVEFILE
+ -------------------------------------------
+  Fatal in file: mod_savefile.F90 at line:     2004
+ SAVEFILE
+ -------------------------------------------
+  Fatal in file: mod_savefile.F90 at line:     2004
+ SAVEFILE
+ -------------------------------------------
+  Fatal in file: mod_savefile.F90 at line:     2004
+ SAVEFILE
+ -------------------------------------------
+  Fatal in file: mod_savefile.F90 at line:     2004
+ SAVEFILE
+ -------------------------------------------
+ Abort called by computing node            37 at 2025-08-11 20:21:29.068 +0200
+ Execution terminated because of runtime error
+  Fatal in file: mod_savefile.F90 at line:     2004
+ SAVEFILE
+ -------------------------------------------
+  Fatal in file: mod_savefile.F90 at line:     2004
+ SAVEFILE
+ -------------------------------------------
+ Abort called by computing node            41 at 2025-08-11 20:21:29.068 +0200
+ Execution terminated because of runtime error
+ NetCDF: One or more variable sizes violate format constraints                   
+ SAVEFILE
+ -------------------------------------------
+  Fatal in file: mod_savefile.F90 at line:     2004
+ SAVEFILE
+ -------------------------------------------
+ -------------- FATAL CALLED ---------------
+  Fatal in file: mod_savefile.F90 at line:     2004
+ SAVEFILE
+ -------------------------------------------
+ Abort called by computing node            56 at 2025-08-11 20:21:29.068 +0200
+ Execution terminated because of runtime error
+ Abort called by computing node            34 at 2025-08-11 20:21:29.068 +0200
+ Abort called by computing node            39 at 2025-08-11 20:21:29.068 +0200
+ Execution terminated because of runtime error
+  Fatal in file: mod_savefile.F90 at line:     2004
+ SAVEFILE
+ -------------------------------------------
+  Fatal in file: mod_savefile.F90 at line:     2004
+ SAVEFILE
+ -------------------------------------------
+ Abort called by computing node            43 at 2025-08-11 20:21:29.068 +0200
+ Execution terminated because of runtime error
+ NetCDF: One or more variable sizes violate format constraints                   
+ -------------- FATAL CALLED ---------------
+  Fatal in file: mod_savefile.F90 at line:     2004
+ SAVEFILE
+ -------------------------------------------
+ Abort called by computing node            45 at 2025-08-11 20:21:29.068 +0200
+ Execution terminated because of runtime error
+ Abort called by computing node            52 at 2025-08-11 20:21:29.068 +0200
+ Execution terminated because of runtime error
+ SAVEFILE
+ -------------------------------------------
+ Abort called by computing node            58 at 2025-08-11 20:21:29.068 +0200
+ Execution terminated because of runtime error
+ Abort called by computing node            35 at 2025-08-11 20:21:29.068 +0200
+ Abort called by computing node            36 at 2025-08-11 20:21:29.068 +0200
+ Execution terminated because of runtime error
+  Fatal in file: mod_savefile.F90 at line:     2004
+ SAVEFILE
+ -------------------------------------------
+ Abort called by computing node            28 at 2025-08-11 20:21:29.068 +0200
+ Abort called by computing node            40 at 2025-08-11 20:21:29.068 +0200
+ Execution terminated because of runtime error
+ NetCDF: One or more variable sizes violate format constraints                   
+ -------------- FATAL CALLED ---------------
+  Fatal in file: mod_savefile.F90 at line:     2004
+ SAVEFILE
+ -------------------------------------------
+ Abort called by computing node            46 at 2025-08-11 20:21:29.068 +0200
+ Execution terminated because of runtime error
+ Abort called by computing node            53 at 2025-08-11 20:21:29.068 +0200
+ Abort called by computing node             4 at 2025-08-11 20:21:29.068 +0200
+ Execution terminated because of runtime error
+ Abort called by computing node            59 at 2025-08-11 20:21:29.068 +0200
+ Execution terminated because of runtime error
+ Abort called by computing node            33 at 2025-08-11 20:21:29.068 +0200
+ Execution terminated because of runtime error
+ NetCDF: One or more variable sizes violate format constraints                   
+ Abort called by computing node            13 at 2025-08-11 20:21:29.069 +0200
+ Execution terminated because of runtime error
+ Abort called by computing node            29 at 2025-08-11 20:21:29.068 +0200
+ Execution terminated because of runtime error
+ NetCDF: One or more variable sizes violate format constraints                   
+ -------------- FATAL CALLED ---------------
+ NetCDF: One or more variable sizes violate format constraints                   
+ -------------- FATAL CALLED ---------------
+ -------------- FATAL CALLED ---------------
+  Fatal in file: mod_savefile.F90 at line:     2004
+ SAVEFILE
+ -------------------------------------------
+ Abort called by computing node            47 at 2025-08-11 20:21:29.068 +0200
+ Execution terminated because of runtime error
+ Abort called by computing node            55 at 2025-08-11 20:21:29.068 +0200
+ Execution terminated because of runtime error
+ Abort called by computing node             6 at 2025-08-11 20:21:29.068 +0200
+ Execution terminated because of runtime error
+ NetCDF: One or more variable sizes violate format constraints                   
+ -------------- FATAL CALLED ---------------
+ Execution terminated because of runtime error
+ -------------- FATAL CALLED ---------------
+ Abort called by computing node            15 at 2025-08-11 20:21:29.069 +0200
+ Execution terminated because of runtime error
+ Abort called by computing node            30 at 2025-08-11 20:21:29.068 +0200
+ Execution terminated because of runtime error
+  Fatal in file: mod_savefile.F90 at line:     2004
+ SAVEFILE
+ -------------------------------------------
+  Fatal in file: mod_savefile.F90 at line:     2004
+ SAVEFILE
+ -------------------------------------------
+ NetCDF: One or more variable sizes violate format constraints                   
+ -------------- FATAL CALLED ---------------
+ Abort called by computing node            27 at 2025-08-11 20:21:29.069 +0200
+ Execution terminated because of runtime error
+ NetCDF: One or more variable sizes violate format constraints                   
+ Execution terminated because of runtime error
+ Abort called by computing node             7 at 2025-08-11 20:21:29.068 +0200
+ Execution terminated because of runtime error
+  Fatal in file: mod_savefile.F90 at line:     2004
+ SAVEFILE
+ -------------------------------------------
+ Execution terminated because of runtime error
+  Fatal in file: mod_savefile.F90 at line:     2004
+ SAVEFILE
+ -------------------------------------------
+ Abort called by computing node            12 at 2025-08-11 20:21:29.069 +0200
+ Execution terminated because of runtime error
+ Execution terminated because of runtime error
+ Abort called by computing node            42 at 2025-08-11 20:21:29.068 +0200
+ Execution terminated because of runtime error
+  Fatal in file: mod_savefile.F90 at line:     2004
+ SAVEFILE
+ -------------------------------------------
+ NetCDF: One or more variable sizes violate format constraints                   
+ -------------- FATAL CALLED ---------------
+ Abort called by computing node            24 at 2025-08-11 20:21:29.069 +0200
+ Execution terminated because of runtime error
+ -------------- FATAL CALLED ---------------
+ NetCDF: One or more variable sizes violate format constraints                   
+ NetCDF: One or more variable sizes violate format constraints                   
+ Abort called by computing node            57 at 2025-08-11 20:21:29.068 +0200
+ Execution terminated because of runtime error
+ NetCDF: One or more variable sizes violate format constraints                   
+ NetCDF: One or more variable sizes violate format constraints                   
+ -------------- FATAL CALLED ---------------
+ Abort called by computing node            38 at 2025-08-11 20:21:29.068 +0200
+ NetCDF: One or more variable sizes violate format constraints                   
+ NetCDF: One or more variable sizes violate format constraints                   
+ -------------- FATAL CALLED ---------------
+  Fatal in file: mod_savefile.F90 at line:     2004
+ SAVEFILE
+ -------------------------------------------
+ NetCDF: One or more variable sizes violate format constraints                   
+ -------------- FATAL CALLED ---------------
+ Abort called by computing node            26 at 2025-08-11 20:21:29.069 +0200
+ Execution terminated because of runtime error
+  Fatal in file: mod_savefile.F90 at line:     2004
+ SAVEFILE
+ -------------------------------------------
+ -------------- FATAL CALLED ---------------
+  Fatal in file: mod_savefile.F90 at line:     2004
+ -------------- FATAL CALLED ---------------
+  Fatal in file: mod_savefile.F90 at line:     2004
+ -------------- FATAL CALLED ---------------
+  Fatal in file: mod_savefile.F90 at line:     2004
+ Execution terminated because of runtime error
+ -------------- FATAL CALLED ---------------
+  Fatal in file: mod_savefile.F90 at line:     2004
+  Fatal in file: mod_savefile.F90 at line:     2004
+ SAVEFILE
+ Abort called by computing node            21 at 2025-08-11 20:21:29.069 +0200
+ Execution terminated because of runtime error
+  Fatal in file: mod_savefile.F90 at line:     2004
+ SAVEFILE
+ -------------------------------------------
+ NetCDF: One or more variable sizes violate format constraints                   
+ Abort called by computing node            44 at 2025-08-11 20:21:29.068 +0200
+ Execution terminated because of runtime error
+ SAVEFILE
+ -------------------------------------------
+ SAVEFILE
+ -------------------------------------------
+ SAVEFILE
+ -------------------------------------------
+ SAVEFILE
+ -------------------------------------------
+ -------------------------------------------
+ Abort called by computing node            22 at 2025-08-11 20:21:29.069 +0200
+ Execution terminated because of runtime error
+  Fatal in file: mod_savefile.F90 at line:     2004
+ SAVEFILE
+ -------------------------------------------
+ -------------- FATAL CALLED ---------------
+ Abort called by computing node            54 at 2025-08-11 20:21:29.068 +0200
+ Execution terminated because of runtime error
+ Abort called by computing node             5 at 2025-08-11 20:21:29.068 +0200
+ Execution terminated because of runtime error
+ Abort called by computing node            32 at 2025-08-11 20:21:29.069 +0200
+ Execution terminated because of runtime error
+ Abort called by computing node            14 at 2025-08-11 20:21:29.069 +0200
+ Execution terminated because of runtime error
+ Abort called by computing node            31 at 2025-08-11 20:21:29.068 +0200
+ Execution terminated because of runtime error
+ Abort called by computing node            20 at 2025-08-11 20:21:29.069 +0200
+ Execution terminated because of runtime error
+  Fatal in file: mod_savefile.F90 at line:     2004
+ SAVEFILE
+ -------------------------------------------
+  Fatal in file: mod_savefile.F90 at line:     2004
+ SAVEFILE
+ -------------------------------------------
+ NetCDF: One or more variable sizes violate format constraints                   
+ -------------- FATAL CALLED ---------------
+  Fatal in file: mod_savefile.F90 at line:     2004
+ SAVEFILE
+ NetCDF: One or more variable sizes violate format constraints                   
+ -------------- FATAL CALLED ---------------
+ NetCDF: One or more variable sizes violate format constraints                   
+ Abort called by computing node            25 at 2025-08-11 20:21:29.069 +0200
+ NetCDF: One or more variable sizes violate format constraints                   
+ -------------- FATAL CALLED ---------------
+ NetCDF: One or more variable sizes violate format constraints                   
+ -------------- FATAL CALLED ---------------
+  Fatal in file: mod_savefile.F90 at line:     2004
+ SAVEFILE
+ -------------------------------------------
+ -------------- FATAL CALLED ---------------
+ Execution terminated because of runtime error
+  Fatal in file: mod_savefile.F90 at line:     2004
+ SAVEFILE
+ -------------------------------------------
+ NetCDF: One or more variable sizes violate format constraints                   
+ -------------- FATAL CALLED ---------------
+  Fatal in file: mod_savefile.F90 at line:     2004
+ SAVEFILE
+ -------------------------------------------
+ Abort called by computing node            23 at 2025-08-11 20:21:29.069 +0200
+ Execution terminated because of runtime error
+  Fatal in file: mod_savefile.F90 at line:     2004
+ SAVEFILE
+ -------------------------------------------
+  Fatal in file: mod_savefile.F90 at line:     2004
+ SAVEFILE
+ -------------------------------------------
+ mod_savefile.F90 :     2004:             1
+ -------------------------------------------
+ NetCDF: One or more variable sizes violate format constraints                   
+ -------------- FATAL CALLED ---------------
+ NetCDF: One or more variable sizes violate format constraints                   
+  Fatal in file: mod_savefile.F90 at line:     2004
+ SAVEFILE
+ -------------------------------------------
+ NetCDF: One or more variable sizes violate format constraints                   
+ -------------- FATAL CALLED ---------------
+ -------------- FATAL CALLED ---------------
+ Abort called by computing node            11 at 2025-08-11 20:21:29.069 +0200
+ Execution terminated because of runtime error
+  Fatal in file: mod_savefile.F90 at line:     2004
+ SAVEFILE
+ -------------------------------------------
+  Fatal in file: mod_savefile.F90 at line:     2004
+ SAVEFILE
+ -------------------------------------------
+ Abort called by computing node             9 at 2025-08-11 20:21:29.069 +0200
+ Execution terminated because of runtime error
+  Fatal in file: mod_savefile.F90 at line:     2004
+ SAVEFILE
+ -------------------------------------------
+ NetCDF: One or more variable sizes violate format constraints                   
+ Abort called by computing node            10 at 2025-08-11 20:21:29.069 +0200
+ Execution terminated because of runtime error
+ NetCDF: One or more variable sizes violate format constraints                   
+ -------------- FATAL CALLED ---------------
+  Fatal in file: mod_savefile.F90 at line:     2004
+ SAVEFILE
+ -------------------------------------------
+ -------------- FATAL CALLED ---------------
+ NetCDF: One or more variable sizes violate format constraints                   
+ -------------- FATAL CALLED ---------------
+ Abort called by computing node            16 at 2025-08-11 20:21:29.069 +0200
+ Execution terminated because of runtime error
+  Fatal in file: mod_savefile.F90 at line:     2004
+ SAVEFILE
+ -------------------------------------------
+  Fatal in file: mod_savefile.F90 at line:     2004
+ SAVEFILE
+ -------------------------------------------
+ Abort called by computing node            18 at 2025-08-11 20:21:29.069 +0200
+ Execution terminated because of runtime error
+ Abort called by computing node             8 at 2025-08-11 20:21:29.069 +0200
+ Abort called by computing node            19 at 2025-08-11 20:21:29.069 +0200
+ Execution terminated because of runtime error
+ Execution terminated because of runtime error
+ NetCDF: One or more variable sizes violate format constraints                   
+ -------------- FATAL CALLED ---------------
+  Fatal in file: mod_savefile.F90 at line:     2004
+ SAVEFILE
+ -------------------------------------------
+ Abort called by computing node            17 at 2025-08-11 20:21:29.069 +0200
+ Execution terminated because of runtime error
+ NetCDF: One or more variable sizes violate format constraints                   
+ -------------- FATAL CALLED ---------------
+ NetCDF: One or more variable sizes violate format constraints                   
+ -------------- FATAL CALLED ---------------
+  Fatal in file: mod_savefile.F90 at line:     2004
+  Fatal in file: mod_savefile.F90 at line:     2004
+ SAVEFILE
+ -------------------------------------------
+ NetCDF: One or more variable sizes violate format constraints                   
+ -------------- FATAL CALLED ---------------
+  Fatal in file: mod_savefile.F90 at line:     2004
+ SAVEFILE
+ -------------------------------------------
+ SAVEFILE
+ -------------------------------------------
+ Abort called by computing node            48 at 2025-08-11 20:21:29.069 +0200
+ Execution terminated because of runtime error
+ Abort called by computing node            49 at 2025-08-11 20:21:29.069 +0200
+ Execution terminated because of runtime error
+ Abort called by computing node            51 at 2025-08-11 20:21:29.069 +0200
+ Execution terminated because of runtime error
+ NetCDF: One or more variable sizes violate format constraints                   
+ -------------- FATAL CALLED ---------------
+  Fatal in file: mod_savefile.F90 at line:     2004
+ SAVEFILE
+ -------------------------------------------
+ Abort called by computing node            50 at 2025-08-11 20:21:29.069 +0200
+ Execution terminated because of runtime error
+ Abort called by computing node             0 at 2025-08-11 20:21:29.069 +0200
+ Execution terminated because of runtime error
+ Abort called by computing node             3 at 2025-08-11 20:21:29.069 +0200
+ Execution terminated because of runtime error
+ Abort called by computing node             1 at 2025-08-11 20:21:29.069 +0200
+ Execution terminated because of runtime error
+ Abort called by computing node             2 at 2025-08-11 20:21:29.069 +0200
+ Execution terminated because of runtime error
+ Abort called by computing node            61 at 2025-08-11 20:21:29.073 +0200
+ Execution terminated because of runtime error
+ Abort called by computing node            62 at 2025-08-11 20:21:29.073 +0200
+ Execution terminated because of runtime error
+ Abort called by computing node            60 at 2025-08-11 20:21:29.073 +0200
+ Execution terminated because of runtime error
+ Abort called by computing node            63 at 2025-08-11 20:21:29.073 +0200
+ Execution terminated because of runtime error
+--------------------------------------------------------------------------
+MPI_ABORT was invoked on rank 9 in communicator MPI COMMUNICATOR 3 DUP FROM 0
+with errorcode 1.
+
+NOTE: invoking MPI_ABORT causes Open MPI to kill all MPI processes.
+You may or may not see output from other processes, depending on
+exactly when Open MPI kills them.
+--------------------------------------------------------------------------
+--------------------------------------------------------------------------
+MPI_ABORT was invoked on rank 8 in communicator MPI COMMUNICATOR 3 DUP FROM 0
+with errorcode 1.
+
+NOTE: invoking MPI_ABORT causes Open MPI to kill all MPI processes.
+You may or may not see output from other processes, depending on
+exactly when Open MPI kills them.
+--------------------------------------------------------------------------
+--------------------------------------------------------------------------
+MPI_ABORT was invoked on rank 11 in communicator MPI COMMUNICATOR 3 DUP FROM 0
+with errorcode 1.
+
+NOTE: invoking MPI_ABORT causes Open MPI to kill all MPI processes.
+You may or may not see output from other processes, depending on
+exactly when Open MPI kills them.
+--------------------------------------------------------------------------
+--------------------------------------------------------------------------
+MPI_ABORT was invoked on rank 10 in communicator MPI COMMUNICATOR 3 DUP FROM 0
+with errorcode 1.
+
+NOTE: invoking MPI_ABORT causes Open MPI to kill all MPI processes.
+You may or may not see output from other processes, depending on
+exactly when Open MPI kills them.
+--------------------------------------------------------------------------
+--------------------------------------------------------------------------
+MPI_ABORT was invoked on rank 32 in communicator MPI COMMUNICATOR 3 DUP FROM 0
+with errorcode 1.
+
+NOTE: invoking MPI_ABORT causes Open MPI to kill all MPI processes.
+You may or may not see output from other processes, depending on
+exactly when Open MPI kills them.
+--------------------------------------------------------------------------
+--------------------------------------------------------------------------
+MPI_ABORT was invoked on rank 33 in communicator MPI COMMUNICATOR 3 DUP FROM 0
+with errorcode 1.
+
+NOTE: invoking MPI_ABORT causes Open MPI to kill all MPI processes.
+You may or may not see output from other processes, depending on
+exactly when Open MPI kills them.
+--------------------------------------------------------------------------
+--------------------------------------------------------------------------
+MPI_ABORT was invoked on rank 35 in communicator MPI COMMUNICATOR 3 DUP FROM 0
+with errorcode 1.
+
+NOTE: invoking MPI_ABORT causes Open MPI to kill all MPI processes.
+You may or may not see output from other processes, depending on
+exactly when Open MPI kills them.
+--------------------------------------------------------------------------
+--------------------------------------------------------------------------
+MPI_ABORT was invoked on rank 28 in communicator MPI COMMUNICATOR 3 DUP FROM 0
+with errorcode 1.
+
+NOTE: invoking MPI_ABORT causes Open MPI to kill all MPI processes.
+You may or may not see output from other processes, depending on
+exactly when Open MPI kills them.
+--------------------------------------------------------------------------
+--------------------------------------------------------------------------
+MPI_ABORT was invoked on rank 31 in communicator MPI COMMUNICATOR 3 DUP FROM 0
+with errorcode 1.
+
+NOTE: invoking MPI_ABORT causes Open MPI to kill all MPI processes.
+You may or may not see output from other processes, depending on
+exactly when Open MPI kills them.
+--------------------------------------------------------------------------
+--------------------------------------------------------------------------
+MPI_ABORT was invoked on rank 29 in communicator MPI COMMUNICATOR 3 DUP FROM 0
+with errorcode 1.
+
+NOTE: invoking MPI_ABORT causes Open MPI to kill all MPI processes.
+You may or may not see output from other processes, depending on
+exactly when Open MPI kills them.
+--------------------------------------------------------------------------
+--------------------------------------------------------------------------
+MPI_ABORT was invoked on rank 34 in communicator MPI COMMUNICATOR 3 DUP FROM 0
+with errorcode 1.
+
+NOTE: invoking MPI_ABORT causes Open MPI to kill all MPI processes.
+You may or may not see output from other processes, depending on
+exactly when Open MPI kills them.
+--------------------------------------------------------------------------
+--------------------------------------------------------------------------
+MPI_ABORT was invoked on rank 30 in communicator MPI COMMUNICATOR 3 DUP FROM 0
+with errorcode 1.
+
+NOTE: invoking MPI_ABORT causes Open MPI to kill all MPI processes.
+You may or may not see output from other processes, depending on
+exactly when Open MPI kills them.
+--------------------------------------------------------------------------
+slurmstepd: error: *** STEP 18794952.0 ON lrdn1429 CANCELLED AT 2025-08-11T20:21:29 ***
+srun: Job step aborted: Waiting up to 92 seconds for job step to finish.
+srun: error: lrdn1999: tasks 45,47: Killed
+srun: error: lrdn1583: tasks 13-15: Killed
+srun: error: lrdn1713: tasks 20-21,23: Killed
+srun: error: lrdn2090: tasks 61-63: Killed
+srun: error: lrdn1767: tasks 24-25,27: Killed
+srun: error: lrdn2028: tasks 48-49,51: Killed
+srun: error: lrdn1968: tasks 40-41,43: Killed
+srun: error: lrdn1775: tasks 29,31: Killed
+srun: error: lrdn2060: tasks 56-57,59: Killed
+srun: error: lrdn1551: tasks 9-10: Killed
+srun: error: lrdn1551: task 11: Exited with exit code 1
+srun: error: lrdn1583: task 12: Killed
+srun: error: lrdn2090: task 60: Killed
+srun: error: lrdn2042: tasks 53,55: Killed
+srun: error: lrdn1434: tasks 4-5,7: Killed
+srun: error: lrdn1660: tasks 16-17,19: Killed
+srun: error: lrdn1713: task 22: Killed
+srun: error: lrdn1929: tasks 37-39: Killed
+srun: error: lrdn1767: task 26: Killed
+srun: error: lrdn2028: task 50: Killed
+srun: error: lrdn1429: tasks 1-3: Killed
+srun: error: lrdn2060: task 58: Killed
+srun: error: lrdn1551: task 8: Killed
+srun: error: lrdn1968: task 42: Killed
+srun: error: lrdn1867: task 32: Exited with exit code 1
+srun: error: lrdn1867: tasks 34-35: Killed
+srun: error: lrdn1999: tasks 44,46: Killed
+srun: error: lrdn1775: tasks 28,30: Killed
+srun: error: lrdn1434: task 6: Killed
+srun: error: lrdn1929: task 36: Killed
+srun: error: lrdn1660: task 18: Killed
+srun: error: lrdn1867: task 33: Killed
+srun: error: lrdn1429: task 0: Killed
+srun: error: lrdn2042: tasks 52,54: Killed

@@ -60,7 +60,7 @@
     ifrest = .false.
     mdate0 = 2009100100
     mdate1 = 2009100100
-    mdate2 = 2009100500
+    mdate2 = 2009100200
 /
 
 &timeparam

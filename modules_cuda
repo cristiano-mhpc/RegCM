@@ -1,5 +1,5 @@
 module load profile/meteo
-#module load cuda/12.2
+# module load cuda/12.2
 module load nvhpc/24.5
 module load netcdf-fortran/4.6.1--hpcx-mpi--2.19--nvhpc--24.5
 module load parallel-netcdf/1.12.3--hpcx-mpi--2.19--nvhpc--24.5

@@ -1,0 +1,1444 @@
+[LOG_CAT_MCAST] VMC Failed to join multicast, is_root 1. Unexpected event was received: event=13, str=RDMA_CM_EVENT_MULTICAST_ERROR, status=-22
+[LOG_CAT_MCAST] MCAST rank=0: Error in initializing vmc communicator
+[LOG_CAT_P2P] Failed to create MCAST comm
+[LOG_CAT_MCAST] MCAST rank=1: Error in initializing vmc communicator
+[LOG_CAT_P2P] Failed to create MCAST comm
+[LOG_CAT_MCAST] MCAST rank=3: Error in initializing vmc communicator
+[LOG_CAT_P2P] Failed to create MCAST comm
+[LOG_CAT_MCAST] MCAST rank=4: Error in initializing vmc communicator
+[LOG_CAT_P2P] Failed to create MCAST comm
+[LOG_CAT_MCAST] MCAST rank=2: Error in initializing vmc communicator
+[LOG_CAT_P2P] Failed to create MCAST comm
+[LOG_CAT_MCAST] MCAST rank=7: Error in initializing vmc communicator
+[LOG_CAT_P2P] Failed to create MCAST comm
+[LOG_CAT_MCAST] MCAST rank=6: Error in initializing vmc communicator
+[LOG_CAT_P2P] Failed to create MCAST comm
+[LOG_CAT_MCAST] MCAST rank=5: Error in initializing vmc communicator
+[LOG_CAT_P2P] Failed to create MCAST comm
+ NetCDF: Variable not found                                                      
+ NetCDF: Variable not found                                                      
+ mod_domain.F90 :      335:Error search variable PTOP:           -49
+ Abort called by computing node             0 at 2025-08-18 15:00:10.882 +0200
+ Execution terminated because of runtime error
+ NetCDF: Variable not found                                                      
+ NetCDF: Variable not found                                                      
+ NetCDF: Variable not found                                                      
+ NetCDF: Variable not found                                                      
+ Abort called by computing node            16 at 2025-08-18 15:00:10.882 +0200
+ Execution terminated because of runtime error
+ Abort called by computing node            38 at 2025-08-18 15:00:10.882 +0200
+ Execution terminated because of runtime error
+ NetCDF: Variable not found                                                      
+ NetCDF: Variable not found                                                      
+ Abort called by computing node            98 at 2025-08-18 15:00:10.882 +0200
+ Execution terminated because of runtime error
+ NetCDF: Variable not found                                                      
+ Abort called by computing node            10 at 2025-08-18 15:00:10.882 +0200
+ Execution terminated because of runtime error
+ NetCDF: Variable not found                                                      
+ NetCDF: Variable not found                                                      
+ Abort called by computing node            35 at 2025-08-18 15:00:10.882 +0200
+ Execution terminated because of runtime error
+ NetCDF: Variable not found                                                      
+ Abort called by computing node            91 at 2025-08-18 15:00:10.882 +0200
+ Execution terminated because of runtime error
+ NetCDF: Variable not found                                                      
+ NetCDF: Variable not found                                                      
+ NetCDF: Variable not found                                                      
+ NetCDF: Variable not found                                                      
+ NetCDF: Variable not found                                                      
+ NetCDF: Variable not found                                                      
+ NetCDF: Variable not found                                                      
+ NetCDF: Variable not found                                                      
+ NetCDF: Variable not found                                                      
+ NetCDF: Variable not found                                                      
+ NetCDF: Variable not found                                                      
+ NetCDF: Variable not found                                                      
+ NetCDF: Variable not found                                                      
+ Abort called by computing node            71 at 2025-08-18 15:00:10.882 +0200
+ Execution terminated because of runtime error
+ NetCDF: Variable not found                                                      
+ Abort called by computing node             5 at 2025-08-18 15:00:10.883 +0200
+ Execution terminated because of runtime error
+ NetCDF: Variable not found                                                      
+ NetCDF: Variable not found                                                      
+ NetCDF: Variable not found                                                      
+ NetCDF: Variable not found                                                      
+ NetCDF: Variable not found                                                      
+ Abort called by computing node            25 at 2025-08-18 15:00:10.883 +0200
+ Execution terminated because of runtime error
+ Abort called by computing node            27 at 2025-08-18 15:00:10.883 +0200
+ Execution terminated because of runtime error
+ NetCDF: Variable not found                                                      
+ NetCDF: Variable not found                                                      
+ Abort called by computing node            63 at 2025-08-18 15:00:10.883 +0200
+ Execution terminated because of runtime error
+ NetCDF: Variable not found                                                      
+ NetCDF: Variable not found                                                      
+ NetCDF: Variable not found                                                      
+ NetCDF: Variable not found                                                      
+ NetCDF: Variable not found                                                      
+ NetCDF: Variable not found                                                      
+ NetCDF: Variable not found                                                      
+ Abort called by computing node            55 at 2025-08-18 15:00:10.883 +0200
+ Execution terminated because of runtime error
+ NetCDF: Variable not found                                                      
+ NetCDF: Variable not found                                                      
+ Abort called by computing node            70 at 2025-08-18 15:00:10.883 +0200
+ Execution terminated because of runtime error
+ NetCDF: Variable not found                                                      
+ NetCDF: Variable not found                                                      
+ NetCDF: Variable not found                                                      
+ NetCDF: Variable not found                                                      
+ NetCDF: Variable not found                                                      
+ NetCDF: Variable not found                                                      
+ NetCDF: Variable not found                                                      
+ NetCDF: Variable not found                                                      
+ NetCDF: Variable not found                                                      
+ NetCDF: Variable not found                                                      
+ Abort called by computing node            28 at 2025-08-18 15:00:10.882 +0200
+ Execution terminated because of runtime error
+ Abort called by computing node           704 at 2025-08-18 15:00:10.883 +0200
+ Execution terminated because of runtime error
+ Abort called by computing node           707 at 2025-08-18 15:00:10.883 +0200
+ Execution terminated because of runtime error
+ Abort called by computing node           776 at 2025-08-18 15:00:10.883 +0200
+ Execution terminated because of runtime error
+ NetCDF: Variable not found                                                      
+ NetCDF: Variable not found                                                      
+ Abort called by computing node            41 at 2025-08-18 15:00:10.882 +0200
+ Execution terminated because of runtime error
+ NetCDF: Variable not found                                                      
+ Abort called by computing node            45 at 2025-08-18 15:00:10.883 +0200
+ Execution terminated because of runtime error
+ Abort called by computing node           757 at 2025-08-18 15:00:10.883 +0200
+ Execution terminated because of runtime error
+ Abort called by computing node           788 at 2025-08-18 15:00:10.883 +0200
+ Execution terminated because of runtime error
+ NetCDF: Variable not found                                                      
+ Abort called by computing node           714 at 2025-08-18 15:00:10.883 +0200
+ Execution terminated because of runtime error
+ NetCDF: Variable not found                                                      
+ Abort called by computing node           791 at 2025-08-18 15:00:10.883 +0200
+ Execution terminated because of runtime error
+ Abort called by computing node             8 at 2025-08-18 15:00:10.883 +0200
+ Execution terminated because of runtime error
+ NetCDF: Variable not found                                                      
+ NetCDF: Variable not found                                                      
+ NetCDF: Variable not found                                                      
+ Abort called by computing node           756 at 2025-08-18 15:00:10.883 +0200
+ Execution terminated because of runtime error
+ NetCDF: Variable not found                                                      
+ Abort called by computing node           775 at 2025-08-18 15:00:10.883 +0200
+ Execution terminated because of runtime error
+ NetCDF: Variable not found                                                      
+ Abort called by computing node           777 at 2025-08-18 15:00:10.883 +0200
+ Execution terminated because of runtime error
+ Abort called by computing node            74 at 2025-08-18 15:00:10.883 +0200
+ Execution terminated because of runtime error
+ Abort called by computing node           701 at 2025-08-18 15:00:10.883 +0200
+ Execution terminated because of runtime error
+ Abort called by computing node           719 at 2025-08-18 15:00:10.883 +0200
+ Execution terminated because of runtime error
+ NetCDF: Variable not found                                                      
+ Abort called by computing node           726 at 2025-08-18 15:00:10.883 +0200
+ Execution terminated because of runtime error
+ Abort called by computing node            97 at 2025-08-18 15:00:10.883 +0200
+ Execution terminated because of runtime error
+ NetCDF: Variable not found                                                      
+ NetCDF: Variable not found                                                      
+ Abort called by computing node           736 at 2025-08-18 15:00:10.883 +0200
+ Execution terminated because of runtime error
+ Abort called by computing node           742 at 2025-08-18 15:00:10.883 +0200
+ Execution terminated because of runtime error
+ Abort called by computing node             3 at 2025-08-18 15:00:10.883 +0200
+ Execution terminated because of runtime error
+ NetCDF: Variable not found                                                      
+ Abort called by computing node           751 at 2025-08-18 15:00:10.883 +0200
+ Execution terminated because of runtime error
+ Abort called by computing node            18 at 2025-08-18 15:00:10.883 +0200
+ Execution terminated because of runtime error
+ NetCDF: Variable not found                                                      
+ NetCDF: Variable not found                                                      
+ NetCDF: Variable not found                                                      
+ NetCDF: Variable not found                                                      
+ NetCDF: Variable not found                                                      
+ Abort called by computing node           773 at 2025-08-18 15:00:10.883 +0200
+ Execution terminated because of runtime error
+ NetCDF: Variable not found                                                      
+ Abort called by computing node           778 at 2025-08-18 15:00:10.883 +0200
+ Execution terminated because of runtime error
+ NetCDF: Variable not found                                                      
+ NetCDF: Variable not found                                                      
+ Abort called by computing node           781 at 2025-08-18 15:00:10.883 +0200
+ Execution terminated because of runtime error
+ NetCDF: Variable not found                                                      
+ Abort called by computing node           792 at 2025-08-18 15:00:10.883 +0200
+ Execution terminated because of runtime error
+ NetCDF: Variable not found                                                      
+ Abort called by computing node            43 at 2025-08-18 15:00:10.883 +0200
+ Execution terminated because of runtime error
+ NetCDF: Variable not found                                                      
+ Abort called by computing node            60 at 2025-08-18 15:00:10.883 +0200
+ Execution terminated because of runtime error
+ NetCDF: Variable not found                                                      
+ NetCDF: Variable not found                                                      
+ Abort called by computing node            68 at 2025-08-18 15:00:10.883 +0200
+ Execution terminated because of runtime error
+ Abort called by computing node           718 at 2025-08-18 15:00:10.883 +0200
+ Execution terminated because of runtime error
+ NetCDF: Variable not found                                                      
+ Abort called by computing node            75 at 2025-08-18 15:00:10.883 +0200
+ Execution terminated because of runtime error
+ NetCDF: Variable not found                                                      
+ Abort called by computing node             1 at 2025-08-18 15:00:10.883 +0200
+ Execution terminated because of runtime error
+ NetCDF: Variable not found                                                      
+ Abort called by computing node           729 at 2025-08-18 15:00:10.883 +0200
+ Execution terminated because of runtime error
+ NetCDF: Variable not found                                                      
+ Abort called by computing node           732 at 2025-08-18 15:00:10.883 +0200
+ Execution terminated because of runtime error
+ NetCDF: Variable not found                                                      
+ Abort called by computing node           737 at 2025-08-18 15:00:10.883 +0200
+ Execution terminated because of runtime error
+ NetCDF: Variable not found                                                      
+ NetCDF: Variable not found                                                      
+ Abort called by computing node            17 at 2025-08-18 15:00:10.883 +0200
+ Execution terminated because of runtime error
+ NetCDF: Variable not found                                                      
+ Abort called by computing node           752 at 2025-08-18 15:00:10.883 +0200
+ Execution terminated because of runtime error
+ Abort called by computing node            20 at 2025-08-18 15:00:10.883 +0200
+ Execution terminated because of runtime error
+ NetCDF: Variable not found                                                      
+ NetCDF: Variable not found                                                      
+ NetCDF: Variable not found                                                      
+ Abort called by computing node           763 at 2025-08-18 15:00:10.883 +0200
+ Execution terminated because of runtime error
+ Abort called by computing node           767 at 2025-08-18 15:00:10.883 +0200
+ Execution terminated because of runtime error
+ NetCDF: Variable not found                                                      
+ Abort called by computing node            36 at 2025-08-18 15:00:10.883 +0200
+ Execution terminated because of runtime error
+ NetCDF: Variable not found                                                      
+ Abort called by computing node            37 at 2025-08-18 15:00:10.883 +0200
+ Execution terminated because of runtime error
+ Abort called by computing node           783 at 2025-08-18 15:00:10.883 +0200
+ Execution terminated because of runtime error
+ NetCDF: Variable not found                                                      
+ Abort called by computing node            72 at 2025-08-18 15:00:10.883 +0200
+ Execution terminated because of runtime error
+ NetCDF: Variable not found                                                      
+ Abort called by computing node           785 at 2025-08-18 15:00:10.883 +0200
+ Execution terminated because of runtime error
+ Abort called by computing node           790 at 2025-08-18 15:00:10.883 +0200
+ Execution terminated because of runtime error
+ NetCDF: Variable not found                                                      
+ NetCDF: Variable not found                                                      
+ Abort called by computing node           794 at 2025-08-18 15:00:10.883 +0200
+ Execution terminated because of runtime error
+ NetCDF: Variable not found                                                      
+ Abort called by computing node            78 at 2025-08-18 15:00:10.883 +0200
+ Execution terminated because of runtime error
+ NetCDF: Variable not found                                                      
+ NetCDF: Variable not found                                                      
+ Abort called by computing node            84 at 2025-08-18 15:00:10.883 +0200
+ Execution terminated because of runtime error
+ NetCDF: Variable not found                                                      
+ Abort called by computing node           798 at 2025-08-18 15:00:10.883 +0200
+ Execution terminated because of runtime error
+ NetCDF: Variable not found                                                      
+ NetCDF: Variable not found                                                      
+ Abort called by computing node            85 at 2025-08-18 15:00:10.883 +0200
+ Execution terminated because of runtime error
+ NetCDF: Variable not found                                                      
+ NetCDF: Variable not found                                                      
+ NetCDF: Variable not found                                                      
+ Abort called by computing node            12 at 2025-08-18 15:00:10.883 +0200
+ Execution terminated because of runtime error
+ NetCDF: Variable not found                                                      
+ Abort called by computing node           712 at 2025-08-18 15:00:10.883 +0200
+ Execution terminated because of runtime error
+ Abort called by computing node            13 at 2025-08-18 15:00:10.883 +0200
+ Execution terminated because of runtime error
+ NetCDF: Variable not found                                                      
+ NetCDF: Variable not found                                                      
+ NetCDF: Variable not found                                                      
+ Abort called by computing node           716 at 2025-08-18 15:00:10.883 +0200
+ Execution terminated because of runtime error
+ NetCDF: Variable not found                                                      
+ NetCDF: Variable not found                                                      
+ Abort called by computing node           717 at 2025-08-18 15:00:10.883 +0200
+ Execution terminated because of runtime error
+ Abort called by computing node            30 at 2025-08-18 15:00:10.883 +0200
+ Execution terminated because of runtime error
+ Abort called by computing node           721 at 2025-08-18 15:00:10.883 +0200
+ Execution terminated because of runtime error
+ NetCDF: Variable not found                                                      
+ NetCDF: Variable not found                                                      
+ Abort called by computing node            33 at 2025-08-18 15:00:10.883 +0200
+ Execution terminated because of runtime error
+ NetCDF: Variable not found                                                      
+ Abort called by computing node            39 at 2025-08-18 15:00:10.883 +0200
+ Execution terminated because of runtime error
+ NetCDF: Variable not found                                                      
+ Abort called by computing node           727 at 2025-08-18 15:00:10.883 +0200
+ Execution terminated because of runtime error
+ NetCDF: Variable not found                                                      
+ Abort called by computing node           730 at 2025-08-18 15:00:10.883 +0200
+ Execution terminated because of runtime error
+ Abort called by computing node           731 at 2025-08-18 15:00:10.883 +0200
+ Execution terminated because of runtime error
+ NetCDF: Variable not found                                                      
+ Abort called by computing node           733 at 2025-08-18 15:00:10.883 +0200
+ Execution terminated because of runtime error
+ NetCDF: Variable not found                                                      
+ Abort called by computing node            54 at 2025-08-18 15:00:10.883 +0200
+ Execution terminated because of runtime error
+ NetCDF: Variable not found                                                      
+ Abort called by computing node           735 at 2025-08-18 15:00:10.883 +0200
+ Execution terminated because of runtime error
+ Abort called by computing node            61 at 2025-08-18 15:00:10.883 +0200
+ Execution terminated because of runtime error
+ NetCDF: Variable not found                                                      
+ Abort called by computing node           743 at 2025-08-18 15:00:10.884 +0200
+ Execution terminated because of runtime error
+ NetCDF: Variable not found                                                      
+ Abort called by computing node           745 at 2025-08-18 15:00:10.884 +0200
+ NetCDF: Variable not found                                                      
+ NetCDF: Variable not found                                                      
+ Abort called by computing node           747 at 2025-08-18 15:00:10.883 +0200
+ Execution terminated because of runtime error
+ NetCDF: Variable not found                                                      
+ Abort called by computing node            90 at 2025-08-18 15:00:10.883 +0200
+ Execution terminated because of runtime error
+ Abort called by computing node           748 at 2025-08-18 15:00:10.883 +0200
+ Execution terminated because of runtime error
+ NetCDF: Variable not found                                                      
+ Abort called by computing node            99 at 2025-08-18 15:00:10.883 +0200
+ Execution terminated because of runtime error
+ NetCDF: Variable not found                                                      
+ Abort called by computing node           750 at 2025-08-18 15:00:10.884 +0200
+ Execution terminated because of runtime error
+ NetCDF: Variable not found                                                      
+ Abort called by computing node           753 at 2025-08-18 15:00:10.884 +0200
+ Execution terminated because of runtime error
+ NetCDF: Variable not found                                                      
+ NetCDF: Variable not found                                                      
+ Abort called by computing node           758 at 2025-08-18 15:00:10.883 +0200
+ Execution terminated because of runtime error
+ Abort called by computing node             7 at 2025-08-18 15:00:10.883 +0200
+ Execution terminated because of runtime error
+ Abort called by computing node           760 at 2025-08-18 15:00:10.883 +0200
+ Execution terminated because of runtime error
+ Abort called by computing node            11 at 2025-08-18 15:00:10.883 +0200
+ Execution terminated because of runtime error
+ Abort called by computing node           762 at 2025-08-18 15:00:10.883 +0200
+ Execution terminated because of runtime error
+ NetCDF: Variable not found                                                      
+ Abort called by computing node           764 at 2025-08-18 15:00:10.883 +0200
+ Execution terminated because of runtime error
+ Abort called by computing node            14 at 2025-08-18 15:00:10.884 +0200
+ Execution terminated because of runtime error
+ NetCDF: Variable not found                                                      
+ Abort called by computing node           768 at 2025-08-18 15:00:10.884 +0200
+ Execution terminated because of runtime error
+ NetCDF: Variable not found                                                      
+ Abort called by computing node           774 at 2025-08-18 15:00:10.883 +0200
+ Execution terminated because of runtime error
+ NetCDF: Variable not found                                                      
+ Abort called by computing node           779 at 2025-08-18 15:00:10.883 +0200
+ Execution terminated because of runtime error
+ NetCDF: Variable not found                                                      
+ Abort called by computing node           780 at 2025-08-18 15:00:10.884 +0200
+ Execution terminated because of runtime error
+ NetCDF: Variable not found                                                      
+ Abort called by computing node            42 at 2025-08-18 15:00:10.884 +0200
+ Execution terminated because of runtime error
+ NetCDF: Variable not found                                                      
+ Abort called by computing node           782 at 2025-08-18 15:00:10.884 +0200
+ Execution terminated because of runtime error
+ NetCDF: Variable not found                                                      
+ NetCDF: Variable not found                                                      
+ Abort called by computing node           784 at 2025-08-18 15:00:10.884 +0200
+ Execution terminated because of runtime error
+ NetCDF: Variable not found                                                      
+ NetCDF: Variable not found                                                      
+ Abort called by computing node           793 at 2025-08-18 15:00:10.884 +0200
+ Execution terminated because of runtime error
+ Abort called by computing node            50 at 2025-08-18 15:00:10.883 +0200
+ Execution terminated because of runtime error
+ NetCDF: Variable not found                                                      
+ Abort called by computing node           796 at 2025-08-18 15:00:10.884 +0200
+ Execution terminated because of runtime error
+srun: Job step aborted: Waiting up to 92 seconds for job step to finish.
+ Abort called by computing node           700 at 2025-08-18 15:00:10.884 +0200
+ Execution terminated because of runtime error
+ NetCDF: Variable not found                                                      
+ NetCDF: Variable not found                                                      
+ Abort called by computing node           702 at 2025-08-18 15:00:10.884 +0200
+ Execution terminated because of runtime error
+ NetCDF: Variable not found                                                      
+ Abort called by computing node            56 at 2025-08-18 15:00:10.884 +0200
+ Execution terminated because of runtime error
+ NetCDF: Variable not found                                                      
+ Abort called by computing node           703 at 2025-08-18 15:00:10.884 +0200
+ Execution terminated because of runtime error
+ NetCDF: Variable not found                                                      
+ Abort called by computing node            57 at 2025-08-18 15:00:10.884 +0200
+ Execution terminated because of runtime error
+ Abort called by computing node           705 at 2025-08-18 15:00:10.883 +0200
+ Execution terminated because of runtime error
+ NetCDF: Variable not found                                                      
+ Abort called by computing node            58 at 2025-08-18 15:00:10.884 +0200
+ Execution terminated because of runtime error
+ Abort called by computing node           706 at 2025-08-18 15:00:10.884 +0200
+ Execution terminated because of runtime error
+ Abort called by computing node           708 at 2025-08-18 15:00:10.884 +0200
+ Execution terminated because of runtime error
+ NetCDF: Variable not found                                                      
+ Abort called by computing node            65 at 2025-08-18 15:00:10.883 +0200
+ Execution terminated because of runtime error
+ NetCDF: Variable not found                                                      
+ Abort called by computing node           709 at 2025-08-18 15:00:10.884 +0200
+ Execution terminated because of runtime error
+ Abort called by computing node            66 at 2025-08-18 15:00:10.883 +0200
+ Execution terminated because of runtime error
+ Abort called by computing node           710 at 2025-08-18 15:00:10.884 +0200
+ Execution terminated because of runtime error
+ Abort called by computing node            76 at 2025-08-18 15:00:10.883 +0200
+ Execution terminated because of runtime error
+ NetCDF: Variable not found                                                      
+ Abort called by computing node           711 at 2025-08-18 15:00:10.884 +0200
+ Execution terminated because of runtime error
+ Abort called by computing node           713 at 2025-08-18 15:00:10.883 +0200
+ Execution terminated because of runtime error
+ NetCDF: Variable not found                                                      
+ Abort called by computing node            81 at 2025-08-18 15:00:10.884 +0200
+ Execution terminated because of runtime error
+ Abort called by computing node           715 at 2025-08-18 15:00:10.884 +0200
+ Execution terminated because of runtime error
+ Abort called by computing node            83 at 2025-08-18 15:00:10.883 +0200
+ Execution terminated because of runtime error
+ Abort called by computing node           720 at 2025-08-18 15:00:10.884 +0200
+ Execution terminated because of runtime error
+ NetCDF: Variable not found                                                      
+ Abort called by computing node            86 at 2025-08-18 15:00:10.884 +0200
+ Execution terminated because of runtime error
+ Abort called by computing node           722 at 2025-08-18 15:00:10.884 +0200
+ Execution terminated because of runtime error
+ NetCDF: Variable not found                                                      
+ Abort called by computing node            88 at 2025-08-18 15:00:10.883 +0200
+ Execution terminated because of runtime error
+ Abort called by computing node           723 at 2025-08-18 15:00:10.884 +0200
+ Execution terminated because of runtime error
+ NetCDF: Variable not found                                                      
+ Abort called by computing node           724 at 2025-08-18 15:00:10.884 +0200
+ Execution terminated because of runtime error
+ Abort called by computing node            93 at 2025-08-18 15:00:10.883 +0200
+ Execution terminated because of runtime error
+ Abort called by computing node           725 at 2025-08-18 15:00:10.884 +0200
+ Execution terminated because of runtime error
+ NetCDF: Variable not found                                                      
+ Abort called by computing node            94 at 2025-08-18 15:00:10.884 +0200
+ Execution terminated because of runtime error
+ NetCDF: Variable not found                                                      
+ Abort called by computing node           728 at 2025-08-18 15:00:10.884 +0200
+ Execution terminated because of runtime error
+ NetCDF: Variable not found                                                      
+ Abort called by computing node           734 at 2025-08-18 15:00:10.884 +0200
+ Execution terminated because of runtime error
+ NetCDF: Variable not found                                                      
+ Abort called by computing node             2 at 2025-08-18 15:00:10.884 +0200
+ Execution terminated because of runtime error
+ NetCDF: Variable not found                                                      
+ Abort called by computing node           738 at 2025-08-18 15:00:10.884 +0200
+ Execution terminated because of runtime error
+ Abort called by computing node             4 at 2025-08-18 15:00:10.884 +0200
+ Execution terminated because of runtime error
+ NetCDF: Variable not found                                                      
+ Abort called by computing node           739 at 2025-08-18 15:00:10.884 +0200
+ Execution terminated because of runtime error
+ NetCDF: Variable not found                                                      
+ Abort called by computing node             6 at 2025-08-18 15:00:10.884 +0200
+ Execution terminated because of runtime error
+ Abort called by computing node           740 at 2025-08-18 15:00:10.883 +0200
+ Execution terminated because of runtime error
+ NetCDF: Variable not found                                                      
+ Abort called by computing node             9 at 2025-08-18 15:00:10.884 +0200
+ Execution terminated because of runtime error
+ NetCDF: Variable not found                                                      
+ Abort called by computing node           741 at 2025-08-18 15:00:10.884 +0200
+ Execution terminated because of runtime error
+ Abort called by computing node           744 at 2025-08-18 15:00:10.884 +0200
+ Execution terminated because of runtime error
+ NetCDF: Variable not found                                                      
+ Abort called by computing node            15 at 2025-08-18 15:00:10.884 +0200
+ Execution terminated because of runtime error
+ Execution terminated because of runtime error
+ Abort called by computing node            19 at 2025-08-18 15:00:10.884 +0200
+ Execution terminated because of runtime error
+ NetCDF: Variable not found                                                      
+ Abort called by computing node           746 at 2025-08-18 15:00:10.884 +0200
+ Execution terminated because of runtime error
+ NetCDF: Variable not found                                                      
+ Abort called by computing node           749 at 2025-08-18 15:00:10.884 +0200
+ Execution terminated because of runtime error
+ NetCDF: Variable not found                                                      
+ Abort called by computing node            21 at 2025-08-18 15:00:10.884 +0200
+ Execution terminated because of runtime error
+ NetCDF: Variable not found                                                      
+ Abort called by computing node           754 at 2025-08-18 15:00:10.884 +0200
+ Execution terminated because of runtime error
+ Abort called by computing node            22 at 2025-08-18 15:00:10.884 +0200
+ Execution terminated because of runtime error
+ NetCDF: Variable not found                                                      
+ Abort called by computing node           755 at 2025-08-18 15:00:10.884 +0200
+ Execution terminated because of runtime error
+ NetCDF: Variable not found                                                      
+ Abort called by computing node           759 at 2025-08-18 15:00:10.883 +0200
+ Execution terminated because of runtime error
+ Abort called by computing node            24 at 2025-08-18 15:00:10.884 +0200
+ Execution terminated because of runtime error
+ NetCDF: Variable not found                                                      
+ Abort called by computing node           761 at 2025-08-18 15:00:10.884 +0200
+ Execution terminated because of runtime error
+ NetCDF: Variable not found                                                      
+ Abort called by computing node           765 at 2025-08-18 15:00:10.884 +0200
+ Execution terminated because of runtime error
+ NetCDF: Variable not found                                                      
+ Abort called by computing node            26 at 2025-08-18 15:00:10.884 +0200
+ Execution terminated because of runtime error
+ NetCDF: Variable not found                                                      
+ Abort called by computing node           766 at 2025-08-18 15:00:10.884 +0200
+ Execution terminated because of runtime error
+ Abort called by computing node            29 at 2025-08-18 15:00:10.883 +0200
+ Execution terminated because of runtime error
+ NetCDF: Variable not found                                                      
+ Abort called by computing node           769 at 2025-08-18 15:00:10.884 +0200
+ Execution terminated because of runtime error
+ NetCDF: Variable not found                                                      
+ Abort called by computing node            31 at 2025-08-18 15:00:10.884 +0200
+ Execution terminated because of runtime error
+ Abort called by computing node           770 at 2025-08-18 15:00:10.883 +0200
+ Execution terminated because of runtime error
+ NetCDF: Variable not found                                                      
+ Abort called by computing node           771 at 2025-08-18 15:00:10.884 +0200
+ Execution terminated because of runtime error
+ NetCDF: Variable not found                                                      
+ Abort called by computing node            32 at 2025-08-18 15:00:10.884 +0200
+ Execution terminated because of runtime error
+ Abort called by computing node           772 at 2025-08-18 15:00:10.883 +0200
+ Execution terminated because of runtime error
+ NetCDF: Variable not found                                                      
+ Abort called by computing node            34 at 2025-08-18 15:00:10.884 +0200
+ Execution terminated because of runtime error
+ Abort called by computing node           786 at 2025-08-18 15:00:10.883 +0200
+ Execution terminated because of runtime error
+ Abort called by computing node            40 at 2025-08-18 15:00:10.884 +0200
+ Execution terminated because of runtime error
+ NetCDF: Variable not found                                                      
+ Abort called by computing node           787 at 2025-08-18 15:00:10.884 +0200
+ Execution terminated because of runtime error
+ Abort called by computing node            44 at 2025-08-18 15:00:10.884 +0200
+ Execution terminated because of runtime error
+ NetCDF: Variable not found                                                      
+ Abort called by computing node           789 at 2025-08-18 15:00:10.884 +0200
+ Execution terminated because of runtime error
+ NetCDF: Variable not found                                                      
+ Abort called by computing node            46 at 2025-08-18 15:00:10.884 +0200
+ Execution terminated because of runtime error
+ Abort called by computing node           795 at 2025-08-18 15:00:10.884 +0200
+ Execution terminated because of runtime error
+ NetCDF: Variable not found                                                      
+ Abort called by computing node            47 at 2025-08-18 15:00:10.884 +0200
+ Execution terminated because of runtime error
+ NetCDF: Variable not found                                                      
+ Abort called by computing node           797 at 2025-08-18 15:00:10.884 +0200
+ Execution terminated because of runtime error
+ Abort called by computing node            48 at 2025-08-18 15:00:10.883 +0200
+ Execution terminated because of runtime error
+ Abort called by computing node           799 at 2025-08-18 15:00:10.883 +0200
+ Execution terminated because of runtime error
+ NetCDF: Variable not found                                                      
+ Abort called by computing node            49 at 2025-08-18 15:00:10.884 +0200
+ Execution terminated because of runtime error
+ Abort called by computing node            51 at 2025-08-18 15:00:10.884 +0200
+ Execution terminated because of runtime error
+ Abort called by computing node            52 at 2025-08-18 15:00:10.884 +0200
+ Execution terminated because of runtime error
+ Abort called by computing node            53 at 2025-08-18 15:00:10.884 +0200
+ Execution terminated because of runtime error
+ NetCDF: Variable not found                                                      
+ Abort called by computing node            59 at 2025-08-18 15:00:10.884 +0200
+ Execution terminated because of runtime error
+ NetCDF: Variable not found                                                      
+ Abort called by computing node            62 at 2025-08-18 15:00:10.884 +0200
+ Execution terminated because of runtime error
+ NetCDF: Variable not found                                                      
+ Abort called by computing node            64 at 2025-08-18 15:00:10.884 +0200
+ Execution terminated because of runtime error
+ NetCDF: Variable not found                                                      
+ Abort called by computing node            67 at 2025-08-18 15:00:10.884 +0200
+ Execution terminated because of runtime error
+ NetCDF: Variable not found                                                      
+ Abort called by computing node            69 at 2025-08-18 15:00:10.884 +0200
+ Execution terminated because of runtime error
+ NetCDF: Variable not found                                                      
+ Abort called by computing node            73 at 2025-08-18 15:00:10.884 +0200
+ Execution terminated because of runtime error
+ NetCDF: Variable not found                                                      
+ Abort called by computing node            77 at 2025-08-18 15:00:10.884 +0200
+ Execution terminated because of runtime error
+ NetCDF: Variable not found                                                      
+ Abort called by computing node            79 at 2025-08-18 15:00:10.884 +0200
+ Execution terminated because of runtime error
+ NetCDF: Variable not found                                                      
+ NetCDF: Variable not found                                                      
+ Abort called by computing node            82 at 2025-08-18 15:00:10.884 +0200
+ Execution terminated because of runtime error
+ NetCDF: Variable not found                                                      
+ Abort called by computing node            87 at 2025-08-18 15:00:10.884 +0200
+ Execution terminated because of runtime error
+ NetCDF: Variable not found                                                      
+ Abort called by computing node            89 at 2025-08-18 15:00:10.884 +0200
+ Execution terminated because of runtime error
+ NetCDF: Variable not found                                                      
+ Abort called by computing node            92 at 2025-08-18 15:00:10.884 +0200
+ Execution terminated because of runtime error
+ NetCDF: Variable not found                                                      
+ Abort called by computing node            95 at 2025-08-18 15:00:10.884 +0200
+ Execution terminated because of runtime error
+ NetCDF: Variable not found                                                      
+ Abort called by computing node            96 at 2025-08-18 15:00:10.884 +0200
+ Execution terminated because of runtime error
+--------------------------------------------------------------------------
+MPI_ABORT was invoked on rank 8 in communicator MPI COMMUNICATOR 3 DUP FROM 0
+with errorcode 1.
+
+NOTE: invoking MPI_ABORT causes Open MPI to kill all MPI processes.
+You may or may not see output from other processes, depending on
+exactly when Open MPI kills them.
+--------------------------------------------------------------------------
+--------------------------------------------------------------------------
+MPI_ABORT was invoked on rank 11 in communicator MPI COMMUNICATOR 3 DUP FROM 0
+with errorcode 1.
+
+NOTE: invoking MPI_ABORT causes Open MPI to kill all MPI processes.
+You may or may not see output from other processes, depending on
+exactly when Open MPI kills them.
+--------------------------------------------------------------------------
+--------------------------------------------------------------------------
+MPI_ABORT was invoked on rank 90 in communicator MPI COMMUNICATOR 3 DUP FROM 0
+with errorcode 1.
+
+NOTE: invoking MPI_ABORT causes Open MPI to kill all MPI processes.
+You may or may not see output from other processes, depending on
+exactly when Open MPI kills them.
+--------------------------------------------------------------------------
+--------------------------------------------------------------------------
+MPI_ABORT was invoked on rank 98 in communicator MPI COMMUNICATOR 3 DUP FROM 0
+with errorcode 1.
+
+NOTE: invoking MPI_ABORT causes Open MPI to kill all MPI processes.
+You may or may not see output from other processes, depending on
+exactly when Open MPI kills them.
+--------------------------------------------------------------------------
+--------------------------------------------------------------------------
+MPI_ABORT was invoked on rank 10 in communicator MPI COMMUNICATOR 3 DUP FROM 0
+with errorcode 1.
+
+NOTE: invoking MPI_ABORT causes Open MPI to kill all MPI processes.
+You may or may not see output from other processes, depending on
+exactly when Open MPI kills them.
+--------------------------------------------------------------------------
+--------------------------------------------------------------------------
+MPI_ABORT was invoked on rank 17 in communicator MPI COMMUNICATOR 3 DUP FROM 0
+with errorcode 1.
+
+NOTE: invoking MPI_ABORT causes Open MPI to kill all MPI processes.
+You may or may not see output from other processes, depending on
+exactly when Open MPI kills them.
+--------------------------------------------------------------------------
+--------------------------------------------------------------------------
+MPI_ABORT was invoked on rank 38 in communicator MPI COMMUNICATOR 3 DUP FROM 0
+with errorcode 1.
+
+NOTE: invoking MPI_ABORT causes Open MPI to kill all MPI processes.
+You may or may not see output from other processes, depending on
+exactly when Open MPI kills them.
+--------------------------------------------------------------------------
+--------------------------------------------------------------------------
+MPI_ABORT was invoked on rank 55 in communicator MPI COMMUNICATOR 3 DUP FROM 0
+with errorcode 1.
+
+NOTE: invoking MPI_ABORT causes Open MPI to kill all MPI processes.
+You may or may not see output from other processes, depending on
+exactly when Open MPI kills them.
+--------------------------------------------------------------------------
+--------------------------------------------------------------------------
+MPI_ABORT was invoked on rank 99 in communicator MPI COMMUNICATOR 3 DUP FROM 0
+with errorcode 1.
+
+NOTE: invoking MPI_ABORT causes Open MPI to kill all MPI processes.
+You may or may not see output from other processes, depending on
+exactly when Open MPI kills them.
+--------------------------------------------------------------------------
+--------------------------------------------------------------------------
+MPI_ABORT was invoked on rank 1 in communicator MPI COMMUNICATOR 3 DUP FROM 0
+with errorcode 1.
+
+NOTE: invoking MPI_ABORT causes Open MPI to kill all MPI processes.
+You may or may not see output from other processes, depending on
+exactly when Open MPI kills them.
+--------------------------------------------------------------------------
+--------------------------------------------------------------------------
+MPI_ABORT was invoked on rank 18 in communicator MPI COMMUNICATOR 3 DUP FROM 0
+with errorcode 1.
+
+NOTE: invoking MPI_ABORT causes Open MPI to kill all MPI processes.
+You may or may not see output from other processes, depending on
+exactly when Open MPI kills them.
+--------------------------------------------------------------------------
+--------------------------------------------------------------------------
+MPI_ABORT was invoked on rank 85 in communicator MPI COMMUNICATOR 3 DUP FROM 0
+with errorcode 1.
+
+NOTE: invoking MPI_ABORT causes Open MPI to kill all MPI processes.
+You may or may not see output from other processes, depending on
+exactly when Open MPI kills them.
+--------------------------------------------------------------------------
+--------------------------------------------------------------------------
+MPI_ABORT was invoked on rank 0 in communicator MPI COMMUNICATOR 3 DUP FROM 0
+with errorcode 1.
+
+NOTE: invoking MPI_ABORT causes Open MPI to kill all MPI processes.
+You may or may not see output from other processes, depending on
+exactly when Open MPI kills them.
+--------------------------------------------------------------------------
+--------------------------------------------------------------------------
+MPI_ABORT was invoked on rank 7 in communicator MPI COMMUNICATOR 3 DUP FROM 0
+with errorcode 1.
+
+NOTE: invoking MPI_ABORT causes Open MPI to kill all MPI processes.
+You may or may not see output from other processes, depending on
+exactly when Open MPI kills them.
+--------------------------------------------------------------------------
+--------------------------------------------------------------------------
+MPI_ABORT was invoked on rank 12 in communicator MPI COMMUNICATOR 3 DUP FROM 0
+with errorcode 1.
+
+NOTE: invoking MPI_ABORT causes Open MPI to kill all MPI processes.
+You may or may not see output from other processes, depending on
+exactly when Open MPI kills them.
+--------------------------------------------------------------------------
+--------------------------------------------------------------------------
+MPI_ABORT was invoked on rank 28 in communicator MPI COMMUNICATOR 3 DUP FROM 0
+with errorcode 1.
+
+NOTE: invoking MPI_ABORT causes Open MPI to kill all MPI processes.
+You may or may not see output from other processes, depending on
+exactly when Open MPI kills them.
+--------------------------------------------------------------------------
+--------------------------------------------------------------------------
+MPI_ABORT was invoked on rank 36 in communicator MPI COMMUNICATOR 3 DUP FROM 0
+with errorcode 1.
+
+NOTE: invoking MPI_ABORT causes Open MPI to kill all MPI processes.
+You may or may not see output from other processes, depending on
+exactly when Open MPI kills them.
+--------------------------------------------------------------------------
+--------------------------------------------------------------------------
+MPI_ABORT was invoked on rank 37 in communicator MPI COMMUNICATOR 3 DUP FROM 0
+with errorcode 1.
+
+NOTE: invoking MPI_ABORT causes Open MPI to kill all MPI processes.
+You may or may not see output from other processes, depending on
+exactly when Open MPI kills them.
+--------------------------------------------------------------------------
+--------------------------------------------------------------------------
+MPI_ABORT was invoked on rank 41 in communicator MPI COMMUNICATOR 3 DUP FROM 0
+with errorcode 1.
+
+NOTE: invoking MPI_ABORT causes Open MPI to kill all MPI processes.
+You may or may not see output from other processes, depending on
+exactly when Open MPI kills them.
+--------------------------------------------------------------------------
+--------------------------------------------------------------------------
+MPI_ABORT was invoked on rank 43 in communicator MPI COMMUNICATOR 3 DUP FROM 0
+with errorcode 1.
+
+NOTE: invoking MPI_ABORT causes Open MPI to kill all MPI processes.
+You may or may not see output from other processes, depending on
+exactly when Open MPI kills them.
+--------------------------------------------------------------------------
+--------------------------------------------------------------------------
+MPI_ABORT was invoked on rank 45 in communicator MPI COMMUNICATOR 3 DUP FROM 0
+with errorcode 1.
+
+NOTE: invoking MPI_ABORT causes Open MPI to kill all MPI processes.
+You may or may not see output from other processes, depending on
+exactly when Open MPI kills them.
+--------------------------------------------------------------------------
+--------------------------------------------------------------------------
+MPI_ABORT was invoked on rank 60 in communicator MPI COMMUNICATOR 3 DUP FROM 0
+with errorcode 1.
+
+NOTE: invoking MPI_ABORT causes Open MPI to kill all MPI processes.
+You may or may not see output from other processes, depending on
+exactly when Open MPI kills them.
+--------------------------------------------------------------------------
+--------------------------------------------------------------------------
+MPI_ABORT was invoked on rank 72 in communicator MPI COMMUNICATOR 3 DUP FROM 0
+with errorcode 1.
+
+NOTE: invoking MPI_ABORT causes Open MPI to kill all MPI processes.
+You may or may not see output from other processes, depending on
+exactly when Open MPI kills them.
+--------------------------------------------------------------------------
+--------------------------------------------------------------------------
+MPI_ABORT was invoked on rank 84 in communicator MPI COMMUNICATOR 3 DUP FROM 0
+with errorcode 1.
+
+NOTE: invoking MPI_ABORT causes Open MPI to kill all MPI processes.
+You may or may not see output from other processes, depending on
+exactly when Open MPI kills them.
+--------------------------------------------------------------------------
+--------------------------------------------------------------------------
+MPI_ABORT was invoked on rank 91 in communicator MPI COMMUNICATOR 3 DUP FROM 0
+with errorcode 1.
+
+NOTE: invoking MPI_ABORT causes Open MPI to kill all MPI processes.
+You may or may not see output from other processes, depending on
+exactly when Open MPI kills them.
+--------------------------------------------------------------------------
+--------------------------------------------------------------------------
+MPI_ABORT was invoked on rank 3 in communicator MPI COMMUNICATOR 3 DUP FROM 0
+with errorcode 1.
+
+NOTE: invoking MPI_ABORT causes Open MPI to kill all MPI processes.
+You may or may not see output from other processes, depending on
+exactly when Open MPI kills them.
+--------------------------------------------------------------------------
+--------------------------------------------------------------------------
+MPI_ABORT was invoked on rank 5 in communicator MPI COMMUNICATOR 3 DUP FROM 0
+with errorcode 1.
+
+NOTE: invoking MPI_ABORT causes Open MPI to kill all MPI processes.
+You may or may not see output from other processes, depending on
+exactly when Open MPI kills them.
+--------------------------------------------------------------------------
+--------------------------------------------------------------------------
+MPI_ABORT was invoked on rank 13 in communicator MPI COMMUNICATOR 3 DUP FROM 0
+with errorcode 1.
+
+NOTE: invoking MPI_ABORT causes Open MPI to kill all MPI processes.
+You may or may not see output from other processes, depending on
+exactly when Open MPI kills them.
+--------------------------------------------------------------------------
+--------------------------------------------------------------------------
+MPI_ABORT was invoked on rank 14 in communicator MPI COMMUNICATOR 3 DUP FROM 0
+with errorcode 1.
+
+NOTE: invoking MPI_ABORT causes Open MPI to kill all MPI processes.
+You may or may not see output from other processes, depending on
+exactly when Open MPI kills them.
+--------------------------------------------------------------------------
+--------------------------------------------------------------------------
+MPI_ABORT was invoked on rank 20 in communicator MPI COMMUNICATOR 3 DUP FROM 0
+with errorcode 1.
+
+NOTE: invoking MPI_ABORT causes Open MPI to kill all MPI processes.
+You may or may not see output from other processes, depending on
+exactly when Open MPI kills them.
+--------------------------------------------------------------------------
+--------------------------------------------------------------------------
+MPI_ABORT was invoked on rank 30 in communicator MPI COMMUNICATOR 3 DUP FROM 0
+with errorcode 1.
+
+NOTE: invoking MPI_ABORT causes Open MPI to kill all MPI processes.
+You may or may not see output from other processes, depending on
+exactly when Open MPI kills them.
+--------------------------------------------------------------------------
+--------------------------------------------------------------------------
+MPI_ABORT was invoked on rank 33 in communicator MPI COMMUNICATOR 3 DUP FROM 0
+with errorcode 1.
+
+NOTE: invoking MPI_ABORT causes Open MPI to kill all MPI processes.
+You may or may not see output from other processes, depending on
+exactly when Open MPI kills them.
+--------------------------------------------------------------------------
+--------------------------------------------------------------------------
+MPI_ABORT was invoked on rank 35 in communicator MPI COMMUNICATOR 3 DUP FROM 0
+with errorcode 1.
+
+NOTE: invoking MPI_ABORT causes Open MPI to kill all MPI processes.
+You may or may not see output from other processes, depending on
+exactly when Open MPI kills them.
+--------------------------------------------------------------------------
+--------------------------------------------------------------------------
+MPI_ABORT was invoked on rank 39 in communicator MPI COMMUNICATOR 3 DUP FROM 0
+with errorcode 1.
+
+NOTE: invoking MPI_ABORT causes Open MPI to kill all MPI processes.
+You may or may not see output from other processes, depending on
+exactly when Open MPI kills them.
+--------------------------------------------------------------------------
+--------------------------------------------------------------------------
+MPI_ABORT was invoked on rank 50 in communicator MPI COMMUNICATOR 3 DUP FROM 0
+with errorcode 1.
+
+NOTE: invoking MPI_ABORT causes Open MPI to kill all MPI processes.
+You may or may not see output from other processes, depending on
+exactly when Open MPI kills them.
+--------------------------------------------------------------------------
+--------------------------------------------------------------------------
+MPI_ABORT was invoked on rank 54 in communicator MPI COMMUNICATOR 3 DUP FROM 0
+with errorcode 1.
+
+NOTE: invoking MPI_ABORT causes Open MPI to kill all MPI processes.
+You may or may not see output from other processes, depending on
+exactly when Open MPI kills them.
+--------------------------------------------------------------------------
+--------------------------------------------------------------------------
+MPI_ABORT was invoked on rank 58 in communicator MPI COMMUNICATOR 3 DUP FROM 0
+with errorcode 1.
+
+NOTE: invoking MPI_ABORT causes Open MPI to kill all MPI processes.
+You may or may not see output from other processes, depending on
+exactly when Open MPI kills them.
+--------------------------------------------------------------------------
+--------------------------------------------------------------------------
+MPI_ABORT was invoked on rank 61 in communicator MPI COMMUNICATOR 3 DUP FROM 0
+with errorcode 1.
+
+NOTE: invoking MPI_ABORT causes Open MPI to kill all MPI processes.
+You may or may not see output from other processes, depending on
+exactly when Open MPI kills them.
+--------------------------------------------------------------------------
+--------------------------------------------------------------------------
+MPI_ABORT was invoked on rank 63 in communicator MPI COMMUNICATOR 3 DUP FROM 0
+with errorcode 1.
+
+NOTE: invoking MPI_ABORT causes Open MPI to kill all MPI processes.
+You may or may not see output from other processes, depending on
+exactly when Open MPI kills them.
+--------------------------------------------------------------------------
+--------------------------------------------------------------------------
+MPI_ABORT was invoked on rank 65 in communicator MPI COMMUNICATOR 3 DUP FROM 0
+with errorcode 1.
+
+NOTE: invoking MPI_ABORT causes Open MPI to kill all MPI processes.
+You may or may not see output from other processes, depending on
+exactly when Open MPI kills them.
+--------------------------------------------------------------------------
+--------------------------------------------------------------------------
+MPI_ABORT was invoked on rank 66 in communicator MPI COMMUNICATOR 3 DUP FROM 0
+with errorcode 1.
+
+NOTE: invoking MPI_ABORT causes Open MPI to kill all MPI processes.
+You may or may not see output from other processes, depending on
+exactly when Open MPI kills them.
+--------------------------------------------------------------------------
+--------------------------------------------------------------------------
+MPI_ABORT was invoked on rank 68 in communicator MPI COMMUNICATOR 3 DUP FROM 0
+with errorcode 1.
+
+NOTE: invoking MPI_ABORT causes Open MPI to kill all MPI processes.
+You may or may not see output from other processes, depending on
+exactly when Open MPI kills them.
+--------------------------------------------------------------------------
+--------------------------------------------------------------------------
+MPI_ABORT was invoked on rank 74 in communicator MPI COMMUNICATOR 3 DUP FROM 0
+with errorcode 1.
+
+NOTE: invoking MPI_ABORT causes Open MPI to kill all MPI processes.
+You may or may not see output from other processes, depending on
+exactly when Open MPI kills them.
+--------------------------------------------------------------------------
+--------------------------------------------------------------------------
+MPI_ABORT was invoked on rank 75 in communicator MPI COMMUNICATOR 3 DUP FROM 0
+with errorcode 1.
+
+NOTE: invoking MPI_ABORT causes Open MPI to kill all MPI processes.
+You may or may not see output from other processes, depending on
+exactly when Open MPI kills them.
+--------------------------------------------------------------------------
+--------------------------------------------------------------------------
+MPI_ABORT was invoked on rank 76 in communicator MPI COMMUNICATOR 3 DUP FROM 0
+with errorcode 1.
+
+NOTE: invoking MPI_ABORT causes Open MPI to kill all MPI processes.
+You may or may not see output from other processes, depending on
+exactly when Open MPI kills them.
+--------------------------------------------------------------------------
+--------------------------------------------------------------------------
+MPI_ABORT was invoked on rank 81 in communicator MPI COMMUNICATOR 3 DUP FROM 0
+with errorcode 1.
+
+NOTE: invoking MPI_ABORT causes Open MPI to kill all MPI processes.
+You may or may not see output from other processes, depending on
+exactly when Open MPI kills them.
+--------------------------------------------------------------------------
+--------------------------------------------------------------------------
+MPI_ABORT was invoked on rank 83 in communicator MPI COMMUNICATOR 3 DUP FROM 0
+with errorcode 1.
+
+NOTE: invoking MPI_ABORT causes Open MPI to kill all MPI processes.
+You may or may not see output from other processes, depending on
+exactly when Open MPI kills them.
+--------------------------------------------------------------------------
+--------------------------------------------------------------------------
+MPI_ABORT was invoked on rank 88 in communicator MPI COMMUNICATOR 3 DUP FROM 0
+with errorcode 1.
+
+NOTE: invoking MPI_ABORT causes Open MPI to kill all MPI processes.
+You may or may not see output from other processes, depending on
+exactly when Open MPI kills them.
+--------------------------------------------------------------------------
+--------------------------------------------------------------------------
+MPI_ABORT was invoked on rank 93 in communicator MPI COMMUNICATOR 3 DUP FROM 0
+with errorcode 1.
+
+NOTE: invoking MPI_ABORT causes Open MPI to kill all MPI processes.
+You may or may not see output from other processes, depending on
+exactly when Open MPI kills them.
+--------------------------------------------------------------------------
+--------------------------------------------------------------------------
+MPI_ABORT was invoked on rank 97 in communicator MPI COMMUNICATOR 3 DUP FROM 0
+with errorcode 1.
+
+NOTE: invoking MPI_ABORT causes Open MPI to kill all MPI processes.
+You may or may not see output from other processes, depending on
+exactly when Open MPI kills them.
+--------------------------------------------------------------------------
+--------------------------------------------------------------------------
+MPI_ABORT was invoked on rank 22 in communicator MPI COMMUNICATOR 3 DUP FROM 0
+with errorcode 1.
+
+NOTE: invoking MPI_ABORT causes Open MPI to kill all MPI processes.
+You may or may not see output from other processes, depending on
+exactly when Open MPI kills them.
+--------------------------------------------------------------------------
+--------------------------------------------------------------------------
+MPI_ABORT was invoked on rank 42 in communicator MPI COMMUNICATOR 3 DUP FROM 0
+with errorcode 1.
+
+NOTE: invoking MPI_ABORT causes Open MPI to kill all MPI processes.
+You may or may not see output from other processes, depending on
+exactly when Open MPI kills them.
+--------------------------------------------------------------------------
+--------------------------------------------------------------------------
+MPI_ABORT was invoked on rank 44 in communicator MPI COMMUNICATOR 3 DUP FROM 0
+with errorcode 1.
+
+NOTE: invoking MPI_ABORT causes Open MPI to kill all MPI processes.
+You may or may not see output from other processes, depending on
+exactly when Open MPI kills them.
+--------------------------------------------------------------------------
+--------------------------------------------------------------------------
+MPI_ABORT was invoked on rank 52 in communicator MPI COMMUNICATOR 3 DUP FROM 0
+with errorcode 1.
+
+NOTE: invoking MPI_ABORT causes Open MPI to kill all MPI processes.
+You may or may not see output from other processes, depending on
+exactly when Open MPI kills them.
+--------------------------------------------------------------------------
+--------------------------------------------------------------------------
+MPI_ABORT was invoked on rank 56 in communicator MPI COMMUNICATOR 3 DUP FROM 0
+with errorcode 1.
+
+NOTE: invoking MPI_ABORT causes Open MPI to kill all MPI processes.
+You may or may not see output from other processes, depending on
+exactly when Open MPI kills them.
+--------------------------------------------------------------------------
+--------------------------------------------------------------------------
+MPI_ABORT was invoked on rank 57 in communicator MPI COMMUNICATOR 3 DUP FROM 0
+with errorcode 1.
+
+NOTE: invoking MPI_ABORT causes Open MPI to kill all MPI processes.
+You may or may not see output from other processes, depending on
+exactly when Open MPI kills them.
+--------------------------------------------------------------------------
+--------------------------------------------------------------------------
+MPI_ABORT was invoked on rank 94 in communicator MPI COMMUNICATOR 3 DUP FROM 0
+with errorcode 1.
+
+NOTE: invoking MPI_ABORT causes Open MPI to kill all MPI processes.
+You may or may not see output from other processes, depending on
+exactly when Open MPI kills them.
+--------------------------------------------------------------------------
+--------------------------------------------------------------------------
+MPI_ABORT was invoked on rank 9 in communicator MPI COMMUNICATOR 3 DUP FROM 0
+with errorcode 1.
+
+NOTE: invoking MPI_ABORT causes Open MPI to kill all MPI processes.
+You may or may not see output from other processes, depending on
+exactly when Open MPI kills them.
+--------------------------------------------------------------------------
+--------------------------------------------------------------------------
+MPI_ABORT was invoked on rank 19 in communicator MPI COMMUNICATOR 3 DUP FROM 0
+with errorcode 1.
+
+NOTE: invoking MPI_ABORT causes Open MPI to kill all MPI processes.
+You may or may not see output from other processes, depending on
+exactly when Open MPI kills them.
+--------------------------------------------------------------------------
+--------------------------------------------------------------------------
+MPI_ABORT was invoked on rank 21 in communicator MPI COMMUNICATOR 3 DUP FROM 0
+with errorcode 1.
+
+NOTE: invoking MPI_ABORT causes Open MPI to kill all MPI processes.
+You may or may not see output from other processes, depending on
+exactly when Open MPI kills them.
+--------------------------------------------------------------------------
+--------------------------------------------------------------------------
+MPI_ABORT was invoked on rank 24 in communicator MPI COMMUNICATOR 3 DUP FROM 0
+with errorcode 1.
+
+NOTE: invoking MPI_ABORT causes Open MPI to kill all MPI processes.
+You may or may not see output from other processes, depending on
+exactly when Open MPI kills them.
+--------------------------------------------------------------------------
+--------------------------------------------------------------------------
+MPI_ABORT was invoked on rank 29 in communicator MPI COMMUNICATOR 3 DUP FROM 0
+with errorcode 1.
+
+NOTE: invoking MPI_ABORT causes Open MPI to kill all MPI processes.
+You may or may not see output from other processes, depending on
+exactly when Open MPI kills them.
+--------------------------------------------------------------------------
+--------------------------------------------------------------------------
+MPI_ABORT was invoked on rank 32 in communicator MPI COMMUNICATOR 3 DUP FROM 0
+with errorcode 1.
+
+NOTE: invoking MPI_ABORT causes Open MPI to kill all MPI processes.
+You may or may not see output from other processes, depending on
+exactly when Open MPI kills them.
+--------------------------------------------------------------------------
+--------------------------------------------------------------------------
+MPI_ABORT was invoked on rank 40 in communicator MPI COMMUNICATOR 3 DUP FROM 0
+with errorcode 1.
+
+NOTE: invoking MPI_ABORT causes Open MPI to kill all MPI processes.
+You may or may not see output from other processes, depending on
+exactly when Open MPI kills them.
+--------------------------------------------------------------------------
+--------------------------------------------------------------------------
+MPI_ABORT was invoked on rank 47 in communicator MPI COMMUNICATOR 3 DUP FROM 0
+with errorcode 1.
+
+NOTE: invoking MPI_ABORT causes Open MPI to kill all MPI processes.
+You may or may not see output from other processes, depending on
+exactly when Open MPI kills them.
+--------------------------------------------------------------------------
+--------------------------------------------------------------------------
+MPI_ABORT was invoked on rank 48 in communicator MPI COMMUNICATOR 3 DUP FROM 0
+with errorcode 1.
+
+NOTE: invoking MPI_ABORT causes Open MPI to kill all MPI processes.
+You may or may not see output from other processes, depending on
+exactly when Open MPI kills them.
+--------------------------------------------------------------------------
+--------------------------------------------------------------------------
+MPI_ABORT was invoked on rank 49 in communicator MPI COMMUNICATOR 3 DUP FROM 0
+with errorcode 1.
+
+NOTE: invoking MPI_ABORT causes Open MPI to kill all MPI processes.
+You may or may not see output from other processes, depending on
+exactly when Open MPI kills them.
+--------------------------------------------------------------------------
+--------------------------------------------------------------------------
+MPI_ABORT was invoked on rank 53 in communicator MPI COMMUNICATOR 3 DUP FROM 0
+with errorcode 1.
+
+NOTE: invoking MPI_ABORT causes Open MPI to kill all MPI processes.
+You may or may not see output from other processes, depending on
+exactly when Open MPI kills them.
+--------------------------------------------------------------------------
+--------------------------------------------------------------------------
+MPI_ABORT was invoked on rank 62 in communicator MPI COMMUNICATOR 3 DUP FROM 0
+with errorcode 1.
+
+NOTE: invoking MPI_ABORT causes Open MPI to kill all MPI processes.
+You may or may not see output from other processes, depending on
+exactly when Open MPI kills them.
+--------------------------------------------------------------------------
+--------------------------------------------------------------------------
+MPI_ABORT was invoked on rank 86 in communicator MPI COMMUNICATOR 3 DUP FROM 0
+with errorcode 1.
+
+NOTE: invoking MPI_ABORT causes Open MPI to kill all MPI processes.
+You may or may not see output from other processes, depending on
+exactly when Open MPI kills them.
+--------------------------------------------------------------------------
+--------------------------------------------------------------------------
+MPI_ABORT was invoked on rank 2 in communicator MPI COMMUNICATOR 3 DUP FROM 0
+with errorcode 1.
+
+NOTE: invoking MPI_ABORT causes Open MPI to kill all MPI processes.
+You may or may not see output from other processes, depending on
+exactly when Open MPI kills them.
+--------------------------------------------------------------------------
+--------------------------------------------------------------------------
+MPI_ABORT was invoked on rank 4 in communicator MPI COMMUNICATOR 3 DUP FROM 0
+with errorcode 1.
+
+NOTE: invoking MPI_ABORT causes Open MPI to kill all MPI processes.
+You may or may not see output from other processes, depending on
+exactly when Open MPI kills them.
+--------------------------------------------------------------------------
+--------------------------------------------------------------------------
+MPI_ABORT was invoked on rank 6 in communicator MPI COMMUNICATOR 3 DUP FROM 0
+with errorcode 1.
+
+NOTE: invoking MPI_ABORT causes Open MPI to kill all MPI processes.
+You may or may not see output from other processes, depending on
+exactly when Open MPI kills them.
+--------------------------------------------------------------------------
+--------------------------------------------------------------------------
+MPI_ABORT was invoked on rank 15 in communicator MPI COMMUNICATOR 3 DUP FROM 0
+with errorcode 1.
+
+NOTE: invoking MPI_ABORT causes Open MPI to kill all MPI processes.
+You may or may not see output from other processes, depending on
+exactly when Open MPI kills them.
+--------------------------------------------------------------------------
+--------------------------------------------------------------------------
+MPI_ABORT was invoked on rank 16 in communicator MPI COMMUNICATOR 3 DUP FROM 0
+with errorcode 1.
+
+NOTE: invoking MPI_ABORT causes Open MPI to kill all MPI processes.
+You may or may not see output from other processes, depending on
+exactly when Open MPI kills them.
+--------------------------------------------------------------------------
+--------------------------------------------------------------------------
+MPI_ABORT was invoked on rank 25 in communicator MPI COMMUNICATOR 3 DUP FROM 0
+with errorcode 1.
+
+NOTE: invoking MPI_ABORT causes Open MPI to kill all MPI processes.
+You may or may not see output from other processes, depending on
+exactly when Open MPI kills them.
+--------------------------------------------------------------------------
+--------------------------------------------------------------------------
+MPI_ABORT was invoked on rank 26 in communicator MPI COMMUNICATOR 3 DUP FROM 0
+with errorcode 1.
+
+NOTE: invoking MPI_ABORT causes Open MPI to kill all MPI processes.
+You may or may not see output from other processes, depending on
+exactly when Open MPI kills them.
+--------------------------------------------------------------------------
+--------------------------------------------------------------------------
+MPI_ABORT was invoked on rank 31 in communicator MPI COMMUNICATOR 3 DUP FROM 0
+with errorcode 1.
+
+NOTE: invoking MPI_ABORT causes Open MPI to kill all MPI processes.
+You may or may not see output from other processes, depending on
+exactly when Open MPI kills them.
+--------------------------------------------------------------------------
+--------------------------------------------------------------------------
+MPI_ABORT was invoked on rank 34 in communicator MPI COMMUNICATOR 3 DUP FROM 0
+with errorcode 1.
+
+NOTE: invoking MPI_ABORT causes Open MPI to kill all MPI processes.
+You may or may not see output from other processes, depending on
+exactly when Open MPI kills them.
+--------------------------------------------------------------------------
+--------------------------------------------------------------------------
+MPI_ABORT was invoked on rank 46 in communicator MPI COMMUNICATOR 3 DUP FROM 0
+with errorcode 1.
+
+NOTE: invoking MPI_ABORT causes Open MPI to kill all MPI processes.
+You may or may not see output from other processes, depending on
+exactly when Open MPI kills them.
+--------------------------------------------------------------------------
+--------------------------------------------------------------------------
+MPI_ABORT was invoked on rank 59 in communicator MPI COMMUNICATOR 3 DUP FROM 0
+with errorcode 1.
+
+NOTE: invoking MPI_ABORT causes Open MPI to kill all MPI processes.
+You may or may not see output from other processes, depending on
+exactly when Open MPI kills them.
+--------------------------------------------------------------------------
+--------------------------------------------------------------------------
+MPI_ABORT was invoked on rank 64 in communicator MPI COMMUNICATOR 3 DUP FROM 0
+with errorcode 1.
+
+NOTE: invoking MPI_ABORT causes Open MPI to kill all MPI processes.
+You may or may not see output from other processes, depending on
+exactly when Open MPI kills them.
+--------------------------------------------------------------------------
+--------------------------------------------------------------------------
+MPI_ABORT was invoked on rank 67 in communicator MPI COMMUNICATOR 3 DUP FROM 0
+with errorcode 1.
+
+NOTE: invoking MPI_ABORT causes Open MPI to kill all MPI processes.
+You may or may not see output from other processes, depending on
+exactly when Open MPI kills them.
+--------------------------------------------------------------------------
+--------------------------------------------------------------------------
+MPI_ABORT was invoked on rank 69 in communicator MPI COMMUNICATOR 3 DUP FROM 0
+with errorcode 1.
+
+NOTE: invoking MPI_ABORT causes Open MPI to kill all MPI processes.
+You may or may not see output from other processes, depending on
+exactly when Open MPI kills them.
+--------------------------------------------------------------------------
+--------------------------------------------------------------------------
+MPI_ABORT was invoked on rank 70 in communicator MPI COMMUNICATOR 3 DUP FROM 0
+with errorcode 1.
+
+NOTE: invoking MPI_ABORT causes Open MPI to kill all MPI processes.
+You may or may not see output from other processes, depending on
+exactly when Open MPI kills them.
+--------------------------------------------------------------------------
+--------------------------------------------------------------------------
+MPI_ABORT was invoked on rank 73 in communicator MPI COMMUNICATOR 3 DUP FROM 0
+with errorcode 1.
+
+NOTE: invoking MPI_ABORT causes Open MPI to kill all MPI processes.
+You may or may not see output from other processes, depending on
+exactly when Open MPI kills them.
+--------------------------------------------------------------------------
+--------------------------------------------------------------------------
+MPI_ABORT was invoked on rank 77 in communicator MPI COMMUNICATOR 3 DUP FROM 0
+with errorcode 1.
+
+NOTE: invoking MPI_ABORT causes Open MPI to kill all MPI processes.
+You may or may not see output from other processes, depending on
+exactly when Open MPI kills them.
+--------------------------------------------------------------------------
+--------------------------------------------------------------------------
+MPI_ABORT was invoked on rank 78 in communicator MPI COMMUNICATOR 3 DUP FROM 0
+with errorcode 1.
+
+NOTE: invoking MPI_ABORT causes Open MPI to kill all MPI processes.
+You may or may not see output from other processes, depending on
+exactly when Open MPI kills them.
+--------------------------------------------------------------------------
+--------------------------------------------------------------------------
+MPI_ABORT was invoked on rank 79 in communicator MPI COMMUNICATOR 3 DUP FROM 0
+with errorcode 1.
+
+NOTE: invoking MPI_ABORT causes Open MPI to kill all MPI processes.
+You may or may not see output from other processes, depending on
+exactly when Open MPI kills them.
+--------------------------------------------------------------------------
+ Abort called by computing node            80 at 2025-08-18 15:00:10.884 +0200
+ Execution terminated because of runtime error
+--------------------------------------------------------------------------
+MPI_ABORT was invoked on rank 80 in communicator MPI COMMUNICATOR 3 DUP FROM 0
+with errorcode 1.
+
+NOTE: invoking MPI_ABORT causes Open MPI to kill all MPI processes.
+You may or may not see output from other processes, depending on
+exactly when Open MPI kills them.
+--------------------------------------------------------------------------
+--------------------------------------------------------------------------
+MPI_ABORT was invoked on rank 82 in communicator MPI COMMUNICATOR 3 DUP FROM 0
+with errorcode 1.
+
+NOTE: invoking MPI_ABORT causes Open MPI to kill all MPI processes.
+You may or may not see output from other processes, depending on
+exactly when Open MPI kills them.
+--------------------------------------------------------------------------
+--------------------------------------------------------------------------
+MPI_ABORT was invoked on rank 87 in communicator MPI COMMUNICATOR 3 DUP FROM 0
+with errorcode 1.
+
+NOTE: invoking MPI_ABORT causes Open MPI to kill all MPI processes.
+You may or may not see output from other processes, depending on
+exactly when Open MPI kills them.
+--------------------------------------------------------------------------
+--------------------------------------------------------------------------
+MPI_ABORT was invoked on rank 89 in communicator MPI COMMUNICATOR 3 DUP FROM 0
+with errorcode 1.
+
+NOTE: invoking MPI_ABORT causes Open MPI to kill all MPI processes.
+You may or may not see output from other processes, depending on
+exactly when Open MPI kills them.
+--------------------------------------------------------------------------
+--------------------------------------------------------------------------
+MPI_ABORT was invoked on rank 92 in communicator MPI COMMUNICATOR 3 DUP FROM 0
+with errorcode 1.
+
+NOTE: invoking MPI_ABORT causes Open MPI to kill all MPI processes.
+You may or may not see output from other processes, depending on
+exactly when Open MPI kills them.
+--------------------------------------------------------------------------
+--------------------------------------------------------------------------
+MPI_ABORT was invoked on rank 95 in communicator MPI COMMUNICATOR 3 DUP FROM 0
+with errorcode 1.
+
+NOTE: invoking MPI_ABORT causes Open MPI to kill all MPI processes.
+You may or may not see output from other processes, depending on
+exactly when Open MPI kills them.
+--------------------------------------------------------------------------
+--------------------------------------------------------------------------
+MPI_ABORT was invoked on rank 96 in communicator MPI COMMUNICATOR 3 DUP FROM 0
+with errorcode 1.
+
+NOTE: invoking MPI_ABORT causes Open MPI to kill all MPI processes.
+You may or may not see output from other processes, depending on
+exactly when Open MPI kills them.
+--------------------------------------------------------------------------
+ Abort called by computing node            23 at 2025-08-18 15:00:10.884 +0200
+ Execution terminated because of runtime error
+--------------------------------------------------------------------------
+MPI_ABORT was invoked on rank 27 in communicator MPI COMMUNICATOR 3 DUP FROM 0
+with errorcode 1.
+
+NOTE: invoking MPI_ABORT causes Open MPI to kill all MPI processes.
+You may or may not see output from other processes, depending on
+exactly when Open MPI kills them.
+--------------------------------------------------------------------------
+--------------------------------------------------------------------------
+MPI_ABORT was invoked on rank 51 in communicator MPI COMMUNICATOR 3 DUP FROM 0
+with errorcode 1.
+
+NOTE: invoking MPI_ABORT causes Open MPI to kill all MPI processes.
+You may or may not see output from other processes, depending on
+exactly when Open MPI kills them.
+--------------------------------------------------------------------------
+--------------------------------------------------------------------------
+MPI_ABORT was invoked on rank 71 in communicator MPI COMMUNICATOR 3 DUP FROM 0
+with errorcode 1.
+
+NOTE: invoking MPI_ABORT causes Open MPI to kill all MPI processes.
+You may or may not see output from other processes, depending on
+exactly when Open MPI kills them.
+--------------------------------------------------------------------------
+--------------------------------------------------------------------------
+MPI_ABORT was invoked on rank 23 in communicator MPI COMMUNICATOR 3 DUP FROM 0
+with errorcode 1.
+
+NOTE: invoking MPI_ABORT causes Open MPI to kill all MPI processes.
+You may or may not see output from other processes, depending on
+exactly when Open MPI kills them.
+--------------------------------------------------------------------------
+slurmstepd: error: *** STEP 19095107.0 ON lrdn4015 CANCELLED AT 2025-08-18T15:00:10 ***
+srun: error: lrdn4024: tasks 106,117,120,124,126,138,153,156,161,164,177,188-189,197: Killed
+srun: error: lrdn4032: tasks 600,603,611,623,635-636,648-649,653,662,673,692-693,699: Killed
+srun: error: lrdn4015: tasks 0,7,14,18,22,26,30,37,59,62,69,72,79-80,85,97: Killed
+srun: error: lrdn4033: tasks 713,716,720-721,723,731,736,746-747,761,771,776-778,798: Killed
+srun: error: lrdn4030: tasks 400,402,404-405,407,421,430,439,447,456,464,478,480,489,495: Killed
+srun: error: lrdn4028: tasks 205,212-213,221-222,245,247,258,260,266,268,270,275,284,292,297: Killed
+srun: error: lrdn4029: tasks 300-301,305,310,314,316,320-321,326,328,338,340,352,354,359,378,383,386,390: Killed
+srun: error: lrdn4031: tasks 506-507,511,514,528,545,547,549,558,562,564,567,570,574,582,594,596: Killed
+srun: error: lrdn4033: tasks 700-712,714-715,717-719,722,724-730,732-735,737-745,748-760,762-766,768-770,772-775,779-797,799: Killed
+srun: error: lrdn4030: tasks 401,403,406,408-420,422-429,431-438,440-446,448-455,457-463,465-476,479,481-488,490-494,496-499: Killed
+srun: error: lrdn4029: tasks 302-304,306-309,311-313,315,317-319,323-325,327,329-337,339,341-351,353,355-358,360-377,379-382,384-385,387-389,391-399: Killed
+srun: error: lrdn4031: tasks 500-505,508-510,512-513,515-527,529-544,546,548,550-557,559-561,563,565-566,568-569,571-573,575-578,580-581,583-593,595,597-599: Killed
+srun: error: lrdn4032: tasks 601-602,604-610,612-622,624-634,637-647,650-652,654-661,663-672,674-679,681-691,694-698: Killed
+srun: error: lrdn4024: tasks 100-105,107-115,118-119,121-123,125,127-137,139-152,154-155,157-160,162-163,165-176,178-187,190-196,198-199: Killed
+srun: error: lrdn4028: tasks 200-204,206-211,214-220,223-244,246,248-257,259,261-265,267,269,271-274,276-283,285-291,293-296,299: Killed
+srun: error: lrdn4015: tasks 1-6,8-13,15-17,19-21,23-25,27-29,31-36,38-58,60-61,63-66,68,70-71,73-78,81-84,86-96,98-99: Killed
+srun: error: lrdn4030: task 477: Killed
+srun: error: lrdn4033: task 767: Killed
+srun: error: lrdn4031: task 579: Killed
+srun: error: lrdn4028: task 298: Killed
+srun: error: lrdn4029: task 322: Killed
+srun: error: lrdn4015: task 67: Killed
+srun: error: lrdn4032: task 680: Killed
+srun: error: lrdn4024: task 116: Killed

@@ -10,7 +10,7 @@
 #SBATCH --gres=gpu:4
 #SBATCH --time=05:00:00
 
-source /leonardo/home/userexternal/ctica000/MS_thesis/RegCM/modules_cuda  
+source /leonardo/home/userexternal/ctica000/MS_thesis/RegCM/module_cuda_old  
 
 cd /leonardo/home/userexternal/ctica000/MS_thesis/RegCM/512_1024_60_1Day_Benchmark/gpu_standardPar 
 
