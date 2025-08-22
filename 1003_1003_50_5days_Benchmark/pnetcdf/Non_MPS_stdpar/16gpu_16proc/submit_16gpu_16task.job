@@ -1,6 +1,5 @@
 #!/bin/bash 
-
-#SBATCH --account=ICT25_MHPC_0
+#SBATCH --account=ICT25_ESP_0
 #SBATCH --out=./production/LOG_%x_%j.out
 #SBATCH --err=./production/LOG_%x_%j.err
 #SBATCH --job-name stdpar_16gpu_16task
@@ -12,7 +11,7 @@
 
 source /leonardo/home/userexternal/ctica000/MS_thesis/RegCM/modules_cuda  
 
-cd /leonardo/home/userexternal/ctica000/MS_thesis/RegCM/1003_1003_50_5days_Benchmark/with_pnetcdf/Non_MPS_stdpar/16gpu_16proc
+cd /leonardo/home/userexternal/ctica000/MS_thesis/RegCM/1003_1003_50_5days_Benchmark/pnetcdf/Non_MPS_stdpar/16gpu_16proc
 
 # Launch
 srun ./STD_launch_per_rank.sh

@@ -12,7 +12,8 @@
 
 source /leonardo/home/userexternal/ctica000/MS_thesis/RegCM/modules_cuda  
 
-cd /leonardo/home/userexternal/ctica000/MS_thesis/RegCM/1003_1003_50_5days_Benchmark/with_pnetcdf/Non_MPS_stdpar/8gpu_8proc
+cd /leonardo/home/userexternal/ctica000/MS_thesis/RegCM/1003_1003_50_5days_Benchmark/pnetcdf/Non_MPS_stdpar/8gpu_8proc
+
 
 # Launch
 srun ./STD_launch_per_rank.sh
