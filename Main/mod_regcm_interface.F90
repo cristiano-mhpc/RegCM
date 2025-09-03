@@ -233,8 +233,8 @@ module mod_regcm_interface
     integer:: i  ! only relevant for profiling 
 
 
-     ! do i = 1, 250   ! relevant for profiling to run only for a short time. 
-    do while ( extime >= timestr .and. extime < timeend )
+    do i = 1, 2500   ! relevant for profiling to run only for a short time. 
+    ! do while ( extime >= timestr .and. extime < timeend )
       !
       ! Retrieve information from the driver
       !
