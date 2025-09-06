@@ -1,0 +1,560 @@
+Failed to create '/leonardo_scratch/large/userexternal/ctica000/profile/nsys_rank3.nsys-rep': No such file or directory.
+Failed to create '/leonardo_scratch/large/userexternal/ctica000/profile/nsys_rank4.nsys-rep': No such file or directory.
+Failed to create '/leonardo_scratch/large/userexternal/ctica000/profile/nsys_rank12.nsys-rep': No such file or directory.
+Failed to create '/leonardo_scratch/large/userexternal/ctica000/profile/nsys_rank15.nsys-rep': No such file or directory.
+Failed to create '/leonardo_scratch/large/userexternal/ctica000/profile/nsys_rank1.nsys-rep': No such file or directory.
+Failed to create '/leonardo_scratch/large/userexternal/ctica000/profile/nsys_rank14.nsys-rep': No such file or directory.
+Failed to create '/leonardo_scratch/large/userexternal/ctica000/profile/nsys_rank7.nsys-rep': No such file or directory.
+Failed to create '/leonardo_scratch/large/userexternal/ctica000/profile/nsys_rank5.nsys-rep': No such file or directory.
+Failed to create '/leonardo_scratch/large/userexternal/ctica000/profile/nsys_rank11.nsys-rep': No such file or directory.
+Failed to create '/leonardo_scratch/large/userexternal/ctica000/profile/nsys_rank13.nsys-rep': No such file or directory.
+Failed to create '/leonardo_scratch/large/userexternal/ctica000/profile/nsys_rank9.nsys-rep': No such file or directory.
+Failed to create '/leonardo_scratch/large/userexternal/ctica000/profile/nsys_rank10.nsys-rep': No such file or directory.
+Importer error status: Importation failed.
+Import Failed with unexpected exception: /dvs/p4/build/sw/devtools/Agora/Rel/QuadD_Main/QuadD/Host/QdstrmImporter/main.cpp(34): Throw in function {anonymous}::Importer::Importer(const boost::filesystem::path&, const boost::filesystem::path&)
+Dynamic exception type: boost::wrapexcept<QuadDCommon::RuntimeException>
+std::exception::what: RuntimeException
+[QuadDCommon::tag_message*] = Status: AnalysisFailed
+Error {
+  Type: RuntimeError
+  SubError {
+    Type: InvalidArgument
+    Props {
+      Items {
+        Type: OriginalExceptionClass
+        Value: "N5boost10wrapexceptIN11QuadDCommon24InvalidArgumentExceptionEEE"
+      }
+      Items {
+        Type: OriginalFile
+        Value: "/dvs/p4/build/sw/devtools/Agora/Rel/QuadD_Main/QuadD/Host/Analysis/Modules/EventCollection.cpp"
+      }
+      Items {
+        Type: OriginalLine
+        Value: "1055"
+      }
+      Items {
+        Type: OriginalFunction
+        Value: "void QuadDAnalysis::EventCollection::CheckOrder(QuadDAnalysis::EventCollectionHelper::EventContainer&, const QuadDAnalysis::ConstEvent&) const"
+      }
+      Items {
+        Type: ErrorText
+        Value: "Wrong event order has been detected when adding events to the collection:\nnew event ={ StartNs=2244726229499 StopNs=2244726229782 GlobalId=304615121030076 Event={ TraceProcessEvent=[{ Correlation=404698 EventClass=1 TextId=10967 ReturnValue=600 },] } Type=48 }\nlast event ={ StartNs=2247223111272 StopNs=2247230356918 GlobalId=304615121030076 Event={ TraceProcessEvent=[{ Correlation=494205 EventClass=1 TextId=10967 ReturnValue=600 },] } Type=48 }"
+      }
+    }
+  }
+}
+Failed to create '/leonardo_scratch/large/userexternal/ctica000/profile/nsys_rank3.qdstrm': No such file or directory.
+Failed to create '/leonardo_scratch/large/userexternal/ctica000/profile/nsys_rank2.nsys-rep': No such file or directory.
+Importer error status: Importation failed.
+Import Failed with unexpected exception: /dvs/p4/build/sw/devtools/Agora/Rel/QuadD_Main/QuadD/Host/QdstrmImporter/main.cpp(34): Throw in function {anonymous}::Importer::Importer(const boost::filesystem::path&, const boost::filesystem::path&)
+Dynamic exception type: boost::wrapexcept<QuadDCommon::RuntimeException>
+std::exception::what: RuntimeException
+[QuadDCommon::tag_message*] = Status: AnalysisFailed
+Error {
+  Type: RuntimeError
+  SubError {
+    Type: InvalidArgument
+    Props {
+      Items {
+        Type: OriginalExceptionClass
+        Value: "N5boost10wrapexceptIN11QuadDCommon24InvalidArgumentExceptionEEE"
+      }
+      Items {
+        Type: OriginalFile
+        Value: "/dvs/p4/build/sw/devtools/Agora/Rel/QuadD_Main/QuadD/Host/Analysis/Modules/EventCollection.cpp"
+      }
+      Items {
+        Type: OriginalLine
+        Value: "1055"
+      }
+      Items {
+        Type: OriginalFunction
+        Value: "void QuadDAnalysis::EventCollection::CheckOrder(QuadDAnalysis::EventCollectionHelper::EventContainer&, const QuadDAnalysis::ConstEvent&) const"
+      }
+      Items {
+        Type: ErrorText
+        Value: "Wrong event order has been detected when adding events to the collection:\nnew event ={ StartNs=2251459919968 StopNs=2251459934646 GlobalId=304615053921208 Event={ TraceProcessEvent=[{ Correlation=593610 EventClass=1 TextId=6214 ReturnValue=0 },] } Type=48 }\nlast event ={ StartNs=2265473529364 StopNs=2265474556361 GlobalId=304615053921208 Event={ TraceProcessEvent=[{ Correlation=686331 EventClass=1 TextId=6214 ReturnValue=600 },] } Type=48 }"
+      }
+    }
+  }
+}
+Failed to create '/leonardo_scratch/large/userexternal/ctica000/profile/nsys_rank1.qdstrm': No such file or directory.
+Importer error status: Importation failed.
+Import Failed with unexpected exception: /dvs/p4/build/sw/devtools/Agora/Rel/QuadD_Main/QuadD/Host/QdstrmImporter/main.cpp(34): Throw in function {anonymous}::Importer::Importer(const boost::filesystem::path&, const boost::filesystem::path&)
+Dynamic exception type: boost::wrapexcept<QuadDCommon::RuntimeException>
+std::exception::what: RuntimeException
+[QuadDCommon::tag_message*] = Status: AnalysisFailed
+Error {
+  Type: RuntimeError
+  SubError {
+    Type: InvalidArgument
+    Props {
+      Items {
+        Type: OriginalExceptionClass
+        Value: "N5boost10wrapexceptIN11QuadDCommon24InvalidArgumentExceptionEEE"
+      }
+      Items {
+        Type: OriginalFile
+        Value: "/dvs/p4/build/sw/devtools/Agora/Rel/QuadD_Main/QuadD/Host/Analysis/Modules/EventCollection.cpp"
+      }
+      Items {
+        Type: OriginalLine
+        Value: "1055"
+      }
+      Items {
+        Type: OriginalFunction
+        Value: "void QuadDAnalysis::EventCollection::CheckOrder(QuadDAnalysis::EventCollectionHelper::EventContainer&, const QuadDAnalysis::ConstEvent&) const"
+      }
+      Items {
+        Type: ErrorText
+        Value: "Wrong event order has been detected when adding events to the collection:\nnew event ={ StartNs=3487619021 StopNs=3487620819 GlobalId=295751197195249 Event={ TraceProcessEvent=[{ Correlation=110 EventClass=1 TextId=10463 ReturnValue=0 },] } Type=48 }\nlast event ={ StartNs=33274009147 StopNs=33274009415 GlobalId=295751197195249 Event={ TraceProcessEvent=[{ Correlation=96734 EventClass=1 TextId=5853 ReturnValue=600 },] } Type=48 }"
+      }
+    }
+  }
+}
+Failed to create '/leonardo_scratch/large/userexternal/ctica000/profile/nsys_rank15.qdstrm': No such file or directory.
+Importer error status: Importation failed.
+Import Failed with unexpected exception: /dvs/p4/build/sw/devtools/Agora/Rel/QuadD_Main/QuadD/Host/QdstrmImporter/main.cpp(34): Throw in function {anonymous}::Importer::Importer(const boost::filesystem::path&, const boost::filesystem::path&)
+Dynamic exception type: boost::wrapexcept<QuadDCommon::RuntimeException>
+std::exception::what: RuntimeException
+[QuadDCommon::tag_message*] = Status: AnalysisFailed
+Error {
+  Type: RuntimeError
+  SubError {
+    Type: InvalidArgument
+    Props {
+      Items {
+        Type: OriginalExceptionClass
+        Value: "N5boost10wrapexceptIN11QuadDCommon24InvalidArgumentExceptionEEE"
+      }
+      Items {
+        Type: OriginalFile
+        Value: "/dvs/p4/build/sw/devtools/Agora/Rel/QuadD_Main/QuadD/Host/Analysis/Modules/EventCollection.cpp"
+      }
+      Items {
+        Type: OriginalLine
+        Value: "1055"
+      }
+      Items {
+        Type: OriginalFunction
+        Value: "void QuadDAnalysis::EventCollection::CheckOrder(QuadDAnalysis::EventCollectionHelper::EventContainer&, const QuadDAnalysis::ConstEvent&) const"
+      }
+      Items {
+        Type: ErrorText
+        Value: "Wrong event order has been detected when adding events to the collection:\nnew event ={ StartNs=20805946562 StopNs=20805946811 GlobalId=301335762309171 Event={ TraceProcessEvent=[{ Correlation=2405 EventClass=1 TextId=5908 ReturnValue=600 },] } Type=48 }\nlast event ={ StartNs=33965973012 StopNs=33965973273 GlobalId=301335762309171 Event={ TraceProcessEvent=[{ Correlation=96596 EventClass=1 TextId=5908 ReturnValue=600 },] } Type=48 }"
+      }
+    }
+  }
+}
+Failed to create '/leonardo_scratch/large/userexternal/ctica000/profile/nsys_rank7.qdstrm': No such file or directory.
+Importer error status: Importation failed.
+Import Failed with unexpected exception: /dvs/p4/build/sw/devtools/Agora/Rel/QuadD_Main/QuadD/Host/QdstrmImporter/main.cpp(34): Throw in function {anonymous}::Importer::Importer(const boost::filesystem::path&, const boost::filesystem::path&)
+Dynamic exception type: boost::wrapexcept<QuadDCommon::RuntimeException>
+std::exception::what: RuntimeException
+[QuadDCommon::tag_message*] = Status: AnalysisFailed
+Error {
+  Type: RuntimeError
+  SubError {
+    Type: InvalidArgument
+    Props {
+      Items {
+        Type: OriginalExceptionClass
+        Value: "N5boost10wrapexceptIN11QuadDCommon24InvalidArgumentExceptionEEE"
+      }
+      Items {
+        Type: OriginalFile
+        Value: "/dvs/p4/build/sw/devtools/Agora/Rel/QuadD_Main/QuadD/Host/Analysis/Modules/EventCollection.cpp"
+      }
+      Items {
+        Type: OriginalLine
+        Value: "1055"
+      }
+      Items {
+        Type: OriginalFunction
+        Value: "void QuadDAnalysis::EventCollection::CheckOrder(QuadDAnalysis::EventCollectionHelper::EventContainer&, const QuadDAnalysis::ConstEvent&) const"
+      }
+      Items {
+        Type: ErrorText
+        Value: "Wrong event order has been detected when adding events to the collection:\nnew event ={ StartNs=33390271767 StopNs=33390272539 GlobalId=295751096531947 Event={ TraceProcessEvent=[{ Correlation=96560 EventClass=1 TextId=6024 ReturnValue=600 },] } Type=48 }\nlast event ={ StartNs=2238688624333 StopNs=2238688624596 GlobalId=295751096531947 Event={ TraceProcessEvent=[{ Correlation=195176 EventClass=1 TextId=6024 ReturnValue=600 },] } Type=48 }"
+      }
+    }
+  }
+}
+Failed to create '/leonardo_scratch/large/userexternal/ctica000/profile/nsys_rank14.qdstrm': No such file or directory.
+Importer error status: Importation failed.
+Import Failed with unexpected exception: /dvs/p4/build/sw/devtools/Agora/Rel/QuadD_Main/QuadD/Host/QdstrmImporter/main.cpp(34): Throw in function {anonymous}::Importer::Importer(const boost::filesystem::path&, const boost::filesystem::path&)
+Dynamic exception type: boost::wrapexcept<QuadDCommon::RuntimeException>
+std::exception::what: RuntimeException
+[QuadDCommon::tag_message*] = Status: AnalysisFailed
+Error {
+  Type: RuntimeError
+  SubError {
+    Type: InvalidArgument
+    Props {
+      Items {
+        Type: OriginalExceptionClass
+        Value: "N5boost10wrapexceptIN11QuadDCommon24InvalidArgumentExceptionEEE"
+      }
+      Items {
+        Type: OriginalFile
+        Value: "/dvs/p4/build/sw/devtools/Agora/Rel/QuadD_Main/QuadD/Host/Analysis/Modules/EventCollection.cpp"
+      }
+      Items {
+        Type: OriginalLine
+        Value: "1055"
+      }
+      Items {
+        Type: OriginalFunction
+        Value: "void QuadDAnalysis::EventCollection::CheckOrder(QuadDAnalysis::EventCollectionHelper::EventContainer&, const QuadDAnalysis::ConstEvent&) const"
+      }
+      Items {
+        Type: ErrorText
+        Value: "Wrong event order has been detected when adding events to the collection:\nnew event ={ StartNs=33994994982 StopNs=33995004126 GlobalId=301335728754737 Event={ TraceProcessEvent=[{ Correlation=96504 EventClass=1 TextId=6660 ReturnValue=0 },] } Type=48 }\nlast event ={ StartNs=41490459606 StopNs=41490731986 GlobalId=301335728754737 Event={ TraceProcessEvent=[{ Correlation=187800 EventClass=1 TextId=6660 ReturnValue=600 },] } Type=48 }"
+      }
+    }
+  }
+}
+Failed to create '/leonardo_scratch/large/userexternal/ctica000/profile/nsys_rank4.qdstrm': No such file or directory.
+Importer error status: Importation failed.
+Import Failed with unexpected exception: /dvs/p4/build/sw/devtools/Agora/Rel/QuadD_Main/QuadD/Host/QdstrmImporter/main.cpp(34): Throw in function {anonymous}::Importer::Importer(const boost::filesystem::path&, const boost::filesystem::path&)
+Dynamic exception type: boost::wrapexcept<QuadDCommon::RuntimeException>
+std::exception::what: RuntimeException
+[QuadDCommon::tag_message*] = Status: AnalysisFailed
+Error {
+  Type: RuntimeError
+  SubError {
+    Type: InvalidArgument
+    Props {
+      Items {
+        Type: OriginalExceptionClass
+        Value: "N5boost10wrapexceptIN11QuadDCommon24InvalidArgumentExceptionEEE"
+      }
+      Items {
+        Type: OriginalFile
+        Value: "/dvs/p4/build/sw/devtools/Agora/Rel/QuadD_Main/QuadD/Host/Analysis/Modules/EventCollection.cpp"
+      }
+      Items {
+        Type: OriginalLine
+        Value: "1055"
+      }
+      Items {
+        Type: OriginalFunction
+        Value: "void QuadDAnalysis::EventCollection::CheckOrder(QuadDAnalysis::EventCollectionHelper::EventContainer&, const QuadDAnalysis::ConstEvent&) const"
+      }
+      Items {
+        Type: ErrorText
+        Value: "Wrong event order has been detected when adding events to the collection:\nnew event ={ StartNs=33795316821 StopNs=33795325666 GlobalId=301322659302694 Event={ TraceProcessEvent=[{ Correlation=96387 EventClass=1 TextId=6586 ReturnValue=0 },] } Type=48 }\nlast event ={ StartNs=42103968362 StopNs=42132535367 GlobalId=301322659302694 Event={ TraceProcessEvent=[{ Correlation=195454 EventClass=1 TextId=6586 ReturnValue=600 },] } Type=48 }"
+      }
+    }
+  }
+}
+Failed to create '/leonardo_scratch/large/userexternal/ctica000/profile/nsys_rank9.qdstrm': No such file or directory.
+Importer error status: Importation failed.
+Import Failed with unexpected exception: /dvs/p4/build/sw/devtools/Agora/Rel/QuadD_Main/QuadD/Host/QdstrmImporter/main.cpp(34): Throw in function {anonymous}::Importer::Importer(const boost::filesystem::path&, const boost::filesystem::path&)
+Dynamic exception type: boost::wrapexcept<QuadDCommon::RuntimeException>
+std::exception::what: RuntimeException
+[QuadDCommon::tag_message*] = Status: AnalysisFailed
+Error {
+  Type: RuntimeError
+  SubError {
+    Type: InvalidArgument
+    Props {
+      Items {
+        Type: OriginalExceptionClass
+        Value: "N5boost10wrapexceptIN11QuadDCommon24InvalidArgumentExceptionEEE"
+      }
+      Items {
+        Type: OriginalFile
+        Value: "/dvs/p4/build/sw/devtools/Agora/Rel/QuadD_Main/QuadD/Host/Analysis/Modules/EventCollection.cpp"
+      }
+      Items {
+        Type: OriginalLine
+        Value: "1055"
+      }
+      Items {
+        Type: OriginalFunction
+        Value: "void QuadDAnalysis::EventCollection::CheckOrder(QuadDAnalysis::EventCollectionHelper::EventContainer&, const QuadDAnalysis::ConstEvent&) const"
+      }
+      Items {
+        Type: ErrorText
+        Value: "Wrong event order has been detected when adding events to the collection:\nnew event ={ StartNs=2236657483653 StopNs=2236657483921 GlobalId=295751146863598 Event={ TraceProcessEvent=[{ Correlation=198779 EventClass=1 TextId=11139 ReturnValue=600 },] } Type=48 }\nlast event ={ StartNs=2240885381288 StopNs=2240885381554 GlobalId=295751146863598 Event={ TraceProcessEvent=[{ Correlation=290805 EventClass=1 TextId=11139 ReturnValue=600 },] } Type=48 }"
+      }
+    }
+  }
+}
+Failed to create '/leonardo_scratch/large/userexternal/ctica000/profile/nsys_rank12.qdstrm': No such file or directory.
+Importer error status: Importation failed.
+Import Failed with unexpected exception: /dvs/p4/build/sw/devtools/Agora/Rel/QuadD_Main/QuadD/Host/QdstrmImporter/main.cpp(34): Throw in function {anonymous}::Importer::Importer(const boost::filesystem::path&, const boost::filesystem::path&)
+Dynamic exception type: boost::wrapexcept<QuadDCommon::RuntimeException>
+std::exception::what: RuntimeException
+[QuadDCommon::tag_message*] = Status: AnalysisFailed
+Error {
+  Type: RuntimeError
+  SubError {
+    Type: InvalidArgument
+    Props {
+      Items {
+        Type: OriginalExceptionClass
+        Value: "N5boost10wrapexceptIN11QuadDCommon24InvalidArgumentExceptionEEE"
+      }
+      Items {
+        Type: OriginalFile
+        Value: "/dvs/p4/build/sw/devtools/Agora/Rel/QuadD_Main/QuadD/Host/Analysis/Modules/EventCollection.cpp"
+      }
+      Items {
+        Type: OriginalLine
+        Value: "1055"
+      }
+      Items {
+        Type: OriginalFunction
+        Value: "void QuadDAnalysis::EventCollection::CheckOrder(QuadDAnalysis::EventCollectionHelper::EventContainer&, const QuadDAnalysis::ConstEvent&) const"
+      }
+      Items {
+        Type: ErrorText
+        Value: "Wrong event order has been detected when adding events to the collection:\nnew event ={ StartNs=2237039331057 StopNs=2237039331334 GlobalId=301335779086388 Event={ TraceProcessEvent=[{ Correlation=197945 EventClass=1 TextId=12723 ReturnValue=600 },] } Type=48 }\nlast event ={ StartNs=2240689931954 StopNs=2240690950389 GlobalId=301335779086388 Event={ TraceProcessEvent=[{ Correlation=294596 EventClass=1 TextId=12723 ReturnValue=600 },] } Type=48 }"
+      }
+    }
+  }
+}
+Failed to create '/leonardo_scratch/large/userexternal/ctica000/profile/nsys_rank5.qdstrm': No such file or directory.
+Importer error status: Importation failed.
+Import Failed with unexpected exception: /dvs/p4/build/sw/devtools/Agora/Rel/QuadD_Main/QuadD/Host/QdstrmImporter/main.cpp(34): Throw in function {anonymous}::Importer::Importer(const boost::filesystem::path&, const boost::filesystem::path&)
+Dynamic exception type: boost::wrapexcept<QuadDCommon::RuntimeException>
+std::exception::what: RuntimeException
+[QuadDCommon::tag_message*] = Status: AnalysisFailed
+Error {
+  Type: RuntimeError
+  SubError {
+    Type: InvalidArgument
+    Props {
+      Items {
+        Type: OriginalExceptionClass
+        Value: "N5boost10wrapexceptIN11QuadDCommon24InvalidArgumentExceptionEEE"
+      }
+      Items {
+        Type: OriginalFile
+        Value: "/dvs/p4/build/sw/devtools/Agora/Rel/QuadD_Main/QuadD/Host/Analysis/Modules/EventCollection.cpp"
+      }
+      Items {
+        Type: OriginalLine
+        Value: "1055"
+      }
+      Items {
+        Type: OriginalFunction
+        Value: "void QuadDAnalysis::EventCollection::CheckOrder(QuadDAnalysis::EventCollectionHelper::EventContainer&, const QuadDAnalysis::ConstEvent&) const"
+      }
+      Items {
+        Type: ErrorText
+        Value: "Wrong event order has been detected when adding events to the collection:\nnew event ={ StartNs=34251431249 StopNs=34251451280 GlobalId=295751130086381 Event={ TraceProcessEvent=[{ Correlation=96339 EventClass=1 TextId=10835 ReturnValue=0 },] } Type=48 }\nlast event ={ StartNs=2238579765736 StopNs=2238597888039 GlobalId=295751130086381 Event={ TraceProcessEvent=[{ Correlation=195006 EventClass=1 TextId=10835 ReturnValue=600 },] } Type=48 }"
+      }
+    }
+  }
+}
+Failed to create '/leonardo_scratch/large/userexternal/ctica000/profile/nsys_rank13.qdstrm': No such file or directory.
+Importer error status: Importation failed.
+Import Failed with unexpected exception: /dvs/p4/build/sw/devtools/Agora/Rel/QuadD_Main/QuadD/Host/QdstrmImporter/main.cpp(34): Throw in function {anonymous}::Importer::Importer(const boost::filesystem::path&, const boost::filesystem::path&)
+Dynamic exception type: boost::wrapexcept<QuadDCommon::RuntimeException>
+std::exception::what: RuntimeException
+[QuadDCommon::tag_message*] = Status: AnalysisFailed
+Error {
+  Type: RuntimeError
+  SubError {
+    Type: InvalidArgument
+    Props {
+      Items {
+        Type: OriginalExceptionClass
+        Value: "N5boost10wrapexceptIN11QuadDCommon24InvalidArgumentExceptionEEE"
+      }
+      Items {
+        Type: OriginalFile
+        Value: "/dvs/p4/build/sw/devtools/Agora/Rel/QuadD_Main/QuadD/Host/Analysis/Modules/EventCollection.cpp"
+      }
+      Items {
+        Type: OriginalLine
+        Value: "1055"
+      }
+      Items {
+        Type: OriginalFunction
+        Value: "void QuadDAnalysis::EventCollection::CheckOrder(QuadDAnalysis::EventCollectionHelper::EventContainer&, const QuadDAnalysis::ConstEvent&) const"
+      }
+      Items {
+        Type: ErrorText
+        Value: "Wrong event order has been detected when adding events to the collection:\nnew event ={ StartNs=2241207685842 StopNs=2241207693859 GlobalId=301322709634345 Event={ TraceProcessEvent=[{ Correlation=294561 EventClass=1 TextId=6099 ReturnValue=0 },] } Type=48 }\nlast event ={ StartNs=2244082964500 StopNs=2244082964827 GlobalId=301322709634345 Event={ TraceProcessEvent=[{ Correlation=394277 EventClass=1 TextId=6099 ReturnValue=600 },] } Type=48 }"
+      }
+    }
+  }
+}
+Failed to create '/leonardo_scratch/large/userexternal/ctica000/profile/nsys_rank10.qdstrm': No such file or directory.
+Importer error status: Importation failed.
+Import Failed with unexpected exception: /dvs/p4/build/sw/devtools/Agora/Rel/QuadD_Main/QuadD/Host/QdstrmImporter/main.cpp(34): Throw in function {anonymous}::Importer::Importer(const boost::filesystem::path&, const boost::filesystem::path&)
+Dynamic exception type: boost::wrapexcept<QuadDCommon::RuntimeException>
+std::exception::what: RuntimeException
+[QuadDCommon::tag_message*] = Status: AnalysisFailed
+Error {
+  Type: RuntimeError
+  SubError {
+    Type: InvalidArgument
+    Props {
+      Items {
+        Type: OriginalExceptionClass
+        Value: "N5boost10wrapexceptIN11QuadDCommon24InvalidArgumentExceptionEEE"
+      }
+      Items {
+        Type: OriginalFile
+        Value: "/dvs/p4/build/sw/devtools/Agora/Rel/QuadD_Main/QuadD/Host/Analysis/Modules/EventCollection.cpp"
+      }
+      Items {
+        Type: OriginalLine
+        Value: "1055"
+      }
+      Items {
+        Type: OriginalFunction
+        Value: "void QuadDAnalysis::EventCollection::CheckOrder(QuadDAnalysis::EventCollectionHelper::EventContainer&, const QuadDAnalysis::ConstEvent&) const"
+      }
+      Items {
+        Type: ErrorText
+        Value: "Wrong event order has been detected when adding events to the collection:\nnew event ={ StartNs=33786434903 StopNs=33786442337 GlobalId=301322625748260 Event={ TraceProcessEvent=[{ Correlation=96522 EventClass=1 TextId=6529 ReturnValue=0 },] } Type=48 }\nlast event ={ StartNs=42107010716 StopNs=42123117813 GlobalId=301322625748260 Event={ TraceProcessEvent=[{ Correlation=195589 EventClass=1 TextId=6529 ReturnValue=600 },] } Type=48 }"
+      }
+    }
+  }
+}
+Failed to create '/leonardo_scratch/large/userexternal/ctica000/profile/nsys_rank11.qdstrm': No such file or directory.
+Failed to create '/leonardo_scratch/large/userexternal/ctica000/profile/nsys_rank8.nsys-rep': No such file or directory.
+Importer error status: Importation failed.
+Import Failed with unexpected exception: /dvs/p4/build/sw/devtools/Agora/Rel/QuadD_Main/QuadD/Host/QdstrmImporter/main.cpp(34): Throw in function {anonymous}::Importer::Importer(const boost::filesystem::path&, const boost::filesystem::path&)
+Dynamic exception type: boost::wrapexcept<QuadDCommon::RuntimeException>
+std::exception::what: RuntimeException
+[QuadDCommon::tag_message*] = Status: AnalysisFailed
+Error {
+  Type: RuntimeError
+  SubError {
+    Type: InvalidArgument
+    Props {
+      Items {
+        Type: OriginalExceptionClass
+        Value: "N5boost10wrapexceptIN11QuadDCommon24InvalidArgumentExceptionEEE"
+      }
+      Items {
+        Type: OriginalFile
+        Value: "/dvs/p4/build/sw/devtools/Agora/Rel/QuadD_Main/QuadD/Host/Analysis/Modules/EventCollection.cpp"
+      }
+      Items {
+        Type: OriginalLine
+        Value: "1055"
+      }
+      Items {
+        Type: OriginalFunction
+        Value: "void QuadDAnalysis::EventCollection::CheckOrder(QuadDAnalysis::EventCollectionHelper::EventContainer&, const QuadDAnalysis::ConstEvent&) const"
+      }
+      Items {
+        Type: ErrorText
+        Value: "Wrong event order has been detected when adding events to the collection:\nnew event ={ StartNs=2237318238091 StopNs=2237318252942 GlobalId=304615104252859 Event={ TraceProcessEvent=[{ Correlation=195452 EventClass=1 TextId=10928 ReturnValue=0 },] } Type=48 }\nlast event ={ StartNs=2241868208071 StopNs=2241868208357 GlobalId=304615104252859 Event={ TraceProcessEvent=[{ Correlation=294732 EventClass=1 TextId=10928 ReturnValue=600 },] } Type=48 }"
+      }
+    }
+  }
+}
+Failed to create '/leonardo_scratch/large/userexternal/ctica000/profile/nsys_rank2.qdstrm': No such file or directory.
+Failed to create '/leonardo_scratch/large/userexternal/ctica000/profile/nsys_rank0.nsys-rep': No such file or directory.
+Importer error status: Importation failed.
+Import Failed with unexpected exception: /dvs/p4/build/sw/devtools/Agora/Rel/QuadD_Main/QuadD/Host/QdstrmImporter/main.cpp(34): Throw in function {anonymous}::Importer::Importer(const boost::filesystem::path&, const boost::filesystem::path&)
+Dynamic exception type: boost::wrapexcept<QuadDCommon::RuntimeException>
+std::exception::what: RuntimeException
+[QuadDCommon::tag_message*] = Status: AnalysisFailed
+Error {
+  Type: RuntimeError
+  SubError {
+    Type: InvalidArgument
+    Props {
+      Items {
+        Type: OriginalExceptionClass
+        Value: "N5boost10wrapexceptIN11QuadDCommon24InvalidArgumentExceptionEEE"
+      }
+      Items {
+        Type: OriginalFile
+        Value: "/dvs/p4/build/sw/devtools/Agora/Rel/QuadD_Main/QuadD/Host/Analysis/Modules/EventCollection.cpp"
+      }
+      Items {
+        Type: OriginalLine
+        Value: "1055"
+      }
+      Items {
+        Type: OriginalFunction
+        Value: "void QuadDAnalysis::EventCollection::CheckOrder(QuadDAnalysis::EventCollectionHelper::EventContainer&, const QuadDAnalysis::ConstEvent&) const"
+      }
+      Items {
+        Type: ErrorText
+        Value: "Wrong event order has been detected when adding events to the collection:\nnew event ={ StartNs=2298945315120 StopNs=2298945315424 GlobalId=301322592193826 Event={ TraceProcessEvent=[{ Correlation=1185750 EventClass=1 TextId=6255 ReturnValue=600 },] } Type=48 }\nlast event ={ StartNs=2305999154489 StopNs=2305999154781 GlobalId=301322592193826 Event={ TraceProcessEvent=[{ Correlation=1275788 EventClass=1 TextId=6255 ReturnValue=600 },] } Type=48 }"
+      }
+    }
+  }
+}
+Failed to create '/leonardo_scratch/large/userexternal/ctica000/profile/nsys_rank8.qdstrm': No such file or directory.
+Importer error status: Importation failed.
+Import Failed with unexpected exception: /dvs/p4/build/sw/devtools/Agora/Rel/QuadD_Main/QuadD/Host/QdstrmImporter/main.cpp(34): Throw in function {anonymous}::Importer::Importer(const boost::filesystem::path&, const boost::filesystem::path&)
+Dynamic exception type: boost::wrapexcept<QuadDCommon::RuntimeException>
+std::exception::what: RuntimeException
+[QuadDCommon::tag_message*] = Status: AnalysisFailed
+Error {
+  Type: RuntimeError
+  SubError {
+    Type: InvalidArgument
+    Props {
+      Items {
+        Type: OriginalExceptionClass
+        Value: "N5boost10wrapexceptIN11QuadDCommon24InvalidArgumentExceptionEEE"
+      }
+      Items {
+        Type: OriginalFile
+        Value: "/dvs/p4/build/sw/devtools/Agora/Rel/QuadD_Main/QuadD/Host/Analysis/Modules/EventCollection.cpp"
+      }
+      Items {
+        Type: OriginalLine
+        Value: "1055"
+      }
+      Items {
+        Type: OriginalFunction
+        Value: "void QuadDAnalysis::EventCollection::CheckOrder(QuadDAnalysis::EventCollectionHelper::EventContainer&, const QuadDAnalysis::ConstEvent&) const"
+      }
+      Items {
+        Type: ErrorText
+        Value: "Wrong event order has been detected when adding events to the collection:\nnew event ={ StartNs=33402925050 StopNs=33402925327 GlobalId=304615037143991 Event={ TraceProcessEvent=[{ Correlation=101132 EventClass=1 TextId=6903 ReturnValue=600 },] } Type=48 }\nlast event ={ StartNs=33546956671 StopNs=33546956940 GlobalId=304615037143991 Event={ TraceProcessEvent=[{ Correlation=195113 EventClass=1 TextId=6903 ReturnValue=600 },] } Type=48 }"
+      }
+    }
+  }
+}
+Failed to create '/leonardo_scratch/large/userexternal/ctica000/profile/nsys_rank0.qdstrm': No such file or directory.
+Failed to create '/leonardo_scratch/large/userexternal/ctica000/profile/nsys_rank6.nsys-rep': No such file or directory.
+Importer error status: Importation failed.
+Import Failed with unexpected exception: /dvs/p4/build/sw/devtools/Agora/Rel/QuadD_Main/QuadD/Host/QdstrmImporter/main.cpp(34): Throw in function {anonymous}::Importer::Importer(const boost::filesystem::path&, const boost::filesystem::path&)
+Dynamic exception type: boost::wrapexcept<QuadDCommon::RuntimeException>
+std::exception::what: RuntimeException
+[QuadDCommon::tag_message*] = Status: AnalysisFailed
+Error {
+  Type: RuntimeError
+  SubError {
+    Type: InvalidArgument
+    Props {
+      Items {
+        Type: OriginalExceptionClass
+        Value: "N5boost10wrapexceptIN11QuadDCommon24InvalidArgumentExceptionEEE"
+      }
+      Items {
+        Type: OriginalFile
+        Value: "/dvs/p4/build/sw/devtools/Agora/Rel/QuadD_Main/QuadD/Host/Analysis/Modules/EventCollection.cpp"
+      }
+      Items {
+        Type: OriginalLine
+        Value: "1055"
+      }
+      Items {
+        Type: OriginalFunction
+        Value: "void QuadDAnalysis::EventCollection::CheckOrder(QuadDAnalysis::EventCollectionHelper::EventContainer&, const QuadDAnalysis::ConstEvent&) const"
+      }
+      Items {
+        Type: ErrorText
+        Value: "Wrong event order has been detected when adding events to the collection:\nnew event ={ StartNs=35550916771 StopNs=35550925600 GlobalId=301335695200303 Event={ TraceProcessEvent=[{ Correlation=96135 EventClass=1 TextId=11244 ReturnValue=0 },] } Type=48 }\nlast event ={ StartNs=2240120064460 StopNs=2240137156770 GlobalId=301335695200303 Event={ TraceProcessEvent=[{ Correlation=194664 EventClass=1 TextId=11244 ReturnValue=600 },] } Type=48 }"
+      }
+    }
+  }
+}
+Failed to create '/leonardo_scratch/large/userexternal/ctica000/profile/nsys_rank6.qdstrm': No such file or directory.

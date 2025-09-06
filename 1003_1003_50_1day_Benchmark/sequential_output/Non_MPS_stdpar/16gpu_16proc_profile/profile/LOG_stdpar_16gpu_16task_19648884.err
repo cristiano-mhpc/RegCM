@@ -1,0 +1,528 @@
+Importer error status: An unknown error occurred.
+Import Failed with unexpected exception: /dvs/p4/build/sw/devtools/Agora/Rel/QuadD_Main/QuadD/Host/QdstrmImporter/main.cpp(34): Throw in function {anonymous}::Importer::Importer(const boost::filesystem::path&, const boost::filesystem::path&)
+Dynamic exception type: boost::wrapexcept<QuadDCommon::RuntimeException>
+std::exception::what: RuntimeException
+[QuadDCommon::tag_message*] = Status: AnalysisFailed
+Error {
+  Type: RuntimeError
+  SubError {
+    Type: InvalidArgument
+    Props {
+      Items {
+        Type: OriginalExceptionClass
+        Value: "N5boost10wrapexceptIN11QuadDCommon24InvalidArgumentExceptionEEE"
+      }
+      Items {
+        Type: OriginalFile
+        Value: "/dvs/p4/build/sw/devtools/Agora/Rel/QuadD_Main/QuadD/Host/Analysis/Modules/EventCollection.cpp"
+      }
+      Items {
+        Type: OriginalLine
+        Value: "1055"
+      }
+      Items {
+        Type: OriginalFunction
+        Value: "void QuadDAnalysis::EventCollection::CheckOrder(QuadDAnalysis::EventCollectionHelper::EventContainer&, const QuadDAnalysis::ConstEvent&) const"
+      }
+      Items {
+        Type: ErrorText
+        Value: "Wrong event order has been detected when adding events to the collection:\nnew event ={ StartNs=3909869407 StopNs=3909871205 GlobalId=315611680803858 Event={ TraceProcessEvent=[{ Correlation=110 EventClass=1 TextId=1016 ReturnValue=0 },] } Type=48 }\nlast event ={ StartNs=33403104838 StopNs=33403105162 GlobalId=315611680803858 Event={ TraceProcessEvent=[{ Correlation=96533 EventClass=1 TextId=776 ReturnValue=600 },] } Type=48 }"
+      }
+    }
+  }
+}
+Importer error status: An unknown error occurred.
+Import Failed with unexpected exception: /dvs/p4/build/sw/devtools/Agora/Rel/QuadD_Main/QuadD/Host/QdstrmImporter/main.cpp(34): Throw in function {anonymous}::Importer::Importer(const boost::filesystem::path&, const boost::filesystem::path&)
+Dynamic exception type: boost::wrapexcept<QuadDCommon::RuntimeException>
+std::exception::what: RuntimeException
+[QuadDCommon::tag_message*] = Status: AnalysisFailed
+Error {
+  Type: RuntimeError
+  SubError {
+    Type: InvalidArgument
+    Props {
+      Items {
+        Type: OriginalExceptionClass
+        Value: "N5boost10wrapexceptIN11QuadDCommon24InvalidArgumentExceptionEEE"
+      }
+      Items {
+        Type: OriginalFile
+        Value: "/dvs/p4/build/sw/devtools/Agora/Rel/QuadD_Main/QuadD/Host/Analysis/Modules/EventCollection.cpp"
+      }
+      Items {
+        Type: OriginalLine
+        Value: "1055"
+      }
+      Items {
+        Type: OriginalFunction
+        Value: "void QuadDAnalysis::EventCollection::CheckOrder(QuadDAnalysis::EventCollectionHelper::EventContainer&, const QuadDAnalysis::ConstEvent&) const"
+      }
+      Items {
+        Type: ErrorText
+        Value: "Wrong event order has been detected when adding events to the collection:\nnew event ={ StartNs=3549664600 StopNs=3549666789 GlobalId=316900489836581 Event={ TraceProcessEvent=[{ Correlation=110 EventClass=1 TextId=963 ReturnValue=0 },] } Type=48 }\nlast event ={ StartNs=32967332439 StopNs=32967332708 GlobalId=316900489836581 Event={ TraceProcessEvent=[{ Correlation=96566 EventClass=1 TextId=867 ReturnValue=600 },] } Type=48 }"
+      }
+    }
+  }
+}
+Importer error status: Importation failed.
+Import Failed with unexpected exception: /dvs/p4/build/sw/devtools/Agora/Rel/QuadD_Main/QuadD/Host/QdstrmImporter/main.cpp(34): Throw in function {anonymous}::Importer::Importer(const boost::filesystem::path&, const boost::filesystem::path&)
+Dynamic exception type: boost::wrapexcept<QuadDCommon::RuntimeException>
+std::exception::what: RuntimeException
+[QuadDCommon::tag_message*] = Status: AnalysisFailed
+Error {
+  Type: RuntimeError
+  SubError {
+    Type: InvalidArgument
+    Props {
+      Items {
+        Type: OriginalExceptionClass
+        Value: "N5boost10wrapexceptIN11QuadDCommon24InvalidArgumentExceptionEEE"
+      }
+      Items {
+        Type: OriginalFile
+        Value: "/dvs/p4/build/sw/devtools/Agora/Rel/QuadD_Main/QuadD/Host/Analysis/Modules/EventCollection.cpp"
+      }
+      Items {
+        Type: OriginalLine
+        Value: "1055"
+      }
+      Items {
+        Type: OriginalFunction
+        Value: "void QuadDAnalysis::EventCollection::CheckOrder(QuadDAnalysis::EventCollectionHelper::EventContainer&, const QuadDAnalysis::ConstEvent&) const"
+      }
+      Items {
+        Type: ErrorText
+        Value: "Wrong event order has been detected when adding events to the collection:\nnew event ={ StartNs=3910700282 StopNs=3910703113 GlobalId=315611848576028 Event={ TraceProcessEvent=[{ Correlation=110 EventClass=1 TextId=1002 ReturnValue=0 },] } Type=48 }\nlast event ={ StartNs=33430211609 StopNs=33430211878 GlobalId=315611848576028 Event={ TraceProcessEvent=[{ Correlation=96665 EventClass=1 TextId=780 ReturnValue=600 },] } Type=48 }"
+      }
+    }
+  }
+}
+Importer error status: Importation failed.
+Import Failed with unexpected exception: /dvs/p4/build/sw/devtools/Agora/Rel/QuadD_Main/QuadD/Host/QdstrmImporter/main.cpp(34): Throw in function {anonymous}::Importer::Importer(const boost::filesystem::path&, const boost::filesystem::path&)
+Dynamic exception type: boost::wrapexcept<QuadDCommon::RuntimeException>
+std::exception::what: RuntimeException
+[QuadDCommon::tag_message*] = Status: AnalysisFailed
+Error {
+  Type: RuntimeError
+  SubError {
+    Type: InvalidArgument
+    Props {
+      Items {
+        Type: OriginalExceptionClass
+        Value: "N5boost10wrapexceptIN11QuadDCommon24InvalidArgumentExceptionEEE"
+      }
+      Items {
+        Type: OriginalFile
+        Value: "/dvs/p4/build/sw/devtools/Agora/Rel/QuadD_Main/QuadD/Host/Analysis/Modules/EventCollection.cpp"
+      }
+      Items {
+        Type: OriginalLine
+        Value: "1055"
+      }
+      Items {
+        Type: OriginalFunction
+        Value: "void QuadDAnalysis::EventCollection::CheckOrder(QuadDAnalysis::EventCollectionHelper::EventContainer&, const QuadDAnalysis::ConstEvent&) const"
+      }
+      Items {
+        Type: ErrorText
+        Value: "Wrong event order has been detected when adding events to the collection:\nnew event ={ StartNs=3213239711 StopNs=3213241617 GlobalId=315788076463396 Event={ TraceProcessEvent=[{ Correlation=110 EventClass=1 TextId=1081 ReturnValue=0 },] } Type=48 }\nlast event ={ StartNs=32554597553 StopNs=32554597806 GlobalId=315788076463396 Event={ TraceProcessEvent=[{ Correlation=96576 EventClass=1 TextId=990 ReturnValue=600 },] } Type=48 }"
+      }
+    }
+  }
+}
+Importer error status: Importation failed.
+Import Failed with unexpected exception: /dvs/p4/build/sw/devtools/Agora/Rel/QuadD_Main/QuadD/Host/QdstrmImporter/main.cpp(34): Throw in function {anonymous}::Importer::Importer(const boost::filesystem::path&, const boost::filesystem::path&)
+Dynamic exception type: boost::wrapexcept<QuadDCommon::RuntimeException>
+std::exception::what: RuntimeException
+[QuadDCommon::tag_message*] = Status: AnalysisFailed
+Error {
+  Type: RuntimeError
+  SubError {
+    Type: InvalidArgument
+    Props {
+      Items {
+        Type: OriginalExceptionClass
+        Value: "N5boost10wrapexceptIN11QuadDCommon24InvalidArgumentExceptionEEE"
+      }
+      Items {
+        Type: OriginalFile
+        Value: "/dvs/p4/build/sw/devtools/Agora/Rel/QuadD_Main/QuadD/Host/Analysis/Modules/EventCollection.cpp"
+      }
+      Items {
+        Type: OriginalLine
+        Value: "1055"
+      }
+      Items {
+        Type: OriginalFunction
+        Value: "void QuadDAnalysis::EventCollection::CheckOrder(QuadDAnalysis::EventCollectionHelper::EventContainer&, const QuadDAnalysis::ConstEvent&) const"
+      }
+      Items {
+        Type: ErrorText
+        Value: "Wrong event order has been detected when adding events to the collection:\nnew event ={ StartNs=3623080705 StopNs=3623082985 GlobalId=315592185677704 Event={ TraceProcessEvent=[{ Correlation=110 EventClass=1 TextId=1082 ReturnValue=0 },] } Type=48 }\nlast event ={ StartNs=33021474710 StopNs=33021474970 GlobalId=315592185677704 Event={ TraceProcessEvent=[{ Correlation=96565 EventClass=1 TextId=736 ReturnValue=600 },] } Type=48 }"
+      }
+    }
+  }
+}
+Importer error status: Importation failed.
+Import Failed with unexpected exception: /dvs/p4/build/sw/devtools/Agora/Rel/QuadD_Main/QuadD/Host/QdstrmImporter/main.cpp(34): Throw in function {anonymous}::Importer::Importer(const boost::filesystem::path&, const boost::filesystem::path&)
+Dynamic exception type: boost::wrapexcept<QuadDCommon::RuntimeException>
+std::exception::what: RuntimeException
+[QuadDCommon::tag_message*] = Status: AnalysisFailed
+Error {
+  Type: RuntimeError
+  SubError {
+    Type: InvalidArgument
+    Props {
+      Items {
+        Type: OriginalExceptionClass
+        Value: "N5boost10wrapexceptIN11QuadDCommon24InvalidArgumentExceptionEEE"
+      }
+      Items {
+        Type: OriginalFile
+        Value: "/dvs/p4/build/sw/devtools/Agora/Rel/QuadD_Main/QuadD/Host/Analysis/Modules/EventCollection.cpp"
+      }
+      Items {
+        Type: OriginalLine
+        Value: "1055"
+      }
+      Items {
+        Type: OriginalFunction
+        Value: "void QuadDAnalysis::EventCollection::CheckOrder(QuadDAnalysis::EventCollectionHelper::EventContainer&, const QuadDAnalysis::ConstEvent&) const"
+      }
+      Items {
+        Type: ErrorText
+        Value: "Wrong event order has been detected when adding events to the collection:\nnew event ={ StartNs=34058898203 StopNs=34058898480 GlobalId=315592236009355 Event={ TraceProcessEvent=[{ Correlation=99452 EventClass=1 TextId=1092 ReturnValue=600 },] } Type=48 }\nlast event ={ StartNs=2234971150639 StopNs=2234989033279 GlobalId=315592236009355 Event={ TraceProcessEvent=[{ Correlation=195040 EventClass=1 TextId=1092 ReturnValue=600 },] } Type=48 }"
+      }
+    }
+  }
+}
+Importer error status: Importation failed.
+Import Failed with unexpected exception: /dvs/p4/build/sw/devtools/Agora/Rel/QuadD_Main/QuadD/Host/QdstrmImporter/main.cpp(34): Throw in function {anonymous}::Importer::Importer(const boost::filesystem::path&, const boost::filesystem::path&)
+Dynamic exception type: boost::wrapexcept<QuadDCommon::RuntimeException>
+std::exception::what: RuntimeException
+[QuadDCommon::tag_message*] = Status: AnalysisFailed
+Error {
+  Type: RuntimeError
+  SubError {
+    Type: InvalidArgument
+    Props {
+      Items {
+        Type: OriginalExceptionClass
+        Value: "N5boost10wrapexceptIN11QuadDCommon24InvalidArgumentExceptionEEE"
+      }
+      Items {
+        Type: OriginalFile
+        Value: "/dvs/p4/build/sw/devtools/Agora/Rel/QuadD_Main/QuadD/Host/Analysis/Modules/EventCollection.cpp"
+      }
+      Items {
+        Type: OriginalLine
+        Value: "1055"
+      }
+      Items {
+        Type: OriginalFunction
+        Value: "void QuadDAnalysis::EventCollection::CheckOrder(QuadDAnalysis::EventCollectionHelper::EventContainer&, const QuadDAnalysis::ConstEvent&) const"
+      }
+      Items {
+        Type: ErrorText
+        Value: "Wrong event order has been detected when adding events to the collection:\nnew event ={ StartNs=2235016554291 StopNs=2235016566334 GlobalId=315592252786572 Event={ TraceProcessEvent=[{ Correlation=191141 EventClass=1 TextId=720 ReturnValue=0 },] } Type=48 }\nlast event ={ StartNs=2238404458737 StopNs=2238404459005 GlobalId=315592252786572 Event={ TraceProcessEvent=[{ Correlation=290689 EventClass=1 TextId=720 ReturnValue=600 },] } Type=48 }"
+      }
+    }
+  }
+}
+Importer error status: Importation failed.
+Import Failed with unexpected exception: /dvs/p4/build/sw/devtools/Agora/Rel/QuadD_Main/QuadD/Host/QdstrmImporter/main.cpp(34): Throw in function {anonymous}::Importer::Importer(const boost::filesystem::path&, const boost::filesystem::path&)
+Dynamic exception type: boost::wrapexcept<QuadDCommon::RuntimeException>
+std::exception::what: RuntimeException
+[QuadDCommon::tag_message*] = Status: AnalysisFailed
+Error {
+  Type: RuntimeError
+  SubError {
+    Type: InvalidArgument
+    Props {
+      Items {
+        Type: OriginalExceptionClass
+        Value: "N5boost10wrapexceptIN11QuadDCommon24InvalidArgumentExceptionEEE"
+      }
+      Items {
+        Type: OriginalFile
+        Value: "/dvs/p4/build/sw/devtools/Agora/Rel/QuadD_Main/QuadD/Host/Analysis/Modules/EventCollection.cpp"
+      }
+      Items {
+        Type: OriginalLine
+        Value: "1055"
+      }
+      Items {
+        Type: OriginalFunction
+        Value: "void QuadDAnalysis::EventCollection::CheckOrder(QuadDAnalysis::EventCollectionHelper::EventContainer&, const QuadDAnalysis::ConstEvent&) const"
+      }
+      Items {
+        Type: ErrorText
+        Value: "Wrong event order has been detected when adding events to the collection:\nnew event ={ StartNs=3619651852 StopNs=3619653460 GlobalId=315592168900487 Event={ TraceProcessEvent=[{ Correlation=110 EventClass=1 TextId=1073 ReturnValue=0 },] } Type=48 }\nlast event ={ StartNs=32977439680 StopNs=32978047188 GlobalId=315592168900487 Event={ TraceProcessEvent=[{ Correlation=96650 EventClass=1 TextId=179 ReturnValue=600 },] } Type=48 }"
+      }
+    }
+  }
+}
+Importer error status: Importation failed.
+Import Failed with unexpected exception: /dvs/p4/build/sw/devtools/Agora/Rel/QuadD_Main/QuadD/Host/QdstrmImporter/main.cpp(34): Throw in function {anonymous}::Importer::Importer(const boost::filesystem::path&, const boost::filesystem::path&)
+Dynamic exception type: boost::wrapexcept<QuadDCommon::RuntimeException>
+std::exception::what: RuntimeException
+[QuadDCommon::tag_message*] = Status: AnalysisFailed
+Error {
+  Type: RuntimeError
+  SubError {
+    Type: InvalidArgument
+    Props {
+      Items {
+        Type: OriginalExceptionClass
+        Value: "N5boost10wrapexceptIN11QuadDCommon24InvalidArgumentExceptionEEE"
+      }
+      Items {
+        Type: OriginalFile
+        Value: "/dvs/p4/build/sw/devtools/Agora/Rel/QuadD_Main/QuadD/Host/Analysis/Modules/EventCollection.cpp"
+      }
+      Items {
+        Type: OriginalLine
+        Value: "1055"
+      }
+      Items {
+        Type: OriginalFunction
+        Value: "void QuadDAnalysis::EventCollection::CheckOrder(QuadDAnalysis::EventCollectionHelper::EventContainer&, const QuadDAnalysis::ConstEvent&) const"
+      }
+      Items {
+        Type: ErrorText
+        Value: "Wrong event order has been detected when adding events to the collection:\nnew event ={ StartNs=33236236568 StopNs=33236247471 GlobalId=315611764689943 Event={ TraceProcessEvent=[{ Correlation=96528 EventClass=1 TextId=1024 ReturnValue=0 },] } Type=48 }\nlast event ={ StartNs=2232147856875 StopNs=2232174614857 GlobalId=315611764689943 Event={ TraceProcessEvent=[{ Correlation=195451 EventClass=1 TextId=1024 ReturnValue=600 },] } Type=48 }"
+      }
+    }
+  }
+}
+Importer error status: Importation failed.
+Import Failed with unexpected exception: /dvs/p4/build/sw/devtools/Agora/Rel/QuadD_Main/QuadD/Host/QdstrmImporter/main.cpp(34): Throw in function {anonymous}::Importer::Importer(const boost::filesystem::path&, const boost::filesystem::path&)
+Dynamic exception type: boost::wrapexcept<QuadDCommon::RuntimeException>
+std::exception::what: RuntimeException
+[QuadDCommon::tag_message*] = Status: AnalysisFailed
+Error {
+  Type: RuntimeError
+  SubError {
+    Type: InvalidArgument
+    Props {
+      Items {
+        Type: OriginalExceptionClass
+        Value: "N5boost10wrapexceptIN11QuadDCommon24InvalidArgumentExceptionEEE"
+      }
+      Items {
+        Type: OriginalFile
+        Value: "/dvs/p4/build/sw/devtools/Agora/Rel/QuadD_Main/QuadD/Host/Analysis/Modules/EventCollection.cpp"
+      }
+      Items {
+        Type: OriginalLine
+        Value: "1055"
+      }
+      Items {
+        Type: OriginalFunction
+        Value: "void QuadDAnalysis::EventCollection::CheckOrder(QuadDAnalysis::EventCollectionHelper::EventContainer&, const QuadDAnalysis::ConstEvent&) const"
+      }
+      Items {
+        Type: ErrorText
+        Value: "Wrong event order has been detected when adding events to the collection:\nnew event ={ StartNs=2246552203404 StopNs=2246552236667 GlobalId=316900405950496 Event={ TraceProcessEvent=[{ Correlation=683470 EventClass=1 TextId=959 ReturnValue=0 },] } Type=48 }\nlast event ={ StartNs=2259835064031 StopNs=2259835064302 GlobalId=316900405950496 Event={ TraceProcessEvent=[{ Correlation=778349 EventClass=1 TextId=963 ReturnValue=600 },] } Type=48 }"
+      }
+    }
+  }
+}
+Importer error status: Importation failed.
+Import Failed with unexpected exception: /dvs/p4/build/sw/devtools/Agora/Rel/QuadD_Main/QuadD/Host/QdstrmImporter/main.cpp(34): Throw in function {anonymous}::Importer::Importer(const boost::filesystem::path&, const boost::filesystem::path&)
+Dynamic exception type: boost::wrapexcept<QuadDCommon::RuntimeException>
+std::exception::what: RuntimeException
+[QuadDCommon::tag_message*] = Status: AnalysisFailed
+Error {
+  Type: RuntimeError
+  SubError {
+    Type: InvalidArgument
+    Props {
+      Items {
+        Type: OriginalExceptionClass
+        Value: "N5boost10wrapexceptIN11QuadDCommon24InvalidArgumentExceptionEEE"
+      }
+      Items {
+        Type: OriginalFile
+        Value: "/dvs/p4/build/sw/devtools/Agora/Rel/QuadD_Main/QuadD/Host/Analysis/Modules/EventCollection.cpp"
+      }
+      Items {
+        Type: OriginalLine
+        Value: "1055"
+      }
+      Items {
+        Type: OriginalFunction
+        Value: "void QuadDAnalysis::EventCollection::CheckOrder(QuadDAnalysis::EventCollectionHelper::EventContainer&, const QuadDAnalysis::ConstEvent&) const"
+      }
+      Items {
+        Type: ErrorText
+        Value: "Wrong event order has been detected when adding events to the collection:\nnew event ={ StartNs=2242904678309 StopNs=2242904678569 GlobalId=316900456282147 Event={ TraceProcessEvent=[{ Correlation=508413 EventClass=1 TextId=983 ReturnValue=600 },] } Type=48 }\nlast event ={ StartNs=2245234667494 StopNs=2245234667756 GlobalId=316900456282147 Event={ TraceProcessEvent=[{ Correlation=593637 EventClass=1 TextId=983 ReturnValue=600 },] } Type=48 }"
+      }
+    }
+  }
+}
+Importer error status: Importation failed.
+Import Failed with unexpected exception: /dvs/p4/build/sw/devtools/Agora/Rel/QuadD_Main/QuadD/Host/QdstrmImporter/main.cpp(34): Throw in function {anonymous}::Importer::Importer(const boost::filesystem::path&, const boost::filesystem::path&)
+Dynamic exception type: boost::wrapexcept<QuadDCommon::RuntimeException>
+std::exception::what: RuntimeException
+[QuadDCommon::tag_message*] = Status: AnalysisFailed
+Error {
+  Type: RuntimeError
+  SubError {
+    Type: InvalidArgument
+    Props {
+      Items {
+        Type: OriginalExceptionClass
+        Value: "N5boost10wrapexceptIN11QuadDCommon24InvalidArgumentExceptionEEE"
+      }
+      Items {
+        Type: OriginalFile
+        Value: "/dvs/p4/build/sw/devtools/Agora/Rel/QuadD_Main/QuadD/Host/Analysis/Modules/EventCollection.cpp"
+      }
+      Items {
+        Type: OriginalLine
+        Value: "1055"
+      }
+      Items {
+        Type: OriginalFunction
+        Value: "void QuadDAnalysis::EventCollection::CheckOrder(QuadDAnalysis::EventCollectionHelper::EventContainer&, const QuadDAnalysis::ConstEvent&) const"
+      }
+      Items {
+        Type: ErrorText
+        Value: "Wrong event order has been detected when adding events to the collection:\nnew event ={ StartNs=35028236960 StopNs=35028237212 GlobalId=315788126795047 Event={ TraceProcessEvent=[{ Correlation=106222 EventClass=1 TextId=1082 ReturnValue=600 },] } Type=48 }\nlast event ={ StartNs=2235475624072 StopNs=2235492850208 GlobalId=315788126795047 Event={ TraceProcessEvent=[{ Correlation=194688 EventClass=1 TextId=1082 ReturnValue=600 },] } Type=48 }"
+      }
+    }
+  }
+}
+Importer error status: Importation failed.
+Import Failed with unexpected exception: /dvs/p4/build/sw/devtools/Agora/Rel/QuadD_Main/QuadD/Host/QdstrmImporter/main.cpp(34): Throw in function {anonymous}::Importer::Importer(const boost::filesystem::path&, const boost::filesystem::path&)
+Dynamic exception type: boost::wrapexcept<QuadDCommon::RuntimeException>
+std::exception::what: RuntimeException
+[QuadDCommon::tag_message*] = Status: AnalysisFailed
+Error {
+  Type: RuntimeError
+  SubError {
+    Type: InvalidArgument
+    Props {
+      Items {
+        Type: OriginalExceptionClass
+        Value: "N5boost10wrapexceptIN11QuadDCommon24InvalidArgumentExceptionEEE"
+      }
+      Items {
+        Type: OriginalFile
+        Value: "/dvs/p4/build/sw/devtools/Agora/Rel/QuadD_Main/QuadD/Host/Analysis/Modules/EventCollection.cpp"
+      }
+      Items {
+        Type: OriginalLine
+        Value: "1055"
+      }
+      Items {
+        Type: OriginalFunction
+        Value: "void QuadDAnalysis::EventCollection::CheckOrder(QuadDAnalysis::EventCollectionHelper::EventContainer&, const QuadDAnalysis::ConstEvent&) const"
+      }
+      Items {
+        Type: ErrorText
+        Value: "Wrong event order has been detected when adding events to the collection:\nnew event ={ StartNs=32833655708 StopNs=32833655973 GlobalId=315788143572264 Event={ TraceProcessEvent=[{ Correlation=97769 EventClass=1 TextId=944 ReturnValue=600 },] } Type=48 }\nlast event ={ StartNs=2233599122411 StopNs=2233599122673 GlobalId=315788143572264 Event={ TraceProcessEvent=[{ Correlation=195048 EventClass=1 TextId=944 ReturnValue=600 },] } Type=48 }"
+      }
+    }
+  }
+}
+Importer error status: Importation failed.
+Import Failed with unexpected exception: /dvs/p4/build/sw/devtools/Agora/Rel/QuadD_Main/QuadD/Host/QdstrmImporter/main.cpp(34): Throw in function {anonymous}::Importer::Importer(const boost::filesystem::path&, const boost::filesystem::path&)
+Dynamic exception type: boost::wrapexcept<QuadDCommon::RuntimeException>
+std::exception::what: RuntimeException
+[QuadDCommon::tag_message*] = Status: AnalysisFailed
+Error {
+  Type: RuntimeError
+  SubError {
+    Type: InvalidArgument
+    Props {
+      Items {
+        Type: OriginalExceptionClass
+        Value: "N5boost10wrapexceptIN11QuadDCommon24InvalidArgumentExceptionEEE"
+      }
+      Items {
+        Type: OriginalFile
+        Value: "/dvs/p4/build/sw/devtools/Agora/Rel/QuadD_Main/QuadD/Host/Analysis/Modules/EventCollection.cpp"
+      }
+      Items {
+        Type: OriginalLine
+        Value: "1055"
+      }
+      Items {
+        Type: OriginalFunction
+        Value: "void QuadDAnalysis::EventCollection::CheckOrder(QuadDAnalysis::EventCollectionHelper::EventContainer&, const QuadDAnalysis::ConstEvent&) const"
+      }
+      Items {
+        Type: ErrorText
+        Value: "Wrong event order has been detected when adding events to the collection:\nnew event ={ StartNs=2235934862963 StopNs=2235936370475 GlobalId=315788059686179 Event={ TraceProcessEvent=[{ Correlation=294747 EventClass=1 TextId=1007 ReturnValue=0 },] } Type=48 }\nlast event ={ StartNs=2238669811563 StopNs=2238669811935 GlobalId=315788059686179 Event={ TraceProcessEvent=[{ Correlation=394511 EventClass=1 TextId=1007 ReturnValue=600 },] } Type=48 }"
+      }
+    }
+  }
+}
+Importer error status: Importation failed.
+Import Failed with unexpected exception: /dvs/p4/build/sw/devtools/Agora/Rel/QuadD_Main/QuadD/Host/QdstrmImporter/main.cpp(34): Throw in function {anonymous}::Importer::Importer(const boost::filesystem::path&, const boost::filesystem::path&)
+Dynamic exception type: boost::wrapexcept<QuadDCommon::RuntimeException>
+std::exception::what: RuntimeException
+[QuadDCommon::tag_message*] = Status: AnalysisFailed
+Error {
+  Type: RuntimeError
+  SubError {
+    Type: InvalidArgument
+    Props {
+      Items {
+        Type: OriginalExceptionClass
+        Value: "N5boost10wrapexceptIN11QuadDCommon24InvalidArgumentExceptionEEE"
+      }
+      Items {
+        Type: OriginalFile
+        Value: "/dvs/p4/build/sw/devtools/Agora/Rel/QuadD_Main/QuadD/Host/Analysis/Modules/EventCollection.cpp"
+      }
+      Items {
+        Type: OriginalLine
+        Value: "1055"
+      }
+      Items {
+        Type: OriginalFunction
+        Value: "void QuadDAnalysis::EventCollection::CheckOrder(QuadDAnalysis::EventCollectionHelper::EventContainer&, const QuadDAnalysis::ConstEvent&) const"
+      }
+      Items {
+        Type: ErrorText
+        Value: "Wrong event order has been detected when adding events to the collection:\nnew event ={ StartNs=2244712508742 StopNs=2244713389820 GlobalId=316900590499883 Event={ TraceProcessEvent=[{ Correlation=593655 EventClass=1 TextId=971 ReturnValue=0 },] } Type=48 }\nlast event ={ StartNs=2247270476924 StopNs=2247275317054 GlobalId=316900590499883 Event={ TraceProcessEvent=[{ Correlation=686043 EventClass=1 TextId=964 ReturnValue=0 },] } Type=48 }"
+      }
+    }
+  }
+}
+Importer error status: Importation failed.
+Import Failed with unexpected exception: /dvs/p4/build/sw/devtools/Agora/Rel/QuadD_Main/QuadD/Host/QdstrmImporter/main.cpp(34): Throw in function {anonymous}::Importer::Importer(const boost::filesystem::path&, const boost::filesystem::path&)
+Dynamic exception type: boost::wrapexcept<QuadDCommon::RuntimeException>
+std::exception::what: RuntimeException
+[QuadDCommon::tag_message*] = Status: AnalysisFailed
+Error {
+  Type: RuntimeError
+  SubError {
+    Type: InvalidArgument
+    Props {
+      Items {
+        Type: OriginalExceptionClass
+        Value: "N5boost10wrapexceptIN11QuadDCommon24InvalidArgumentExceptionEEE"
+      }
+      Items {
+        Type: OriginalFile
+        Value: "/dvs/p4/build/sw/devtools/Agora/Rel/QuadD_Main/QuadD/Host/Analysis/Modules/EventCollection.cpp"
+      }
+      Items {
+        Type: OriginalLine
+        Value: "1055"
+      }
+      Items {
+        Type: OriginalFunction
+        Value: "void QuadDAnalysis::EventCollection::CheckOrder(QuadDAnalysis::EventCollectionHelper::EventContainer&, const QuadDAnalysis::ConstEvent&) const"
+      }
+      Items {
+        Type: ErrorText
+        Value: "Wrong event order has been detected when adding events to the collection:\nnew event ={ StartNs=32384756405 StopNs=32384756690 GlobalId=315611815021594 Event={ TraceProcessEvent=[{ Correlation=97569 EventClass=1 TextId=1004 ReturnValue=600 },] } Type=48 }\nlast event ={ StartNs=32516817284 StopNs=32517146177 GlobalId=315611815021594 Event={ TraceProcessEvent=[{ Correlation=195006 EventClass=1 TextId=1004 ReturnValue=600 },] } Type=48 }"
+      }
+    }
+  }
+}

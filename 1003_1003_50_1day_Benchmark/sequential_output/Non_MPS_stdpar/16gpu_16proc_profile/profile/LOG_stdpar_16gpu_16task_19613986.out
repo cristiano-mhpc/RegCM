@@ -1,0 +1,88 @@
+Loading netcdf-fortran/4.6.1--hpcx-mpi--2.19--nvhpc--24.5
+  Loading requirement: glibc/2.28--gcc--12.2.0-gi6mmti bzip2/1.0.8-ib3znej
+    gcc-runtime/12.2.0--gcc--12.2.0-dqfwf7y lz4/1.9.4--gcc--12.2.0-dcavnmi
+    snappy/1.1.10--gcc--12.2.0-gagtosp zlib-ng/2.1.6-jkgunjc zstd/1.5.6-uq5yyux
+    c-blosc/1.21.5--gcc--12.2.0-buk7w2l hpcx-mpi/2.19 pkgconf/2.2.0
+    hdf5/1.14.3--hpcx-mpi--2.19--nvhpc--24.5 libaec/1.0.6--gcc--12.2.0-blqbmai
+    parallel-netcdf/1.12.3--hpcx-mpi--2.19--nvhpc--24.5
+    netcdf-c/4.9.2--hpcx-mpi--2.19--nvhpc--24.5
+[Rank 1] on lrdn1619.leonardo.local: GPU=1, TMPDIR=/leonardo_scratch/large/userexternal/ctica000/tmp_nsys/rank_1
+[Rank 3] on lrdn1619.leonardo.local: GPU=3, TMPDIR=/leonardo_scratch/large/userexternal/ctica000/tmp_nsys/rank_3
+[Rank 0] on lrdn1619.leonardo.local: GPU=0, TMPDIR=/leonardo_scratch/large/userexternal/ctica000/tmp_nsys/rank_0
+[Rank 2] on lrdn1619.leonardo.local: GPU=2, TMPDIR=/leonardo_scratch/large/userexternal/ctica000/tmp_nsys/rank_2
+Filesystem      Size  Used Avail Use% Mounted on
+tmpfs            10G     0   10G   0% /tmp
+Filesystem      Size  Used Avail Use% Mounted on
+tmpfs            10G     0   10G   0% /tmp
+Filesystem      Size  Used Avail Use% Mounted on
+tmpfs            10G     0   10G   0% /tmp
+Filesystem      Size  Used Avail Use% Mounted on
+tmpfs            10G     0   10G   0% /tmp
+Filesystem                                            Size  Used Avail Use% Mounted on
+10.128.84.1@o2ib:10.128.84.2@o2ib:/lscratch/leonardo   43P   32P  9.3P  78% /leonardo_scratch
+Filesystem                                            Size  Used Avail Use% Mounted on
+10.128.84.1@o2ib:10.128.84.2@o2ib:/lscratch/leonardo   43P   32P  9.3P  78% /leonardo_scratch
+Filesystem                                            Size  Used Avail Use% Mounted on
+10.128.84.1@o2ib:10.128.84.2@o2ib:/lscratch/leonardo   43P   32P  9.3P  78% /leonardo_scratch
+Filesystem                                            Size  Used Avail Use% Mounted on
+10.128.84.1@o2ib:10.128.84.2@o2ib:/lscratch/leonardo   43P   32P  9.3P  78% /leonardo_scratch
+[Rank 11] on lrdn2259.leonardo.local: GPU=3, TMPDIR=/leonardo_scratch/large/userexternal/ctica000/tmp_nsys/rank_11
+[Rank 12] on lrdn2528.leonardo.local: GPU=0, TMPDIR=/leonardo_scratch/large/userexternal/ctica000/tmp_nsys/rank_12
+[Rank 6] on lrdn2154.leonardo.local: GPU=2, TMPDIR=/leonardo_scratch/large/userexternal/ctica000/tmp_nsys/rank_6
+[Rank 10] on lrdn2259.leonardo.local: GPU=2, TMPDIR=/leonardo_scratch/large/userexternal/ctica000/tmp_nsys/rank_10
+[Rank 8] on lrdn2259.leonardo.local: GPU=0, TMPDIR=/leonardo_scratch/large/userexternal/ctica000/tmp_nsys/rank_8
+[Rank 9] on lrdn2259.leonardo.local: GPU=1, TMPDIR=/leonardo_scratch/large/userexternal/ctica000/tmp_nsys/rank_9
+Filesystem      Size  Used Avail Use% Mounted on
+tmpfs            10G     0   10G   0% /tmp
+Filesystem      Size  Used Avail Use% Mounted on
+tmpfs            10G     0   10G   0% /tmp
+Filesystem      Size  Used Avail Use% Mounted on
+tmpfs            10G     0   10G   0% /tmp
+Filesystem      Size  Used Avail Use% Mounted on
+tmpfs            10G     0   10G   0% /tmp
+Filesystem                                            Size  Used Avail Use% Mounted on
+10.128.84.1@o2ib:10.128.84.2@o2ib:/lscratch/leonardo   43P   32P  9.3P  78% /leonardo_scratch
+Filesystem                                            Size  Used Avail Use% Mounted on
+10.128.84.1@o2ib:10.128.84.2@o2ib:/lscratch/leonardo   43P   32P  9.3P  78% /leonardo_scratch
+Filesystem                                            Size  Used Avail Use% Mounted on
+10.128.84.1@o2ib:10.128.84.2@o2ib:/lscratch/leonardo   43P   32P  9.3P  78% /leonardo_scratch
+Filesystem                                            Size  Used Avail Use% Mounted on
+10.128.84.1@o2ib:10.128.84.2@o2ib:/lscratch/leonardo   43P   32P  9.3P  78% /leonardo_scratch
+[Rank 14] on lrdn2528.leonardo.local: GPU=2, TMPDIR=/leonardo_scratch/large/userexternal/ctica000/tmp_nsys/rank_14
+[Rank 13] on lrdn2528.leonardo.local: GPU=1, TMPDIR=/leonardo_scratch/large/userexternal/ctica000/tmp_nsys/rank_13
+[Rank 15] on lrdn2528.leonardo.local: GPU=3, TMPDIR=/leonardo_scratch/large/userexternal/ctica000/tmp_nsys/rank_15
+Filesystem      Size  Used Avail Use% Mounted on
+tmpfs            10G     0   10G   0% /tmp
+Filesystem      Size  Used Avail Use% Mounted on
+tmpfs            10G     0   10G   0% /tmp
+Filesystem      Size  Used Avail Use% Mounted on
+tmpfs            10G     0   10G   0% /tmp
+Filesystem      Size  Used Avail Use% Mounted on
+tmpfs            10G     0   10G   0% /tmp
+[Rank 7] on lrdn2154.leonardo.local: GPU=3, TMPDIR=/leonardo_scratch/large/userexternal/ctica000/tmp_nsys/rank_7
+[Rank 5] on lrdn2154.leonardo.local: GPU=1, TMPDIR=/leonardo_scratch/large/userexternal/ctica000/tmp_nsys/rank_5
+[Rank 4] on lrdn2154.leonardo.local: GPU=0, TMPDIR=/leonardo_scratch/large/userexternal/ctica000/tmp_nsys/rank_4
+Filesystem      Size  Used Avail Use% Mounted on
+tmpfs            10G     0   10G   0% /tmp
+Filesystem      Size  Used Avail Use% Mounted on
+tmpfs            10G     0   10G   0% /tmp
+Filesystem      Size  Used Avail Use% Mounted on
+tmpfs            10G     0   10G   0% /tmp
+Filesystem      Size  Used Avail Use% Mounted on
+tmpfs            10G     0   10G   0% /tmp
+Filesystem                                            Size  Used Avail Use% Mounted on
+10.128.84.1@o2ib:10.128.84.2@o2ib:/lscratch/leonardo   43P   32P  9.3P  78% /leonardo_scratch
+Filesystem                                            Size  Used Avail Use% Mounted on
+10.128.84.1@o2ib:10.128.84.2@o2ib:/lscratch/leonardo   43P   32P  9.3P  78% /leonardo_scratch
+Filesystem                                            Size  Used Avail Use% Mounted on
+10.128.84.1@o2ib:10.128.84.2@o2ib:/lscratch/leonardo   43P   32P  9.3P  78% /leonardo_scratch
+Filesystem                                            Size  Used Avail Use% Mounted on
+10.128.84.1@o2ib:10.128.84.2@o2ib:/lscratch/leonardo   43P   32P  9.3P  78% /leonardo_scratch
+Filesystem                                            Size  Used Avail Use% Mounted on
+10.128.84.1@o2ib:10.128.84.2@o2ib:/lscratch/leonardo   43P   32P  9.3P  78% /leonardo_scratch
+Filesystem                                            Size  Used Avail Use% Mounted on
+10.128.84.1@o2ib:10.128.84.2@o2ib:/lscratch/leonardo   43P   32P  9.3P  78% /leonardo_scratch
+Filesystem                                            Size  Used Avail Use% Mounted on
+10.128.84.1@o2ib:10.128.84.2@o2ib:/lscratch/leonardo   43P   32P  9.3P  78% /leonardo_scratch
+Filesystem                                            Size  Used Avail Use% Mounted on
+10.128.84.1@o2ib:10.128.84.2@o2ib:/lscratch/leonardo   43P   32P  9.3P  78% /leonardo_scratch

@@ -1,0 +1,4 @@
+ Moloch core does not work SL advection code
+srun: Job step aborted: Waiting up to 182 seconds for job step to finish.
+slurmstepd: error: *** STEP 19673536.0 ON lrdn2742 CANCELLED AT 2025-09-04T22:24:47 ***
+slurmstepd: error: *** JOB 19673536 ON lrdn2742 CANCELLED AT 2025-09-04T22:24:47 ***
