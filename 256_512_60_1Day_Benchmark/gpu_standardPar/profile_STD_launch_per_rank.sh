@@ -11,7 +11,7 @@ fi
 # GPU binding
 export CUDA_VISIBLE_DEVICES=$RANK
 export ACC_DEVICE_TYPE=nvidia
-export ACC_DEVICE_NUM=$RANK
+export ACC_DEVICE_NUM=0
 
 # Set binary and input paths
 
@@ -33,9 +33,10 @@ NSYS_OUT="$SCRATCH/profile/nsys_rank${SLURM_PROCID}"
 
 # Launch with Nsight profiling
 nsys profile \
+  --duration=1500 \
   --force-overwrite true \
   --stats=true \
   --output "$NSYS_OUT" \
-  --trace=cuda,nvtx,osrt,mpi \
+  --trace=nvtx,mpi \
   "$BINDIR/regcmMPIOPENACC_GPU_STDPAR_RCEMIP" "$INPUT_FILE"
 

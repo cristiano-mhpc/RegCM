@@ -1,6 +1,0 @@
-/var/spool/slurmd/job19691480/slurm_script: line 14: /leonardo/home/userexternal/ctica000/MS_thesis/RegCM/modules_cuda_old: No such file or directory
-/leonardo/home/userexternal/ctica000/MS_thesis/RegCM/256_512_60_1Day_Benchmark/gpu_standardPar/./profile_STD_launch_per_rank.sh: line 35: nsys: command not found
-/leonardo/home/userexternal/ctica000/MS_thesis/RegCM/256_512_60_1Day_Benchmark/gpu_standardPar/./profile_STD_launch_per_rank.sh: line 35: nsys: command not found
-/leonardo/home/userexternal/ctica000/MS_thesis/RegCM/256_512_60_1Day_Benchmark/gpu_standardPar/./profile_STD_launch_per_rank.sh: line 35: nsys: command not found
-/leonardo/home/userexternal/ctica000/MS_thesis/RegCM/256_512_60_1Day_Benchmark/gpu_standardPar/./profile_STD_launch_per_rank.sh: line 35: nsys: command not found
-srun: error: lrdn2518: tasks 0-3: Exited with exit code 127

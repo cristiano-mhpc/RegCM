@@ -16,7 +16,10 @@ source /leonardo/home/userexternal/ctica000/MS_thesis/RegCM/modules_cuda
 cd /leonardo/home/userexternal/ctica000/MS_thesis/RegCM/256_512_60_1Day_Benchmark/gpu_standardPar 
 
 # Launch
-srun ./profile_STD_launch_per_rank.sh
+# srun ./profile_STD_launch_one_rank.sh
+# srun ./profile_STD_launch_per_rank.sh
+
+srun ./profile_one_rank_new_nsys.sh 
 
 
 
