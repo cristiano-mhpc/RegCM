@@ -1,0 +1,4 @@
+Importer error status: An unknown error occurred.
+slurmstepd: error: Detected 1 oom-kill event(s) in StepId=17191019.0. Some of your processes may have been killed by the cgroup out-of-memory handler.
+srun: error: lrdn1996: task 1: Out Of Memory
+Importer error status: An unknown error occurred.

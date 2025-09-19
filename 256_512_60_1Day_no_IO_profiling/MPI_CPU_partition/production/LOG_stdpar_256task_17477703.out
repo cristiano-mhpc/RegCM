@@ -1,0 +1,456 @@
+Loading netcdf-c/4.9.2--openmpi--4.1.6--nvhpc--23.11
+  Loading requirement: bzip2/1.0.8--gcc--12.2.0-cc63fjd
+    lz4/1.9.4--nvhpc--23.11-5h5hoio snappy/1.1.10--nvhpc--23.11-ozr5mpq
+    zstd/1.5.5--gcc--12.2.0-h6hxgmk c-blosc/1.21.5--nvhpc--23.11-k6qwhp7
+    libaec/1.0.6--nvhpc--23.11-mpahyfr
+[Wrapper][Rank 14][Local 14] on lrdn3477.leonardo.local: CUDA_VISIBLE_DEVICES=14
+[Wrapper][Rank 11][Local 11] on lrdn3477.leonardo.local: CUDA_VISIBLE_DEVICES=11
+[Wrapper][Rank 24][Local 24] on lrdn3477.leonardo.local: CUDA_VISIBLE_DEVICES=24
+[Wrapper][Rank 27][Local 27] on lrdn3477.leonardo.local: CUDA_VISIBLE_DEVICES=27
+[Wrapper][Rank 5][Local 5] on lrdn3477.leonardo.local: CUDA_VISIBLE_DEVICES=5
+[Wrapper][Rank 12][Local 12] on lrdn3477.leonardo.local: CUDA_VISIBLE_DEVICES=12
+[Wrapper][Rank 4][Local 4] on lrdn3477.leonardo.local: CUDA_VISIBLE_DEVICES=4
+[Wrapper][Rank 19][Local 19] on lrdn3477.leonardo.local: CUDA_VISIBLE_DEVICES=19
+[Wrapper][Rank 9][Local 9] on lrdn3477.leonardo.local: CUDA_VISIBLE_DEVICES=9
+[Wrapper][Rank 13][Local 13] on lrdn3477.leonardo.local: CUDA_VISIBLE_DEVICES=13
+[Wrapper][Rank 6][Local 6] on lrdn3477.leonardo.local: CUDA_VISIBLE_DEVICES=6
+[Wrapper][Rank 20][Local 20] on lrdn3477.leonardo.local: CUDA_VISIBLE_DEVICES=20
+[Wrapper][Rank 2][Local 2] on lrdn3477.leonardo.local: CUDA_VISIBLE_DEVICES=2
+[Wrapper][Rank 10][Local 10] on lrdn3477.leonardo.local: CUDA_VISIBLE_DEVICES=10
+[Wrapper][Rank 29][Local 29] on lrdn3477.leonardo.local: CUDA_VISIBLE_DEVICES=29
+[Wrapper][Rank 22][Local 22] on lrdn3477.leonardo.local: CUDA_VISIBLE_DEVICES=22
+[Wrapper][Rank 31][Local 31] on lrdn3477.leonardo.local: CUDA_VISIBLE_DEVICES=31
+[Wrapper][Rank 17][Local 17] on lrdn3477.leonardo.local: CUDA_VISIBLE_DEVICES=17
+[Wrapper][Rank 23][Local 23] on lrdn3477.leonardo.local: CUDA_VISIBLE_DEVICES=23
+[Wrapper][Rank 15][Local 15] on lrdn3477.leonardo.local: CUDA_VISIBLE_DEVICES=15
+[Wrapper][Rank 7][Local 7] on lrdn3477.leonardo.local: CUDA_VISIBLE_DEVICES=7
+[Wrapper][Rank 21][Local 21] on lrdn3477.leonardo.local: CUDA_VISIBLE_DEVICES=21
+[Wrapper][Rank 25][Local 25] on lrdn3477.leonardo.local: CUDA_VISIBLE_DEVICES=25
+[Wrapper][Rank 28][Local 28] on lrdn3477.leonardo.local: CUDA_VISIBLE_DEVICES=28
+[Wrapper][Rank 3][Local 3] on lrdn3477.leonardo.local: CUDA_VISIBLE_DEVICES=3
+[Wrapper][Rank 26][Local 26] on lrdn3477.leonardo.local: CUDA_VISIBLE_DEVICES=26
+[Wrapper][Rank 16][Local 16] on lrdn3477.leonardo.local: CUDA_VISIBLE_DEVICES=16
+[Wrapper][Rank 1][Local 1] on lrdn3477.leonardo.local: CUDA_VISIBLE_DEVICES=1
+[Wrapper][Rank 0][Local 0] on lrdn3477.leonardo.local: CUDA_VISIBLE_DEVICES=0
+[Wrapper][Rank 8][Local 8] on lrdn3477.leonardo.local: CUDA_VISIBLE_DEVICES=8
+[Wrapper][Rank 18][Local 18] on lrdn3477.leonardo.local: CUDA_VISIBLE_DEVICES=18
+[Wrapper][Rank 30][Local 30] on lrdn3477.leonardo.local: CUDA_VISIBLE_DEVICES=30
+[Wrapper][Rank 191][Local 31] on lrdn3668.leonardo.local: CUDA_VISIBLE_DEVICES=31
+[Wrapper][Rank 168][Local 8] on lrdn3668.leonardo.local: CUDA_VISIBLE_DEVICES=8
+[Wrapper][Rank 169][Local 9] on lrdn3668.leonardo.local: CUDA_VISIBLE_DEVICES=9
+[Wrapper][Rank 185][Local 25] on lrdn3668.leonardo.local: CUDA_VISIBLE_DEVICES=25
+[Wrapper][Rank 160][Local 0] on lrdn3668.leonardo.local: CUDA_VISIBLE_DEVICES=0
+[Wrapper][Rank 184][Local 24] on lrdn3668.leonardo.local: CUDA_VISIBLE_DEVICES=24
+[Wrapper][Rank 176][Local 16] on lrdn3668.leonardo.local: CUDA_VISIBLE_DEVICES=16
+[Wrapper][Rank 171][Local 11] on lrdn3668.leonardo.local: CUDA_VISIBLE_DEVICES=11
+[Wrapper][Rank 187][Local 27] on lrdn3668.leonardo.local: CUDA_VISIBLE_DEVICES=27
+[Wrapper][Rank 189][Local 29] on lrdn3668.leonardo.local: CUDA_VISIBLE_DEVICES=29
+[Wrapper][Rank 162][Local 2] on lrdn3668.leonardo.local: CUDA_VISIBLE_DEVICES=2
+[Wrapper][Rank 164][Local 4] on lrdn3668.leonardo.local: CUDA_VISIBLE_DEVICES=4
+[Wrapper][Rank 182][Local 22] on lrdn3668.leonardo.local: CUDA_VISIBLE_DEVICES=22
+[Wrapper][Rank 179][Local 19] on lrdn3668.leonardo.local: CUDA_VISIBLE_DEVICES=19
+[Wrapper][Rank 224][Local 0] on lrdn3775.leonardo.local: CUDA_VISIBLE_DEVICES=0
+[Wrapper][Rank 255][Local 31] on lrdn3775.leonardo.local: CUDA_VISIBLE_DEVICES=31
+[Wrapper][Rank 165][Local 5] on lrdn3668.leonardo.local: CUDA_VISIBLE_DEVICES=5
+[Wrapper][Rank 166][Local 6] on lrdn3668.leonardo.local: CUDA_VISIBLE_DEVICES=6
+[Wrapper][Rank 167][Local 7] on lrdn3668.leonardo.local: CUDA_VISIBLE_DEVICES=7
+[Wrapper][Rank 173][Local 13] on lrdn3668.leonardo.local: CUDA_VISIBLE_DEVICES=13
+[Wrapper][Rank 180][Local 20] on lrdn3668.leonardo.local: CUDA_VISIBLE_DEVICES=20
+[Wrapper][Rank 186][Local 26] on lrdn3668.leonardo.local: CUDA_VISIBLE_DEVICES=26
+[Wrapper][Rank 237][Local 13] on lrdn3775.leonardo.local: CUDA_VISIBLE_DEVICES=13
+[Wrapper][Rank 177][Local 17] on lrdn3668.leonardo.local: CUDA_VISIBLE_DEVICES=17
+[Wrapper][Rank 178][Local 18] on lrdn3668.leonardo.local: CUDA_VISIBLE_DEVICES=18
+[Wrapper][Rank 183][Local 23] on lrdn3668.leonardo.local: CUDA_VISIBLE_DEVICES=23
+[Wrapper][Rank 136][Local 8] on lrdn3636.leonardo.local: CUDA_VISIBLE_DEVICES=8
+[Wrapper][Rank 170][Local 10] on lrdn3668.leonardo.local: CUDA_VISIBLE_DEVICES=10
+[Wrapper][Rank 234][Local 10] on lrdn3775.leonardo.local: CUDA_VISIBLE_DEVICES=10
+[Wrapper][Rank 190][Local 30] on lrdn3668.leonardo.local: CUDA_VISIBLE_DEVICES=30
+[Wrapper][Rank 130][Local 2] on lrdn3636.leonardo.local: CUDA_VISIBLE_DEVICES=2
+[Wrapper][Rank 181][Local 21] on lrdn3668.leonardo.local: CUDA_VISIBLE_DEVICES=21
+[Wrapper][Rank 131][Local 3] on lrdn3636.leonardo.local: CUDA_VISIBLE_DEVICES=3
+[Wrapper][Rank 141][Local 13] on lrdn3636.leonardo.local: CUDA_VISIBLE_DEVICES=13
+[Wrapper][Rank 161][Local 1] on lrdn3668.leonardo.local: CUDA_VISIBLE_DEVICES=1
+[Wrapper][Rank 175][Local 15] on lrdn3668.leonardo.local: CUDA_VISIBLE_DEVICES=15
+[Wrapper][Rank 188][Local 28] on lrdn3668.leonardo.local: CUDA_VISIBLE_DEVICES=28
+[Wrapper][Rank 163][Local 3] on lrdn3668.leonardo.local: CUDA_VISIBLE_DEVICES=3
+[Wrapper][Rank 151][Local 23] on lrdn3636.leonardo.local: CUDA_VISIBLE_DEVICES=23
+[Wrapper][Rank 239][Local 15] on lrdn3775.leonardo.local: CUDA_VISIBLE_DEVICES=15
+[Wrapper][Rank 139][Local 11] on lrdn3636.leonardo.local: CUDA_VISIBLE_DEVICES=11
+[Wrapper][Rank 244][Local 20] on lrdn3775.leonardo.local: CUDA_VISIBLE_DEVICES=20
+[Wrapper][Rank 174][Local 14] on lrdn3668.leonardo.local: CUDA_VISIBLE_DEVICES=14
+[Wrapper][Rank 142][Local 14] on lrdn3636.leonardo.local: CUDA_VISIBLE_DEVICES=14
+[Wrapper][Rank 158][Local 30] on lrdn3636.leonardo.local: CUDA_VISIBLE_DEVICES=30
+[Wrapper][Rank 146][Local 18] on lrdn3636.leonardo.local: CUDA_VISIBLE_DEVICES=18
+[Wrapper][Rank 231][Local 7] on lrdn3775.leonardo.local: CUDA_VISIBLE_DEVICES=7
+[Wrapper][Rank 145][Local 17] on lrdn3636.leonardo.local: CUDA_VISIBLE_DEVICES=17
+[Wrapper][Rank 144][Local 16] on lrdn3636.leonardo.local: CUDA_VISIBLE_DEVICES=16
+[Wrapper][Rank 154][Local 26] on lrdn3636.leonardo.local: CUDA_VISIBLE_DEVICES=26
+[Wrapper][Rank 248][Local 24] on lrdn3775.leonardo.local: CUDA_VISIBLE_DEVICES=24
+[Wrapper][Rank 243][Local 19] on lrdn3775.leonardo.local: CUDA_VISIBLE_DEVICES=19
+[Wrapper][Rank 253][Local 29] on lrdn3775.leonardo.local: CUDA_VISIBLE_DEVICES=29
+[Wrapper][Rank 233][Local 9] on lrdn3775.leonardo.local: CUDA_VISIBLE_DEVICES=9
+[Wrapper][Rank 249][Local 25] on lrdn3775.leonardo.local: CUDA_VISIBLE_DEVICES=25
+[Wrapper][Rank 241][Local 17] on lrdn3775.leonardo.local: CUDA_VISIBLE_DEVICES=17
+[Wrapper][Rank 228][Local 4] on lrdn3775.leonardo.local: CUDA_VISIBLE_DEVICES=4
+[Wrapper][Rank 232][Local 8] on lrdn3775.leonardo.local: CUDA_VISIBLE_DEVICES=8
+[Wrapper][Rank 240][Local 16] on lrdn3775.leonardo.local: CUDA_VISIBLE_DEVICES=16
+[Wrapper][Rank 226][Local 2] on lrdn3775.leonardo.local: CUDA_VISIBLE_DEVICES=2
+[Wrapper][Rank 134][Local 6] on lrdn3636.leonardo.local: CUDA_VISIBLE_DEVICES=6
+[Wrapper][Rank 137][Local 9] on lrdn3636.leonardo.local: CUDA_VISIBLE_DEVICES=9
+[Wrapper][Rank 252][Local 28] on lrdn3775.leonardo.local: CUDA_VISIBLE_DEVICES=28
+[Wrapper][Rank 246][Local 22] on lrdn3775.leonardo.local: CUDA_VISIBLE_DEVICES=22
+[Wrapper][Rank 172][Local 12] on lrdn3668.leonardo.local: CUDA_VISIBLE_DEVICES=12
+[Wrapper][Rank 135][Local 7] on lrdn3636.leonardo.local: CUDA_VISIBLE_DEVICES=7
+[Wrapper][Rank 148][Local 20] on lrdn3636.leonardo.local: CUDA_VISIBLE_DEVICES=20
+[Wrapper][Rank 138][Local 10] on lrdn3636.leonardo.local: CUDA_VISIBLE_DEVICES=10
+[Wrapper][Rank 238][Local 14] on lrdn3775.leonardo.local: CUDA_VISIBLE_DEVICES=14
+[Wrapper][Rank 132][Local 4] on lrdn3636.leonardo.local: CUDA_VISIBLE_DEVICES=4
+[Wrapper][Rank 227][Local 3] on lrdn3775.leonardo.local: CUDA_VISIBLE_DEVICES=3
+[Wrapper][Rank 128][Local 0] on lrdn3636.leonardo.local: CUDA_VISIBLE_DEVICES=0
+[Wrapper][Rank 152][Local 24] on lrdn3636.leonardo.local: CUDA_VISIBLE_DEVICES=24
+[Wrapper][Rank 129][Local 1] on lrdn3636.leonardo.local: CUDA_VISIBLE_DEVICES=1
+[Wrapper][Rank 147][Local 19] on lrdn3636.leonardo.local: CUDA_VISIBLE_DEVICES=19
+[Wrapper][Rank 150][Local 22] on lrdn3636.leonardo.local: CUDA_VISIBLE_DEVICES=22
+[Wrapper][Rank 236][Local 12] on lrdn3775.leonardo.local: CUDA_VISIBLE_DEVICES=12
+[Wrapper][Rank 133][Local 5] on lrdn3636.leonardo.local: CUDA_VISIBLE_DEVICES=5
+[Wrapper][Rank 140][Local 12] on lrdn3636.leonardo.local: CUDA_VISIBLE_DEVICES=12
+[Wrapper][Rank 143][Local 15] on lrdn3636.leonardo.local: CUDA_VISIBLE_DEVICES=15
+[Wrapper][Rank 229][Local 5] on lrdn3775.leonardo.local: CUDA_VISIBLE_DEVICES=5
+[Wrapper][Rank 159][Local 31] on lrdn3636.leonardo.local: CUDA_VISIBLE_DEVICES=31
+[Wrapper][Rank 250][Local 26] on lrdn3775.leonardo.local: CUDA_VISIBLE_DEVICES=26
+[Wrapper][Rank 254][Local 30] on lrdn3775.leonardo.local: CUDA_VISIBLE_DEVICES=30
+[Wrapper][Rank 247][Local 23] on lrdn3775.leonardo.local: CUDA_VISIBLE_DEVICES=23
+[Wrapper][Rank 251][Local 27] on lrdn3775.leonardo.local: CUDA_VISIBLE_DEVICES=27
+[Wrapper][Rank 225][Local 1] on lrdn3775.leonardo.local: CUDA_VISIBLE_DEVICES=1
+[Wrapper][Rank 149][Local 21] on lrdn3636.leonardo.local: CUDA_VISIBLE_DEVICES=21
+[Wrapper][Rank 153][Local 25] on lrdn3636.leonardo.local: CUDA_VISIBLE_DEVICES=25
+[Wrapper][Rank 156][Local 28] on lrdn3636.leonardo.local: CUDA_VISIBLE_DEVICES=28
+[Wrapper][Rank 157][Local 29] on lrdn3636.leonardo.local: CUDA_VISIBLE_DEVICES=29
+[Wrapper][Rank 155][Local 27] on lrdn3636.leonardo.local: CUDA_VISIBLE_DEVICES=27
+[Wrapper][Rank 245][Local 21] on lrdn3775.leonardo.local: CUDA_VISIBLE_DEVICES=21
+[Wrapper][Rank 235][Local 11] on lrdn3775.leonardo.local: CUDA_VISIBLE_DEVICES=11
+[Wrapper][Rank 230][Local 6] on lrdn3775.leonardo.local: CUDA_VISIBLE_DEVICES=6
+[Wrapper][Rank 242][Local 18] on lrdn3775.leonardo.local: CUDA_VISIBLE_DEVICES=18
+[Wrapper][Rank 82][Local 18] on lrdn3552.leonardo.local: CUDA_VISIBLE_DEVICES=18
+[Wrapper][Rank 92][Local 28] on lrdn3552.leonardo.local: CUDA_VISIBLE_DEVICES=28
+[Wrapper][Rank 70][Local 6] on lrdn3552.leonardo.local: CUDA_VISIBLE_DEVICES=6
+[Wrapper][Rank 69][Local 5] on lrdn3552.leonardo.local: CUDA_VISIBLE_DEVICES=5
+[Wrapper][Rank 80][Local 16] on lrdn3552.leonardo.local: CUDA_VISIBLE_DEVICES=16
+[Wrapper][Rank 84][Local 20] on lrdn3552.leonardo.local: CUDA_VISIBLE_DEVICES=20
+[Wrapper][Rank 81][Local 17] on lrdn3552.leonardo.local: CUDA_VISIBLE_DEVICES=17
+[Wrapper][Rank 72][Local 8] on lrdn3552.leonardo.local: CUDA_VISIBLE_DEVICES=8
+[Wrapper][Rank 77][Local 13] on lrdn3552.leonardo.local: CUDA_VISIBLE_DEVICES=13
+[Wrapper][Rank 75][Local 11] on lrdn3552.leonardo.local: CUDA_VISIBLE_DEVICES=11
+[Wrapper][Rank 93][Local 29] on lrdn3552.leonardo.local: CUDA_VISIBLE_DEVICES=29
+[Wrapper][Rank 73][Local 9] on lrdn3552.leonardo.local: CUDA_VISIBLE_DEVICES=9
+[Wrapper][Rank 79][Local 15] on lrdn3552.leonardo.local: CUDA_VISIBLE_DEVICES=15
+[Wrapper][Rank 71][Local 7] on lrdn3552.leonardo.local: CUDA_VISIBLE_DEVICES=7
+[Wrapper][Rank 95][Local 31] on lrdn3552.leonardo.local: CUDA_VISIBLE_DEVICES=31
+[Wrapper][Rank 83][Local 19] on lrdn3552.leonardo.local: CUDA_VISIBLE_DEVICES=19
+[Wrapper][Rank 94][Local 30] on lrdn3552.leonardo.local: CUDA_VISIBLE_DEVICES=30
+[Wrapper][Rank 74][Local 10] on lrdn3552.leonardo.local: CUDA_VISIBLE_DEVICES=10
+[Wrapper][Rank 91][Local 27] on lrdn3552.leonardo.local: CUDA_VISIBLE_DEVICES=27
+[Wrapper][Rank 76][Local 12] on lrdn3552.leonardo.local: CUDA_VISIBLE_DEVICES=12
+[Wrapper][Rank 67][Local 3] on lrdn3552.leonardo.local: CUDA_VISIBLE_DEVICES=3
+[Wrapper][Rank 78][Local 14] on lrdn3552.leonardo.local: CUDA_VISIBLE_DEVICES=14
+[Wrapper][Rank 90][Local 26] on lrdn3552.leonardo.local: CUDA_VISIBLE_DEVICES=26
+[Wrapper][Rank 86][Local 22] on lrdn3552.leonardo.local: CUDA_VISIBLE_DEVICES=22
+[Wrapper][Rank 87][Local 23] on lrdn3552.leonardo.local: CUDA_VISIBLE_DEVICES=23
+[Wrapper][Rank 65][Local 1] on lrdn3552.leonardo.local: CUDA_VISIBLE_DEVICES=1
+[Wrapper][Rank 88][Local 24] on lrdn3552.leonardo.local: CUDA_VISIBLE_DEVICES=24
+[Wrapper][Rank 66][Local 2] on lrdn3552.leonardo.local: CUDA_VISIBLE_DEVICES=2
+[Wrapper][Rank 68][Local 4] on lrdn3552.leonardo.local: CUDA_VISIBLE_DEVICES=4
+[Wrapper][Rank 64][Local 0] on lrdn3552.leonardo.local: CUDA_VISIBLE_DEVICES=0
+[Wrapper][Rank 89][Local 25] on lrdn3552.leonardo.local: CUDA_VISIBLE_DEVICES=25
+[Wrapper][Rank 85][Local 21] on lrdn3552.leonardo.local: CUDA_VISIBLE_DEVICES=21
+[Wrapper][Rank 54][Local 22] on lrdn3540.leonardo.local: CUDA_VISIBLE_DEVICES=22
+[Wrapper][Rank 51][Local 19] on lrdn3540.leonardo.local: CUDA_VISIBLE_DEVICES=19
+[Wrapper][Rank 35][Local 3] on lrdn3540.leonardo.local: CUDA_VISIBLE_DEVICES=3
+[Wrapper][Rank 47][Local 15] on lrdn3540.leonardo.local: CUDA_VISIBLE_DEVICES=15
+[Wrapper][Rank 43][Local 11] on lrdn3540.leonardo.local: CUDA_VISIBLE_DEVICES=11
+[Wrapper][Rank 41][Local 9] on lrdn3540.leonardo.local: CUDA_VISIBLE_DEVICES=9
+[Wrapper][Rank 33][Local 1] on lrdn3540.leonardo.local: CUDA_VISIBLE_DEVICES=1
+[Wrapper][Rank 58][Local 26] on lrdn3540.leonardo.local: CUDA_VISIBLE_DEVICES=26
+[Wrapper][Rank 60][Local 28] on lrdn3540.leonardo.local: CUDA_VISIBLE_DEVICES=28
+[Wrapper][Rank 34][Local 2] on lrdn3540.leonardo.local: CUDA_VISIBLE_DEVICES=2
+[Wrapper][Rank 42][Local 10] on lrdn3540.leonardo.local: CUDA_VISIBLE_DEVICES=10
+[Wrapper][Rank 55][Local 23] on lrdn3540.leonardo.local: CUDA_VISIBLE_DEVICES=23
+[Wrapper][Rank 32][Local 0] on lrdn3540.leonardo.local: CUDA_VISIBLE_DEVICES=0
+[Wrapper][Rank 45][Local 13] on lrdn3540.leonardo.local: CUDA_VISIBLE_DEVICES=13
+[Wrapper][Rank 40][Local 8] on lrdn3540.leonardo.local: CUDA_VISIBLE_DEVICES=8
+[Wrapper][Rank 50][Local 18] on lrdn3540.leonardo.local: CUDA_VISIBLE_DEVICES=18
+[Wrapper][Rank 44][Local 12] on lrdn3540.leonardo.local: CUDA_VISIBLE_DEVICES=12
+[Wrapper][Rank 49][Local 17] on lrdn3540.leonardo.local: CUDA_VISIBLE_DEVICES=17
+[Wrapper][Rank 38][Local 6] on lrdn3540.leonardo.local: CUDA_VISIBLE_DEVICES=6
+[Wrapper][Rank 62][Local 30] on lrdn3540.leonardo.local: CUDA_VISIBLE_DEVICES=30
+[Wrapper][Rank 52][Local 20] on lrdn3540.leonardo.local: CUDA_VISIBLE_DEVICES=20
+[Wrapper][Rank 56][Local 24] on lrdn3540.leonardo.local: CUDA_VISIBLE_DEVICES=24
+[Wrapper][Rank 46][Local 14] on lrdn3540.leonardo.local: CUDA_VISIBLE_DEVICES=14
+[Wrapper][Rank 37][Local 5] on lrdn3540.leonardo.local: CUDA_VISIBLE_DEVICES=5
+[Wrapper][Rank 48][Local 16] on lrdn3540.leonardo.local: CUDA_VISIBLE_DEVICES=16
+[Wrapper][Rank 53][Local 21] on lrdn3540.leonardo.local: CUDA_VISIBLE_DEVICES=21
+[Wrapper][Rank 57][Local 25] on lrdn3540.leonardo.local: CUDA_VISIBLE_DEVICES=25
+[Wrapper][Rank 61][Local 29] on lrdn3540.leonardo.local: CUDA_VISIBLE_DEVICES=29
+[Wrapper][Rank 63][Local 31] on lrdn3540.leonardo.local: CUDA_VISIBLE_DEVICES=31
+[Wrapper][Rank 59][Local 27] on lrdn3540.leonardo.local: CUDA_VISIBLE_DEVICES=27
+[Wrapper][Rank 36][Local 4] on lrdn3540.leonardo.local: CUDA_VISIBLE_DEVICES=4
+[Wrapper][Rank 39][Local 7] on lrdn3540.leonardo.local: CUDA_VISIBLE_DEVICES=7
+[Wrapper][Rank 207][Local 15] on lrdn3721.leonardo.local: CUDA_VISIBLE_DEVICES=15
+[Wrapper][Rank 195][Local 3] on lrdn3721.leonardo.local: CUDA_VISIBLE_DEVICES=3
+[Wrapper][Rank 218][Local 26] on lrdn3721.leonardo.local: CUDA_VISIBLE_DEVICES=26
+[Wrapper][Rank 199][Local 7] on lrdn3721.leonardo.local: CUDA_VISIBLE_DEVICES=7
+[Wrapper][Rank 202][Local 10] on lrdn3721.leonardo.local: CUDA_VISIBLE_DEVICES=10
+[Wrapper][Rank 221][Local 29] on lrdn3721.leonardo.local: CUDA_VISIBLE_DEVICES=29
+[Wrapper][Rank 213][Local 21] on lrdn3721.leonardo.local: CUDA_VISIBLE_DEVICES=21
+[Wrapper][Rank 201][Local 9] on lrdn3721.leonardo.local: CUDA_VISIBLE_DEVICES=9
+[Wrapper][Rank 206][Local 14] on lrdn3721.leonardo.local: CUDA_VISIBLE_DEVICES=14
+[Wrapper][Rank 210][Local 18] on lrdn3721.leonardo.local: CUDA_VISIBLE_DEVICES=18
+[Wrapper][Rank 216][Local 24] on lrdn3721.leonardo.local: CUDA_VISIBLE_DEVICES=24
+[Wrapper][Rank 194][Local 2] on lrdn3721.leonardo.local: CUDA_VISIBLE_DEVICES=2
+[Wrapper][Rank 205][Local 13] on lrdn3721.leonardo.local: CUDA_VISIBLE_DEVICES=13
+[Wrapper][Rank 219][Local 27] on lrdn3721.leonardo.local: CUDA_VISIBLE_DEVICES=27
+[Wrapper][Rank 212][Local 20] on lrdn3721.leonardo.local: CUDA_VISIBLE_DEVICES=20
+[Wrapper][Rank 209][Local 17] on lrdn3721.leonardo.local: CUDA_VISIBLE_DEVICES=17
+[Wrapper][Rank 222][Local 30] on lrdn3721.leonardo.local: CUDA_VISIBLE_DEVICES=30
+[Wrapper][Rank 204][Local 12] on lrdn3721.leonardo.local: CUDA_VISIBLE_DEVICES=12
+[Wrapper][Rank 220][Local 28] on lrdn3721.leonardo.local: CUDA_VISIBLE_DEVICES=28
+[Wrapper][Rank 215][Local 23] on lrdn3721.leonardo.local: CUDA_VISIBLE_DEVICES=23
+[Wrapper][Rank 193][Local 1] on lrdn3721.leonardo.local: CUDA_VISIBLE_DEVICES=1
+[Wrapper][Rank 203][Local 11] on lrdn3721.leonardo.local: CUDA_VISIBLE_DEVICES=11
+[Wrapper][Rank 217][Local 25] on lrdn3721.leonardo.local: CUDA_VISIBLE_DEVICES=25
+[Wrapper][Rank 196][Local 4] on lrdn3721.leonardo.local: CUDA_VISIBLE_DEVICES=4
+[Wrapper][Rank 192][Local 0] on lrdn3721.leonardo.local: CUDA_VISIBLE_DEVICES=0
+[Wrapper][Rank 214][Local 22] on lrdn3721.leonardo.local: CUDA_VISIBLE_DEVICES=22
+[Wrapper][Rank 198][Local 6] on lrdn3721.leonardo.local: CUDA_VISIBLE_DEVICES=6
+[Wrapper][Rank 223][Local 31] on lrdn3721.leonardo.local: CUDA_VISIBLE_DEVICES=31
+[Wrapper][Rank 208][Local 16] on lrdn3721.leonardo.local: CUDA_VISIBLE_DEVICES=16
+[Wrapper][Rank 200][Local 8] on lrdn3721.leonardo.local: CUDA_VISIBLE_DEVICES=8
+[Wrapper][Rank 197][Local 5] on lrdn3721.leonardo.local: CUDA_VISIBLE_DEVICES=5
+[Wrapper][Rank 211][Local 19] on lrdn3721.leonardo.local: CUDA_VISIBLE_DEVICES=19
+[Wrapper][Rank 97][Local 1] on lrdn3635.leonardo.local: CUDA_VISIBLE_DEVICES=1
+[Wrapper][Rank 99][Local 3] on lrdn3635.leonardo.local: CUDA_VISIBLE_DEVICES=3
+[Wrapper][Rank 109][Local 13] on lrdn3635.leonardo.local: CUDA_VISIBLE_DEVICES=13
+[Wrapper][Rank 101][Local 5] on lrdn3635.leonardo.local: CUDA_VISIBLE_DEVICES=5
+[Wrapper][Rank 102][Local 6] on lrdn3635.leonardo.local: CUDA_VISIBLE_DEVICES=6
+[Wrapper][Rank 107][Local 11] on lrdn3635.leonardo.local: CUDA_VISIBLE_DEVICES=11
+[Wrapper][Rank 111][Local 15] on lrdn3635.leonardo.local: CUDA_VISIBLE_DEVICES=15
+[Wrapper][Rank 113][Local 17] on lrdn3635.leonardo.local: CUDA_VISIBLE_DEVICES=17
+[Wrapper][Rank 117][Local 21] on lrdn3635.leonardo.local: CUDA_VISIBLE_DEVICES=21
+[Wrapper][Rank 119][Local 23] on lrdn3635.leonardo.local: CUDA_VISIBLE_DEVICES=23
+[Wrapper][Rank 122][Local 26] on lrdn3635.leonardo.local: CUDA_VISIBLE_DEVICES=26
+[Wrapper][Rank 123][Local 27] on lrdn3635.leonardo.local: CUDA_VISIBLE_DEVICES=27
+[Wrapper][Rank 103][Local 7] on lrdn3635.leonardo.local: CUDA_VISIBLE_DEVICES=7
+[Wrapper][Rank 115][Local 19] on lrdn3635.leonardo.local: CUDA_VISIBLE_DEVICES=19
+[Wrapper][Rank 127][Local 31] on lrdn3635.leonardo.local: CUDA_VISIBLE_DEVICES=31
+[Wrapper][Rank 98][Local 2] on lrdn3635.leonardo.local: CUDA_VISIBLE_DEVICES=2
+[Wrapper][Rank 125][Local 29] on lrdn3635.leonardo.local: CUDA_VISIBLE_DEVICES=29
+[Wrapper][Rank 121][Local 25] on lrdn3635.leonardo.local: CUDA_VISIBLE_DEVICES=25
+[Wrapper][Rank 126][Local 30] on lrdn3635.leonardo.local: CUDA_VISIBLE_DEVICES=30
+[Wrapper][Rank 124][Local 28] on lrdn3635.leonardo.local: CUDA_VISIBLE_DEVICES=28
+[Wrapper][Rank 120][Local 24] on lrdn3635.leonardo.local: CUDA_VISIBLE_DEVICES=24
+[Wrapper][Rank 114][Local 18] on lrdn3635.leonardo.local: CUDA_VISIBLE_DEVICES=18
+[Wrapper][Rank 96][Local 0] on lrdn3635.leonardo.local: CUDA_VISIBLE_DEVICES=0
+[Wrapper][Rank 100][Local 4] on lrdn3635.leonardo.local: CUDA_VISIBLE_DEVICES=4
+[Wrapper][Rank 112][Local 16] on lrdn3635.leonardo.local: CUDA_VISIBLE_DEVICES=16
+[Wrapper][Rank 118][Local 22] on lrdn3635.leonardo.local: CUDA_VISIBLE_DEVICES=22
+[Wrapper][Rank 105][Local 9] on lrdn3635.leonardo.local: CUDA_VISIBLE_DEVICES=9
+[Wrapper][Rank 110][Local 14] on lrdn3635.leonardo.local: CUDA_VISIBLE_DEVICES=14
+[Wrapper][Rank 116][Local 20] on lrdn3635.leonardo.local: CUDA_VISIBLE_DEVICES=20
+[Wrapper][Rank 108][Local 12] on lrdn3635.leonardo.local: CUDA_VISIBLE_DEVICES=12
+[Wrapper][Rank 104][Local 8] on lrdn3635.leonardo.local: CUDA_VISIBLE_DEVICES=8
+[Wrapper][Rank 106][Local 10] on lrdn3635.leonardo.local: CUDA_VISIBLE_DEVICES=10
+
+  This is RegCM development version
+   GIT Revision: 5.0.0-944-g5801-dirty compiled at: data : Jul  6 2025  time: 14:23:24
+
+ : this run start at  : 2025-07-08 13:32:51+0200
+ : it is submitted by : 
+ : it is running on   : lrdn3477.leonardo.local
+ : it is using        :           256   processors
+ : in directory       : 
+ /leonardo/home/userexternal/ctica000/MS_thesis/RegCM/256_512_60_1Day_Benchmark/MPI_CPU_partition
+                       
+ CPUS DIM1 =            32
+ CPUS DIM2 =             8
+ 
+ Reading model namelist file
+ Using default microphysical parameter.
+ Initial date of the global simulation:  1900-01-01 00:00:00 UTC        
+ Initial date of this run             :  1900-01-01 00:00:00 UTC        
+ Final date of this run               :  1900-01-02 00:00:00 UTC        
+ Total simulation length              :            24  hours
+ Timestep in seconds =   30.000000
+ Advection timestep =    10.000 (factor  3)
+ Max. Courant number for horizontal advection =    1.0607
+ Sound waves timestep =     2.000 (factor  5)
+ Courant number of horizontal sound waves =    0.5017
+ Setting IPCC scenario to CONST   
+ Selected value at year          1900
+ Create SAV files :   F
+ Create ATM files :   F
+ Create RAD files :   F
+ Create SRF files :   F
+ Create STS files :   F
+ Create SHF files :   F
+ Monthly new files are created
+ Monthly SAV files are written
+ Frequency in hours to create ATM :    3.0
+ Frequency in hours to create RAD :    3.0
+ Frequency in hours to create SRF :    3.0
+ Physical Parameterizations
+  Lateral Boundary conditions :  0
+  Semi-Lagrangian Advection   :  0
+  Land cumulus conv. scheme   :  0
+  Ocean cumulus conv. scheme  :  0
+  Moisture schem              :  2
+  Ocean Flux scheme           :  2
+  Zeng roughness formula      :  1
+  Zeng roughness method       :  1
+  Coupling with ocean         :  0
+  Coupling with wave          :  0
+  Coupling with COP           :  0
+  Pressure gradient force     :  0
+  Prescribed LW emissivity    :  0
+  Lake model in BATS          :  0
+  Simulate diurnal sst cycle  :  0
+  Simulate sea ice cover      :  0
+  Enable chem/aerosol model   :  0
+  Large scale LWP as convect. :  0
+  Cloud fraction scheme       :  7
+  Marine stratocumulus        :  0
+  Climate O3 dataset          :  0
+  Climate Aerosol dataset     :  0
+ Model Timestep Pameterizations
+  time step for dynamical model in seconds :          30.000000
+  time step for surface   model in seconds :         600.000000
+  time step for cumulus   model in seconds :         300.000000
+  time step for radiation model in seconds :        1800.000000
+  time step for emission  model in seconds :       64800.000000
+Vertical level height profile: 
+  1    22.94
+  2    71.01
+  3   122.19
+  4   176.67
+  5   234.66
+  6   296.40
+  7   362.11
+  8   432.07
+  9   506.53
+ 10   585.80
+ 11   670.18
+ 12   760.00
+ 13   855.61
+ 14   957.40
+ 15  1065.74
+ 16  1181.07
+ 17  1303.85
+ 18  1434.54
+ 19  1573.65
+ 20  1721.74
+ 21  1879.39
+ 22  2047.20
+ 23  2225.83
+ 24  2415.98
+ 25  2618.40
+ 26  2833.87
+ 27  3063.23
+ 28  3307.39
+ 29  3567.30
+ 30  3843.97
+ 31  4138.48
+ 32  4451.99
+ 33  4785.72
+ 34  5140.97
+ 35  5519.13
+ 36  5921.69
+ 37  6350.20
+ 38  6806.35
+ 39  7291.92
+ 40  7808.81
+ 41  8359.04
+ 42  8944.75
+ 43  9568.23
+ 44 10231.93
+ 45 10938.43
+ 46 11690.50
+ 47 12491.07
+ 48 13343.27
+ 49 14250.44
+ 50 15216.11
+ 51 16244.06
+ 52 17338.32
+ 53 18503.14
+ 54 19743.09
+ 55 21063.01
+ 56 22468.05
+ 57 23963.72
+ 58 25555.84
+ 59 27250.65
+ 60 29054.77
+ Model top at     30000.00000000000       m
+ Domain grid parameters:
+  Map Projection        : NORMER
+  Dot Grid Full Extent  :  512x 256x 60
+  Model Grid Spacing    :    2.000000 km
+  Proj Center Latitude  :    0.000000 deg
+  Proj Center longitude :   90.000000 deg
+ Holtslag PBL Scheme
+  ricr_ocn     =    0.250000
+  ricr_lnd     =    0.250000
+  zhnew_fac    =    0.250000
+  ifaholt      =  0
+  ifaholtth10  =  2
+  holtth10iter =    1
+ Cloud fraction schemes parameters
+  # of bottom no cloud model levels :  1
+  Maximum relative humidity         :    1.010000
+  Minimum relative humidity         :    0.010000
+  Maximum total cloud cover for rad :    1.000000
+  Conv. CF UMF factor deep cumulus  :    0.140000
+  Conv. CF UMF factor deep cumulus  :    0.140000
+  Conv. CF UMF factor k2            :  500.000000
+  Surface radiation hack            :           F
+  Vavrus-Waliser Arctic cloud fix   :           T
+ Convective Cloud Cover parameters after resolution scaling
+  Maximum Convective Cloud Cover :    1.000000
+  Convective Cloud Water         :    0.000300
+ The surface energy budget is used to calculate the ground temperature.
+ The radiation is computed every   30. minutes.
+ The lateral boundary conditions are fixed.
+ Successfully read in surface temperature.
+  # Ozone profile #
+    0.170E-04  0.164E-04  0.142E-04  0.109E-04  0.733E-05  0.426E-05  0.211E-05
+    0.873E-06  0.301E-06  0.851E-07  0.196E-07  0.373E-08  0.598E-09  0.840E-10
+    0.105E-10  0.120E-11  0.100E-11  0.100E-11  0.100E-11  0.100E-11  0.100E-11
+    0.100E-11  0.100E-11  0.100E-11  0.100E-11  0.100E-11  0.100E-11  0.100E-11
+    0.100E-11  0.100E-11  0.100E-11  0.100E-11  0.100E-11  0.100E-11  0.100E-11
+    0.100E-11  0.100E-11  0.100E-11  0.100E-11  0.100E-11  0.100E-11  0.100E-11
+    0.100E-11  0.100E-11  0.100E-11  0.100E-11  0.100E-11  0.100E-11  0.100E-11
+    0.100E-11  0.100E-11  0.100E-11  0.100E-11  0.100E-11  0.100E-11  0.100E-11
+    0.100E-11  0.100E-11  0.100E-11  0.100E-11  0.100E-11  0.100E-11
+ At  1900-01-01 00:00:00 UTC        
+ JDay      0.00000 solar zenith angle = 42.05 degrees
+                   solar TSI irradiance    =     340.0000 W/m^2
+ $$$  1900-01-01 03:00:00 UTC        
+ $$$ max, min of ps (mb) =  1016.89 1016.89
+ $$$  1900-01-01 06:00:00 UTC        
+ $$$ max, min of ps (mb) =  1017.44 1017.44
+ $$$  1900-01-01 09:00:00 UTC        
+ $$$ max, min of ps (mb) =  1017.98 1017.98
+ $$$  1900-01-01 12:00:00 UTC        
+ $$$ max, min of ps (mb) =  1018.52 1018.52
+ $$$  1900-01-01 15:00:00 UTC        
+ $$$ max, min of ps (mb) =  1019.04 1019.04
+ $$$  1900-01-01 18:00:00 UTC        
+ $$$ max, min of ps (mb) =  1019.56 1019.56
+ $$$  1900-01-01 21:00:00 UTC        
+ $$$ max, min of ps (mb) =  1020.07 1020.07
+ At  1900-01-02 00:00:00 UTC        
+ JDay      1.00000 solar zenith angle = 42.05 degrees
+                   solar TSI irradiance    =     340.0000 W/m^2
+ Final time  1900-01-02 00:00:00 UTC reached.
+ Elapsed seconds of run for this final timeslice :     930.3342    
+ : this run stops at  : 2025-07-08 13:48:22+0200
+ : Run has been completed using           256  processors.
+ : Total elapsed seconds of run :     930.5954189300537     
+ RegCM V5 simulation successfully reached end

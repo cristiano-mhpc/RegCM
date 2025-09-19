@@ -1,0 +1,40 @@
+
+ERROR: /dvs/p4/build/sw/devtools/Agora/Rel/QuadD_Main/QuadD/Common/ProcessWaiter/Src/POSIX/ProcessWaiterImpl.cpp(329): Throw in function void QuadDCommon::ProcessWaiter::ProcessWaiterImpl::WriteTerminationStatusToFile(const QuadDCommon::ProcessWaiter::TerminationStatus&)
+Dynamic exception type: boost::wrapexcept<QuadDCommon::WriteStreamException>
+std::exception::what: WriteStreamException
+[QuadDCommon::tag_message*] = Failed to write termination status to file
+[QuadDCommon::tag_errno_text*] = Dynamic exception type: std::__ios_failure
+std::exception::what: basic_ios::clear: iostream error
+
+[boost::errinfo_file_name_*] = /tmp/nsys_termination_status_4185999
+
+ERROR: /dvs/p4/build/sw/devtools/Agora/Rel/QuadD_Main/QuadD/Common/ProcessWaiter/Src/POSIX/ProcessWaiterImpl.cpp(329): Throw in function void QuadDCommon::ProcessWaiter::ProcessWaiterImpl::WriteTerminationStatusToFile(const QuadDCommon::ProcessWaiter::TerminationStatus&)
+Dynamic exception type: boost::wrapexcept<QuadDCommon::WriteStreamException>
+std::exception::what: WriteStreamException
+[QuadDCommon::tag_message*] = Failed to write termination status to file
+[QuadDCommon::tag_errno_text*] = Dynamic exception type: std::__ios_failure
+std::exception::what: basic_ios::clear: iostream error
+
+[boost::errinfo_file_name_*] = /tmp/nsys_termination_status_4185989
+
+ERROR: /dvs/p4/build/sw/devtools/Agora/Rel/QuadD_Main/QuadD/Common/ProcessWaiter/Src/POSIX/ProcessWaiterImpl.cpp(329): Throw in function void QuadDCommon::ProcessWaiter::ProcessWaiterImpl::WriteTerminationStatusToFile(const QuadDCommon::ProcessWaiter::TerminationStatus&)
+Dynamic exception type: boost::wrapexcept<QuadDCommon::WriteStreamException>
+std::exception::what: WriteStreamException
+[QuadDCommon::tag_message*] = Failed to write termination status to file
+[QuadDCommon::tag_errno_text*] = Dynamic exception type: std::__ios_failure
+std::exception::what: basic_ios::clear: iostream error
+
+[boost::errinfo_file_name_*] = /tmp/nsys_termination_status_4186001
+
+ERROR: /dvs/p4/build/sw/devtools/Agora/Rel/QuadD_Main/QuadD/Common/ProcessWaiter/Src/POSIX/ProcessWaiterImpl.cpp(329): Throw in function void QuadDCommon::ProcessWaiter::ProcessWaiterImpl::WriteTerminationStatusToFile(const QuadDCommon::ProcessWaiter::TerminationStatus&)
+Dynamic exception type: boost::wrapexcept<QuadDCommon::WriteStreamException>
+std::exception::what: WriteStreamException
+[QuadDCommon::tag_message*] = Failed to write termination status to file
+[QuadDCommon::tag_errno_text*] = Dynamic exception type: std::__ios_failure
+std::exception::what: basic_ios::clear: iostream error
+
+[boost::errinfo_file_name_*] = /tmp/nsys_termination_status_4185993
+slurmstepd: error:  mpi/pmix_v3: _errhandler: lrdn0113 [0]: pmixp_client_v2.c:212: Error handler invoked: status = -25, source = [slurm.pmix.17123443.0:2]
+srun: Job step aborted: Waiting up to 92 seconds for job step to finish.
+slurmstepd: error: *** STEP 17123443.0 ON lrdn0113 CANCELLED AT 2025-06-29T11:32:34 ***
+srun: error: lrdn0113: tasks 0-3: Killed

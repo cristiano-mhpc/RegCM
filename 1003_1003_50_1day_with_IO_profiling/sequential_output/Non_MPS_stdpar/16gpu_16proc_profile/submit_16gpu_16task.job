@@ -1,0 +1,20 @@
+#!/bin/bash 
+
+#SBATCH --account=ICT25_ESP_0
+#SBATCH --out=./profile/LOG_%x_%j.out
+#SBATCH --err=./profile/LOG_%x_%j.err
+#SBATCH --job-name stdpar_16gpu_16task
+#SBATCH --ntasks-per-node=4
+#SBATCH --partition=boost_usr_prod
+#SBATCH --nodes=4
+#SBATCH --mem=0G
+#SBATCH --gres=gpu:4
+#SBATCH --time=10:00:00
+
+source /leonardo/home/userexternal/ctica000/MS_thesis/RegCM/modules_cuda  
+
+cd /leonardo/home/userexternal/ctica000/MS_thesis/RegCM/253_253_50_1day_Benchmark/sequential_output/Non_MPS_stdpar/16gpu_16proc_profile
+
+# Launch
+srun ./profile_STD_launch_per_rank.sh 
+

@@ -1,0 +1,2993 @@
+[Wrapper][Rank 0][Local 0] on lrdn1600.leonardo.local: CUDA_VISIBLE_DEVICES=0
+[Wrapper][Rank 1][Local 1] on lrdn1600.leonardo.local: CUDA_VISIBLE_DEVICES=1
+[Wrapper][Rank 3][Local 3] on lrdn1600.leonardo.local: CUDA_VISIBLE_DEVICES=3
+[Wrapper][Rank 2][Local 2] on lrdn1600.leonardo.local: CUDA_VISIBLE_DEVICES=2
+[Wrapper][Rank 16][Local 0] on lrdn2872.leonardo.local: CUDA_VISIBLE_DEVICES=0
+[Wrapper][Rank 23][Local 3] on lrdn3272.leonardo.local: CUDA_VISIBLE_DEVICES=3
+[Wrapper][Rank 10][Local 2] on lrdn2714.leonardo.local: CUDA_VISIBLE_DEVICES=2
+[Wrapper][Rank 4][Local 0] on lrdn2004.leonardo.local: CUDA_VISIBLE_DEVICES=0
+[Wrapper][Rank 27][Local 3] on lrdn3295.leonardo.local: CUDA_VISIBLE_DEVICES=3
+[Wrapper][Rank 31][Local 3] on lrdn3347.leonardo.local: CUDA_VISIBLE_DEVICES=3
+[Wrapper][Rank 15][Local 3] on lrdn2764.leonardo.local: CUDA_VISIBLE_DEVICES=3
+[Wrapper][Rank 17][Local 1] on lrdn2872.leonardo.local: CUDA_VISIBLE_DEVICES=1
+[Wrapper][Rank 19][Local 3] on lrdn2872.leonardo.local: CUDA_VISIBLE_DEVICES=3
+[Wrapper][Rank 18][Local 2] on lrdn2872.leonardo.local: CUDA_VISIBLE_DEVICES=2
+[Wrapper][Rank 21][Local 1] on lrdn3272.leonardo.local: CUDA_VISIBLE_DEVICES=1
+[Wrapper][Rank 20][Local 0] on lrdn3272.leonardo.local: CUDA_VISIBLE_DEVICES=0
+[Wrapper][Rank 22][Local 2] on lrdn3272.leonardo.local: CUDA_VISIBLE_DEVICES=2
+[Wrapper][Rank 5][Local 1] on lrdn2004.leonardo.local: CUDA_VISIBLE_DEVICES=1
+[Wrapper][Rank 11][Local 3] on lrdn2714.leonardo.local: CUDA_VISIBLE_DEVICES=3
+[Wrapper][Rank 7][Local 3] on lrdn2004.leonardo.local: CUDA_VISIBLE_DEVICES=3
+[Wrapper][Rank 8][Local 0] on lrdn2714.leonardo.local: CUDA_VISIBLE_DEVICES=0
+[Wrapper][Rank 6][Local 2] on lrdn2004.leonardo.local: CUDA_VISIBLE_DEVICES=2
+[Wrapper][Rank 9][Local 1] on lrdn2714.leonardo.local: CUDA_VISIBLE_DEVICES=1
+[Wrapper][Rank 25][Local 1] on lrdn3295.leonardo.local: CUDA_VISIBLE_DEVICES=1
+[Wrapper][Rank 26][Local 2] on lrdn3295.leonardo.local: CUDA_VISIBLE_DEVICES=2
+[Wrapper][Rank 24][Local 0] on lrdn3295.leonardo.local: CUDA_VISIBLE_DEVICES=0
+[Wrapper][Rank 29][Local 1] on lrdn3347.leonardo.local: CUDA_VISIBLE_DEVICES=1
+[Wrapper][Rank 28][Local 0] on lrdn3347.leonardo.local: CUDA_VISIBLE_DEVICES=0
+[Wrapper][Rank 30][Local 2] on lrdn3347.leonardo.local: CUDA_VISIBLE_DEVICES=2
+[Wrapper][Rank 13][Local 1] on lrdn2764.leonardo.local: CUDA_VISIBLE_DEVICES=1
+[Wrapper][Rank 14][Local 2] on lrdn2764.leonardo.local: CUDA_VISIBLE_DEVICES=2
+[Wrapper][Rank 12][Local 0] on lrdn2764.leonardo.local: CUDA_VISIBLE_DEVICES=0
+
+  This is RegCM development version
+   GIT Revision: 5.0.0-944-g5801-dirty compiled at: data : Aug 30 2025  time: 14:14:40
+
+ MPI Rank:            0  using device:            0
+ : this run start at  : 2025-08-30 15:17:55+0200
+ : it is submitted by : 
+ : it is running on   : lrdn1600.leonardo.local
+ : it is using        :            32   processors
+ : in directory       : 
+ /leonardo/home/userexternal/ctica000/MS_thesis/RegCM/1003_1003_50_1day_Benchmark/parallel_output/Non_MPS_stdpar/32gpu_32proc
+                       
+ CPUS DIM1 =             8
+ CPUS DIM2 =             4
+ 
+ Reading model namelist file
+ Using default non-hydrostatc parameters.
+ Using default microphysical parameter.
+ Using default Holtslag parameter.
+ Initial date of the global simulation:  2009-10-01 00:00:00 UTC        
+ Initial date of this run             :  2009-10-01 00:00:00 UTC        
+ Final date of this run               :  2009-10-02 00:00:00 UTC        
+ Total simulation length              :            24  hours
+ Timestep in seconds =   45.000000
+ Reading Domain file : input/EURR-3_DOMAIN000.nc
+ Advection timestep =    15.000 (factor  3)
+ Max. Courant number for horizontal advection =    0.9538
+ Sound waves timestep =     3.000 (factor  5)
+ Courant number of horizontal sound waves =    0.4512
+ Setting IPCC scenario to SSP585  
+ Load GHG for 200910 SSP585
+ Model will output required CORDEX variables.
+ Create SAV files :   T
+ Create ATM files :   T
+ Create RAD files :   T
+ Create SRF files :   T
+ Create STS files :   T
+ Create SHF files :   F
+ Frequency in days for new files:    1.0
+ Monthly SAV files are written
+ Frequency in hours to create ATM :    1.0
+ Frequency in hours to create RAD :    1.0
+ Frequency in hours to create SRF :    1.0
+ Physical Parameterizations
+  Lateral Boundary conditions :  5
+  Semi-Lagrangian Advection   :  0
+  Land cumulus conv. scheme   :  0
+  Ocean cumulus conv. scheme  :  0
+  Moisture schem              :  2
+  Ocean Flux scheme           :  2
+  Zeng roughness formula      :  1
+  Zeng roughness method       :  1
+  Coupling with ocean         :  0
+  Coupling with wave          :  0
+  Coupling with COP           :  0
+  Pressure gradient force     :  0
+  Prescribed LW emissivity    :  0
+  Lake model in BATS          :  0
+  Simulate diurnal sst cycle  :  0
+  Simulate sea ice cover      :  1
+  Enable chem/aerosol model   :  0
+  Large scale LWP as convect. :  1
+  Cloud fraction scheme       :  0
+  Marine stratocumulus        :  0
+  Climate O3 dataset          :  1
+  Climate Aerosol dataset     :  2
+ Boundary Pameterizations
+  Num. of bndy points cross  :  31
+  Num. of bndy points dot    :  31
+  Nudge value high range     :  6.000000
+  Nudge value medium range   :  4.000000
+  Nudge value low range      :  2.000000
+  Nm paramter                : -1.000000
+  Dm paramter                : -1.000000
+ Model Timestep Pameterizations
+  time step for dynamical model in seconds :          45.000000
+  time step for surface   model in seconds :         450.000000
+  time step for cumulus   model in seconds :         225.000000
+  time step for radiation model in seconds :        1350.000000
+  time step for emission  model in seconds :       48600.000000
+ Nudging coefficients F1=    0.033333, F2=    0.000000
+  # Nudging coefficient profile #
+     5.95       5.86       5.76       5.67       5.57       5.48       5.38    
+     5.28       5.19       5.09       5.00       4.90       4.81       4.71    
+     4.62       4.52       4.43       4.33       4.24       4.14       4.05    
+     3.97       3.90       3.83       3.76       3.69       3.62       3.55    
+     3.48       3.41       3.34       3.27       3.20       3.14       3.07    
+     3.00       2.93       2.86       2.79       2.72       2.65       2.58    
+     2.52       2.45       2.38       2.31       2.24       2.17       2.10    
+     2.10       2.03    
+ Model top at     30000.00000000000       m
+ Domain grid parameters:
+  Map Projection        : ROTLLR
+  Dot Grid Full Extent  : 1003x1003x 50
+  Model Grid Spacing    :    3.335968 km
+  Proj Center Latitude  :   50.000000 deg
+  Proj Center longitude :    6.600000 deg
+  Pole Latitude         :   40.000000 deg
+  Pole longitude        :  186.600000 deg
+ Holtslag PBL Scheme
+  ricr_ocn     =    0.250000
+  ricr_lnd     =    0.250000
+  zhnew_fac    =    0.250000
+  ifaholt      =  0
+  ifaholtth10  =  2
+  holtth10iter =    1
+ Cloud fraction schemes parameters
+  # of bottom no cloud model levels :  0
+  Maximum relative humidity         :    1.010000
+  Minimum relative humidity         :    0.010000
+  RH0 temperature threshold         :  238.000000
+  Relative humidity thresholds: Land =    0.800000 Ocean =    0.900000
+  Maximum total cloud cover for rad :    0.750000
+  Conv. CF UMF factor deep cumulus  :    0.140000
+  Conv. CF UMF factor deep cumulus  :    0.140000
+  Conv. CF UMF factor k2            :  500.000000
+  Surface radiation hack            :           F
+  Vavrus-Waliser Arctic cloud fix   :           T
+ Convective Cloud Cover parameters after resolution scaling
+  Maximum Convective Cloud Cover :    0.750000
+  Convective Cloud Water         :    0.000300
+ The surface energy budget is used to calculate the ground temperature.
+ The radiation is computed every   23. minutes.
+ Relaxation boundary conditions (exponential method)
+ READY IC DATA for  2009-10-01 00:00:00 UTC        
+ SEARCH BC data for 2009100106 , step =        0
+ READY  BC from     2009100100  to 2009100106 
+ Computing weights, R =     348.80780029 .......... Done.
+ Reading Initial Ozone Data...
+  # Updated ozone profile #
+    0.765E-05  0.694E-05  0.569E-05  0.413E-05  0.280E-05  0.178E-05  0.101E-05
+    0.544E-06  0.304E-06  0.192E-06  0.138E-06  0.104E-06  0.848E-07  0.726E-07
+    0.682E-07  0.663E-07  0.652E-07  0.645E-07  0.639E-07  0.633E-07  0.628E-07
+    0.619E-07  0.606E-07  0.593E-07  0.580E-07  0.564E-07  0.549E-07  0.535E-07
+    0.524E-07  0.516E-07  0.508E-07  0.501E-07  0.496E-07  0.493E-07  0.490E-07
+    0.487E-07  0.487E-07  0.487E-07  0.487E-07  0.487E-07  0.487E-07  0.485E-07
+    0.483E-07  0.481E-07  0.480E-07  0.478E-07  0.477E-07  0.475E-07  0.475E-07
+    0.475E-07  0.475E-07  0.475E-07
+ Read solar forcing total irradiance data...
+ Updating orbit parameters at  2009-10-01 00:00:00 UTC        
+ At  2009-10-01 00:00:00 UTC        
+ JDay    273.00000 solar declination angle =  -2.71002168 degrees
+                   solar TSI irradiance    =    1355.8045 W/m^2
+ CLM version: 4.5 - RegCM 5.0.0-944-g5801-dirty
+ Attempting to initialize the land model .....
+ Mask given by RegCM model has a total of        487659  land points
+ Attempting to initialize run control settings .....
+ Read in clm_inparm namelist from: EURR-3_namelist.in
+ Read in clm_hydrology1_inparm namelist
+ Read in clm_soilhydrology_inparm namelist
+ Successfully initialized run control settings
+ 
+ define run:
+    source                = Community Land Model CLM4.5
+    model_version         = 5.0.0-944-g5801-dirty
+    run type              = initial
+    case title            = RegCM driven CLM4.5
+    username              = 
+    hostname              = lrdn1600.leonardo.local
+ input data files:
+    PFT physiology = 
+ /leonardo_work/ICT25_ESP/RCMDATA/CLM45/pftdata/pft-physiology.c130503.nc
+    surface data   = input/EURR-3_CLM45_surface.nc
+    land frac data = input/EURR-3_DOMAIN000.nc
+    enable_megan_emission                                 :   F
+    enable_urban_landunit                                 :   T
+    enable_more_crop_pft                                  :   F
+    SNICAR optical = 
+ /leonardo_work/ICT25_ESP/RCMDATA/CLM45/snicardata/snicar_optics_5bnd_c090915.nc
+    SNICAR aging = 
+ /leonardo_work/ICT25_ESP/RCMDATA/CLM45/snicardata/snicar_drdt_bst_fit_60_c070416.nc
+    initial data is from RegCM atm model
+    atmospheric forcing data is from RegCM atm model
+ Large file support for output files is ON
+ model physics parameters:
+    flag for random perturbation test is not set
+    CO2 volume mixing ratio   (umol/mol)   =     355.0000000000000     
+    land albedos  (unitless 0-1)   =    0.8000000000000000     
+    ice albedos   (unitless 0-1)   =    0.5500000000000000     
+    urban air conditioning/heating and wasteheat   = ON_WASTEHEAT    
+    urban traffic flux   =   F
+    more vertical layers =   F
+    maxpatch_pft         =            17
+    allocate_all_vegpfts =   T
+    perchroot (PWS based on unfrozen layers only) =   F
+    perchroot (PWS based on time-integrated active layer only) =   F
+ 
+ Lake Model Namelists:
+ Hostetler eddy increase low    :     25.00000000000000     
+ Hostetler eddy increase factor :     10.00000000000000     
+ Albedo melting lakes (visible) :   0.1000000000000000     
+ Albedo melting lakes (NIR)     :   0.1000000000000000     
+ Attempting to read ldomain from input/EURR-3_DOMAIN000.nc
+   domain_check set       = domain_set
+   domain_check decomped  =   T
+   domain_check ns        =       1000000
+   domain_check ni,nj     =          1000         1000
+   domain_check clmlevel  = gridcell
+   domain_check nbeg,nend =             1        15239
+   domain_check lonc      =    -6.952402887032403      
+    11.11733380539798     
+   domain_check latc      =     33.94779705280406      
+    35.93000000000000     
+   domain_check mask      =             1            1
+   domain_check frac      =     100.0000000000000      
+    100.0000000000000     
+   domain_check topo      =     0.000000000000000      
+    1849.270369674424     
+   domain_check area      =     10.74947992534302      
+    10.79622895484203     
+   domain_check pftm      =             1            1
+  
+  Reading in urban input data from surface data file ...
+  UrbanInput : input/EURR-3_CLM45_surface.nc
+  Sucessfully read urban input data
+ 
+ Attempting to read PFT physiological data .....
+ Successfully read PFT physiological data
+ Attempting to read surface boundary data .....
+ Checked LAT/LON compliance
+ Successfully read surface boundary data
+ 
+  Surface Grid Characteristics
+    total number of gridcells =        487659
+    total number of landunits =       1169625
+    total number of columns   =       2379439
+    total number of pfts      =       9206259
+  
+ ---clm_ptrs_check:
+    clm_ptrs_check: g index ranges - OK
+    clm_ptrs_check: l index ranges - OK
+    clm_ptrs_check: c index ranges - OK
+    clm_ptrs_check: p index ranges - OK
+    clm_ptrs_check: g mono increasing - OK
+    clm_ptrs_check: l mono increasing - OK
+    clm_ptrs_check: c mono increasing - OK
+    clm_ptrs_check: p mono increasing - OK
+    clm_ptrs_check: tree consistent - OK
+  
+ Attempting to initialize time invariant variables
+ Attempting to read soil color, sand and clay boundary data .....
+ WARNING:: ETALAKE not found on surface data set.
+ All lake columns will have eta set equal to default value
+ WARNING:: LAKEFETCH not found on surface data set.
+ All lake columns will have fetch set equal to default value
+ Successfully read fmax, soil color, sand and clay boundary data
+ 
+ Attempting to read organic matter data .....
+  organicrd : input/EURR-3_CLM45_surface.nc
+ Successfully read organic matter data
+ 
+  # zsoi #
+    0.710E-02  0.279E-01  0.623E-01  0.119      0.212      0.366      0.620    
+     1.04       1.73       2.86       4.74       7.83       12.9       21.3    
+     21.3       35.2    
+  # zisoi #
+     0.00      0.175E-01  0.451E-01  0.906E-01  0.166      0.289      0.493    
+    0.829       1.38       2.30       3.80       6.28       10.4       17.1    
+     17.1       28.3       42.1    
+  # dzsoi #
+    0.175E-01  0.276E-01  0.455E-01  0.750E-01  0.124      0.204      0.336    
+    0.554      0.913       1.51       2.48       4.09       6.75       11.1    
+     11.1       13.9    
+ dzsoi_decomp    1.000000000000000     
+ Attempting to read snow optical properties .....
+ SnowOptics_init : 
+ /leonardo_work/ICT25_ESP/RCMDATA/CLM45/snicardata/snicar_optics_5bnd_c090915.nc
+ Successfully read snow optical properties
+ Attempting to read snow aging parameters .....
+ Successfully read snow aging properties
+ Successfully initialized time invariant variables
+ CLM_hist_printflds : number of master fields =           241
+ Setting initial data to non-spun up values
+ Attempting to initialize time invariant variables for lakes
+ CLM timestep appears to differ from 1800s. 
+ Adjusting minimum snow layer thickness over lakes to maintain stability.
+ New minimum thickness is    2.0000000000000000E-002 .
+ Successfully initialized time invariant variables for lakes
+ Setting initial data to non-spun up values for lake points
+ Initializing clm2 history files
+ There will be a total of             2  history tapes
+ History tape             1  write frequency is MONTHLY
+ All fields on history tape             1  are grid averaged
+ Output precision on history tape             1 =            2
+ History tape             2  write frequency =             1
+ All fields on history tape             2  are grid averaged
+ Output precision on history tape             2 =            2
+ hist tape =             1  written with dov2xy=   T
+ hist tape =             2  written with dov2xy=   T
+ Successfully initialized clm2 history files
+ Successfully initialized the land model
+ begin initial run at:  2009-10-01 00:00:00 UTC
+ Attempting to read monthly vegetation data .....
+ At  2009-10-01 00:00:00 UTC
+ Month =            10  Day =             1
+ Reading months :             9           10
+ Successfully read monthly vegetation data for
+ month            10
+ Restrict outout to CORDEX variables
+ Opening new output file output//EURR-3_ATM.2009100100.nc
+ Opening new output file output//EURR-3_SRF.2009100100.nc
+ Opening new output file output//EURR-3_STS.2009100100.nc
+ Opening new output file output//EURR-3_RAD.2009100100.nc
+Time to run newoutfiles:  13.293398 s
+Time to run write_record_output_stream:  10.998847 s
+ ATM variables written at  2009-10-01 00:00:00 UTC        
+ Computing weights, R =      89.00187683 .......... Done.
+ Reading EXT,SSA,ASY Data...
+ AEROPP file open 
+ /leonardo_work/ICT25_ESP/RCMDATA/MERRA2/OPPMONTH/MERRA2_OPPMONTH_wb3.200909.nc
+ AEROPP file open 
+ /leonardo_work/ICT25_ESP/RCMDATA/MERRA2/OPPMONTH/MERRA2_OPPMONTH_wb3.200910.nc
+ AEROPP file open 
+ /leonardo_work/ICT25_ESP/RCMDATA/MERRA2/OPPMONTH/MERRA2_OPPMONTH_wb6.200909.nc
+ AEROPP file open 
+ /leonardo_work/ICT25_ESP/RCMDATA/MERRA2/OPPMONTH/MERRA2_OPPMONTH_wb6.200910.nc
+ AEROPP file open 
+ /leonardo_work/ICT25_ESP/RCMDATA/MERRA2/OPPMONTH/MERRA2_OPPMONTH_wb10.200909.nc
+ AEROPP file open 
+ /leonardo_work/ICT25_ESP/RCMDATA/MERRA2/OPPMONTH/MERRA2_OPPMONTH_wb10.200910.nc
+ AEROPP file open 
+ /leonardo_work/ICT25_ESP/RCMDATA/MERRA2/OPPMONTH/MERRA2_OPPMONTH_wb13.200909.nc
+ AEROPP file open 
+ /leonardo_work/ICT25_ESP/RCMDATA/MERRA2/OPPMONTH/MERRA2_OPPMONTH_wb13.200910.nc
+ AEROPP file open 
+ /leonardo_work/ICT25_ESP/RCMDATA/MERRA2/OPPMONTH/MERRA2_OPPMONTH_wb19.200909.nc
+ AEROPP file open 
+ /leonardo_work/ICT25_ESP/RCMDATA/MERRA2/OPPMONTH/MERRA2_OPPMONTH_wb19.200910.nc
+  # Updated VIS ext profile #
+    0.196E-05  0.568E-05  0.207E-04  0.770E-04  0.396E-03  0.111E-02  0.190E-02
+    0.237E-02  0.247E-02  0.268E-02  0.275E-02  0.242E-02  0.206E-02  0.190E-02
+    0.178E-02  0.163E-02  0.148E-02  0.140E-02  0.137E-02  0.137E-02  0.140E-02
+    0.152E-02  0.173E-02  0.199E-02  0.226E-02  0.250E-02  0.270E-02  0.289E-02
+    0.311E-02  0.334E-02  0.352E-02  0.367E-02  0.375E-02  0.378E-02  0.379E-02
+    0.383E-02  0.390E-02  0.401E-02  0.422E-02  0.448E-02  0.471E-02  0.503E-02
+    0.545E-02  0.582E-02  0.608E-02  0.601E-02  0.580E-02  0.537E-02  0.495E-02
+    0.495E-02  0.458E-02
+  # Updated VIS ssa profile #
+    0.916      0.917      0.931      0.953      0.974      0.980      0.974    
+    0.964      0.955      0.953      0.953      0.949      0.940      0.933    
+    0.927      0.920      0.913      0.908      0.903      0.899      0.898    
+    0.898      0.899      0.899      0.900      0.902      0.904      0.905    
+    0.907      0.908      0.909      0.911      0.913      0.915      0.917    
+    0.919      0.922      0.926      0.932      0.939      0.943      0.949    
+    0.955      0.960      0.963      0.964      0.964      0.964      0.964    
+    0.964      0.963    
+  # Updated VIS asy profile #
+    0.661      0.662      0.666      0.671      0.678      0.685      0.691    
+    0.698      0.706      0.725      0.742      0.748      0.744      0.739    
+    0.734      0.729      0.724      0.721      0.718      0.715      0.713    
+    0.714      0.714      0.715      0.715      0.716      0.718      0.720    
+    0.723      0.725      0.727      0.731      0.733      0.735      0.737    
+    0.740      0.742      0.746      0.752      0.759      0.764      0.770    
+    0.776      0.783      0.787      0.788      0.788      0.788      0.786    
+    0.786      0.786    
+ Creating history file output//EURR-3.clm.regcm.h1.20091001_03600.nc
+ CLM History variables written
+Time to run write_record_output_stream:  10.394182 s
+ ATM variables written at  2009-10-01 01:00:00 UTC        
+Time to run write_record_output_stream:  16.626080 s
+ SRF variables written at  2009-10-01 01:00:00 UTC        
+Time to run write_record_output_stream:   4.473384 s
+ RAD variables written at  2009-10-01 01:00:00 UTC        
+ CLM History variables written
+Time to run write_record_output_stream:  10.106678 s
+ ATM variables written at  2009-10-01 02:00:00 UTC        
+Time to run write_record_output_stream:  22.060070 s
+ SRF variables written at  2009-10-01 02:00:00 UTC        
+Time to run write_record_output_stream:   2.571527 s
+ RAD variables written at  2009-10-01 02:00:00 UTC        
+ CLM History variables written
+Time to run write_record_output_stream:  10.309956 s
+ ATM variables written at  2009-10-01 03:00:00 UTC        
+Time to run write_record_output_stream:  25.208290 s
+ SRF variables written at  2009-10-01 03:00:00 UTC        
+Time to run write_record_output_stream:   2.612801 s
+ RAD variables written at  2009-10-01 03:00:00 UTC        
+ $$$  2009-10-01 03:00:00 UTC        
+ $$$ max, min of ps (mb) =  1027.23  679.73
+ CLM History variables written
+Time to run write_record_output_stream:  10.197042 s
+ ATM variables written at  2009-10-01 04:00:00 UTC        
+Time to run write_record_output_stream:  26.902397 s
+ SRF variables written at  2009-10-01 04:00:00 UTC        
+Time to run write_record_output_stream:   2.977511 s
+ RAD variables written at  2009-10-01 04:00:00 UTC        
+ CLM History variables written
+Time to run write_record_output_stream:  10.306536 s
+ ATM variables written at  2009-10-01 05:00:00 UTC        
+Time to run write_record_output_stream:  28.443863 s
+ SRF variables written at  2009-10-01 05:00:00 UTC        
+Time to run write_record_output_stream:   2.773719 s
+ RAD variables written at  2009-10-01 05:00:00 UTC        
+ CLM History variables written
+Time to run write_record_output_stream:   9.957103 s
+ ATM variables written at  2009-10-01 06:00:00 UTC        
+Time to run write_record_output_stream:  28.247249 s
+ SRF variables written at  2009-10-01 06:00:00 UTC        
+Time to run write_record_output_stream:   3.243635 s
+ RAD variables written at  2009-10-01 06:00:00 UTC        
+ SEARCH BC data for 2009100112 , step =      480
+ READY  BC from     2009100106  to 2009100112 
+ $$$  2009-10-01 06:00:00 UTC        
+ $$$ max, min of ps (mb) =  1027.43  679.19
+ CLM History variables written
+Time to run write_record_output_stream:   9.946101 s
+ ATM variables written at  2009-10-01 07:00:00 UTC        
+Time to run write_record_output_stream:  26.167325 s
+ SRF variables written at  2009-10-01 07:00:00 UTC        
+Time to run write_record_output_stream:   2.470103 s
+ RAD variables written at  2009-10-01 07:00:00 UTC        
+ CLM History variables written
+Time to run write_record_output_stream:   9.964749 s
+ ATM variables written at  2009-10-01 08:00:00 UTC        
+Time to run write_record_output_stream:  25.055853 s
+ SRF variables written at  2009-10-01 08:00:00 UTC        
+Time to run write_record_output_stream:   2.836514 s
+ RAD variables written at  2009-10-01 08:00:00 UTC        
+ CLM History variables written
+Time to run write_record_output_stream:   9.956137 s
+ ATM variables written at  2009-10-01 09:00:00 UTC        
+Time to run write_record_output_stream:  24.709742 s
+ SRF variables written at  2009-10-01 09:00:00 UTC        
+Time to run write_record_output_stream:   2.480964 s
+ RAD variables written at  2009-10-01 09:00:00 UTC        
+ $$$  2009-10-01 09:00:00 UTC        
+ $$$ max, min of ps (mb) =  1028.22  679.32
+ CLM History variables written
+Time to run write_record_output_stream:   9.924663 s
+ ATM variables written at  2009-10-01 10:00:00 UTC        
+Time to run write_record_output_stream:   0.000000 s
+ SRF variables written at  2009-10-01 10:00:00 UTC        
+Time to run write_record_output_stream:   3.536362 s
+ RAD variables written at  2009-10-01 10:00:00 UTC        
+ CLM History variables written
+Time to run write_record_output_stream:   9.945930 s
+ ATM variables written at  2009-10-01 11:00:00 UTC        
+Time to run write_record_output_stream:  22.896494 s
+ SRF variables written at  2009-10-01 11:00:00 UTC        
+Time to run write_record_output_stream:   2.768060 s
+ RAD variables written at  2009-10-01 11:00:00 UTC        
+ CLM History variables written
+Time to run write_record_output_stream:  10.295579 s
+ ATM variables written at  2009-10-01 12:00:00 UTC        
+Time to run write_record_output_stream:  22.711544 s
+ SRF variables written at  2009-10-01 12:00:00 UTC        
+Time to run write_record_output_stream:   3.305171 s
+ RAD variables written at  2009-10-01 12:00:00 UTC        
+ SEARCH BC data for 2009100118 , step =      960
+ READY  BC from     2009100112  to 2009100118 
+ $$$  2009-10-01 12:00:00 UTC        
+ $$$ max, min of ps (mb) =  1028.83  678.96
+ CLM History variables written
+Time to run write_record_output_stream:  10.316574 s
+ ATM variables written at  2009-10-01 13:00:00 UTC        
+Time to run write_record_output_stream:  21.776801 s
+ SRF variables written at  2009-10-01 13:00:00 UTC        
+Time to run write_record_output_stream:   2.693899 s
+ RAD variables written at  2009-10-01 13:00:00 UTC        
+ CLM History variables written
+Time to run write_record_output_stream:  10.380942 s
+ ATM variables written at  2009-10-01 14:00:00 UTC        
+Time to run write_record_output_stream:  22.122834 s
+ SRF variables written at  2009-10-01 14:00:00 UTC        
+Time to run write_record_output_stream:   2.712692 s
+ RAD variables written at  2009-10-01 14:00:00 UTC        
+ CLM History variables written
+Time to run write_record_output_stream:  10.467628 s
+ ATM variables written at  2009-10-01 15:00:00 UTC        
+Time to run write_record_output_stream:  20.396374 s
+ SRF variables written at  2009-10-01 15:00:00 UTC        
+Time to run write_record_output_stream:   2.564996 s
+ RAD variables written at  2009-10-01 15:00:00 UTC        
+ $$$  2009-10-01 15:00:00 UTC        
+ $$$ max, min of ps (mb) =  1029.07  678.16
+ CLM History variables written
+Time to run write_record_output_stream:  10.269038 s
+ ATM variables written at  2009-10-01 16:00:00 UTC        
+Time to run write_record_output_stream:  18.797121 s
+ SRF variables written at  2009-10-01 16:00:00 UTC        
+Time to run write_record_output_stream:   2.936866 s
+ RAD variables written at  2009-10-01 16:00:00 UTC        
+ CLM History variables written
+Time to run write_record_output_stream:  10.133949 s
+ ATM variables written at  2009-10-01 17:00:00 UTC        
+Time to run write_record_output_stream:  17.620528 s
+ SRF variables written at  2009-10-01 17:00:00 UTC        
+Time to run write_record_output_stream:   3.316532 s
+ RAD variables written at  2009-10-01 17:00:00 UTC        
+ CLM History variables written
+Time to run write_record_output_stream:  10.208752 s
+ ATM variables written at  2009-10-01 18:00:00 UTC        
+Time to run write_record_output_stream:  16.336379 s
+ SRF variables written at  2009-10-01 18:00:00 UTC        
+Time to run write_record_output_stream:   2.887215 s
+ RAD variables written at  2009-10-01 18:00:00 UTC        
+ SEARCH BC data for 2009100200 , step =     1440
+ READY  BC from     2009100118  to 2009100200 
+ $$$  2009-10-01 18:00:00 UTC        
+ $$$ max, min of ps (mb) =  1028.98  677.95
+ CLM History variables written
+Time to run write_record_output_stream:  10.261215 s
+ ATM variables written at  2009-10-01 19:00:00 UTC        
+Time to run write_record_output_stream:  15.901960 s
+ SRF variables written at  2009-10-01 19:00:00 UTC        
+ MPI Rank:           10  using device:            0
+ Set    20 100% special land-units points to zero slope
+Time to run newoutfiles:  12.981888 s
+Time to run write_record_output_stream:  10.995030 s
+Time to run write_record_output_stream:  10.393095 s
+Time to run write_record_output_stream:  20.882842 s
+Time to run write_record_output_stream:   4.473660 s
+Time to run write_record_output_stream:  10.106309 s
+Time to run write_record_output_stream:  21.261465 s
+Time to run write_record_output_stream:   2.571794 s
+Time to run write_record_output_stream:  10.308537 s
+Time to run write_record_output_stream:  20.885962 s
+Time to run write_record_output_stream:   2.612937 s
+Time to run write_record_output_stream:  10.196732 s
+Time to run write_record_output_stream:  20.685112 s
+Time to run write_record_output_stream:   2.977710 s
+Time to run write_record_output_stream:  10.306323 s
+Time to run write_record_output_stream:  21.244788 s
+Time to run write_record_output_stream:   2.773878 s
+ MPI Rank:           24  using device:            0
+ Set    10 100% special land-units points to zero slope
+Time to run newoutfiles:  13.255059 s
+Time to run write_record_output_stream:  11.067677 s
+Time to run write_record_output_stream:  10.394100 s
+Time to run write_record_output_stream:   1.232620 s
+Time to run write_record_output_stream:   4.473583 s
+Time to run write_record_output_stream:  10.105823 s
+Time to run write_record_output_stream:   1.507457 s
+Time to run write_record_output_stream:   2.571720 s
+Time to run write_record_output_stream:  10.308514 s
+Time to run write_record_output_stream:   1.133124 s
+Time to run write_record_output_stream:   2.612923 s
+Time to run write_record_output_stream:  10.196831 s
+Time to run write_record_output_stream:   0.822050 s
+Time to run write_record_output_stream:   2.977423 s
+Time to run write_record_output_stream:  10.305850 s
+Time to run write_record_output_stream:   1.098173 s
+Time to run write_record_output_stream:   2.773912 s
+ MPI Rank:           19  using device:            0
+ Set    70 100% special land-units points to zero slope
+Time to run newoutfiles:  13.038643 s
+Time to run write_record_output_stream:  11.013276 s
+Time to run write_record_output_stream:  10.393934 s
+Time to run write_record_output_stream:   9.386105 s
+Time to run write_record_output_stream:   4.473557 s
+Time to run write_record_output_stream:  10.106288 s
+Time to run write_record_output_stream:   9.246034 s
+Time to run write_record_output_stream:   2.571797 s
+Time to run write_record_output_stream:  10.308716 s
+Time to run write_record_output_stream:   8.614585 s
+Time to run write_record_output_stream:   2.613083 s
+Time to run write_record_output_stream:  10.196902 s
+Time to run write_record_output_stream:   7.957056 s
+Time to run write_record_output_stream:   2.977718 s
+Time to run write_record_output_stream:  10.306085 s
+Time to run write_record_output_stream:   7.719835 s
+Time to run write_record_output_stream:   2.773923 s
+Time to run write_record_output_stream:   9.956544 s
+Time to run write_record_output_stream:  21.123352 s
+Time to run write_record_output_stream:   3.243881 s
+Time to run write_record_output_stream:   9.945991 s
+Time to run write_record_output_stream:  22.949960 s
+Time to run write_record_output_stream:   2.470339 s
+Time to run write_record_output_stream:   9.963692 s
+Time to run write_record_output_stream:  24.724802 s
+Time to run write_record_output_stream:   2.836606 s
+Time to run write_record_output_stream:   9.955690 s
+Time to run write_record_output_stream:  26.248059 s
+Time to run write_record_output_stream:   2.481237 s
+Time to run write_record_output_stream:   9.923863 s
+Time to run write_record_output_stream:  27.614950 s
+Time to run write_record_output_stream:   3.536532 s
+Time to run write_record_output_stream:   9.945354 s
+Time to run write_record_output_stream:  28.025490 s
+Time to run write_record_output_stream:   2.768146 s
+Time to run write_record_output_stream:  10.295614 s
+Time to run write_record_output_stream:   9.956798 s
+Time to run write_record_output_stream:   0.419316 s
+Time to run write_record_output_stream:   3.243804 s
+Time to run write_record_output_stream:   9.946553 s
+Time to run write_record_output_stream:   0.418687 s
+Time to run write_record_output_stream:   2.470151 s
+Time to run write_record_output_stream:   9.963671 s
+Time to run write_record_output_stream:   0.412096 s
+Time to run write_record_output_stream:   2.836607 s
+Time to run write_record_output_stream:   9.956339 s
+Time to run write_record_output_stream:   0.392217 s
+Time to run write_record_output_stream:   2.481184 s
+Time to run write_record_output_stream:   9.923726 s
+Time to run write_record_output_stream:   0.670333 s
+Time to run write_record_output_stream:   3.536493 s
+Time to run write_record_output_stream:   9.945560 s
+Time to run write_record_output_stream:   0.486263 s
+Time to run write_record_output_stream:   2.768143 s
+Time to run write_record_output_stream:  10.295318 s
+Time to run write_record_output_stream:   9.957011 s
+Time to run write_record_output_stream:   6.642669 s
+Time to run write_record_output_stream:   3.243915 s
+Time to run write_record_output_stream:   9.946132 s
+Time to run write_record_output_stream:   7.448935 s
+Time to run write_record_output_stream:   2.470310 s
+Time to run write_record_output_stream:   9.964104 s
+Time to run write_record_output_stream:   8.621009 s
+Time to run write_record_output_stream:   2.836634 s
+Time to run write_record_output_stream:   9.955904 s
+Time to run write_record_output_stream:   9.984126 s
+Time to run write_record_output_stream:   2.481155 s
+Time to run write_record_output_stream:   9.923712 s
+Time to run write_record_output_stream:  11.233254 s
+Time to run write_record_output_stream:   3.536498 s
+Time to run write_record_output_stream:   9.945932 s
+Time to run write_record_output_stream:  10.591325 s
+Time to run write_record_output_stream:   2.768215 s
+Time to run write_record_output_stream:  10.295471 s
+ MPI Rank:           29  using device:            0
+ Set    10 100% special land-units points to zero slope
+Time to run newoutfiles:  12.723021 s
+Time to run write_record_output_stream:  11.067705 s
+Time to run write_record_output_stream:  10.395034 s
+Time to run write_record_output_stream:   9.087214 s
+Time to run write_record_output_stream:   4.473587 s
+Time to run write_record_output_stream:  10.105920 s
+Time to run write_record_output_stream:  10.297534 s
+Time to run write_record_output_stream:   2.571664 s
+Time to run write_record_output_stream:  10.308393 s
+Time to run write_record_output_stream:  10.982987 s
+Time to run write_record_output_stream:   2.612855 s
+Time to run write_record_output_stream:  10.197153 s
+Time to run write_record_output_stream:  11.987208 s
+Time to run write_record_output_stream:   2.977620 s
+Time to run write_record_output_stream:  10.306041 s
+Time to run write_record_output_stream:  13.481675 s
+Time to run write_record_output_stream:   2.773824 s
+ MPI Rank:           20  using device:            0
+ Set    30 100% special land-units points to zero slope
+Time to run newoutfiles:  12.970996 s
+Time to run write_record_output_stream:  11.068183 s
+Time to run write_record_output_stream:  10.394323 s
+Time to run write_record_output_stream:   0.591340 s
+Time to run write_record_output_stream:   4.473691 s
+Time to run write_record_output_stream:  10.105694 s
+Time to run write_record_output_stream:   0.979550 s
+Time to run write_record_output_stream:   2.571838 s
+Time to run write_record_output_stream:  10.308697 s
+Time to run write_record_output_stream:   0.962600 s
+Time to run write_record_output_stream:   2.613053 s
+Time to run write_record_output_stream:  10.196955 s
+Time to run write_record_output_stream:   1.163324 s
+Time to run write_record_output_stream:   2.977819 s
+Time to run write_record_output_stream:  10.305712 s
+Time to run write_record_output_stream:   1.906954 s
+Time to run write_record_output_stream:   2.773956 s
+Time to run write_record_output_stream:  29.159316 s
+Time to run write_record_output_stream:   3.305397 s
+Time to run write_record_output_stream:  10.316418 s
+Time to run write_record_output_stream:  29.030902 s
+Time to run write_record_output_stream:   2.694078 s
+Time to run write_record_output_stream:  10.380181 s
+Time to run write_record_output_stream:  30.799730 s
+Time to run write_record_output_stream:   2.712868 s
+Time to run write_record_output_stream:  10.466889 s
+Time to run write_record_output_stream:   0.000000 s
+Time to run write_record_output_stream:   2.565067 s
+Time to run write_record_output_stream:  10.268540 s
+Time to run write_record_output_stream:  29.870739 s
+Time to run write_record_output_stream:   2.937084 s
+Time to run write_record_output_stream:  10.133245 s
+Time to run write_record_output_stream:  30.444651 s
+Time to run write_record_output_stream:   3.316666 s
+Time to run write_record_output_stream:  10.208359 s
+Time to run write_record_output_stream:  30.707210 s
+Time to run write_record_output_stream:   1.209567 s
+Time to run write_record_output_stream:   3.305403 s
+Time to run write_record_output_stream:  10.315866 s
+Time to run write_record_output_stream:   0.406217 s
+Time to run write_record_output_stream:   2.694146 s
+Time to run write_record_output_stream:  10.380292 s
+Time to run write_record_output_stream:   1.659828 s
+Time to run write_record_output_stream:   2.712769 s
+Time to run write_record_output_stream:  10.467177 s
+Time to run write_record_output_stream:   0.000000 s
+Time to run write_record_output_stream:   2.564901 s
+Time to run write_record_output_stream:  10.268523 s
+Time to run write_record_output_stream:   0.512002 s
+Time to run write_record_output_stream:   2.937053 s
+Time to run write_record_output_stream:  10.133591 s
+Time to run write_record_output_stream:   1.189620 s
+Time to run write_record_output_stream:   3.316686 s
+Time to run write_record_output_stream:  10.208412 s
+Time to run write_record_output_stream:   0.963647 s
+Time to run write_record_output_stream:  10.181586 s
+Time to run write_record_output_stream:   3.305388 s
+Time to run write_record_output_stream:  10.316481 s
+Time to run write_record_output_stream:   8.859122 s
+Time to run write_record_output_stream:   2.694124 s
+Time to run write_record_output_stream:  10.380437 s
+Time to run write_record_output_stream:   9.596058 s
+Time to run write_record_output_stream:   2.712910 s
+Time to run write_record_output_stream:  10.467161 s
+Time to run write_record_output_stream:   0.000000 s
+Time to run write_record_output_stream:   2.565093 s
+Time to run write_record_output_stream:  10.268618 s
+Time to run write_record_output_stream:   7.335116 s
+Time to run write_record_output_stream:   2.937067 s
+Time to run write_record_output_stream:  10.133398 s
+Time to run write_record_output_stream:   7.174063 s
+Time to run write_record_output_stream:   3.316744 s
+Time to run write_record_output_stream:  10.208225 s
+Time to run write_record_output_stream:   6.501740 s
+ MPI Rank:            3  using device:            0
+ Set    10 100% special land-units points to zero slope
+Time to run newoutfiles:  13.306402 s
+Time to run write_record_output_stream:  10.994840 s
+Time to run write_record_output_stream:  10.393491 s
+Time to run write_record_output_stream:  28.162940 s
+Time to run write_record_output_stream:   4.473375 s
+Time to run write_record_output_stream:  10.106103 s
+Time to run write_record_output_stream:  29.375838 s
+Time to run write_record_output_stream:   2.571878 s
+Time to run write_record_output_stream:  10.308879 s
+Time to run write_record_output_stream:  30.158204 s
+Time to run write_record_output_stream:   2.613044 s
+Time to run write_record_output_stream:  10.196726 s
+Time to run write_record_output_stream:  30.953563 s
+Time to run write_record_output_stream:   2.977924 s
+Time to run write_record_output_stream:  10.306739 s
+Time to run write_record_output_stream:  32.127830 s
+Time to run write_record_output_stream:   2.773965 s
+ MPI Rank:           15  using device:            0
+ Set   110 100% special land-units points to zero slope
+Time to run newoutfiles:  13.181142 s
+Time to run write_record_output_stream:  11.013285 s
+Time to run write_record_output_stream:  10.393662 s
+Time to run write_record_output_stream:   2.681412 s
+Time to run write_record_output_stream:   4.473595 s
+Time to run write_record_output_stream:  10.106716 s
+Time to run write_record_output_stream:   2.622224 s
+Time to run write_record_output_stream:   2.571934 s
+Time to run write_record_output_stream:  10.308633 s
+Time to run write_record_output_stream:   2.385922 s
+Time to run write_record_output_stream:   2.612985 s
+Time to run write_record_output_stream:  10.196830 s
+Time to run write_record_output_stream:   2.847385 s
+Time to run write_record_output_stream:   2.977741 s
+Time to run write_record_output_stream:  10.306052 s
+Time to run write_record_output_stream:   3.979249 s
+Time to run write_record_output_stream:   2.773926 s
+Time to run write_record_output_stream:   9.957087 s
+Time to run write_record_output_stream:  14.179160 s
+Time to run write_record_output_stream:   3.243689 s
+Time to run write_record_output_stream:   9.947081 s
+Time to run write_record_output_stream:  15.884908 s
+Time to run write_record_output_stream:   2.470172 s
+Time to run write_record_output_stream:   9.964001 s
+Time to run write_record_output_stream:  15.388567 s
+Time to run write_record_output_stream:   2.836569 s
+Time to run write_record_output_stream:   9.956625 s
+Time to run write_record_output_stream:  13.467379 s
+Time to run write_record_output_stream:   2.481025 s
+Time to run write_record_output_stream:   9.924182 s
+Time to run write_record_output_stream:  10.839016 s
+Time to run write_record_output_stream:   3.536510 s
+Time to run write_record_output_stream:   9.946103 s
+Time to run write_record_output_stream:   8.380562 s
+Time to run write_record_output_stream:   2.768050 s
+Time to run write_record_output_stream:  10.295638 s
+Time to run write_record_output_stream:   9.956736 s
+Time to run write_record_output_stream:   1.734840 s
+Time to run write_record_output_stream:   3.243890 s
+Time to run write_record_output_stream:   9.946413 s
+Time to run write_record_output_stream:   2.790096 s
+Time to run write_record_output_stream:   2.470325 s
+Time to run write_record_output_stream:   9.963805 s
+Time to run write_record_output_stream:   3.286382 s
+Time to run write_record_output_stream:   2.836753 s
+Time to run write_record_output_stream:   9.956458 s
+Time to run write_record_output_stream:   3.697685 s
+Time to run write_record_output_stream:   2.481264 s
+Time to run write_record_output_stream:   9.923870 s
+Time to run write_record_output_stream:   4.159533 s
+Time to run write_record_output_stream:   3.536648 s
+Time to run write_record_output_stream:   9.945729 s
+Time to run write_record_output_stream:   3.937285 s
+Time to run write_record_output_stream:   2.768266 s
+Time to run write_record_output_stream:  10.295237 s
+Time to run write_record_output_stream:   2.887487 s
+Time to run write_record_output_stream:  10.260916 s
+Time to run write_record_output_stream:  31.106481 s
+Time to run write_record_output_stream:   3.219832 s
+Time to run write_record_output_stream:  10.386021 s
+Time to run write_record_output_stream:  32.104988 s
+Time to run write_record_output_stream:   3.180447 s
+Time to run write_record_output_stream:  10.397900 s
+Time to run write_record_output_stream:  32.782650 s
+Time to run write_record_output_stream:   2.722699 s
+Time to run write_record_output_stream:  10.121583 s
+Time to run write_record_output_stream:  33.537172 s
+Time to run write_record_output_stream:   2.702232 s
+Time to run write_record_output_stream:  10.276235 s
+Time to run write_record_output_stream:  35.004416 s
+Time to run write_record_output_stream:   3.207318 s
+Time to run write_record_output_stream:  10.388337 s
+Time to run write_record_output_stream:  34.824695 s
+Time to run write_record_output_stream:   0.240238 s
+Time to run write_record_output_stream:   2.887367 s
+Time to run write_record_output_stream:  10.260643 s
+Time to run write_record_output_stream:   0.484878 s
+Time to run write_record_output_stream:   3.219777 s
+Time to run write_record_output_stream:  10.385943 s
+Time to run write_record_output_stream:   0.624416 s
+Time to run write_record_output_stream:   3.180334 s
+Time to run write_record_output_stream:  10.398311 s
+Time to run write_record_output_stream:   0.468461 s
+Time to run write_record_output_stream:   2.722614 s
+Time to run write_record_output_stream:  10.121677 s
+Time to run write_record_output_stream:   0.406398 s
+Time to run write_record_output_stream:   2.702156 s
+Time to run write_record_output_stream:  10.277074 s
+Time to run write_record_output_stream:   1.211499 s
+Time to run write_record_output_stream:   3.207315 s
+Time to run write_record_output_stream:  10.388321 s
+Time to run write_record_output_stream:   0.499545 s
+Time to run write_record_output_stream:   0.240370 s
+Time to run write_record_output_stream:   2.887516 s
+Time to run write_record_output_stream:  10.260988 s
+Time to run write_record_output_stream:   6.131160 s
+Time to run write_record_output_stream:   3.219839 s
+Time to run write_record_output_stream:  10.385916 s
+Time to run write_record_output_stream:   6.968686 s
+Time to run write_record_output_stream:   3.180388 s
+Time to run write_record_output_stream:  10.398022 s
+Time to run write_record_output_stream:   7.287433 s
+Time to run write_record_output_stream:   2.722651 s
+Time to run write_record_output_stream:  10.121431 s
+Time to run write_record_output_stream:   7.402492 s
+Time to run write_record_output_stream:   2.702146 s
+Time to run write_record_output_stream:  10.275973 s
+Time to run write_record_output_stream:   8.337444 s
+Time to run write_record_output_stream:   3.207389 s
+Time to run write_record_output_stream:  10.388214 s
+Time to run write_record_output_stream:   7.680269 s
+Time to run write_record_output_stream:   0.240276 s
+Time to run write_record_output_stream:   9.956809 s
+Time to run write_record_output_stream:  32.257173 s
+Time to run write_record_output_stream:   3.244050 s
+Time to run write_record_output_stream:   9.945849 s
+Time to run write_record_output_stream:  33.950094 s
+Time to run write_record_output_stream:   2.470412 s
+Time to run write_record_output_stream:   9.964482 s
+Time to run write_record_output_stream:  35.333244 s
+Time to run write_record_output_stream:   2.836740 s
+Time to run write_record_output_stream:   9.956261 s
+Time to run write_record_output_stream:  36.495440 s
+Time to run write_record_output_stream:   2.481263 s
+Time to run write_record_output_stream:   9.924873 s
+Time to run write_record_output_stream:  37.539066 s
+Time to run write_record_output_stream:   3.536725 s
+Time to run write_record_output_stream:   9.946150 s
+Time to run write_record_output_stream:  37.540881 s
+Time to run write_record_output_stream:   2.768359 s
+Time to run write_record_output_stream:  10.295772 s
+Time to run write_record_output_stream:   9.956769 s
+Time to run write_record_output_stream:   4.563543 s
+Time to run write_record_output_stream:   3.243913 s
+Time to run write_record_output_stream:   9.945856 s
+Time to run write_record_output_stream:   7.182580 s
+Time to run write_record_output_stream:   2.470337 s
+Time to run write_record_output_stream:   9.964289 s
+Time to run write_record_output_stream:   9.479163 s
+Time to run write_record_output_stream:   2.836722 s
+Time to run write_record_output_stream:   9.955882 s
+Time to run write_record_output_stream:  11.061112 s
+Time to run write_record_output_stream:   2.481301 s
+Time to run write_record_output_stream:   9.923504 s
+Time to run write_record_output_stream:  12.669467 s
+Time to run write_record_output_stream:   3.536636 s
+Time to run write_record_output_stream:   9.945599 s
+Time to run write_record_output_stream:  13.250634 s
+Time to run write_record_output_stream:   2.768107 s
+Time to run write_record_output_stream:  10.295337 s
+Time to run write_record_output_stream:   7.592655 s
+Time to run write_record_output_stream:   3.305276 s
+Time to run write_record_output_stream:  10.316293 s
+Time to run write_record_output_stream:   6.869840 s
+Time to run write_record_output_stream:   2.694039 s
+Time to run write_record_output_stream:  10.380531 s
+Time to run write_record_output_stream:   8.906310 s
+Time to run write_record_output_stream:   2.712832 s
+Time to run write_record_output_stream:  10.467697 s
+Time to run write_record_output_stream:   0.000000 s
+Time to run write_record_output_stream:   2.565104 s
+Time to run write_record_output_stream:  10.268797 s
+Time to run write_record_output_stream:  15.346320 s
+Time to run write_record_output_stream:   2.937075 s
+Time to run write_record_output_stream:  10.134121 s
+Time to run write_record_output_stream:  22.193249 s
+Time to run write_record_output_stream:   3.316699 s
+Time to run write_record_output_stream:  10.208842 s
+Time to run write_record_output_stream:  24.881549 s
+Time to run write_record_output_stream:   4.462166 s
+Time to run write_record_output_stream:   3.305462 s
+Time to run write_record_output_stream:  10.316062 s
+Time to run write_record_output_stream:   3.748444 s
+Time to run write_record_output_stream:   2.694196 s
+Time to run write_record_output_stream:  10.380558 s
+Time to run write_record_output_stream:   5.517025 s
+Time to run write_record_output_stream:   2.712958 s
+Time to run write_record_output_stream:  10.467364 s
+Time to run write_record_output_stream:   0.000000 s
+Time to run write_record_output_stream:   2.565092 s
+Time to run write_record_output_stream:  10.268662 s
+Time to run write_record_output_stream:   5.208763 s
+Time to run write_record_output_stream:   2.937132 s
+Time to run write_record_output_stream:  10.133599 s
+Time to run write_record_output_stream:   5.828644 s
+Time to run write_record_output_stream:   3.316852 s
+Time to run write_record_output_stream:  10.208312 s
+Time to run write_record_output_stream:   6.156594 s
+Time to run write_record_output_stream:   2.559375 s
+Time to run write_record_output_stream:   2.559161 s
+Time to run write_record_output_stream:   2.559283 s
+Time to run write_record_output_stream:  38.068986 s
+Time to run write_record_output_stream:   3.305455 s
+Time to run write_record_output_stream:  10.316606 s
+Time to run write_record_output_stream:  37.183631 s
+Time to run write_record_output_stream:   2.694332 s
+Time to run write_record_output_stream:  10.380691 s
+Time to run write_record_output_stream:  37.996121 s
+Time to run write_record_output_stream:   2.713015 s
+Time to run write_record_output_stream:  10.467462 s
+Time to run write_record_output_stream:   0.000000 s
+Time to run write_record_output_stream:   2.565277 s
+Time to run write_record_output_stream:  10.269175 s
+Time to run write_record_output_stream:  34.424907 s
+Time to run write_record_output_stream:   2.937203 s
+Time to run write_record_output_stream:  10.134182 s
+Time to run write_record_output_stream:  33.599443 s
+Time to run write_record_output_stream:   3.316952 s
+Time to run write_record_output_stream:  10.208878 s
+Time to run write_record_output_stream:  32.567819 s
+Time to run write_record_output_stream:  14.414385 s
+Time to run write_record_output_stream:   3.304819 s
+Time to run write_record_output_stream:  10.316539 s
+Time to run write_record_output_stream:  14.401661 s
+Time to run write_record_output_stream:   2.693959 s
+Time to run write_record_output_stream:  10.378813 s
+Time to run write_record_output_stream:  15.242940 s
+Time to run write_record_output_stream:   2.712740 s
+Time to run write_record_output_stream:  10.465684 s
+Time to run write_record_output_stream:   0.000000 s
+Time to run write_record_output_stream:   2.564634 s
+Time to run write_record_output_stream:  10.267478 s
+Time to run write_record_output_stream:  11.531701 s
+Time to run write_record_output_stream:   2.936992 s
+Time to run write_record_output_stream:  10.132900 s
+Time to run write_record_output_stream:  10.236722 s
+Time to run write_record_output_stream:   3.316574 s
+Time to run write_record_output_stream:  10.205934 s
+Time to run write_record_output_stream:   8.574251 s
+Time to run write_record_output_stream:   2.887419 s
+Time to run write_record_output_stream:  10.261245 s
+Time to run write_record_output_stream:  25.415491 s
+Time to run write_record_output_stream:   3.219760 s
+Time to run write_record_output_stream:  10.386135 s
+Time to run write_record_output_stream:  26.247783 s
+Time to run write_record_output_stream:   3.180403 s
+Time to run write_record_output_stream:  10.398575 s
+Time to run write_record_output_stream:  26.550424 s
+Time to run write_record_output_stream:   2.722744 s
+Time to run write_record_output_stream:  10.121777 s
+Time to run write_record_output_stream:  26.434715 s
+Time to run write_record_output_stream:   2.702198 s
+Time to run write_record_output_stream:  10.277130 s
+Time to run write_record_output_stream:  26.978868 s
+Time to run write_record_output_stream:   3.207318 s
+Time to run write_record_output_stream:  10.388702 s
+Time to run write_record_output_stream:  26.051697 s
+Time to run write_record_output_stream:   0.240245 s
+Time to run write_record_output_stream:   2.887483 s
+Time to run write_record_output_stream:  10.260773 s
+Time to run write_record_output_stream:   6.773597 s
+Time to run write_record_output_stream:   3.219863 s
+Time to run write_record_output_stream:  10.385741 s
+Time to run write_record_output_stream:   7.728307 s
+Time to run write_record_output_stream:   3.180461 s
+Time to run write_record_output_stream:  10.398126 s
+Time to run write_record_output_stream:   9.032654 s
+Time to run write_record_output_stream:   2.722718 s
+Time to run write_record_output_stream:  10.121504 s
+Time to run write_record_output_stream:  10.253335 s
+Time to run write_record_output_stream:   2.702300 s
+Time to run write_record_output_stream:  10.276118 s
+Time to run write_record_output_stream:  11.458716 s
+Time to run write_record_output_stream:   3.207343 s
+Time to run write_record_output_stream:  10.388330 s
+Time to run write_record_output_stream:  11.173466 s
+Time to run write_record_output_stream:   0.240237 s
+ MPI Rank:           11  using device:            0
+ Set     1 100% special land-units points to zero slope
+Time to run newoutfiles:  13.310770 s
+Time to run write_record_output_stream:  10.995166 s
+Time to run write_record_output_stream:  10.393538 s
+Time to run write_record_output_stream:  14.782743 s
+Time to run write_record_output_stream:   4.473495 s
+Time to run write_record_output_stream:  10.106483 s
+Time to run write_record_output_stream:  16.341700 s
+Time to run write_record_output_stream:   2.571707 s
+Time to run write_record_output_stream:  10.308676 s
+Time to run write_record_output_stream:  17.018720 s
+Time to run write_record_output_stream:   2.612854 s
+Time to run write_record_output_stream:  10.196885 s
+Time to run write_record_output_stream:  17.845578 s
+Time to run write_record_output_stream:   2.977577 s
+Time to run write_record_output_stream:  10.306096 s
+Time to run write_record_output_stream:  19.203607 s
+Time to run write_record_output_stream:   2.773765 s
+Time to run write_record_output_stream:   2.887548 s
+Time to run write_record_output_stream:  10.261436 s
+Time to run write_record_output_stream:  31.879778 s
+Time to run write_record_output_stream:   3.219900 s
+Time to run write_record_output_stream:  10.386629 s
+Time to run write_record_output_stream:  32.027991 s
+Time to run write_record_output_stream:   3.180520 s
+Time to run write_record_output_stream:  10.398264 s
+Time to run write_record_output_stream:  31.969903 s
+Time to run write_record_output_stream:   2.722791 s
+Time to run write_record_output_stream:  10.122209 s
+Time to run write_record_output_stream:  31.944914 s
+Time to run write_record_output_stream:   2.702316 s
+Time to run write_record_output_stream:  10.276039 s
+Time to run write_record_output_stream:  33.055509 s
+Time to run write_record_output_stream:   3.207394 s
+Time to run write_record_output_stream:  10.388556 s
+Time to run write_record_output_stream:  32.977274 s
+Time to run write_record_output_stream:   0.240135 s
+Time to run write_record_output_stream:   2.887254 s
+Time to run write_record_output_stream:  10.259340 s
+Time to run write_record_output_stream:   6.581860 s
+Time to run write_record_output_stream:   3.219486 s
+Time to run write_record_output_stream:  10.384750 s
+Time to run write_record_output_stream:   5.472054 s
+Time to run write_record_output_stream:   3.180084 s
+Time to run write_record_output_stream:  10.396443 s
+Time to run write_record_output_stream:   4.167957 s
+Time to run write_record_output_stream:   2.722476 s
+Time to run write_record_output_stream:  10.120023 s
+Time to run write_record_output_stream:   3.201786 s
+Time to run write_record_output_stream:   2.702112 s
+Time to run write_record_output_stream:  10.275085 s
+Time to run write_record_output_stream:   3.262322 s
+Time to run write_record_output_stream:   3.207549 s
+Time to run write_record_output_stream:  10.387130 s
+Time to run write_record_output_stream:   2.145815 s
+Time to run write_record_output_stream:   0.239676 s
+Time to run write_record_output_stream:   2.559320 s
+Time to run write_record_output_stream:   2.559389 s
+Time to run write_record_output_stream:   9.956884 s
+Time to run write_record_output_stream:  19.582632 s
+Time to run write_record_output_stream:   3.243859 s
+Time to run write_record_output_stream:   9.946295 s
+Time to run write_record_output_stream:  21.183501 s
+Time to run write_record_output_stream:   2.470182 s
+Time to run write_record_output_stream:   9.964046 s
+Time to run write_record_output_stream:  22.239854 s
+Time to run write_record_output_stream:   2.836544 s
+Time to run write_record_output_stream:   9.955917 s
+Time to run write_record_output_stream:  22.891940 s
+Time to run write_record_output_stream:   2.481124 s
+Time to run write_record_output_stream:   9.923878 s
+Time to run write_record_output_stream:  23.293249 s
+Time to run write_record_output_stream:   3.536584 s
+Time to run write_record_output_stream:   9.945400 s
+Time to run write_record_output_stream:  22.689861 s
+Time to run write_record_output_stream:   2.768138 s
+Time to run write_record_output_stream:  10.295740 s
+Time to run write_record_output_stream:   2.559428 s
+Time to run write_record_output_stream:   2.558997 s
+ MPI Rank:           30  using device:            0
+ Set     1 100% special land-units points to zero slope
+Time to run newoutfiles:  12.956689 s
+Time to run write_record_output_stream:  11.148303 s
+Time to run write_record_output_stream:  10.394928 s
+Time to run write_record_output_stream:  17.080492 s
+Time to run write_record_output_stream:   4.473528 s
+Time to run write_record_output_stream:  10.105464 s
+Time to run write_record_output_stream:  20.357147 s
+Time to run write_record_output_stream:   2.571592 s
+Time to run write_record_output_stream:  10.307980 s
+Time to run write_record_output_stream:  22.509230 s
+Time to run write_record_output_stream:   2.612836 s
+Time to run write_record_output_stream:  10.197083 s
+Time to run write_record_output_stream:  24.135060 s
+Time to run write_record_output_stream:   2.977484 s
+Time to run write_record_output_stream:  10.305871 s
+Time to run write_record_output_stream:  25.684217 s
+Time to run write_record_output_stream:   2.773815 s
+Time to run write_record_output_stream:  22.770462 s
+Time to run write_record_output_stream:   3.305327 s
+Time to run write_record_output_stream:  10.316367 s
+Time to run write_record_output_stream:  21.524444 s
+Time to run write_record_output_stream:   2.694046 s
+Time to run write_record_output_stream:  10.379915 s
+Time to run write_record_output_stream:  22.005910 s
+Time to run write_record_output_stream:   2.712775 s
+Time to run write_record_output_stream:  10.467003 s
+Time to run write_record_output_stream:   0.000000 s
+Time to run write_record_output_stream:   2.564961 s
+Time to run write_record_output_stream:  10.268852 s
+Time to run write_record_output_stream:  18.220914 s
+Time to run write_record_output_stream:   2.936997 s
+Time to run write_record_output_stream:  10.133282 s
+Time to run write_record_output_stream:  17.489088 s
+Time to run write_record_output_stream:   3.316630 s
+Time to run write_record_output_stream:  10.208431 s
+Time to run write_record_output_stream:  16.422725 s
+ MPI Rank:           14  using device:            0
+ Set    10 100% special land-units points to zero slope
+Time to run newoutfiles:  13.029278 s
+Time to run write_record_output_stream:  10.995685 s
+Time to run write_record_output_stream:  10.393472 s
+Time to run write_record_output_stream:  17.790057 s
+Time to run write_record_output_stream:   4.473668 s
+Time to run write_record_output_stream:  10.106594 s
+Time to run write_record_output_stream:  18.031496 s
+Time to run write_record_output_stream:   2.571817 s
+Time to run write_record_output_stream:  10.308165 s
+Time to run write_record_output_stream:  18.242060 s
+Time to run write_record_output_stream:   2.613052 s
+Time to run write_record_output_stream:  10.196445 s
+Time to run write_record_output_stream:  19.501992 s
+Time to run write_record_output_stream:   2.977780 s
+Time to run write_record_output_stream:  10.305903 s
+Time to run write_record_output_stream:  21.050416 s
+Time to run write_record_output_stream:   2.774069 s
+Time to run write_record_output_stream:   9.957002 s
+Time to run write_record_output_stream:  25.821395 s
+Time to run write_record_output_stream:   3.243790 s
+Time to run write_record_output_stream:   9.946583 s
+Time to run write_record_output_stream:  27.269398 s
+Time to run write_record_output_stream:   2.470196 s
+Time to run write_record_output_stream:   9.963854 s
+Time to run write_record_output_stream:  28.525322 s
+Time to run write_record_output_stream:   2.836580 s
+Time to run write_record_output_stream:   9.956656 s
+Time to run write_record_output_stream:  29.804384 s
+Time to run write_record_output_stream:   2.481085 s
+Time to run write_record_output_stream:   9.923845 s
+Time to run write_record_output_stream:  31.442320 s
+Time to run write_record_output_stream:   3.536451 s
+Time to run write_record_output_stream:   9.945687 s
+Time to run write_record_output_stream:  32.400822 s
+Time to run write_record_output_stream:   2.768123 s
+Time to run write_record_output_stream:  10.295546 s
+Time to run write_record_output_stream:   2.887481 s
+Time to run write_record_output_stream:  10.260922 s
+Time to run write_record_output_stream:  15.695009 s
+Time to run write_record_output_stream:   3.219764 s
+Time to run write_record_output_stream:  10.386167 s
+Time to run write_record_output_stream:  15.894523 s
+Time to run write_record_output_stream:   3.180288 s
+Time to run write_record_output_stream:  10.398023 s
+Time to run write_record_output_stream:  16.063724 s
+Time to run write_record_output_stream:   2.722577 s
+Time to run write_record_output_stream:  10.121534 s
+Time to run write_record_output_stream:  16.459093 s
+Time to run write_record_output_stream:   2.702173 s
+Time to run write_record_output_stream:  10.275963 s
+Time to run write_record_output_stream:  17.940953 s
+Time to run write_record_output_stream:   3.207233 s
+Time to run write_record_output_stream:  10.388447 s
+Time to run write_record_output_stream:  18.414406 s
+Time to run write_record_output_stream:   0.240248 s
+Time to run write_record_output_stream:   9.956378 s
+Time to run write_record_output_stream:  21.293196 s
+Time to run write_record_output_stream:   3.244022 s
+Time to run write_record_output_stream:   9.945919 s
+Time to run write_record_output_stream:  22.988542 s
+Time to run write_record_output_stream:   2.470420 s
+Time to run write_record_output_stream:   9.963779 s
+Time to run write_record_output_stream:  24.560217 s
+Time to run write_record_output_stream:   2.836706 s
+Time to run write_record_output_stream:   9.955606 s
+Time to run write_record_output_stream:  26.583006 s
+Time to run write_record_output_stream:   2.481359 s
+Time to run write_record_output_stream:   9.923666 s
+Time to run write_record_output_stream:  28.564682 s
+Time to run write_record_output_stream:   3.536741 s
+Time to run write_record_output_stream:   9.945815 s
+Time to run write_record_output_stream:  29.423937 s
+Time to run write_record_output_stream:   2.768320 s
+Time to run write_record_output_stream:  10.294890 s
+Time to run write_record_output_stream:  34.173251 s
+Time to run write_record_output_stream:   3.305343 s
+Time to run write_record_output_stream:  10.316195 s
+Time to run write_record_output_stream:  34.685889 s
+Time to run write_record_output_stream:   2.694052 s
+Time to run write_record_output_stream:  10.380372 s
+Time to run write_record_output_stream:  36.816032 s
+Time to run write_record_output_stream:   2.712772 s
+Time to run write_record_output_stream:  10.467372 s
+Time to run write_record_output_stream:   0.000000 s
+Time to run write_record_output_stream:   2.564984 s
+Time to run write_record_output_stream:  10.268547 s
+Time to run write_record_output_stream:  34.858447 s
+Time to run write_record_output_stream:   2.937050 s
+Time to run write_record_output_stream:  10.133696 s
+Time to run write_record_output_stream:  34.396589 s
+Time to run write_record_output_stream:   3.316659 s
+Time to run write_record_output_stream:  10.208411 s
+Time to run write_record_output_stream:  32.954019 s
+Time to run write_record_output_stream:   2.559230 s
+Time to run write_record_output_stream:  30.998872 s
+Time to run write_record_output_stream:   3.304995 s
+Time to run write_record_output_stream:  10.316473 s
+Time to run write_record_output_stream:  30.880741 s
+Time to run write_record_output_stream:   2.693995 s
+Time to run write_record_output_stream:  10.378731 s
+Time to run write_record_output_stream:  32.059798 s
+Time to run write_record_output_stream:   2.712851 s
+Time to run write_record_output_stream:  10.465407 s
+Time to run write_record_output_stream:   0.000000 s
+Time to run write_record_output_stream:   2.564889 s
+Time to run write_record_output_stream:  10.267516 s
+Time to run write_record_output_stream:  29.441274 s
+Time to run write_record_output_stream:   2.937066 s
+Time to run write_record_output_stream:  10.132957 s
+Time to run write_record_output_stream:  29.132520 s
+Time to run write_record_output_stream:   3.316654 s
+Time to run write_record_output_stream:  10.205888 s
+Time to run write_record_output_stream:  29.086893 s
+Time to run write_record_output_stream:   2.887253 s
+Time to run write_record_output_stream:  10.261137 s
+Time to run write_record_output_stream:  30.433369 s
+Time to run write_record_output_stream:   3.219765 s
+Time to run write_record_output_stream:  10.385552 s
+Time to run write_record_output_stream:  27.859287 s
+Time to run write_record_output_stream:   3.180310 s
+Time to run write_record_output_stream:  10.398272 s
+Time to run write_record_output_stream:  25.310487 s
+Time to run write_record_output_stream:   2.722608 s
+Time to run write_record_output_stream:  10.121819 s
+Time to run write_record_output_stream:  23.208263 s
+Time to run write_record_output_stream:   2.702130 s
+Time to run write_record_output_stream:  10.276919 s
+Time to run write_record_output_stream:  22.826844 s
+Time to run write_record_output_stream:   3.207186 s
+Time to run write_record_output_stream:  10.388698 s
+Time to run write_record_output_stream:  21.834496 s
+Time to run write_record_output_stream:   0.240257 s
+Time to run write_record_output_stream:   2.887474 s
+Time to run write_record_output_stream:  10.259244 s
+Time to run write_record_output_stream:  29.527739 s
+Time to run write_record_output_stream:   3.219594 s
+Time to run write_record_output_stream:  10.384116 s
+Time to run write_record_output_stream:  30.349280 s
+Time to run write_record_output_stream:   3.180208 s
+Time to run write_record_output_stream:  10.396408 s
+Time to run write_record_output_stream:  30.633339 s
+Time to run write_record_output_stream:   2.722668 s
+Time to run write_record_output_stream:  10.119946 s
+Time to run write_record_output_stream:  30.747638 s
+Time to run write_record_output_stream:   2.702224 s
+Time to run write_record_output_stream:  10.274528 s
+Time to run write_record_output_stream:  31.660793 s
+Time to run write_record_output_stream:   3.207529 s
+Time to run write_record_output_stream:  10.386717 s
+Time to run write_record_output_stream:  30.985543 s
+Time to run write_record_output_stream:   0.239719 s
+Time to run write_record_output_stream:   2.559259 s
+Time to run write_record_output_stream:   2.559104 s
+ MPI Rank:           25  using device:            0
+Time to run newoutfiles:  13.069022 s
+Time to run write_record_output_stream:  11.067972 s
+Time to run write_record_output_stream:  10.394778 s
+Time to run write_record_output_stream:  14.858824 s
+Time to run write_record_output_stream:   4.473526 s
+Time to run write_record_output_stream:  10.106263 s
+Time to run write_record_output_stream:  16.358130 s
+Time to run write_record_output_stream:   2.571664 s
+Time to run write_record_output_stream:  10.308750 s
+Time to run write_record_output_stream:  17.415519 s
+Time to run write_record_output_stream:   2.612855 s
+Time to run write_record_output_stream:  10.197312 s
+Time to run write_record_output_stream:  18.883192 s
+Time to run write_record_output_stream:   2.977674 s
+Time to run write_record_output_stream:  10.306386 s
+Time to run write_record_output_stream:  21.069502 s
+Time to run write_record_output_stream:   2.773876 s
+Time to run write_record_output_stream:   9.957438 s
+Time to run write_record_output_stream:  21.954208 s
+Time to run write_record_output_stream:   3.243788 s
+Time to run write_record_output_stream:   9.946881 s
+Time to run write_record_output_stream:  24.113814 s
+Time to run write_record_output_stream:   2.470160 s
+Time to run write_record_output_stream:   9.964269 s
+Time to run write_record_output_stream:  23.891181 s
+Time to run write_record_output_stream:   2.836535 s
+Time to run write_record_output_stream:   9.957022 s
+Time to run write_record_output_stream:  19.899677 s
+Time to run write_record_output_stream:   2.481156 s
+Time to run write_record_output_stream:   9.923989 s
+Time to run write_record_output_stream:  14.249045 s
+Time to run write_record_output_stream:   3.536499 s
+Time to run write_record_output_stream:   9.946202 s
+Time to run write_record_output_stream:  11.127228 s
+Time to run write_record_output_stream:   2.768111 s
+Time to run write_record_output_stream:  10.295614 s
+Time to run write_record_output_stream:   9.704522 s
+Time to run write_record_output_stream:   3.305348 s
+Time to run write_record_output_stream:  10.316451 s
+Time to run write_record_output_stream:   7.540523 s
+Time to run write_record_output_stream:   2.694075 s
+Time to run write_record_output_stream:  10.380944 s
+Time to run write_record_output_stream:   8.265128 s
+Time to run write_record_output_stream:   2.712875 s
+Time to run write_record_output_stream:  10.467848 s
+Time to run write_record_output_stream:   0.000000 s
+Time to run write_record_output_stream:   2.564978 s
+Time to run write_record_output_stream:  10.269059 s
+Time to run write_record_output_stream:  10.141758 s
+Time to run write_record_output_stream:   2.937022 s
+Time to run write_record_output_stream:  10.134254 s
+Time to run write_record_output_stream:  13.560421 s
+Time to run write_record_output_stream:   3.316650 s
+Time to run write_record_output_stream:  10.208870 s
+Time to run write_record_output_stream:  14.723784 s
+Time to run write_record_output_stream:   2.887354 s
+Time to run write_record_output_stream:  10.261442 s
+Time to run write_record_output_stream:  15.962813 s
+Time to run write_record_output_stream:   3.219727 s
+Time to run write_record_output_stream:  10.385923 s
+Time to run write_record_output_stream:  17.684038 s
+Time to run write_record_output_stream:   3.180281 s
+Time to run write_record_output_stream:  10.398764 s
+Time to run write_record_output_stream:  18.996366 s
+Time to run write_record_output_stream:   2.722622 s
+Time to run write_record_output_stream:  10.122302 s
+Time to run write_record_output_stream:  19.736047 s
+Time to run write_record_output_stream:   2.702092 s
+Time to run write_record_output_stream:  10.277221 s
+Time to run write_record_output_stream:  21.224149 s
+Time to run write_record_output_stream:   3.207303 s
+Time to run write_record_output_stream:  10.388786 s
+Time to run write_record_output_stream:  20.909739 s
+Time to run write_record_output_stream:   0.240263 s
+Time to run write_record_output_stream:   2.559173 s
+Time to run dispose_output_streams subroutine:   0.000000 s
+ MPI Rank:           31  using device:            0
+Time to run newoutfiles:  13.011039 s
+Time to run write_record_output_stream:  11.148288 s
+Time to run write_record_output_stream:  10.395132 s
+Time to run write_record_output_stream:  11.435286 s
+Time to run write_record_output_stream:   4.473676 s
+Time to run write_record_output_stream:  10.105757 s
+Time to run write_record_output_stream:  12.129621 s
+Time to run write_record_output_stream:   2.571753 s
+Time to run write_record_output_stream:  10.308092 s
+Time to run write_record_output_stream:  12.258485 s
+Time to run write_record_output_stream:   2.612853 s
+Time to run write_record_output_stream:  10.197170 s
+Time to run write_record_output_stream:  12.696480 s
+Time to run write_record_output_stream:   2.977719 s
+Time to run write_record_output_stream:  10.306078 s
+Time to run write_record_output_stream:  13.810463 s
+Time to run write_record_output_stream:   2.773906 s
+Time to run write_record_output_stream:   9.956833 s
+Time to run write_record_output_stream:  14.088366 s
+Time to run write_record_output_stream:   3.243860 s
+Time to run write_record_output_stream:   9.946763 s
+Time to run write_record_output_stream:  16.088651 s
+Time to run write_record_output_stream:   2.470298 s
+Time to run write_record_output_stream:   9.964025 s
+Time to run write_record_output_stream:  18.077149 s
+Time to run write_record_output_stream:   2.836684 s
+Time to run write_record_output_stream:   9.956347 s
+Time to run write_record_output_stream:  19.994887 s
+Time to run write_record_output_stream:   2.481112 s
+Time to run write_record_output_stream:   9.924186 s
+Time to run write_record_output_stream:  21.759199 s
+Time to run write_record_output_stream:   3.536566 s
+Time to run write_record_output_stream:   9.945755 s
+Time to run write_record_output_stream:  22.375751 s
+Time to run write_record_output_stream:   2.768217 s
+Time to run write_record_output_stream:  10.295978 s
+Time to run write_record_output_stream:  23.563158 s
+Time to run write_record_output_stream:   3.305403 s
+Time to run write_record_output_stream:  10.316428 s
+Time to run write_record_output_stream:  23.546612 s
+Time to run write_record_output_stream:   2.694135 s
+Time to run write_record_output_stream:  10.380688 s
+Time to run write_record_output_stream:  25.184620 s
+Time to run write_record_output_stream:   2.712851 s
+Time to run write_record_output_stream:  10.467749 s
+Time to run write_record_output_stream:   0.000000 s
+Time to run write_record_output_stream:   2.564943 s
+Time to run write_record_output_stream:  10.268622 s
+Time to run write_record_output_stream:  22.995067 s
+Time to run write_record_output_stream:   2.937100 s
+Time to run write_record_output_stream:  10.134044 s
+Time to run write_record_output_stream:  22.672448 s
+Time to run write_record_output_stream:   3.316733 s
+Time to run write_record_output_stream:  10.208483 s
+Time to run write_record_output_stream:  22.011899 s
+Time to run write_record_output_stream:   2.887426 s
+ MPI Rank:           26  using device:            0
+Time to run newoutfiles:  12.766694 s
+Time to run write_record_output_stream:  11.067890 s
+Time to run write_record_output_stream:  10.394690 s
+Time to run write_record_output_stream:  22.769021 s
+Time to run write_record_output_stream:   4.473340 s
+Time to run write_record_output_stream:  10.106247 s
+Time to run write_record_output_stream:  23.278644 s
+Time to run write_record_output_stream:   2.571650 s
+Time to run write_record_output_stream:  10.308371 s
+Time to run write_record_output_stream:  23.233148 s
+Time to run write_record_output_stream:   2.612962 s
+Time to run write_record_output_stream:  10.197270 s
+Time to run write_record_output_stream:  23.606688 s
+Time to run write_record_output_stream:   2.977677 s
+Time to run write_record_output_stream:  10.306391 s
+Time to run write_record_output_stream:  24.627456 s
+Time to run write_record_output_stream:   2.773883 s
+Time to run write_record_output_stream:   9.957358 s
+Time to run write_record_output_stream:  10.261376 s
+Time to run write_record_output_stream:  21.316502 s
+Time to run write_record_output_stream:   3.219828 s
+Time to run write_record_output_stream:  10.386179 s
+Time to run write_record_output_stream:  21.086365 s
+Time to run write_record_output_stream:   3.180328 s
+Time to run write_record_output_stream:  10.398617 s
+Time to run write_record_output_stream:  20.346920 s
+Time to run write_record_output_stream:   2.722737 s
+Time to run write_record_output_stream:  10.122145 s
+Time to run write_record_output_stream:  19.549894 s
+Time to run write_record_output_stream:   2.702199 s
+Time to run write_record_output_stream:  10.277171 s
+Time to run write_record_output_stream:  19.496642 s
+Time to run write_record_output_stream:   3.207252 s
+Time to run write_record_output_stream:  10.388912 s
+Time to run write_record_output_stream:  17.955651 s
+Time to run write_record_output_stream:   0.240279 s
+Time to run write_record_output_stream:   2.559324 s
+Time to run write_record_output_stream:  24.681392 s
+Time to run write_record_output_stream:   3.243824 s
+Time to run write_record_output_stream:   9.946909 s
+Time to run write_record_output_stream:  26.864589 s
+Time to run write_record_output_stream:   2.470255 s
+Time to run write_record_output_stream:   9.964259 s
+Time to run write_record_output_stream:  28.954316 s
+Time to run write_record_output_stream:   2.836576 s
+Time to run write_record_output_stream:   9.956411 s
+Time to run write_record_output_stream:  30.784756 s
+Time to run write_record_output_stream:   2.481162 s
+Time to run write_record_output_stream:   9.924164 s
+Time to run write_record_output_stream:  32.200443 s
+Time to run write_record_output_stream:   3.536465 s
+Time to run write_record_output_stream:   9.946026 s
+Time to run write_record_output_stream:  32.145601 s
+Time to run write_record_output_stream:   2.768177 s
+Time to run write_record_output_stream:  10.295719 s
+Time to run write_record_output_stream:  32.436902 s
+Time to run dispose_output_streams subroutine:   0.000000 s
+Time to run write_record_output_stream:   3.305344 s
+Time to run write_record_output_stream:  10.316548 s
+Time to run write_record_output_stream:  30.221495 s
+Time to run write_record_output_stream:   2.694203 s
+Time to run write_record_output_stream:  10.380698 s
+Time to run write_record_output_stream:  28.940582 s
+Time to run write_record_output_stream:   2.712852 s
+Time to run write_record_output_stream:  10.467749 s
+Time to run write_record_output_stream:   0.000000 s
+Time to run write_record_output_stream:   2.565001 s
+Time to run write_record_output_stream:  10.268827 s
+Time to run write_record_output_stream:  22.123254 s
+Time to run write_record_output_stream:   2.937075 s
+Time to run write_record_output_stream:  10.134157 s
+Time to run write_record_output_stream:  20.397688 s
+Time to run write_record_output_stream:   3.316786 s
+Time to run write_record_output_stream:  10.208901 s
+Time to run write_record_output_stream:  18.553599 s
+Time to run write_record_output_stream:   2.887509 s
+Time to run write_record_output_stream:  10.261502 s
+Time to run write_record_output_stream:  17.493816 s
+Time to run write_record_output_stream:   3.219713 s
+Time to run write_record_output_stream:  10.386043 s
+Time to run write_record_output_stream:  17.195664 s
+Time to run write_record_output_stream:   3.180253 s
+Time to run write_record_output_stream:  10.398673 s
+Time to run write_record_output_stream:  17.320876 s
+Time to run write_record_output_stream:   2.722652 s
+Time to run write_record_output_stream:  10.122111 s
+Time to run write_record_output_stream:  17.487184 s
+Time to run write_record_output_stream:   2.702231 s
+Time to run write_record_output_stream:  10.277081 s
+Time to run write_record_output_stream:  18.307142 s
+Time to run write_record_output_stream:   3.207258 s
+Time to run write_record_output_stream:  10.388763 s
+Time to run write_record_output_stream:  17.351604 s
+Time to run write_record_output_stream:   0.240339 s
+Time to run write_record_output_stream:   2.559363 s
+Time to run dispose_output_streams subroutine:   0.000000 s
+ MPI Rank:           27  using device:            0
+Time to run newoutfiles:  13.173688 s
+Time to run write_record_output_stream:  11.149115 s
+Time to run write_record_output_stream:  10.395210 s
+Time to run write_record_output_stream:  11.598043 s
+Time to run write_record_output_stream:   4.473237 s
+Time to run write_record_output_stream:  10.106247 s
+Time to run write_record_output_stream:  10.403398 s
+Time to run write_record_output_stream:   2.571630 s
+Time to run write_record_output_stream:  10.308486 s
+Time to run write_record_output_stream:   9.367119 s
+Time to run write_record_output_stream:   2.612742 s
+Time to run write_record_output_stream:  10.197368 s
+Time to run write_record_output_stream:   8.993011 s
+Time to run write_record_output_stream:   2.977567 s
+Time to run write_record_output_stream:  10.306146 s
+Time to run write_record_output_stream:   9.326656 s
+Time to run write_record_output_stream:   2.773782 s
+Time to run write_record_output_stream:   9.957234 s
+Time to run write_record_output_stream:   9.072027 s
+Time to run write_record_output_stream:   3.243656 s
+Time to run write_record_output_stream:   9.946995 s
+Time to run write_record_output_stream:  10.783683 s
+Time to run write_record_output_stream:   2.469994 s
+Time to run write_record_output_stream:   9.964119 s
+Time to run write_record_output_stream:  12.286277 s
+Time to run write_record_output_stream:   2.836439 s
+Time to run write_record_output_stream:   9.956349 s
+Time to run write_record_output_stream:  14.080012 s
+Time to run write_record_output_stream:   2.481031 s
+Time to run write_record_output_stream:   9.923982 s
+Time to run write_record_output_stream:  15.844825 s
+Time to run write_record_output_stream:   3.536413 s
+Time to run write_record_output_stream:   9.946020 s
+Time to run write_record_output_stream:  15.482382 s
+Time to run write_record_output_stream:   2.768021 s
+Time to run write_record_output_stream:  10.295779 s
+Time to run write_record_output_stream:  15.798734 s
+Time to run write_record_output_stream:   3.305297 s
+Time to run write_record_output_stream:  10.316516 s
+Time to run write_record_output_stream:  15.466569 s
+Time to run write_record_output_stream:   2.693974 s
+Time to run write_record_output_stream:  10.380672 s
+Time to run write_record_output_stream:  16.897495 s
+Time to run write_record_output_stream:   2.712623 s
+Time to run write_record_output_stream:  10.467815 s
+Time to run write_record_output_stream:   0.000000 s
+Time to run write_record_output_stream:   2.565011 s
+Time to run write_record_output_stream:  10.268861 s
+Time to run write_record_output_stream:  13.871093 s
+Time to run write_record_output_stream:   2.936938 s
+Time to run write_record_output_stream:  10.134198 s
+Time to run write_record_output_stream:  12.988064 s
+Time to run write_record_output_stream:   3.316554 s
+Time to run write_record_output_stream:  10.208858 s
+Time to run write_record_output_stream:  11.406527 s
+Time to run write_record_output_stream:   2.887258 s
+Time to run write_record_output_stream:  10.261317 s
+Time to run write_record_output_stream:  10.091550 s
+Time to run write_record_output_stream:   3.219665 s
+Time to run write_record_output_stream:  10.386033 s
+Time to run write_record_output_stream:   9.811595 s
+Time to run write_record_output_stream:   3.180130 s
+Time to run write_record_output_stream:  10.398716 s
+Time to run write_record_output_stream:   9.022654 s
+Time to run write_record_output_stream:   2.722634 s
+Time to run write_record_output_stream:  10.122427 s
+Time to run write_record_output_stream:   7.927673 s
+Time to run write_record_output_stream:   2.702097 s
+Time to run write_record_output_stream:  10.277051 s
+Time to run write_record_output_stream:   7.573744 s
+Time to run write_record_output_stream:   3.207216 s
+Time to run write_record_output_stream:  10.388833 s
+Time to run write_record_output_stream:   6.309401 s
+Time to run write_record_output_stream:   0.240263 s
+Time to run write_record_output_stream:   2.559263 s
+Time to run dispose_output_streams subroutine:   0.000000 s
+Time to run dispose_output_streams subroutine:   0.000000 s
+Time to run dispose_output_streams subroutine:   0.000000 s
+ MPI Rank:           17  using device:            0
+Time to run newoutfiles:  13.232228 s
+Time to run write_record_output_stream:  11.087026 s
+Time to run write_record_output_stream:  10.394561 s
+Time to run write_record_output_stream:  15.155114 s
+Time to run write_record_output_stream:   4.473581 s
+Time to run write_record_output_stream:  10.106311 s
+Time to run write_record_output_stream:  15.151325 s
+Time to run write_record_output_stream:   2.571748 s
+Time to run write_record_output_stream:  10.308721 s
+Time to run write_record_output_stream:  14.793112 s
+Time to run write_record_output_stream:   2.613003 s
+Time to run write_record_output_stream:  10.196850 s
+Time to run write_record_output_stream:  14.812954 s
+Time to run write_record_output_stream:   2.977851 s
+Time to run write_record_output_stream:  10.306095 s
+Time to run write_record_output_stream:  15.383194 s
+Time to run write_record_output_stream:   2.773975 s
+Time to run write_record_output_stream:   9.956809 s
+Time to run write_record_output_stream:  15.197930 s
+Time to run write_record_output_stream:   3.244007 s
+Time to run write_record_output_stream:   9.946264 s
+Time to run write_record_output_stream:  16.355469 s
+Time to run write_record_output_stream:   2.470415 s
+Time to run write_record_output_stream:   9.964245 s
+Time to run write_record_output_stream:  16.530797 s
+Time to run write_record_output_stream:   2.836746 s
+Time to run write_record_output_stream:   9.956243 s
+Time to run write_record_output_stream:  15.933317 s
+Time to run write_record_output_stream:   2.481272 s
+Time to run write_record_output_stream:   9.924182 s
+Time to run write_record_output_stream:  15.568794 s
+Time to run write_record_output_stream:   3.536622 s
+Time to run write_record_output_stream:   9.946072 s
+Time to run write_record_output_stream:  14.485478 s
+Time to run write_record_output_stream:   2.768262 s
+Time to run write_record_output_stream:  10.295793 s
+Time to run write_record_output_stream:  14.113583 s
+Time to run write_record_output_stream:   3.305461 s
+Time to run write_record_output_stream:  10.316503 s
+Time to run write_record_output_stream:  12.998088 s
+Time to run write_record_output_stream:   2.694188 s
+Time to run write_record_output_stream:  10.380566 s
+Time to run write_record_output_stream:  14.238379 s
+Time to run write_record_output_stream:   2.712955 s
+Time to run write_record_output_stream:  10.467156 s
+Time to run write_record_output_stream:   0.000000 s
+Time to run write_record_output_stream:   2.565220 s
+Time to run write_record_output_stream:  10.268752 s
+Time to run write_record_output_stream:  14.413272 s
+Time to run write_record_output_stream:   2.937174 s
+Time to run write_record_output_stream:  10.133506 s
+Time to run write_record_output_stream:  15.699233 s
+Time to run write_record_output_stream:   3.316792 s
+Time to run write_record_output_stream:  10.208238 s
+Time to run write_record_output_stream:  15.910151 s
+Time to run write_record_output_stream:   2.887517 s
+Time to run write_record_output_stream:  10.260929 s
+Time to run write_record_output_stream:  15.556576 s
+Time to run write_record_output_stream:   3.219932 s
+Time to run write_record_output_stream:  10.385885 s
+Time to run write_record_output_stream:  15.553411 s
+Time to run write_record_output_stream:   3.180357 s
+Time to run write_record_output_stream:  10.397987 s
+Time to run write_record_output_stream:  14.998486 s
+Time to run write_record_output_stream:   2.722699 s
+Time to run write_record_output_stream:  10.121568 s
+Time to run write_record_output_stream:  14.459123 s
+Time to run write_record_output_stream:   2.702271 s
+Time to run write_record_output_stream:  10.276056 s
+Time to run write_record_output_stream:  15.167251 s
+Time to run write_record_output_stream:   3.207420 s
+Time to run write_record_output_stream:  10.388356 s
+Time to run write_record_output_stream:  14.549253 s
+Time to run write_record_output_stream:   0.240282 s
+Time to run write_record_output_stream:   2.559357 s
+Time to run dispose_output_streams subroutine:   0.000000 s
+ MPI Rank:           18  using device:            0
+Time to run newoutfiles:  12.810185 s
+Time to run write_record_output_stream:  11.088202 s
+Time to run write_record_output_stream:  10.393791 s
+Time to run write_record_output_stream:  20.020414 s
+Time to run write_record_output_stream:   4.473633 s
+Time to run write_record_output_stream:  10.106224 s
+Time to run write_record_output_stream:  19.798671 s
+Time to run write_record_output_stream:   2.571882 s
+Time to run write_record_output_stream:  10.308254 s
+Time to run write_record_output_stream:  18.858790 s
+Time to run write_record_output_stream:   2.612948 s
+Time to run write_record_output_stream:  10.196645 s
+Time to run write_record_output_stream:  17.698653 s
+Time to run write_record_output_stream:   2.977755 s
+Time to run write_record_output_stream:  10.305849 s
+Time to run write_record_output_stream:  16.717812 s
+Time to run write_record_output_stream:   2.773948 s
+Time to run write_record_output_stream:   9.956696 s
+Time to run write_record_output_stream:  15.578530 s
+Time to run write_record_output_stream:   3.243913 s
+Time to run write_record_output_stream:   9.945956 s
+Time to run write_record_output_stream:  16.507852 s
+Time to run write_record_output_stream:   2.470269 s
+Time to run write_record_output_stream:   9.964187 s
+Time to run write_record_output_stream:  17.427694 s
+Time to run write_record_output_stream:   2.836693 s
+Time to run write_record_output_stream:   9.955808 s
+Time to run write_record_output_stream:  18.069785 s
+Time to run write_record_output_stream:   2.481173 s
+Time to run write_record_output_stream:   9.923744 s
+Time to run write_record_output_stream:  19.009161 s
+Time to run write_record_output_stream:   3.536577 s
+Time to run write_record_output_stream:   9.945682 s
+Time to run write_record_output_stream:  19.792281 s
+Time to run write_record_output_stream:   2.768249 s
+Time to run write_record_output_stream:  10.295627 s
+Time to run write_record_output_stream:  21.511915 s
+Time to run write_record_output_stream:   3.305481 s
+Time to run write_record_output_stream:  10.316131 s
+Time to run write_record_output_stream:  22.073502 s
+Time to run write_record_output_stream:   2.694208 s
+Time to run write_record_output_stream:  10.380114 s
+Time to run write_record_output_stream:  23.711445 s
+Time to run write_record_output_stream:   2.712976 s
+Time to run write_record_output_stream:  10.466904 s
+Time to run write_record_output_stream:   0.000000 s
+Time to run write_record_output_stream:   2.565074 s
+Time to run write_record_output_stream:  10.268294 s
+Time to run write_record_output_stream:  21.653498 s
+Time to run write_record_output_stream:   2.937076 s
+Time to run write_record_output_stream:  10.133214 s
+Time to run write_record_output_stream:  21.324073 s
+Time to run write_record_output_stream:   3.316827 s
+Time to run write_record_output_stream:  10.207940 s
+Time to run write_record_output_stream:  20.538260 s
+Time to run write_record_output_stream:   2.887428 s
+Time to run write_record_output_stream:  10.260583 s
+Time to run write_record_output_stream:  20.019030 s
+Time to run write_record_output_stream:   3.219835 s
+Time to run write_record_output_stream:  10.385683 s
+Time to run write_record_output_stream:  20.057086 s
+Time to run write_record_output_stream:   3.180500 s
+Time to run write_record_output_stream:  10.397825 s
+Time to run write_record_output_stream:  20.209685 s
+Time to run write_record_output_stream:   2.722658 s
+Time to run write_record_output_stream:  10.121377 s
+Time to run write_record_output_stream:  20.211709 s
+Time to run write_record_output_stream:   2.702126 s
+Time to run write_record_output_stream:  10.275866 s
+Time to run write_record_output_stream:  20.812302 s
+Time to run write_record_output_stream:   3.207315 s
+Time to run write_record_output_stream:  10.387900 s
+Time to run write_record_output_stream:  19.833096 s
+Time to run write_record_output_stream:   0.240283 s
+Time to run write_record_output_stream:   2.559232 s
+Time to run dispose_output_streams subroutine:   0.000000 s
+Time to run dispose_output_streams subroutine:   0.000000 s
+Time to run dispose_output_streams subroutine:   0.000000 s
+ MPI Rank:            5  using device:            0
+Time to run newoutfiles:  13.107815 s
+Time to run write_record_output_stream:  10.993815 s
+Time to run write_record_output_stream:  10.393864 s
+Time to run write_record_output_stream:  12.393686 s
+Time to run write_record_output_stream:   4.473595 s
+Time to run write_record_output_stream:  10.106476 s
+Time to run write_record_output_stream:  13.420573 s
+Time to run write_record_output_stream:   2.571716 s
+Time to run write_record_output_stream:  10.309008 s
+Time to run write_record_output_stream:  13.770390 s
+Time to run write_record_output_stream:   2.612959 s
+Time to run write_record_output_stream:  10.196851 s
+Time to run write_record_output_stream:  14.263162 s
+Time to run write_record_output_stream:   2.977485 s
+Time to run write_record_output_stream:  10.306798 s
+Time to run write_record_output_stream:  14.980253 s
+Time to run write_record_output_stream:   2.773954 s
+Time to run write_record_output_stream:   9.957222 s
+Time to run write_record_output_stream:  14.827203 s
+Time to run write_record_output_stream:   3.243859 s
+Time to run write_record_output_stream:   9.946317 s
+Time to run write_record_output_stream:  16.516542 s
+Time to run write_record_output_stream:   2.470378 s
+Time to run write_record_output_stream:   9.964598 s
+Time to run write_record_output_stream:  17.737893 s
+Time to run write_record_output_stream:   2.836702 s
+Time to run write_record_output_stream:   9.956219 s
+Time to run write_record_output_stream:  17.186875 s
+Time to run write_record_output_stream:   2.481214 s
+Time to run write_record_output_stream:   9.924073 s
+Time to run write_record_output_stream:  16.911191 s
+Time to run write_record_output_stream:   3.536579 s
+Time to run write_record_output_stream:   9.946155 s
+Time to run write_record_output_stream:  16.148659 s
+Time to run write_record_output_stream:   2.768183 s
+Time to run write_record_output_stream:  10.295578 s
+Time to run write_record_output_stream:  16.285248 s
+Time to run write_record_output_stream:   3.305431 s
+Time to run write_record_output_stream:  10.316307 s
+Time to run write_record_output_stream:  15.393881 s
+Time to run write_record_output_stream:   2.694142 s
+Time to run write_record_output_stream:  10.380419 s
+Time to run write_record_output_stream:  16.520609 s
+Time to run write_record_output_stream:   2.712911 s
+Time to run write_record_output_stream:  10.467424 s
+Time to run write_record_output_stream:   0.000000 s
+Time to run write_record_output_stream:   2.565123 s
+Time to run write_record_output_stream:  10.269027 s
+Time to run write_record_output_stream:  15.022722 s
+Time to run write_record_output_stream:   2.937131 s
+Time to run write_record_output_stream:  10.133641 s
+Time to run write_record_output_stream:  15.425918 s
+Time to run write_record_output_stream:   3.316771 s
+Time to run write_record_output_stream:  10.208608 s
+Time to run write_record_output_stream:  15.594752 s
+Time to run write_record_output_stream:   2.887473 s
+Time to run write_record_output_stream:  10.261181 s
+Time to run write_record_output_stream:  15.575974 s
+Time to run write_record_output_stream:   3.219878 s
+Time to run write_record_output_stream:  10.386196 s
+Time to run write_record_output_stream:  15.886283 s
+Time to run write_record_output_stream:   3.180436 s
+Time to run write_record_output_stream:  10.398115 s
+Time to run write_record_output_stream:  15.473822 s
+Time to run write_record_output_stream:   2.722671 s
+Time to run write_record_output_stream:  10.121933 s
+Time to run write_record_output_stream:  14.886173 s
+Time to run write_record_output_stream:   2.702178 s
+Time to run write_record_output_stream:  10.276234 s
+Time to run write_record_output_stream:  15.121848 s
+Time to run write_record_output_stream:   3.207389 s
+Time to run write_record_output_stream:  10.388223 s
+Time to run write_record_output_stream:  14.097201 s
+Time to run write_record_output_stream:   0.240145 s
+Time to run write_record_output_stream:   2.559267 s
+Time to run dispose_output_streams subroutine:   0.000000 s
+ MPI Rank:            6  using device:            0
+Time to run newoutfiles:  13.326143 s
+Time to run write_record_output_stream:  10.993822 s
+Time to run write_record_output_stream:  10.393695 s
+Time to run write_record_output_stream:  14.164164 s
+Time to run write_record_output_stream:   4.473615 s
+Time to run write_record_output_stream:  10.106266 s
+Time to run write_record_output_stream:  14.000890 s
+Time to run write_record_output_stream:   2.571804 s
+Time to run write_record_output_stream:  10.308780 s
+Time to run write_record_output_stream:  13.592141 s
+Time to run write_record_output_stream:   2.613049 s
+Time to run write_record_output_stream:  10.196889 s
+Time to run write_record_output_stream:  13.576766 s
+Time to run write_record_output_stream:   2.977535 s
+Time to run write_record_output_stream:  10.306365 s
+Time to run write_record_output_stream:  14.287153 s
+Time to run write_record_output_stream:   2.773999 s
+Time to run write_record_output_stream:   9.956736 s
+Time to run write_record_output_stream:  14.150260 s
+Time to run write_record_output_stream:   3.243946 s
+Time to run write_record_output_stream:   9.946203 s
+Time to run write_record_output_stream:  15.840323 s
+Time to run write_record_output_stream:   2.470331 s
+Time to run write_record_output_stream:   9.964257 s
+Time to run write_record_output_stream:  17.664656 s
+Time to run write_record_output_stream:   2.836699 s
+Time to run write_record_output_stream:   9.955969 s
+Time to run write_record_output_stream:  19.533579 s
+Time to run write_record_output_stream:   2.481241 s
+Time to run write_record_output_stream:   9.924064 s
+Time to run write_record_output_stream:  21.294110 s
+Time to run write_record_output_stream:   3.536659 s
+Time to run write_record_output_stream:   9.945753 s
+Time to run write_record_output_stream:  22.004442 s
+Time to run write_record_output_stream:   2.768208 s
+Time to run write_record_output_stream:  10.295694 s
+Time to run write_record_output_stream:  23.171309 s
+Time to run write_record_output_stream:   3.305515 s
+Time to run write_record_output_stream:  10.316382 s
+Time to run write_record_output_stream:  23.001633 s
+Time to run write_record_output_stream:   2.694163 s
+Time to run write_record_output_stream:  10.380470 s
+Time to run write_record_output_stream:  24.680140 s
+Time to run write_record_output_stream:   2.712955 s
+Time to run write_record_output_stream:  10.467226 s
+Time to run write_record_output_stream:   0.000000 s
+Time to run write_record_output_stream:   2.565333 s
+Time to run write_record_output_stream:  10.268813 s
+Time to run write_record_output_stream:  23.368438 s
+Time to run write_record_output_stream:   2.937184 s
+Time to run write_record_output_stream:  10.133668 s
+Time to run write_record_output_stream:  23.554358 s
+Time to run write_record_output_stream:   3.316762 s
+Time to run write_record_output_stream:  10.208302 s
+Time to run write_record_output_stream:  23.243000 s
+Time to run write_record_output_stream:   2.887532 s
+Time to run write_record_output_stream:  10.261153 s
+Time to run write_record_output_stream:  22.910373 s
+Time to run write_record_output_stream:   3.219891 s
+Time to run write_record_output_stream:  10.386170 s
+Time to run write_record_output_stream:  23.196400 s
+Time to run write_record_output_stream:   3.180477 s
+Time to run write_record_output_stream:  10.398122 s
+Time to run write_record_output_stream:  23.125829 s
+Time to run write_record_output_stream:   2.722822 s
+Time to run write_record_output_stream:  10.121702 s
+Time to run write_record_output_stream:  22.942741 s
+Time to run write_record_output_stream:   2.702194 s
+Time to run write_record_output_stream:  10.276189 s
+Time to run write_record_output_stream:  23.607310 s
+Time to run write_record_output_stream:   3.207524 s
+Time to run write_record_output_stream:  10.388357 s
+Time to run write_record_output_stream:  22.912877 s
+Time to run write_record_output_stream:   0.240147 s
+Time to run write_record_output_stream:   2.559316 s
+Time to run dispose_output_streams subroutine:   0.000000 s
+ MPI Rank:            7  using device:            0
+Time to run newoutfiles:  12.744824 s
+Time to run write_record_output_stream:  10.993812 s
+Time to run write_record_output_stream:  10.393767 s
+Time to run write_record_output_stream:  28.457904 s
+Time to run write_record_output_stream:   4.473535 s
+Time to run write_record_output_stream:  10.106468 s
+Time to run write_record_output_stream:  29.268165 s
+Time to run write_record_output_stream:   2.571685 s
+Time to run write_record_output_stream:  10.309051 s
+Time to run write_record_output_stream:  29.673219 s
+Time to run write_record_output_stream:   2.612933 s
+Time to run write_record_output_stream:  10.197037 s
+Time to run write_record_output_stream:  30.405868 s
+Time to run write_record_output_stream:   2.977587 s
+Time to run write_record_output_stream:  10.306867 s
+Time to run write_record_output_stream:  31.737885 s
+Time to run write_record_output_stream:   2.773866 s
+Time to run write_record_output_stream:   9.957362 s
+Time to run write_record_output_stream:  32.149621 s
+Time to run write_record_output_stream:   3.243798 s
+Time to run write_record_output_stream:   9.946222 s
+Time to run write_record_output_stream:  34.014135 s
+Time to run write_record_output_stream:   2.470223 s
+Time to run write_record_output_stream:   9.964736 s
+Time to run write_record_output_stream:  35.567143 s
+Time to run write_record_output_stream:   2.836562 s
+Time to run write_record_output_stream:   9.956295 s
+Time to run write_record_output_stream:  36.894671 s
+Time to run write_record_output_stream:   2.481204 s
+Time to run write_record_output_stream:   9.924437 s
+Time to run write_record_output_stream:  38.210390 s
+Time to run write_record_output_stream:   3.536546 s
+Time to run write_record_output_stream:   9.946664 s
+Time to run write_record_output_stream:  38.615903 s
+Time to run write_record_output_stream:   2.768181 s
+Time to run write_record_output_stream:  10.295928 s
+Time to run write_record_output_stream:  39.813627 s
+Time to run write_record_output_stream:   3.305367 s
+Time to run write_record_output_stream:  10.316995 s
+Time to run write_record_output_stream:  39.717309 s
+Time to run write_record_output_stream:   2.694198 s
+Time to run write_record_output_stream:  10.380824 s
+Time to run write_record_output_stream:  41.345773 s
+Time to run write_record_output_stream:   2.712852 s
+Time to run write_record_output_stream:  10.467667 s
+Time to run write_record_output_stream:   0.000000 s
+Time to run write_record_output_stream:   2.565128 s
+Time to run write_record_output_stream:  10.269405 s
+Time to run write_record_output_stream:  39.019791 s
+Time to run write_record_output_stream:   2.937049 s
+Time to run write_record_output_stream:  10.133998 s
+Time to run write_record_output_stream:  38.446106 s
+Time to run write_record_output_stream:   3.316765 s
+Time to run write_record_output_stream:  10.209410 s
+Time to run write_record_output_stream:  37.418242 s
+Time to run write_record_output_stream:   2.887396 s
+Time to run write_record_output_stream:  10.261377 s
+Time to run write_record_output_stream:  36.552356 s
+Time to run write_record_output_stream:   3.219815 s
+Time to run write_record_output_stream:  10.386161 s
+Time to run write_record_output_stream:  36.451617 s
+Time to run write_record_output_stream:   3.180401 s
+Time to run write_record_output_stream:  10.398344 s
+Time to run write_record_output_stream:  36.205911 s
+Time to run write_record_output_stream:   2.722660 s
+Time to run write_record_output_stream:  10.122273 s
+Time to run write_record_output_stream:  35.945444 s
+Time to run write_record_output_stream:   2.702098 s
+Time to run write_record_output_stream:  10.276479 s
+Time to run write_record_output_stream:  36.420625 s
+Time to run write_record_output_stream:   3.207361 s
+Time to run write_record_output_stream:  10.388873 s
+Time to run write_record_output_stream:  35.550752 s
+Time to run write_record_output_stream:   0.240293 s
+Time to run write_record_output_stream:   2.559316 s
+Time to run dispose_output_streams subroutine:   0.000000 s
+ MPI Rank:            4  using device:            0
+Time to run newoutfiles:  13.244068 s
+Time to run write_record_output_stream:  10.993834 s
+Time to run write_record_output_stream:  10.393933 s
+Time to run write_record_output_stream:   7.413482 s
+Time to run write_record_output_stream:   4.473574 s
+Time to run write_record_output_stream:  10.106571 s
+Time to run write_record_output_stream:   8.057711 s
+Time to run write_record_output_stream:   2.571733 s
+Time to run write_record_output_stream:  10.309730 s
+Time to run write_record_output_stream:   9.171953 s
+Time to run write_record_output_stream:   2.612831 s
+Time to run write_record_output_stream:  10.196902 s
+Time to run write_record_output_stream:  10.611190 s
+Time to run write_record_output_stream:   2.977611 s
+Time to run write_record_output_stream:  10.306861 s
+Time to run write_record_output_stream:  12.676278 s
+Time to run write_record_output_stream:   2.773762 s
+Time to run write_record_output_stream:   9.957282 s
+Time to run write_record_output_stream:  14.589562 s
+Time to run write_record_output_stream:   3.243797 s
+Time to run write_record_output_stream:   9.946234 s
+Time to run write_record_output_stream:  18.945627 s
+Time to run write_record_output_stream:   2.470292 s
+Time to run write_record_output_stream:   9.964877 s
+Time to run write_record_output_stream:  22.356246 s
+Time to run write_record_output_stream:   2.836555 s
+Time to run write_record_output_stream:   9.956191 s
+Time to run write_record_output_stream:  22.956518 s
+Time to run write_record_output_stream:   2.481083 s
+Time to run write_record_output_stream:   9.924829 s
+Time to run write_record_output_stream:  22.517517 s
+Time to run write_record_output_stream:   3.536493 s
+Time to run write_record_output_stream:   9.946341 s
+Time to run write_record_output_stream:  21.514349 s
+Time to run write_record_output_stream:   2.768008 s
+Time to run write_record_output_stream:  10.295871 s
+Time to run write_record_output_stream:  21.564986 s
+Time to run write_record_output_stream:   3.305348 s
+Time to run write_record_output_stream:  10.316744 s
+Time to run write_record_output_stream:  20.561148 s
+Time to run write_record_output_stream:   2.694036 s
+Time to run write_record_output_stream:  10.380679 s
+Time to run write_record_output_stream:  21.499822 s
+Time to run write_record_output_stream:   2.712727 s
+Time to run write_record_output_stream:  10.467532 s
+Time to run write_record_output_stream:   0.000000 s
+Time to run write_record_output_stream:   2.565037 s
+Time to run write_record_output_stream:  10.269109 s
+Time to run write_record_output_stream:  18.668269 s
+Time to run write_record_output_stream:   2.937025 s
+Time to run write_record_output_stream:  10.134243 s
+Time to run write_record_output_stream:  18.443879 s
+Time to run write_record_output_stream:   3.316657 s
+Time to run write_record_output_stream:  10.208411 s
+Time to run write_record_output_stream:  17.002951 s
+Time to run write_record_output_stream:   2.887356 s
+Time to run write_record_output_stream:  10.261361 s
+Time to run write_record_output_stream:  17.356847 s
+Time to run write_record_output_stream:   3.219718 s
+Time to run write_record_output_stream:  10.386978 s
+Time to run write_record_output_stream:  19.115635 s
+Time to run write_record_output_stream:   3.180285 s
+Time to run write_record_output_stream:  10.398481 s
+Time to run write_record_output_stream:  20.592284 s
+Time to run write_record_output_stream:   2.722578 s
+Time to run write_record_output_stream:  10.121927 s
+Time to run write_record_output_stream:  21.252131 s
+Time to run write_record_output_stream:   2.702064 s
+Time to run write_record_output_stream:  10.276399 s
+Time to run write_record_output_stream:  22.221868 s
+Time to run write_record_output_stream:   3.207179 s
+Time to run write_record_output_stream:  10.388605 s
+Time to run write_record_output_stream:  21.360825 s
+Time to run write_record_output_stream:   0.240299 s
+Time to run write_record_output_stream:   2.559221 s
+Time to run dispose_output_streams subroutine:   0.000000 s
+Time to run dispose_output_streams subroutine:   0.000000 s
+Time to run dispose_output_streams subroutine:   0.000000 s
+ MPI Rank:            9  using device:            0
+Time to run newoutfiles:  13.130042 s
+Time to run write_record_output_stream:  10.994939 s
+Time to run write_record_output_stream:  10.393710 s
+Time to run write_record_output_stream:  13.565919 s
+Time to run write_record_output_stream:   4.473504 s
+Time to run write_record_output_stream:  10.106368 s
+Time to run write_record_output_stream:  14.335175 s
+Time to run write_record_output_stream:   2.571744 s
+Time to run write_record_output_stream:  10.308708 s
+Time to run write_record_output_stream:  14.398566 s
+Time to run write_record_output_stream:   2.612830 s
+Time to run write_record_output_stream:  10.196891 s
+Time to run write_record_output_stream:  14.658077 s
+Time to run write_record_output_stream:   2.977469 s
+Time to run write_record_output_stream:  10.306227 s
+Time to run write_record_output_stream:  15.411710 s
+Time to run write_record_output_stream:   2.773803 s
+Time to run write_record_output_stream:   9.956657 s
+Time to run write_record_output_stream:  15.391132 s
+Time to run write_record_output_stream:   3.243782 s
+Time to run write_record_output_stream:   9.946139 s
+Time to run write_record_output_stream:  16.892979 s
+Time to run write_record_output_stream:   2.470170 s
+Time to run write_record_output_stream:   9.964126 s
+Time to run write_record_output_stream:  17.724252 s
+Time to run write_record_output_stream:   2.836589 s
+Time to run write_record_output_stream:   9.955914 s
+Time to run write_record_output_stream:  18.079240 s
+Time to run write_record_output_stream:   2.481137 s
+Time to run write_record_output_stream:   9.924088 s
+Time to run write_record_output_stream:  18.253290 s
+Time to run write_record_output_stream:   3.536607 s
+Time to run write_record_output_stream:   9.945713 s
+Time to run write_record_output_stream:  17.525647 s
+Time to run write_record_output_stream:   2.768186 s
+Time to run write_record_output_stream:  10.295620 s
+Time to run write_record_output_stream:  16.886722 s
+Time to run write_record_output_stream:   3.305366 s
+Time to run write_record_output_stream:  10.316553 s
+Time to run write_record_output_stream:  15.024685 s
+Time to run write_record_output_stream:   2.693986 s
+Time to run write_record_output_stream:  10.380605 s
+Time to run write_record_output_stream:  15.583571 s
+Time to run write_record_output_stream:   2.712815 s
+Time to run write_record_output_stream:  10.467369 s
+Time to run write_record_output_stream:   0.000000 s
+Time to run write_record_output_stream:   2.564965 s
+Time to run write_record_output_stream:  10.268799 s
+Time to run write_record_output_stream:  13.139398 s
+Time to run write_record_output_stream:   2.936997 s
+Time to run write_record_output_stream:  10.133326 s
+Time to run write_record_output_stream:  13.110460 s
+Time to run write_record_output_stream:   3.316646 s
+Time to run write_record_output_stream:  10.208610 s
+Time to run write_record_output_stream:  14.462818 s
+Time to run write_record_output_stream:   2.887379 s
+Time to run write_record_output_stream:  10.260937 s
+Time to run write_record_output_stream:  15.184686 s
+Time to run write_record_output_stream:   3.219821 s
+Time to run write_record_output_stream:  10.386324 s
+Time to run write_record_output_stream:  15.954505 s
+Time to run write_record_output_stream:   3.180239 s
+Time to run write_record_output_stream:  10.397814 s
+Time to run write_record_output_stream:  15.709666 s
+Time to run write_record_output_stream:   2.722620 s
+Time to run write_record_output_stream:  10.121826 s
+Time to run write_record_output_stream:  15.022317 s
+Time to run write_record_output_stream:   2.702116 s
+Time to run write_record_output_stream:  10.276306 s
+Time to run write_record_output_stream:  15.004423 s
+Time to run write_record_output_stream:   3.207263 s
+Time to run write_record_output_stream:  10.388439 s
+Time to run write_record_output_stream:  13.807646 s
+Time to run write_record_output_stream:   0.240285 s
+Time to run write_record_output_stream:   2.559180 s
+Time to run dispose_output_streams subroutine:   0.000000 s
+ MPI Rank:           28  using device:            0
+Time to run newoutfiles:  13.011886 s
+Time to run write_record_output_stream:  11.068271 s
+Time to run write_record_output_stream:  10.395151 s
+Time to run write_record_output_stream:   1.231487 s
+Time to run write_record_output_stream:   4.473495 s
+Time to run write_record_output_stream:  10.106019 s
+Time to run write_record_output_stream:   1.687300 s
+Time to run write_record_output_stream:   2.571736 s
+Time to run write_record_output_stream:  10.309151 s
+Time to run write_record_output_stream:   1.791056 s
+Time to run write_record_output_stream:   2.612843 s
+Time to run write_record_output_stream:  10.197170 s
+Time to run write_record_output_stream:   2.383547 s
+Time to run write_record_output_stream:   2.977637 s
+Time to run write_record_output_stream:  10.306382 s
+Time to run write_record_output_stream:   3.641121 s
+Time to run write_record_output_stream:   2.773860 s
+Time to run write_record_output_stream:   9.957374 s
+Time to run write_record_output_stream:   3.832697 s
+Time to run write_record_output_stream:   3.243736 s
+Time to run write_record_output_stream:   9.947196 s
+Time to run write_record_output_stream:   3.867110 s
+Time to run write_record_output_stream:   2.470212 s
+Time to run write_record_output_stream:   9.964244 s
+Time to run write_record_output_stream:   2.735924 s
+Time to run write_record_output_stream:   2.836534 s
+Time to run write_record_output_stream:   9.956806 s
+Time to run write_record_output_stream:   2.911285 s
+Time to run write_record_output_stream:   2.481079 s
+Time to run write_record_output_stream:   9.924563 s
+Time to run write_record_output_stream:   2.729601 s
+Time to run write_record_output_stream:   3.536497 s
+Time to run write_record_output_stream:   9.946150 s
+Time to run write_record_output_stream:   3.186755 s
+Time to run write_record_output_stream:   2.767994 s
+Time to run write_record_output_stream:  10.295775 s
+Time to run write_record_output_stream:   5.033667 s
+Time to run write_record_output_stream:   3.305311 s
+Time to run write_record_output_stream:  10.316537 s
+Time to run write_record_output_stream:   5.566751 s
+Time to run write_record_output_stream:   2.694044 s
+Time to run write_record_output_stream:  10.381145 s
+Time to run write_record_output_stream:   7.653579 s
+Time to run write_record_output_stream:   2.712837 s
+Time to run write_record_output_stream:  10.468210 s
+Time to run write_record_output_stream:   0.000000 s
+Time to run write_record_output_stream:   2.564968 s
+Time to run write_record_output_stream:  10.269300 s
+Time to run write_record_output_stream:   7.885975 s
+Time to run write_record_output_stream:   2.937041 s
+Time to run write_record_output_stream:  10.134212 s
+Time to run write_record_output_stream:   8.356477 s
+Time to run write_record_output_stream:   3.316687 s
+Time to run write_record_output_stream:  10.209038 s
+Time to run write_record_output_stream:   7.164657 s
+Time to run write_record_output_stream:   2.887271 s
+Time to run write_record_output_stream:  10.261163 s
+Time to run write_record_output_stream:   5.627151 s
+Time to run write_record_output_stream:   3.219711 s
+Time to run write_record_output_stream:  10.386577 s
+Time to run write_record_output_stream:   4.342520 s
+Time to run write_record_output_stream:   3.180329 s
+Time to run write_record_output_stream:  10.399425 s
+Time to run write_record_output_stream:   2.802841 s
+Time to run write_record_output_stream:   2.722661 s
+Time to run write_record_output_stream:  10.122263 s
+Time to run write_record_output_stream:   1.413091 s
+Time to run write_record_output_stream:   2.702155 s
+Time to run write_record_output_stream:  10.277484 s
+Time to run write_record_output_stream:   1.370029 s
+Time to run write_record_output_stream:   3.207343 s
+Time to run write_record_output_stream:  10.388904 s
+Time to run write_record_output_stream:   0.389495 s
+Time to run write_record_output_stream:   0.240293 s
+Time to run write_record_output_stream:   2.559302 s
+Time to run dispose_output_streams subroutine:   0.000000 s
+ MPI Rank:           16  using device:            0
+Time to run newoutfiles:  12.779466 s
+Time to run write_record_output_stream:  11.068497 s
+Time to run write_record_output_stream:  10.394218 s
+Time to run write_record_output_stream:   3.218763 s
+Time to run write_record_output_stream:   4.473734 s
+Time to run write_record_output_stream:  10.105920 s
+Time to run write_record_output_stream:   3.402570 s
+Time to run write_record_output_stream:   2.571858 s
+Time to run write_record_output_stream:  10.308939 s
+Time to run write_record_output_stream:   3.220545 s
+Time to run write_record_output_stream:   2.613083 s
+Time to run write_record_output_stream:  10.196883 s
+Time to run write_record_output_stream:   3.348031 s
+Time to run write_record_output_stream:   2.977820 s
+Time to run write_record_output_stream:  10.306058 s
+Time to run write_record_output_stream:   4.066910 s
+Time to run write_record_output_stream:   2.774029 s
+Time to run write_record_output_stream:   9.956843 s
+Time to run write_record_output_stream:   4.093815 s
+Time to run write_record_output_stream:   3.244024 s
+Time to run write_record_output_stream:   9.946064 s
+Time to run write_record_output_stream:   5.640516 s
+Time to run write_record_output_stream:   2.470438 s
+Time to run write_record_output_stream:   9.964159 s
+Time to run write_record_output_stream:   6.124136 s
+Time to run write_record_output_stream:   2.836699 s
+Time to run write_record_output_stream:   9.955681 s
+Time to run write_record_output_stream:   6.600000 s
+Time to run write_record_output_stream:   2.481249 s
+Time to run write_record_output_stream:   9.923644 s
+Time to run write_record_output_stream:   7.241403 s
+Time to run write_record_output_stream:   3.536562 s
+Time to run write_record_output_stream:   9.945711 s
+Time to run write_record_output_stream:   7.325635 s
+Time to run write_record_output_stream:   2.768301 s
+Time to run write_record_output_stream:  10.295463 s
+Time to run write_record_output_stream:   8.256076 s
+Time to run write_record_output_stream:   3.305480 s
+Time to run write_record_output_stream:  10.316134 s
+Time to run write_record_output_stream:   8.746829 s
+Time to run write_record_output_stream:   2.694234 s
+Time to run write_record_output_stream:  10.380016 s
+Time to run write_record_output_stream:  11.151437 s
+Time to run write_record_output_stream:   2.712971 s
+Time to run write_record_output_stream:  10.467108 s
+Time to run write_record_output_stream:   0.000000 s
+Time to run write_record_output_stream:   2.565163 s
+Time to run write_record_output_stream:  10.268620 s
+Time to run write_record_output_stream:   9.394126 s
+Time to run write_record_output_stream:   2.937202 s
+Time to run write_record_output_stream:  10.133235 s
+Time to run write_record_output_stream:  10.154329 s
+Time to run write_record_output_stream:   3.316826 s
+Time to run write_record_output_stream:  10.208117 s
+Time to run write_record_output_stream:  10.308218 s
+Time to run write_record_output_stream:   2.887506 s
+Time to run write_record_output_stream:  10.260805 s
+Time to run write_record_output_stream:   9.982760 s
+Time to run write_record_output_stream:   3.219898 s
+Time to run write_record_output_stream:  10.385838 s
+Time to run write_record_output_stream:   9.467158 s
+Time to run write_record_output_stream:   3.180483 s
+Time to run write_record_output_stream:  10.397948 s
+Time to run write_record_output_stream:   8.742336 s
+Time to run write_record_output_stream:   2.722744 s
+Time to run write_record_output_stream:  10.121453 s
+Time to run write_record_output_stream:   7.869471 s
+Time to run write_record_output_stream:   2.702213 s
+Time to run write_record_output_stream:  10.275818 s
+Time to run write_record_output_stream:   7.362393 s
+Time to run write_record_output_stream:   3.207493 s
+Time to run write_record_output_stream:  10.388072 s
+Time to run write_record_output_stream:   5.688916 s
+Time to run write_record_output_stream:   0.240275 s
+Time to run write_record_output_stream:   2.559383 s
+Time to run dispose_output_streams subroutine:   0.000000 s
+ MPI Rank:           21  using device:            0
+Time to run newoutfiles:  13.070376 s
+Time to run write_record_output_stream:  11.068305 s
+Time to run write_record_output_stream:  10.394472 s
+Time to run write_record_output_stream:  13.304721 s
+Time to run write_record_output_stream:   4.473676 s
+Time to run write_record_output_stream:  10.106189 s
+Time to run write_record_output_stream:  14.041538 s
+Time to run write_record_output_stream:   2.571939 s
+Time to run write_record_output_stream:  10.309001 s
+Time to run write_record_output_stream:  14.097651 s
+Time to run write_record_output_stream:   2.612942 s
+Time to run write_record_output_stream:  10.197139 s
+Time to run write_record_output_stream:  14.304371 s
+Time to run write_record_output_stream:   2.977860 s
+Time to run write_record_output_stream:  10.306095 s
+Time to run write_record_output_stream:  15.132829 s
+Time to run write_record_output_stream:   2.773995 s
+Time to run write_record_output_stream:   9.957064 s
+Time to run write_record_output_stream:  15.100142 s
+Time to run write_record_output_stream:   3.243979 s
+Time to run write_record_output_stream:   9.946158 s
+Time to run write_record_output_stream:  15.612864 s
+Time to run write_record_output_stream:   2.470425 s
+Time to run write_record_output_stream:   9.964046 s
+Time to run write_record_output_stream:  14.018706 s
+Time to run write_record_output_stream:   2.836829 s
+Time to run write_record_output_stream:   9.956217 s
+Time to run write_record_output_stream:  12.294029 s
+Time to run write_record_output_stream:   2.481376 s
+Time to run write_record_output_stream:   9.924015 s
+Time to run write_record_output_stream:  10.946374 s
+Time to run write_record_output_stream:   3.536666 s
+Time to run write_record_output_stream:   9.945959 s
+Time to run write_record_output_stream:   8.438179 s
+Time to run write_record_output_stream:   2.768338 s
+Time to run write_record_output_stream:  10.295248 s
+Time to run write_record_output_stream:   7.419029 s
+Time to run write_record_output_stream:   3.305567 s
+Time to run write_record_output_stream:  10.316227 s
+Time to run write_record_output_stream:   6.374378 s
+Time to run write_record_output_stream:   2.694279 s
+Time to run write_record_output_stream:  10.380449 s
+Time to run write_record_output_stream:   8.046354 s
+Time to run write_record_output_stream:   2.712920 s
+Time to run write_record_output_stream:  10.467289 s
+Time to run write_record_output_stream:   0.000000 s
+Time to run write_record_output_stream:   2.565255 s
+Time to run write_record_output_stream:  10.268789 s
+Time to run write_record_output_stream:   9.306077 s
+Time to run write_record_output_stream:   2.937283 s
+Time to run write_record_output_stream:  10.133503 s
+Time to run write_record_output_stream:  11.934454 s
+Time to run write_record_output_stream:   3.316826 s
+Time to run write_record_output_stream:  10.208433 s
+Time to run write_record_output_stream:  13.593614 s
+Time to run write_record_output_stream:   2.887528 s
+Time to run write_record_output_stream:  10.261109 s
+Time to run write_record_output_stream:  14.315385 s
+Time to run write_record_output_stream:   3.219997 s
+Time to run write_record_output_stream:  10.385839 s
+Time to run write_record_output_stream:  15.233742 s
+Time to run write_record_output_stream:   3.180510 s
+Time to run write_record_output_stream:  10.398062 s
+Time to run write_record_output_stream:  15.490327 s
+Time to run write_record_output_stream:   2.722809 s
+Time to run write_record_output_stream:  10.121534 s
+Time to run write_record_output_stream:  15.699838 s
+Time to run write_record_output_stream:   2.702331 s
+Time to run write_record_output_stream:  10.276306 s
+Time to run write_record_output_stream:  16.938818 s
+Time to run write_record_output_stream:   3.207452 s
+Time to run write_record_output_stream:  10.388386 s
+Time to run write_record_output_stream:  16.856346 s
+Time to run write_record_output_stream:   0.240238 s
+Time to run write_record_output_stream:   2.559317 s
+Time to run dispose_output_streams subroutine:   0.000000 s
+ MPI Rank:           22  using device:            0
+Time to run newoutfiles:  12.497110 s
+Time to run write_record_output_stream:  11.089750 s
+Time to run write_record_output_stream:  10.394297 s
+Time to run write_record_output_stream:  23.168329 s
+Time to run write_record_output_stream:   4.473567 s
+Time to run write_record_output_stream:  10.106280 s
+Time to run write_record_output_stream:  23.667907 s
+Time to run write_record_output_stream:   2.571668 s
+Time to run write_record_output_stream:  10.308605 s
+Time to run write_record_output_stream:  23.523515 s
+Time to run write_record_output_stream:   2.612863 s
+Time to run write_record_output_stream:  10.196797 s
+Time to run write_record_output_stream:  23.723362 s
+Time to run write_record_output_stream:   2.977654 s
+Time to run write_record_output_stream:  10.306118 s
+Time to run write_record_output_stream:  23.727593 s
+Time to run write_record_output_stream:   2.773986 s
+Time to run write_record_output_stream:   9.956931 s
+Time to run write_record_output_stream:  22.613446 s
+Time to run write_record_output_stream:   3.243763 s
+Time to run write_record_output_stream:   9.946101 s
+Time to run write_record_output_stream:  22.640564 s
+Time to run write_record_output_stream:   2.470326 s
+Time to run write_record_output_stream:   9.964191 s
+Time to run write_record_output_stream:  22.172119 s
+Time to run write_record_output_stream:   2.836666 s
+Time to run write_record_output_stream:   9.956040 s
+Time to run write_record_output_stream:  21.087920 s
+Time to run write_record_output_stream:   2.481157 s
+Time to run write_record_output_stream:   9.923891 s
+Time to run write_record_output_stream:  19.647577 s
+Time to run write_record_output_stream:   3.536561 s
+Time to run write_record_output_stream:   9.945809 s
+Time to run write_record_output_stream:  17.105444 s
+Time to run write_record_output_stream:   2.768163 s
+Time to run write_record_output_stream:  10.295393 s
+Time to run write_record_output_stream:  15.993320 s
+Time to run write_record_output_stream:   3.305360 s
+Time to run write_record_output_stream:  10.316442 s
+Time to run write_record_output_stream:  14.973686 s
+Time to run write_record_output_stream:   2.694207 s
+Time to run write_record_output_stream:  10.380467 s
+Time to run write_record_output_stream:  17.118482 s
+Time to run write_record_output_stream:   2.712875 s
+Time to run write_record_output_stream:  10.467226 s
+Time to run write_record_output_stream:   0.000000 s
+Time to run write_record_output_stream:   2.565061 s
+Time to run write_record_output_stream:  10.268651 s
+Time to run write_record_output_stream:  15.574173 s
+Time to run write_record_output_stream:   2.937086 s
+Time to run write_record_output_stream:  10.133562 s
+Time to run write_record_output_stream:  16.069825 s
+Time to run write_record_output_stream:   3.316752 s
+Time to run write_record_output_stream:  10.208207 s
+Time to run write_record_output_stream:  15.375240 s
+Time to run write_record_output_stream:   2.887483 s
+Time to run write_record_output_stream:  10.261130 s
+Time to run write_record_output_stream:  14.503202 s
+Time to run write_record_output_stream:   3.219917 s
+Time to run write_record_output_stream:  10.385879 s
+Time to run write_record_output_stream:  14.580439 s
+Time to run write_record_output_stream:   3.180458 s
+Time to run write_record_output_stream:  10.398021 s
+Time to run write_record_output_stream:  14.397490 s
+Time to run write_record_output_stream:   2.722676 s
+Time to run write_record_output_stream:  10.121566 s
+Time to run write_record_output_stream:  13.470448 s
+Time to run write_record_output_stream:   2.702195 s
+Time to run write_record_output_stream:  10.276225 s
+Time to run write_record_output_stream:  13.272644 s
+Time to run write_record_output_stream:   3.207272 s
+Time to run write_record_output_stream:  10.388292 s
+Time to run write_record_output_stream:  12.218749 s
+Time to run write_record_output_stream:   0.240242 s
+Time to run write_record_output_stream:   2.559299 s
+Time to run dispose_output_streams subroutine:   0.000000 s
+ MPI Rank:           23  using device:            0
+Time to run newoutfiles:  12.143751 s
+Time to run write_record_output_stream:  11.144086 s
+Time to run write_record_output_stream:  10.394512 s
+Time to run write_record_output_stream:   5.340175 s
+Time to run write_record_output_stream:   4.473712 s
+Time to run write_record_output_stream:  10.106096 s
+Time to run write_record_output_stream:   6.107122 s
+Time to run write_record_output_stream:   2.571874 s
+Time to run write_record_output_stream:  10.308428 s
+Time to run write_record_output_stream:   6.882894 s
+Time to run write_record_output_stream:   2.613036 s
+Time to run write_record_output_stream:  10.197216 s
+Time to run write_record_output_stream:   7.674433 s
+Time to run write_record_output_stream:   2.977822 s
+Time to run write_record_output_stream:  10.306099 s
+Time to run write_record_output_stream:   8.619274 s
+Time to run write_record_output_stream:   2.774024 s
+Time to run write_record_output_stream:   9.957098 s
+Time to run write_record_output_stream:   8.411412 s
+Time to run write_record_output_stream:   3.244008 s
+Time to run write_record_output_stream:   9.946415 s
+Time to run write_record_output_stream:   9.719305 s
+Time to run write_record_output_stream:   2.470414 s
+Time to run write_record_output_stream:   9.964148 s
+Time to run write_record_output_stream:  10.664790 s
+Time to run write_record_output_stream:   2.836753 s
+Time to run write_record_output_stream:   9.955848 s
+Time to run write_record_output_stream:  11.462882 s
+Time to run write_record_output_stream:   2.481272 s
+Time to run write_record_output_stream:   9.923928 s
+Time to run write_record_output_stream:  12.045939 s
+Time to run write_record_output_stream:   3.536704 s
+Time to run write_record_output_stream:   9.945860 s
+Time to run write_record_output_stream:  11.640942 s
+Time to run write_record_output_stream:   2.768354 s
+Time to run write_record_output_stream:  10.295418 s
+Time to run write_record_output_stream:  11.583351 s
+Time to run write_record_output_stream:   3.305532 s
+Time to run write_record_output_stream:  10.316446 s
+Time to run write_record_output_stream:  10.790019 s
+Time to run write_record_output_stream:   2.694309 s
+Time to run write_record_output_stream:  10.380484 s
+Time to run write_record_output_stream:  11.139794 s
+Time to run write_record_output_stream:   2.712999 s
+Time to run write_record_output_stream:  10.467196 s
+Time to run write_record_output_stream:   0.000000 s
+Time to run write_record_output_stream:   2.565207 s
+Time to run write_record_output_stream:  10.268852 s
+Time to run write_record_output_stream:   8.333383 s
+Time to run write_record_output_stream:   2.937183 s
+Time to run write_record_output_stream:  10.133712 s
+Time to run write_record_output_stream:   7.725620 s
+Time to run write_record_output_stream:   3.316824 s
+Time to run write_record_output_stream:  10.208693 s
+Time to run write_record_output_stream:   6.689826 s
+Time to run write_record_output_stream:   2.887537 s
+Time to run write_record_output_stream:  10.260998 s
+Time to run write_record_output_stream:   6.166437 s
+Time to run write_record_output_stream:   3.219870 s
+Time to run write_record_output_stream:  10.385437 s
+Time to run write_record_output_stream:   6.571684 s
+Time to run write_record_output_stream:   3.180410 s
+Time to run write_record_output_stream:  10.398135 s
+Time to run write_record_output_stream:   6.567780 s
+Time to run write_record_output_stream:   2.722771 s
+Time to run write_record_output_stream:  10.121653 s
+Time to run write_record_output_stream:   6.498634 s
+Time to run write_record_output_stream:   2.702271 s
+Time to run write_record_output_stream:  10.276288 s
+Time to run write_record_output_stream:   7.066504 s
+Time to run write_record_output_stream:   3.207448 s
+Time to run write_record_output_stream:  10.388268 s
+Time to run write_record_output_stream:   6.476301 s
+Time to run write_record_output_stream:   0.240258 s
+Time to run write_record_output_stream:   2.559449 s
+Time to run dispose_output_streams subroutine:   0.000000 s
+Time to run dispose_output_streams subroutine:   0.000000 s
+ MPI Rank:            8  using device:            0
+Time to run newoutfiles:  12.914561 s
+Time to run write_record_output_stream:  11.030275 s
+Time to run write_record_output_stream:  10.394284 s
+Time to run write_record_output_stream:   6.024074 s
+Time to run write_record_output_stream:   4.473479 s
+Time to run write_record_output_stream:  10.106497 s
+Time to run write_record_output_stream:   6.311095 s
+Time to run write_record_output_stream:   2.571606 s
+Time to run write_record_output_stream:  10.309360 s
+Time to run write_record_output_stream:   5.761103 s
+Time to run write_record_output_stream:   2.612743 s
+Time to run write_record_output_stream:  10.197060 s
+Time to run write_record_output_stream:   5.571109 s
+Time to run write_record_output_stream:   2.977360 s
+Time to run write_record_output_stream:  10.307246 s
+Time to run write_record_output_stream:   6.256531 s
+Time to run write_record_output_stream:   2.773704 s
+Time to run write_record_output_stream:   9.957187 s
+Time to run write_record_output_stream:   6.261175 s
+Time to run write_record_output_stream:   3.243663 s
+Time to run write_record_output_stream:   9.946651 s
+Time to run write_record_output_stream:   7.830443 s
+Time to run write_record_output_stream:   2.470092 s
+Time to run write_record_output_stream:   9.964893 s
+Time to run write_record_output_stream:   7.730592 s
+Time to run write_record_output_stream:   2.836465 s
+Time to run write_record_output_stream:   9.956628 s
+Time to run write_record_output_stream:   5.559894 s
+Time to run write_record_output_stream:   2.480954 s
+Time to run write_record_output_stream:   9.924513 s
+Time to run write_record_output_stream:   4.225827 s
+Time to run write_record_output_stream:   3.536384 s
+Time to run write_record_output_stream:   9.946215 s
+Time to run write_record_output_stream:   2.769477 s
+Time to run write_record_output_stream:   2.768020 s
+Time to run write_record_output_stream:  10.295862 s
+Time to run write_record_output_stream:   2.857417 s
+Time to run write_record_output_stream:   3.305260 s
+Time to run write_record_output_stream:  10.317016 s
+Time to run write_record_output_stream:   2.062698 s
+Time to run write_record_output_stream:   2.693851 s
+Time to run write_record_output_stream:  10.380473 s
+Time to run write_record_output_stream:   3.556908 s
+Time to run write_record_output_stream:   2.712687 s
+Time to run write_record_output_stream:  10.467492 s
+Time to run write_record_output_stream:   0.000000 s
+Time to run write_record_output_stream:   2.564842 s
+Time to run write_record_output_stream:  10.269224 s
+Time to run write_record_output_stream:   3.252619 s
+Time to run write_record_output_stream:   2.936883 s
+Time to run write_record_output_stream:  10.133385 s
+Time to run write_record_output_stream:   5.298381 s
+Time to run write_record_output_stream:   3.316529 s
+Time to run write_record_output_stream:  10.209033 s
+Time to run write_record_output_stream:   7.260523 s
+Time to run write_record_output_stream:   2.887236 s
+Time to run write_record_output_stream:  10.261215 s
+Time to run write_record_output_stream:   9.267293 s
+Time to run write_record_output_stream:   3.219653 s
+Time to run write_record_output_stream:  10.386117 s
+Time to run write_record_output_stream:  10.552434 s
+Time to run write_record_output_stream:   3.180201 s
+Time to run write_record_output_stream:  10.398228 s
+Time to run write_record_output_stream:  11.088070 s
+Time to run write_record_output_stream:   2.722514 s
+Time to run write_record_output_stream:  10.122133 s
+Time to run write_record_output_stream:  11.741199 s
+Time to run write_record_output_stream:   2.701991 s
+Time to run write_record_output_stream:  10.276502 s
+Time to run write_record_output_stream:  13.288223 s
+Time to run write_record_output_stream:   3.207179 s
+Time to run write_record_output_stream:  10.388402 s
+Time to run write_record_output_stream:  13.636694 s
+Time to run write_record_output_stream:   0.240143 s
+Time to run write_record_output_stream:   2.559031 s
+Time to run dispose_output_streams subroutine:   0.000000 s
+ MPI Rank:           12  using device:            0
+Time to run newoutfiles:  13.236009 s
+Time to run write_record_output_stream:  11.078048 s
+Time to run write_record_output_stream:  10.394559 s
+Time to run write_record_output_stream:   4.695321 s
+Time to run write_record_output_stream:   4.473635 s
+Time to run write_record_output_stream:  10.106328 s
+Time to run write_record_output_stream:   4.771553 s
+Time to run write_record_output_stream:   2.571789 s
+Time to run write_record_output_stream:  10.308772 s
+Time to run write_record_output_stream:   4.159615 s
+Time to run write_record_output_stream:   2.612897 s
+Time to run write_record_output_stream:  10.197094 s
+Time to run write_record_output_stream:   3.973305 s
+Time to run write_record_output_stream:   2.977722 s
+Time to run write_record_output_stream:  10.306218 s
+Time to run write_record_output_stream:   4.625078 s
+Time to run write_record_output_stream:   2.773966 s
+Time to run write_record_output_stream:   9.957005 s
+Time to run write_record_output_stream:   4.449727 s
+Time to run write_record_output_stream:   3.244000 s
+Time to run write_record_output_stream:   9.946352 s
+Time to run write_record_output_stream:   5.492301 s
+Time to run write_record_output_stream:   2.470497 s
+Time to run write_record_output_stream:   9.964405 s
+Time to run write_record_output_stream:   5.683546 s
+Time to run write_record_output_stream:   2.836680 s
+Time to run write_record_output_stream:   9.956020 s
+Time to run write_record_output_stream:   5.851442 s
+Time to run write_record_output_stream:   2.481260 s
+Time to run write_record_output_stream:   9.924327 s
+Time to run write_record_output_stream:   6.362632 s
+Time to run write_record_output_stream:   3.536655 s
+Time to run write_record_output_stream:   9.946033 s
+Time to run write_record_output_stream:   6.040785 s
+Time to run write_record_output_stream:   2.768301 s
+Time to run write_record_output_stream:  10.295527 s
+Time to run write_record_output_stream:   6.127951 s
+Time to run write_record_output_stream:   3.304961 s
+Time to run write_record_output_stream:  10.316334 s
+Time to run write_record_output_stream:   5.544793 s
+Time to run write_record_output_stream:   2.694053 s
+Time to run write_record_output_stream:  10.379085 s
+Time to run write_record_output_stream:   6.774485 s
+Time to run write_record_output_stream:   2.712748 s
+Time to run write_record_output_stream:  10.465734 s
+Time to run write_record_output_stream:   0.000000 s
+Time to run write_record_output_stream:   2.564770 s
+Time to run write_record_output_stream:  10.267703 s
+Time to run write_record_output_stream:   4.067301 s
+Time to run write_record_output_stream:   2.937008 s
+Time to run write_record_output_stream:  10.133224 s
+Time to run write_record_output_stream:   4.217869 s
+Time to run write_record_output_stream:   3.316645 s
+Time to run write_record_output_stream:  10.206393 s
+Time to run write_record_output_stream:   4.210294 s
+Time to run write_record_output_stream:   2.887394 s
+Time to run write_record_output_stream:  10.259753 s
+Time to run write_record_output_stream:   3.900457 s
+Time to run write_record_output_stream:   3.219629 s
+Time to run write_record_output_stream:  10.384398 s
+Time to run write_record_output_stream:   4.085071 s
+Time to run write_record_output_stream:   3.180141 s
+Time to run write_record_output_stream:  10.396418 s
+Time to run write_record_output_stream:   3.618503 s
+Time to run write_record_output_stream:   2.722530 s
+Time to run write_record_output_stream:  10.120398 s
+Time to run write_record_output_stream:   3.137790 s
+Time to run write_record_output_stream:   2.702173 s
+Time to run write_record_output_stream:  10.274933 s
+Time to run write_record_output_stream:   3.515345 s
+Time to run write_record_output_stream:   3.207489 s
+Time to run write_record_output_stream:  10.387385 s
+Time to run write_record_output_stream:   2.729339 s
+Time to run write_record_output_stream:   0.239756 s
+Time to run write_record_output_stream:   2.559084 s
+Time to run dispose_output_streams subroutine:   0.000000 s
+ MPI Rank:           13  using device:            0
+Time to run newoutfiles:  13.185297 s
+Time to run write_record_output_stream:  11.086815 s
+Time to run write_record_output_stream:  10.393699 s
+Time to run write_record_output_stream:  15.179876 s
+Time to run write_record_output_stream:   4.473623 s
+Time to run write_record_output_stream:  10.106582 s
+Time to run write_record_output_stream:  16.131446 s
+Time to run write_record_output_stream:   2.571911 s
+Time to run write_record_output_stream:  10.308579 s
+Time to run write_record_output_stream:  16.450379 s
+Time to run write_record_output_stream:   2.613016 s
+Time to run write_record_output_stream:  10.196422 s
+Time to run write_record_output_stream:  16.913747 s
+Time to run write_record_output_stream:   2.977740 s
+Time to run write_record_output_stream:  10.306073 s
+Time to run write_record_output_stream:  17.772212 s
+Time to run write_record_output_stream:   2.774017 s
+Time to run write_record_output_stream:   9.956759 s
+Time to run write_record_output_stream:  17.639489 s
+Time to run write_record_output_stream:   3.243962 s
+Time to run write_record_output_stream:   9.945862 s
+Time to run write_record_output_stream:  19.017872 s
+Time to run write_record_output_stream:   2.470412 s
+Time to run write_record_output_stream:   9.963875 s
+Time to run write_record_output_stream:  19.304320 s
+Time to run write_record_output_stream:   2.836723 s
+Time to run write_record_output_stream:   9.955653 s
+Time to run write_record_output_stream:  17.187638 s
+Time to run write_record_output_stream:   2.481347 s
+Time to run write_record_output_stream:   9.923971 s
+Time to run write_record_output_stream:  15.291672 s
+Time to run write_record_output_stream:   3.536726 s
+Time to run write_record_output_stream:   9.945621 s
+Time to run write_record_output_stream:  13.333099 s
+Time to run write_record_output_stream:   2.768415 s
+Time to run write_record_output_stream:  10.295557 s
+Time to run write_record_output_stream:  11.703763 s
+Time to run write_record_output_stream:   3.305050 s
+Time to run write_record_output_stream:  10.316491 s
+Time to run write_record_output_stream:   9.275064 s
+Time to run write_record_output_stream:   2.694048 s
+Time to run write_record_output_stream:  10.378707 s
+Time to run write_record_output_stream:  10.044105 s
+Time to run write_record_output_stream:   2.712763 s
+Time to run write_record_output_stream:  10.465452 s
+Time to run write_record_output_stream:   0.000000 s
+Time to run write_record_output_stream:   2.564855 s
+Time to run write_record_output_stream:  10.267444 s
+Time to run write_record_output_stream:  10.517424 s
+Time to run write_record_output_stream:   2.937067 s
+Time to run write_record_output_stream:  10.132519 s
+Time to run write_record_output_stream:  13.284353 s
+Time to run write_record_output_stream:   3.316690 s
+Time to run write_record_output_stream:  10.205947 s
+Time to run write_record_output_stream:  15.782599 s
+Time to run write_record_output_stream:   2.887460 s
+Time to run write_record_output_stream:  10.259178 s
+Time to run write_record_output_stream:  15.949074 s
+Time to run write_record_output_stream:   3.219636 s
+Time to run write_record_output_stream:  10.384344 s
+Time to run write_record_output_stream:  15.984267 s
+Time to run write_record_output_stream:   3.180194 s
+Time to run write_record_output_stream:  10.396386 s
+Time to run write_record_output_stream:  15.558247 s
+Time to run write_record_output_stream:   2.722725 s
+Time to run write_record_output_stream:  10.120065 s
+Time to run write_record_output_stream:  15.521532 s
+Time to run write_record_output_stream:   2.702323 s
+Time to run write_record_output_stream:  10.274649 s
+Time to run write_record_output_stream:  16.489691 s
+Time to run write_record_output_stream:   3.207668 s
+Time to run write_record_output_stream:  10.387132 s
+Time to run write_record_output_stream:  16.259079 s
+Time to run write_record_output_stream:   0.239733 s
+Time to run write_record_output_stream:   2.559098 s
+Time to run dispose_output_streams subroutine:   0.000000 s
+Time to run dispose_output_streams subroutine:   0.000000 s
+Time to run dispose_output_streams subroutine:   0.000000 s
+ MPI Rank:            1  using device:            0
+Time to run newoutfiles:  13.243046 s
+Time to run write_record_output_stream:  10.994710 s
+Time to run write_record_output_stream:  10.393662 s
+Time to run write_record_output_stream:  10.281613 s
+Time to run write_record_output_stream:   4.473579 s
+Time to run write_record_output_stream:  10.106323 s
+Time to run write_record_output_stream:  12.737922 s
+Time to run write_record_output_stream:   2.571686 s
+Time to run write_record_output_stream:  10.309296 s
+Time to run write_record_output_stream:  13.898020 s
+Time to run write_record_output_stream:   2.612908 s
+Time to run write_record_output_stream:  10.196604 s
+Time to run write_record_output_stream:  14.799459 s
+Time to run write_record_output_stream:   2.977596 s
+Time to run write_record_output_stream:  10.306442 s
+Time to run write_record_output_stream:  15.900366 s
+Time to run write_record_output_stream:   2.773813 s
+Time to run write_record_output_stream:   9.957212 s
+Time to run write_record_output_stream:  16.051764 s
+Time to run write_record_output_stream:   3.243751 s
+Time to run write_record_output_stream:   9.946089 s
+Time to run write_record_output_stream:  17.757844 s
+Time to run write_record_output_stream:   2.470147 s
+Time to run write_record_output_stream:   9.964663 s
+Time to run write_record_output_stream:  19.490036 s
+Time to run write_record_output_stream:   2.836556 s
+Time to run write_record_output_stream:   9.956239 s
+Time to run write_record_output_stream:  20.903591 s
+Time to run write_record_output_stream:   2.480986 s
+Time to run write_record_output_stream:   9.924663 s
+Time to run write_record_output_stream:  22.026139 s
+Time to run write_record_output_stream:   3.536550 s
+Time to run write_record_output_stream:   9.946184 s
+Time to run write_record_output_stream:  22.401867 s
+Time to run write_record_output_stream:   2.768114 s
+Time to run write_record_output_stream:  10.295686 s
+Time to run write_record_output_stream:  23.375032 s
+Time to run write_record_output_stream:   3.305242 s
+Time to run write_record_output_stream:  10.316635 s
+Time to run write_record_output_stream:  22.965156 s
+Time to run write_record_output_stream:   2.694046 s
+Time to run write_record_output_stream:  10.380491 s
+Time to run write_record_output_stream:  24.286824 s
+Time to run write_record_output_stream:   2.712874 s
+Time to run write_record_output_stream:  10.467632 s
+Time to run write_record_output_stream:   0.000000 s
+Time to run write_record_output_stream:   2.565004 s
+Time to run write_record_output_stream:  10.268808 s
+Time to run write_record_output_stream:  21.839954 s
+Time to run write_record_output_stream:   2.937059 s
+Time to run write_record_output_stream:  10.134218 s
+Time to run write_record_output_stream:  21.493375 s
+Time to run write_record_output_stream:   3.316830 s
+Time to run write_record_output_stream:  10.209031 s
+Time to run write_record_output_stream:  20.727668 s
+Time to run write_record_output_stream:   2.887375 s
+Time to run write_record_output_stream:  10.261338 s
+Time to run write_record_output_stream:  20.124148 s
+Time to run write_record_output_stream:   3.219689 s
+Time to run write_record_output_stream:  10.386546 s
+Time to run write_record_output_stream:  20.124887 s
+Time to run write_record_output_stream:   3.180356 s
+Time to run write_record_output_stream:  10.398401 s
+Time to run write_record_output_stream:  19.693427 s
+Time to run write_record_output_stream:   2.722581 s
+Time to run write_record_output_stream:  10.121842 s
+Time to run write_record_output_stream:  19.238623 s
+Time to run write_record_output_stream:   2.702108 s
+Time to run write_record_output_stream:  10.275922 s
+Time to run write_record_output_stream:  19.553639 s
+Time to run write_record_output_stream:   3.207334 s
+Time to run write_record_output_stream:  10.388341 s
+Time to run write_record_output_stream:  18.514229 s
+Time to run write_record_output_stream:   0.240144 s
+Time to run write_record_output_stream:   2.559181 s
+Time to run dispose_output_streams subroutine:   0.000000 s
+ MPI Rank:            2  using device:            0
+Time to run newoutfiles:  13.324035 s
+Time to run write_record_output_stream:  10.994518 s
+Time to run write_record_output_stream:  10.393775 s
+Time to run write_record_output_stream:  12.434834 s
+Time to run write_record_output_stream:   4.473427 s
+Time to run write_record_output_stream:  10.106005 s
+Time to run write_record_output_stream:  13.215269 s
+Time to run write_record_output_stream:   2.571606 s
+Time to run write_record_output_stream:  10.308926 s
+Time to run write_record_output_stream:  13.373258 s
+Time to run write_record_output_stream:   2.612883 s
+Time to run write_record_output_stream:  10.196356 s
+Time to run write_record_output_stream:  13.733455 s
+Time to run write_record_output_stream:   2.977701 s
+Time to run write_record_output_stream:  10.306254 s
+Time to run write_record_output_stream:  14.696162 s
+Time to run write_record_output_stream:   2.773821 s
+Time to run write_record_output_stream:   9.956565 s
+Time to run write_record_output_stream:  14.815130 s
+Time to run write_record_output_stream:   3.243881 s
+Time to run write_record_output_stream:   9.945421 s
+Time to run write_record_output_stream:  16.575814 s
+Time to run write_record_output_stream:   2.470412 s
+Time to run write_record_output_stream:   9.964008 s
+Time to run write_record_output_stream:  18.126268 s
+Time to run write_record_output_stream:   2.836702 s
+Time to run write_record_output_stream:   9.955765 s
+Time to run write_record_output_stream:  19.397288 s
+Time to run write_record_output_stream:   2.481132 s
+Time to run write_record_output_stream:   9.923968 s
+Time to run write_record_output_stream:  20.473279 s
+Time to run write_record_output_stream:   3.536538 s
+Time to run write_record_output_stream:   9.945590 s
+Time to run write_record_output_stream:  20.603218 s
+Time to run write_record_output_stream:   2.768195 s
+Time to run write_record_output_stream:  10.295354 s
+Time to run write_record_output_stream:  21.441140 s
+Time to run write_record_output_stream:   3.305327 s
+Time to run write_record_output_stream:  10.316287 s
+Time to run write_record_output_stream:  20.914629 s
+Time to run write_record_output_stream:   2.694031 s
+Time to run write_record_output_stream:  10.380108 s
+Time to run write_record_output_stream:  22.015772 s
+Time to run write_record_output_stream:   2.712772 s
+Time to run write_record_output_stream:  10.467114 s
+Time to run write_record_output_stream:   0.000000 s
+Time to run write_record_output_stream:   2.565254 s
+Time to run write_record_output_stream:  10.268484 s
+Time to run write_record_output_stream:  19.123999 s
+Time to run write_record_output_stream:   2.937031 s
+Time to run write_record_output_stream:  10.133652 s
+Time to run write_record_output_stream:  18.429347 s
+Time to run write_record_output_stream:   3.316808 s
+Time to run write_record_output_stream:  10.208475 s
+Time to run write_record_output_stream:  17.331375 s
+Time to run write_record_output_stream:   2.887341 s
+Time to run write_record_output_stream:  10.261074 s
+Time to run write_record_output_stream:  16.313504 s
+Time to run write_record_output_stream:   3.219746 s
+Time to run write_record_output_stream:  10.386539 s
+Time to run write_record_output_stream:  15.973937 s
+Time to run write_record_output_stream:   3.180328 s
+Time to run write_record_output_stream:  10.397977 s
+Time to run write_record_output_stream:  15.265403 s
+Time to run write_record_output_stream:   2.722741 s
+Time to run write_record_output_stream:  10.121784 s
+Time to run write_record_output_stream:  14.522177 s
+Time to run write_record_output_stream:   2.702259 s
+Time to run write_record_output_stream:  10.275641 s
+Time to run write_record_output_stream:  14.510103 s
+Time to run write_record_output_stream:   3.207616 s
+Time to run write_record_output_stream:  10.387997 s
+Time to run write_record_output_stream:  13.090378 s
+Time to run write_record_output_stream:   0.240143 s
+Time to run write_record_output_stream:   2.559227 s
+Time to run dispose_output_streams subroutine:   0.000000 s
+Time to run dispose_output_streams subroutine:   0.000000 s
+Time to run write_record_output_stream:   3.219501 s
+ RAD variables written at  2009-10-01 19:00:00 UTC        
+ CLM History variables written
+Time to run write_record_output_stream:  10.386646 s
+ ATM variables written at  2009-10-01 20:00:00 UTC        
+Time to run write_record_output_stream:  15.728173 s
+ SRF variables written at  2009-10-01 20:00:00 UTC        
+Time to run write_record_output_stream:   3.180152 s
+ RAD variables written at  2009-10-01 20:00:00 UTC        
+ CLM History variables written
+Time to run write_record_output_stream:  10.398747 s
+ ATM variables written at  2009-10-01 21:00:00 UTC        
+Time to run write_record_output_stream:  15.153875 s
+ SRF variables written at  2009-10-01 21:00:00 UTC        
+Time to run write_record_output_stream:   2.722376 s
+ RAD variables written at  2009-10-01 21:00:00 UTC        
+ $$$  2009-10-01 21:00:00 UTC        
+ $$$ max, min of ps (mb) =  1028.74  677.65
+ CLM History variables written
+Time to run write_record_output_stream:  10.121972 s
+ ATM variables written at  2009-10-01 22:00:00 UTC        
+Time to run write_record_output_stream:  14.708566 s
+ SRF variables written at  2009-10-01 22:00:00 UTC        
+Time to run write_record_output_stream:   2.702005 s
+ RAD variables written at  2009-10-01 22:00:00 UTC        
+ CLM History variables written
+Time to run write_record_output_stream:  10.276229 s
+ ATM variables written at  2009-10-01 23:00:00 UTC        
+Time to run write_record_output_stream:  15.293696 s
+ SRF variables written at  2009-10-01 23:00:00 UTC        
+Time to run write_record_output_stream:   3.207285 s
+ RAD variables written at  2009-10-01 23:00:00 UTC        
+ Write restart file for CLM at  2009-10-02 00:00:00 UTC        
+ CLM History variables written
+ history tape             1 : no open file to close
+ Closing local history file output//EURR-3.clm.regcm.h1.20091001_03600.nc
+ Writing restart dataset on output/EURR-3.clm.regcm.r.2009100200.nc
+ Writing restart dataset on output//EURR-3.clm.regcm.rh0.2009100200.nc
+ Writing restart dataset on output//EURR-3.clm.regcm.rh1.2009100200.nc
+ Successfully wrote out restart data for CLM 4.5
+ At  2009-10-02 00:00:00 UTC        
+ JDay    274.00000 solar declination angle =  -3.09798020 degrees
+                   solar TSI irradiance    =    1355.8045 W/m^2
+Time to run write_record_output_stream:  10.389009 s
+ ATM variables written at  2009-10-02 00:00:00 UTC        
+Time to run write_record_output_stream:  15.736863 s
+ SRF variables written at  2009-10-02 00:00:00 UTC        
+Time to run write_record_output_stream:   0.240107 s
+ STS variables written at  2009-10-02 00:00:00 UTC        
+Time to run write_record_output_stream:   2.559050 s
+ RAD variables written at  2009-10-02 00:00:00 UTC        
+ SAV variables written at  2009-10-02 00:00:00 UTC        
+ Final time  2009-10-02 00:00:00 UTC reached.
+Time to run dispose_output_streams subroutine:   0.000000 s
+ Elapsed seconds of run for this final timeslice :    1.2588501E-04
+ : this run stops at  : 2025-08-30 18:06:01+0200
+ : Run has been completed using            32  processors.
+ : Total elapsed seconds of run :    0.7504560947418213     
+ RegCM V5 simulation successfully reached end
