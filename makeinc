@@ -1,7 +1,6 @@
 #::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
 # #    This file is part of ICTP RegCM.
-#    
-#    Use of this source code is governed by an MIT-style license that can
+#    #    Use of this source code is governed by an MIT-style license that can
 #    be found in the LICENSE file or at
 #
 #         https://opensource.org/licenses/MIT.
@@ -42,7 +41,7 @@ ifeq ($(findstring DCLM45, $(CPPFLAGS)),DCLM45)
   #CPPFLAGS += $(DEFINE)VICHYDRO
 endif
 
-CPPFLAGS += $(DEFINE)RCEMIP
+# CPPFLAGS += $(DEFINE)RCEMIP
 
 space :=
 space +=

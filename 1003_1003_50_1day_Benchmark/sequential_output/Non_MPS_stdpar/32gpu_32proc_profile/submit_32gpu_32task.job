@@ -13,11 +13,10 @@
 
 source /leonardo/home/userexternal/ctica000/MS_thesis/RegCM/modules_cuda  
 
-cd /leonardo/home/userexternal/ctica000/MS_thesis/RegCM/1003_1003_50_1day_Benchmark/sequential_output/Non_MPS_stdpar/32gpu_32proc_profile
+cd /leonardo/home/userexternal/ctica000/MS_thesis/RegCM/253_253_50_1day_Benchmark/sequential_output/Non_MPS_stdpar/32gpu_32proc_profile
 
 # Launch
-srun ./STD_launch_per_rank.sh
+srun ./profile_one_rank_new_nsys.sh 
 
-# srun ./STD_profile_one_rank.sh
 
 

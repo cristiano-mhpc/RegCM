@@ -36,7 +36,7 @@ NSYS_OUT="${SCRATCH:-/tmp/$USER}/profile_new_nsys/nsys_rank${RANK_GLOBAL}"
 # Launch quickly and symmetrically
 if [[ "$RANK_GLOBAL" -eq "$PROFILE_RANK" ]]; then
   exec $NSYS_BIN profile \
-    --duration=900 \
+    --duration=100 \
     --force-overwrite=true \
     --kill=none \
     --stats=true \

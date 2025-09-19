@@ -1,5 +1,0 @@
-[Rank 0] on lrdn1604.leonardo.local: GPU=0, TMPDIR=/leonardo_scratch/large/userexternal/ctica000/tmp_nsys/rank_0
-Filesystem      Size  Used Avail Use% Mounted on
-tmpfs            10G     0   10G   0% /tmp
-Filesystem                                            Size  Used Avail Use% Mounted on
-10.128.84.1@o2ib:10.128.84.2@o2ib:/lscratch/leonardo   43P   33P  8.6P  79% /leonardo_scratch

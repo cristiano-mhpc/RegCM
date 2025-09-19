@@ -65,7 +65,7 @@
 /
 
 &timeparam
-    dt = 45
+    dt = 90
     dtabem = 1
 /
 
