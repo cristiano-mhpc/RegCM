@@ -1,0 +1,2078 @@
+Flat profile:
+
+Each sample counts as 0.01 seconds.
+  %   cumulative   self              self     total           
+ time   seconds   seconds    calls   s/call   s/call  name    
+ 39.03      1.37     1.37      145     0.01     0.01  mod_ocn_zeng_zengocndrv_
+ 16.52      1.95     0.58     2757     0.00     0.00  mod_mppparam_cartesian_to_linear_real8_grid_subgrid_
+  9.97      2.30     0.35     3532     0.00     0.00  mod_mppparam_linear_to_cartesian_real8_subgrid_subgrid_
+  4.56      2.46     0.16      145     0.00     0.02  mod_lm_interface_surface_model_
+  3.99      2.60     0.14    17432     0.00     0.00  mod_timer_is_start_
+  3.13      2.71     0.11      290     0.00     0.00  mod_ocn_common_ocn_interf_
+  2.85      2.81     0.10     8640     0.00     0.00  mod_moloch_sound_
+  2.56      2.90     0.09    86400     0.00     0.00  mod_moloch_wafone_
+  2.56      2.99     0.09     2880     0.00     0.00  mod_timer_syncro_act_
+  2.28      3.07     0.08     5807     0.00     0.00  mod_timer_syncro_willact_
+  1.42      3.12     0.05   172802     0.00     0.00  mod_mppparam_real8_3d_exchange_left_right_bottom_top_
+  1.42      3.17     0.05    86402     0.00     0.00  mod_mppparam_real8_3d_exchange_
+  1.14      3.21     0.04     2880     0.00     0.00  mod_pbl_holtbl_holtbl_
+  0.85      3.24     0.03   106561     0.00     0.00  mod_mppparam_real8_3d_exchange_bottom_top_
+  0.85      3.27     0.03     2880     0.00     0.00  mod_micro_nogtom_nogtom_
+  0.85      3.30     0.03     2880     0.00     0.00  mod_moloch_moloch_
+  0.85      3.33     0.03      145     0.00     0.00  mod_lm_interface_collect_output_
+  0.85      3.36     0.03       49     0.00     0.00  mod_lm_interface_surface_albedo_
+  0.57      3.38     0.02     8640     0.00     0.00  mod_moloch_advection_
+  0.57      3.40     0.02     2885     0.00     0.00  mod_slice_mkslice_
+  0.57      3.42     0.02      146     0.00     0.00  mod_mppparam_cartesian_to_linear_real8_subgrid_subgrid_
+  0.57      3.44     0.02       49     0.00     0.00  mod_ocn_albedo_ocn_albedo_
+  0.57      3.46     0.02       49     0.00     0.00  mod_rad_radiation_radini_
+  0.28      3.47     0.01   106561     0.00     0.00  mod_mppparam_real8_3d_exchange_left_right_
+  0.28      3.48     0.01     2881     0.00     0.00  mod_output_output_
+  0.28      3.49     0.01      203     0.00     0.00  mod_memutil_getmem3d_d_
+  0.28      3.50     0.01       49     0.00     0.00  mod_ocn_common_albedoocn_
+  0.28      3.51     0.01       15     0.00     0.00  mod_memutil_getmem4d_d_
+  0.00      3.51     0.00  4014082     0.00     0.00  mod_ipcc_scenario_ghgval_
+  0.00      3.51     0.00    34584     0.00     0.00  mod_memutil_assignp3d4_d_
+  0.00      3.51     0.00    25919     0.00     0.00  mod_timer_alarm_act_
+  0.00      3.51     0.00    20160     0.00     0.00  mod_timer_alarm_check_
+  0.00      3.51     0.00    17280     0.00     0.00  mod_timer_syncro_check_
+  0.00      3.51     0.00     8645     0.00     0.00  mod_date_days_from_reference_to_date_
+  0.00      3.51     0.00     8645     0.00     0.00  mod_date_idayofyear_to_monthdate_
+  0.00      3.51     0.00     8645     0.00     0.00  mod_date_mdays_leap_
+  0.00      3.51     0.00     5884     0.00     0.00  mod_date_initfromtypedt_
+  0.00      3.51     0.00     5760     0.00     0.00  mod_date_lfdomonth_
+  0.00      3.51     0.00     5760     0.00     0.00  mod_mppparam_real8_3d_exchange_left_bottom_
+  0.00      3.51     0.00     5759     0.00     0.00  mod_date_lmidnight_
+  0.00      3.51     0.00     3034     0.00     0.00  mod_timer_is_integrating_
+  0.00      3.51     0.00     2937     0.00     0.00  mod_date_add_interval_
+  0.00      3.51     0.00     2885     0.00     0.00  mod_date_internal_to_date_time_
+  0.00      3.51     0.00     2885     0.00     0.00  mod_date_second_of_day_to_time_
+  0.00      3.51     0.00     2884     0.00     0.00  mod_date_idayofyear_
+  0.00      3.51     0.00     2882     0.00     0.00  mod_pbl_interface_pblscheme_
+  0.00      3.51     0.00     2881     0.00     0.00  mod_date_yeardayfrac_
+  0.00      3.51     0.00     2881     0.00     0.00  mod_sun_zenitm_
+  0.00      3.51     0.00     2880     0.00     0.00  mod_cu_interface_cucloud_
+  0.00      3.51     0.00     2880     0.00     0.00  mod_micro_interface_cldfrac_
+  0.00      3.51     0.00     2880     0.00     0.00  mod_micro_interface_microscheme_
+  0.00      3.51     0.00     2880     0.00     0.00  mod_moloch_physical_parametrizations_
+  0.00      3.51     0.00     2880     0.00     0.00  mod_mppparam_real8_2d_exchange_left_bottom_
+  0.00      3.51     0.00     2880     0.00     0.00  mod_timer_step_timer_
+  0.00      3.51     0.00     1504     0.00     0.00  mod_message_checkalloc_
+  0.00      3.51     0.00      931     0.00     0.00  mod_rad_radiation_radclr_
+  0.00      3.51     0.00      931     0.00     0.00  mod_rad_radiation_radded_
+  0.00      3.51     0.00      339     0.00     0.00  mod_timer_alarm_willact_
+  0.00      3.51     0.00      305     0.00     0.00  mod_memutil_getmem1d_d_
+  0.00      3.51     0.00      281     0.00     0.00  mod_space_getspc1d_r8arr_
+  0.00      3.51     0.00      242     0.00     0.00  mod_zita_gzita_
+  0.00      3.51     0.00      203     0.00     0.00  mod_space_getspc3d_r8arr_
+  0.00      3.51     0.00      149     0.00     0.00  mod_memutil_getmem2d_d_
+  0.00      3.51     0.00      149     0.00     0.00  mod_space_getspc2d_r8arr_
+  0.00      3.51     0.00      145     0.00     0.01  mod_ocn_common_vecocn_
+  0.00      3.51     0.00      125     0.00     0.00  mod_memutil_assignp2d_d_
+  0.00      3.51     0.00      121     0.00     0.00  mod_zita_bzita_
+  0.00      3.51     0.00      121     0.00     0.00  mod_zita_md_ak_
+  0.00      3.51     0.00      121     0.00     0.00  mod_zita_md_bk_
+  0.00      3.51     0.00      121     0.00     0.00  mod_zita_sigmazita_
+  0.00      3.51     0.00      121     0.00     0.00  mod_zita_zfz_
+  0.00      3.51     0.00      114     0.00     0.00  mod_memutil_assignp3d_d_
+  0.00      3.51     0.00       59     0.00     0.00  mod_mppparam_bcast_real8_
+  0.00      3.51     0.00       53     0.00     0.00  mod_rad_radiation_radctl_
+  0.00      3.51     0.00       51     0.00     0.00  mod_mppparam_bcast_int4_
+  0.00      3.51     0.00       51     0.00     0.00  mod_rad_colmod3_colmod3_
+  0.00      3.51     0.00       49     0.00     0.00  mod_rad_aerosol_aeroppt_
+  0.00      3.51     0.00       49     0.00     0.00  mod_rad_interface_radiation_
+  0.00      3.51     0.00       49     0.00     0.00  mod_rad_outrad_radout_
+  0.00      3.51     0.00       49     0.00     0.00  mod_rad_radiation_aermix_
+  0.00      3.51     0.00       49     0.00     0.00  mod_rad_radiation_radclw_
+  0.00      3.51     0.00       49     0.00     0.00  mod_rad_radiation_radcsw_
+  0.00      3.51     0.00       49     0.00     0.00  mod_rad_radiation_radinp_
+  0.00      3.51     0.00       49     0.00     0.00  mod_rad_radiation_radtpl_
+  0.00      3.51     0.00       30     0.00     0.00  mod_memutil_getmem1d_i_
+  0.00      3.51     0.00       28     0.00     0.00  mod_space_getspc1d_iarr_
+  0.00      3.51     0.00       25     0.00     0.00  mod_mppparam_bcast_logical_
+  0.00      3.51     0.00       21     0.00     0.00  mod_memutil_getmem2d_l_
+  0.00      3.51     0.00       21     0.00     0.00  mod_space_getspc2d_larr_
+  0.00      3.51     0.00       16     0.00     0.00  mod_memutil_getmem2d_i_
+  0.00      3.51     0.00       16     0.00     0.00  mod_space_getspc2d_iarr_
+  0.00      3.51     0.00       15     0.00     0.00  mod_memutil_assignp4d_d_
+  0.00      3.51     0.00       15     0.00     0.00  mod_space_getspc4d_r8arr_
+  0.00      3.51     0.00       14     0.00     0.00  mod_realkinds_is_inf_double_
+  0.00      3.51     0.00       14     0.00     0.00  mod_realkinds_is_nan_double_
+  0.00      3.51     0.00       13     0.00     0.00  mod_date_initfromtypeit_
+  0.00      3.51     0.00       13     0.00     0.00  mod_memutil_assignp2d_i_
+  0.00      3.51     0.00       13     0.00     0.00  mod_mppparam_bcast_arr_character_
+  0.00      3.51     0.00        9     0.00     0.00  mod_mppparam_bcast_arr_logical_
+  0.00      3.51     0.00        8     0.00     0.00  mod_memutil_getmem3d_l_
+  0.00      3.51     0.00        8     0.00     0.00  mod_space_getspc3d_larr_
+  0.00      3.51     0.00        7     0.00     0.00  mod_memutil_getmem3d_i_
+  0.00      3.51     0.00        7     0.00     0.00  mod_mppparam_maxall_real8_
+  0.00      3.51     0.00        7     0.00     0.00  mod_mppparam_minall_real8_
+  0.00      3.51     0.00        7     0.00     0.00  mod_mppparam_sumall_int4_
+  0.00      3.51     0.00        7     0.00     0.00  mod_space_getspc3d_iarr_
+  0.00      3.51     0.00        7     0.00     0.00  mod_timer_init_alarm_
+  0.00      3.51     0.00        6     0.00     0.00  mod_atm_interface_allocate_v3dbound_
+  0.00      3.51     0.00        6     0.00     0.00  mod_ensemble_randify2d_
+  0.00      3.51     0.00        6     0.00     0.00  mod_memutil_assignp2d3_d_
+  0.00      3.51     0.00        6     0.00     0.00  mod_timer_init_syncro_
+  0.00      3.51     0.00        5     0.00     0.00  mod_mppparam_bcast_rcm_time_and_date_
+  0.00      3.51     0.00        4     0.00     0.00  mod_bdycod_invert_top_bottom_
+  0.00      3.51     0.00        4     0.00     0.00  mod_memutil_getmem3d_r_
+  0.00      3.51     0.00        4     0.00     0.00  mod_moloch_uvstagtox_
+  0.00      3.51     0.00        4     0.00     0.00  mod_rad_aerosol_remove_nans_
+  0.00      3.51     0.00        4     0.00     0.00  mod_rad_o3blk_close_o3data_
+  0.00      3.51     0.00        4     0.00     0.00  mod_space_getspc3d_r4arr_
+  0.00      3.51     0.00        3     0.00     0.00  mod_atm_interface_setup_boundaries_
+  0.00      3.51     0.00        3     0.00     0.00  mod_date_check_cal_
+  0.00      3.51     0.00        3     0.00     0.00  mod_date_date_time_to_internal_
+  0.00      3.51     0.00        3     0.00     0.00  mod_date_date_to_days_from_reference_
+  0.00      3.51     0.00        3     0.00     0.00  mod_date_diffdate_
+  0.00      3.51     0.00        3     0.00     0.00  mod_date_initfromintdt_
+  0.00      3.51     0.00        3     0.00     0.00  mod_date_lleap_
+  0.00      3.51     0.00        3     0.00     0.00  mod_date_split_i10_
+  0.00      3.51     0.00        3     0.00     0.00  mod_date_time_to_second_of_day_
+  0.00      3.51     0.00        3     0.00     0.00  mod_date_tohours_
+  0.00      3.51     0.00        3     0.00     0.00  mod_date_yeardays_
+  0.00      3.51     0.00        3     0.00     0.00  mod_init_init_
+  0.00      3.51     0.00        3     0.00     0.00  mod_memutil_assignp3d_i_
+  0.00      3.51     0.00        3     0.00     0.00  mod_memutil_assignp4d5_d_
+  0.00      3.51     0.00        3     0.00     0.00  mod_memutil_getmem1d_l_
+  0.00      3.51     0.00        3     0.00     0.00  mod_mppparam_real8_2d_exchange_
+  0.00      3.51     0.00        3     0.00     0.00  mod_space_getspc1d_larr_
+  0.00      3.51     0.00        2     0.00     0.00  mo_simple_plumes_sp_aop_profile_
+  0.00      3.51     0.00        2     0.00     0.00  mod_advection_vadv4d_
+  0.00      3.51     0.00        2     0.00     0.00  mod_atm_interface_allocate_v2dbound_
+  0.00      3.51     0.00        2     0.00     0.00  mod_atm_interface_export_data_from_atm_
+  0.00      3.51     0.00        2     0.00     0.00  mod_capecin_otlift_table_fill
+  0.00      3.51     0.00        2     0.00     0.00  mod_cbmz_integrator_jac_chem_
+  0.00      3.51     0.00        2     0.00     0.00  mod_cbmz_jacobiansp_
+  0.00      3.51     0.00        2     0.00     0.00  mod_che_bdyco_setup_che_bdycon_
+  0.00      3.51     0.00        2     0.00     0.00  mod_che_carbonaer_doaging_
+  0.00      3.51     0.00        2     0.00     0.00  mod_cloud_echam5_echam5_cldfrac_
+  0.00      3.51     0.00        2     0.00     0.00  mod_cloud_guli2007_gulisa_cldfrac_
+  0.00      3.51     0.00        2     0.00     0.00  mod_cloud_subex_subex_cldfrac_
+  0.00      3.51     0.00        2     0.00     0.00  mod_cloud_texeira_texeira_cldfrac_
+  0.00      3.51     0.00        2     0.00     0.00  mod_cloud_thomp_thomp_cldfrac_
+  0.00      3.51     0.00        2     0.00     0.00  mod_cloud_tompkins_tompkins_cldfrac_
+  0.00      3.51     0.00        2     0.00     0.00  mod_cloud_xuran_xuran_cldfrac_
+  0.00      3.51     0.00        2     0.00     0.00  mod_cu_interface_shallow_convection_
+  0.00      3.51     0.00        2     0.00     0.00  mod_cu_tiedtke_ntiedtke_ctracer
+  0.00      3.51     0.00        2     0.00     0.00  mod_date_split_rcm_time_and_date_complete_
+  0.00      3.51     0.00        2     0.00     0.00  mod_diffusion_diffu_x4d3d_
+  0.00      3.51     0.00        2     0.00     0.00  mod_earth_get_window_r4_has_south_pole
+  0.00      3.51     0.00        2     0.00     0.00  mod_kdtree2_heapsort_struct_
+  0.00      3.51     0.00        2     0.00     0.00  mod_lm_interface_wlh_
+  0.00      3.51     0.00        2     0.00     0.00  mod_memutil_getmem1d_r_
+  0.00      3.51     0.00        2     0.00     0.00  mod_memutil_getmem2d_r_
+  0.00      3.51     0.00        2     0.00     0.00  mod_memutil_relmem3d_d_
+  0.00      3.51     0.00        2     0.00     0.00  mod_memutil_relmem3d_i_
+  0.00      3.51     0.00        2     0.00     0.00  mod_memutil_relmem3d_l_
+  0.00      3.51     0.00        2     0.00     0.00  mod_memutil_relmem3d_r_
+  0.00      3.51     0.00        2     0.00     0.00  mod_message_viz_plot_
+  0.00      3.51     0.00        2     0.00     0.00  mod_micro_interface_condtq_
+  0.00      3.51     0.00        2     0.00     0.00  mod_micro_nogtom_rain_fallspeed_
+  0.00      3.51     0.00        2     0.00     0.00  mod_micro_subex_subex_season_factor
+  0.00      3.51     0.00        2     0.00     0.00  mod_mppparam_bcast_arr_int4_
+  0.00      3.51     0.00        2     0.00     0.00  mod_mppparam_cl_setup_real8_
+  0.00      3.51     0.00        2     0.00     0.00  mod_mppparam_get_cartcomm_
+  0.00      3.51     0.00        2     0.00     0.00  mod_mppparam_glosplitw_
+  0.00      3.51     0.00        2     0.00     0.00  mod_mppparam_real8_2d_exchange_bottom_top_
+  0.00      3.51     0.00        2     0.00     0.00  mod_mppparam_real8_2d_exchange_left_right_
+  0.00      3.51     0.00        2     0.00     0.00  mod_ncio_check_ok_
+  0.00      3.51     0.00        2     0.00     0.00  mod_nhinterp_smtdsmt_
+  0.00      3.51     0.00        2     0.00     0.00  mod_output_vinterz_
+  0.00      3.51     0.00        2     0.00     0.00  mod_params_param_gcd_rec
+  0.00      3.51     0.00        2     0.00     0.00  mod_pbl_holtbl_force_water_conserve_
+  0.00      3.51     0.00        2     0.00     0.00  mod_pbl_uwtcm_pblhgt_
+  0.00      3.51     0.00        2     0.00     0.00  mod_rad_common_
+  0.00      3.51     0.00        2     0.00     0.00  mod_rad_interface_export_data_from_rad_
+  0.00      3.51     0.00        2     0.00     0.00  mod_rad_outrad_copy4d_add_
+  0.00      3.51     0.00        2     0.00     0.00  mod_rad_radiation_radabs_
+  0.00      3.51     0.00        2     0.00     0.00  mod_rad_radiation_radems_
+  0.00      3.51     0.00        2     0.00     0.00  mod_rad_radiation_radoz2_
+  0.00      3.51     0.00        2     0.00     0.00  mod_rad_radiation_trcplk_
+  0.00      3.51     0.00        2     0.00     0.00  mod_rad_radiation_trcpth_
+  0.00      3.51     0.00        2     0.00     0.00  mod_rad_tracer_trcmix_
+  0.00      3.51     0.00        2     0.00     0.00  mod_sound_sound_
+  0.00      3.51     0.00        2     0.00     0.00  mod_space_getspc1d_r4arr_
+  0.00      3.51     0.00        2     0.00     0.00  mod_space_getspc2d_r4arr_
+  0.00      3.51     0.00        2     0.00     0.00  mod_split_spstep_
+  0.00      3.51     0.00        2     0.00     0.00  mod_stdatm_stdlrate_
+  0.00      3.51     0.00        2     0.00     0.00  mod_sun_read_solarforcing_
+  0.00      3.51     0.00        2     0.00     0.00  mod_tendency_extracttenchi_
+  0.00      3.51     0.00        2     0.00     0.00  mod_timefilter_filter_raw_qv_
+  0.00      3.51     0.00        2     0.00     0.00  mod_vertint_intzps2_
+  0.00      3.51     0.00        2     0.00     0.00  mod_vmodes_invmtrx_
+  0.00      3.51     0.00        2     0.00     0.00  rrlw_ncpar_getabsorberindex_
+  0.00      3.51     0.00        2     0.00     0.00  rrsw_ncpar_getabsorberindex_
+  0.00      3.51     0.00        1     0.00     3.51  MAIN_
+  0.00      3.51     0.00        1     0.00     0.00  mod_atm_interface_allocate_mod_atm_interface_
+  0.00      3.51     0.00        1     0.00     0.00  mod_atm_interface_setup_model_indexes_
+  0.00      3.51     0.00        1     0.00     0.00  mod_bats_internal_allocate_mod_bats_internal_
+  0.00      3.51     0.00        1     0.00     0.00  mod_bdycod_allocate_mod_bdycon_
+  0.00      3.51     0.00        1     0.00     0.00  mod_bdycod_initideal_
+  0.00      3.51     0.00        1     0.00     0.00  mod_bdycod_is_present_qc_
+  0.00      3.51     0.00        1     0.00     0.00  mod_bdycod_is_present_qi_
+  0.00      3.51     0.00        1     0.00     0.00  mod_bdycod_setup_bdycon_
+  0.00      3.51     0.00        1     0.00     0.00  mod_che_bdyco_allocate_mod_che_bdyco_
+  0.00      3.51     0.00        1     0.00     0.00  mod_che_bionit_allocate_mod_che_bionit_
+  0.00      3.51     0.00        1     0.00     0.00  mod_che_common_allocate_mod_che_common_
+  0.00      3.51     0.00        1     0.00     0.00  mod_che_dust_allocate_mod_che_dust_
+  0.00      3.51     0.00        1     0.00     0.00  mod_che_mppio_allocate_mod_che_mppio_
+  0.00      3.51     0.00        1     0.00     0.00  mod_cu_common_init_mod_cumulus_
+  0.00      3.51     0.00        1     0.00     0.00  mod_cu_interface_allocate_cumulus_
+  0.00      3.51     0.00        1     0.00     0.00  mod_cu_interface_init_cumulus_
+  0.00      3.51     0.00        1     0.00     0.00  mod_date_tochar10_
+  0.00      3.51     0.00        1     0.00     0.00  mod_date_tochar_
+  0.00      3.51     0.00        1     0.00     0.00  mod_date_toint10_
+  0.00      3.51     0.00        1     0.00     0.00  mod_diffusion_allocate_mod_diffusion_
+  0.00      3.51     0.00        1     0.00     0.00  mod_header_checktime_
+  0.00      3.51     0.00        1     0.00     0.00  mod_header_finaltime_
+  0.00      3.51     0.00        1     0.00     0.00  mod_header_header_
+  0.00      3.51     0.00        1     0.00     0.00  mod_header_whoami_
+  0.00      3.51     0.00        1     0.00     0.00  mod_ipcc_scenario_set_scenario_
+  0.00      3.51     0.00        1     0.00     0.00  mod_lm_interface_allocate_surface_model_
+  0.00      3.51     0.00        1     0.00     0.00  mod_lm_interface_init_surface_model_
+  0.00      3.51     0.00        1     0.00     0.00  mod_lm_interface_initialize_surface_model_
+  0.00      3.51     0.00        1     0.00     0.00  mod_memutil_assignp2d4_d_
+  0.00      3.51     0.00        1     0.00     0.00  mod_memutil_finalize_pool1d_d_
+  0.00      3.51     0.00        1     0.00     0.00  mod_memutil_finalize_pool1d_i_
+  0.00      3.51     0.00        1     0.00     0.00  mod_memutil_finalize_pool1d_l_
+  0.00      3.51     0.00        1     0.00     0.00  mod_memutil_finalize_pool1d_r_
+  0.00      3.51     0.00        1     0.00     0.00  mod_memutil_finalize_pool1d_s_
+  0.00      3.51     0.00        1     0.00     0.00  mod_memutil_finalize_pool1d_t_
+  0.00      3.51     0.00        1     0.00     0.00  mod_memutil_finalize_pool2d_d_
+  0.00      3.51     0.00        1     0.00     0.00  mod_memutil_finalize_pool2d_i_
+  0.00      3.51     0.00        1     0.00     0.00  mod_memutil_finalize_pool2d_l_
+  0.00      3.51     0.00        1     0.00     0.00  mod_memutil_finalize_pool2d_r_
+  0.00      3.51     0.00        1     0.00     0.00  mod_memutil_finalize_pool2d_s_
+  0.00      3.51     0.00        1     0.00     0.00  mod_memutil_finalize_pool3d_d_
+  0.00      3.51     0.00        1     0.00     0.00  mod_memutil_finalize_pool3d_i_
+  0.00      3.51     0.00        1     0.00     0.00  mod_memutil_finalize_pool3d_l_
+  0.00      3.51     0.00        1     0.00     0.00  mod_memutil_finalize_pool3d_r_
+  0.00      3.51     0.00        1     0.00     0.00  mod_memutil_finalize_pool3d_s_
+  0.00      3.51     0.00        1     0.00     0.00  mod_memutil_finalize_pool4d_d_
+  0.00      3.51     0.00        1     0.00     0.00  mod_memutil_finalize_pool4d_i_
+  0.00      3.51     0.00        1     0.00     0.00  mod_memutil_finalize_pool4d_l_
+  0.00      3.51     0.00        1     0.00     0.00  mod_memutil_finalize_pool4d_r_
+  0.00      3.51     0.00        1     0.00     0.00  mod_memutil_finalize_pool4d_s_
+  0.00      3.51     0.00        1     0.00     0.00  mod_memutil_finalize_pool5d_d_
+  0.00      3.51     0.00        1     0.00     0.00  mod_memutil_finalize_pool5d_i_
+  0.00      3.51     0.00        1     0.00     0.00  mod_memutil_finalize_pool5d_l_
+  0.00      3.51     0.00        1     0.00     0.00  mod_memutil_finalize_pool5d_r_
+  0.00      3.51     0.00        1     0.00     0.00  mod_memutil_finalize_pool5d_s_
+  0.00      3.51     0.00        1     0.00     0.00  mod_memutil_memory_destroy_
+  0.00      3.51     0.00        1     0.00     0.00  mod_memutil_memory_init_
+  0.00      3.51     0.00        1     0.00     0.00  mod_memutil_relmem2d_d_
+  0.00      3.51     0.00        1     0.00     0.00  mod_memutil_relmem2d_i_
+  0.00      3.51     0.00        1     0.00     0.00  mod_memutil_relmem2d_l_
+  0.00      3.51     0.00        1     0.00     0.00  mod_memutil_relmem2d_r_
+  0.00      3.51     0.00        1     0.00     0.00  mod_message_setup_mesg_
+  0.00      3.51     0.00        1     0.00     0.00  mod_micro_interface_allocate_micro_
+  0.00      3.51     0.00        1     0.00     0.00  mod_micro_interface_init_micro_
+  0.00      3.51     0.00        1     0.00     0.00  mod_micro_nogtom_allocate_mod_nogtom_
+  0.00      3.51     0.00        1     0.00     0.00  mod_micro_nogtom_init_nogtom_
+  0.00      3.51     0.00        1     0.00     0.00  mod_moloch_allocate_moloch_
+  0.00      3.51     0.00        1     0.00     0.00  mod_moloch_init_moloch_
+  0.00      3.51     0.00        1     0.00     0.00  mod_mppparam_broadcast_params_
+  0.00      3.51     0.00        1     0.00     0.00  mod_mppparam_cartesian_to_linear_integer_subgrid_subgrid_
+  0.00      3.51     0.00        1     0.00     0.00  mod_mppparam_set_nproc_
+  0.00      3.51     0.00        1     0.00     0.00  mod_ncio_close_icbc_
+  0.00      3.51     0.00        1     0.00     0.00  mod_ncout_dispose_output_streams_
+  0.00      3.51     0.00        1     0.00     0.00  mod_ncout_init_output_streams_
+  0.00      3.51     0.00        1     0.00     0.00  mod_ncout_newoutfiles_
+  0.00      3.51     0.00        1     0.00     0.00  mod_ocn_common_initocn_
+  0.00      3.51     0.00        1     0.00     0.00  mod_ocn_internal_allocate_mod_ocn_internal_
+  0.00      3.51     0.00        1     0.00     0.02  mod_params_param_
+  0.00      3.51     0.00        1     0.00     0.00  mod_pbl_holtbl_allocate_mod_pbl_holtbl_
+  0.00      3.51     0.00        1     0.00     0.00  mod_pbl_interface_allocate_pblscheme_
+  0.00      3.51     0.00        1     0.00     0.00  mod_pbl_interface_init_pblscheme_
+  0.00      3.51     0.00        1     0.00     0.00  mod_rad_aerosol_allocate_mod_rad_aerosol_
+  0.00      3.51     0.00        1     0.00     0.00  mod_rad_colmod3_allocate_mod_rad_colmod3_
+  0.00      3.51     0.00        1     0.00     0.00  mod_rad_interface_allocate_radiation_
+  0.00      3.51     0.00        1     0.00     0.00  mod_rad_interface_init_radiation_
+  0.00      3.51     0.00        1     0.00     0.00  mod_rad_interface_inito3_
+  0.00      3.51     0.00        1     0.00     0.00  mod_rad_o3blk_allocate_mod_rad_o3blk_
+  0.00      3.51     0.00        1     0.00     0.00  mod_rad_o3blk_o3data_
+  0.00      3.51     0.00        1     0.00     0.00  mod_rad_outrad_allocate_mod_rad_outrad_
+  0.00      3.51     0.00        1     0.00     0.00  mod_regcm_interface_rcm_finalize_
+  0.00      3.51     0.00        1     0.00     0.02  mod_regcm_interface_rcm_initialize_
+  0.00      3.51     0.00        1     0.00     3.49  mod_regcm_interface_rcm_run_
+  0.00      3.51     0.00        1     0.00     0.00  mod_regcm_interface_setup_openacc_
+  0.00      3.51     0.00        1     0.00     0.00  mod_runparams_allocate_mod_runparams_
+  0.00      3.51     0.00        1     0.00     0.00  mod_savefile_allocate_mod_savefile_
+  0.00      3.51     0.00        1     0.00     0.00  mod_slice_init_slice_
+  0.00      3.51     0.00        1     0.00     0.00  mod_split_allocate_mod_split_
+  0.00      3.51     0.00        1     0.00     0.00  mod_tendency_allocate_mod_tend_
+  0.00      3.51     0.00        1     0.00     0.00  mod_timer_cleanup_
+  0.00      3.51     0.00        1     0.00     0.00  mod_timer_init_timer_
+  0.00      3.51     0.00        1     0.00     0.00  mod_zita_model_zitaf_
+  0.00      3.51     0.00        1     0.00     0.00  mod_zita_model_zitah_
+
+ %         the percentage of the total running time of the
+time       program used by this function.
+
+cumulative a running sum of the number of seconds accounted
+ seconds   for by this function and those listed above it.
+
+ self      the number of seconds accounted for by this
+seconds    function alone.  This is the major sort for this
+           listing.
+
+calls      the number of times this function was invoked, if
+           this function is profiled, else blank.
+
+ self      the average number of milliseconds spent in this
+ms/call    function per call, if this function is profiled,
+	   else blank.
+
+ total     the average number of milliseconds spent in this
+ms/call    function and its descendents per call, if this
+	   function is profiled, else blank.
+
+name       the name of the function.  This is the minor sort
+           for this listing. The index shows the location of
+	   the function in the gprof listing. If the index is
+	   in parenthesis it shows where it would appear in
+	   the gprof listing if it were to be printed.
+
+Copyright (C) 2012-2025 Free Software Foundation, Inc.
+
+Copying and distribution of this file, with or without modification,
+are permitted in any medium without royalty provided the copyright
+notice and this notice are preserved.
+
+		     Call graph (explanation follows)
+
+
+granularity: each sample hit covers 2 byte(s) for 0.28% of 3.51 seconds
+
+index % time    self  children    called     name
+                0.00    3.51       1/1           main [2]
+[1]     99.9    0.00    3.51       1         MAIN_ [1]
+                0.00    3.49       1/1           mod_regcm_interface_rcm_run_ [3]
+                0.00    0.02       1/1           mod_regcm_interface_rcm_initialize_ [28]
+                0.00    0.00       1/3           mod_date_diffdate_ [151]
+                0.00    0.00       1/13          mod_date_initfromtypeit_ [125]
+                0.00    0.00       1/3           mod_date_tohours_ [156]
+                0.00    0.00       1/1           mod_regcm_interface_rcm_finalize_ [298]
+-----------------------------------------------
+                                                 <spontaneous>
+[2]     99.9    0.00    3.51                 main [2]
+                0.00    3.51       1/1           MAIN_ [1]
+-----------------------------------------------
+                0.00    3.49       1/1           MAIN_ [1]
+[3]     99.3    0.00    3.49       1         mod_regcm_interface_rcm_run_ [3]
+                0.03    3.40    2880/2880        mod_moloch_moloch_ [4]
+                0.01    0.05    2880/2881        mod_output_output_ [19]
+                0.00    0.00    2879/25919       mod_timer_alarm_act_ [66]
+-----------------------------------------------
+                0.03    3.40    2880/2880        mod_regcm_interface_rcm_run_ [3]
+[4]     97.7    0.03    3.40    2880         mod_moloch_moloch_ [4]
+                0.00    2.89    2880/2880        mod_moloch_physical_parametrizations_ [5]
+                0.10    0.10    8640/8640        mod_moloch_sound_ [12]
+                0.02    0.13    8640/8640        mod_moloch_advection_ [13]
+                0.09    0.00    2880/2880        mod_timer_syncro_act_ [16]
+                0.00    0.05    2880/2881        mod_sun_zenitm_ [23]
+                0.02    0.00    2880/2885        mod_slice_mkslice_ [30]
+                0.00    0.00    2880/106561      mod_mppparam_real8_3d_exchange_bottom_top_ [25]
+                0.00    0.00    2880/106561      mod_mppparam_real8_3d_exchange_left_right_ [36]
+                0.00    0.00    2880/2880        mod_timer_step_timer_ [87]
+                0.00    0.00      14/14          mod_realkinds_is_nan_double_ [124]
+                0.00    0.00      14/14          mod_realkinds_is_inf_double_ [123]
+                0.00    0.00       8/3034        mod_timer_is_integrating_ [76]
+                0.00    0.00       7/7           mod_mppparam_maxall_real8_ [132]
+                0.00    0.00       7/7           mod_mppparam_minall_real8_ [133]
+                0.00    0.00       7/7           mod_mppparam_sumall_int4_ [134]
+-----------------------------------------------
+                0.00    2.89    2880/2880        mod_moloch_moloch_ [4]
+[5]     82.5    0.00    2.89    2880         mod_moloch_physical_parametrizations_ [5]
+                0.16    2.44     145/145         mod_lm_interface_surface_model_ [6]
+                0.08    0.00    5807/5807        mod_timer_syncro_willact_ [17]
+                0.03    0.05      49/49          mod_lm_interface_surface_albedo_ [18]
+                0.05    0.00    5858/17432       mod_timer_is_start_ [14]
+                0.04    0.00    2880/2880        mod_pbl_holtbl_holtbl_ [24]
+                0.03    0.00    2880/2880        mod_micro_nogtom_nogtom_ [26]
+                0.00    0.02      49/51          mod_rad_colmod3_colmod3_ [35]
+                0.00    0.00    2880/2880        mod_cu_interface_cucloud_ [83]
+                0.00    0.00    2880/2880        mod_micro_interface_cldfrac_ [84]
+                0.00    0.00    2880/2880        mod_micro_interface_microscheme_ [85]
+                0.00    0.00    2880/2882        mod_pbl_interface_pblscheme_ [81]
+                0.00    0.00      49/339         mod_timer_alarm_willact_ [91]
+                0.00    0.00      49/49          mod_rad_interface_radiation_ [108]
+-----------------------------------------------
+                0.16    2.44     145/145         mod_moloch_physical_parametrizations_ [5]
+[6]     74.1    0.16    2.44     145         mod_lm_interface_surface_model_ [6]
+                0.00    1.89     145/145         mod_ocn_common_vecocn_ [7]
+                0.06    0.46     145/290         mod_ocn_common_ocn_interf_ [9]
+                0.03    0.00     145/145         mod_lm_interface_collect_output_ [27]
+-----------------------------------------------
+                0.00    1.89     145/145         mod_lm_interface_surface_model_ [6]
+[7]     53.8    0.00    1.89     145         mod_ocn_common_vecocn_ [7]
+                1.37    0.00     145/145         mod_ocn_zeng_zengocndrv_ [8]
+                0.06    0.46     145/290         mod_ocn_common_ocn_interf_ [9]
+-----------------------------------------------
+                1.37    0.00     145/145         mod_ocn_common_vecocn_ [7]
+[8]     39.0    1.37    0.00     145         mod_ocn_zeng_zengocndrv_ [8]
+-----------------------------------------------
+                0.06    0.46     145/290         mod_lm_interface_surface_model_ [6]
+                0.06    0.46     145/290         mod_ocn_common_vecocn_ [7]
+[9]     29.6    0.11    0.93     290         mod_ocn_common_ocn_interf_ [9]
+                0.58    0.00    2755/2757        mod_mppparam_cartesian_to_linear_real8_grid_subgrid_ [10]
+                0.33    0.00    3335/3532        mod_mppparam_linear_to_cartesian_real8_subgrid_subgrid_ [11]
+                0.02    0.00     145/146         mod_mppparam_cartesian_to_linear_real8_subgrid_subgrid_ [31]
+-----------------------------------------------
+                0.00    0.00       2/2757        mod_ocn_common_initocn_ [53]
+                0.58    0.00    2755/2757        mod_ocn_common_ocn_interf_ [9]
+[10]    16.5    0.58    0.00    2757         mod_mppparam_cartesian_to_linear_real8_grid_subgrid_ [10]
+-----------------------------------------------
+                0.00    0.00       1/3532        mod_ocn_common_initocn_ [53]
+                0.02    0.00     196/3532        mod_ocn_common_albedoocn_ [22]
+                0.33    0.00    3335/3532        mod_ocn_common_ocn_interf_ [9]
+[11]    10.0    0.35    0.00    3532         mod_mppparam_linear_to_cartesian_real8_subgrid_subgrid_ [11]
+-----------------------------------------------
+                0.10    0.10    8640/8640        mod_moloch_moloch_ [4]
+[12]     5.7    0.10    0.10    8640         mod_moloch_sound_ [12]
+                0.05    0.00  172800/172802      mod_mppparam_real8_3d_exchange_left_right_bottom_top_ [20]
+                0.05    0.00   86400/86402       mod_mppparam_real8_3d_exchange_ [21]
+-----------------------------------------------
+                0.02    0.13    8640/8640        mod_moloch_moloch_ [4]
+[13]     4.2    0.02    0.13    8640         mod_moloch_advection_ [13]
+                0.09    0.03   86400/86400       mod_moloch_wafone_ [15]
+                0.00    0.00   17280/106561      mod_mppparam_real8_3d_exchange_bottom_top_ [25]
+                0.00    0.00   17280/106561      mod_mppparam_real8_3d_exchange_left_right_ [36]
+                0.00    0.00   34560/34584       mod_memutil_assignp3d4_d_ [65]
+-----------------------------------------------
+                0.00    0.00       1/17432       mod_ocn_common_initocn_ [53]
+                0.00    0.00      49/17432       mod_rad_outrad_radout_ [55]
+                0.05    0.00    5762/17432       mod_sun_zenitm_ [23]
+                0.05    0.00    5762/17432       mod_output_output_ [19]
+                0.05    0.00    5858/17432       mod_moloch_physical_parametrizations_ [5]
+[14]     4.0    0.14    0.00   17432         mod_timer_is_start_ [14]
+-----------------------------------------------
+                0.09    0.03   86400/86400       mod_moloch_advection_ [13]
+[15]     3.5    0.09    0.03   86400         mod_moloch_wafone_ [15]
+                0.02    0.00   86400/106561      mod_mppparam_real8_3d_exchange_bottom_top_ [25]
+                0.01    0.00   86400/106561      mod_mppparam_real8_3d_exchange_left_right_ [36]
+-----------------------------------------------
+                0.09    0.00    2880/2880        mod_moloch_moloch_ [4]
+[16]     2.6    0.09    0.00    2880         mod_timer_syncro_act_ [16]
+-----------------------------------------------
+                0.08    0.00    5807/5807        mod_moloch_physical_parametrizations_ [5]
+[17]     2.3    0.08    0.00    5807         mod_timer_syncro_willact_ [17]
+-----------------------------------------------
+                0.03    0.05      49/49          mod_moloch_physical_parametrizations_ [5]
+[18]     2.3    0.03    0.05      49         mod_lm_interface_surface_albedo_ [18]
+                0.01    0.04      49/49          mod_ocn_common_albedoocn_ [22]
+-----------------------------------------------
+                0.00    0.00       1/2881        mod_regcm_interface_rcm_initialize_ [28]
+                0.01    0.05    2880/2881        mod_regcm_interface_rcm_run_ [3]
+[19]     1.6    0.01    0.05    2881         mod_output_output_ [19]
+                0.05    0.00    5762/17432       mod_timer_is_start_ [14]
+                0.00    0.00   17280/25919       mod_timer_alarm_act_ [66]
+                0.00    0.00    5760/5760        mod_date_lfdomonth_ [73]
+                0.00    0.00    5759/5759        mod_date_lmidnight_ [75]
+                0.00    0.00    2881/3034        mod_timer_is_integrating_ [76]
+                0.00    0.00       1/1           mod_ncout_newoutfiles_ [290]
+                0.00    0.00       1/5884        mod_date_initfromtypedt_ [72]
+-----------------------------------------------
+                0.00    0.00       2/172802      mod_params_param_ [29]
+                0.05    0.00  172800/172802      mod_moloch_sound_ [12]
+[20]     1.4    0.05    0.00  172802         mod_mppparam_real8_3d_exchange_left_right_bottom_top_ [20]
+-----------------------------------------------
+                0.00    0.00       2/86402       mod_bdycod_initideal_ [63]
+                0.05    0.00   86400/86402       mod_moloch_sound_ [12]
+[21]     1.4    0.05    0.00   86402         mod_mppparam_real8_3d_exchange_ [21]
+-----------------------------------------------
+                0.01    0.04      49/49          mod_lm_interface_surface_albedo_ [18]
+[22]     1.4    0.01    0.04      49         mod_ocn_common_albedoocn_ [22]
+                0.02    0.00      49/49          mod_ocn_albedo_ocn_albedo_ [33]
+                0.02    0.00     196/3532        mod_mppparam_linear_to_cartesian_real8_subgrid_subgrid_ [11]
+-----------------------------------------------
+                0.00    0.00       1/2881        mod_init_init_ [51]
+                0.00    0.05    2880/2881        mod_moloch_moloch_ [4]
+[23]     1.3    0.00    0.05    2881         mod_sun_zenitm_ [23]
+                0.05    0.00    5762/17432       mod_timer_is_start_ [14]
+                0.00    0.00    5760/25919       mod_timer_alarm_act_ [66]
+                0.00    0.00    2881/2881        mod_date_yeardayfrac_ [82]
+-----------------------------------------------
+                0.04    0.00    2880/2880        mod_moloch_physical_parametrizations_ [5]
+[24]     1.1    0.04    0.00    2880         mod_pbl_holtbl_holtbl_ [24]
+                0.00    0.00    5760/5760        mod_mppparam_real8_3d_exchange_left_bottom_ [74]
+                0.00    0.00    2880/2880        mod_mppparam_real8_2d_exchange_left_bottom_ [86]
+-----------------------------------------------
+                0.00    0.00       1/106561      mod_init_init_ [51]
+                0.00    0.00    2880/106561      mod_moloch_moloch_ [4]
+                0.00    0.00   17280/106561      mod_moloch_advection_ [13]
+                0.02    0.00   86400/106561      mod_moloch_wafone_ [15]
+[25]     0.9    0.03    0.00  106561         mod_mppparam_real8_3d_exchange_bottom_top_ [25]
+-----------------------------------------------
+                0.03    0.00    2880/2880        mod_moloch_physical_parametrizations_ [5]
+[26]     0.9    0.03    0.00    2880         mod_micro_nogtom_nogtom_ [26]
+-----------------------------------------------
+                0.03    0.00     145/145         mod_lm_interface_surface_model_ [6]
+[27]     0.9    0.03    0.00     145         mod_lm_interface_collect_output_ [27]
+                0.00    0.00     290/339         mod_timer_alarm_willact_ [91]
+                0.00    0.00     145/3034        mod_timer_is_integrating_ [76]
+-----------------------------------------------
+                0.00    0.02       1/1           MAIN_ [1]
+[28]     0.6    0.00    0.02       1         mod_regcm_interface_rcm_initialize_ [28]
+                0.00    0.02       1/1           mod_params_param_ [29]
+                0.00    0.00       1/3           mod_init_init_ [51]
+                0.00    0.00       1/2881        mod_output_output_ [19]
+                0.00    0.00       6/6           mod_ensemble_randify2d_ [137]
+                0.00    0.00       1/1           mod_header_whoami_ [245]
+                0.00    0.00       1/1           mod_regcm_interface_setup_openacc_ [299]
+                0.00    0.00       1/1           mod_message_setup_mesg_ [280]
+                0.00    0.00       1/1           mod_mppparam_broadcast_params_ [284]
+                0.00    0.00       1/1           mod_memutil_memory_init_ [275]
+                0.00    0.00       1/1           mod_mppparam_set_nproc_ [286]
+                0.00    0.00       1/1           mod_header_header_ [244]
+                0.00    0.00       1/1           mod_atm_interface_setup_model_indexes_ [228]
+                0.00    0.00       1/1           mod_ncout_init_output_streams_ [289]
+-----------------------------------------------
+                0.00    0.02       1/1           mod_regcm_interface_rcm_initialize_ [28]
+[29]     0.6    0.00    0.02       1         mod_params_param_ [29]
+                0.00    0.00       1/1           mod_atm_interface_allocate_mod_atm_interface_ [39]
+                0.00    0.00       1/1           mod_micro_interface_allocate_micro_ [40]
+                0.00    0.00       1/1           mod_lm_interface_allocate_surface_model_ [42]
+                0.00    0.00       1/1           mod_che_bdyco_allocate_mod_che_bdyco_ [44]
+                0.00    0.00       1/1           mod_rad_interface_allocate_radiation_ [45]
+                0.00    0.00       1/1           mod_split_allocate_mod_split_ [46]
+                0.00    0.00       1/1           mod_pbl_interface_allocate_pblscheme_ [48]
+                0.00    0.00       6/6           mod_atm_interface_allocate_v3dbound_ [49]
+                0.00    0.00       1/1           mod_cu_common_init_mod_cumulus_ [50]
+                0.00    0.00       1/1           mod_moloch_allocate_moloch_ [54]
+                0.00    0.00       1/1           mod_tendency_allocate_mod_tend_ [60]
+                0.00    0.00       1/1           mod_lm_interface_init_surface_model_ [59]
+                0.00    0.00       1/1           mod_diffusion_allocate_mod_diffusion_ [61]
+                0.00    0.00       1/1           mod_bdycod_allocate_mod_bdycon_ [62]
+                0.00    0.00       2/172802      mod_mppparam_real8_3d_exchange_left_right_bottom_top_ [20]
+                0.00    0.00     121/121         mod_zita_sigmazita_ [102]
+                0.00    0.00     121/121         mod_zita_bzita_ [99]
+                0.00    0.00     121/121         mod_zita_md_ak_ [100]
+                0.00    0.00     121/242         mod_zita_gzita_ [94]
+                0.00    0.00     121/121         mod_zita_md_bk_ [101]
+                0.00    0.00      59/59          mod_mppparam_bcast_real8_ [105]
+                0.00    0.00      51/51          mod_mppparam_bcast_int4_ [106]
+                0.00    0.00      25/25          mod_mppparam_bcast_logical_ [116]
+                0.00    0.00       9/9           mod_mppparam_bcast_arr_logical_ [128]
+                0.00    0.00       7/13          mod_mppparam_bcast_arr_character_ [127]
+                0.00    0.00       7/7           mod_timer_init_alarm_ [136]
+                0.00    0.00       6/6           mod_timer_init_syncro_ [139]
+                0.00    0.00       5/5           mod_mppparam_bcast_rcm_time_and_date_ [140]
+                0.00    0.00       3/3           mod_date_initfromintdt_ [152]
+                0.00    0.00       3/3           mod_atm_interface_setup_boundaries_ [147]
+                0.00    0.00       3/3           mod_mppparam_real8_2d_exchange_ [161]
+                0.00    0.00       2/2           mod_mppparam_bcast_arr_int4_ [196]
+                0.00    0.00       2/13          mod_date_initfromtypeit_ [125]
+                0.00    0.00       2/2           mod_atm_interface_allocate_v2dbound_ [165]
+                0.00    0.00       2/114         mod_memutil_assignp3d_d_ [104]
+                0.00    0.00       2/2           mod_mppparam_real8_2d_exchange_left_right_ [200]
+                0.00    0.00       2/2           mod_mppparam_real8_2d_exchange_bottom_top_ [199]
+                0.00    0.00       1/1           mod_timer_init_timer_ [304]
+                0.00    0.00       1/1           mod_runparams_allocate_mod_runparams_ [300]
+                0.00    0.00       1/1           mod_savefile_allocate_mod_savefile_ [301]
+                0.00    0.00       1/1           mod_che_common_allocate_mod_che_common_ [234]
+                0.00    0.00       1/1           mod_che_dust_allocate_mod_che_dust_ [235]
+                0.00    0.00       1/1           mod_che_mppio_allocate_mod_che_mppio_ [236]
+                0.00    0.00       1/1           mod_che_bionit_allocate_mod_che_bionit_ [233]
+                0.00    0.00       1/5884        mod_date_initfromtypedt_ [72]
+                0.00    0.00       1/1           mod_ipcc_scenario_set_scenario_ [246]
+                0.00    0.00       1/1           mod_zita_model_zitaf_ [305]
+                0.00    0.00       1/1           mod_zita_model_zitah_ [306]
+                0.00    0.00       1/1           mod_slice_init_slice_ [302]
+                0.00    0.00       1/1           mod_micro_nogtom_init_nogtom_ [282]
+                0.00    0.00       1/1           mod_micro_interface_init_micro_ [281]
+                0.00    0.00       1/1           mod_rad_interface_init_radiation_ [293]
+                0.00    0.00       1/1           mod_cu_interface_init_cumulus_ [238]
+                0.00    0.00       1/1           mod_bdycod_setup_bdycon_ [232]
+                0.00    0.00       1/1           mod_cu_interface_allocate_cumulus_ [237]
+                0.00    0.00       1/13          mod_memutil_assignp2d_i_ [126]
+                0.00    0.00       1/1           mod_pbl_interface_init_pblscheme_ [292]
+-----------------------------------------------
+                0.00    0.00       1/2885        mod_init_init_ [51]
+                0.00    0.00       4/2885        __libc_csu_init [43]
+                0.02    0.00    2880/2885        mod_moloch_moloch_ [4]
+[30]     0.6    0.02    0.00    2885         mod_slice_mkslice_ [30]
+-----------------------------------------------
+                0.00    0.00       1/146         mod_ocn_common_initocn_ [53]
+                0.02    0.00     145/146         mod_ocn_common_ocn_interf_ [9]
+[31]     0.6    0.02    0.00     146         mod_mppparam_cartesian_to_linear_real8_subgrid_subgrid_ [31]
+-----------------------------------------------
+                0.00    0.00       4/53          __libc_csu_init [43]
+                0.00    0.02      49/53          mod_rad_colmod3_colmod3_ [35]
+[32]     0.6    0.00    0.02      53         mod_rad_radiation_radctl_ [32]
+                0.02    0.00      49/49          mod_rad_radiation_radini_ [34]
+                0.00    0.00      49/49          mod_rad_radiation_radinp_ [112]
+                0.00    0.00      49/49          mod_rad_radiation_aermix_ [109]
+                0.00    0.00      49/49          mod_rad_aerosol_aeroppt_ [107]
+                0.00    0.00      49/49          mod_rad_radiation_radcsw_ [111]
+                0.00    0.00      49/49          mod_rad_radiation_radclw_ [110]
+-----------------------------------------------
+                0.02    0.00      49/49          mod_ocn_common_albedoocn_ [22]
+[33]     0.6    0.02    0.00      49         mod_ocn_albedo_ocn_albedo_ [33]
+-----------------------------------------------
+                0.02    0.00      49/49          mod_rad_radiation_radctl_ [32]
+[34]     0.6    0.02    0.00      49         mod_rad_radiation_radini_ [34]
+                0.00    0.00 4014080/4014082     mod_ipcc_scenario_ghgval_ [64]
+-----------------------------------------------
+                0.00    0.00       2/51          __libc_csu_init [43]
+                0.00    0.02      49/51          mod_moloch_physical_parametrizations_ [5]
+[35]     0.5    0.00    0.02      51         mod_rad_colmod3_colmod3_ [35]
+                0.00    0.02      49/53          mod_rad_radiation_radctl_ [32]
+                0.00    0.00      49/49          mod_rad_outrad_radout_ [55]
+-----------------------------------------------
+                0.00    0.00       1/106561      mod_init_init_ [51]
+                0.00    0.00    2880/106561      mod_moloch_moloch_ [4]
+                0.00    0.00   17280/106561      mod_moloch_advection_ [13]
+                0.01    0.00   86400/106561      mod_moloch_wafone_ [15]
+[36]     0.3    0.01    0.00  106561         mod_mppparam_real8_3d_exchange_left_right_ [36]
+-----------------------------------------------
+                0.00    0.00       1/203         mod_micro_interface_allocate_micro_ [40]
+                0.00    0.00       1/203         mod_che_bdyco_allocate_mod_che_bdyco_ [44]
+                0.00    0.00       2/203         mod_rad_interface_allocate_radiation_ [45]
+                0.00    0.00       2/203         mod_bdycod_allocate_mod_bdycon_ [62]
+                0.00    0.00       2/203         mod_cu_common_init_mod_cumulus_ [50]
+                0.00    0.00       3/203         mod_diffusion_allocate_mod_diffusion_ [61]
+                0.00    0.00       4/203         mod_tendency_allocate_mod_tend_ [60]
+                0.00    0.00       4/203         mod_mppparam_cl_setup_real8_ [58]
+                0.00    0.00       5/203         mod_split_allocate_mod_split_ [46]
+                0.00    0.00       5/203         mod_rad_aerosol_allocate_mod_rad_aerosol_ [57]
+                0.00    0.00       6/203         mod_rad_colmod3_allocate_mod_rad_colmod3_ [56]
+                0.00    0.00      11/203         mod_moloch_allocate_moloch_ [54]
+                0.00    0.00      18/203         mod_atm_interface_allocate_v3dbound_ [49]
+                0.00    0.00      24/203         mod_micro_nogtom_allocate_mod_nogtom_ [41]
+                0.00    0.00      26/203         mod_pbl_holtbl_allocate_mod_pbl_holtbl_ [47]
+                0.00    0.00      43/203         mod_atm_interface_allocate_mod_atm_interface_ [39]
+                0.00    0.00      46/203         mod_lm_interface_allocate_surface_model_ [42]
+[37]     0.3    0.01    0.00     203         mod_memutil_getmem3d_d_ [37]
+                0.00    0.00     406/1504        mod_message_checkalloc_ [88]
+                0.00    0.00     203/203         mod_space_getspc3d_r8arr_ [95]
+                0.00    0.00       2/2           mod_memutil_relmem3d_d_ [188]
+-----------------------------------------------
+                0.00    0.00       1/15          mod_lm_interface_allocate_surface_model_ [42]
+                0.00    0.00       1/15          mod_cu_common_init_mod_cumulus_ [50]
+                0.00    0.00       2/15          mod_atm_interface_allocate_mod_atm_interface_ [39]
+                0.00    0.00       2/15          mod_rad_interface_allocate_radiation_ [45]
+                0.00    0.00       2/15          mod_split_allocate_mod_split_ [46]
+                0.00    0.00       3/15          mod_micro_nogtom_allocate_mod_nogtom_ [41]
+                0.00    0.00       4/15          mod_che_bdyco_allocate_mod_che_bdyco_ [44]
+[38]     0.3    0.01    0.00      15         mod_memutil_getmem4d_d_ [38]
+                0.00    0.00      30/1504        mod_message_checkalloc_ [88]
+                0.00    0.00      15/15          mod_space_getspc4d_r8arr_ [122]
+-----------------------------------------------
+                0.00    0.00       1/1           mod_params_param_ [29]
+[39]     0.1    0.00    0.00       1         mod_atm_interface_allocate_mod_atm_interface_ [39]
+                0.00    0.00      43/203         mod_memutil_getmem3d_d_ [37]
+                0.00    0.00       2/15          mod_memutil_getmem4d_d_ [38]
+                0.00    0.00      77/149         mod_memutil_getmem2d_d_ [96]
+                0.00    0.00       7/16          mod_memutil_getmem2d_i_ [119]
+                0.00    0.00       3/7           mod_memutil_getmem3d_i_ [131]
+                0.00    0.00       2/125         mod_memutil_assignp2d_d_ [98]
+-----------------------------------------------
+                0.00    0.00       1/1           mod_params_param_ [29]
+[40]     0.1    0.00    0.00       1         mod_micro_interface_allocate_micro_ [40]
+                0.00    0.00       1/1           mod_micro_nogtom_allocate_mod_nogtom_ [41]
+                0.00    0.00       1/203         mod_memutil_getmem3d_d_ [37]
+                0.00    0.00       2/149         mod_memutil_getmem2d_d_ [96]
+-----------------------------------------------
+                0.00    0.00       1/1           mod_micro_interface_allocate_micro_ [40]
+[41]     0.1    0.00    0.00       1         mod_micro_nogtom_allocate_mod_nogtom_ [41]
+                0.00    0.00       3/15          mod_memutil_getmem4d_d_ [38]
+                0.00    0.00      24/203         mod_memutil_getmem3d_d_ [37]
+                0.00    0.00       2/149         mod_memutil_getmem2d_d_ [96]
+-----------------------------------------------
+                0.00    0.00       1/1           mod_params_param_ [29]
+[42]     0.1    0.00    0.00       1         mod_lm_interface_allocate_surface_model_ [42]
+                0.00    0.00      46/203         mod_memutil_getmem3d_d_ [37]
+                0.00    0.00       1/15          mod_memutil_getmem4d_d_ [38]
+                0.00    0.00       3/34584       mod_memutil_assignp3d4_d_ [65]
+                0.00    0.00       3/149         mod_memutil_getmem2d_d_ [96]
+-----------------------------------------------
+                                                 <spontaneous>
+[43]     0.1    0.00    0.00                 __libc_csu_init [43]
+                0.00    0.00       4/53          mod_rad_radiation_radctl_ [32]
+                0.00    0.00       2/51          mod_rad_colmod3_colmod3_ [35]
+                0.00    0.00       2/3           mod_init_init_ [51]
+                0.00    0.00       4/2885        mod_slice_mkslice_ [30]
+                0.00    0.00       4/4           mod_rad_aerosol_remove_nans_ [144]
+                0.00    0.00       4/4           mod_rad_o3blk_close_o3data_ [145]
+                0.00    0.00       4/4           mod_moloch_uvstagtox_ [143]
+                0.00    0.00       4/4           mod_bdycod_invert_top_bottom_ [141]
+                0.00    0.00       2/2           mo_simple_plumes_sp_aop_profile_ [163]
+                0.00    0.00       2/2           mod_earth_get_window_r4_has_south_pole [183]
+                0.00    0.00       2/2           mod_kdtree2_heapsort_struct_ [184]
+                0.00    0.00       2/2           mod_capecin_otlift_table_fill [167]
+                0.00    0.00       2/2           mod_nhinterp_smtdsmt_ [202]
+                0.00    0.00       2/2           mod_vertint_intzps2_ [224]
+                0.00    0.00       2/2           mod_mppparam_get_cartcomm_ [197]
+                0.00    0.00       2/2           mod_pbl_holtbl_force_water_conserve_ [205]
+                0.00    0.00       2/2           mod_pbl_uwtcm_pblhgt_ [206]
+                0.00    0.00       2/2           mod_rad_tracer_trcmix_ [215]
+                0.00    0.00       2/2           mod_rad_outrad_copy4d_add_ [209]
+                0.00    0.00       2/2           mod_cu_tiedtke_ntiedtke_ctracer [180]
+                0.00    0.00       2/2           mod_cloud_echam5_echam5_cldfrac_ [172]
+                0.00    0.00       2/2           mod_cloud_texeira_texeira_cldfrac_ [175]
+                0.00    0.00       2/2           mod_cloud_tompkins_tompkins_cldfrac_ [177]
+                0.00    0.00       2/2           mod_cloud_guli2007_gulisa_cldfrac_ [173]
+                0.00    0.00       2/2           mod_cloud_thomp_thomp_cldfrac_ [176]
+                0.00    0.00       2/2           mod_cloud_xuran_xuran_cldfrac_ [178]
+                0.00    0.00       2/2           mod_cloud_subex_subex_cldfrac_ [174]
+                0.00    0.00       2/2           mod_micro_subex_subex_season_factor [195]
+                0.00    0.00       2/2           mod_micro_nogtom_rain_fallspeed_ [194]
+                0.00    0.00       2/2           mod_che_bdyco_setup_che_bdycon_ [170]
+                0.00    0.00       2/2           mod_timefilter_filter_raw_qv_ [223]
+                0.00    0.00       2/2           mod_sound_sound_ [216]
+                0.00    0.00       2/2           mod_params_param_gcd_rec [204]
+                0.00    0.00       2/2           mod_tendency_extracttenchi_ [222]
+                0.00    0.00       2/2           mod_output_vinterz_ [203]
+                0.00    0.00       2/2           mod_split_spstep_ [219]
+                0.00    0.00       2/2           mod_vmodes_invmtrx_ [225]
+                0.00    0.00       2/2           mod_sun_read_solarforcing_ [221]
+                0.00    0.00       2/2           mod_micro_interface_condtq_ [193]
+                0.00    0.00       2/2           mod_diffusion_diffu_x4d3d_ [182]
+                0.00    0.00       2/2           mod_ncio_check_ok_ [201]
+                0.00    0.00       2/2           mod_advection_vadv4d_ [164]
+                0.00    0.00       2/2882        mod_pbl_interface_pblscheme_ [81]
+                0.00    0.00       2/2           mod_rad_interface_export_data_from_rad_ [208]
+                0.00    0.00       2/2           mod_cu_interface_shallow_convection_ [179]
+                0.00    0.00       2/2           mod_lm_interface_wlh_ [185]
+                0.00    0.00       2/2           mod_atm_interface_export_data_from_atm_ [166]
+                0.00    0.00       2/2           mod_stdatm_stdlrate_ [220]
+                0.00    0.00       2/2           mod_message_viz_plot_ [192]
+                0.00    0.00       2/4014082     mod_ipcc_scenario_ghgval_ [64]
+                0.00    0.00       2/2           rrsw_ncpar_getabsorberindex_ [227]
+                0.00    0.00       2/2           rrlw_ncpar_getabsorberindex_ [226]
+                0.00    0.00       2/2           mod_rad_common_ [207]
+                0.00    0.00       2/2           mod_cbmz_jacobiansp_ [169]
+                0.00    0.00       2/2           mod_cbmz_integrator_jac_chem_ [168]
+                0.00    0.00       2/2           mod_che_carbonaer_doaging_ [171]
+-----------------------------------------------
+                0.00    0.00       1/1           mod_params_param_ [29]
+[44]     0.1    0.00    0.00       1         mod_che_bdyco_allocate_mod_che_bdyco_ [44]
+                0.00    0.00       4/15          mod_memutil_getmem4d_d_ [38]
+                0.00    0.00       1/203         mod_memutil_getmem3d_d_ [37]
+                0.00    0.00       2/149         mod_memutil_getmem2d_d_ [96]
+                0.00    0.00       1/30          mod_memutil_getmem1d_i_ [114]
+-----------------------------------------------
+                0.00    0.00       1/1           mod_params_param_ [29]
+[45]     0.1    0.00    0.00       1         mod_rad_interface_allocate_radiation_ [45]
+                0.00    0.00       2/15          mod_memutil_getmem4d_d_ [38]
+                0.00    0.00       1/1           mod_rad_colmod3_allocate_mod_rad_colmod3_ [56]
+                0.00    0.00       1/1           mod_rad_aerosol_allocate_mod_rad_aerosol_ [57]
+                0.00    0.00       2/203         mod_memutil_getmem3d_d_ [37]
+                0.00    0.00       1/1           mod_rad_outrad_allocate_mod_rad_outrad_ [297]
+                0.00    0.00       1/1           mod_rad_o3blk_allocate_mod_rad_o3blk_ [295]
+-----------------------------------------------
+                0.00    0.00       1/1           mod_params_param_ [29]
+[46]     0.0    0.00    0.00       1         mod_split_allocate_mod_split_ [46]
+                0.00    0.00       2/15          mod_memutil_getmem4d_d_ [38]
+                0.00    0.00       5/203         mod_memutil_getmem3d_d_ [37]
+                0.00    0.00       5/149         mod_memutil_getmem2d_d_ [96]
+                0.00    0.00       2/305         mod_memutil_getmem1d_d_ [92]
+-----------------------------------------------
+                0.00    0.00       1/1           mod_pbl_interface_allocate_pblscheme_ [48]
+[47]     0.0    0.00    0.00       1         mod_pbl_holtbl_allocate_mod_pbl_holtbl_ [47]
+                0.00    0.00      26/203         mod_memutil_getmem3d_d_ [37]
+                0.00    0.00       9/149         mod_memutil_getmem2d_d_ [96]
+                0.00    0.00       1/21          mod_memutil_getmem2d_l_ [117]
+-----------------------------------------------
+                0.00    0.00       1/1           mod_params_param_ [29]
+[48]     0.0    0.00    0.00       1         mod_pbl_interface_allocate_pblscheme_ [48]
+                0.00    0.00       1/1           mod_pbl_holtbl_allocate_mod_pbl_holtbl_ [47]
+                0.00    0.00       1/149         mod_memutil_getmem2d_d_ [96]
+                0.00    0.00       1/16          mod_memutil_getmem2d_i_ [119]
+-----------------------------------------------
+                0.00    0.00       6/6           mod_params_param_ [29]
+[49]     0.0    0.00    0.00       6         mod_atm_interface_allocate_v3dbound_ [49]
+                0.00    0.00      18/203         mod_memutil_getmem3d_d_ [37]
+-----------------------------------------------
+                0.00    0.00       1/1           mod_params_param_ [29]
+[50]     0.0    0.00    0.00       1         mod_cu_common_init_mod_cumulus_ [50]
+                0.00    0.00       1/15          mod_memutil_getmem4d_d_ [38]
+                0.00    0.00       2/203         mod_memutil_getmem3d_d_ [37]
+                0.00    0.00       2/16          mod_memutil_getmem2d_i_ [119]
+                0.00    0.00       1/149         mod_memutil_getmem2d_d_ [96]
+-----------------------------------------------
+                0.00    0.00       1/3           mod_regcm_interface_rcm_initialize_ [28]
+                0.00    0.00       2/3           __libc_csu_init [43]
+[51]     0.0    0.00    0.00       3         mod_init_init_ [51]
+                0.00    0.00       1/1           mod_lm_interface_initialize_surface_model_ [52]
+                0.00    0.00       1/2881        mod_sun_zenitm_ [23]
+                0.00    0.00       1/2885        mod_slice_mkslice_ [30]
+                0.00    0.00       1/1           mod_bdycod_initideal_ [63]
+                0.00    0.00       1/106561      mod_mppparam_real8_3d_exchange_bottom_top_ [25]
+                0.00    0.00       1/106561      mod_mppparam_real8_3d_exchange_left_right_ [36]
+                0.00    0.00       1/1           mod_bdycod_is_present_qc_ [230]
+                0.00    0.00       1/1           mod_bdycod_is_present_qi_ [231]
+                0.00    0.00       1/1           mod_rad_o3blk_o3data_ [296]
+                0.00    0.00       1/1           mod_rad_interface_inito3_ [294]
+                0.00    0.00       1/1           mod_moloch_init_moloch_ [283]
+-----------------------------------------------
+                0.00    0.00       1/1           mod_init_init_ [51]
+[52]     0.0    0.00    0.00       1         mod_lm_interface_initialize_surface_model_ [52]
+                0.00    0.00       1/1           mod_ocn_common_initocn_ [53]
+-----------------------------------------------
+                0.00    0.00       1/1           mod_lm_interface_initialize_surface_model_ [52]
+[53]     0.0    0.00    0.00       1         mod_ocn_common_initocn_ [53]
+                0.00    0.00       2/2757        mod_mppparam_cartesian_to_linear_real8_grid_subgrid_ [10]
+                0.00    0.00       1/146         mod_mppparam_cartesian_to_linear_real8_subgrid_subgrid_ [31]
+                0.00    0.00       1/3532        mod_mppparam_linear_to_cartesian_real8_subgrid_subgrid_ [11]
+                0.00    0.00       1/17432       mod_timer_is_start_ [14]
+                0.00    0.00       1/1           mod_mppparam_cartesian_to_linear_integer_subgrid_subgrid_ [285]
+-----------------------------------------------
+                0.00    0.00       1/1           mod_params_param_ [29]
+[54]     0.0    0.00    0.00       1         mod_moloch_allocate_moloch_ [54]
+                0.00    0.00      11/203         mod_memutil_getmem3d_d_ [37]
+                0.00    0.00       5/149         mod_memutil_getmem2d_d_ [96]
+                0.00    0.00       3/305         mod_memutil_getmem1d_d_ [92]
+-----------------------------------------------
+                0.00    0.00      49/49          mod_rad_colmod3_colmod3_ [35]
+[55]     0.0    0.00    0.00      49         mod_rad_outrad_radout_ [55]
+                0.00    0.00      49/17432       mod_timer_is_start_ [14]
+-----------------------------------------------
+                0.00    0.00       1/1           mod_rad_interface_allocate_radiation_ [45]
+[56]     0.0    0.00    0.00       1         mod_rad_colmod3_allocate_mod_rad_colmod3_ [56]
+                0.00    0.00       6/203         mod_memutil_getmem3d_d_ [37]
+                0.00    0.00      45/305         mod_memutil_getmem1d_d_ [92]
+                0.00    0.00      21/149         mod_memutil_getmem2d_d_ [96]
+                0.00    0.00       1/30          mod_memutil_getmem1d_i_ [114]
+                0.00    0.00       1/3           mod_memutil_getmem1d_l_ [160]
+-----------------------------------------------
+                0.00    0.00       1/1           mod_rad_interface_allocate_radiation_ [45]
+[57]     0.0    0.00    0.00       1         mod_rad_aerosol_allocate_mod_rad_aerosol_ [57]
+                0.00    0.00       5/203         mod_memutil_getmem3d_d_ [37]
+                0.00    0.00      18/305         mod_memutil_getmem1d_d_ [92]
+                0.00    0.00       7/149         mod_memutil_getmem2d_d_ [96]
+-----------------------------------------------
+                0.00    0.00       2/2           mod_lm_interface_init_surface_model_ [59]
+[58]     0.0    0.00    0.00       2         mod_mppparam_cl_setup_real8_ [58]
+                0.00    0.00       4/203         mod_memutil_getmem3d_d_ [37]
+                0.00    0.00      16/30          mod_memutil_getmem1d_i_ [114]
+                0.00    0.00       8/21          mod_memutil_getmem2d_l_ [117]
+                0.00    0.00       8/8           mod_memutil_getmem3d_l_ [129]
+                0.00    0.00       4/4           mod_memutil_getmem3d_r_ [142]
+                0.00    0.00       4/7           mod_memutil_getmem3d_i_ [131]
+                0.00    0.00       2/2           mod_mppparam_glosplitw_ [198]
+                0.00    0.00       2/149         mod_memutil_getmem2d_d_ [96]
+                0.00    0.00       2/2           mod_memutil_getmem2d_r_ [187]
+                0.00    0.00       2/16          mod_memutil_getmem2d_i_ [119]
+-----------------------------------------------
+                0.00    0.00       1/1           mod_params_param_ [29]
+[59]     0.0    0.00    0.00       1         mod_lm_interface_init_surface_model_ [59]
+                0.00    0.00       2/2           mod_mppparam_cl_setup_real8_ [58]
+                0.00    0.00      51/125         mod_memutil_assignp2d_d_ [98]
+                0.00    0.00       8/114         mod_memutil_assignp3d_d_ [104]
+                0.00    0.00       6/6           mod_memutil_assignp2d3_d_ [138]
+                0.00    0.00       4/13          mod_memutil_assignp2d_i_ [126]
+                0.00    0.00       3/3           mod_memutil_assignp3d_i_ [158]
+                0.00    0.00       2/305         mod_memutil_getmem1d_d_ [92]
+                0.00    0.00       1/1           mod_bats_internal_allocate_mod_bats_internal_ [229]
+                0.00    0.00       1/1           mod_ocn_internal_allocate_mod_ocn_internal_ [291]
+                0.00    0.00       1/1           mod_memutil_assignp2d4_d_ [247]
+-----------------------------------------------
+                0.00    0.00       1/1           mod_params_param_ [29]
+[60]     0.0    0.00    0.00       1         mod_tendency_allocate_mod_tend_ [60]
+                0.00    0.00       4/203         mod_memutil_getmem3d_d_ [37]
+                0.00    0.00      10/34584       mod_memutil_assignp3d4_d_ [65]
+                0.00    0.00       4/149         mod_memutil_getmem2d_d_ [96]
+                0.00    0.00       3/3           mod_memutil_assignp4d5_d_ [159]
+-----------------------------------------------
+                0.00    0.00       1/1           mod_params_param_ [29]
+[61]     0.0    0.00    0.00       1         mod_diffusion_allocate_mod_diffusion_ [61]
+                0.00    0.00       3/203         mod_memutil_getmem3d_d_ [37]
+                0.00    0.00       1/149         mod_memutil_getmem2d_d_ [96]
+-----------------------------------------------
+                0.00    0.00       1/1           mod_params_param_ [29]
+[62]     0.0    0.00    0.00       1         mod_bdycod_allocate_mod_bdycon_ [62]
+                0.00    0.00       2/203         mod_memutil_getmem3d_d_ [37]
+-----------------------------------------------
+                0.00    0.00       1/1           mod_init_init_ [51]
+[63]     0.0    0.00    0.00       1         mod_bdycod_initideal_ [63]
+                0.00    0.00       2/86402       mod_mppparam_real8_3d_exchange_ [21]
+-----------------------------------------------
+                0.00    0.00       2/4014082     __libc_csu_init [43]
+                0.00    0.00 4014080/4014082     mod_rad_radiation_radini_ [34]
+[64]     0.0    0.00    0.00 4014082         mod_ipcc_scenario_ghgval_ [64]
+-----------------------------------------------
+                0.00    0.00       1/34584       mod_cu_interface_init_cumulus_ [238]
+                0.00    0.00       3/34584       mod_lm_interface_allocate_surface_model_ [42]
+                0.00    0.00       5/34584       mod_micro_interface_init_micro_ [281]
+                0.00    0.00       5/34584       mod_moloch_init_moloch_ [283]
+                0.00    0.00      10/34584       mod_tendency_allocate_mod_tend_ [60]
+                0.00    0.00   34560/34584       mod_moloch_advection_ [13]
+[65]     0.0    0.00    0.00   34584         mod_memutil_assignp3d4_d_ [65]
+-----------------------------------------------
+                0.00    0.00    2879/25919       mod_regcm_interface_rcm_run_ [3]
+                0.00    0.00    5760/25919       mod_sun_zenitm_ [23]
+                0.00    0.00   17280/25919       mod_output_output_ [19]
+[66]     0.0    0.00    0.00   25919         mod_timer_alarm_act_ [66]
+-----------------------------------------------
+                0.00    0.00   20160/20160       mod_timer_step_timer_ [87]
+[67]     0.0    0.00    0.00   20160         mod_timer_alarm_check_ [67]
+                0.00    0.00      57/2937        mod_date_add_interval_ [77]
+                0.00    0.00      57/5884        mod_date_initfromtypedt_ [72]
+-----------------------------------------------
+                0.00    0.00   17280/17280       mod_timer_step_timer_ [87]
+[68]     0.0    0.00    0.00   17280         mod_timer_syncro_check_ [68]
+-----------------------------------------------
+                0.00    0.00       1/8645        mod_date_tochar_ [240]
+                0.00    0.00       1/8645        mod_date_toint10_ [241]
+                0.00    0.00       2/8645        mod_date_split_rcm_time_and_date_complete_ [181]
+                0.00    0.00    2881/8645        mod_date_yeardayfrac_ [82]
+                0.00    0.00    5760/8645        mod_date_lfdomonth_ [73]
+[69]     0.0    0.00    0.00    8645         mod_date_days_from_reference_to_date_ [69]
+                0.00    0.00    8645/8645        mod_date_idayofyear_to_monthdate_ [70]
+                0.00    0.00       3/3           mod_date_yeardays_ [157]
+-----------------------------------------------
+                0.00    0.00    8645/8645        mod_date_days_from_reference_to_date_ [69]
+[70]     0.0    0.00    0.00    8645         mod_date_idayofyear_to_monthdate_ [70]
+                0.00    0.00    8645/8645        mod_date_mdays_leap_ [71]
+-----------------------------------------------
+                0.00    0.00    8645/8645        mod_date_idayofyear_to_monthdate_ [70]
+[71]     0.0    0.00    0.00    8645         mod_date_mdays_leap_ [71]
+-----------------------------------------------
+                0.00    0.00       1/5884        mod_output_output_ [19]
+                0.00    0.00       1/5884        mod_params_param_ [29]
+                0.00    0.00       1/5884        mod_timer_init_timer_ [304]
+                0.00    0.00       7/5884        mod_timer_init_alarm_ [136]
+                0.00    0.00      57/5884        mod_timer_alarm_check_ [67]
+                0.00    0.00    2880/5884        mod_timer_step_timer_ [87]
+                0.00    0.00    2937/5884        mod_date_add_interval_ [77]
+[72]     0.0    0.00    0.00    5884         mod_date_initfromtypedt_ [72]
+-----------------------------------------------
+                0.00    0.00    5760/5760        mod_output_output_ [19]
+[73]     0.0    0.00    0.00    5760         mod_date_lfdomonth_ [73]
+                0.00    0.00    5760/8645        mod_date_days_from_reference_to_date_ [69]
+-----------------------------------------------
+                0.00    0.00    5760/5760        mod_pbl_holtbl_holtbl_ [24]
+[74]     0.0    0.00    0.00    5760         mod_mppparam_real8_3d_exchange_left_bottom_ [74]
+-----------------------------------------------
+                0.00    0.00    5759/5759        mod_output_output_ [19]
+[75]     0.0    0.00    0.00    5759         mod_date_lmidnight_ [75]
+-----------------------------------------------
+                0.00    0.00       8/3034        mod_moloch_moloch_ [4]
+                0.00    0.00     145/3034        mod_lm_interface_collect_output_ [27]
+                0.00    0.00    2881/3034        mod_output_output_ [19]
+[76]     0.0    0.00    0.00    3034         mod_timer_is_integrating_ [76]
+-----------------------------------------------
+                0.00    0.00      57/2937        mod_timer_alarm_check_ [67]
+                0.00    0.00    2880/2937        mod_timer_step_timer_ [87]
+[77]     0.0    0.00    0.00    2937         mod_date_add_interval_ [77]
+                0.00    0.00    2937/5884        mod_date_initfromtypedt_ [72]
+-----------------------------------------------
+                0.00    0.00       1/2885        mod_date_tochar_ [240]
+                0.00    0.00       1/2885        mod_date_toint10_ [241]
+                0.00    0.00       2/2885        mod_date_split_rcm_time_and_date_complete_ [181]
+                0.00    0.00    2881/2885        mod_date_yeardayfrac_ [82]
+[78]     0.0    0.00    0.00    2885         mod_date_internal_to_date_time_ [78]
+                0.00    0.00    2885/2885        mod_date_second_of_day_to_time_ [79]
+-----------------------------------------------
+                0.00    0.00    2885/2885        mod_date_internal_to_date_time_ [78]
+[79]     0.0    0.00    0.00    2885         mod_date_second_of_day_to_time_ [79]
+-----------------------------------------------
+                0.00    0.00       3/2884        mod_date_date_to_days_from_reference_ [150]
+                0.00    0.00    2881/2884        mod_date_yeardayfrac_ [82]
+[80]     0.0    0.00    0.00    2884         mod_date_idayofyear_ [80]
+-----------------------------------------------
+                0.00    0.00       2/2882        __libc_csu_init [43]
+                0.00    0.00    2880/2882        mod_moloch_physical_parametrizations_ [5]
+[81]     0.0    0.00    0.00    2882         mod_pbl_interface_pblscheme_ [81]
+-----------------------------------------------
+                0.00    0.00    2881/2881        mod_sun_zenitm_ [23]
+[82]     0.0    0.00    0.00    2881         mod_date_yeardayfrac_ [82]
+                0.00    0.00    2881/8645        mod_date_days_from_reference_to_date_ [69]
+                0.00    0.00    2881/2885        mod_date_internal_to_date_time_ [78]
+                0.00    0.00    2881/2884        mod_date_idayofyear_ [80]
+-----------------------------------------------
+                0.00    0.00    2880/2880        mod_moloch_physical_parametrizations_ [5]
+[83]     0.0    0.00    0.00    2880         mod_cu_interface_cucloud_ [83]
+-----------------------------------------------
+                0.00    0.00    2880/2880        mod_moloch_physical_parametrizations_ [5]
+[84]     0.0    0.00    0.00    2880         mod_micro_interface_cldfrac_ [84]
+-----------------------------------------------
+                0.00    0.00    2880/2880        mod_moloch_physical_parametrizations_ [5]
+[85]     0.0    0.00    0.00    2880         mod_micro_interface_microscheme_ [85]
+-----------------------------------------------
+                0.00    0.00    2880/2880        mod_pbl_holtbl_holtbl_ [24]
+[86]     0.0    0.00    0.00    2880         mod_mppparam_real8_2d_exchange_left_bottom_ [86]
+-----------------------------------------------
+                0.00    0.00    2880/2880        mod_moloch_moloch_ [4]
+[87]     0.0    0.00    0.00    2880         mod_timer_step_timer_ [87]
+                0.00    0.00   20160/20160       mod_timer_alarm_check_ [67]
+                0.00    0.00   17280/17280       mod_timer_syncro_check_ [68]
+                0.00    0.00    2880/2937        mod_date_add_interval_ [77]
+                0.00    0.00    2880/5884        mod_date_initfromtypedt_ [72]
+                0.00    0.00       1/2           mod_date_split_rcm_time_and_date_complete_ [181]
+-----------------------------------------------
+                0.00    0.00       4/1504        mod_memutil_getmem1d_r_ [186]
+                0.00    0.00       4/1504        mod_memutil_getmem2d_r_ [187]
+                0.00    0.00       6/1504        mod_memutil_getmem1d_l_ [160]
+                0.00    0.00       8/1504        mod_memutil_getmem3d_r_ [142]
+                0.00    0.00      14/1504        mod_memutil_getmem3d_i_ [131]
+                0.00    0.00      16/1504        mod_memutil_getmem3d_l_ [129]
+                0.00    0.00      26/1504        mod_memutil_memory_init_ [275]
+                0.00    0.00      30/1504        mod_memutil_getmem4d_d_ [38]
+                0.00    0.00      32/1504        mod_memutil_getmem2d_i_ [119]
+                0.00    0.00      42/1504        mod_memutil_getmem2d_l_ [117]
+                0.00    0.00      56/1504        mod_memutil_getmem1d_i_ [114]
+                0.00    0.00     298/1504        mod_memutil_getmem2d_d_ [96]
+                0.00    0.00     406/1504        mod_memutil_getmem3d_d_ [37]
+                0.00    0.00     562/1504        mod_memutil_getmem1d_d_ [92]
+[88]     0.0    0.00    0.00    1504         mod_message_checkalloc_ [88]
+-----------------------------------------------
+                0.00    0.00     931/931         mod_rad_radiation_radcsw_ [111]
+[89]     0.0    0.00    0.00     931         mod_rad_radiation_radclr_ [89]
+-----------------------------------------------
+                0.00    0.00     931/931         mod_rad_radiation_radcsw_ [111]
+[90]     0.0    0.00    0.00     931         mod_rad_radiation_radded_ [90]
+-----------------------------------------------
+                0.00    0.00      49/339         mod_moloch_physical_parametrizations_ [5]
+                0.00    0.00     290/339         mod_lm_interface_collect_output_ [27]
+[91]     0.0    0.00    0.00     339         mod_timer_alarm_willact_ [91]
+-----------------------------------------------
+                0.00    0.00       2/305         mod_lm_interface_init_surface_model_ [59]
+                0.00    0.00       2/305         mod_split_allocate_mod_split_ [46]
+                0.00    0.00       2/305         mod_mppparam_set_nproc_ [286]
+                0.00    0.00       3/305         mod_moloch_allocate_moloch_ [54]
+                0.00    0.00       9/305         mod_runparams_allocate_mod_runparams_ [300]
+                0.00    0.00      18/305         mod_rad_aerosol_allocate_mod_rad_aerosol_ [57]
+                0.00    0.00      42/305         mod_ocn_internal_allocate_mod_ocn_internal_ [291]
+                0.00    0.00      45/305         mod_rad_colmod3_allocate_mod_rad_colmod3_ [56]
+                0.00    0.00     182/305         mod_bats_internal_allocate_mod_bats_internal_ [229]
+[92]     0.0    0.00    0.00     305         mod_memutil_getmem1d_d_ [92]
+                0.00    0.00     562/1504        mod_message_checkalloc_ [88]
+                0.00    0.00     281/281         mod_space_getspc1d_r8arr_ [93]
+-----------------------------------------------
+                0.00    0.00     281/281         mod_memutil_getmem1d_d_ [92]
+[93]     0.0    0.00    0.00     281         mod_space_getspc1d_r8arr_ [93]
+-----------------------------------------------
+                0.00    0.00     121/242         mod_params_param_ [29]
+                0.00    0.00     121/242         mod_moloch_init_moloch_ [283]
+[94]     0.0    0.00    0.00     242         mod_zita_gzita_ [94]
+-----------------------------------------------
+                0.00    0.00     203/203         mod_memutil_getmem3d_d_ [37]
+[95]     0.0    0.00    0.00     203         mod_space_getspc3d_r8arr_ [95]
+-----------------------------------------------
+                0.00    0.00       1/149         mod_pbl_interface_allocate_pblscheme_ [48]
+                0.00    0.00       1/149         mod_diffusion_allocate_mod_diffusion_ [61]
+                0.00    0.00       1/149         mod_cu_common_init_mod_cumulus_ [50]
+                0.00    0.00       1/149         mod_runparams_allocate_mod_runparams_ [300]
+                0.00    0.00       2/149         mod_micro_interface_allocate_micro_ [40]
+                0.00    0.00       2/149         mod_che_bdyco_allocate_mod_che_bdyco_ [44]
+                0.00    0.00       2/149         mod_micro_nogtom_allocate_mod_nogtom_ [41]
+                0.00    0.00       2/149         mod_mppparam_cl_setup_real8_ [58]
+                0.00    0.00       3/149         mod_lm_interface_allocate_surface_model_ [42]
+                0.00    0.00       4/149         mod_tendency_allocate_mod_tend_ [60]
+                0.00    0.00       5/149         mod_split_allocate_mod_split_ [46]
+                0.00    0.00       5/149         mod_moloch_allocate_moloch_ [54]
+                0.00    0.00       6/149         mod_atm_interface_allocate_v2dbound_ [165]
+                0.00    0.00       7/149         mod_rad_aerosol_allocate_mod_rad_aerosol_ [57]
+                0.00    0.00       9/149         mod_pbl_holtbl_allocate_mod_pbl_holtbl_ [47]
+                0.00    0.00      21/149         mod_rad_colmod3_allocate_mod_rad_colmod3_ [56]
+                0.00    0.00      77/149         mod_atm_interface_allocate_mod_atm_interface_ [39]
+[96]     0.0    0.00    0.00     149         mod_memutil_getmem2d_d_ [96]
+                0.00    0.00     298/1504        mod_message_checkalloc_ [88]
+                0.00    0.00     149/149         mod_space_getspc2d_r8arr_ [97]
+                0.00    0.00       1/1           mod_memutil_relmem2d_d_ [276]
+-----------------------------------------------
+                0.00    0.00     149/149         mod_memutil_getmem2d_d_ [96]
+[97]     0.0    0.00    0.00     149         mod_space_getspc2d_r8arr_ [97]
+-----------------------------------------------
+                0.00    0.00       1/125         mod_slice_init_slice_ [302]
+                0.00    0.00       2/125         mod_atm_interface_allocate_mod_atm_interface_ [39]
+                0.00    0.00       9/125         mod_micro_interface_init_micro_ [281]
+                0.00    0.00      10/125         mod_moloch_init_moloch_ [283]
+                0.00    0.00      11/125         mod_cu_interface_init_cumulus_ [238]
+                0.00    0.00      16/125         mod_pbl_interface_init_pblscheme_ [292]
+                0.00    0.00      25/125         mod_rad_interface_init_radiation_ [293]
+                0.00    0.00      51/125         mod_lm_interface_init_surface_model_ [59]
+[98]     0.0    0.00    0.00     125         mod_memutil_assignp2d_d_ [98]
+-----------------------------------------------
+                0.00    0.00     121/121         mod_params_param_ [29]
+[99]     0.0    0.00    0.00     121         mod_zita_bzita_ [99]
+                0.00    0.00     121/121         mod_zita_zfz_ [103]
+-----------------------------------------------
+                0.00    0.00     121/121         mod_params_param_ [29]
+[100]    0.0    0.00    0.00     121         mod_zita_md_ak_ [100]
+-----------------------------------------------
+                0.00    0.00     121/121         mod_params_param_ [29]
+[101]    0.0    0.00    0.00     121         mod_zita_md_bk_ [101]
+-----------------------------------------------
+                0.00    0.00     121/121         mod_params_param_ [29]
+[102]    0.0    0.00    0.00     121         mod_zita_sigmazita_ [102]
+-----------------------------------------------
+                0.00    0.00     121/121         mod_zita_bzita_ [99]
+[103]    0.0    0.00    0.00     121         mod_zita_zfz_ [103]
+-----------------------------------------------
+                0.00    0.00       2/114         mod_params_param_ [29]
+                0.00    0.00       8/114         mod_lm_interface_init_surface_model_ [59]
+                0.00    0.00      10/114         mod_rad_interface_init_radiation_ [293]
+                0.00    0.00      14/114         mod_slice_init_slice_ [302]
+                0.00    0.00      15/114         mod_moloch_init_moloch_ [283]
+                0.00    0.00      18/114         mod_micro_interface_init_micro_ [281]
+                0.00    0.00      22/114         mod_pbl_interface_init_pblscheme_ [292]
+                0.00    0.00      25/114         mod_cu_interface_init_cumulus_ [238]
+[104]    0.0    0.00    0.00     114         mod_memutil_assignp3d_d_ [104]
+-----------------------------------------------
+                0.00    0.00      59/59          mod_params_param_ [29]
+[105]    0.0    0.00    0.00      59         mod_mppparam_bcast_real8_ [105]
+-----------------------------------------------
+                0.00    0.00      51/51          mod_params_param_ [29]
+[106]    0.0    0.00    0.00      51         mod_mppparam_bcast_int4_ [106]
+-----------------------------------------------
+                0.00    0.00      49/49          mod_rad_radiation_radctl_ [32]
+[107]    0.0    0.00    0.00      49         mod_rad_aerosol_aeroppt_ [107]
+-----------------------------------------------
+                0.00    0.00      49/49          mod_moloch_physical_parametrizations_ [5]
+[108]    0.0    0.00    0.00      49         mod_rad_interface_radiation_ [108]
+-----------------------------------------------
+                0.00    0.00      49/49          mod_rad_radiation_radctl_ [32]
+[109]    0.0    0.00    0.00      49         mod_rad_radiation_aermix_ [109]
+-----------------------------------------------
+                0.00    0.00      49/49          mod_rad_radiation_radctl_ [32]
+[110]    0.0    0.00    0.00      49         mod_rad_radiation_radclw_ [110]
+                0.00    0.00      49/49          mod_rad_radiation_radtpl_ [113]
+                0.00    0.00       2/2           mod_rad_radiation_radoz2_ [212]
+                0.00    0.00       2/2           mod_rad_radiation_trcpth_ [214]
+                0.00    0.00       2/2           mod_rad_radiation_trcplk_ [213]
+                0.00    0.00       2/2           mod_rad_radiation_radems_ [211]
+                0.00    0.00       2/2           mod_rad_radiation_radabs_ [210]
+-----------------------------------------------
+                0.00    0.00      49/49          mod_rad_radiation_radctl_ [32]
+[111]    0.0    0.00    0.00      49         mod_rad_radiation_radcsw_ [111]
+                0.00    0.00     931/931         mod_rad_radiation_radded_ [90]
+                0.00    0.00     931/931         mod_rad_radiation_radclr_ [89]
+-----------------------------------------------
+                0.00    0.00      49/49          mod_rad_radiation_radctl_ [32]
+[112]    0.0    0.00    0.00      49         mod_rad_radiation_radinp_ [112]
+-----------------------------------------------
+                0.00    0.00      49/49          mod_rad_radiation_radclw_ [110]
+[113]    0.0    0.00    0.00      49         mod_rad_radiation_radtpl_ [113]
+-----------------------------------------------
+                0.00    0.00       1/30          mod_che_bdyco_allocate_mod_che_bdyco_ [44]
+                0.00    0.00       1/30          mod_rad_colmod3_allocate_mod_rad_colmod3_ [56]
+                0.00    0.00       1/30          mod_ensemble_randify2d_ [137]
+                0.00    0.00       3/30          mod_ocn_internal_allocate_mod_ocn_internal_ [291]
+                0.00    0.00       4/30          mod_mppparam_set_nproc_ [286]
+                0.00    0.00       4/30          mod_bats_internal_allocate_mod_bats_internal_ [229]
+                0.00    0.00      16/30          mod_mppparam_cl_setup_real8_ [58]
+[114]    0.0    0.00    0.00      30         mod_memutil_getmem1d_i_ [114]
+                0.00    0.00      56/1504        mod_message_checkalloc_ [88]
+                0.00    0.00      28/28          mod_space_getspc1d_iarr_ [115]
+-----------------------------------------------
+                0.00    0.00      28/28          mod_memutil_getmem1d_i_ [114]
+[115]    0.0    0.00    0.00      28         mod_space_getspc1d_iarr_ [115]
+-----------------------------------------------
+                0.00    0.00      25/25          mod_params_param_ [29]
+[116]    0.0    0.00    0.00      25         mod_mppparam_bcast_logical_ [116]
+-----------------------------------------------
+                0.00    0.00       1/21          mod_pbl_holtbl_allocate_mod_pbl_holtbl_ [47]
+                0.00    0.00       8/21          mod_mppparam_cl_setup_real8_ [58]
+                0.00    0.00      12/21          mod_atm_interface_setup_boundaries_ [147]
+[117]    0.0    0.00    0.00      21         mod_memutil_getmem2d_l_ [117]
+                0.00    0.00      42/1504        mod_message_checkalloc_ [88]
+                0.00    0.00      21/21          mod_space_getspc2d_larr_ [118]
+                0.00    0.00       1/1           mod_memutil_relmem2d_l_ [278]
+-----------------------------------------------
+                0.00    0.00      21/21          mod_memutil_getmem2d_l_ [117]
+[118]    0.0    0.00    0.00      21         mod_space_getspc2d_larr_ [118]
+-----------------------------------------------
+                0.00    0.00       1/16          mod_cu_interface_allocate_cumulus_ [237]
+                0.00    0.00       1/16          mod_pbl_interface_allocate_pblscheme_ [48]
+                0.00    0.00       2/16          mod_cu_common_init_mod_cumulus_ [50]
+                0.00    0.00       2/16          mod_mppparam_cl_setup_real8_ [58]
+                0.00    0.00       3/16          mod_atm_interface_setup_boundaries_ [147]
+                0.00    0.00       7/16          mod_atm_interface_allocate_mod_atm_interface_ [39]
+[119]    0.0    0.00    0.00      16         mod_memutil_getmem2d_i_ [119]
+                0.00    0.00      32/1504        mod_message_checkalloc_ [88]
+                0.00    0.00      16/16          mod_space_getspc2d_iarr_ [120]
+                0.00    0.00       1/1           mod_memutil_relmem2d_i_ [277]
+-----------------------------------------------
+                0.00    0.00      16/16          mod_memutil_getmem2d_i_ [119]
+[120]    0.0    0.00    0.00      16         mod_space_getspc2d_iarr_ [120]
+-----------------------------------------------
+                0.00    0.00       1/15          mod_moloch_init_moloch_ [283]
+                0.00    0.00       2/15          mod_rad_interface_init_radiation_ [293]
+                0.00    0.00       2/15          mod_micro_interface_init_micro_ [281]
+                0.00    0.00       2/15          mod_slice_init_slice_ [302]
+                0.00    0.00       4/15          mod_cu_interface_init_cumulus_ [238]
+                0.00    0.00       4/15          mod_pbl_interface_init_pblscheme_ [292]
+[121]    0.0    0.00    0.00      15         mod_memutil_assignp4d_d_ [121]
+-----------------------------------------------
+                0.00    0.00      15/15          mod_memutil_getmem4d_d_ [38]
+[122]    0.0    0.00    0.00      15         mod_space_getspc4d_r8arr_ [122]
+-----------------------------------------------
+                0.00    0.00      14/14          mod_moloch_moloch_ [4]
+[123]    0.0    0.00    0.00      14         mod_realkinds_is_inf_double_ [123]
+-----------------------------------------------
+                0.00    0.00      14/14          mod_moloch_moloch_ [4]
+[124]    0.0    0.00    0.00      14         mod_realkinds_is_nan_double_ [124]
+-----------------------------------------------
+                0.00    0.00       1/13          MAIN_ [1]
+                0.00    0.00       2/13          mod_params_param_ [29]
+                0.00    0.00       3/13          mod_timer_init_timer_ [304]
+                0.00    0.00       7/13          mod_timer_init_alarm_ [136]
+[125]    0.0    0.00    0.00      13         mod_date_initfromtypeit_ [125]
+-----------------------------------------------
+                0.00    0.00       1/13          mod_rad_interface_init_radiation_ [293]
+                0.00    0.00       1/13          mod_pbl_interface_init_pblscheme_ [292]
+                0.00    0.00       1/13          mod_params_param_ [29]
+                0.00    0.00       2/13          mod_micro_interface_init_micro_ [281]
+                0.00    0.00       4/13          mod_lm_interface_init_surface_model_ [59]
+                0.00    0.00       4/13          mod_cu_interface_init_cumulus_ [238]
+[126]    0.0    0.00    0.00      13         mod_memutil_assignp2d_i_ [126]
+-----------------------------------------------
+                0.00    0.00       6/13          mod_mppparam_broadcast_params_ [284]
+                0.00    0.00       7/13          mod_params_param_ [29]
+[127]    0.0    0.00    0.00      13         mod_mppparam_bcast_arr_character_ [127]
+-----------------------------------------------
+                0.00    0.00       9/9           mod_params_param_ [29]
+[128]    0.0    0.00    0.00       9         mod_mppparam_bcast_arr_logical_ [128]
+-----------------------------------------------
+                0.00    0.00       8/8           mod_mppparam_cl_setup_real8_ [58]
+[129]    0.0    0.00    0.00       8         mod_memutil_getmem3d_l_ [129]
+                0.00    0.00      16/1504        mod_message_checkalloc_ [88]
+                0.00    0.00       8/8           mod_space_getspc3d_larr_ [130]
+                0.00    0.00       2/2           mod_memutil_relmem3d_l_ [190]
+-----------------------------------------------
+                0.00    0.00       8/8           mod_memutil_getmem3d_l_ [129]
+[130]    0.0    0.00    0.00       8         mod_space_getspc3d_larr_ [130]
+-----------------------------------------------
+                0.00    0.00       3/7           mod_atm_interface_allocate_mod_atm_interface_ [39]
+                0.00    0.00       4/7           mod_mppparam_cl_setup_real8_ [58]
+[131]    0.0    0.00    0.00       7         mod_memutil_getmem3d_i_ [131]
+                0.00    0.00      14/1504        mod_message_checkalloc_ [88]
+                0.00    0.00       7/7           mod_space_getspc3d_iarr_ [135]
+                0.00    0.00       2/2           mod_memutil_relmem3d_i_ [189]
+-----------------------------------------------
+                0.00    0.00       7/7           mod_moloch_moloch_ [4]
+[132]    0.0    0.00    0.00       7         mod_mppparam_maxall_real8_ [132]
+-----------------------------------------------
+                0.00    0.00       7/7           mod_moloch_moloch_ [4]
+[133]    0.0    0.00    0.00       7         mod_mppparam_minall_real8_ [133]
+-----------------------------------------------
+                0.00    0.00       7/7           mod_moloch_moloch_ [4]
+[134]    0.0    0.00    0.00       7         mod_mppparam_sumall_int4_ [134]
+-----------------------------------------------
+                0.00    0.00       7/7           mod_memutil_getmem3d_i_ [131]
+[135]    0.0    0.00    0.00       7         mod_space_getspc3d_iarr_ [135]
+-----------------------------------------------
+                0.00    0.00       7/7           mod_params_param_ [29]
+[136]    0.0    0.00    0.00       7         mod_timer_init_alarm_ [136]
+                0.00    0.00       7/5884        mod_date_initfromtypedt_ [72]
+                0.00    0.00       7/13          mod_date_initfromtypeit_ [125]
+-----------------------------------------------
+                0.00    0.00       6/6           mod_regcm_interface_rcm_initialize_ [28]
+[137]    0.0    0.00    0.00       6         mod_ensemble_randify2d_ [137]
+                0.00    0.00       1/30          mod_memutil_getmem1d_i_ [114]
+-----------------------------------------------
+                0.00    0.00       6/6           mod_lm_interface_init_surface_model_ [59]
+[138]    0.0    0.00    0.00       6         mod_memutil_assignp2d3_d_ [138]
+-----------------------------------------------
+                0.00    0.00       6/6           mod_params_param_ [29]
+[139]    0.0    0.00    0.00       6         mod_timer_init_syncro_ [139]
+-----------------------------------------------
+                0.00    0.00       5/5           mod_params_param_ [29]
+[140]    0.0    0.00    0.00       5         mod_mppparam_bcast_rcm_time_and_date_ [140]
+-----------------------------------------------
+                0.00    0.00       4/4           __libc_csu_init [43]
+[141]    0.0    0.00    0.00       4         mod_bdycod_invert_top_bottom_ [141]
+-----------------------------------------------
+                0.00    0.00       4/4           mod_mppparam_cl_setup_real8_ [58]
+[142]    0.0    0.00    0.00       4         mod_memutil_getmem3d_r_ [142]
+                0.00    0.00       8/1504        mod_message_checkalloc_ [88]
+                0.00    0.00       4/4           mod_space_getspc3d_r4arr_ [146]
+                0.00    0.00       2/2           mod_memutil_relmem3d_r_ [191]
+-----------------------------------------------
+                0.00    0.00       4/4           __libc_csu_init [43]
+[143]    0.0    0.00    0.00       4         mod_moloch_uvstagtox_ [143]
+-----------------------------------------------
+                0.00    0.00       4/4           __libc_csu_init [43]
+[144]    0.0    0.00    0.00       4         mod_rad_aerosol_remove_nans_ [144]
+-----------------------------------------------
+                0.00    0.00       4/4           __libc_csu_init [43]
+[145]    0.0    0.00    0.00       4         mod_rad_o3blk_close_o3data_ [145]
+-----------------------------------------------
+                0.00    0.00       4/4           mod_memutil_getmem3d_r_ [142]
+[146]    0.0    0.00    0.00       4         mod_space_getspc3d_r4arr_ [146]
+-----------------------------------------------
+                0.00    0.00       3/3           mod_params_param_ [29]
+[147]    0.0    0.00    0.00       3         mod_atm_interface_setup_boundaries_ [147]
+                0.00    0.00      12/21          mod_memutil_getmem2d_l_ [117]
+                0.00    0.00       3/16          mod_memutil_getmem2d_i_ [119]
+-----------------------------------------------
+                0.00    0.00       3/3           mod_date_diffdate_ [151]
+[148]    0.0    0.00    0.00       3         mod_date_check_cal_ [148]
+-----------------------------------------------
+                0.00    0.00       3/3           mod_date_initfromintdt_ [152]
+[149]    0.0    0.00    0.00       3         mod_date_date_time_to_internal_ [149]
+                0.00    0.00       3/3           mod_date_time_to_second_of_day_ [155]
+-----------------------------------------------
+                0.00    0.00       3/3           mod_date_initfromintdt_ [152]
+[150]    0.0    0.00    0.00       3         mod_date_date_to_days_from_reference_ [150]
+                0.00    0.00       3/2884        mod_date_idayofyear_ [80]
+-----------------------------------------------
+                0.00    0.00       1/3           MAIN_ [1]
+                0.00    0.00       2/3           mod_timer_init_timer_ [304]
+[151]    0.0    0.00    0.00       3         mod_date_diffdate_ [151]
+                0.00    0.00       3/3           mod_date_check_cal_ [148]
+-----------------------------------------------
+                0.00    0.00       3/3           mod_params_param_ [29]
+[152]    0.0    0.00    0.00       3         mod_date_initfromintdt_ [152]
+                0.00    0.00       3/3           mod_date_split_i10_ [154]
+                0.00    0.00       3/3           mod_date_date_to_days_from_reference_ [150]
+                0.00    0.00       3/3           mod_date_date_time_to_internal_ [149]
+-----------------------------------------------
+                0.00    0.00       3/3           mod_date_yeardays_ [157]
+[153]    0.0    0.00    0.00       3         mod_date_lleap_ [153]
+-----------------------------------------------
+                0.00    0.00       3/3           mod_date_initfromintdt_ [152]
+[154]    0.0    0.00    0.00       3         mod_date_split_i10_ [154]
+-----------------------------------------------
+                0.00    0.00       3/3           mod_date_date_time_to_internal_ [149]
+[155]    0.0    0.00    0.00       3         mod_date_time_to_second_of_day_ [155]
+-----------------------------------------------
+                0.00    0.00       1/3           MAIN_ [1]
+                0.00    0.00       2/3           mod_timer_init_timer_ [304]
+[156]    0.0    0.00    0.00       3         mod_date_tohours_ [156]
+-----------------------------------------------
+                0.00    0.00       3/3           mod_date_days_from_reference_to_date_ [69]
+[157]    0.0    0.00    0.00       3         mod_date_yeardays_ [157]
+                0.00    0.00       3/3           mod_date_lleap_ [153]
+-----------------------------------------------
+                0.00    0.00       3/3           mod_lm_interface_init_surface_model_ [59]
+[158]    0.0    0.00    0.00       3         mod_memutil_assignp3d_i_ [158]
+-----------------------------------------------
+                0.00    0.00       3/3           mod_tendency_allocate_mod_tend_ [60]
+[159]    0.0    0.00    0.00       3         mod_memutil_assignp4d5_d_ [159]
+-----------------------------------------------
+                0.00    0.00       1/3           mod_rad_colmod3_allocate_mod_rad_colmod3_ [56]
+                0.00    0.00       2/3           mod_mppparam_set_nproc_ [286]
+[160]    0.0    0.00    0.00       3         mod_memutil_getmem1d_l_ [160]
+                0.00    0.00       6/1504        mod_message_checkalloc_ [88]
+                0.00    0.00       3/3           mod_space_getspc1d_larr_ [162]
+-----------------------------------------------
+                0.00    0.00       3/3           mod_params_param_ [29]
+[161]    0.0    0.00    0.00       3         mod_mppparam_real8_2d_exchange_ [161]
+-----------------------------------------------
+                0.00    0.00       3/3           mod_memutil_getmem1d_l_ [160]
+[162]    0.0    0.00    0.00       3         mod_space_getspc1d_larr_ [162]
+-----------------------------------------------
+                0.00    0.00       2/2           __libc_csu_init [43]
+[163]    0.0    0.00    0.00       2         mo_simple_plumes_sp_aop_profile_ [163]
+-----------------------------------------------
+                0.00    0.00       2/2           __libc_csu_init [43]
+[164]    0.0    0.00    0.00       2         mod_advection_vadv4d_ [164]
+-----------------------------------------------
+                0.00    0.00       2/2           mod_params_param_ [29]
+[165]    0.0    0.00    0.00       2         mod_atm_interface_allocate_v2dbound_ [165]
+                0.00    0.00       6/149         mod_memutil_getmem2d_d_ [96]
+-----------------------------------------------
+                0.00    0.00       2/2           __libc_csu_init [43]
+[166]    0.0    0.00    0.00       2         mod_atm_interface_export_data_from_atm_ [166]
+-----------------------------------------------
+                0.00    0.00       2/2           __libc_csu_init [43]
+[167]    0.0    0.00    0.00       2         mod_capecin_otlift_table_fill [167]
+-----------------------------------------------
+                0.00    0.00       2/2           __libc_csu_init [43]
+[168]    0.0    0.00    0.00       2         mod_cbmz_integrator_jac_chem_ [168]
+-----------------------------------------------
+                0.00    0.00       2/2           __libc_csu_init [43]
+[169]    0.0    0.00    0.00       2         mod_cbmz_jacobiansp_ [169]
+-----------------------------------------------
+                0.00    0.00       2/2           __libc_csu_init [43]
+[170]    0.0    0.00    0.00       2         mod_che_bdyco_setup_che_bdycon_ [170]
+-----------------------------------------------
+                0.00    0.00       2/2           __libc_csu_init [43]
+[171]    0.0    0.00    0.00       2         mod_che_carbonaer_doaging_ [171]
+-----------------------------------------------
+                0.00    0.00       2/2           __libc_csu_init [43]
+[172]    0.0    0.00    0.00       2         mod_cloud_echam5_echam5_cldfrac_ [172]
+-----------------------------------------------
+                0.00    0.00       2/2           __libc_csu_init [43]
+[173]    0.0    0.00    0.00       2         mod_cloud_guli2007_gulisa_cldfrac_ [173]
+-----------------------------------------------
+                0.00    0.00       2/2           __libc_csu_init [43]
+[174]    0.0    0.00    0.00       2         mod_cloud_subex_subex_cldfrac_ [174]
+-----------------------------------------------
+                0.00    0.00       2/2           __libc_csu_init [43]
+[175]    0.0    0.00    0.00       2         mod_cloud_texeira_texeira_cldfrac_ [175]
+-----------------------------------------------
+                0.00    0.00       2/2           __libc_csu_init [43]
+[176]    0.0    0.00    0.00       2         mod_cloud_thomp_thomp_cldfrac_ [176]
+-----------------------------------------------
+                0.00    0.00       2/2           __libc_csu_init [43]
+[177]    0.0    0.00    0.00       2         mod_cloud_tompkins_tompkins_cldfrac_ [177]
+-----------------------------------------------
+                0.00    0.00       2/2           __libc_csu_init [43]
+[178]    0.0    0.00    0.00       2         mod_cloud_xuran_xuran_cldfrac_ [178]
+-----------------------------------------------
+                0.00    0.00       2/2           __libc_csu_init [43]
+[179]    0.0    0.00    0.00       2         mod_cu_interface_shallow_convection_ [179]
+-----------------------------------------------
+                0.00    0.00       2/2           __libc_csu_init [43]
+[180]    0.0    0.00    0.00       2         mod_cu_tiedtke_ntiedtke_ctracer [180]
+-----------------------------------------------
+                0.00    0.00       1/2           mod_timer_init_timer_ [304]
+                0.00    0.00       1/2           mod_timer_step_timer_ [87]
+[181]    0.0    0.00    0.00       2         mod_date_split_rcm_time_and_date_complete_ [181]
+                0.00    0.00       2/8645        mod_date_days_from_reference_to_date_ [69]
+                0.00    0.00       2/2885        mod_date_internal_to_date_time_ [78]
+-----------------------------------------------
+                0.00    0.00       2/2           __libc_csu_init [43]
+[182]    0.0    0.00    0.00       2         mod_diffusion_diffu_x4d3d_ [182]
+-----------------------------------------------
+                0.00    0.00       2/2           __libc_csu_init [43]
+[183]    0.0    0.00    0.00       2         mod_earth_get_window_r4_has_south_pole [183]
+-----------------------------------------------
+                0.00    0.00       2/2           __libc_csu_init [43]
+[184]    0.0    0.00    0.00       2         mod_kdtree2_heapsort_struct_ [184]
+-----------------------------------------------
+                0.00    0.00       2/2           __libc_csu_init [43]
+[185]    0.0    0.00    0.00       2         mod_lm_interface_wlh_ [185]
+-----------------------------------------------
+                0.00    0.00       2/2           mod_mppparam_set_nproc_ [286]
+[186]    0.0    0.00    0.00       2         mod_memutil_getmem1d_r_ [186]
+                0.00    0.00       4/1504        mod_message_checkalloc_ [88]
+                0.00    0.00       2/2           mod_space_getspc1d_r4arr_ [217]
+-----------------------------------------------
+                0.00    0.00       2/2           mod_mppparam_cl_setup_real8_ [58]
+[187]    0.0    0.00    0.00       2         mod_memutil_getmem2d_r_ [187]
+                0.00    0.00       4/1504        mod_message_checkalloc_ [88]
+                0.00    0.00       2/2           mod_space_getspc2d_r4arr_ [218]
+                0.00    0.00       1/1           mod_memutil_relmem2d_r_ [279]
+-----------------------------------------------
+                0.00    0.00       2/2           mod_memutil_getmem3d_d_ [37]
+[188]    0.0    0.00    0.00       2         mod_memutil_relmem3d_d_ [188]
+-----------------------------------------------
+                0.00    0.00       2/2           mod_memutil_getmem3d_i_ [131]
+[189]    0.0    0.00    0.00       2         mod_memutil_relmem3d_i_ [189]
+-----------------------------------------------
+                0.00    0.00       2/2           mod_memutil_getmem3d_l_ [129]
+[190]    0.0    0.00    0.00       2         mod_memutil_relmem3d_l_ [190]
+-----------------------------------------------
+                0.00    0.00       2/2           mod_memutil_getmem3d_r_ [142]
+[191]    0.0    0.00    0.00       2         mod_memutil_relmem3d_r_ [191]
+-----------------------------------------------
+                0.00    0.00       2/2           __libc_csu_init [43]
+[192]    0.0    0.00    0.00       2         mod_message_viz_plot_ [192]
+-----------------------------------------------
+                0.00    0.00       2/2           __libc_csu_init [43]
+[193]    0.0    0.00    0.00       2         mod_micro_interface_condtq_ [193]
+-----------------------------------------------
+                0.00    0.00       2/2           __libc_csu_init [43]
+[194]    0.0    0.00    0.00       2         mod_micro_nogtom_rain_fallspeed_ [194]
+-----------------------------------------------
+                0.00    0.00       2/2           __libc_csu_init [43]
+[195]    0.0    0.00    0.00       2         mod_micro_subex_subex_season_factor [195]
+-----------------------------------------------
+                0.00    0.00       2/2           mod_params_param_ [29]
+[196]    0.0    0.00    0.00       2         mod_mppparam_bcast_arr_int4_ [196]
+-----------------------------------------------
+                0.00    0.00       2/2           __libc_csu_init [43]
+[197]    0.0    0.00    0.00       2         mod_mppparam_get_cartcomm_ [197]
+-----------------------------------------------
+                0.00    0.00       2/2           mod_mppparam_cl_setup_real8_ [58]
+[198]    0.0    0.00    0.00       2         mod_mppparam_glosplitw_ [198]
+-----------------------------------------------
+                0.00    0.00       2/2           mod_params_param_ [29]
+[199]    0.0    0.00    0.00       2         mod_mppparam_real8_2d_exchange_bottom_top_ [199]
+-----------------------------------------------
+                0.00    0.00       2/2           mod_params_param_ [29]
+[200]    0.0    0.00    0.00       2         mod_mppparam_real8_2d_exchange_left_right_ [200]
+-----------------------------------------------
+                0.00    0.00       2/2           __libc_csu_init [43]
+[201]    0.0    0.00    0.00       2         mod_ncio_check_ok_ [201]
+-----------------------------------------------
+                0.00    0.00       2/2           __libc_csu_init [43]
+[202]    0.0    0.00    0.00       2         mod_nhinterp_smtdsmt_ [202]
+-----------------------------------------------
+                0.00    0.00       2/2           __libc_csu_init [43]
+[203]    0.0    0.00    0.00       2         mod_output_vinterz_ [203]
+-----------------------------------------------
+                0.00    0.00       2/2           __libc_csu_init [43]
+[204]    0.0    0.00    0.00       2         mod_params_param_gcd_rec [204]
+-----------------------------------------------
+                0.00    0.00       2/2           __libc_csu_init [43]
+[205]    0.0    0.00    0.00       2         mod_pbl_holtbl_force_water_conserve_ [205]
+-----------------------------------------------
+                0.00    0.00       2/2           __libc_csu_init [43]
+[206]    0.0    0.00    0.00       2         mod_pbl_uwtcm_pblhgt_ [206]
+-----------------------------------------------
+                0.00    0.00       2/2           __libc_csu_init [43]
+[207]    0.0    0.00    0.00       2         mod_rad_common_ [207]
+-----------------------------------------------
+                0.00    0.00       2/2           __libc_csu_init [43]
+[208]    0.0    0.00    0.00       2         mod_rad_interface_export_data_from_rad_ [208]
+-----------------------------------------------
+                0.00    0.00       2/2           __libc_csu_init [43]
+[209]    0.0    0.00    0.00       2         mod_rad_outrad_copy4d_add_ [209]
+-----------------------------------------------
+                0.00    0.00       2/2           mod_rad_radiation_radclw_ [110]
+[210]    0.0    0.00    0.00       2         mod_rad_radiation_radabs_ [210]
+-----------------------------------------------
+                0.00    0.00       2/2           mod_rad_radiation_radclw_ [110]
+[211]    0.0    0.00    0.00       2         mod_rad_radiation_radems_ [211]
+-----------------------------------------------
+                0.00    0.00       2/2           mod_rad_radiation_radclw_ [110]
+[212]    0.0    0.00    0.00       2         mod_rad_radiation_radoz2_ [212]
+-----------------------------------------------
+                0.00    0.00       2/2           mod_rad_radiation_radclw_ [110]
+[213]    0.0    0.00    0.00       2         mod_rad_radiation_trcplk_ [213]
+-----------------------------------------------
+                0.00    0.00       2/2           mod_rad_radiation_radclw_ [110]
+[214]    0.0    0.00    0.00       2         mod_rad_radiation_trcpth_ [214]
+-----------------------------------------------
+                0.00    0.00       2/2           __libc_csu_init [43]
+[215]    0.0    0.00    0.00       2         mod_rad_tracer_trcmix_ [215]
+-----------------------------------------------
+                0.00    0.00       2/2           __libc_csu_init [43]
+[216]    0.0    0.00    0.00       2         mod_sound_sound_ [216]
+-----------------------------------------------
+                0.00    0.00       2/2           mod_memutil_getmem1d_r_ [186]
+[217]    0.0    0.00    0.00       2         mod_space_getspc1d_r4arr_ [217]
+-----------------------------------------------
+                0.00    0.00       2/2           mod_memutil_getmem2d_r_ [187]
+[218]    0.0    0.00    0.00       2         mod_space_getspc2d_r4arr_ [218]
+-----------------------------------------------
+                0.00    0.00       2/2           __libc_csu_init [43]
+[219]    0.0    0.00    0.00       2         mod_split_spstep_ [219]
+-----------------------------------------------
+                0.00    0.00       2/2           __libc_csu_init [43]
+[220]    0.0    0.00    0.00       2         mod_stdatm_stdlrate_ [220]
+-----------------------------------------------
+                0.00    0.00       2/2           __libc_csu_init [43]
+[221]    0.0    0.00    0.00       2         mod_sun_read_solarforcing_ [221]
+-----------------------------------------------
+                0.00    0.00       2/2           __libc_csu_init [43]
+[222]    0.0    0.00    0.00       2         mod_tendency_extracttenchi_ [222]
+-----------------------------------------------
+                0.00    0.00       2/2           __libc_csu_init [43]
+[223]    0.0    0.00    0.00       2         mod_timefilter_filter_raw_qv_ [223]
+-----------------------------------------------
+                0.00    0.00       2/2           __libc_csu_init [43]
+[224]    0.0    0.00    0.00       2         mod_vertint_intzps2_ [224]
+-----------------------------------------------
+                0.00    0.00       2/2           __libc_csu_init [43]
+[225]    0.0    0.00    0.00       2         mod_vmodes_invmtrx_ [225]
+-----------------------------------------------
+                0.00    0.00       2/2           __libc_csu_init [43]
+[226]    0.0    0.00    0.00       2         rrlw_ncpar_getabsorberindex_ [226]
+-----------------------------------------------
+                0.00    0.00       2/2           __libc_csu_init [43]
+[227]    0.0    0.00    0.00       2         rrsw_ncpar_getabsorberindex_ [227]
+-----------------------------------------------
+                0.00    0.00       1/1           mod_regcm_interface_rcm_initialize_ [28]
+[228]    0.0    0.00    0.00       1         mod_atm_interface_setup_model_indexes_ [228]
+-----------------------------------------------
+                0.00    0.00       1/1           mod_lm_interface_init_surface_model_ [59]
+[229]    0.0    0.00    0.00       1         mod_bats_internal_allocate_mod_bats_internal_ [229]
+                0.00    0.00     182/305         mod_memutil_getmem1d_d_ [92]
+                0.00    0.00       4/30          mod_memutil_getmem1d_i_ [114]
+-----------------------------------------------
+                0.00    0.00       1/1           mod_init_init_ [51]
+[230]    0.0    0.00    0.00       1         mod_bdycod_is_present_qc_ [230]
+-----------------------------------------------
+                0.00    0.00       1/1           mod_init_init_ [51]
+[231]    0.0    0.00    0.00       1         mod_bdycod_is_present_qi_ [231]
+-----------------------------------------------
+                0.00    0.00       1/1           mod_params_param_ [29]
+[232]    0.0    0.00    0.00       1         mod_bdycod_setup_bdycon_ [232]
+-----------------------------------------------
+                0.00    0.00       1/1           mod_params_param_ [29]
+[233]    0.0    0.00    0.00       1         mod_che_bionit_allocate_mod_che_bionit_ [233]
+-----------------------------------------------
+                0.00    0.00       1/1           mod_params_param_ [29]
+[234]    0.0    0.00    0.00       1         mod_che_common_allocate_mod_che_common_ [234]
+-----------------------------------------------
+                0.00    0.00       1/1           mod_params_param_ [29]
+[235]    0.0    0.00    0.00       1         mod_che_dust_allocate_mod_che_dust_ [235]
+-----------------------------------------------
+                0.00    0.00       1/1           mod_params_param_ [29]
+[236]    0.0    0.00    0.00       1         mod_che_mppio_allocate_mod_che_mppio_ [236]
+-----------------------------------------------
+                0.00    0.00       1/1           mod_params_param_ [29]
+[237]    0.0    0.00    0.00       1         mod_cu_interface_allocate_cumulus_ [237]
+                0.00    0.00       1/16          mod_memutil_getmem2d_i_ [119]
+-----------------------------------------------
+                0.00    0.00       1/1           mod_params_param_ [29]
+[238]    0.0    0.00    0.00       1         mod_cu_interface_init_cumulus_ [238]
+                0.00    0.00      25/114         mod_memutil_assignp3d_d_ [104]
+                0.00    0.00      11/125         mod_memutil_assignp2d_d_ [98]
+                0.00    0.00       4/13          mod_memutil_assignp2d_i_ [126]
+                0.00    0.00       4/15          mod_memutil_assignp4d_d_ [121]
+                0.00    0.00       1/34584       mod_memutil_assignp3d4_d_ [65]
+-----------------------------------------------
+                0.00    0.00       1/1           mod_regcm_interface_rcm_finalize_ [298]
+[239]    0.0    0.00    0.00       1         mod_date_tochar10_ [239]
+                0.00    0.00       1/1           mod_date_toint10_ [241]
+-----------------------------------------------
+                0.00    0.00       1/1           mod_timer_init_timer_ [304]
+[240]    0.0    0.00    0.00       1         mod_date_tochar_ [240]
+                0.00    0.00       1/8645        mod_date_days_from_reference_to_date_ [69]
+                0.00    0.00       1/2885        mod_date_internal_to_date_time_ [78]
+-----------------------------------------------
+                0.00    0.00       1/1           mod_date_tochar10_ [239]
+[241]    0.0    0.00    0.00       1         mod_date_toint10_ [241]
+                0.00    0.00       1/8645        mod_date_days_from_reference_to_date_ [69]
+                0.00    0.00       1/2885        mod_date_internal_to_date_time_ [78]
+-----------------------------------------------
+                0.00    0.00       1/1           mod_regcm_interface_rcm_finalize_ [298]
+[242]    0.0    0.00    0.00       1         mod_header_checktime_ [242]
+-----------------------------------------------
+                0.00    0.00       1/1           mod_regcm_interface_rcm_finalize_ [298]
+[243]    0.0    0.00    0.00       1         mod_header_finaltime_ [243]
+-----------------------------------------------
+                0.00    0.00       1/1           mod_regcm_interface_rcm_initialize_ [28]
+[244]    0.0    0.00    0.00       1         mod_header_header_ [244]
+-----------------------------------------------
+                0.00    0.00       1/1           mod_regcm_interface_rcm_initialize_ [28]
+[245]    0.0    0.00    0.00       1         mod_header_whoami_ [245]
+-----------------------------------------------
+                0.00    0.00       1/1           mod_params_param_ [29]
+[246]    0.0    0.00    0.00       1         mod_ipcc_scenario_set_scenario_ [246]
+-----------------------------------------------
+                0.00    0.00       1/1           mod_lm_interface_init_surface_model_ [59]
+[247]    0.0    0.00    0.00       1         mod_memutil_assignp2d4_d_ [247]
+-----------------------------------------------
+                0.00    0.00       1/1           mod_memutil_memory_destroy_ [274]
+[248]    0.0    0.00    0.00       1         mod_memutil_finalize_pool1d_d_ [248]
+-----------------------------------------------
+                0.00    0.00       1/1           mod_memutil_memory_destroy_ [274]
+[249]    0.0    0.00    0.00       1         mod_memutil_finalize_pool1d_i_ [249]
+-----------------------------------------------
+                0.00    0.00       1/1           mod_memutil_memory_destroy_ [274]
+[250]    0.0    0.00    0.00       1         mod_memutil_finalize_pool1d_l_ [250]
+-----------------------------------------------
+                0.00    0.00       1/1           mod_memutil_memory_destroy_ [274]
+[251]    0.0    0.00    0.00       1         mod_memutil_finalize_pool1d_r_ [251]
+-----------------------------------------------
+                0.00    0.00       1/1           mod_memutil_memory_destroy_ [274]
+[252]    0.0    0.00    0.00       1         mod_memutil_finalize_pool1d_s_ [252]
+-----------------------------------------------
+                0.00    0.00       1/1           mod_memutil_memory_destroy_ [274]
+[253]    0.0    0.00    0.00       1         mod_memutil_finalize_pool1d_t_ [253]
+-----------------------------------------------
+                0.00    0.00       1/1           mod_memutil_memory_destroy_ [274]
+[254]    0.0    0.00    0.00       1         mod_memutil_finalize_pool2d_d_ [254]
+-----------------------------------------------
+                0.00    0.00       1/1           mod_memutil_memory_destroy_ [274]
+[255]    0.0    0.00    0.00       1         mod_memutil_finalize_pool2d_i_ [255]
+-----------------------------------------------
+                0.00    0.00       1/1           mod_memutil_memory_destroy_ [274]
+[256]    0.0    0.00    0.00       1         mod_memutil_finalize_pool2d_l_ [256]
+-----------------------------------------------
+                0.00    0.00       1/1           mod_memutil_memory_destroy_ [274]
+[257]    0.0    0.00    0.00       1         mod_memutil_finalize_pool2d_r_ [257]
+-----------------------------------------------
+                0.00    0.00       1/1           mod_memutil_memory_destroy_ [274]
+[258]    0.0    0.00    0.00       1         mod_memutil_finalize_pool2d_s_ [258]
+-----------------------------------------------
+                0.00    0.00       1/1           mod_memutil_memory_destroy_ [274]
+[259]    0.0    0.00    0.00       1         mod_memutil_finalize_pool3d_d_ [259]
+-----------------------------------------------
+                0.00    0.00       1/1           mod_memutil_memory_destroy_ [274]
+[260]    0.0    0.00    0.00       1         mod_memutil_finalize_pool3d_i_ [260]
+-----------------------------------------------
+                0.00    0.00       1/1           mod_memutil_memory_destroy_ [274]
+[261]    0.0    0.00    0.00       1         mod_memutil_finalize_pool3d_l_ [261]
+-----------------------------------------------
+                0.00    0.00       1/1           mod_memutil_memory_destroy_ [274]
+[262]    0.0    0.00    0.00       1         mod_memutil_finalize_pool3d_r_ [262]
+-----------------------------------------------
+                0.00    0.00       1/1           mod_memutil_memory_destroy_ [274]
+[263]    0.0    0.00    0.00       1         mod_memutil_finalize_pool3d_s_ [263]
+-----------------------------------------------
+                0.00    0.00       1/1           mod_memutil_memory_destroy_ [274]
+[264]    0.0    0.00    0.00       1         mod_memutil_finalize_pool4d_d_ [264]
+-----------------------------------------------
+                0.00    0.00       1/1           mod_memutil_memory_destroy_ [274]
+[265]    0.0    0.00    0.00       1         mod_memutil_finalize_pool4d_i_ [265]
+-----------------------------------------------
+                0.00    0.00       1/1           mod_memutil_memory_destroy_ [274]
+[266]    0.0    0.00    0.00       1         mod_memutil_finalize_pool4d_l_ [266]
+-----------------------------------------------
+                0.00    0.00       1/1           mod_memutil_memory_destroy_ [274]
+[267]    0.0    0.00    0.00       1         mod_memutil_finalize_pool4d_r_ [267]
+-----------------------------------------------
+                0.00    0.00       1/1           mod_memutil_memory_destroy_ [274]
+[268]    0.0    0.00    0.00       1         mod_memutil_finalize_pool4d_s_ [268]
+-----------------------------------------------
+                0.00    0.00       1/1           mod_regcm_interface_rcm_finalize_ [298]
+[269]    0.0    0.00    0.00       1         mod_memutil_finalize_pool5d_d_ [269]
+-----------------------------------------------
+                0.00    0.00       1/1           mod_memutil_memory_destroy_ [274]
+[270]    0.0    0.00    0.00       1         mod_memutil_finalize_pool5d_i_ [270]
+-----------------------------------------------
+                0.00    0.00       1/1           mod_memutil_memory_destroy_ [274]
+[271]    0.0    0.00    0.00       1         mod_memutil_finalize_pool5d_l_ [271]
+-----------------------------------------------
+                0.00    0.00       1/1           mod_memutil_memory_destroy_ [274]
+[272]    0.0    0.00    0.00       1         mod_memutil_finalize_pool5d_r_ [272]
+-----------------------------------------------
+                0.00    0.00       1/1           mod_memutil_memory_destroy_ [274]
+[273]    0.0    0.00    0.00       1         mod_memutil_finalize_pool5d_s_ [273]
+-----------------------------------------------
+                0.00    0.00       1/1           mod_regcm_interface_rcm_finalize_ [298]
+[274]    0.0    0.00    0.00       1         mod_memutil_memory_destroy_ [274]
+                0.00    0.00       1/1           mod_memutil_finalize_pool1d_s_ [252]
+                0.00    0.00       1/1           mod_memutil_finalize_pool1d_i_ [249]
+                0.00    0.00       1/1           mod_memutil_finalize_pool1d_l_ [250]
+                0.00    0.00       1/1           mod_memutil_finalize_pool1d_d_ [248]
+                0.00    0.00       1/1           mod_memutil_finalize_pool1d_r_ [251]
+                0.00    0.00       1/1           mod_memutil_finalize_pool2d_i_ [255]
+                0.00    0.00       1/1           mod_memutil_finalize_pool1d_t_ [253]
+                0.00    0.00       1/1           mod_memutil_finalize_pool2d_s_ [258]
+                0.00    0.00       1/1           mod_memutil_finalize_pool2d_r_ [257]
+                0.00    0.00       1/1           mod_memutil_finalize_pool2d_l_ [256]
+                0.00    0.00       1/1           mod_memutil_finalize_pool2d_d_ [254]
+                0.00    0.00       1/1           mod_memutil_finalize_pool3d_s_ [263]
+                0.00    0.00       1/1           mod_memutil_finalize_pool3d_i_ [260]
+                0.00    0.00       1/1           mod_memutil_finalize_pool3d_r_ [262]
+                0.00    0.00       1/1           mod_memutil_finalize_pool3d_l_ [261]
+                0.00    0.00       1/1           mod_memutil_finalize_pool3d_d_ [259]
+                0.00    0.00       1/1           mod_memutil_finalize_pool4d_s_ [268]
+                0.00    0.00       1/1           mod_memutil_finalize_pool4d_i_ [265]
+                0.00    0.00       1/1           mod_memutil_finalize_pool4d_l_ [266]
+                0.00    0.00       1/1           mod_memutil_finalize_pool4d_d_ [264]
+                0.00    0.00       1/1           mod_memutil_finalize_pool4d_r_ [267]
+                0.00    0.00       1/1           mod_memutil_finalize_pool5d_s_ [273]
+                0.00    0.00       1/1           mod_memutil_finalize_pool5d_i_ [270]
+                0.00    0.00       1/1           mod_memutil_finalize_pool5d_l_ [271]
+                0.00    0.00       1/1           mod_memutil_finalize_pool5d_r_ [272]
+-----------------------------------------------
+                0.00    0.00       1/1           mod_regcm_interface_rcm_initialize_ [28]
+[275]    0.0    0.00    0.00       1         mod_memutil_memory_init_ [275]
+                0.00    0.00      26/1504        mod_message_checkalloc_ [88]
+-----------------------------------------------
+                0.00    0.00       1/1           mod_memutil_getmem2d_d_ [96]
+[276]    0.0    0.00    0.00       1         mod_memutil_relmem2d_d_ [276]
+-----------------------------------------------
+                0.00    0.00       1/1           mod_memutil_getmem2d_i_ [119]
+[277]    0.0    0.00    0.00       1         mod_memutil_relmem2d_i_ [277]
+-----------------------------------------------
+                0.00    0.00       1/1           mod_memutil_getmem2d_l_ [117]
+[278]    0.0    0.00    0.00       1         mod_memutil_relmem2d_l_ [278]
+-----------------------------------------------
+                0.00    0.00       1/1           mod_memutil_getmem2d_r_ [187]
+[279]    0.0    0.00    0.00       1         mod_memutil_relmem2d_r_ [279]
+-----------------------------------------------
+                0.00    0.00       1/1           mod_regcm_interface_rcm_initialize_ [28]
+[280]    0.0    0.00    0.00       1         mod_message_setup_mesg_ [280]
+-----------------------------------------------
+                0.00    0.00       1/1           mod_params_param_ [29]
+[281]    0.0    0.00    0.00       1         mod_micro_interface_init_micro_ [281]
+                0.00    0.00      18/114         mod_memutil_assignp3d_d_ [104]
+                0.00    0.00       9/125         mod_memutil_assignp2d_d_ [98]
+                0.00    0.00       5/34584       mod_memutil_assignp3d4_d_ [65]
+                0.00    0.00       2/13          mod_memutil_assignp2d_i_ [126]
+                0.00    0.00       2/15          mod_memutil_assignp4d_d_ [121]
+-----------------------------------------------
+                0.00    0.00       1/1           mod_params_param_ [29]
+[282]    0.0    0.00    0.00       1         mod_micro_nogtom_init_nogtom_ [282]
+-----------------------------------------------
+                0.00    0.00       1/1           mod_init_init_ [51]
+[283]    0.0    0.00    0.00       1         mod_moloch_init_moloch_ [283]
+                0.00    0.00     121/242         mod_zita_gzita_ [94]
+                0.00    0.00      15/114         mod_memutil_assignp3d_d_ [104]
+                0.00    0.00      10/125         mod_memutil_assignp2d_d_ [98]
+                0.00    0.00       5/34584       mod_memutil_assignp3d4_d_ [65]
+                0.00    0.00       1/15          mod_memutil_assignp4d_d_ [121]
+-----------------------------------------------
+                0.00    0.00       1/1           mod_regcm_interface_rcm_initialize_ [28]
+[284]    0.0    0.00    0.00       1         mod_mppparam_broadcast_params_ [284]
+                0.00    0.00       6/13          mod_mppparam_bcast_arr_character_ [127]
+-----------------------------------------------
+                0.00    0.00       1/1           mod_ocn_common_initocn_ [53]
+[285]    0.0    0.00    0.00       1         mod_mppparam_cartesian_to_linear_integer_subgrid_subgrid_ [285]
+-----------------------------------------------
+                0.00    0.00       1/1           mod_regcm_interface_rcm_initialize_ [28]
+[286]    0.0    0.00    0.00       1         mod_mppparam_set_nproc_ [286]
+                0.00    0.00       4/30          mod_memutil_getmem1d_i_ [114]
+                0.00    0.00       2/305         mod_memutil_getmem1d_d_ [92]
+                0.00    0.00       2/2           mod_memutil_getmem1d_r_ [186]
+                0.00    0.00       2/3           mod_memutil_getmem1d_l_ [160]
+-----------------------------------------------
+                0.00    0.00       1/1           mod_regcm_interface_rcm_finalize_ [298]
+[287]    0.0    0.00    0.00       1         mod_ncio_close_icbc_ [287]
+-----------------------------------------------
+                0.00    0.00       1/1           mod_regcm_interface_rcm_finalize_ [298]
+[288]    0.0    0.00    0.00       1         mod_ncout_dispose_output_streams_ [288]
+-----------------------------------------------
+                0.00    0.00       1/1           mod_regcm_interface_rcm_initialize_ [28]
+[289]    0.0    0.00    0.00       1         mod_ncout_init_output_streams_ [289]
+-----------------------------------------------
+                0.00    0.00       1/1           mod_output_output_ [19]
+[290]    0.0    0.00    0.00       1         mod_ncout_newoutfiles_ [290]
+-----------------------------------------------
+                0.00    0.00       1/1           mod_lm_interface_init_surface_model_ [59]
+[291]    0.0    0.00    0.00       1         mod_ocn_internal_allocate_mod_ocn_internal_ [291]
+                0.00    0.00      42/305         mod_memutil_getmem1d_d_ [92]
+                0.00    0.00       3/30          mod_memutil_getmem1d_i_ [114]
+-----------------------------------------------
+                0.00    0.00       1/1           mod_params_param_ [29]
+[292]    0.0    0.00    0.00       1         mod_pbl_interface_init_pblscheme_ [292]
+                0.00    0.00      22/114         mod_memutil_assignp3d_d_ [104]
+                0.00    0.00      16/125         mod_memutil_assignp2d_d_ [98]
+                0.00    0.00       4/15          mod_memutil_assignp4d_d_ [121]
+                0.00    0.00       1/13          mod_memutil_assignp2d_i_ [126]
+-----------------------------------------------
+                0.00    0.00       1/1           mod_params_param_ [29]
+[293]    0.0    0.00    0.00       1         mod_rad_interface_init_radiation_ [293]
+                0.00    0.00      25/125         mod_memutil_assignp2d_d_ [98]
+                0.00    0.00      10/114         mod_memutil_assignp3d_d_ [104]
+                0.00    0.00       2/15          mod_memutil_assignp4d_d_ [121]
+                0.00    0.00       1/13          mod_memutil_assignp2d_i_ [126]
+-----------------------------------------------
+                0.00    0.00       1/1           mod_init_init_ [51]
+[294]    0.0    0.00    0.00       1         mod_rad_interface_inito3_ [294]
+-----------------------------------------------
+                0.00    0.00       1/1           mod_rad_interface_allocate_radiation_ [45]
+[295]    0.0    0.00    0.00       1         mod_rad_o3blk_allocate_mod_rad_o3blk_ [295]
+-----------------------------------------------
+                0.00    0.00       1/1           mod_init_init_ [51]
+[296]    0.0    0.00    0.00       1         mod_rad_o3blk_o3data_ [296]
+-----------------------------------------------
+                0.00    0.00       1/1           mod_rad_interface_allocate_radiation_ [45]
+[297]    0.0    0.00    0.00       1         mod_rad_outrad_allocate_mod_rad_outrad_ [297]
+-----------------------------------------------
+                0.00    0.00       1/1           MAIN_ [1]
+[298]    0.0    0.00    0.00       1         mod_regcm_interface_rcm_finalize_ [298]
+                0.00    0.00       1/1           mod_ncio_close_icbc_ [287]
+                0.00    0.00       1/1           mod_ncout_dispose_output_streams_ [288]
+                0.00    0.00       1/1           mod_date_tochar10_ [239]
+                0.00    0.00       1/1           mod_header_checktime_ [242]
+                0.00    0.00       1/1           mod_memutil_finalize_pool5d_d_ [269]
+                0.00    0.00       1/1           mod_memutil_memory_destroy_ [274]
+                0.00    0.00       1/1           mod_timer_cleanup_ [303]
+                0.00    0.00       1/1           mod_header_finaltime_ [243]
+-----------------------------------------------
+                0.00    0.00       1/1           mod_regcm_interface_rcm_initialize_ [28]
+[299]    0.0    0.00    0.00       1         mod_regcm_interface_setup_openacc_ [299]
+-----------------------------------------------
+                0.00    0.00       1/1           mod_params_param_ [29]
+[300]    0.0    0.00    0.00       1         mod_runparams_allocate_mod_runparams_ [300]
+                0.00    0.00       9/305         mod_memutil_getmem1d_d_ [92]
+                0.00    0.00       1/149         mod_memutil_getmem2d_d_ [96]
+-----------------------------------------------
+                0.00    0.00       1/1           mod_params_param_ [29]
+[301]    0.0    0.00    0.00       1         mod_savefile_allocate_mod_savefile_ [301]
+-----------------------------------------------
+                0.00    0.00       1/1           mod_params_param_ [29]
+[302]    0.0    0.00    0.00       1         mod_slice_init_slice_ [302]
+                0.00    0.00      14/114         mod_memutil_assignp3d_d_ [104]
+                0.00    0.00       2/15          mod_memutil_assignp4d_d_ [121]
+                0.00    0.00       1/125         mod_memutil_assignp2d_d_ [98]
+-----------------------------------------------
+                0.00    0.00       1/1           mod_regcm_interface_rcm_finalize_ [298]
+[303]    0.0    0.00    0.00       1         mod_timer_cleanup_ [303]
+-----------------------------------------------
+                0.00    0.00       1/1           mod_params_param_ [29]
+[304]    0.0    0.00    0.00       1         mod_timer_init_timer_ [304]
+                0.00    0.00       3/13          mod_date_initfromtypeit_ [125]
+                0.00    0.00       2/3           mod_date_diffdate_ [151]
+                0.00    0.00       2/3           mod_date_tohours_ [156]
+                0.00    0.00       1/5884        mod_date_initfromtypedt_ [72]
+                0.00    0.00       1/2           mod_date_split_rcm_time_and_date_complete_ [181]
+                0.00    0.00       1/1           mod_date_tochar_ [240]
+-----------------------------------------------
+                0.00    0.00       1/1           mod_params_param_ [29]
+[305]    0.0    0.00    0.00       1         mod_zita_model_zitaf_ [305]
+-----------------------------------------------
+                0.00    0.00       1/1           mod_params_param_ [29]
+[306]    0.0    0.00    0.00       1         mod_zita_model_zitah_ [306]
+-----------------------------------------------
+
+ This table describes the call tree of the program, and was sorted by
+ the total amount of time spent in each function and its children.
+
+ Each entry in this table consists of several lines.  The line with the
+ index number at the left hand margin lists the current function.
+ The lines above it list the functions that called this function,
+ and the lines below it list the functions this one called.
+ This line lists:
+     index	A unique number given to each element of the table.
+		Index numbers are sorted numerically.
+		The index number is printed next to every function name so
+		it is easier to look up where the function is in the table.
+
+     % time	This is the percentage of the `total' time that was spent
+		in this function and its children.  Note that due to
+		different viewpoints, functions excluded by options, etc,
+		these numbers will NOT add up to 100%.
+
+     self	This is the total amount of time spent in this function.
+
+     children	This is the total amount of time propagated into this
+		function by its children.
+
+     called	This is the number of times the function was called.
+		If the function called itself recursively, the number
+		only includes non-recursive calls, and is followed by
+		a `+' and the number of recursive calls.
+
+     name	The name of the current function.  The index number is
+		printed after it.  If the function is a member of a
+		cycle, the cycle number is printed between the
+		function's name and the index number.
+
+
+ For the function's parents, the fields have the following meanings:
+
+     self	This is the amount of time that was propagated directly
+		from the function into this parent.
+
+     children	This is the amount of time that was propagated from
+		the function's children into this parent.
+
+     called	This is the number of times this parent called the
+		function `/' the total number of times the function
+		was called.  Recursive calls to the function are not
+		included in the number after the `/'.
+
+     name	This is the name of the parent.  The parent's index
+		number is printed after it.  If the parent is a
+		member of a cycle, the cycle number is printed between
+		the name and the index number.
+
+ If the parents of the function cannot be determined, the word
+ `<spontaneous>' is printed in the `name' field, and all the other
+ fields are blank.
+
+ For the function's children, the fields have the following meanings:
+
+     self	This is the amount of time that was propagated directly
+		from the child into the function.
+
+     children	This is the amount of time that was propagated from the
+		child's children to the function.
+
+     called	This is the number of times the function called
+		this child `/' the total number of times the child
+		was called.  Recursive calls by the child are not
+		listed in the number after the `/'.
+
+     name	This is the name of the child.  The child's index
+		number is printed after it.  If the child is a
+		member of a cycle, the cycle number is printed
+		between the name and the index number.
+
+ If there are any cycles (circles) in the call graph, there is an
+ entry for the cycle-as-a-whole.  This entry shows who called the
+ cycle (as parents) and the members of the cycle (as children.)
+ The `+' recursive calls entry shows the number of function calls that
+ were internal to the cycle, and the calls entry for each member shows,
+ for that member, how many times it was called from other members of
+ the cycle.
+
+Copyright (C) 2012-2025 Free Software Foundation, Inc.
+
+Copying and distribution of this file, with or without modification,
+are permitted in any medium without royalty provided the copyright
+notice and this notice are preserved.
+
+Index by function name
+
+   [1] MAIN_                 [257] mod_memutil_finalize_pool2d_r_ [19] mod_output_output_
+ [163] mo_simple_plumes_sp_aop_profile_ [258] mod_memutil_finalize_pool2d_s_ [203] mod_output_vinterz_
+ [164] mod_advection_vadv4d_ [259] mod_memutil_finalize_pool3d_d_ [29] mod_params_param_
+  [39] mod_atm_interface_allocate_mod_atm_interface_ [260] mod_memutil_finalize_pool3d_i_ [204] mod_params_param_gcd_rec (mod_params.F90)
+ [165] mod_atm_interface_allocate_v2dbound_ [261] mod_memutil_finalize_pool3d_l_ [47] mod_pbl_holtbl_allocate_mod_pbl_holtbl_
+  [49] mod_atm_interface_allocate_v3dbound_ [262] mod_memutil_finalize_pool3d_r_ [205] mod_pbl_holtbl_force_water_conserve_
+ [166] mod_atm_interface_export_data_from_atm_ [263] mod_memutil_finalize_pool3d_s_ [24] mod_pbl_holtbl_holtbl_
+ [147] mod_atm_interface_setup_boundaries_ [264] mod_memutil_finalize_pool4d_d_ [48] mod_pbl_interface_allocate_pblscheme_
+ [228] mod_atm_interface_setup_model_indexes_ [265] mod_memutil_finalize_pool4d_i_ [292] mod_pbl_interface_init_pblscheme_
+ [229] mod_bats_internal_allocate_mod_bats_internal_ [266] mod_memutil_finalize_pool4d_l_ [81] mod_pbl_interface_pblscheme_
+  [62] mod_bdycod_allocate_mod_bdycon_ [267] mod_memutil_finalize_pool4d_r_ [206] mod_pbl_uwtcm_pblhgt_
+  [63] mod_bdycod_initideal_ [268] mod_memutil_finalize_pool4d_s_ [107] mod_rad_aerosol_aeroppt_
+ [141] mod_bdycod_invert_top_bottom_ [269] mod_memutil_finalize_pool5d_d_ [57] mod_rad_aerosol_allocate_mod_rad_aerosol_
+ [230] mod_bdycod_is_present_qc_ [270] mod_memutil_finalize_pool5d_i_ [144] mod_rad_aerosol_remove_nans_
+ [231] mod_bdycod_is_present_qi_ [271] mod_memutil_finalize_pool5d_l_ [56] mod_rad_colmod3_allocate_mod_rad_colmod3_
+ [232] mod_bdycod_setup_bdycon_ [272] mod_memutil_finalize_pool5d_r_ [35] mod_rad_colmod3_colmod3_
+ [167] mod_capecin_otlift_table_fill (mod_capecin.F90) [273] mod_memutil_finalize_pool5d_s_ [207] mod_rad_common_
+ [168] mod_cbmz_integrator_jac_chem_ [92] mod_memutil_getmem1d_d_ [45] mod_rad_interface_allocate_radiation_
+ [169] mod_cbmz_jacobiansp_  [114] mod_memutil_getmem1d_i_ [208] mod_rad_interface_export_data_from_rad_
+  [44] mod_che_bdyco_allocate_mod_che_bdyco_ [160] mod_memutil_getmem1d_l_ [293] mod_rad_interface_init_radiation_
+ [170] mod_che_bdyco_setup_che_bdycon_ [186] mod_memutil_getmem1d_r_ [294] mod_rad_interface_inito3_
+ [233] mod_che_bionit_allocate_mod_che_bionit_ [96] mod_memutil_getmem2d_d_ [108] mod_rad_interface_radiation_
+ [171] mod_che_carbonaer_doaging_ [119] mod_memutil_getmem2d_i_ [295] mod_rad_o3blk_allocate_mod_rad_o3blk_
+ [234] mod_che_common_allocate_mod_che_common_ [117] mod_memutil_getmem2d_l_ [145] mod_rad_o3blk_close_o3data_
+ [235] mod_che_dust_allocate_mod_che_dust_ [187] mod_memutil_getmem2d_r_ [296] mod_rad_o3blk_o3data_
+ [236] mod_che_mppio_allocate_mod_che_mppio_ [37] mod_memutil_getmem3d_d_ [297] mod_rad_outrad_allocate_mod_rad_outrad_
+ [172] mod_cloud_echam5_echam5_cldfrac_ [131] mod_memutil_getmem3d_i_ [209] mod_rad_outrad_copy4d_add_
+ [173] mod_cloud_guli2007_gulisa_cldfrac_ [129] mod_memutil_getmem3d_l_ [55] mod_rad_outrad_radout_
+ [174] mod_cloud_subex_subex_cldfrac_ [142] mod_memutil_getmem3d_r_ [109] mod_rad_radiation_aermix_
+ [175] mod_cloud_texeira_texeira_cldfrac_ [38] mod_memutil_getmem4d_d_ [210] mod_rad_radiation_radabs_
+ [176] mod_cloud_thomp_thomp_cldfrac_ [274] mod_memutil_memory_destroy_ [89] mod_rad_radiation_radclr_
+ [177] mod_cloud_tompkins_tompkins_cldfrac_ [275] mod_memutil_memory_init_ [110] mod_rad_radiation_radclw_
+ [178] mod_cloud_xuran_xuran_cldfrac_ [276] mod_memutil_relmem2d_d_ [111] mod_rad_radiation_radcsw_
+  [50] mod_cu_common_init_mod_cumulus_ [277] mod_memutil_relmem2d_i_ [32] mod_rad_radiation_radctl_
+ [237] mod_cu_interface_allocate_cumulus_ [278] mod_memutil_relmem2d_l_ [90] mod_rad_radiation_radded_
+  [83] mod_cu_interface_cucloud_ [279] mod_memutil_relmem2d_r_ [211] mod_rad_radiation_radems_
+ [238] mod_cu_interface_init_cumulus_ [188] mod_memutil_relmem3d_d_ [34] mod_rad_radiation_radini_
+ [179] mod_cu_interface_shallow_convection_ [189] mod_memutil_relmem3d_i_ [112] mod_rad_radiation_radinp_
+ [180] mod_cu_tiedtke_ntiedtke_ctracer (mod_cu_tiedtke.F90) [190] mod_memutil_relmem3d_l_ [212] mod_rad_radiation_radoz2_
+  [77] mod_date_add_interval_ [191] mod_memutil_relmem3d_r_ [113] mod_rad_radiation_radtpl_
+ [148] mod_date_check_cal_    [88] mod_message_checkalloc_ [213] mod_rad_radiation_trcplk_
+ [149] mod_date_date_time_to_internal_ [280] mod_message_setup_mesg_ [214] mod_rad_radiation_trcpth_
+ [150] mod_date_date_to_days_from_reference_ [192] mod_message_viz_plot_ [215] mod_rad_tracer_trcmix_
+  [69] mod_date_days_from_reference_to_date_ [40] mod_micro_interface_allocate_micro_ [123] mod_realkinds_is_inf_double_
+ [151] mod_date_diffdate_     [84] mod_micro_interface_cldfrac_ [124] mod_realkinds_is_nan_double_
+  [80] mod_date_idayofyear_  [193] mod_micro_interface_condtq_ [298] mod_regcm_interface_rcm_finalize_
+  [70] mod_date_idayofyear_to_monthdate_ [281] mod_micro_interface_init_micro_ [28] mod_regcm_interface_rcm_initialize_
+ [152] mod_date_initfromintdt_ [85] mod_micro_interface_microscheme_ [3] mod_regcm_interface_rcm_run_
+  [72] mod_date_initfromtypedt_ [41] mod_micro_nogtom_allocate_mod_nogtom_ [299] mod_regcm_interface_setup_openacc_
+ [125] mod_date_initfromtypeit_ [282] mod_micro_nogtom_init_nogtom_ [300] mod_runparams_allocate_mod_runparams_
+  [78] mod_date_internal_to_date_time_ [26] mod_micro_nogtom_nogtom_ [301] mod_savefile_allocate_mod_savefile_
+  [73] mod_date_lfdomonth_   [194] mod_micro_nogtom_rain_fallspeed_ [302] mod_slice_init_slice_
+ [153] mod_date_lleap_       [195] mod_micro_subex_subex_season_factor (mod_micro_subex.F90) [30] mod_slice_mkslice_
+  [75] mod_date_lmidnight_    [13] mod_moloch_advection_ [216] mod_sound_sound_
+  [71] mod_date_mdays_leap_   [54] mod_moloch_allocate_moloch_ [115] mod_space_getspc1d_iarr_
+  [79] mod_date_second_of_day_to_time_ [283] mod_moloch_init_moloch_ [162] mod_space_getspc1d_larr_
+ [154] mod_date_split_i10_     [4] mod_moloch_moloch_    [217] mod_space_getspc1d_r4arr_
+ [181] mod_date_split_rcm_time_and_date_complete_ [5] mod_moloch_physical_parametrizations_ [93] mod_space_getspc1d_r8arr_
+ [155] mod_date_time_to_second_of_day_ [12] mod_moloch_sound_ [120] mod_space_getspc2d_iarr_
+ [239] mod_date_tochar10_    [143] mod_moloch_uvstagtox_ [118] mod_space_getspc2d_larr_
+ [240] mod_date_tochar_       [15] mod_moloch_wafone_    [218] mod_space_getspc2d_r4arr_
+ [156] mod_date_tohours_     [127] mod_mppparam_bcast_arr_character_ [97] mod_space_getspc2d_r8arr_
+ [241] mod_date_toint10_     [196] mod_mppparam_bcast_arr_int4_ [135] mod_space_getspc3d_iarr_
+  [82] mod_date_yeardayfrac_ [128] mod_mppparam_bcast_arr_logical_ [130] mod_space_getspc3d_larr_
+ [157] mod_date_yeardays_    [106] mod_mppparam_bcast_int4_ [146] mod_space_getspc3d_r4arr_
+  [61] mod_diffusion_allocate_mod_diffusion_ [116] mod_mppparam_bcast_logical_ [95] mod_space_getspc3d_r8arr_
+ [182] mod_diffusion_diffu_x4d3d_ [140] mod_mppparam_bcast_rcm_time_and_date_ [122] mod_space_getspc4d_r8arr_
+ [183] mod_earth_get_window_r4_has_south_pole (mod_earth.F90) [105] mod_mppparam_bcast_real8_ [46] mod_split_allocate_mod_split_
+ [137] mod_ensemble_randify2d_ [284] mod_mppparam_broadcast_params_ [219] mod_split_spstep_
+ [242] mod_header_checktime_ [285] mod_mppparam_cartesian_to_linear_integer_subgrid_subgrid_ [220] mod_stdatm_stdlrate_
+ [243] mod_header_finaltime_  [10] mod_mppparam_cartesian_to_linear_real8_grid_subgrid_ [221] mod_sun_read_solarforcing_
+ [244] mod_header_header_     [31] mod_mppparam_cartesian_to_linear_real8_subgrid_subgrid_ [23] mod_sun_zenitm_
+ [245] mod_header_whoami_     [58] mod_mppparam_cl_setup_real8_ [60] mod_tendency_allocate_mod_tend_
+  [51] mod_init_init_        [197] mod_mppparam_get_cartcomm_ [222] mod_tendency_extracttenchi_
+  [64] mod_ipcc_scenario_ghgval_ [198] mod_mppparam_glosplitw_ [223] mod_timefilter_filter_raw_qv_
+ [246] mod_ipcc_scenario_set_scenario_ [11] mod_mppparam_linear_to_cartesian_real8_subgrid_subgrid_ [66] mod_timer_alarm_act_
+ [184] mod_kdtree2_heapsort_struct_ [132] mod_mppparam_maxall_real8_ [67] mod_timer_alarm_check_
+  [42] mod_lm_interface_allocate_surface_model_ [133] mod_mppparam_minall_real8_ [91] mod_timer_alarm_willact_
+  [27] mod_lm_interface_collect_output_ [161] mod_mppparam_real8_2d_exchange_ [303] mod_timer_cleanup_
+  [59] mod_lm_interface_init_surface_model_ [199] mod_mppparam_real8_2d_exchange_bottom_top_ [136] mod_timer_init_alarm_
+  [52] mod_lm_interface_initialize_surface_model_ [86] mod_mppparam_real8_2d_exchange_left_bottom_ [139] mod_timer_init_syncro_
+  [18] mod_lm_interface_surface_albedo_ [200] mod_mppparam_real8_2d_exchange_left_right_ [304] mod_timer_init_timer_
+   [6] mod_lm_interface_surface_model_ [21] mod_mppparam_real8_3d_exchange_ [76] mod_timer_is_integrating_
+ [185] mod_lm_interface_wlh_  [25] mod_mppparam_real8_3d_exchange_bottom_top_ [14] mod_timer_is_start_
+ [138] mod_memutil_assignp2d3_d_ [74] mod_mppparam_real8_3d_exchange_left_bottom_ [87] mod_timer_step_timer_
+ [247] mod_memutil_assignp2d4_d_ [36] mod_mppparam_real8_3d_exchange_left_right_ [16] mod_timer_syncro_act_
+  [98] mod_memutil_assignp2d_d_ [20] mod_mppparam_real8_3d_exchange_left_right_bottom_top_ [68] mod_timer_syncro_check_
+ [126] mod_memutil_assignp2d_i_ [286] mod_mppparam_set_nproc_ [17] mod_timer_syncro_willact_
+  [65] mod_memutil_assignp3d4_d_ [134] mod_mppparam_sumall_int4_ [224] mod_vertint_intzps2_
+ [104] mod_memutil_assignp3d_d_ [201] mod_ncio_check_ok_ [225] mod_vmodes_invmtrx_
+ [158] mod_memutil_assignp3d_i_ [287] mod_ncio_close_icbc_ [99] mod_zita_bzita_
+ [159] mod_memutil_assignp4d5_d_ [288] mod_ncout_dispose_output_streams_ [94] mod_zita_gzita_
+ [121] mod_memutil_assignp4d_d_ [289] mod_ncout_init_output_streams_ [100] mod_zita_md_ak_
+ [248] mod_memutil_finalize_pool1d_d_ [290] mod_ncout_newoutfiles_ [101] mod_zita_md_bk_
+ [249] mod_memutil_finalize_pool1d_i_ [202] mod_nhinterp_smtdsmt_ [305] mod_zita_model_zitaf_
+ [250] mod_memutil_finalize_pool1d_l_ [33] mod_ocn_albedo_ocn_albedo_ [306] mod_zita_model_zitah_
+ [251] mod_memutil_finalize_pool1d_r_ [22] mod_ocn_common_albedoocn_ [102] mod_zita_sigmazita_
+ [252] mod_memutil_finalize_pool1d_s_ [53] mod_ocn_common_initocn_ [103] mod_zita_zfz_
+ [253] mod_memutil_finalize_pool1d_t_ [9] mod_ocn_common_ocn_interf_ [226] rrlw_ncpar_getabsorberindex_
+ [254] mod_memutil_finalize_pool2d_d_ [7] mod_ocn_common_vecocn_ [227] rrsw_ncpar_getabsorberindex_
+ [255] mod_memutil_finalize_pool2d_i_ [291] mod_ocn_internal_allocate_mod_ocn_internal_
+ [256] mod_memutil_finalize_pool2d_l_ [8] mod_ocn_zeng_zengocndrv_

@@ -13,8 +13,8 @@
 
 source /leonardo/home/userexternal/ctica000/MS_thesis/RegCM/modules_cuda  
 
-cd /leonardo/home/userexternal/ctica000/MS_thesis/RegCM/256_512_60_1Day_no_IO_profiling/gpu_standardPar
 
+cd /leonardo/home/userexternal/ctica000/MS_thesis/RegCM/512_1024_60_1Day_no_IO_profiling/gpu_standardPar/Non_MPS/8gpu_8proc
 
 # Launch
 srun ./STD_launch_per_rank.sh

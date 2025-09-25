@@ -38,5 +38,8 @@ $NSYS_BIN profile \
   --output "$NSYS_OUT" \
   --trace=nvtx,mpi,cuda \
   --mpi-impl=openmpi \
+  --cuda-um-cpu-page-faults=true \
+  --cuda-um-gpu-page-faults=true \
+  --cuda-memory-usage=true \
   "$BINDIR/regcmMPICLM45_OPENACC_GPU_STDPAR" "$INPUT_FILE"
 
