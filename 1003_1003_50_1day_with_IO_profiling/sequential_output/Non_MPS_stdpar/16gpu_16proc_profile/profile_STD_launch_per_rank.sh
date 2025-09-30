@@ -19,7 +19,7 @@ export ACC_DEVICE_NUM=0
 NSYS_BIN="/leonardo/prod/opt/compilers/nvhpc/25.3/binary/Linux_x86_64/25.3/compilers/bin/nsys"
 
 # Set binary and input paths
-export BINDIR=/leonardo/home/userexternal/ctica000/MS_thesis/RegCM/bin
+export BINDIR=/leonardo/home/userexternal/ctica000/MS_thesis/RegCM/bin/profile_binary
 INPUT_FILE=EURR-3_namelist.in
 
 # Set a unique temp directory using TMPDIR only

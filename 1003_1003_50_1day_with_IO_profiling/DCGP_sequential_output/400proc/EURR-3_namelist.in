@@ -1,6 +1,5 @@
 &dimparam
-    iy = 1003
-    jx = 1003
+    iy = 1003 jx = 1003
     kz = 50
 /
 
@@ -61,7 +60,7 @@
     ifrest = .false.
     mdate0 = 2009100100
     mdate1 = 2009100100
-    mdate2 = 2009100200
+    mdate2 = 2009100500
 /
 
 &timeparam
@@ -110,9 +109,9 @@
     iseaice = 1
     iconvlwp = 1
     icldfrac = 0
-    iclimao3 = 0
+    iclimao3 = 1
     isolconst = 0
-    iclimaaer = 0
+    iclimaaer = 2
     radclimpath = '/leonardo_work/ICT25_ESP/RCMDATA/MERRA2/OPPMONTH'
 /
 

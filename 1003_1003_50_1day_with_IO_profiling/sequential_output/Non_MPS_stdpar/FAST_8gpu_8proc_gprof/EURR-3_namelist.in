@@ -110,9 +110,9 @@
     iseaice = 1
     iconvlwp = 1
     icldfrac = 0
-    iclimao3 = 0
+    iclimao3 = 1
     isolconst = 0
-    iclimaaer = 0
+    iclimaaer = 2
     radclimpath = '/leonardo_work/ICT25_ESP/RCMDATA/MERRA2/OPPMONTH'
 /
 

@@ -14,7 +14,7 @@
 
 source /leonardo/home/userexternal/ctica000/MS_thesis/RegCM/modules_cuda  
 
-cd /leonardo/home/userexternal/ctica000/MS_thesis/RegCM/256_512_60_1Day_no_IO_profiling/DCGP_partition/production
+cd /leonardo/home/userexternal/ctica000/MS_thesis/RegCM/512_1024_60_1Day_no_IO_profiling/DCGP_partition
 
 # Launch
 srun ./STD_launch_per_rank.sh
