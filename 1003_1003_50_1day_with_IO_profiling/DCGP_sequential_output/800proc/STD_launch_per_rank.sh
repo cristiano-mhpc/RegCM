@@ -20,6 +20,13 @@ export BINDIR=/leonardo/home/userexternal/ctica000/MS_thesis/RegCM/bin
 # Set thread count for stdpar=multicore
 export OMP_NUM_THREADS=$SLURM_CPUS_PER_TASK 
 
+# for gprof
+export MPI_SHEPHERD=true
+OUTDIR="$PWD/gprof_${SLURM_JOB_ID}"
+mkdir -p "$OUTDIR" 
+# export GMON_OUT_PREFIX=regcm_rank${SLURM_PROCID}_gmon.out
+export GMON_OUT_PREFIX="$OUTDIR/gmon_out_rank${SLURM_PROCID}"
+
 
 echo "[Wrapper][Rank $SLURM_PROCID][Local $SLURM_LOCALID] on $(hostname): CUDA_VISIBLE_DEVICES=$CUDA_VISIBLE_DEVICES"
 

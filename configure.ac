@@ -665,7 +665,8 @@ if eval "test x$DEBUG = x1"; then
   fi
   if test -z "$COMPILER_GNU_TRUE"; then
     if test -z "${osname##Linux}"; then
-      FCFLAGS="-O0 -g -pg -fbacktrace \
+      # FCFLAGS="-O0 -g -pg -fbacktrace \
+       FCFLAGS="-O0 -g -fbacktrace \
             -fdump-core -Wall -pedantic -Wconversion -Wsurprising -Waliasing \
             -Wampersand -Warray-bounds -Wcharacter-truncation -Wuninitialized \
             -Wline-truncation -Wintrinsics-std -Wno-tabs -Wunderflow \
@@ -738,7 +739,8 @@ else
       FCFLAGS="-O3 -finline-functions -mtune=native -ftree-vectorize \
                -march=native $FCFLAGS" # -ftree-parallelize-loops=2"
       if eval "test x"$USE_PROF" = x1"; then
-        FCFLAGS="-g -pg $FCFLAGS"
+        # FCFLAGS="-g -pg $FCFLAGS"
+        FCFLAGS="-g $FCFLAGS"
       fi
     else
       # MacOSX may choke on using AVX extensions...
@@ -793,8 +795,10 @@ else
     AC_SUBST(NOOPTFC)
   fi
   if test -z "$COMPILER_PGI_TRUE"; then
-    NOOPTFC="-O1 $FCFLAGS -g -pg"
-    FCFLAGS="-O3 -fast -fastsse $FCFLAGS -g -pg"
+    # NOOPTFC="-O1 $FCFLAGS -g -pg"
+    NOOPTFC="-O1 $FCFLAGS -g"
+    # FCFLAGS="-O3 -fast -fastsse $FCFLAGS -g -pg"
+    FCFLAGS="-O3 -fast -fastsse $FCFLAGS -g"
     if eval "test x"$USE_OPENACC" = x1"; then
       FCFLAGS="$FCFLAGS -acc=gpu -gpu=$PGI_GPU_ARCH,lineinfo -Minfo=accel"
       NOOPTFC="$NOOPTFC -acc=gpu -gpu=$PGI_GPU_ARCH,lineinfo -Minfo=accel"
