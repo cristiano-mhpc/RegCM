@@ -322,15 +322,15 @@ module mod_clm_biogeophysics2
                          num_nolakec, filter_nolakec, xmf, fact, &
                          c_h2osfc, xmf_h2osfc)
 
-    do fc = 1,num_nolakec
+    do concurrent ( fc = 1:num_nolakec )
       c = filter_nolakec(fc)
-      j = snl(c)+1
+      j = snl(c)
 
       ! Calculate difference in soil temperature from last time step, for
       ! flux corrections
 
-      if (snl(c) < 0) then
-        t_grnd0(c) = frac_sno_eff(c) * tssbef(c,snl(c)+1) + &
+      if ( j < 0) then
+        t_grnd0(c) = frac_sno_eff(c) * tssbef(c,j+1) + &
           (1.0_rk8 - frac_sno_eff(c) - frac_h2osfc(c)) * tssbef(c,1) + &
           frac_h2osfc(c) * t_h2osfc_bef(c)
       else
@@ -342,7 +342,7 @@ module mod_clm_biogeophysics2
 
       ! Determine ratio of topsoil_evap_tot
 
-      egsmax(c) = (h2osoi_ice(c,j)+h2osoi_liq(c,j)) / dtsrf
+      egsmax(c) = (h2osoi_ice(c,j+1)+h2osoi_liq(c,j+1)) / dtsrf
 
       ! added to trap very small negative soil water,ice
 
@@ -361,7 +361,7 @@ module mod_clm_biogeophysics2
     ! greater than availability, or 1.0 otherwise.
     ! Correct fluxes to present soil temperature
 
-    do fp = 1,num_nolakep
+    do concurrent ( fp = 1:num_nolakep )
       p = filter_nolakep(fp)
       c = pcolumn(p)
       eflx_sh_grnd(p) = eflx_sh_grnd(p) + tinc(c)*cgrnds(p)
@@ -383,18 +383,15 @@ module mod_clm_biogeophysics2
     ! Set the column-average qflx_evap_soi as the weighted average over all pfts
     ! but only count the pfts that are evaporating
 
-    do fc = 1,num_nolakec
+    do concurrent ( fc = 1:num_nolakec )
       c = filter_nolakec(fc)
       topsoil_evap_tot(c) = 0._rk8
       sumwt(c) = 0._rk8
-    end do
-
-    do pi = 1,max_pft_per_col
-      do fc = 1,num_nolakec
-        c = filter_nolakec(fc)
+      !$acc loop seq
+      do pi = 1, max_pft_per_col
         if ( pi <= npfts(c) ) then
           p = pfti(c) + pi - 1
-          if (pactive(p)) then
+          if ( pactive(p) ) then
             topsoil_evap_tot(c) = topsoil_evap_tot(c) + &
                            qflx_evap_soi(p) * wtcol(p)
           end if
@@ -404,7 +401,7 @@ module mod_clm_biogeophysics2
 
     ! Calculate ratio for rescaling pft-level fluxes to meet availability
 
-    do fc = 1,num_nolakec
+    do concurrent ( fc = 1:num_nolakec )
       c = filter_nolakec(fc)
       if (topsoil_evap_tot(c) > egsmax(c)) then
         egirat(c) = (egsmax(c)/topsoil_evap_tot(c))
@@ -413,12 +410,12 @@ module mod_clm_biogeophysics2
       end if
     end do
 
-    do fp = 1,num_nolakep
+    do concurrent ( fp = 1:num_nolakep )
       p = filter_nolakep(fp)
       c = pcolumn(p)
       l = plandunit(p)
       g = pgridcell(p)
-      j = snl(c)+1
+      j = snl(c)
 
       ! Correct soil fluxes for possible evaporation in excess
       ! of top layer water
@@ -437,7 +434,7 @@ module mod_clm_biogeophysics2
       ! Ground heat flux
 
       if ( ltype(l) /= isturb ) then
-        lw_grnd = (frac_sno_eff(c)*tssbef(c,snl(c)+1)**4 + &
+        lw_grnd = (frac_sno_eff(c)*tssbef(c,j+1)**4 + &
                   (1._rk8-frac_sno_eff(c)-frac_h2osfc(c))*tssbef(c,1)**4 + &
                    frac_h2osfc(c)*t_h2osfc_bef(c)**4)
 
@@ -452,7 +449,7 @@ module mod_clm_biogeophysics2
         end if
       else
         ! For all urban columns we use the net longwave radiation
-        ! (eflx_lwrad_net) since the term (emg*sb*tssbef(snl+1)**4)
+        ! (eflx_lwrad_net) since the term (emg*sb*tssbef(j+1)**4)
         ! is not the upward longwave flux because of interactions
         ! between urban columns.
 
@@ -493,9 +490,9 @@ module mod_clm_biogeophysics2
         ! for evaporation partitioning between liquid evap and ice
         ! sublimation, use the ratio of liquid to (liquid+ice) in
         ! the top layer to determine split
-        if ( (h2osoi_liq(c,j)+h2osoi_ice(c,j)) > 0.0_rk8 ) then
-          qflx_evap_grnd(p) = max(qflx_ev_snow(p)*(h2osoi_liq(c,j) / &
-            (h2osoi_liq(c,j)+h2osoi_ice(c,j))), 0._rk8)
+        if ( (h2osoi_liq(c,j+1)+h2osoi_ice(c,j+1)) > 0.0_rk8 ) then
+          qflx_evap_grnd(p) = max(qflx_ev_snow(p)*(h2osoi_liq(c,j+1) / &
+            (h2osoi_liq(c,j+1)+h2osoi_ice(c,j+1))), 0._rk8)
         else
           qflx_evap_grnd(p) = 0.0_rk8
         end if
@@ -512,7 +509,7 @@ module mod_clm_biogeophysics2
       ! This was moved in from Hydrology2 to keep all pft-level
       ! calculations out of Hydrology2
 
-      if ( snl(c) < 0 .and. do_capsnow(c) ) then
+      if ( j < 0 .and. do_capsnow(c) ) then
         qflx_snwcp_liq(p) = qflx_snwcp_liq(p)+frac_sno_eff(c)*qflx_dew_grnd(p)
         qflx_snwcp_ice(p) = qflx_snwcp_ice(p)+frac_sno_eff(c)*qflx_dew_snow(p)
       end if
@@ -527,7 +524,7 @@ module mod_clm_biogeophysics2
 
     ! Soil Energy balance check
 
-    do fp = 1, num_nolakep
+    do concurrent ( fp = 1:num_nolakep )
       p = filter_nolakep(fp)
       c = pcolumn(p)
       errsoi_pft(p) = eflx_soil_grnd(p) - xmf(c) - xmf_h2osfc(c) - &
@@ -544,11 +541,11 @@ module mod_clm_biogeophysics2
       end if
     end do
 
-    do j = -nlevsno+1, nlevgrnd
-      do fp = 1, num_nolakep
-        p = filter_nolakep(fp)
-        c = pcolumn(p)
-
+    do concurrent ( fp = 1:num_nolakep )
+      p = filter_nolakep(fp)
+      c = pcolumn(p)
+      !$acc loop seq
+      do j = -nlevsno+1, nlevgrnd
         if ( (ctype(c) /= icol_sunwall .and. &
               ctype(c) /= icol_shadewall .and. &
               ctype(c) /= icol_roof) .or. ( j <= nlevurb)) then
@@ -572,15 +569,15 @@ module mod_clm_biogeophysics2
     ! The increase of ground longwave is added directly
     ! to the outgoing longwave and the net longwave.
 
-    do fp = 1,num_nolakep
+    do concurrent ( fp = 1:num_nolakep )
       p = filter_nolakep(fp)
       c = pcolumn(p)
       l = plandunit(p)
       g = pgridcell(p)
-      j = snl(c)+1
+      j = snl(c)
 
       if ( ltype(l) /= isturb ) then
-        lw_grnd=(frac_sno_eff(c)*tssbef(c,snl(c)+1)**4 &
+        lw_grnd=(frac_sno_eff(c)*tssbef(c,j+1)**4 &
                +(1._rk8-frac_sno_eff(c)-frac_h2osfc(c))*tssbef(c,1)**4 &
                +frac_h2osfc(c)*t_h2osfc_bef(c)**4)
 

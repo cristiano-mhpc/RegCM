@@ -1171,10 +1171,13 @@ module mod_nchelper
     implicit none
     character(len=*), intent(in) :: fname
     integer(ik4), intent(out) :: ncid
-    integer(ik4)  :: incstat
+    integer(ik4)  :: incstat, iofmod
     incstat = nf90_create(fname, iomode, ncid)
     call checkncerr(incstat,__FILE__,__LINE__, &
                     'Error creating NetCDF output '//trim(fname))
+    incstat = nf90_set_fill(ncid, nf90_nofill, iofmod)
+    call checkncerr(incstat,__FILE__,__LINE__, &
+                    'Error setting fill mode on NetCDF output '//trim(fname))
   end subroutine createfile_withname
 
   subroutine openfile_withname(fname,ncid)
@@ -1248,7 +1251,6 @@ module mod_nchelper
     character(len=*), intent(in) :: aname
     character(len=*), intent(out) :: aval
     integer(ik4), intent(in) :: ivar
-    integer :: varid
     interface
       integer(c_int) function nc_get_att_string(ncid, varid, name, pp) bind(c)
         use iso_c_binding, only : c_int, c_char, c_ptr
@@ -1265,7 +1267,7 @@ module mod_nchelper
       end function strlen
     end interface
     integer :: xtype, nlen, attid, i
-    integer(c_int) :: c_ncid, c_varid, c_status, c_nlen
+    integer(c_int) :: c_ncid, c_varid, c_status
     type(c_ptr) :: c_str
     character(len_trim(aname)+1) :: c_aname
     character, pointer :: f_str(:)
@@ -1314,7 +1316,7 @@ module mod_nchelper
       end function strlen
     end interface
     integer :: xtype, nlen, attid, i
-    integer(c_int) :: c_ncid, c_varid, c_status, c_nlen
+    integer(c_int) :: c_ncid, c_varid, c_status
     type(c_ptr) :: c_str
     character(len_trim(aname)+1) :: c_aname
     character, pointer :: f_str(:)

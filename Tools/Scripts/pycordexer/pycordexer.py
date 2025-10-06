@@ -141,6 +141,12 @@ def parse_input():
         type=str,
     )
     parser.add_argument(
+        '-G',
+        '--global-institute',
+        default='ECMWF',
+        type=str,
+    )
+    parser.add_argument(
         '-e',
         '--experiment',
         default='none',
@@ -184,6 +190,14 @@ def parse_input():
              'specified, this script will use the name RegCM'
     )
     parser.add_argument(
+        '-i',
+        '--institute_id',
+        type=str,
+        default='ICTP',
+        help='The name of the institute running the RegCM model. '
+             'Default is ICTP.'
+    )
+    parser.add_argument(
         '-r',
         '--regcm-version',
         type=str,
@@ -223,7 +237,8 @@ def parse_input():
 
 def save_vars(datafile, requested_vars, worker_pool,
               mail='esp@ictp.it', domain='NONE', global_model='NONE',
-              experiment='none', ensemble='NN', notes='none', corrflag=True,
+              global_institute='NONE', experiment='none', ensemble='NN',
+              notes='none', corrflag=True, institute_id='ICTP',
               regcm_model_name='RegCM', regcm_version=None,
               regcm_version_id=None, regcm_nest_tag=None,
               cordex_root_dir=OUTPUTDIR, sigterm_handler=None,
@@ -250,6 +265,7 @@ def save_vars(datafile, requested_vars, worker_pool,
         mail,
         domain,
         global_model,
+        global_institute,
         experiment,
         ensemble,
         notes
@@ -260,6 +276,7 @@ def save_vars(datafile, requested_vars, worker_pool,
         REGCM_FILE = RegcmOutputFile(
             ncf,
             datafile,
+            institute_id,
             regcm_model_name,
             regcm_version,
             regcm_version_id,
@@ -423,9 +440,11 @@ def main():
     mail = args.mail
     domain = args.domain
     global_model = args.global_model
+    global_institute = args.global_institute
     experiment = args.experiment
     ensemble = args.ensemble
     notes = args.notes
+    institute_id = args.institute_id
 
     regcm_model_name = args.regcm_model_name
     regcm_version = args.regcm_version
@@ -453,10 +472,12 @@ def main():
         mail,
         domain,
         global_model,
+        global_institute,
         experiment,
         ensemble,
         notes,
         corrflag,
+        institute_id,
         regcm_model_name,
         regcm_version,
         regcm_version_id,

@@ -599,6 +599,7 @@ module mod_lm_interface
       expfie%lhfx(j,i) = sum(lms%evpr(:,j,i)*wlh(lms%tgrd(:,j,i)))*rdnnsg
       expfie%shfx(j,i) = sum(lms%sent(:,j,i))*rdnnsg
       expfie%prec(j,i) = sum(lms%prcp(:,j,i))*rdnnsg
+      expfie%evap(j,i) = sum(lms%evpr(:,j,i))*rdnnsg
       expfie%wndu(j,i) = lm%u10m(j,i)
       expfie%wndv(j,i) = lm%v10m(j,i)
       expfie%taux(j,i) = sum(lms%taux(:,j,i))*rdnnsg
@@ -880,7 +881,7 @@ module mod_lm_interface
               tas = sum(lms%t2m(:,j,i))*rdnnsg
               ps = sum(lms%sfcp(:,j,i))*rdnnsg
               es = pfesat(tas,ps)
-              qs = pfwsat(tas,ps,es)
+              qs = pfwsat(tas,ps)
               qas = lm%q2m(j,i)
               uas = lm%w10m(j,i)
               rh = min(max((qas/qs),d_zero),d_one)
@@ -1287,8 +1288,7 @@ module mod_lm_interface
 
 #include <pfesat.inc>
 #include <pfwsat.inc>
-#include <pfdesatdt.inc>
-#include <pqderiv.inc>
+#include <pfesdt.inc>
 #include <evpt.inc>
 #include <wlh.inc>
 

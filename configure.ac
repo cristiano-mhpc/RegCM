@@ -558,10 +558,10 @@ if test -z "$COMPILER_INTEL_LLVM_TRUE"; then
   if eval "test x$DEBUG = x1"; then
     OMPFLAGS=""
   else
-    OMPFLAGS="-qopenmp -qopt-report"
+    OMPFLAGS="-qopenmp"
   fi
   FCFLAGS="$FCFLAGS -convert big_endian -assume byterecl \
-           -heap-arrays -fPIC $OMPFLAGS"
+           -heap-arrays -qopt-report -fPIC"
   CPRDEF="INTEL"
   AC_SUBST(FCFLAGS)
   AC_SUBST(OMPFLAGS)
