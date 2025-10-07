@@ -1,0 +1,121 @@
+Failing in Thread:1
+Accelerator Fatal Error: call to cuStreamSynchronize returned error 719 (CUDA_ERROR_LAUNCH_FAILED): Launch failed (often invalid pointer dereference)
+ File: /leonardo/home/userexternal/ctica000/MS_thesis/RegCM/Share/mod_vertint.F90
+ Function: intp1_pointer:1256
+ Line: 1289
+
+Failing in Thread:1
+Accelerator Fatal Error: call to cuStreamSynchronize returned error 719 (CUDA_ERROR_LAUNCH_FAILED): Launch failed (often invalid pointer dereference)
+ File: /leonardo/home/userexternal/ctica000/MS_thesis/RegCM/Share/mod_vertint.F90
+ Function: intp1_pointer:1256
+ Line: 1289
+
+Failing in Thread:1
+Accelerator Fatal Error: call to cuStreamSynchronize returned error 719 (CUDA_ERROR_LAUNCH_FAILED): Launch failed (often invalid pointer dereference)
+ File: /leonardo/home/userexternal/ctica000/MS_thesis/RegCM/Share/mod_vertint.F90
+ Function: intp1_pointer:1256
+ Line: 1289
+
+Failing in Thread:1
+Failing in Thread:1
+Failing in Thread:1
+Accelerator Fatal Error: call to cuStreamSynchronize returned error 719 (CUDA_ERROR_LAUNCH_FAILED): Launch failed (often invalid pointer dereference)
+ File: /leonardo/home/userexternal/ctica000/MS_thesis/RegCM/Share/mod_vertint.F90
+ Function: intp1_pointer:1256
+ Line: 1289
+
+Accelerator Fatal Error: call to cuStreamSynchronize returned error 719 (CUDA_ERROR_LAUNCH_FAILED): Launch failed (often invalid pointer dereference)
+ File: /leonardo/home/userexternal/ctica000/MS_thesis/RegCM/Share/mod_vertint.F90
+ Function: intp1_pointer:1256
+ Line: 1289
+
+Accelerator Fatal Error: call to cuStreamSynchronize returned error 719 (CUDA_ERROR_LAUNCH_FAILED): Launch failed (often invalid pointer dereference)
+ File: /leonardo/home/userexternal/ctica000/MS_thesis/RegCM/Share/mod_vertint.F90
+ Function: intp1_pointer:1256
+ Line: 1289
+
+Failing in Thread:1
+Accelerator Fatal Error: call to cuStreamSynchronize returned error 719 (CUDA_ERROR_LAUNCH_FAILED): Launch failed (often invalid pointer dereference)
+ File: /leonardo/home/userexternal/ctica000/MS_thesis/RegCM/Share/mod_vertint.F90
+ Function: intp1_pointer:1256
+ Line: 1289
+
+Failing in Thread:1
+Accelerator Fatal Error: call to cuStreamSynchronize returned error 719 (CUDA_ERROR_LAUNCH_FAILED): Launch failed (often invalid pointer dereference)
+ File: /leonardo/home/userexternal/ctica000/MS_thesis/RegCM/Share/mod_vertint.F90
+ Function: intp1_pointer:1256
+ Line: 1289
+
+Failing in Thread:1
+Accelerator Fatal Error: call to cuStreamSynchronize returned error 719 (CUDA_ERROR_LAUNCH_FAILED): Launch failed (often invalid pointer dereference)
+ File: /leonardo/home/userexternal/ctica000/MS_thesis/RegCM/Share/mod_vertint.F90
+ Function: intp1_pointer:1256
+ Line: 1289
+
+Failing in Thread:1
+Accelerator Fatal Error: call to cuStreamSynchronize returned error 719 (CUDA_ERROR_LAUNCH_FAILED): Launch failed (often invalid pointer dereference)
+ File: /leonardo/home/userexternal/ctica000/MS_thesis/RegCM/Share/mod_vertint.F90
+ Function: intp1_pointer:1256
+ Line: 1289
+
+Failing in Thread:1
+Accelerator Fatal Error: call to cuStreamSynchronize returned error 719 (CUDA_ERROR_LAUNCH_FAILED): Launch failed (often invalid pointer dereference)
+ File: /leonardo/home/userexternal/ctica000/MS_thesis/RegCM/Share/mod_vertint.F90
+ Function: intp1_pointer:1256
+ Line: 1289
+
+Failing in Thread:1
+Accelerator Fatal Error: call to cuStreamSynchronize returned error 719 (CUDA_ERROR_LAUNCH_FAILED): Launch failed (often invalid pointer dereference)
+ File: /leonardo/home/userexternal/ctica000/MS_thesis/RegCM/Share/mod_vertint.F90
+ Function: intp1_pointer:1256
+ Line: 1289
+
+Failing in Thread:1
+Accelerator Fatal Error: call to cuStreamSynchronize returned error 719 (CUDA_ERROR_LAUNCH_FAILED): Launch failed (often invalid pointer dereference)
+ File: /leonardo/home/userexternal/ctica000/MS_thesis/RegCM/Share/mod_vertint.F90
+ Function: intp1_pointer:1256
+ Line: 1289
+
+Failing in Thread:1
+Accelerator Fatal Error: call to cuStreamSynchronize returned error 719 (CUDA_ERROR_LAUNCH_FAILED): Launch failed (often invalid pointer dereference)
+ File: /leonardo/home/userexternal/ctica000/MS_thesis/RegCM/Share/mod_vertint.F90
+ Function: intp1_pointer:1256
+ Line: 1289
+
+Failing in Thread:1
+Accelerator Fatal Error: call to cuStreamSynchronize returned error 719 (CUDA_ERROR_LAUNCH_FAILED): Launch failed (often invalid pointer dereference)
+ File: /leonardo/home/userexternal/ctica000/MS_thesis/RegCM/Share/mod_vertint.F90
+ Function: intp1_pointer:1256
+ Line: 1289
+
+Failing in Thread:1
+Accelerator Fatal Error: call to cuStreamSynchronize returned error 719 (CUDA_ERROR_LAUNCH_FAILED): Launch failed (often invalid pointer dereference)
+ File: /leonardo/home/userexternal/ctica000/MS_thesis/RegCM/Share/mod_vertint.F90
+ Function: intp1_pointer:1256
+ Line: 1289
+
+[ perf record: Woken up 30168 times to write data ]
+[ perf record: Woken up 30187 times to write data ]
+[ perf record: Woken up 30019 times to write data ]
+[ perf record: Woken up 30171 times to write data ]
+[ perf record: Woken up 30160 times to write data ]
+[ perf record: Woken up 30170 times to write data ]
+[ perf record: Woken up 31360 times to write data ]
+[ perf record: Woken up 30172 times to write data ]
+[ perf record: Woken up 30173 times to write data ]
+[ perf record: Woken up 30178 times to write data ]
+[ perf record: Woken up 31661 times to write data ]
+[ perf record: Woken up 30162 times to write data ]
+[ perf record: Woken up 31525 times to write data ]
+[ perf record: Woken up 30170 times to write data ]
+[ perf record: Woken up 31664 times to write data ]
+[ perf record: Woken up 30509 times to write data ]
+slurmstepd: error:  mpi/pmix_v3: _errhandler: lrdn2372 [2]: pmixp_client_v2.c:212: Error handler invoked: status = -25, source = [slurm.pmix.21263510.0:10]
+slurmstepd: error:  mpi/pmix_v3: _errhandler: lrdn1020 [1]: pmixp_client_v2.c:212: Error handler invoked: status = -25, source = [slurm.pmix.21263510.0:6]
+srun: Job step aborted: Waiting up to 182 seconds for job step to finish.
+slurmstepd: error: *** STEP 21263510.0 ON lrdn1018 CANCELLED AT 2025-10-07T11:32:28 ***
+slurmstepd: error:  mpi/pmix_v3: _errhandler: lrdn2509 [3]: pmixp_client_v2.c:212: Error handler invoked: status = -25, source = [slurm.pmix.21263510.0:15]
+srun: error: lrdn1018: tasks 0-3: Killed
+srun: error: lrdn2509: tasks 12-15: Killed
+srun: error: lrdn1020: tasks 4-7: Killed
+srun: error: lrdn2372: tasks 8-11: Killed

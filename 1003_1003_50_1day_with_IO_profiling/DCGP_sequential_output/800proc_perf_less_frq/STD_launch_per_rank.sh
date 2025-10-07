@@ -15,13 +15,18 @@ fi
 export CUDA_VISIBLE_DEVICES=$RANK
 export ACC_DEVICE_TYPE=nvidia
 export ACC_DEVICE_NUM=0
-export BINDIR=/leonardo/home/userexternal/ctica000/MS_thesis/RegCM/bin
+# Set thread count for stdpar=multicore
+export OMP_NUM_THREADS=$SLURM_CPUS_PER_TASK 
+export BINDIR=/leonardo/home/userexternal/ctica000/MS_thesis/RegCM/bin 
+INPUT_FILE=EURR-3_namelist.in
+
+echo "[Wrapper][Rank $SLURM_PROCID][Local $SLURM_LOCALID] on $(hostname): CUDA_VISIBLE_DEVICES=$CUDA_VISIBLE_DEVICES"
 
 # For Perf
 FREQ="${PERF_FREQ:-200}"  # samples/seconds 
 
 # output directory per job 
-OUTDIR="${PERF_OUTDIR:-$SCRATCH/perf/with_IO/sequential_write/perf_${SLURM_JOB_ID}}" 
+OUTDIR="${PERF_OUTDIR:-$SCRATCH/perf/with_IO/DCGP/800proc/perf_${SLURM_JOB_ID}}" 
 mkdir -p "$OUTDIR" 
 umask 007   # files created with 600 permissions    
 
@@ -36,7 +41,6 @@ common_args=(
        -e cycles:u,instructions:u
 )
 
-echo "[Wrapper][Rank $SLURM_PROCID][Local $SLURM_LOCALID] on $(hostname): CUDA_VISIBLE_DEVICES=$CUDA_VISIBLE_DEVICES"
-
 # Launch the binary
-exec perf record "${common_args[@]}" -- $BINDIR/regcmMPICLM45_OPENACC_GPU_STDPAR EURR-3_namelist.in 
+exec perf record "${common_args[@]}" -- $BINDIR/regcmMPICLM45 "$INPUT_FILE"  
+
