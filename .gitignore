@@ -1,4 +1,4 @@
-*.swp
+*.sw?
 Main/batslib/Makefile
 Main/batslib/Makefile.in
 Main/batslib/libbats.a
