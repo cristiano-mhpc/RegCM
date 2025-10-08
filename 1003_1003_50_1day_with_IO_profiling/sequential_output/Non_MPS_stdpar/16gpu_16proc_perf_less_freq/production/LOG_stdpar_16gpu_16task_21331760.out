@@ -1,0 +1,20 @@
+[Wrapper][Rank 3][Local 3] on lrdn1538.leonardo.local: CUDA_VISIBLE_DEVICES=3
+[Wrapper][Rank 2][Local 2] on lrdn1538.leonardo.local: CUDA_VISIBLE_DEVICES=2
+[Wrapper][Rank 1][Local 1] on lrdn1538.leonardo.local: CUDA_VISIBLE_DEVICES=1
+[Wrapper][Rank 0][Local 0] on lrdn1538.leonardo.local: CUDA_VISIBLE_DEVICES=0
+[Wrapper][Rank 7][Local 3] on lrdn1949.leonardo.local: CUDA_VISIBLE_DEVICES=3
+[Wrapper][Rank 8][Local 0] on lrdn2468.leonardo.local: CUDA_VISIBLE_DEVICES=0
+[Wrapper][Rank 6][Local 2] on lrdn1949.leonardo.local: CUDA_VISIBLE_DEVICES=2
+[Wrapper][Rank 5][Local 1] on lrdn1949.leonardo.local: CUDA_VISIBLE_DEVICES=1
+[Wrapper][Rank 4][Local 0] on lrdn1949.leonardo.local: CUDA_VISIBLE_DEVICES=0
+[Wrapper][Rank 15][Local 3] on lrdn2541.leonardo.local: CUDA_VISIBLE_DEVICES=3
+[Wrapper][Rank 10][Local 2] on lrdn2468.leonardo.local: CUDA_VISIBLE_DEVICES=2
+[Wrapper][Rank 11][Local 3] on lrdn2468.leonardo.local: CUDA_VISIBLE_DEVICES=3
+[Wrapper][Rank 9][Local 1] on lrdn2468.leonardo.local: CUDA_VISIBLE_DEVICES=1
+[Wrapper][Rank 13][Local 1] on lrdn2541.leonardo.local: CUDA_VISIBLE_DEVICES=1
+[Wrapper][Rank 12][Local 0] on lrdn2541.leonardo.local: CUDA_VISIBLE_DEVICES=0
+[Wrapper][Rank 14][Local 2] on lrdn2541.leonardo.local: CUDA_VISIBLE_DEVICES=2
+
+  This is RegCM development version
+   GIT Revision: 5.0.0-944-g5801-dirty compiled at: data : Oct  8 2025  time: 16:34:51
+
