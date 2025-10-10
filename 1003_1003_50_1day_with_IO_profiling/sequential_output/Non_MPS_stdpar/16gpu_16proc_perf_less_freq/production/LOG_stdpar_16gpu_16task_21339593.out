@@ -1,35 +1,27 @@
-Loading netcdf-fortran/4.6.1--hpcx-mpi--2.19--nvhpc--24.5
-  Loading requirement: glibc/2.28--gcc--12.2.0-gi6mmti bzip2/1.0.8-ib3znej
-    gcc-runtime/12.2.0--gcc--12.2.0-dqfwf7y lz4/1.9.4--gcc--12.2.0-dcavnmi
-    snappy/1.1.10--gcc--12.2.0-gagtosp zlib-ng/2.1.6-jkgunjc zstd/1.5.6-uq5yyux
-    c-blosc/1.21.5--gcc--12.2.0-buk7w2l hpcx-mpi/2.19 pkgconf/2.2.0
-    hdf5/1.14.3--hpcx-mpi--2.19--nvhpc--24.5 libaec/1.0.6--gcc--12.2.0-blqbmai
-    parallel-netcdf/1.12.3--hpcx-mpi--2.19--nvhpc--24.5
-    netcdf-c/4.9.2--hpcx-mpi--2.19--nvhpc--24.5
-[Wrapper][Rank 2][Local 2] on lrdn1018.leonardo.local: CUDA_VISIBLE_DEVICES=2
-[Wrapper][Rank 3][Local 3] on lrdn1018.leonardo.local: CUDA_VISIBLE_DEVICES=3
-[Wrapper][Rank 0][Local 0] on lrdn1018.leonardo.local: CUDA_VISIBLE_DEVICES=0
-[Wrapper][Rank 1][Local 1] on lrdn1018.leonardo.local: CUDA_VISIBLE_DEVICES=1
-[Wrapper][Rank 8][Local 0] on lrdn2372.leonardo.local: CUDA_VISIBLE_DEVICES=0
-[Wrapper][Rank 4][Local 0] on lrdn1020.leonardo.local: CUDA_VISIBLE_DEVICES=0
-[Wrapper][Rank 12][Local 0] on lrdn2509.leonardo.local: CUDA_VISIBLE_DEVICES=0
-[Wrapper][Rank 11][Local 3] on lrdn2372.leonardo.local: CUDA_VISIBLE_DEVICES=3
-[Wrapper][Rank 10][Local 2] on lrdn2372.leonardo.local: CUDA_VISIBLE_DEVICES=2
-[Wrapper][Rank 9][Local 1] on lrdn2372.leonardo.local: CUDA_VISIBLE_DEVICES=1
-[Wrapper][Rank 6][Local 2] on lrdn1020.leonardo.local: CUDA_VISIBLE_DEVICES=2
-[Wrapper][Rank 7][Local 3] on lrdn1020.leonardo.local: CUDA_VISIBLE_DEVICES=3
-[Wrapper][Rank 5][Local 1] on lrdn1020.leonardo.local: CUDA_VISIBLE_DEVICES=1
-[Wrapper][Rank 15][Local 3] on lrdn2509.leonardo.local: CUDA_VISIBLE_DEVICES=3
-[Wrapper][Rank 14][Local 2] on lrdn2509.leonardo.local: CUDA_VISIBLE_DEVICES=2
-[Wrapper][Rank 13][Local 1] on lrdn2509.leonardo.local: CUDA_VISIBLE_DEVICES=1
+[Wrapper][Rank 1][Local 1] on lrdn1801.leonardo.local: CUDA_VISIBLE_DEVICES=1
+[Wrapper][Rank 2][Local 2] on lrdn1801.leonardo.local: CUDA_VISIBLE_DEVICES=2
+[Wrapper][Rank 0][Local 0] on lrdn1801.leonardo.local: CUDA_VISIBLE_DEVICES=0
+[Wrapper][Rank 3][Local 3] on lrdn1801.leonardo.local: CUDA_VISIBLE_DEVICES=3
+[Wrapper][Rank 5][Local 1] on lrdn1937.leonardo.local: CUDA_VISIBLE_DEVICES=1
+[Wrapper][Rank 10][Local 2] on lrdn2413.leonardo.local: CUDA_VISIBLE_DEVICES=2
+[Wrapper][Rank 7][Local 3] on lrdn1937.leonardo.local: CUDA_VISIBLE_DEVICES=3
+[Wrapper][Rank 4][Local 0] on lrdn1937.leonardo.local: CUDA_VISIBLE_DEVICES=0
+[Wrapper][Rank 6][Local 2] on lrdn1937.leonardo.local: CUDA_VISIBLE_DEVICES=2
+[Wrapper][Rank 13][Local 1] on lrdn3060.leonardo.local: CUDA_VISIBLE_DEVICES=1
+[Wrapper][Rank 11][Local 3] on lrdn2413.leonardo.local: CUDA_VISIBLE_DEVICES=3
+[Wrapper][Rank 8][Local 0] on lrdn2413.leonardo.local: CUDA_VISIBLE_DEVICES=0
+[Wrapper][Rank 9][Local 1] on lrdn2413.leonardo.local: CUDA_VISIBLE_DEVICES=1
+[Wrapper][Rank 14][Local 2] on lrdn3060.leonardo.local: CUDA_VISIBLE_DEVICES=2
+[Wrapper][Rank 15][Local 3] on lrdn3060.leonardo.local: CUDA_VISIBLE_DEVICES=3
+[Wrapper][Rank 12][Local 0] on lrdn3060.leonardo.local: CUDA_VISIBLE_DEVICES=0
 
   This is RegCM development version
-   GIT Revision: 5.0.0-944-g5801-dirty compiled at: data : Oct  7 2025  time: 09:44:54
+   GIT Revision: 5.0.0-944-g5801-dirty compiled at: data : Oct  8 2025  time: 19:29:42
 
  MPI Rank:            0  using device:            0
- : this run start at  : 2025-10-07 10:53:16+0200
+ : this run start at  : 2025-10-08 19:43:06+0200
  : it is submitted by : 
- : it is running on   : lrdn1018.leonardo.local
+ : it is running on   : lrdn1801.leonardo.local
  : it is using        :            16   processors
  : in directory       : 
  /leonardo/home/userexternal/ctica000/MS_thesis/RegCM/1003_1003_50_1day_with_IO_profiling/sequential_output/Non_MPS_stdpar/16gpu_16proc_perf_less_freq
@@ -181,7 +173,7 @@ Loading netcdf-fortran/4.6.1--hpcx-mpi--2.19--nvhpc--24.5
     run type              = initial
     case title            = RegCM driven CLM4.5
     username              = 
-    hostname              = lrdn1018.leonardo.local
+    hostname              = lrdn1801.leonardo.local
  input data files:
     PFT physiology = 
  /leonardo_work/ICT25_ESP/RCMDATA/CLM45/pftdata/pft-physiology.c130503.nc
@@ -296,8 +288,6 @@ Loading netcdf-fortran/4.6.1--hpcx-mpi--2.19--nvhpc--24.5
  Successfully initialized time invariant variables
  CLM_hist_printflds : number of master fields =           241
  Setting initial data to non-spun up values
- MPI Rank:            1  using device:            0
- Set    10 100% special land-units points to zero slope
  Attempting to initialize time invariant variables for lakes
  CLM timestep appears to differ from 1800s. 
  Adjusting minimum snow layer thickness over lakes to maintain stability.
@@ -351,205 +341,165 @@ Loading netcdf-fortran/4.6.1--hpcx-mpi--2.19--nvhpc--24.5
  /leonardo_work/ICT25_ESP/RCMDATA/MERRA2/OPPMONTH/MERRA2_OPPMONTH_wb19.200909.nc
  AEROPP file open 
  /leonardo_work/ICT25_ESP/RCMDATA/MERRA2/OPPMONTH/MERRA2_OPPMONTH_wb19.200910.nc
- MPI Rank:            2  using device:            0
- MPI Rank:           11  using device:            0
- MPI Rank:            3  using device:            0
- MPI Rank:            4  using device:            0
- MPI Rank:            5  using device:            0
- Set    21 100% special land-units points to zero slope
+  # Updated VIS ext profile #
+    0.196E-05  0.568E-05  0.207E-04  0.770E-04  0.396E-03  0.111E-02  0.190E-02
+    0.237E-02  0.247E-02  0.268E-02  0.275E-02  0.242E-02  0.206E-02  0.190E-02
+    0.178E-02  0.163E-02  0.148E-02  0.140E-02  0.137E-02  0.137E-02  0.140E-02
+    0.152E-02  0.173E-02  0.199E-02  0.226E-02  0.250E-02  0.270E-02  0.289E-02
+    0.311E-02  0.334E-02  0.352E-02  0.367E-02  0.375E-02  0.378E-02  0.379E-02
+    0.383E-02  0.390E-02  0.401E-02  0.422E-02  0.448E-02  0.471E-02  0.503E-02
+    0.545E-02  0.582E-02  0.608E-02  0.601E-02  0.580E-02  0.537E-02  0.495E-02
+    0.495E-02  0.458E-02
+  # Updated VIS ssa profile #
+    0.916      0.917      0.931      0.953      0.974      0.980      0.974    
+    0.964      0.955      0.953      0.953      0.949      0.940      0.933    
+    0.927      0.920      0.913      0.908      0.903      0.899      0.898    
+    0.898      0.899      0.899      0.900      0.902      0.904      0.905    
+    0.907      0.908      0.909      0.911      0.913      0.915      0.917    
+    0.919      0.922      0.926      0.932      0.939      0.943      0.949    
+    0.955      0.960      0.963      0.964      0.964      0.964      0.964    
+    0.964      0.963    
+  # Updated VIS asy profile #
+    0.661      0.662      0.666      0.671      0.678      0.685      0.691    
+    0.698      0.706      0.725      0.742      0.748      0.744      0.739    
+    0.734      0.729      0.724      0.721      0.718      0.715      0.713    
+    0.714      0.714      0.715      0.715      0.716      0.718      0.720    
+    0.723      0.725      0.727      0.731      0.733      0.735      0.737    
+    0.740      0.742      0.746      0.752      0.759      0.764      0.770    
+    0.776      0.783      0.787      0.788      0.788      0.788      0.786    
+    0.786      0.786    
+ Creating history file output//EURR-3.clm.regcm.h1.20091001_03600.nc
+ CLM History variables written
+ SRF variables written at  2009-10-01 01:00:00 UTC        
+ RAD variables written at  2009-10-01 01:00:00 UTC        
+ CLM History variables written
+ SRF variables written at  2009-10-01 02:00:00 UTC        
+ RAD variables written at  2009-10-01 02:00:00 UTC        
+ CLM History variables written
+ SRF variables written at  2009-10-01 03:00:00 UTC        
+ RAD variables written at  2009-10-01 03:00:00 UTC        
+ $$$  2009-10-01 03:00:00 UTC        
+ $$$ max, min of ps (mb) =  1027.23  679.73
+ CLM History variables written
+ SRF variables written at  2009-10-01 04:00:00 UTC        
+ RAD variables written at  2009-10-01 04:00:00 UTC        
+ CLM History variables written
+ SRF variables written at  2009-10-01 05:00:00 UTC        
+ RAD variables written at  2009-10-01 05:00:00 UTC        
+ CLM History variables written
+ SRF variables written at  2009-10-01 06:00:00 UTC        
+ RAD variables written at  2009-10-01 06:00:00 UTC        
+ SEARCH BC data for 2009100112 , step =      480
+ READY  BC from     2009100106  to 2009100112 
+ $$$  2009-10-01 06:00:00 UTC        
+ $$$ max, min of ps (mb) =  1027.43  679.19
+ CLM History variables written
+ SRF variables written at  2009-10-01 07:00:00 UTC        
+ RAD variables written at  2009-10-01 07:00:00 UTC        
+ CLM History variables written
+ SRF variables written at  2009-10-01 08:00:00 UTC        
+ RAD variables written at  2009-10-01 08:00:00 UTC        
+ CLM History variables written
+ SRF variables written at  2009-10-01 09:00:00 UTC        
+ RAD variables written at  2009-10-01 09:00:00 UTC        
+ $$$  2009-10-01 09:00:00 UTC        
+ $$$ max, min of ps (mb) =  1028.23  679.32
+ CLM History variables written
+ SRF variables written at  2009-10-01 10:00:00 UTC        
+ RAD variables written at  2009-10-01 10:00:00 UTC        
+ CLM History variables written
+ SRF variables written at  2009-10-01 11:00:00 UTC        
+ RAD variables written at  2009-10-01 11:00:00 UTC        
+ CLM History variables written
+ SRF variables written at  2009-10-01 12:00:00 UTC        
+ RAD variables written at  2009-10-01 12:00:00 UTC        
+ SEARCH BC data for 2009100118 , step =      960
+ READY  BC from     2009100112  to 2009100118 
+ $$$  2009-10-01 12:00:00 UTC        
+ $$$ max, min of ps (mb) =  1028.83  678.96
+ CLM History variables written
+ SRF variables written at  2009-10-01 13:00:00 UTC        
+ RAD variables written at  2009-10-01 13:00:00 UTC        
+ CLM History variables written
+ SRF variables written at  2009-10-01 14:00:00 UTC        
+ RAD variables written at  2009-10-01 14:00:00 UTC        
+ CLM History variables written
+ SRF variables written at  2009-10-01 15:00:00 UTC        
+ RAD variables written at  2009-10-01 15:00:00 UTC        
+ $$$  2009-10-01 15:00:00 UTC        
+ $$$ max, min of ps (mb) =  1029.07  678.16
+ CLM History variables written
+ SRF variables written at  2009-10-01 16:00:00 UTC        
+ RAD variables written at  2009-10-01 16:00:00 UTC        
+ CLM History variables written
+ SRF variables written at  2009-10-01 17:00:00 UTC        
+ RAD variables written at  2009-10-01 17:00:00 UTC        
+ CLM History variables written
+ SRF variables written at  2009-10-01 18:00:00 UTC        
+ RAD variables written at  2009-10-01 18:00:00 UTC        
+ SEARCH BC data for 2009100200 , step =     1440
+ READY  BC from     2009100118  to 2009100200 
+ $$$  2009-10-01 18:00:00 UTC        
+ $$$ max, min of ps (mb) =  1028.98  677.87
+ CLM History variables written
+ SRF variables written at  2009-10-01 19:00:00 UTC        
+ RAD variables written at  2009-10-01 19:00:00 UTC        
+ MPI Rank:           12  using device:            0
+ Set    10 100% special land-units points to zero slope
+ MPI Rank:           13  using device:            0
+ MPI Rank:           15  using device:            0
+ Set     1 100% special land-units points to zero slope
  MPI Rank:           14  using device:            0
  Set    10 100% special land-units points to zero slope
  MPI Rank:            9  using device:            0
  Set    70 100% special land-units points to zero slope
-FATAL ERROR: FORTRAN AUTO ALLOCATION FAILED
-FATAL ERROR: FORTRAN AUTO ALLOCATION FAILED
- MPI Rank:            8  using device:            0
- MPI Rank:           13  using device:            0
- MPI Rank:           12  using device:            0
- Set    10 100% special land-units points to zero slope
-FATAL ERROR: FORTRAN AUTO ALLOCATION FAILED
-FATAL ERROR: FORTRAN AUTO ALLOCATION FAILED
-FATAL ERROR: FORTRAN AUTO ALLOCATION FAILED
- MPI Rank:            7  using device:            0
- Set   120 100% special land-units points to zero slope
- MPI Rank:           15  using device:            0
- Set     1 100% special land-units points to zero slope
-FATAL ERROR: FORTRAN AUTO ALLOCATION FAILED
-FATAL ERROR: FORTRAN AUTO ALLOCATION FAILED
-FATAL ERROR: FORTRAN AUTO ALLOCATION FAILED
-FATAL ERROR: FORTRAN AUTO ALLOCATION FAILED
-FATAL ERROR: FORTRAN AUTO ALLOCATION FAILED
  MPI Rank:           10  using device:            0
  Set    30 100% special land-units points to zero slope
-FATAL ERROR: FORTRAN AUTO ALLOCATION FAILED
-FATAL ERROR: FORTRAN AUTO ALLOCATION FAILED
-FATAL ERROR: FORTRAN AUTO ALLOCATION FAILED
-FATAL ERROR: FORTRAN AUTO ALLOCATION FAILED
-FATAL ERROR: FORTRAN AUTO ALLOCATION FAILED
-FATAL ERROR: FORTRAN AUTO ALLOCATION FAILED
-FATAL ERROR: FORTRAN AUTO ALLOCATION FAILED
-FATAL ERROR: FORTRAN AUTO ALLOCATION FAILED
-FATAL ERROR: FORTRAN AUTO ALLOCATION FAILED
-FATAL ERROR: FORTRAN AUTO ALLOCATION FAILED
-FATAL ERROR: FORTRAN AUTO ALLOCATION FAILED
-FATAL ERROR: FORTRAN AUTO ALLOCATION FAILED
-FATAL ERROR: FORTRAN AUTO ALLOCATION FAILED
-FATAL ERROR: FORTRAN AUTO ALLOCATION FAILED
-FATAL ERROR: FORTRAN AUTO ALLOCATION FAILED
-FATAL ERROR: FORTRAN AUTO ALLOCATION FAILED
-FATAL ERROR: FORTRAN AUTO ALLOCATION FAILED
-FATAL ERROR: FORTRAN AUTO ALLOCATION FAILED
-FATAL ERROR: FORTRAN AUTO ALLOCATION FAILED
-FATAL ERROR: FORTRAN AUTO ALLOCATION FAILED
-FATAL ERROR: FORTRAN AUTO ALLOCATION FAILED
-FATAL ERROR: FORTRAN AUTO ALLOCATION FAILED
-FATAL ERROR: FORTRAN AUTO ALLOCATION FAILED
-FATAL ERROR: FORTRAN AUTO ALLOCATION FAILED
-FATAL ERROR: FORTRAN AUTO ALLOCATION FAILED
-FATAL ERROR: FORTRAN AUTO ALLOCATION FAILED
-FATAL ERROR: FORTRAN AUTO ALLOCATION FAILED
-FATAL ERROR: FORTRAN AUTO ALLOCATION FAILED
-FATAL ERROR: FORTRAN AUTO ALLOCATION FAILED
-FATAL ERROR: FORTRAN AUTO ALLOCATION FAILED
-FATAL ERROR: FORTRAN AUTO ALLOCATION FAILED
-FATAL ERROR: FORTRAN AUTO ALLOCATION FAILED
-FATAL ERROR: FORTRAN AUTO ALLOCATION FAILED
-FATAL ERROR: FORTRAN AUTO ALLOCATION FAILED
+ MPI Rank:           11  using device:            0
+ MPI Rank:            8  using device:            0
+ MPI Rank:            4  using device:            0
+ MPI Rank:            5  using device:            0
+ Set    21 100% special land-units points to zero slope
  MPI Rank:            6  using device:            0
-FATAL ERROR: FORTRAN AUTO ALLOCATION FAILED
-FATAL ERROR: FORTRAN AUTO ALLOCATION FAILED
-FATAL ERROR: FORTRAN AUTO ALLOCATION FAILED
-FATAL ERROR: FORTRAN AUTO ALLOCATION FAILED
-FATAL ERROR: FORTRAN AUTO ALLOCATION FAILED
-FATAL ERROR: FORTRAN AUTO ALLOCATION FAILED
-FATAL ERROR: FORTRAN AUTO ALLOCATION FAILED
-FATAL ERROR: FORTRAN AUTO ALLOCATION FAILED
-FATAL ERROR: FORTRAN AUTO ALLOCATION FAILED
-FATAL ERROR: FORTRAN AUTO ALLOCATION FAILED
-FATAL ERROR: FORTRAN AUTO ALLOCATION FAILED
-FATAL ERROR: FORTRAN AUTO ALLOCATION FAILED
-FATAL ERROR: FORTRAN AUTO ALLOCATION FAILED
-FATAL ERROR: FORTRAN AUTO ALLOCATION FAILED
-FATAL ERROR: FORTRAN AUTO ALLOCATION FAILED
-FATAL ERROR: FORTRAN AUTO ALLOCATION FAILED
-FATAL ERROR: FORTRAN AUTO ALLOCATION FAILED
-FATAL ERROR: FORTRAN AUTO ALLOCATION FAILED
-FATAL ERROR: FORTRAN AUTO ALLOCATION FAILED
-FATAL ERROR: FORTRAN AUTO ALLOCATION FAILED
-FATAL ERROR: FORTRAN AUTO ALLOCATION FAILED
-FATAL ERROR: FORTRAN AUTO ALLOCATION FAILED
-FATAL ERROR: FORTRAN AUTO ALLOCATION FAILED
-FATAL ERROR: FORTRAN AUTO ALLOCATION FAILED
-FATAL ERROR: FORTRAN AUTO ALLOCATION FAILED
-FATAL ERROR: FORTRAN AUTO ALLOCATION FAILED
-FATAL ERROR: FORTRAN AUTO ALLOCATION FAILED
-FATAL ERROR: FORTRAN AUTO ALLOCATION FAILED
-FATAL ERROR: FORTRAN AUTO ALLOCATION FAILED
-FATAL ERROR: FORTRAN AUTO ALLOCATION FAILED
-FATAL ERROR: FORTRAN AUTO ALLOCATION FAILED
-FATAL ERROR: FORTRAN AUTO ALLOCATION FAILED
-FATAL ERROR: FORTRAN AUTO ALLOCATION FAILED
-FATAL ERROR: FORTRAN AUTO ALLOCATION FAILED
-FATAL ERROR: FORTRAN AUTO ALLOCATION FAILED
-FATAL ERROR: FORTRAN AUTO ALLOCATION FAILED
-FATAL ERROR: FORTRAN AUTO ALLOCATION FAILED
-FATAL ERROR: FORTRAN AUTO ALLOCATION FAILED
-FATAL ERROR: FORTRAN AUTO ALLOCATION FAILED
-FATAL ERROR: FORTRAN AUTO ALLOCATION FAILED
-FATAL ERROR: FORTRAN AUTO ALLOCATION FAILED
-FATAL ERROR: FORTRAN AUTO ALLOCATION FAILED
-FATAL ERROR: FORTRAN AUTO ALLOCATION FAILED
-FATAL ERROR: FORTRAN AUTO ALLOCATION FAILED
-FATAL ERROR: FORTRAN AUTO ALLOCATION FAILED
-FATAL ERROR: FORTRAN AUTO ALLOCATION FAILED
-FATAL ERROR: FORTRAN AUTO ALLOCATION FAILED
-FATAL ERROR: FORTRAN AUTO ALLOCATION FAILED
-FATAL ERROR: FORTRAN AUTO ALLOCATION FAILED
-FATAL ERROR: FORTRAN AUTO ALLOCATION FAILED
-FATAL ERROR: FORTRAN AUTO ALLOCATION FAILED
-FATAL ERROR: FORTRAN AUTO ALLOCATION FAILED
-FATAL ERROR: FORTRAN AUTO ALLOCATION FAILED
-FATAL ERROR: FORTRAN AUTO ALLOCATION FAILED
-FATAL ERROR: FORTRAN AUTO ALLOCATION FAILED
-FATAL ERROR: FORTRAN AUTO ALLOCATION FAILED
-FATAL ERROR: FORTRAN AUTO ALLOCATION FAILED
-FATAL ERROR: FORTRAN AUTO ALLOCATION FAILED
-FATAL ERROR: FORTRAN AUTO ALLOCATION FAILED
-FATAL ERROR: FORTRAN AUTO ALLOCATION FAILED
-FATAL ERROR: FORTRAN AUTO ALLOCATION FAILED
-FATAL ERROR: FORTRAN AUTO ALLOCATION FAILED
-FATAL ERROR: FORTRAN AUTO ALLOCATION FAILED
-FATAL ERROR: FORTRAN AUTO ALLOCATION FAILED
-FATAL ERROR: FORTRAN AUTO ALLOCATION FAILED
-FATAL ERROR: FORTRAN AUTO ALLOCATION FAILED
-FATAL ERROR: FORTRAN AUTO ALLOCATION FAILED
-FATAL ERROR: FORTRAN AUTO ALLOCATION FAILED
-FATAL ERROR: FORTRAN AUTO ALLOCATION FAILED
-FATAL ERROR: FORTRAN AUTO ALLOCATION FAILED
-FATAL ERROR: FORTRAN AUTO ALLOCATION FAILED
-FATAL ERROR: FORTRAN AUTO ALLOCATION FAILED
-FATAL ERROR: FORTRAN AUTO ALLOCATION FAILED
-FATAL ERROR: FORTRAN AUTO ALLOCATION FAILED
-FATAL ERROR: FORTRAN AUTO ALLOCATION FAILED
-FATAL ERROR: FORTRAN AUTO ALLOCATION FAILED
-FATAL ERROR: FORTRAN AUTO ALLOCATION FAILED
-FATAL ERROR: FORTRAN AUTO ALLOCATION FAILED
-FATAL ERROR: FORTRAN AUTO ALLOCATION FAILED
-FATAL ERROR: FORTRAN AUTO ALLOCATION FAILED
-FATAL ERROR: FORTRAN AUTO ALLOCATION FAILED
-FATAL ERROR: FORTRAN AUTO ALLOCATION FAILED
-FATAL ERROR: FORTRAN AUTO ALLOCATION FAILED
-FATAL ERROR: FORTRAN AUTO ALLOCATION FAILED
-FATAL ERROR: FORTRAN AUTO ALLOCATION FAILED
-FATAL ERROR: FORTRAN AUTO ALLOCATION FAILED
-FATAL ERROR: FORTRAN AUTO ALLOCATION FAILED
-FATAL ERROR: FORTRAN AUTO ALLOCATION FAILED
-FATAL ERROR: FORTRAN AUTO ALLOCATION FAILED
-FATAL ERROR: FORTRAN AUTO ALLOCATION FAILED
-FATAL ERROR: FORTRAN AUTO ALLOCATION FAILED
-FATAL ERROR: FORTRAN AUTO ALLOCATION FAILED
-FATAL ERROR: FORTRAN AUTO ALLOCATION FAILED
-FATAL ERROR: FORTRAN AUTO ALLOCATION FAILED
-FATAL ERROR: FORTRAN AUTO ALLOCATION FAILED
-FATAL ERROR: FORTRAN AUTO ALLOCATION FAILED
-FATAL ERROR: FORTRAN AUTO ALLOCATION FAILED
-FATAL ERROR: FORTRAN AUTO ALLOCATION FAILED
-FATAL ERROR: FORTRAN AUTO ALLOCATION FAILED
-FATAL ERROR: FORTRAN AUTO ALLOCATION FAILED
-FATAL ERROR: FORTRAN AUTO ALLOCATION FAILED
-FATAL ERROR: FORTRAN AUTO ALLOCATION FAILED
-FATAL ERROR: FORTRAN AUTO ALLOCATION FAILED
-FATAL ERROR: FORTRAN AUTO ALLOCATION FAILED
-FATAL ERROR: FORTRAN AUTO ALLOCATION FAILED
-FATAL ERROR: FORTRAN AUTO ALLOCATION FAILED
-FATAL ERROR: FORTRAN AUTO ALLOCATION FAILED
-FATAL ERROR: FORTRAN AUTO ALLOCATION FAILED
-FATAL ERROR: FORTRAN AUTO ALLOCATION FAILED
-FATAL ERROR: FORTRAN AUTO ALLOCATION FAILED
-FATAL ERROR: FORTRAN AUTO ALLOCATION FAILED
-FATAL ERROR: FORTRAN AUTO ALLOCATION FAILED
-FATAL ERROR: FORTRAN AUTO ALLOCATION FAILED
-FATAL ERROR: FORTRAN AUTO ALLOCATION FAILED
-FATAL ERROR: FORTRAN AUTO ALLOCATION FAILED
-FATAL ERROR: FORTRAN AUTO ALLOCATION FAILED
-FATAL ERROR: FORTRAN AUTO ALLOCATION FAILED
-FATAL ERROR: FORTRAN AUTO ALLOCATION FAILED
-FATAL ERROR: FORTRAN AUTO ALLOCATION FAILED
-FATAL ERROR: FORTRAN AUTO ALLOCATION FAILED
-FATAL ERROR: FORTRAN AUTO ALLOCATION FAILED
-FATAL ERROR: FORTRAN AUTO ALLOCATION FAILED
-FATAL ERROR: FORTRAN AUTO ALLOCATION FAILED
-FATAL ERROR: FORTRAN AUTO ALLOCATION FAILED
-FATAL ERROR: FORTRAN AUTO ALLOCATION FAILED
-FATAL ERROR: FORTRAN AUTO ALLOCATION FAILED
-FATAL ERROR: FORTRAN AUTO ALLOCATION FAILED
-FATAL ERROR: FORTRAN AUTO ALLOCATION FAILED
-FATAL ERROR: FORTRAN AUTO ALLOCATION FAILED
-FATAL ERROR: FORTRAN AUTO ALLOCATION FAILED
-FATAL ERROR: FORTRAN AUTO ALLOCATION FAILED
-FATAL ERROR: FORTRAN AUTO ALLOCATION FAILED
-FATAL ERROR: FORTRAN AUTO ALLOCATION FAILED
-FATAL ERROR: FORTRAN AUTO ALLOCATION FAILED
-FATAL ERROR: FORTRAN AUTO ALLOCATION FAILED
-FATAL ERROR: FORTRAN AUTO ALLOCATION FAILED
-FATAL ERROR: FORTRAN AUTO ALLOCATION FAILED
+ MPI Rank:            7  using device:            0
+ Set   120 100% special land-units points to zero slope
+ MPI Rank:            1  using device:            0
+ Set    10 100% special land-units points to zero slope
+ MPI Rank:            2  using device:            0
+ MPI Rank:            3  using device:            0
+ CLM History variables written
+ SRF variables written at  2009-10-01 20:00:00 UTC        
+ RAD variables written at  2009-10-01 20:00:00 UTC        
+ CLM History variables written
+ SRF variables written at  2009-10-01 21:00:00 UTC        
+ RAD variables written at  2009-10-01 21:00:00 UTC        
+ $$$  2009-10-01 21:00:00 UTC        
+ $$$ max, min of ps (mb) =  1028.75  677.64
+ CLM History variables written
+ SRF variables written at  2009-10-01 22:00:00 UTC        
+ RAD variables written at  2009-10-01 22:00:00 UTC        
+ CLM History variables written
+ SRF variables written at  2009-10-01 23:00:00 UTC        
+ RAD variables written at  2009-10-01 23:00:00 UTC        
+ Write restart file for CLM at  2009-10-02 00:00:00 UTC        
+ CLM History variables written
+ history tape             1 : no open file to close
+ Closing local history file output//EURR-3.clm.regcm.h1.20091001_03600.nc
+ Writing restart dataset on output/EURR-3.clm.regcm.r.2009100200.nc
+ Writing restart dataset on output//EURR-3.clm.regcm.rh0.2009100200.nc
+ Writing restart dataset on output//EURR-3.clm.regcm.rh1.2009100200.nc
+ Successfully wrote out restart data for CLM 4.5
+ At  2009-10-02 00:00:00 UTC        
+ JDay    274.00000 solar declination angle =  -3.09798020 degrees
+                   solar TSI irradiance    =    1355.8045 W/m^2
+ ATM variables written at  2009-10-02 00:00:00 UTC        
+ SRF variables written at  2009-10-02 00:00:00 UTC        
+ STS variables written at  2009-10-02 00:00:00 UTC        
+ RAD variables written at  2009-10-02 00:00:00 UTC        
+ SAV variables written at  2009-10-02 00:00:00 UTC        
+ Final time  2009-10-02 00:00:00 UTC reached.
+ Elapsed seconds of run for this final timeslice :     5313.746    
+ : this run stops at  : 2025-10-08 21:11:41+0200
+ : Run has been completed using            16  processors.
+ : Total elapsed seconds of run :     5314.892733097076     
+ RegCM V5 simulation successfully reached end

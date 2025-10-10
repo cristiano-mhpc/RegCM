@@ -1,4 +1,0 @@
-[Wrapper][Rank 1][Local 1] on lrdn1526.leonardo.local: CUDA_VISIBLE_DEVICES=1
-[Wrapper][Rank 0][Local 0] on lrdn1526.leonardo.local: CUDA_VISIBLE_DEVICES=0
-[Wrapper][Rank 3][Local 3] on lrdn1526.leonardo.local: CUDA_VISIBLE_DEVICES=3
-[Wrapper][Rank 2][Local 2] on lrdn1526.leonardo.local: CUDA_VISIBLE_DEVICES=2

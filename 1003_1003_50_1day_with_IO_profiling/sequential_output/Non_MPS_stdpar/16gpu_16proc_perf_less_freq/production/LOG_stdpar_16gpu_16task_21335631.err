@@ -1,7 +1,0 @@
-srun: error: Task launch for StepId=21335631.0 failed on node lrdn1666: Communication connection failure
-srun: error: Task launch for StepId=21335631.0 failed on node lrdn1578: Communication connection failure
-srun: error: Task launch for StepId=21335631.0 failed on node lrdn2417: Communication connection failure
-srun: error: Application launch failed: Communication connection failure
-srun: Job step aborted: Waiting up to 182 seconds for job step to finish.
-slurmstepd: error: *** STEP 21335631.0 ON lrdn1526 CANCELLED AT 2025-10-08T18:34:59 ***
-srun: error: lrdn1526: tasks 0-3: Killed
