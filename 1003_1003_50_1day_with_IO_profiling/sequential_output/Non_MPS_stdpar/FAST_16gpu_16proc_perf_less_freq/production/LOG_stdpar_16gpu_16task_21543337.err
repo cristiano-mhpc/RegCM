@@ -1,0 +1,205 @@
+Failing in Thread:1
+Accelerator Fatal Error: call to cuStreamSynchronize returned error 700 (CUDA_ERROR_ILLEGAL_ADDRESS): Illegal address during kernel execution
+ File: /leonardo/home/userexternal/ctica000/MS_thesis/RegCM/Main/mod_output.F90
+ Function: output:60
+ Line: 1060
+
+Failing in Thread:1
+Accelerator Fatal Error: call to cuStreamSynchronize returned error 700 (CUDA_ERROR_ILLEGAL_ADDRESS): Illegal address during kernel execution
+ File: /leonardo/home/userexternal/ctica000/MS_thesis/RegCM/Main/mod_output.F90
+ Function: output:60
+ Line: 1060
+
+Failing in Thread:1
+Accelerator Fatal Error: call to cuStreamSynchronize returned error 700 (CUDA_ERROR_ILLEGAL_ADDRESS): Illegal address during kernel execution
+ File: /leonardo/home/userexternal/ctica000/MS_thesis/RegCM/Main/mod_output.F90
+ Function: output:60
+ Line: 1060
+
+Failing in Thread:1
+Accelerator Fatal Error: call to cuStreamSynchronize returned error 700 (CUDA_ERROR_ILLEGAL_ADDRESS): Illegal address during kernel execution
+ File: /leonardo/home/userexternal/ctica000/MS_thesis/RegCM/Main/mod_output.F90
+ Function: output:60
+ Line: 1060
+
+Failing in Thread:1
+Failing in Thread:1
+Accelerator Fatal Error: call to cuStreamSynchronize returned error 700 (CUDA_ERROR_ILLEGAL_ADDRESS): Illegal address during kernel execution
+ File: /leonardo/home/userexternal/ctica000/MS_thesis/RegCM/Main/mod_output.F90
+ Function: output:60
+ Line: 1060
+
+Accelerator Fatal Error: call to cuStreamSynchronize returned error 700 (CUDA_ERROR_ILLEGAL_ADDRESS): Illegal address during kernel execution
+ File: /leonardo/home/userexternal/ctica000/MS_thesis/RegCM/Main/mod_output.F90
+ Function: output:60
+ Line: 1060
+
+Failing in Thread:1
+Accelerator Fatal Error: call to cuStreamSynchronize returned error 700 (CUDA_ERROR_ILLEGAL_ADDRESS): Illegal address during kernel execution
+ File: /leonardo/home/userexternal/ctica000/MS_thesis/RegCM/Main/mod_output.F90
+ Function: output:60
+ Line: 1060
+
+Failing in Thread:1
+Accelerator Fatal Error: call to cuStreamSynchronize returned error 700 (CUDA_ERROR_ILLEGAL_ADDRESS): Illegal address during kernel execution
+ File: /leonardo/home/userexternal/ctica000/MS_thesis/RegCM/Main/mod_output.F90
+ Function: output:60
+ Line: 1060
+
+Failing in Thread:1
+Failing in Thread:1
+Accelerator Fatal Error: call to cuStreamSynchronize returned error 700 (CUDA_ERROR_ILLEGAL_ADDRESS): Illegal address during kernel execution
+ File: /leonardo/home/userexternal/ctica000/MS_thesis/RegCM/Main/mod_output.F90
+ Function: output:60
+ Line: 1060
+
+Accelerator Fatal Error: call to cuStreamSynchronize returned error 700 (CUDA_ERROR_ILLEGAL_ADDRESS): Illegal address during kernel execution
+ File: /leonardo/home/userexternal/ctica000/MS_thesis/RegCM/Main/mod_output.F90
+ Function: output:60
+ Line: 1060
+
+Failing in Thread:1
+Accelerator Fatal Error: call to cuStreamSynchronize returned error 700 (CUDA_ERROR_ILLEGAL_ADDRESS): Illegal address during kernel execution
+ File: /leonardo/home/userexternal/ctica000/MS_thesis/RegCM/Main/mod_output.F90
+ Function: output:60
+ Line: 1060
+
+Failing in Thread:1
+Accelerator Fatal Error: call to cuStreamSynchronize returned error 700 (CUDA_ERROR_ILLEGAL_ADDRESS): Illegal address during kernel execution
+ File: /leonardo/home/userexternal/ctica000/MS_thesis/RegCM/Main/mod_output.F90
+ Function: output:60
+ Line: 1060
+
+Failing in Thread:1
+Accelerator Fatal Error: call to cuStreamSynchronize returned error 700 (CUDA_ERROR_ILLEGAL_ADDRESS): Illegal address during kernel execution
+ File: /leonardo/home/userexternal/ctica000/MS_thesis/RegCM/Main/mod_output.F90
+ Function: output:60
+ Line: 1060
+
+Failing in Thread:1
+Accelerator Fatal Error: call to cuStreamSynchronize returned error 700 (CUDA_ERROR_ILLEGAL_ADDRESS): Illegal address during kernel execution
+ File: /leonardo/home/userexternal/ctica000/MS_thesis/RegCM/Main/mod_output.F90
+ Function: output:60
+ Line: 1060
+
+[ perf record: Woken up 3105 times to write data ]
+Failing in Thread:1
+Accelerator Fatal Error: call to cuStreamSynchronize returned error 700 (CUDA_ERROR_ILLEGAL_ADDRESS): Illegal address during kernel execution
+ File: /leonardo/home/userexternal/ctica000/MS_thesis/RegCM/Main/mod_output.F90
+ Function: output:60
+ Line: 1060
+
+Failing in Thread:1
+Accelerator Fatal Error: call to cuStreamSynchronize returned error 700 (CUDA_ERROR_ILLEGAL_ADDRESS): Illegal address during kernel execution
+ File: /leonardo/home/userexternal/ctica000/MS_thesis/RegCM/Main/mod_output.F90
+ Function: output:60
+ Line: 1060
+
+Warning:
+Processed 102387 events and lost 1 chunks!
+
+Check IO/CPU overload!
+
+[ perf record: Woken up 3112 times to write data ]
+[ perf record: Woken up 3114 times to write data ]
+[ perf record: Captured and wrote 776.447 MB /leonardo_scratch/large/userexternal/ctica000/perf/with_IO/sequential_write/perf_21543337/perf.data.rank7 (96319 samples) ]
+[ perf record: Woken up 2970 times to write data ]
+[ perf record: Woken up 3096 times to write data ]
+[ perf record: Woken up 3113 times to write data ]
+Warning:
+Processed 102425 events and lost 1 chunks!
+
+Check IO/CPU overload!
+
+Warning:
+Processed 102570 events and lost 1 chunks!
+
+Check IO/CPU overload!
+
+[ perf record: Captured and wrote 778.217 MB /leonardo_scratch/large/userexternal/ctica000/perf/with_IO/sequential_write/perf_21543337/perf.data.rank6 (96541 samples) ]
+Warning:
+Processed 97881 events and lost 5 chunks!
+
+Check IO/CPU overload!
+
+[ perf record: Captured and wrote 778.724 MB /leonardo_scratch/large/userexternal/ctica000/perf/with_IO/sequential_write/perf_21543337/perf.data.rank5 (96603 samples) ]
+Warning:
+Processed 101840 events and lost 6 chunks!
+
+Check IO/CPU overload!
+
+[ perf record: Woken up 3110 times to write data ]
+[ perf record: Captured and wrote 778.474 MB /leonardo_scratch/large/userexternal/ctica000/perf/with_IO/sequential_write/perf_21543337/perf.data.rank4 (96573 samples) ]
+[ perf record: Woken up 2972 times to write data ]
+[ perf record: Woken up 3109 times to write data ]
+[ perf record: Captured and wrote 742.882 MB /leonardo_scratch/large/userexternal/ctica000/perf/with_IO/sequential_write/perf_21543337/perf.data.rank3 (92156 samples) ]
+[ perf record: Woken up 2954 times to write data ]
+[ perf record: Woken up 3110 times to write data ]
+[ perf record: Captured and wrote 774.547 MB /leonardo_scratch/large/userexternal/ctica000/perf/with_IO/sequential_write/perf_21543337/perf.data.rank15 (96087 samples) ]
+Warning:
+Processed 102308 events and lost 1 chunks!
+
+Check IO/CPU overload!
+
+[ perf record: Captured and wrote 777.456 MB /leonardo_scratch/large/userexternal/ctica000/perf/with_IO/sequential_write/perf_21543337/perf.data.rank13 (96447 samples) ]
+Warning:
+Processed 97956 events and lost 2 chunks!
+
+Check IO/CPU overload!
+
+Warning:
+Processed 102297 events and lost 1 chunks!
+
+Check IO/CPU overload!
+
+[ perf record: Captured and wrote 743.296 MB /leonardo_scratch/large/userexternal/ctica000/perf/with_IO/sequential_write/perf_21543337/perf.data.rank2 (92207 samples) ]
+Warning:
+Processed 97373 events and lost 2 chunks!
+
+Check IO/CPU overload!
+
+[ perf record: Captured and wrote 777.910 MB /leonardo_scratch/large/userexternal/ctica000/perf/with_IO/sequential_write/perf_21543337/perf.data.rank14 (96504 samples) ]
+[ perf record: Captured and wrote 738.672 MB /leonardo_scratch/large/userexternal/ctica000/perf/with_IO/sequential_write/perf_21543337/perf.data.rank1 (91633 samples) ]
+[ perf record: Captured and wrote 777.748 MB /leonardo_scratch/large/userexternal/ctica000/perf/with_IO/sequential_write/perf_21543337/perf.data.rank12 (96484 samples) ]
+srun: error: lrdn0008: tasks 1-3: Exited with exit code 1
+srun: error: lrdn2803: tasks 4-7: Exited with exit code 1
+srun: error: lrdn3120: tasks 12-15: Exited with exit code 1
+[ perf record: Woken up 3439 times to write data ]
+[ perf record: Woken up 3106 times to write data ]
+[ perf record: Woken up 3107 times to write data ]
+Warning:
+Processed 102483 events and lost 2 chunks!
+
+Check IO/CPU overload!
+
+Warning:
+Processed 133756 events and lost 20 chunks!
+
+Check IO/CPU overload!
+
+[ perf record: Woken up 5531 times to write data ]
+[ perf record: Woken up 3111 times to write data ]
+[ perf record: Captured and wrote 860.135 MB /leonardo_scratch/large/userexternal/ctica000/perf/with_IO/sequential_write/perf_21543337/perf.data.rank0 (106447 samples) ]
+Warning:
+Processed 102213 events and lost 2 chunks!
+
+Check IO/CPU overload!
+
+Warning:
+Processed 102777 events and lost 2 chunks!
+
+Check IO/CPU overload!
+
+Warning:
+Processed 102726 events and lost 1 chunks!
+
+Check IO/CPU overload!
+
+[ perf record: Captured and wrote 776.898 MB /leonardo_scratch/large/userexternal/ctica000/perf/with_IO/sequential_write/perf_21543337/perf.data.rank11 (96378 samples) ]
+[ perf record: Captured and wrote 776.886 MB /leonardo_scratch/large/userexternal/ctica000/perf/with_IO/sequential_write/perf_21543337/perf.data.rank8 (96373 samples) ]
+[ perf record: Captured and wrote 778.920 MB /leonardo_scratch/large/userexternal/ctica000/perf/with_IO/sequential_write/perf_21543337/perf.data.rank10 (96625 samples) ]
+[ perf record: Captured and wrote 778.064 MB /leonardo_scratch/large/userexternal/ctica000/perf/with_IO/sequential_write/perf_21543337/perf.data.rank9 (96518 samples) ]
+slurmstepd: error: *** STEP 21543337.0 ON lrdn0008 CANCELLED AT 2025-10-13T16:10:50 ***
+srun: Job step aborted: Waiting up to 182 seconds for job step to finish.
+srun: error: lrdn0008: task 0: Killed
+srun: error: lrdn2863: tasks 8-11: Killed

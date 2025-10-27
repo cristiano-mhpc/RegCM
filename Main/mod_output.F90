@@ -70,6 +70,9 @@ module mod_output
     real(rkx), dimension(:,:,:), pointer, contiguous :: qv
     real(rkx), dimension(:,:), pointer, contiguous :: temp500
     type(regcm_projection), save :: pj
+
+    real(rkx) :: tmp_sum
+    real(rkx), allocatable :: ptmp(:,:,:), ttmp(:,:,:), rh3d(:,:,:)
 #ifdef DEBUG
     character(len=dbgslen) :: subroutine_name = 'output'
     integer(ik4), save :: idindx = 0
@@ -1045,36 +1048,83 @@ module mod_output
           end if
         end if
         if ( associated(srf_cape_out) .and. associated(srf_cin_out) ) then
+          allocate(rh3d(kz, jci1:jci2, ici1:ici2), ptmp(kz, jci1:jci2, ici1:ici2), ttmp(kz,jci1:jci2, ici1:ici2))
           if ( idynamic == 3 ) then
-            do i = ici1, ici2
-              do j = jci1, jci2
-                do k = 1, kz
-                  kk = kzp1 - k
-                  p1d(kk) = mo_atm%p(j,i,k)
-                  t1d(kk) = mo_atm%t(j,i,k)
-                  rh1d(kk) = min(d_one,max(d_zero,(mo_atm%qx(j,i,k,iqv) / &
-                      pfwsat(mo_atm%t(j,i,k),mo_atm%p(j,i,k)))))
-                end do
-                call getcape(kz,p1d,t1d,rh1d, &
-                  srf_cape_out(j,i),srf_cin_out(j,i))
-              end do
+            do concurrent(i = ici1:ici2, j = jci1:jci2) local(k,kk)!,rh1d)!ptmp,ttmp,rh1d)
+            ! do concurrent(i = ici1:ici2, j = jci1:jci2) local(tmp_sum,k) 
+               ! tmp_sum = 0._rkx
+               do k = 1, kz
+                 kk = (kz + 1) - k
+                 ! tmp_sum = tmp_sum + mo_atm%qx(j,i,k) 
+                 ! rh1d(k) = min(d_one, max(d_zero, mo_atm%qx(j,i,k,iqv) / 1._rkx))
+                 ! tmp_sum = tmp_sum + pfwsat(mo_atm%t(j,i,k), mo_atm%p(j,i,k)) 
+                 rh3d(kk,j,i) = min(d_one, max(d_zero, mo_atm%qx(j,i,k,iqv) / &
+                              pfwsat(mo_atm%t(j,i,k), mo_atm%p(j,i,k))))
+                 ptmp(kk,j,i) = mo_atm%p(j,i,k)!9.0e4_rkx
+                 ttmp(kk,j,i) = mo_atm%t(j,i,k)!290._rkx
+                 ! rh1d(k) = 0.5_rkx
+                 ! rh3d(j,i,kk) = 0.5_rkx
+               end do 
+               call getcape(kz, ptmp(:,j,i), ttmp(:,j,i), rh3d(:,j,i), srf_cape_out(j,i), srf_cin_out (j,i)) 
+               ! call getcape(kz, mo_atm%p(j,i,1:kz), mo_atm%t(j,i,1:kz), rh1d, srf_cape_out(j,i), srf_cin_out(j,i))
+               ! srf_cape_out(j,i) = 0._rkx!sum(rh1d) 
+               ! srf_cin_out (j,i) = 0._rkx 
+              ! do k = 1, kz
+                ! kk = kzp1 - k
+                ! kk = (kz + 1) - k
+                ! p1d(kk) = mo_atm%p(j,i,k)
+                ! t1d(kk) = mo_atm%t(j,i,k)
+                ! rh1d(kk) = min(d_one,max(d_zero,(mo_atm%qx(j,i,k,iqv) / &
+                    ! pfwsat(mo_atm%t(j,i,k),mo_atm%p(j,i,k)))))
+              ! end do
+              ! call getcape(kz,p1d,t1d,rh1d, &
+                ! srf_cape_out(j,i),srf_cin_out(j,i))
+              ! call getcape(kz, &
+                ! mo_atm%p(j,i,1:kz),&
+                ! mo_atm%t(j,i,1:kz), &
+                ! rh1d, &
+                ! srf_cape_out(j,i),srf_cin_out(j,i))
             end do
           else
-            do i = ici1, ici2
-              do j = jci1, jci2
-                do k = 1, kz
-                  kk = kzp1 - k
-                  p1d(kk) = atm1%pr(j,i,k)
-                  t1d(kk) = atm1%t(j,i,k)/sfs%psa(j,i)
-                  rh1d(kk) = min(d_one,max(d_zero, &
-                     (atm1%qx(j,i,k,iqv)/ps_out(j,i)) / &
-                     pfwsat(atm1%t(j,i,k)/ps_out(j,i),atm1%pr(j,i,k))))
-                end do
-                call getcape(kz,p1d,t1d,rh1d, &
-                  srf_cape_out(j,i),srf_cin_out(j,i))
-              end do
+            do concurrent (i = ici1:ici2, j = jci1:jci2) local(k,kk)!,ptmp,rh1d)!ttmp,rh1d)
+            ! do concurrent (i = ici1:ici2, j = jci1:jci2) local(tmp_sum,k) 
+               ! tmp_sum = 0._rkx
+               do k = 1, kz
+                 kk = (kz + 1) - k
+                 ! tmp_sum = tmp_sum + atm1%pr(j,i,k) + atm1%t(j,i,k)/sfs%psa(j,i) + atm1%qx(j,i,k,iqv) 
+                 ! rh1d(k) = min(d_one, max(d_zero, atm1%qx(j,i,k,iqv)/ps_out(j,i)))
+                 ! tmp_sum = tmp_sum + pfwsat(atm1%t(j,i,k)/ps_out(j,i), atm1%pr(j,i,k)) 
+                 rh3d(kk,j,i) = min(d_one,max(d_zero, &
+                             (atm1%qx(j,i,k,iqv)/ps_out(j,i)) / &
+                             pfwsat(atm1%t(j,i,k)/ps_out(j,i),atm1%pr(j,i,k))))
+                 ptmp(kk,j,i) = atm1%pr(j,i,k)!9.0e4_rkx
+                 ttmp(kk,j,i) = atm1%t(j,i,k)/sfs%psa(j,i)
+                 ! rh1d(kk) = 0.5_rkx
+                 ! rh3d(j,i,k) = 0.5_rkx
+               end do 
+               call getcape(kz, ptmp(:,j,i), ttmp(:,j,i), rh3d(:,j,i), srf_cape_out(j,i), srf_cin_out (j,i))
+               ! call getcape(kz, atm1%p(j,i,1:kz)/sfs%psa(j,i), mo_atm%t(j,i,1:kz), rh1d, srf_cape_out(j,i), srf_cin_out(j,i))
+               ! srf_cape_out(j,i) = 0._rkx!sum(rh1d)  
+               ! srf_cin_out (j,i) = 0._rkx 
+              ! do k = 1, kz
+                ! kk = kzp1 - k
+                ! kk = (kz + 1) - k
+                ! p1d(kk) = atm1%pr(j,i,k)
+                ! t1d(kk) = atm1%t(j,i,k)/sfs%psa(j,i)
+                ! rh1d(kk) = min(d_one,max(d_zero, &
+                !    (atm1%qx(j,i,k,iqv)/ps_out(j,i)) / &
+                !    pfwsat(atm1%t(j,i,k)/ps_out(j,i),atm1%pr(j,i,k))))
+              ! end do
+              ! call getcape(kz,p1d,t1d,rh1d, &
+              !   srf_cape_out(j,i),srf_cin_out(j,i))
+              ! call getcape(kz, &
+              !   atm1%p(j,i,1:kz)/sfs%psa(j,i),&
+              !   mo_atm%t(j,i,1:kz), &
+              !   rh1d, &
+              !   srf_cape_out(j,i),srf_cin_out(j,i))
             end do
           end if
+          deallocate(rh3d, ptmp, ttmp)
         end if
 
         if ( associated(srf_tprw_out) ) then

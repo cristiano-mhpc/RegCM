@@ -1,0 +1,534 @@
+[lrdn2673:2718062:0:2718062] Caught signal 11 (Segmentation fault: address not mapped to object at address 0x120000f04)
+[lrdn2678:4099623:0:4099623] Caught signal 11 (Segmentation fault: address not mapped to object at address 0x120000f04)
+[lrdn2678:4099625:0:4099625] Caught signal 11 (Segmentation fault: address not mapped to object at address 0x120000f04)
+[lrdn2678:4099624:0:4099624] Caught signal 11 (Segmentation fault: address not mapped to object at address 0x120000f04)
+[lrdn2678:4099626:0:4099626] Caught signal 11 (Segmentation fault: address not mapped to object at address 0x120000f04)
+[lrdn2677:3988697:0:3988697] Caught signal 11 (Segmentation fault: address not mapped to object at address 0x120000f04)
+[lrdn2676:3512244:0:3512244] Caught signal 11 (Segmentation fault: address not mapped to object at address 0x120000f04)
+[lrdn2673:2718064:0:2718064] Caught signal 11 (Segmentation fault: address not mapped to object at address 0x120000f04)
+[lrdn2677:3988695:0:3988695] Caught signal 11 (Segmentation fault: address not mapped to object at address 0x120000f04)
+[lrdn2676:3512246:0:3512246] Caught signal 11 (Segmentation fault: address not mapped to object at address 0x120000f04)
+[lrdn2676:3512243:0:3512243] Caught signal 11 (Segmentation fault: address not mapped to object at address 0x120000f04)
+[lrdn2677:3988696:0:3988696] Caught signal 11 (Segmentation fault: address not mapped to object at address 0x120000f04)
+[lrdn2676:3512245:0:3512245] Caught signal 11 (Segmentation fault: address not mapped to object at address 0x120000f04)
+[lrdn2677:3988698:0:3988698] Caught signal 11 (Segmentation fault: address not mapped to object at address 0x120000f04)
+[lrdn2673:2718063:0:2718063] Caught signal 11 (Segmentation fault: address not mapped to object at address 0x120000f04)
+[lrdn2673:2718061:0:2718061] Caught signal 11 (Segmentation fault: address not mapped to object at address 0x120000f04)
+==== backtrace (tid:3988698) ====
+ 0 0x0000000000012cf0 __funlockfile()  :0
+==== backtrace (tid:3512243) ====
+ 1 0x000000000000ba4f __pgi_uacc_cuda_dataup1()  /proj/build/24A/Linux_x86_64/rte/accel-uni/build/Linux_x86_64/../../src/cuda_dataup1.c:88
+ 2 0x00000000000370fc __pgi_uacc_dataup1()  /proj/build/24A/Linux_x86_64/rte/accel-uni/build/Linux_x86_64/../../src/dataup1.c:58
+ 3 0x0000000000037920 __pgi_uacc_dataupx()  /proj/build/24A/Linux_x86_64/rte/accel-uni/build/Linux_x86_64/../../src/dataupx.c:123
+ 0 0x0000000000012cf0 __funlockfile()  :0
+ 4 0x0000000000034d5a __pgi_uacc_dataonb()  /proj/build/24A/Linux_x86_64/rte/accel-uni/build/Linux_x86_64/../../src/dataonb.c:613
+ 1 0x000000000000ba4f __pgi_uacc_cuda_dataup1()  /proj/build/24A/Linux_x86_64/rte/accel-uni/build/Linux_x86_64/../../src/cuda_dataup1.c:88
+ 5 0x0000000000810ec4 mod_output_output_()  /leonardo/home/userexternal/ctica000/MS_thesis/RegCM/Share/pfwsat.inc:1052
+ 2 0x00000000000370fc __pgi_uacc_dataup1()  /proj/build/24A/Linux_x86_64/rte/accel-uni/build/Linux_x86_64/../../src/dataup1.c:58
+ 6 0x00000000004496be mod_regcm_interface_rcm_run_()  /leonardo/home/userexternal/ctica000/MS_thesis/RegCM/Main/mod_regcm_interface.F90:281
+ 3 0x0000000000037920 __pgi_uacc_dataupx()  /proj/build/24A/Linux_x86_64/rte/accel-uni/build/Linux_x86_64/../../src/dataupx.c:123
+ 7 0x0000000000a25bd7 MAIN_()  /leonardo/home/userexternal/ctica000/MS_thesis/RegCM/Main/regcm.F90:83
+ 4 0x0000000000034d5a __pgi_uacc_dataonb()  /proj/build/24A/Linux_x86_64/rte/accel-uni/build/Linux_x86_64/../../src/dataonb.c:613
+ 8 0x00000000004484b1 main()  ???:0
+ 5 0x0000000000810ec4 mod_output_output_()  /leonardo/home/userexternal/ctica000/MS_thesis/RegCM/Share/pfwsat.inc:1052
+ 9 0x000000000003ad85 __libc_start_main()  ???:0
+ 6 0x00000000004496be mod_regcm_interface_rcm_run_()  /leonardo/home/userexternal/ctica000/MS_thesis/RegCM/Main/mod_regcm_interface.F90:281
+10 0x000000000044839e _start()  ???:0
+ 7 0x0000000000a25bd7 MAIN_()  /leonardo/home/userexternal/ctica000/MS_thesis/RegCM/Main/regcm.F90:83
+=================================
+ 8 0x00000000004484b1 main()  ???:0
+[lrdn2677:3988698] *** Process received signal ***
+ 9 0x000000000003ad85 __libc_start_main()  ???:0
+[lrdn2677:3988698] Signal: Segmentation fault (11)
+[lrdn2677:3988698] Signal code:  (-6)
+[lrdn2677:3988698] Failing at address: 0x1f485003cdcda
+10 0x000000000044839e _start()  ???:0
+=================================
+[lrdn2677:3988698] [ 0] /lib64/libpthread.so.0(+0x12cf0)[0x153419a63cf0]
+[lrdn2676:3512243] *** Process received signal ***
+[lrdn2676:3512243] Signal: Segmentation fault (11)
+[lrdn2676:3512243] Signal code:  (-6)
+[lrdn2676:3512243] Failing at address: 0x1f485003597b3
+[lrdn2677:3988698] [ 1] /leonardo/prod/spack/06/install/0.22/linux-rhel8-icelake/gcc-8.5.0/nvhpc-24.5-torlmnyzcexnrs6pq4cccabv7ehkv3xy/Linux_x86_64/24.5/compilers/lib/libaccdevice.so(__pgi_uacc_cuda_dataup1+0xebf)[0x15341d9dca4f]
+[lrdn2677:3988698] [ 2] /leonardo/prod/spack/06/install/0.22/linux-rhel8-icelake/gcc-8.5.0/nvhpc-24.5-torlmnyzcexnrs6pq4cccabv7ehkv3xy/Linux_x86_64/24.5/compilers/lib/libacchost.so(__pgi_uacc_dataup1+0x14c)[0x15341df510fc]
+[lrdn2677:3988698] [ 3] /leonardo/prod/spack/06/install/0.22/linux-rhel8-icelake/gcc-8.5.0/nvhpc-24.5-torlmnyzcexnrs6pq4cccabv7ehkv3xy/Linux_x86_64/24.5/compilers/lib/libacchost.so(__pgi_uacc_dataupx+0x3b0)[0x15341df51920]
+[lrdn2676:3512243] [ 0] /lib64/libpthread.so.0(+0x12cf0)[0x146390231cf0]
+[lrdn2677:3988698] [ 4] /leonardo/prod/spack/06/install/0.22/linux-rhel8-icelake/gcc-8.5.0/nvhpc-24.5-torlmnyzcexnrs6pq4cccabv7ehkv3xy/Linux_x86_64/24.5/compilers/lib/libacchost.so(__pgi_uacc_dataonb+0x85a)[0x15341df4ed5a]
+[lrdn2676:3512243] [ 1] /leonardo/prod/spack/06/install/0.22/linux-rhel8-icelake/gcc-8.5.0/nvhpc-24.5-torlmnyzcexnrs6pq4cccabv7ehkv3xy/Linux_x86_64/24.5/compilers/lib/libaccdevice.so(__pgi_uacc_cuda_dataup1+0xebf)[0x1463941aaa4f]
+[lrdn2676:3512243] [ 2] /leonardo/prod/spack/06/install/0.22/linux-rhel8-icelake/gcc-8.5.0/nvhpc-24.5-torlmnyzcexnrs6pq4cccabv7ehkv3xy/Linux_x86_64/24.5/compilers/lib/libacchost.so(__pgi_uacc_dataup1+0x14c)[0x14639471f0fc]
+[lrdn2677:3988698] [ 5] /leonardo/home/userexternal/ctica000/MS_thesis/RegCM/bin/regcmMPICLM45_OPENACC_GPU_STDPAR(mod_output_output_+0x50bc4)[0x810ec4]
+[lrdn2676:3512243] [ 3] /leonardo/prod/spack/06/install/0.22/linux-rhel8-icelake/gcc-8.5.0/nvhpc-24.5-torlmnyzcexnrs6pq4cccabv7ehkv3xy/Linux_x86_64/24.5/compilers/lib/libacchost.so(__pgi_uacc_dataupx+0x3b0)[0x14639471f920]
+[lrdn2676:3512243] [ 4] /leonardo/prod/spack/06/install/0.22/linux-rhel8-icelake/gcc-8.5.0/nvhpc-24.5-torlmnyzcexnrs6pq4cccabv7ehkv3xy/Linux_x86_64/24.5/compilers/lib/libacchost.so(__pgi_uacc_dataonb+0x85a)[0x14639471cd5a]
+[lrdn2677:3988698] [ 6] /leonardo/home/userexternal/ctica000/MS_thesis/RegCM/bin/regcmMPICLM45_OPENACC_GPU_STDPAR(mod_regcm_interface_rcm_run_+0x7e)[0x4496be]
+[lrdn2677:3988698] [ 7] /leonardo/home/userexternal/ctica000/MS_thesis/RegCM/bin/regcmMPICLM45_OPENACC_GPU_STDPAR(MAIN_+0xd7)[0xa25bd7]
+[lrdn2676:3512243] [ 5] /leonardo/home/userexternal/ctica000/MS_thesis/RegCM/bin/regcmMPICLM45_OPENACC_GPU_STDPAR(mod_output_output_+0x50bc4)[0x810ec4]
+[lrdn2677:3988698] [ 8] /leonardo/home/userexternal/ctica000/MS_thesis/RegCM/bin/regcmMPICLM45_OPENACC_GPU_STDPAR(main+0x31)[0x4484b1]
+[lrdn2676:3512243] [ 6] /leonardo/home/userexternal/ctica000/MS_thesis/RegCM/bin/regcmMPICLM45_OPENACC_GPU_STDPAR(mod_regcm_interface_rcm_run_+0x7e)[0x4496be]
+[lrdn2677:3988698] [ 9] /lib64/libc.so.6(__libc_start_main+0xe5)[0x153418dedd85]
+[lrdn2676:3512243] [ 7] /leonardo/home/userexternal/ctica000/MS_thesis/RegCM/bin/regcmMPICLM45_OPENACC_GPU_STDPAR(MAIN_+0xd7)[0xa25bd7]
+[lrdn2677:3988698] [10] /leonardo/home/userexternal/ctica000/MS_thesis/RegCM/bin/regcmMPICLM45_OPENACC_GPU_STDPAR(_start+0x2e)[0x44839e]
+[lrdn2677:3988698] *** End of error message ***
+[lrdn2676:3512243] [ 8] /leonardo/home/userexternal/ctica000/MS_thesis/RegCM/bin/regcmMPICLM45_OPENACC_GPU_STDPAR(main+0x31)[0x4484b1]
+[lrdn2676:3512243] [ 9] /lib64/libc.so.6(__libc_start_main+0xe5)[0x14638f5bbd85]
+[lrdn2676:3512243] [10] /leonardo/home/userexternal/ctica000/MS_thesis/RegCM/bin/regcmMPICLM45_OPENACC_GPU_STDPAR(_start+0x2e)[0x44839e]
+[lrdn2676:3512243] *** End of error message ***
+==== backtrace (tid:3988696) ====
+ 0 0x0000000000012cf0 __funlockfile()  :0
+ 1 0x000000000000ba4f __pgi_uacc_cuda_dataup1()  /proj/build/24A/Linux_x86_64/rte/accel-uni/build/Linux_x86_64/../../src/cuda_dataup1.c:88
+ 2 0x00000000000370fc __pgi_uacc_dataup1()  /proj/build/24A/Linux_x86_64/rte/accel-uni/build/Linux_x86_64/../../src/dataup1.c:58
+ 3 0x0000000000037920 __pgi_uacc_dataupx()  /proj/build/24A/Linux_x86_64/rte/accel-uni/build/Linux_x86_64/../../src/dataupx.c:123
+ 4 0x0000000000034d5a __pgi_uacc_dataonb()  /proj/build/24A/Linux_x86_64/rte/accel-uni/build/Linux_x86_64/../../src/dataonb.c:613
+ 5 0x0000000000810ec4 mod_output_output_()  /leonardo/home/userexternal/ctica000/MS_thesis/RegCM/Share/pfwsat.inc:1052
+ 6 0x00000000004496be mod_regcm_interface_rcm_run_()  /leonardo/home/userexternal/ctica000/MS_thesis/RegCM/Main/mod_regcm_interface.F90:281
+ 7 0x0000000000a25bd7 MAIN_()  /leonardo/home/userexternal/ctica000/MS_thesis/RegCM/Main/regcm.F90:83
+ 8 0x00000000004484b1 main()  ???:0
+ 9 0x000000000003ad85 __libc_start_main()  ???:0
+10 0x000000000044839e _start()  ???:0
+==== backtrace (tid:3988697) ====
+ 0 0x0000000000012cf0 __funlockfile()  :0
+ 1 0x000000000000ba4f __pgi_uacc_cuda_dataup1()  /proj/build/24A/Linux_x86_64/rte/accel-uni/build/Linux_x86_64/../../src/cuda_dataup1.c:88
+ 2 0x00000000000370fc __pgi_uacc_dataup1()  /proj/build/24A/Linux_x86_64/rte/accel-uni/build/Linux_x86_64/../../src/dataup1.c:58
+ 3 0x0000000000037920 __pgi_uacc_dataupx()  /proj/build/24A/Linux_x86_64/rte/accel-uni/build/Linux_x86_64/../../src/dataupx.c:123
+ 4 0x0000000000034d5a __pgi_uacc_dataonb()  /proj/build/24A/Linux_x86_64/rte/accel-uni/build/Linux_x86_64/../../src/dataonb.c:613
+ 5 0x0000000000810ec4 mod_output_output_()  /leonardo/home/userexternal/ctica000/MS_thesis/RegCM/Share/pfwsat.inc:1052
+ 6 0x00000000004496be mod_regcm_interface_rcm_run_()  /leonardo/home/userexternal/ctica000/MS_thesis/RegCM/Main/mod_regcm_interface.F90:281
+ 7 0x0000000000a25bd7 MAIN_()  /leonardo/home/userexternal/ctica000/MS_thesis/RegCM/Main/regcm.F90:83
+ 8 0x00000000004484b1 main()  ???:0
+ 9 0x000000000003ad85 __libc_start_main()  ???:0
+10 0x000000000044839e _start()  ???:0
+=================================
+=================================
+[lrdn2677:3988697] *** Process received signal ***
+[lrdn2677:3988696] *** Process received signal ***
+[lrdn2677:3988696] Signal: Segmentation fault (11)
+[lrdn2677:3988696] Signal code:  (-6)
+[lrdn2677:3988696] Failing at address: 0x1f485003cdcd8
+[lrdn2677:3988697] Signal: Segmentation fault (11)
+[lrdn2677:3988697] Signal code:  (-6)
+[lrdn2677:3988697] Failing at address: 0x1f485003cdcd9
+[lrdn2677:3988696] [ 0] /lib64/libpthread.so.0(+0x12cf0)[0x14b6303abcf0]
+[lrdn2677:3988696] [ 1] /leonardo/prod/spack/06/install/0.22/linux-rhel8-icelake/gcc-8.5.0/nvhpc-24.5-torlmnyzcexnrs6pq4cccabv7ehkv3xy/Linux_x86_64/24.5/compilers/lib/libaccdevice.so(__pgi_uacc_cuda_dataup1+0xebf)[0x14b634324a4f]
+[lrdn2677:3988696] [ 2] /leonardo/prod/spack/06/install/0.22/linux-rhel8-icelake/gcc-8.5.0/nvhpc-24.5-torlmnyzcexnrs6pq4cccabv7ehkv3xy/Linux_x86_64/24.5/compilers/lib/libacchost.so(__pgi_uacc_dataup1+0x14c)[0x14b6348990fc]
+[lrdn2677:3988696] [ 3] /leonardo/prod/spack/06/install/0.22/linux-rhel8-icelake/gcc-8.5.0/nvhpc-24.5-torlmnyzcexnrs6pq4cccabv7ehkv3xy/Linux_x86_64/24.5/compilers/lib/libacchost.so(__pgi_uacc_dataupx+0x3b0)[0x14b634899920]
+[lrdn2677:3988696] [ 4] /leonardo/prod/spack/06/install/0.22/linux-rhel8-icelake/gcc-8.5.0/nvhpc-24.5-torlmnyzcexnrs6pq4cccabv7ehkv3xy/Linux_x86_64/24.5/compilers/lib/libacchost.so(__pgi_uacc_dataonb+0x85a)[0x14b634896d5a]
+[lrdn2677:3988697] [ 0] /lib64/libpthread.so.0(+0x12cf0)[0x14c7b2740cf0]
+[lrdn2677:3988696] [ 5] /leonardo/home/userexternal/ctica000/MS_thesis/RegCM/bin/regcmMPICLM45_OPENACC_GPU_STDPAR(mod_output_output_+0x50bc4)[0x810ec4]
+[lrdn2677:3988697] [ 1] /leonardo/prod/spack/06/install/0.22/linux-rhel8-icelake/gcc-8.5.0/nvhpc-24.5-torlmnyzcexnrs6pq4cccabv7ehkv3xy/Linux_x86_64/24.5/compilers/lib/libaccdevice.so(__pgi_uacc_cuda_dataup1+0xebf)[0x14c7b66b9a4f]
+[lrdn2677:3988696] [ 6] /leonardo/home/userexternal/ctica000/MS_thesis/RegCM/bin/regcmMPICLM45_OPENACC_GPU_STDPAR(mod_regcm_interface_rcm_run_+0x7e)[0x4496be]
+[lrdn2677:3988696] [ 7] /leonardo/home/userexternal/ctica000/MS_thesis/RegCM/bin/regcmMPICLM45_OPENACC_GPU_STDPAR(MAIN_+0xd7)[0xa25bd7]
+[lrdn2677:3988697] [ 2] /leonardo/prod/spack/06/install/0.22/linux-rhel8-icelake/gcc-8.5.0/nvhpc-24.5-torlmnyzcexnrs6pq4cccabv7ehkv3xy/Linux_x86_64/24.5/compilers/lib/libacchost.so(__pgi_uacc_dataup1+0x14c)[0x14c7b6c2e0fc]
+[lrdn2677:3988697] [ 3] /leonardo/prod/spack/06/install/0.22/linux-rhel8-icelake/gcc-8.5.0/nvhpc-24.5-torlmnyzcexnrs6pq4cccabv7ehkv3xy/Linux_x86_64/24.5/compilers/lib/libacchost.so(__pgi_uacc_dataupx+0x3b0)[0x14c7b6c2e920]
+[lrdn2677:3988697] [ 4] /leonardo/prod/spack/06/install/0.22/linux-rhel8-icelake/gcc-8.5.0/nvhpc-24.5-torlmnyzcexnrs6pq4cccabv7ehkv3xy/Linux_x86_64/24.5/compilers/lib/libacchost.so(__pgi_uacc_dataonb+0x85a)[0x14c7b6c2bd5a]
+[lrdn2677:3988697] [ 5] /leonardo/home/userexternal/ctica000/MS_thesis/RegCM/bin/regcmMPICLM45_OPENACC_GPU_STDPAR(mod_output_output_+0x50bc4)[0x810ec4]
+[lrdn2677:3988696] [ 8] /leonardo/home/userexternal/ctica000/MS_thesis/RegCM/bin/regcmMPICLM45_OPENACC_GPU_STDPAR(main+0x31)[0x4484b1]
+[lrdn2677:3988696] [ 9] /lib64/libc.so.6(__libc_start_main+0xe5)[0x14b62f735d85]
+[lrdn2677:3988696] [10] /leonardo/home/userexternal/ctica000/MS_thesis/RegCM/bin/regcmMPICLM45_OPENACC_GPU_STDPAR(_start+0x2e)[0x44839e]
+[lrdn2677:3988696] *** End of error message ***
+[lrdn2677:3988697] [ 6] /leonardo/home/userexternal/ctica000/MS_thesis/RegCM/bin/regcmMPICLM45_OPENACC_GPU_STDPAR(mod_regcm_interface_rcm_run_+0x7e)[0x4496be]
+[lrdn2677:3988697] [ 7] /leonardo/home/userexternal/ctica000/MS_thesis/RegCM/bin/regcmMPICLM45_OPENACC_GPU_STDPAR(MAIN_+0xd7)[0xa25bd7]
+[lrdn2677:3988697] [ 8] /leonardo/home/userexternal/ctica000/MS_thesis/RegCM/bin/regcmMPICLM45_OPENACC_GPU_STDPAR(main+0x31)[0x4484b1]
+[lrdn2677:3988697] [ 9] /lib64/libc.so.6(__libc_start_main+0xe5)[0x14c7b1acad85]
+[lrdn2677:3988697] [10] /leonardo/home/userexternal/ctica000/MS_thesis/RegCM/bin/regcmMPICLM45_OPENACC_GPU_STDPAR(_start+0x2e)[0x44839e]
+[lrdn2677:3988697] *** End of error message ***
+==== backtrace (tid:2718063) ====
+ 0 0x0000000000012cf0 __funlockfile()  :0
+==== backtrace (tid:4099625) ====
+ 1 0x000000000000ba4f __pgi_uacc_cuda_dataup1()  /proj/build/24A/Linux_x86_64/rte/accel-uni/build/Linux_x86_64/../../src/cuda_dataup1.c:88
+ 2 0x00000000000370fc __pgi_uacc_dataup1()  /proj/build/24A/Linux_x86_64/rte/accel-uni/build/Linux_x86_64/../../src/dataup1.c:58
+ 3 0x0000000000037920 __pgi_uacc_dataupx()  /proj/build/24A/Linux_x86_64/rte/accel-uni/build/Linux_x86_64/../../src/dataupx.c:123
+ 4 0x0000000000034d5a __pgi_uacc_dataonb()  /proj/build/24A/Linux_x86_64/rte/accel-uni/build/Linux_x86_64/../../src/dataonb.c:613
+ 0 0x0000000000012cf0 __funlockfile()  :0
+ 5 0x0000000000810ec4 mod_output_output_()  /leonardo/home/userexternal/ctica000/MS_thesis/RegCM/Share/pfwsat.inc:1052
+ 1 0x000000000000ba4f __pgi_uacc_cuda_dataup1()  /proj/build/24A/Linux_x86_64/rte/accel-uni/build/Linux_x86_64/../../src/cuda_dataup1.c:88
+ 2 0x00000000000370fc __pgi_uacc_dataup1()  /proj/build/24A/Linux_x86_64/rte/accel-uni/build/Linux_x86_64/../../src/dataup1.c:58
+ 3 0x0000000000037920 __pgi_uacc_dataupx()  /proj/build/24A/Linux_x86_64/rte/accel-uni/build/Linux_x86_64/../../src/dataupx.c:123
+ 4 0x0000000000034d5a __pgi_uacc_dataonb()  /proj/build/24A/Linux_x86_64/rte/accel-uni/build/Linux_x86_64/../../src/dataonb.c:613
+ 5 0x0000000000810ec4 mod_output_output_()  /leonardo/home/userexternal/ctica000/MS_thesis/RegCM/Share/pfwsat.inc:1052
+ 6 0x00000000004496be mod_regcm_interface_rcm_run_()  /leonardo/home/userexternal/ctica000/MS_thesis/RegCM/Main/mod_regcm_interface.F90:281
+ 7 0x0000000000a25bd7 MAIN_()  /leonardo/home/userexternal/ctica000/MS_thesis/RegCM/Main/regcm.F90:83
+ 8 0x00000000004484b1 main()  ???:0
+ 9 0x000000000003ad85 __libc_start_main()  ???:0
+10 0x000000000044839e _start()  ???:0
+=================================
+[lrdn2678:4099625] *** Process received signal ***
+[lrdn2678:4099625] Signal: Segmentation fault (11)
+[lrdn2678:4099625] Signal code:  (-6)
+[lrdn2678:4099625] Failing at address: 0x1f485003e8e29
+[lrdn2678:4099625] [ 0] /lib64/libpthread.so.0(+0x12cf0)[0x14b0714d8cf0]
+ 6 0x00000000004496be mod_regcm_interface_rcm_run_()  /leonardo/home/userexternal/ctica000/MS_thesis/RegCM/Main/mod_regcm_interface.F90:281
+[lrdn2678:4099625] [ 1] /leonardo/prod/spack/06/install/0.22/linux-rhel8-icelake/gcc-8.5.0/nvhpc-24.5-torlmnyzcexnrs6pq4cccabv7ehkv3xy/Linux_x86_64/24.5/compilers/lib/libaccdevice.so(__pgi_uacc_cuda_dataup1+0xebf)[0x14b075451a4f]
+ 7 0x0000000000a25bd7 MAIN_()  /leonardo/home/userexternal/ctica000/MS_thesis/RegCM/Main/regcm.F90:83
+[lrdn2678:4099625] [ 2] /leonardo/prod/spack/06/install/0.22/linux-rhel8-icelake/gcc-8.5.0/nvhpc-24.5-torlmnyzcexnrs6pq4cccabv7ehkv3xy/Linux_x86_64/24.5/compilers/lib/libacchost.so(__pgi_uacc_dataup1+0x14c)[0x14b0759c60fc]
+ 8 0x00000000004484b1 main()  ???:0
+[lrdn2678:4099625] [ 3] /leonardo/prod/spack/06/install/0.22/linux-rhel8-icelake/gcc-8.5.0/nvhpc-24.5-torlmnyzcexnrs6pq4cccabv7ehkv3xy/Linux_x86_64/24.5/compilers/lib/libacchost.so(__pgi_uacc_dataupx+0x3b0)[0x14b0759c6920]
+ 9 0x000000000003ad85 __libc_start_main()  ???:0
+[lrdn2678:4099625] [ 4] /leonardo/prod/spack/06/install/0.22/linux-rhel8-icelake/gcc-8.5.0/nvhpc-24.5-torlmnyzcexnrs6pq4cccabv7ehkv3xy/Linux_x86_64/24.5/compilers/lib/libacchost.so(__pgi_uacc_dataonb+0x85a)[0x14b0759c3d5a]
+10 0x000000000044839e _start()  ???:0
+=================================
+[lrdn2678:4099625] [ 5] /leonardo/home/userexternal/ctica000/MS_thesis/RegCM/bin/regcmMPICLM45_OPENACC_GPU_STDPAR(mod_output_output_+0x50bc4)[0x810ec4]
+[lrdn2678:4099625] [ 6] /leonardo/home/userexternal/ctica000/MS_thesis/RegCM/bin/regcmMPICLM45_OPENACC_GPU_STDPAR(mod_regcm_interface_rcm_run_+0x7e)[0x4496be]
+[lrdn2678:4099625] [ 7] /leonardo/home/userexternal/ctica000/MS_thesis/RegCM/bin/regcmMPICLM45_OPENACC_GPU_STDPAR(MAIN_+0xd7)[0xa25bd7]
+[lrdn2673:2718063] *** Process received signal ***
+[lrdn2678:4099625] [ 8] /leonardo/home/userexternal/ctica000/MS_thesis/RegCM/bin/regcmMPICLM45_OPENACC_GPU_STDPAR(main+0x31)[0x4484b1]
+[lrdn2673:2718063] Signal: Segmentation fault (11)
+[lrdn2673:2718063] Signal code:  (-6)
+[lrdn2673:2718063] Failing at address: 0x1f4850029796f
+[lrdn2678:4099625] [ 9] /lib64/libc.so.6(__libc_start_main+0xe5)[0x14b070862d85]
+[lrdn2678:4099625] [10] /leonardo/home/userexternal/ctica000/MS_thesis/RegCM/bin/regcmMPICLM45_OPENACC_GPU_STDPAR(_start+0x2e)[0x44839e]
+[lrdn2678:4099625] *** End of error message ***
+==== backtrace (tid:3512246) ====
+ 0 0x0000000000012cf0 __funlockfile()  :0
+ 1 0x000000000000ba4f __pgi_uacc_cuda_dataup1()  /proj/build/24A/Linux_x86_64/rte/accel-uni/build/Linux_x86_64/../../src/cuda_dataup1.c:88
+ 2 0x00000000000370fc __pgi_uacc_dataup1()  /proj/build/24A/Linux_x86_64/rte/accel-uni/build/Linux_x86_64/../../src/dataup1.c:58
+ 3 0x0000000000037920 __pgi_uacc_dataupx()  /proj/build/24A/Linux_x86_64/rte/accel-uni/build/Linux_x86_64/../../src/dataupx.c:123
+ 4 0x0000000000034d5a __pgi_uacc_dataonb()  /proj/build/24A/Linux_x86_64/rte/accel-uni/build/Linux_x86_64/../../src/dataonb.c:613
+ 5 0x0000000000810ec4 mod_output_output_()  /leonardo/home/userexternal/ctica000/MS_thesis/RegCM/Share/pfwsat.inc:1052
+ 6 0x00000000004496be mod_regcm_interface_rcm_run_()  /leonardo/home/userexternal/ctica000/MS_thesis/RegCM/Main/mod_regcm_interface.F90:281
+ 7 0x0000000000a25bd7 MAIN_()  /leonardo/home/userexternal/ctica000/MS_thesis/RegCM/Main/regcm.F90:83
+[lrdn2673:2718063] [ 0] /lib64/libpthread.so.0(+0x12cf0)[0x153845fa2cf0]
+ 8 0x00000000004484b1 main()  ???:0
+ 9 0x000000000003ad85 __libc_start_main()  ???:0
+10 0x000000000044839e _start()  ???:0
+=================================
+[lrdn2676:3512246] *** Process received signal ***
+[lrdn2676:3512246] Signal: Segmentation fault (11)
+[lrdn2676:3512246] Signal code:  (-6)
+[lrdn2676:3512246] Failing at address: 0x1f485003597b6
+[lrdn2673:2718063] [ 1] /leonardo/prod/spack/06/install/0.22/linux-rhel8-icelake/gcc-8.5.0/nvhpc-24.5-torlmnyzcexnrs6pq4cccabv7ehkv3xy/Linux_x86_64/24.5/compilers/lib/libaccdevice.so(__pgi_uacc_cuda_dataup1+0xebf)[0x153849f1ba4f]
+[lrdn2676:3512246] [ 0] /lib64/libpthread.so.0(+0x12cf0)[0x14fe138ddcf0]
+[lrdn2676:3512246] [ 1] /leonardo/prod/spack/06/install/0.22/linux-rhel8-icelake/gcc-8.5.0/nvhpc-24.5-torlmnyzcexnrs6pq4cccabv7ehkv3xy/Linux_x86_64/24.5/compilers/lib/libaccdevice.so(__pgi_uacc_cuda_dataup1+0xebf)[0x14fe17856a4f]
+[lrdn2673:2718063] [ 2] /leonardo/prod/spack/06/install/0.22/linux-rhel8-icelake/gcc-8.5.0/nvhpc-24.5-torlmnyzcexnrs6pq4cccabv7ehkv3xy/Linux_x86_64/24.5/compilers/lib/libacchost.so(__pgi_uacc_dataup1+0x14c)[0x15384a4900fc]
+[lrdn2676:3512246] [ 2] /leonardo/prod/spack/06/install/0.22/linux-rhel8-icelake/gcc-8.5.0/nvhpc-24.5-torlmnyzcexnrs6pq4cccabv7ehkv3xy/Linux_x86_64/24.5/compilers/lib/libacchost.so(__pgi_uacc_dataup1+0x14c)[0x14fe17dcb0fc]
+[lrdn2676:3512246] [ 3] /leonardo/prod/spack/06/install/0.22/linux-rhel8-icelake/gcc-8.5.0/nvhpc-24.5-torlmnyzcexnrs6pq4cccabv7ehkv3xy/Linux_x86_64/24.5/compilers/lib/libacchost.so(__pgi_uacc_dataupx+0x3b0)[0x14fe17dcb920]
+[lrdn2673:2718063] [ 3] /leonardo/prod/spack/06/install/0.22/linux-rhel8-icelake/gcc-8.5.0/nvhpc-24.5-torlmnyzcexnrs6pq4cccabv7ehkv3xy/Linux_x86_64/24.5/compilers/lib/libacchost.so(__pgi_uacc_dataupx+0x3b0)[0x15384a490920]
+[lrdn2676:3512246] [ 4] /leonardo/prod/spack/06/install/0.22/linux-rhel8-icelake/gcc-8.5.0/nvhpc-24.5-torlmnyzcexnrs6pq4cccabv7ehkv3xy/Linux_x86_64/24.5/compilers/lib/libacchost.so(__pgi_uacc_dataonb+0x85a)[0x14fe17dc8d5a]
+[lrdn2673:2718063] [ 4] /leonardo/prod/spack/06/install/0.22/linux-rhel8-icelake/gcc-8.5.0/nvhpc-24.5-torlmnyzcexnrs6pq4cccabv7ehkv3xy/Linux_x86_64/24.5/compilers/lib/libacchost.so(__pgi_uacc_dataonb+0x85a)[0x15384a48dd5a]
+==== backtrace (tid:4099624) ====
+[lrdn2676:3512246] [ 5] /leonardo/home/userexternal/ctica000/MS_thesis/RegCM/bin/regcmMPICLM45_OPENACC_GPU_STDPAR(mod_output_output_+0x50bc4)[0x810ec4]
+ 0 0x0000000000012cf0 __funlockfile()  :0
+ 1 0x000000000000ba4f __pgi_uacc_cuda_dataup1()  /proj/build/24A/Linux_x86_64/rte/accel-uni/build/Linux_x86_64/../../src/cuda_dataup1.c:88
+ 2 0x00000000000370fc __pgi_uacc_dataup1()  /proj/build/24A/Linux_x86_64/rte/accel-uni/build/Linux_x86_64/../../src/dataup1.c:58
+[lrdn2676:3512246] [ 6] /leonardo/home/userexternal/ctica000/MS_thesis/RegCM/bin/regcmMPICLM45_OPENACC_GPU_STDPAR(mod_regcm_interface_rcm_run_+0x7e)[0x4496be]
+ 3 0x0000000000037920 __pgi_uacc_dataupx()  /proj/build/24A/Linux_x86_64/rte/accel-uni/build/Linux_x86_64/../../src/dataupx.c:123
+ 4 0x0000000000034d5a __pgi_uacc_dataonb()  /proj/build/24A/Linux_x86_64/rte/accel-uni/build/Linux_x86_64/../../src/dataonb.c:613
+ 5 0x0000000000810ec4 mod_output_output_()  /leonardo/home/userexternal/ctica000/MS_thesis/RegCM/Share/pfwsat.inc:1052
+ 6 0x00000000004496be mod_regcm_interface_rcm_run_()  /leonardo/home/userexternal/ctica000/MS_thesis/RegCM/Main/mod_regcm_interface.F90:281
+[lrdn2676:3512246] [ 7] /leonardo/home/userexternal/ctica000/MS_thesis/RegCM/bin/regcmMPICLM45_OPENACC_GPU_STDPAR(MAIN_+0xd7)[0xa25bd7]
+ 7 0x0000000000a25bd7 MAIN_()  /leonardo/home/userexternal/ctica000/MS_thesis/RegCM/Main/regcm.F90:83
+ 8 0x00000000004484b1 main()  ???:0
+ 9 0x000000000003ad85 __libc_start_main()  ???:0
+[lrdn2676:3512246] [ 8] /leonardo/home/userexternal/ctica000/MS_thesis/RegCM/bin/regcmMPICLM45_OPENACC_GPU_STDPAR(main+0x31)[0x4484b1]
+10 0x000000000044839e _start()  ???:0
+=================================
+[lrdn2676:3512246] [ 9] /lib64/libc.so.6(__libc_start_main+0xe5)[0x14fe12c67d85]
+[lrdn2678:4099624] *** Process received signal ***
+[lrdn2678:4099624] Signal: Segmentation fault (11)
+[lrdn2678:4099624] Signal code:  (-6)
+[lrdn2678:4099624] Failing at address: 0x1f485003e8e28
+[lrdn2676:3512246] [10] /leonardo/home/userexternal/ctica000/MS_thesis/RegCM/bin/regcmMPICLM45_OPENACC_GPU_STDPAR(_start+0x2e)[0x44839e]
+[lrdn2676:3512246] *** End of error message ***
+[lrdn2678:4099624] [ 0] /lib64/libpthread.so.0(+0x12cf0)[0x1496afc84cf0]
+[lrdn2678:4099624] [ 1] /leonardo/prod/spack/06/install/0.22/linux-rhel8-icelake/gcc-8.5.0/nvhpc-24.5-torlmnyzcexnrs6pq4cccabv7ehkv3xy/Linux_x86_64/24.5/compilers/lib/libaccdevice.so(__pgi_uacc_cuda_dataup1+0xebf)[0x1496b3bfda4f]
+[lrdn2678:4099624] [ 2] /leonardo/prod/spack/06/install/0.22/linux-rhel8-icelake/gcc-8.5.0/nvhpc-24.5-torlmnyzcexnrs6pq4cccabv7ehkv3xy/Linux_x86_64/24.5/compilers/lib/libacchost.so(__pgi_uacc_dataup1+0x14c)[0x1496b41720fc]
+[lrdn2673:2718063] [ 5] /leonardo/home/userexternal/ctica000/MS_thesis/RegCM/bin/regcmMPICLM45_OPENACC_GPU_STDPAR(mod_output_output_+0x50bc4)[0x810ec4]
+[lrdn2678:4099624] [ 3] /leonardo/prod/spack/06/install/0.22/linux-rhel8-icelake/gcc-8.5.0/nvhpc-24.5-torlmnyzcexnrs6pq4cccabv7ehkv3xy/Linux_x86_64/24.5/compilers/lib/libacchost.so(__pgi_uacc_dataupx+0x3b0)[0x1496b4172920]
+[lrdn2678:4099624] [ 4] /leonardo/prod/spack/06/install/0.22/linux-rhel8-icelake/gcc-8.5.0/nvhpc-24.5-torlmnyzcexnrs6pq4cccabv7ehkv3xy/Linux_x86_64/24.5/compilers/lib/libacchost.so(__pgi_uacc_dataonb+0x85a)[0x1496b416fd5a]
+[lrdn2673:2718063] [ 6] /leonardo/home/userexternal/ctica000/MS_thesis/RegCM/bin/regcmMPICLM45_OPENACC_GPU_STDPAR(mod_regcm_interface_rcm_run_+0x7e)[0x4496be]
+[lrdn2678:4099624] [ 5] /leonardo/home/userexternal/ctica000/MS_thesis/RegCM/bin/regcmMPICLM45_OPENACC_GPU_STDPAR(mod_output_output_+0x50bc4)[0x810ec4]
+[lrdn2678:4099624] [ 6] /leonardo/home/userexternal/ctica000/MS_thesis/RegCM/bin/regcmMPICLM45_OPENACC_GPU_STDPAR(mod_regcm_interface_rcm_run_+0x7e)[0x4496be]
+[lrdn2673:2718063] [ 7] /leonardo/home/userexternal/ctica000/MS_thesis/RegCM/bin/regcmMPICLM45_OPENACC_GPU_STDPAR(MAIN_+0xd7)[0xa25bd7]
+[lrdn2678:4099624] [ 7] /leonardo/home/userexternal/ctica000/MS_thesis/RegCM/bin/regcmMPICLM45_OPENACC_GPU_STDPAR(MAIN_+0xd7)[0xa25bd7]
+[lrdn2678:4099624] [ 8] /leonardo/home/userexternal/ctica000/MS_thesis/RegCM/bin/regcmMPICLM45_OPENACC_GPU_STDPAR(main+0x31)[0x4484b1]
+[lrdn2673:2718063] [ 8] /leonardo/home/userexternal/ctica000/MS_thesis/RegCM/bin/regcmMPICLM45_OPENACC_GPU_STDPAR(main+0x31)[0x4484b1]
+[lrdn2678:4099624] [ 9] /lib64/libc.so.6(__libc_start_main+0xe5)[0x1496af00ed85]
+[lrdn2678:4099624] [10] /leonardo/home/userexternal/ctica000/MS_thesis/RegCM/bin/regcmMPICLM45_OPENACC_GPU_STDPAR(_start+0x2e)[0x44839e]
+[lrdn2678:4099624] *** End of error message ***
+[lrdn2673:2718063] [ 9] /lib64/libc.so.6(__libc_start_main+0xe5)[0x15384532cd85]
+[lrdn2673:2718063] [10] /leonardo/home/userexternal/ctica000/MS_thesis/RegCM/bin/regcmMPICLM45_OPENACC_GPU_STDPAR(_start+0x2e)[0x44839e]
+[lrdn2673:2718063] *** End of error message ***
+==== backtrace (tid:4099623) ====
+ 0 0x0000000000012cf0 __funlockfile()  :0
+ 1 0x000000000000ba4f __pgi_uacc_cuda_dataup1()  /proj/build/24A/Linux_x86_64/rte/accel-uni/build/Linux_x86_64/../../src/cuda_dataup1.c:88
+==== backtrace (tid:3988695) ====
+ 2 0x00000000000370fc __pgi_uacc_dataup1()  /proj/build/24A/Linux_x86_64/rte/accel-uni/build/Linux_x86_64/../../src/dataup1.c:58
+ 3 0x0000000000037920 __pgi_uacc_dataupx()  /proj/build/24A/Linux_x86_64/rte/accel-uni/build/Linux_x86_64/../../src/dataupx.c:123
+ 0 0x0000000000012cf0 __funlockfile()  :0
+ 4 0x0000000000034d5a __pgi_uacc_dataonb()  /proj/build/24A/Linux_x86_64/rte/accel-uni/build/Linux_x86_64/../../src/dataonb.c:613
+ 1 0x000000000000ba4f __pgi_uacc_cuda_dataup1()  /proj/build/24A/Linux_x86_64/rte/accel-uni/build/Linux_x86_64/../../src/cuda_dataup1.c:88
+ 5 0x0000000000810ec4 mod_output_output_()  /leonardo/home/userexternal/ctica000/MS_thesis/RegCM/Share/pfwsat.inc:1052
+ 2 0x00000000000370fc __pgi_uacc_dataup1()  /proj/build/24A/Linux_x86_64/rte/accel-uni/build/Linux_x86_64/../../src/dataup1.c:58
+ 3 0x0000000000037920 __pgi_uacc_dataupx()  /proj/build/24A/Linux_x86_64/rte/accel-uni/build/Linux_x86_64/../../src/dataupx.c:123
+ 6 0x00000000004496be mod_regcm_interface_rcm_run_()  /leonardo/home/userexternal/ctica000/MS_thesis/RegCM/Main/mod_regcm_interface.F90:281
+ 7 0x0000000000a25bd7 MAIN_()  /leonardo/home/userexternal/ctica000/MS_thesis/RegCM/Main/regcm.F90:83
+ 8 0x00000000004484b1 main()  ???:0
+ 4 0x0000000000034d5a __pgi_uacc_dataonb()  /proj/build/24A/Linux_x86_64/rte/accel-uni/build/Linux_x86_64/../../src/dataonb.c:613
+ 9 0x000000000003ad85 __libc_start_main()  ???:0
+ 5 0x0000000000810ec4 mod_output_output_()  /leonardo/home/userexternal/ctica000/MS_thesis/RegCM/Share/pfwsat.inc:1052
+10 0x000000000044839e _start()  ???:0
+ 6 0x00000000004496be mod_regcm_interface_rcm_run_()  /leonardo/home/userexternal/ctica000/MS_thesis/RegCM/Main/mod_regcm_interface.F90:281
+=================================
+ 7 0x0000000000a25bd7 MAIN_()  /leonardo/home/userexternal/ctica000/MS_thesis/RegCM/Main/regcm.F90:83
+ 8 0x00000000004484b1 main()  ???:0
+[lrdn2678:4099623] *** Process received signal ***
+ 9 0x000000000003ad85 __libc_start_main()  ???:0
+10 0x000000000044839e _start()  ???:0
+[lrdn2678:4099623] Signal: Segmentation fault (11)
+[lrdn2678:4099623] Signal code:  (-6)
+[lrdn2678:4099623] Failing at address: 0x1f485003e8e27
+=================================
+[lrdn2677:3988695] *** Process received signal ***
+[lrdn2678:4099623] [ 0] /lib64/libpthread.so.0(+0x12cf0)[0x15046db47cf0]
+[lrdn2677:3988695] Signal: Segmentation fault (11)
+[lrdn2677:3988695] Signal code:  (-6)
+[lrdn2677:3988695] Failing at address: 0x1f485003cdcd7
+[lrdn2678:4099623] [ 1] /leonardo/prod/spack/06/install/0.22/linux-rhel8-icelake/gcc-8.5.0/nvhpc-24.5-torlmnyzcexnrs6pq4cccabv7ehkv3xy/Linux_x86_64/24.5/compilers/lib/libaccdevice.so(__pgi_uacc_cuda_dataup1+0xebf)[0x150471ac0a4f]
+[lrdn2677:3988695] [ 0] /lib64/libpthread.so.0(+0x12cf0)[0x1486ace38cf0]
+[lrdn2678:4099623] [ 2] /leonardo/prod/spack/06/install/0.22/linux-rhel8-icelake/gcc-8.5.0/nvhpc-24.5-torlmnyzcexnrs6pq4cccabv7ehkv3xy/Linux_x86_64/24.5/compilers/lib/libacchost.so(__pgi_uacc_dataup1+0x14c)[0x1504720350fc]
+[lrdn2678:4099623] [ 3] /leonardo/prod/spack/06/install/0.22/linux-rhel8-icelake/gcc-8.5.0/nvhpc-24.5-torlmnyzcexnrs6pq4cccabv7ehkv3xy/Linux_x86_64/24.5/compilers/lib/libacchost.so(__pgi_uacc_dataupx+0x3b0)[0x150472035920]
+[lrdn2677:3988695] [ 1] /leonardo/prod/spack/06/install/0.22/linux-rhel8-icelake/gcc-8.5.0/nvhpc-24.5-torlmnyzcexnrs6pq4cccabv7ehkv3xy/Linux_x86_64/24.5/compilers/lib/libaccdevice.so(__pgi_uacc_cuda_dataup1+0xebf)[0x1486b0db1a4f]
+[lrdn2678:4099623] [ 4] /leonardo/prod/spack/06/install/0.22/linux-rhel8-icelake/gcc-8.5.0/nvhpc-24.5-torlmnyzcexnrs6pq4cccabv7ehkv3xy/Linux_x86_64/24.5/compilers/lib/libacchost.so(__pgi_uacc_dataonb+0x85a)[0x150472032d5a]
+[lrdn2677:3988695] [ 2] /leonardo/prod/spack/06/install/0.22/linux-rhel8-icelake/gcc-8.5.0/nvhpc-24.5-torlmnyzcexnrs6pq4cccabv7ehkv3xy/Linux_x86_64/24.5/compilers/lib/libacchost.so(__pgi_uacc_dataup1+0x14c)[0x1486b13260fc]
+[lrdn2677:3988695] [ 3] /leonardo/prod/spack/06/install/0.22/linux-rhel8-icelake/gcc-8.5.0/nvhpc-24.5-torlmnyzcexnrs6pq4cccabv7ehkv3xy/Linux_x86_64/24.5/compilers/lib/libacchost.so(__pgi_uacc_dataupx+0x3b0)[0x1486b1326920]
+[lrdn2678:4099623] [ 5] /leonardo/home/userexternal/ctica000/MS_thesis/RegCM/bin/regcmMPICLM45_OPENACC_GPU_STDPAR(mod_output_output_+0x50bc4)[0x810ec4]
+[lrdn2677:3988695] [ 4] /leonardo/prod/spack/06/install/0.22/linux-rhel8-icelake/gcc-8.5.0/nvhpc-24.5-torlmnyzcexnrs6pq4cccabv7ehkv3xy/Linux_x86_64/24.5/compilers/lib/libacchost.so(__pgi_uacc_dataonb+0x85a)[0x1486b1323d5a]
+[lrdn2678:4099623] [ 6] /leonardo/home/userexternal/ctica000/MS_thesis/RegCM/bin/regcmMPICLM45_OPENACC_GPU_STDPAR(mod_regcm_interface_rcm_run_+0x7e)[0x4496be]
+[lrdn2677:3988695] [ 5] /leonardo/home/userexternal/ctica000/MS_thesis/RegCM/bin/regcmMPICLM45_OPENACC_GPU_STDPAR(mod_output_output_+0x50bc4)[0x810ec4]
+[lrdn2678:4099623] [ 7] /leonardo/home/userexternal/ctica000/MS_thesis/RegCM/bin/regcmMPICLM45_OPENACC_GPU_STDPAR(MAIN_+0xd7)[0xa25bd7]
+[lrdn2677:3988695] [ 6] /leonardo/home/userexternal/ctica000/MS_thesis/RegCM/bin/regcmMPICLM45_OPENACC_GPU_STDPAR(mod_regcm_interface_rcm_run_+0x7e)[0x4496be]
+[lrdn2678:4099623] [ 8] /leonardo/home/userexternal/ctica000/MS_thesis/RegCM/bin/regcmMPICLM45_OPENACC_GPU_STDPAR(main+0x31)[0x4484b1]
+[lrdn2677:3988695] [ 7] /leonardo/home/userexternal/ctica000/MS_thesis/RegCM/bin/regcmMPICLM45_OPENACC_GPU_STDPAR(MAIN_+0xd7)[0xa25bd7]
+[lrdn2678:4099623] [ 9] /lib64/libc.so.6(__libc_start_main+0xe5)[0x15046ced1d85]
+[lrdn2677:3988695] [ 8] /leonardo/home/userexternal/ctica000/MS_thesis/RegCM/bin/regcmMPICLM45_OPENACC_GPU_STDPAR(main+0x31)[0x4484b1]
+[lrdn2678:4099623] [10] /leonardo/home/userexternal/ctica000/MS_thesis/RegCM/bin/regcmMPICLM45_OPENACC_GPU_STDPAR(_start+0x2e)[0x44839e]
+[lrdn2678:4099623] *** End of error message ***
+[lrdn2677:3988695] [ 9] /lib64/libc.so.6(__libc_start_main+0xe5)[0x1486ac1c2d85]
+[lrdn2677:3988695] [10] /leonardo/home/userexternal/ctica000/MS_thesis/RegCM/bin/regcmMPICLM45_OPENACC_GPU_STDPAR(_start+0x2e)[0x44839e]
+[lrdn2677:3988695] *** End of error message ***
+==== backtrace (tid:3512244) ====
+ 0 0x0000000000012cf0 __funlockfile()  :0
+ 1 0x000000000000ba4f __pgi_uacc_cuda_dataup1()  /proj/build/24A/Linux_x86_64/rte/accel-uni/build/Linux_x86_64/../../src/cuda_dataup1.c:88
+ 2 0x00000000000370fc __pgi_uacc_dataup1()  /proj/build/24A/Linux_x86_64/rte/accel-uni/build/Linux_x86_64/../../src/dataup1.c:58
+ 3 0x0000000000037920 __pgi_uacc_dataupx()  /proj/build/24A/Linux_x86_64/rte/accel-uni/build/Linux_x86_64/../../src/dataupx.c:123
+ 4 0x0000000000034d5a __pgi_uacc_dataonb()  /proj/build/24A/Linux_x86_64/rte/accel-uni/build/Linux_x86_64/../../src/dataonb.c:613
+ 5 0x0000000000810ec4 mod_output_output_()  /leonardo/home/userexternal/ctica000/MS_thesis/RegCM/Share/pfwsat.inc:1052
+ 6 0x00000000004496be mod_regcm_interface_rcm_run_()  /leonardo/home/userexternal/ctica000/MS_thesis/RegCM/Main/mod_regcm_interface.F90:281
+ 7 0x0000000000a25bd7 MAIN_()  /leonardo/home/userexternal/ctica000/MS_thesis/RegCM/Main/regcm.F90:83
+ 8 0x00000000004484b1 main()  ???:0
+ 9 0x000000000003ad85 __libc_start_main()  ???:0
+10 0x000000000044839e _start()  ???:0
+=================================
+[lrdn2676:3512244] *** Process received signal ***
+[lrdn2676:3512244] Signal: Segmentation fault (11)
+[lrdn2676:3512244] Signal code:  (-6)
+[lrdn2676:3512244] Failing at address: 0x1f485003597b4
+[lrdn2676:3512244] [ 0] /lib64/libpthread.so.0(+0x12cf0)[0x14f64725ecf0]
+[lrdn2676:3512244] [ 1] /leonardo/prod/spack/06/install/0.22/linux-rhel8-icelake/gcc-8.5.0/nvhpc-24.5-torlmnyzcexnrs6pq4cccabv7ehkv3xy/Linux_x86_64/24.5/compilers/lib/libaccdevice.so(__pgi_uacc_cuda_dataup1+0xebf)[0x14f64b1d7a4f]
+[lrdn2676:3512244] [ 2] /leonardo/prod/spack/06/install/0.22/linux-rhel8-icelake/gcc-8.5.0/nvhpc-24.5-torlmnyzcexnrs6pq4cccabv7ehkv3xy/Linux_x86_64/24.5/compilers/lib/libacchost.so(__pgi_uacc_dataup1+0x14c)[0x14f64b74c0fc]
+[lrdn2676:3512244] [ 3] /leonardo/prod/spack/06/install/0.22/linux-rhel8-icelake/gcc-8.5.0/nvhpc-24.5-torlmnyzcexnrs6pq4cccabv7ehkv3xy/Linux_x86_64/24.5/compilers/lib/libacchost.so(__pgi_uacc_dataupx+0x3b0)[0x14f64b74c920]
+[lrdn2676:3512244] [ 4] /leonardo/prod/spack/06/install/0.22/linux-rhel8-icelake/gcc-8.5.0/nvhpc-24.5-torlmnyzcexnrs6pq4cccabv7ehkv3xy/Linux_x86_64/24.5/compilers/lib/libacchost.so(__pgi_uacc_dataonb+0x85a)[0x14f64b749d5a]
+[lrdn2676:3512244] [ 5] /leonardo/home/userexternal/ctica000/MS_thesis/RegCM/bin/regcmMPICLM45_OPENACC_GPU_STDPAR(mod_output_output_+0x50bc4)[0x810ec4]
+==== backtrace (tid:4099626) ====
+[lrdn2676:3512244] [ 6] /leonardo/home/userexternal/ctica000/MS_thesis/RegCM/bin/regcmMPICLM45_OPENACC_GPU_STDPAR(mod_regcm_interface_rcm_run_+0x7e)[0x4496be]
+ 0 0x0000000000012cf0 __funlockfile()  :0
+ 1 0x000000000000ba4f __pgi_uacc_cuda_dataup1()  /proj/build/24A/Linux_x86_64/rte/accel-uni/build/Linux_x86_64/../../src/cuda_dataup1.c:88
+ 2 0x00000000000370fc __pgi_uacc_dataup1()  /proj/build/24A/Linux_x86_64/rte/accel-uni/build/Linux_x86_64/../../src/dataup1.c:58
+[lrdn2676:3512244] [ 7] /leonardo/home/userexternal/ctica000/MS_thesis/RegCM/bin/regcmMPICLM45_OPENACC_GPU_STDPAR(MAIN_+0xd7)[0xa25bd7]
+ 3 0x0000000000037920 __pgi_uacc_dataupx()  /proj/build/24A/Linux_x86_64/rte/accel-uni/build/Linux_x86_64/../../src/dataupx.c:123
+ 4 0x0000000000034d5a __pgi_uacc_dataonb()  /proj/build/24A/Linux_x86_64/rte/accel-uni/build/Linux_x86_64/../../src/dataonb.c:613
+ 5 0x0000000000810ec4 mod_output_output_()  /leonardo/home/userexternal/ctica000/MS_thesis/RegCM/Share/pfwsat.inc:1052
+[lrdn2676:3512244] [ 8] /leonardo/home/userexternal/ctica000/MS_thesis/RegCM/bin/regcmMPICLM45_OPENACC_GPU_STDPAR(main+0x31)[0x4484b1]
+ 6 0x00000000004496be mod_regcm_interface_rcm_run_()  /leonardo/home/userexternal/ctica000/MS_thesis/RegCM/Main/mod_regcm_interface.F90:281
+ 7 0x0000000000a25bd7 MAIN_()  /leonardo/home/userexternal/ctica000/MS_thesis/RegCM/Main/regcm.F90:83
+ 8 0x00000000004484b1 main()  ???:0
+ 9 0x000000000003ad85 __libc_start_main()  ???:0
+10 0x000000000044839e _start()  ???:0
+[lrdn2676:3512244] [ 9] /lib64/libc.so.6(__libc_start_main+0xe5)[0x14f6465e8d85]
+=================================
+[lrdn2676:3512244] [10] /leonardo/home/userexternal/ctica000/MS_thesis/RegCM/bin/regcmMPICLM45_OPENACC_GPU_STDPAR(_start+0x2e)[0x44839e]
+[lrdn2678:4099626] *** Process received signal ***
+[lrdn2676:3512244] *** End of error message ***
+[lrdn2678:4099626] Signal: Segmentation fault (11)
+[lrdn2678:4099626] Signal code:  (-6)
+[lrdn2678:4099626] Failing at address: 0x1f485003e8e2a
+[lrdn2678:4099626] [ 0] /lib64/libpthread.so.0(+0x12cf0)[0x1472151c4cf0]
+[lrdn2678:4099626] [ 1] /leonardo/prod/spack/06/install/0.22/linux-rhel8-icelake/gcc-8.5.0/nvhpc-24.5-torlmnyzcexnrs6pq4cccabv7ehkv3xy/Linux_x86_64/24.5/compilers/lib/libaccdevice.so(__pgi_uacc_cuda_dataup1+0xebf)[0x14721913da4f]
+[lrdn2678:4099626] [ 2] /leonardo/prod/spack/06/install/0.22/linux-rhel8-icelake/gcc-8.5.0/nvhpc-24.5-torlmnyzcexnrs6pq4cccabv7ehkv3xy/Linux_x86_64/24.5/compilers/lib/libacchost.so(__pgi_uacc_dataup1+0x14c)[0x1472196b20fc]
+[lrdn2678:4099626] [ 3] /leonardo/prod/spack/06/install/0.22/linux-rhel8-icelake/gcc-8.5.0/nvhpc-24.5-torlmnyzcexnrs6pq4cccabv7ehkv3xy/Linux_x86_64/24.5/compilers/lib/libacchost.so(__pgi_uacc_dataupx+0x3b0)[0x1472196b2920]
+[lrdn2678:4099626] [ 4] /leonardo/prod/spack/06/install/0.22/linux-rhel8-icelake/gcc-8.5.0/nvhpc-24.5-torlmnyzcexnrs6pq4cccabv7ehkv3xy/Linux_x86_64/24.5/compilers/lib/libacchost.so(__pgi_uacc_dataonb+0x85a)[0x1472196afd5a]
+[lrdn2678:4099626] [ 5] /leonardo/home/userexternal/ctica000/MS_thesis/RegCM/bin/regcmMPICLM45_OPENACC_GPU_STDPAR(mod_output_output_+0x50bc4)[0x810ec4]
+[lrdn2678:4099626] [ 6] /leonardo/home/userexternal/ctica000/MS_thesis/RegCM/bin/regcmMPICLM45_OPENACC_GPU_STDPAR(mod_regcm_interface_rcm_run_+0x7e)[0x4496be]
+[lrdn2678:4099626] [ 7] /leonardo/home/userexternal/ctica000/MS_thesis/RegCM/bin/regcmMPICLM45_OPENACC_GPU_STDPAR(MAIN_+0xd7)[0xa25bd7]
+[lrdn2678:4099626] [ 8] /leonardo/home/userexternal/ctica000/MS_thesis/RegCM/bin/regcmMPICLM45_OPENACC_GPU_STDPAR(main+0x31)[0x4484b1]
+[lrdn2678:4099626] [ 9] /lib64/libc.so.6(__libc_start_main+0xe5)[0x14721454ed85]
+[lrdn2678:4099626] [10] /leonardo/home/userexternal/ctica000/MS_thesis/RegCM/bin/regcmMPICLM45_OPENACC_GPU_STDPAR(_start+0x2e)[0x44839e]
+[lrdn2678:4099626] *** End of error message ***
+==== backtrace (tid:3512245) ====
+ 0 0x0000000000012cf0 __funlockfile()  :0
+ 1 0x000000000000ba4f __pgi_uacc_cuda_dataup1()  /proj/build/24A/Linux_x86_64/rte/accel-uni/build/Linux_x86_64/../../src/cuda_dataup1.c:88
+ 2 0x00000000000370fc __pgi_uacc_dataup1()  /proj/build/24A/Linux_x86_64/rte/accel-uni/build/Linux_x86_64/../../src/dataup1.c:58
+ 3 0x0000000000037920 __pgi_uacc_dataupx()  /proj/build/24A/Linux_x86_64/rte/accel-uni/build/Linux_x86_64/../../src/dataupx.c:123
+ 4 0x0000000000034d5a __pgi_uacc_dataonb()  /proj/build/24A/Linux_x86_64/rte/accel-uni/build/Linux_x86_64/../../src/dataonb.c:613
+ 5 0x0000000000810ec4 mod_output_output_()  /leonardo/home/userexternal/ctica000/MS_thesis/RegCM/Share/pfwsat.inc:1052
+ 6 0x00000000004496be mod_regcm_interface_rcm_run_()  /leonardo/home/userexternal/ctica000/MS_thesis/RegCM/Main/mod_regcm_interface.F90:281
+ 7 0x0000000000a25bd7 MAIN_()  /leonardo/home/userexternal/ctica000/MS_thesis/RegCM/Main/regcm.F90:83
+ 8 0x00000000004484b1 main()  ???:0
+ 9 0x000000000003ad85 __libc_start_main()  ???:0
+10 0x000000000044839e _start()  ???:0
+=================================
+[lrdn2676:3512245] *** Process received signal ***
+[lrdn2676:3512245] Signal: Segmentation fault (11)
+[lrdn2676:3512245] Signal code:  (-6)
+[lrdn2676:3512245] Failing at address: 0x1f485003597b5
+[lrdn2676:3512245] [ 0] /lib64/libpthread.so.0(+0x12cf0)[0x154f957a5cf0]
+[lrdn2676:3512245] [ 1] /leonardo/prod/spack/06/install/0.22/linux-rhel8-icelake/gcc-8.5.0/nvhpc-24.5-torlmnyzcexnrs6pq4cccabv7ehkv3xy/Linux_x86_64/24.5/compilers/lib/libaccdevice.so(__pgi_uacc_cuda_dataup1+0xebf)[0x154f9971ea4f]
+==== backtrace (tid:2718061) ====
+ 0 0x0000000000012cf0 __funlockfile()  :0
+[lrdn2676:3512245] [ 2] /leonardo/prod/spack/06/install/0.22/linux-rhel8-icelake/gcc-8.5.0/nvhpc-24.5-torlmnyzcexnrs6pq4cccabv7ehkv3xy/Linux_x86_64/24.5/compilers/lib/libacchost.so(__pgi_uacc_dataup1+0x14c)[0x154f99c930fc]
+ 1 0x000000000000ba4f __pgi_uacc_cuda_dataup1()  /proj/build/24A/Linux_x86_64/rte/accel-uni/build/Linux_x86_64/../../src/cuda_dataup1.c:88
+[lrdn2676:3512245] [ 3] /leonardo/prod/spack/06/install/0.22/linux-rhel8-icelake/gcc-8.5.0/nvhpc-24.5-torlmnyzcexnrs6pq4cccabv7ehkv3xy/Linux_x86_64/24.5/compilers/lib/libacchost.so(__pgi_uacc_dataupx+0x3b0)[0x154f99c93920]
+ 2 0x00000000000370fc __pgi_uacc_dataup1()  /proj/build/24A/Linux_x86_64/rte/accel-uni/build/Linux_x86_64/../../src/dataup1.c:58
+[lrdn2676:3512245] [ 4] /leonardo/prod/spack/06/install/0.22/linux-rhel8-icelake/gcc-8.5.0/nvhpc-24.5-torlmnyzcexnrs6pq4cccabv7ehkv3xy/Linux_x86_64/24.5/compilers/lib/libacchost.so(__pgi_uacc_dataonb+0x85a)[0x154f99c90d5a]
+ 3 0x0000000000037920 __pgi_uacc_dataupx()  /proj/build/24A/Linux_x86_64/rte/accel-uni/build/Linux_x86_64/../../src/dataupx.c:123
+[lrdn2676:3512245] [ 5] /leonardo/home/userexternal/ctica000/MS_thesis/RegCM/bin/regcmMPICLM45_OPENACC_GPU_STDPAR(mod_output_output_+0x50bc4)[0x810ec4]
+ 4 0x0000000000034d5a __pgi_uacc_dataonb()  /proj/build/24A/Linux_x86_64/rte/accel-uni/build/Linux_x86_64/../../src/dataonb.c:613
+[lrdn2676:3512245] [ 6] /leonardo/home/userexternal/ctica000/MS_thesis/RegCM/bin/regcmMPICLM45_OPENACC_GPU_STDPAR(mod_regcm_interface_rcm_run_+0x7e)[0x4496be]
+ 5 0x0000000000810ec4 mod_output_output_()  /leonardo/home/userexternal/ctica000/MS_thesis/RegCM/Share/pfwsat.inc:1052
+[lrdn2676:3512245] [ 7] /leonardo/home/userexternal/ctica000/MS_thesis/RegCM/bin/regcmMPICLM45_OPENACC_GPU_STDPAR(MAIN_+0xd7)[0xa25bd7]
+ 6 0x00000000004496be mod_regcm_interface_rcm_run_()  /leonardo/home/userexternal/ctica000/MS_thesis/RegCM/Main/mod_regcm_interface.F90:281
+[lrdn2676:3512245] [ 8] /leonardo/home/userexternal/ctica000/MS_thesis/RegCM/bin/regcmMPICLM45_OPENACC_GPU_STDPAR(main+0x31)[0x4484b1]
+ 7 0x0000000000a25bd7 MAIN_()  /leonardo/home/userexternal/ctica000/MS_thesis/RegCM/Main/regcm.F90:83
+[lrdn2676:3512245] [ 9] /lib64/libc.so.6(__libc_start_main+0xe5)[0x154f94b2fd85]
+ 8 0x00000000004484b1 main()  ???:0
+[lrdn2676:3512245] [10] /leonardo/home/userexternal/ctica000/MS_thesis/RegCM/bin/regcmMPICLM45_OPENACC_GPU_STDPAR(_start+0x2e)[0x44839e]
+ 9 0x000000000003ad85 __libc_start_main()  ???:0
+[lrdn2676:3512245] *** End of error message ***
+10 0x000000000044839e _start()  ???:0
+=================================
+[lrdn2673:2718061] *** Process received signal ***
+[lrdn2673:2718061] Signal: Segmentation fault (11)
+[lrdn2673:2718061] Signal code:  (-6)
+[lrdn2673:2718061] Failing at address: 0x1f4850029796d
+[lrdn2673:2718061] [ 0] /lib64/libpthread.so.0(+0x12cf0)[0x14bed3c5acf0]
+[lrdn2673:2718061] [ 1] /leonardo/prod/spack/06/install/0.22/linux-rhel8-icelake/gcc-8.5.0/nvhpc-24.5-torlmnyzcexnrs6pq4cccabv7ehkv3xy/Linux_x86_64/24.5/compilers/lib/libaccdevice.so(__pgi_uacc_cuda_dataup1+0xebf)[0x14bed7bd3a4f]
+[lrdn2673:2718061] [ 2] /leonardo/prod/spack/06/install/0.22/linux-rhel8-icelake/gcc-8.5.0/nvhpc-24.5-torlmnyzcexnrs6pq4cccabv7ehkv3xy/Linux_x86_64/24.5/compilers/lib/libacchost.so(__pgi_uacc_dataup1+0x14c)[0x14bed81480fc]
+[lrdn2673:2718061] [ 3] /leonardo/prod/spack/06/install/0.22/linux-rhel8-icelake/gcc-8.5.0/nvhpc-24.5-torlmnyzcexnrs6pq4cccabv7ehkv3xy/Linux_x86_64/24.5/compilers/lib/libacchost.so(__pgi_uacc_dataupx+0x3b0)[0x14bed8148920]
+==== backtrace (tid:2718064) ====
+ 0 0x0000000000012cf0 __funlockfile()  :0
+ 1 0x000000000000ba4f __pgi_uacc_cuda_dataup1()  /proj/build/24A/Linux_x86_64/rte/accel-uni/build/Linux_x86_64/../../src/cuda_dataup1.c:88
+ 2 0x00000000000370fc __pgi_uacc_dataup1()  /proj/build/24A/Linux_x86_64/rte/accel-uni/build/Linux_x86_64/../../src/dataup1.c:58
+ 3 0x0000000000037920 __pgi_uacc_dataupx()  /proj/build/24A/Linux_x86_64/rte/accel-uni/build/Linux_x86_64/../../src/dataupx.c:123
+ 4 0x0000000000034d5a __pgi_uacc_dataonb()  /proj/build/24A/Linux_x86_64/rte/accel-uni/build/Linux_x86_64/../../src/dataonb.c:613
+ 5 0x0000000000810ec4 mod_output_output_()  /leonardo/home/userexternal/ctica000/MS_thesis/RegCM/Share/pfwsat.inc:1052
+ 6 0x00000000004496be mod_regcm_interface_rcm_run_()  /leonardo/home/userexternal/ctica000/MS_thesis/RegCM/Main/mod_regcm_interface.F90:281
+ 7 0x0000000000a25bd7 MAIN_()  /leonardo/home/userexternal/ctica000/MS_thesis/RegCM/Main/regcm.F90:83
+ 8 0x00000000004484b1 main()  ???:0
+ 9 0x000000000003ad85 __libc_start_main()  ???:0
+10 0x000000000044839e _start()  ???:0
+=================================
+[lrdn2673:2718061] [ 4] /leonardo/prod/spack/06/install/0.22/linux-rhel8-icelake/gcc-8.5.0/nvhpc-24.5-torlmnyzcexnrs6pq4cccabv7ehkv3xy/Linux_x86_64/24.5/compilers/lib/libacchost.so(__pgi_uacc_dataonb+0x85a)[0x14bed8145d5a]
+[lrdn2673:2718064] *** Process received signal ***
+[lrdn2673:2718064] Signal: Segmentation fault (11)
+[lrdn2673:2718064] Signal code:  (-6)
+[lrdn2673:2718064] Failing at address: 0x1f48500297970
+[lrdn2673:2718061] [ 5] /leonardo/home/userexternal/ctica000/MS_thesis/RegCM/bin/regcmMPICLM45_OPENACC_GPU_STDPAR(mod_output_output_+0x50bc4)[0x810ec4]
+[lrdn2673:2718064] [ 0] /lib64/libpthread.so.0(+0x12cf0)[0x14c370163cf0]
+[lrdn2673:2718064] [ 1] /leonardo/prod/spack/06/install/0.22/linux-rhel8-icelake/gcc-8.5.0/nvhpc-24.5-torlmnyzcexnrs6pq4cccabv7ehkv3xy/Linux_x86_64/24.5/compilers/lib/libaccdevice.so(__pgi_uacc_cuda_dataup1+0xebf)[0x14c3740dca4f]
+[lrdn2673:2718064] [ 2] /leonardo/prod/spack/06/install/0.22/linux-rhel8-icelake/gcc-8.5.0/nvhpc-24.5-torlmnyzcexnrs6pq4cccabv7ehkv3xy/Linux_x86_64/24.5/compilers/lib/libacchost.so(__pgi_uacc_dataup1+0x14c)[0x14c3746510fc]
+[lrdn2673:2718064] [ 3] /leonardo/prod/spack/06/install/0.22/linux-rhel8-icelake/gcc-8.5.0/nvhpc-24.5-torlmnyzcexnrs6pq4cccabv7ehkv3xy/Linux_x86_64/24.5/compilers/lib/libacchost.so(__pgi_uacc_dataupx+0x3b0)[0x14c374651920]
+[lrdn2673:2718064] [ 4] /leonardo/prod/spack/06/install/0.22/linux-rhel8-icelake/gcc-8.5.0/nvhpc-24.5-torlmnyzcexnrs6pq4cccabv7ehkv3xy/Linux_x86_64/24.5/compilers/lib/libacchost.so(__pgi_uacc_dataonb+0x85a)[0x14c37464ed5a]
+[lrdn2673:2718064] [ 5] /leonardo/home/userexternal/ctica000/MS_thesis/RegCM/bin/regcmMPICLM45_OPENACC_GPU_STDPAR(mod_output_output_+0x50bc4)[0x810ec4]
+[lrdn2673:2718061] [ 6] /leonardo/home/userexternal/ctica000/MS_thesis/RegCM/bin/regcmMPICLM45_OPENACC_GPU_STDPAR(mod_regcm_interface_rcm_run_+0x7e)[0x4496be]
+[lrdn2673:2718061] [ 7] /leonardo/home/userexternal/ctica000/MS_thesis/RegCM/bin/regcmMPICLM45_OPENACC_GPU_STDPAR(MAIN_+0xd7)[0xa25bd7]
+[lrdn2673:2718061] [ 8] /leonardo/home/userexternal/ctica000/MS_thesis/RegCM/bin/regcmMPICLM45_OPENACC_GPU_STDPAR(main+0x31)[0x4484b1]
+[lrdn2673:2718064] [ 6] /leonardo/home/userexternal/ctica000/MS_thesis/RegCM/bin/regcmMPICLM45_OPENACC_GPU_STDPAR(mod_regcm_interface_rcm_run_+0x7e)[0x4496be]
+[lrdn2673:2718064] [ 7] /leonardo/home/userexternal/ctica000/MS_thesis/RegCM/bin/regcmMPICLM45_OPENACC_GPU_STDPAR(MAIN_+0xd7)[0xa25bd7]
+[lrdn2673:2718061] [ 9] /lib64/libc.so.6(__libc_start_main+0xe5)[0x14bed2fe4d85]
+[lrdn2673:2718061] [10] /leonardo/home/userexternal/ctica000/MS_thesis/RegCM/bin/regcmMPICLM45_OPENACC_GPU_STDPAR(_start+0x2e)[0x44839e]
+[lrdn2673:2718061] *** End of error message ***
+[lrdn2673:2718064] [ 8] /leonardo/home/userexternal/ctica000/MS_thesis/RegCM/bin/regcmMPICLM45_OPENACC_GPU_STDPAR(main+0x31)[0x4484b1]
+[lrdn2673:2718064] [ 9] /lib64/libc.so.6(__libc_start_main+0xe5)[0x14c36f4edd85]
+[lrdn2673:2718064] [10] /leonardo/home/userexternal/ctica000/MS_thesis/RegCM/bin/regcmMPICLM45_OPENACC_GPU_STDPAR(_start+0x2e)[0x44839e]
+[lrdn2673:2718064] *** End of error message ***
+==== backtrace (tid:2718062) ====
+ 0 0x0000000000012cf0 __funlockfile()  :0
+ 1 0x000000000000ba4f __pgi_uacc_cuda_dataup1()  /proj/build/24A/Linux_x86_64/rte/accel-uni/build/Linux_x86_64/../../src/cuda_dataup1.c:88
+ 2 0x00000000000370fc __pgi_uacc_dataup1()  /proj/build/24A/Linux_x86_64/rte/accel-uni/build/Linux_x86_64/../../src/dataup1.c:58
+ 3 0x0000000000037920 __pgi_uacc_dataupx()  /proj/build/24A/Linux_x86_64/rte/accel-uni/build/Linux_x86_64/../../src/dataupx.c:123
+ 4 0x0000000000034d5a __pgi_uacc_dataonb()  /proj/build/24A/Linux_x86_64/rte/accel-uni/build/Linux_x86_64/../../src/dataonb.c:613
+ 5 0x0000000000810ec4 mod_output_output_()  /leonardo/home/userexternal/ctica000/MS_thesis/RegCM/Share/pfwsat.inc:1052
+ 6 0x00000000004496be mod_regcm_interface_rcm_run_()  /leonardo/home/userexternal/ctica000/MS_thesis/RegCM/Main/mod_regcm_interface.F90:281
+ 7 0x0000000000a25bd7 MAIN_()  /leonardo/home/userexternal/ctica000/MS_thesis/RegCM/Main/regcm.F90:83
+ 8 0x00000000004484b1 main()  ???:0
+ 9 0x000000000003ad85 __libc_start_main()  ???:0
+10 0x000000000044839e _start()  ???:0
+=================================
+[lrdn2673:2718062] *** Process received signal ***
+[lrdn2673:2718062] Signal: Segmentation fault (11)
+[lrdn2673:2718062] Signal code:  (-6)
+[lrdn2673:2718062] Failing at address: 0x1f4850029796e
+[lrdn2673:2718062] [ 0] /lib64/libpthread.so.0(+0x12cf0)[0x14e0a7d4dcf0]
+[lrdn2673:2718062] [ 1] /leonardo/prod/spack/06/install/0.22/linux-rhel8-icelake/gcc-8.5.0/nvhpc-24.5-torlmnyzcexnrs6pq4cccabv7ehkv3xy/Linux_x86_64/24.5/compilers/lib/libaccdevice.so(__pgi_uacc_cuda_dataup1+0xebf)[0x14e0abcc6a4f]
+[lrdn2673:2718062] [ 2] /leonardo/prod/spack/06/install/0.22/linux-rhel8-icelake/gcc-8.5.0/nvhpc-24.5-torlmnyzcexnrs6pq4cccabv7ehkv3xy/Linux_x86_64/24.5/compilers/lib/libacchost.so(__pgi_uacc_dataup1+0x14c)[0x14e0ac23b0fc]
+[lrdn2673:2718062] [ 3] /leonardo/prod/spack/06/install/0.22/linux-rhel8-icelake/gcc-8.5.0/nvhpc-24.5-torlmnyzcexnrs6pq4cccabv7ehkv3xy/Linux_x86_64/24.5/compilers/lib/libacchost.so(__pgi_uacc_dataupx+0x3b0)[0x14e0ac23b920]
+[lrdn2673:2718062] [ 4] /leonardo/prod/spack/06/install/0.22/linux-rhel8-icelake/gcc-8.5.0/nvhpc-24.5-torlmnyzcexnrs6pq4cccabv7ehkv3xy/Linux_x86_64/24.5/compilers/lib/libacchost.so(__pgi_uacc_dataonb+0x85a)[0x14e0ac238d5a]
+[lrdn2673:2718062] [ 5] /leonardo/home/userexternal/ctica000/MS_thesis/RegCM/bin/regcmMPICLM45_OPENACC_GPU_STDPAR(mod_output_output_+0x50bc4)[0x810ec4]
+[lrdn2673:2718062] [ 6] /leonardo/home/userexternal/ctica000/MS_thesis/RegCM/bin/regcmMPICLM45_OPENACC_GPU_STDPAR(mod_regcm_interface_rcm_run_+0x7e)[0x4496be]
+[lrdn2673:2718062] [ 7] /leonardo/home/userexternal/ctica000/MS_thesis/RegCM/bin/regcmMPICLM45_OPENACC_GPU_STDPAR(MAIN_+0xd7)[0xa25bd7]
+[lrdn2673:2718062] [ 8] /leonardo/home/userexternal/ctica000/MS_thesis/RegCM/bin/regcmMPICLM45_OPENACC_GPU_STDPAR(main+0x31)[0x4484b1]
+[lrdn2673:2718062] [ 9] /lib64/libc.so.6(__libc_start_main+0xe5)[0x14e0a70d7d85]
+[lrdn2673:2718062] [10] /leonardo/home/userexternal/ctica000/MS_thesis/RegCM/bin/regcmMPICLM45_OPENACC_GPU_STDPAR(_start+0x2e)[0x44839e]
+[lrdn2673:2718062] *** End of error message ***
+[ perf record: Woken up 2782 times to write data ]
+[ perf record: Woken up 3062 times to write data ]
+[ perf record: Woken up 3057 times to write data ]
+[ perf record: Woken up 2806 times to write data ]
+[ perf record: Woken up 3060 times to write data ]
+[ perf record: Woken up 3059 times to write data ]
+[ perf record: Woken up 3061 times to write data ]
+[ perf record: Woken up 3064 times to write data ]
+[ perf record: Woken up 3056 times to write data ]
+[ perf record: Woken up 3060 times to write data ]
+[ perf record: Woken up 4227 times to write data ]
+Warning:
+Processed 100713 events and lost 1 chunks!
+
+Check IO/CPU overload!
+
+[ perf record: Woken up 3057 times to write data ]
+[ perf record: Woken up 4355 times to write data ]
+[ perf record: Woken up 3062 times to write data ]
+Warning:
+Processed 92666 events and lost 3 chunks!
+
+Check IO/CPU overload!
+
+Warning:
+Processed 100969 events and lost 1 chunks!
+
+Check IO/CPU overload!
+
+[ perf record: Woken up 3061 times to write data ]
+[ perf record: Captured and wrote 701.955 MB /leonardo_scratch/large/userexternal/ctica000/perf/with_IO/sequential_write/perf_22461926/perf.data.rank3 (87076 samples) ]
+[ perf record: Captured and wrote 696.029 MB /leonardo_scratch/large/userexternal/ctica000/perf/with_IO/sequential_write/perf_22461926/perf.data.rank1 (86340 samples) ]
+[ perf record: Captured and wrote 701.241 MB /leonardo_scratch/large/userexternal/ctica000/perf/with_IO/sequential_write/perf_22461926/perf.data.rank2 (86987 samples) ]
+[ perf record: Captured and wrote 765.098 MB /leonardo_scratch/large/userexternal/ctica000/perf/with_IO/sequential_write/perf_22461926/perf.data.rank7 (94910 samples) ]
+[ perf record: Captured and wrote 764.436 MB /leonardo_scratch/large/userexternal/ctica000/perf/with_IO/sequential_write/perf_22461926/perf.data.rank6 (94830 samples) ]
+[ perf record: Captured and wrote 765.626 MB /leonardo_scratch/large/userexternal/ctica000/perf/with_IO/sequential_write/perf_22461926/perf.data.rank8 (94975 samples) ]
+[ perf record: Captured and wrote 765.109 MB /leonardo_scratch/large/userexternal/ctica000/perf/with_IO/sequential_write/perf_22461926/perf.data.rank11 (94914 samples) ]
+[ perf record: Captured and wrote 765.320 MB /leonardo_scratch/large/userexternal/ctica000/perf/with_IO/sequential_write/perf_22461926/perf.data.rank5 (94940 samples) ]
+[ perf record: Captured and wrote 766.113 MB /leonardo_scratch/large/userexternal/ctica000/perf/with_IO/sequential_write/perf_22461926/perf.data.rank10 (95035 samples) ]
+[ perf record: Captured and wrote 764.461 MB /leonardo_scratch/large/userexternal/ctica000/perf/with_IO/sequential_write/perf_22461926/perf.data.rank9 (94829 samples) ]
+[ perf record: Captured and wrote 765.482 MB /leonardo_scratch/large/userexternal/ctica000/perf/with_IO/sequential_write/perf_22461926/perf.data.rank12 (94961 samples) ]
+[ perf record: Captured and wrote 764.416 MB /leonardo_scratch/large/userexternal/ctica000/perf/with_IO/sequential_write/perf_22461926/perf.data.rank14 (94829 samples) ]
+[ perf record: Captured and wrote 764.986 MB /leonardo_scratch/large/userexternal/ctica000/perf/with_IO/sequential_write/perf_22461926/perf.data.rank4 (94899 samples) ]
+[ perf record: Captured and wrote 765.573 MB /leonardo_scratch/large/userexternal/ctica000/perf/with_IO/sequential_write/perf_22461926/perf.data.rank15 (94973 samples) ]
+[ perf record: Captured and wrote 765.383 MB /leonardo_scratch/large/userexternal/ctica000/perf/with_IO/sequential_write/perf_22461926/perf.data.rank13 (94949 samples) ]
+[ perf record: Woken up 3794 times to write data ]
+srun: error: lrdn2676: tasks 4-7: Segmentation fault
+srun: error: lrdn2673: tasks 1-3: Segmentation fault
+srun: error: lrdn2677: tasks 8-11: Segmentation fault
+[ perf record: Captured and wrote 949.009 MB /leonardo_scratch/large/userexternal/ctica000/perf/with_IO/sequential_write/perf_22461926/perf.data.rank0 (117466 samples) ]
+srun: error: lrdn2678: tasks 12-15: Segmentation fault
+slurmstepd: error: *** STEP 22461926.0 ON lrdn2673 CANCELLED AT 2025-10-24T22:41:50 ***
+srun: Job step aborted: Waiting up to 182 seconds for job step to finish.
+srun: error: lrdn2673: task 0: Killed

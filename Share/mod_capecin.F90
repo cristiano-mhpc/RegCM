@@ -85,11 +85,12 @@ module mod_capecin
   !
   !            cin - Convective Inhibition (J/kg) (real)
   !
-  subroutine getcape(nk,p,t,rh,cape,cin)
+  pure subroutine getcape(nk,p,t,rh,cape,cin)
+    !$acc routine seq 
     implicit none
 
     integer(ik4), intent(in) :: nk
-    real(rkx), dimension(nk), intent(in) :: p, t, rh
+    real(rkx), intent(in),contiguous :: p(:), t(:), rh(:)
     real(rkx), intent(out) :: cape, cin
 
     logical :: doit, ice, cloud, not_converged

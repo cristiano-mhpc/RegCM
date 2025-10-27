@@ -1,0 +1,10 @@
+srun: Job step aborted: Waiting up to 182 seconds for job step to finish.
+slurmstepd: error: *** STEP 22696000.0 ON lrdn1241 CANCELLED AT 2025-10-26T10:56:25 ***
+slurmstepd: error: *** JOB 22696000 ON lrdn1241 CANCELLED AT 2025-10-26T10:56:25 ***
+[ perf record: Woken up 9992 times to write data ]
+[ perf record: Woken up 10015 times to write data ]
+[ perf record: Woken up 10001 times to write data ]
+[ perf record: Woken up 10768 times to write data ]
+[ perf record: Woken up 9780 times to write data ]
+[ perf record: Woken up 9739 times to write data ]
+[ perf record: Woken up 9741 times to write data ]

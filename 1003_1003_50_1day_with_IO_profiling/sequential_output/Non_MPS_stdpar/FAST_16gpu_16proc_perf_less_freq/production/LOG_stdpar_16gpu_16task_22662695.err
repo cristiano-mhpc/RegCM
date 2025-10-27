@@ -1,0 +1,62 @@
+[ perf record: Woken up 23775 times to write data ]
+[ perf record: Woken up 23740 times to write data ]
+[ perf record: Woken up 23710 times to write data ]
+[ perf record: Woken up 23717 times to write data ]
+[ perf record: Woken up 23732 times to write data ]
+[ perf record: Woken up 23717 times to write data ]
+[ perf record: Woken up 23689 times to write data ]
+[ perf record: Woken up 23762 times to write data ]
+[ perf record: Woken up 23737 times to write data ]
+[ perf record: Woken up 25371 times to write data ]
+[ perf record: Woken up 25361 times to write data ]
+[ perf record: Woken up 25504 times to write data ]
+Warning:
+Processed 773598 events and lost 3 chunks!
+
+Check IO/CPU overload!
+
+Warning:
+Processed 765438 events and lost 1 chunks!
+
+Check IO/CPU overload!
+
+[ perf record: Captured and wrote 5929.212 MB /leonardo_scratch/large/userexternal/ctica000/perf/with_IO/sequential_write/perf_22662695/perf.data.rank11 (735820 samples) ]
+[ perf record: Captured and wrote 5934.114 MB /leonardo_scratch/large/userexternal/ctica000/perf/with_IO/sequential_write/perf_22662695/perf.data.rank8 (736341 samples) ]
+[ perf record: Captured and wrote 5944.084 MB /leonardo_scratch/large/userexternal/ctica000/perf/with_IO/sequential_write/perf_22662695/perf.data.rank10 (737578 samples) ]
+[ perf record: Captured and wrote 5932.136 MB /leonardo_scratch/large/userexternal/ctica000/perf/with_IO/sequential_write/perf_22662695/perf.data.rank12 (736195 samples) ]
+[ perf record: Captured and wrote 5935.720 MB /leonardo_scratch/large/userexternal/ctica000/perf/with_IO/sequential_write/perf_22662695/perf.data.rank13 (736640 samples) ]
+[ perf record: Captured and wrote 5933.359 MB /leonardo_scratch/large/userexternal/ctica000/perf/with_IO/sequential_write/perf_22662695/perf.data.rank14 (736347 samples) ]
+[ perf record: Captured and wrote 5929.655 MB /leonardo_scratch/large/userexternal/ctica000/perf/with_IO/sequential_write/perf_22662695/perf.data.rank9 (735781 samples) ]
+[ perf record: Captured and wrote 5927.943 MB /leonardo_scratch/large/userexternal/ctica000/perf/with_IO/sequential_write/perf_22662695/perf.data.rank5 (735661 samples) ]
+[ perf record: Captured and wrote 5922.630 MB /leonardo_scratch/large/userexternal/ctica000/perf/with_IO/sequential_write/perf_22662695/perf.data.rank6 (735002 samples) ]
+[ perf record: Captured and wrote 5930.931 MB /leonardo_scratch/large/userexternal/ctica000/perf/with_IO/sequential_write/perf_22662695/perf.data.rank15 (736036 samples) ]
+[ perf record: Captured and wrote 5918.961 MB /leonardo_scratch/large/userexternal/ctica000/perf/with_IO/sequential_write/perf_22662695/perf.data.rank4 (734547 samples) ]
+[ perf record: Captured and wrote 5939.258 MB /leonardo_scratch/large/userexternal/ctica000/perf/with_IO/sequential_write/perf_22662695/perf.data.rank7 (736980 samples) ]
+[ perf record: Woken up 23548 times to write data ]
+[ perf record: Woken up 24062 times to write data ]
+[ perf record: Woken up 23611 times to write data ]
+[ perf record: Woken up 25558 times to write data ]
+Warning:
+Processed 760939 events and lost 1 chunks!
+
+Check IO/CPU overload!
+
+Warning:
+Processed 762482 events and lost 1 chunks!
+
+Check IO/CPU overload!
+
+Warning:
+Processed 761660 events and lost 17 chunks!
+
+Check IO/CPU overload!
+
+[ perf record: Captured and wrote 5899.902 MB /leonardo_scratch/large/userexternal/ctica000/perf/with_IO/sequential_write/perf_22662695/perf.data.rank3 (732182 samples) ]
+[ perf record: Captured and wrote 5887.666 MB /leonardo_scratch/large/userexternal/ctica000/perf/with_IO/sequential_write/perf_22662695/perf.data.rank1 (730663 samples) ]
+[ perf record: Captured and wrote 5893.114 MB /leonardo_scratch/large/userexternal/ctica000/perf/with_IO/sequential_write/perf_22662695/perf.data.rank2 (731339 samples) ]
+Warning:
+Processed 1003351 events and lost 56 chunks!
+
+Check IO/CPU overload!
+
+[ perf record: Captured and wrote 6057.623 MB /leonardo_scratch/large/userexternal/ctica000/perf/with_IO/sequential_write/perf_22662695/perf.data.rank0 (748941 samples) ]

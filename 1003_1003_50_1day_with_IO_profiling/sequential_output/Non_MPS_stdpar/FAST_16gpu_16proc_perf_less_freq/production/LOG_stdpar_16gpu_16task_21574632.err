@@ -1,0 +1,19 @@
+srun: Job step aborted: Waiting up to 182 seconds for job step to finish.
+[ perf record: Woken up 12574 times to write data ]
+[ perf record: Woken up 12569 times to write data ]
+[ perf record: Woken up 12589 times to write data ]
+[ perf record: Woken up 12579 times to write data ]
+[ perf record: Woken up 12581 times to write data ]
+[ perf record: Woken up 12571 times to write data ]
+[ perf record: Woken up 12563 times to write data ]
+[ perf record: Woken up 12597 times to write data ]
+[ perf record: Woken up 12572 times to write data ]
+slurmstepd: error: *** STEP 21574632.0 ON lrdn0760 CANCELLED AT 2025-10-14T02:24:12 ***
+[ perf record: Woken up 12552 times to write data ]
+[ perf record: Woken up 12584 times to write data ]
+[ perf record: Woken up 12548 times to write data ]
+[ perf record: Woken up 12296 times to write data ]
+[ perf record: Woken up 13431 times to write data ]
+[ perf record: Woken up 12292 times to write data ]
+[ perf record: Woken up 12345 times to write data ]
+slurmstepd: error: *** JOB 21574632 ON lrdn0760 CANCELLED AT 2025-10-14T02:24:12 ***

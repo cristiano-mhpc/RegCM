@@ -1,0 +1,771 @@
+srun: no partition specified, using default partition lrd_all_serial
+srun: no gres/tmpfs specified, using default: gres/tmpfs:10g
+srun: job 21575845 queued and waiting for resources
+srun: job 21575845 has been allocated resources
+/usr/bin/make  all-recursive
+Making all in external
+make[2]: Nothing to be done for 'all'.
+Making all in Share
+make[2]: Nothing to be done for 'all'.
+Making all in PreProc
+Making all in Terrain
+make[3]: Nothing to be done for 'all'.
+Making all in ICBC
+Making all in cmip6
+make[4]: Nothing to be done for 'all'.
+make[4]: Nothing to be done for 'all-am'.
+Making all in CLM
+make[3]: Nothing to be done for 'all'.
+Making all in CLM45
+make[3]: Nothing to be done for 'all'.
+Making all in CH_EMISSIONS
+Making all in interpolation
+Making all in tools
+Making all in REGCM_grid
+make[6]: Nothing to be done for 'all'.
+make[6]: Nothing to be done for 'all-am'.
+make[5]: Nothing to be done for 'all-am'.
+make[4]: Nothing to be done for 'all-am'.
+make[3]: Nothing to be done for 'all-am'.
+Making all in Main
+Making all in mpplib
+make[3]: Nothing to be done for 'all'.
+Making all in netlib
+make[3]: Nothing to be done for 'all'.
+Making all in batslib
+make[3]: Nothing to be done for 'all'.
+Making all in ocnlib
+make[3]: Nothing to be done for 'all'.
+Making all in chemlib
+Making all in GAS_CBMZ_NEW
+make[4]: Nothing to be done for 'all'.
+make[4]: Nothing to be done for 'all-am'.
+Making all in clmlib
+Making all in clm4.5
+make[4]: Nothing to be done for 'all'.
+make[4]: Nothing to be done for 'all-am'.
+Making all in microlib
+make[3]: Nothing to be done for 'all'.
+Making all in cloudlib
+make[3]: Nothing to be done for 'all'.
+Making all in cumlib
+make[3]: Nothing to be done for 'all'.
+Making all in radlib
+Making all in RRTMG
+make[4]: Nothing to be done for 'all'.
+make[4]: Nothing to be done for 'all-am'.
+Making all in pbllib
+make[3]: Nothing to be done for 'all'.
+Making all in oasislib
+make[3]: Nothing to be done for 'all'.
+make[3]: Entering directory '/leonardo/home/userexternal/ctica000/MS_thesis/RegCM/Main'
+mpifort -I/leonardo/home/userexternal/ctica000/MS_thesis/RegCM/external -DNCFILTERS_AVAIL -DNETCDF4_HDF5 -I/leonardo/prod/spack/06/install/0.22/linux-rhel8-icelake/nvhpc-24.5/netcdf-c-4.9.2-ggbu5c62vlol4oe6sgxpjxzvapbge2hk/include -I/leonardo/prod/spack/06/install/0.22/linux-rhel8-icelake/nvhpc-24.5/netcdf-fortran-4.6.1-nvymynen3aoyohew4d7t646sjig4ufl6/include -I/leonardo/prod/spack/06/install/0.22/linux-rhel8-icelake/nvhpc-24.5/netcdf-fortran-4.6.1-nvymynen3aoyohew4d7t646sjig4ufl6/include -I/leonardo/prod/spack/06/install/0.22/linux-rhel8-icelake/nvhpc-24.5/netcdf-c-4.9.2-ggbu5c62vlol4oe6sgxpjxzvapbge2hk/include -I/leonardo/prod/spack/06/install/0.22/linux-rhel8-icelake/nvhpc-24.5/netcdf-fortran-4.6.1-nvymynen3aoyohew4d7t646sjig4ufl6/include -I/leonardo/prod/spack/06/install/0.22/linux-rhel8-icelake/nvhpc-24.5/netcdf-fortran-4.6.1-nvymynen3aoyohew4d7t646sjig4ufl6/include -DCLM45 -DOPENACC -DGPU  -DSTDPAR -I/leonardo/home/userexternal/ctica000/MS_thesis/RegCM/Share  -I./mpplib -I./clmlib -I./netlib -Ichemlib/GAS_CBMZ_NEW -I./chemlib -I./batslib -I./ocnlib -I./cumlib -I./microlib -I./cloudlib -I./radlib -I./pbllib -Iradlib/RRTMG -I./clmlib/clm4.5 -I./oasislib -DGIT_VER=\"5.0.0-944-g5801-dirty\" -DUSE_MPI3 -DF2008 -O3 -fast -fastsse -g -byteswapio -g -stdpar=gpu           -gpu=ccall-major,lineinfo,mem:managed -Minfo=accel -c mod_output.F90
+make[3]: Leaving directory '/leonardo/home/userexternal/ctica000/MS_thesis/RegCM/Main'
+output:
+     96, Generating NVIDIA GPU code
+         96,   ! blockidx%x threadidx%x auto-collapsed
+             Loop parallelized across CUDA thread blocks, CUDA threads(128) collapse(2) ! blockidx%x threadidx%x collapsed-innermost
+     96, Generating implicit copyin(mddom%xlon(jci1:jci2,ici1:ici2)) [if not already present]
+         Generating implicit copyout(mask_out(jci1:jci2,ici1:ici2)) [if not already present]
+         Generating implicit copyin(mddom%area(jci1:jci2,ici1:ici2)) [if not already present]
+         Generating implicit copyout(area_out(jci1:jci2,ici1:ici2)) [if not already present]
+         Generating implicit copyin(mddom%ht(jci1:jci2,ici1:ici2)) [if not already present]
+         Generating implicit copyout(xlat_out(jci1:jci2,ici1:ici2),xlon_out(jci1:jci2,ici1:ici2)) [if not already present]
+         Generating implicit copyin(mddom%xlat(jci1:jci2,ici1:ici2),mddom%mask(jci1:jci2,ici1:ici2)) [if not already present]
+         Generating implicit copyout(topo_out(jci1:jci2,ici1:ici2)) [if not already present]
+         Generating implicit copyin(mddom) [if not already present]
+    115, Generating NVIDIA GPU code
+        115,   ! blockidx%x threadidx%x auto-collapsed
+             Loop parallelized across CUDA thread blocks, CUDA threads(128) collapse(2) ! blockidx%x threadidx%x collapsed-innermost
+    115, Generating implicit copyout(p0_out(jci1:jci2,ici1:ici2)) [if not already present]
+         Generating implicit copyin(atm0%ps(jci1:jci2,ici1:ici2),atm0) [if not already present]
+    229, Generating NVIDIA GPU code
+        229,   ! blockidx%x threadidx%x auto-collapsed
+             Loop parallelized across CUDA thread blocks, CUDA threads(128) collapse(2) ! blockidx%x threadidx%x collapsed-innermost
+    229, Generating implicit copyout(ps_out(jci1:jci2,ici1:ici2)) [if not already present]
+         Generating implicit copyin(sfs%psa(jci1:jci2,ici1:ici2),sfs) [if not already present]
+    234, Generating NVIDIA GPU code
+        234,   ! blockidx%x threadidx%x auto-collapsed
+             Loop parallelized across CUDA thread blocks, CUDA threads(128) collapse(3) ! blockidx%x threadidx%x collapsed-innermost
+    234, Generating implicit copyout(atm_t_out(jci1:jci2,ici1:ici2,1:kz)) [if not already present]
+         Generating implicit copyin(mo_atm,mo_atm%t(jci1:jci2,ici1:ici2,1:kz)) [if not already present]
+    238, Generating NVIDIA GPU code
+        238,   ! blockidx%x threadidx%x auto-collapsed
+             Loop parallelized across CUDA thread blocks, CUDA threads(128) collapse(3) ! blockidx%x threadidx%x collapsed-innermost
+    238, Generating implicit copyin(atm1,ps_out(jci1:jci2,ici1:ici2)) [if not already present]
+         Generating implicit copyout(atm_t_out(jci1:jci2,ici1:ici2,1:kz)) [if not already present]
+         Generating implicit copyin(atm1%t(jci1:jci2,ici1:ici2,1:kz)) [if not already present]
+         246, Generating NVIDIA GPU code
+             246,   ! blockidx%x threadidx%x auto-collapsed
+                  Loop parallelized across CUDA thread blocks, CUDA threads(128) collapse(3) ! blockidx%x threadidx%x collapsed-innermost
+         246, Generating implicit copyin(mo_atm) [if not already present]
+              Generating implicit copyout(mo_atm%ux(jce2,ice1:ice2,1:kz)) [if not already present]
+              Generating implicit copyin(mo_atm%u(jci1-1:jci2+2,ice1:ice2,1:kz),mo_atm%u(:,ice1:ice2,1:kz)) [if not already present]
+              Generating implicit copyout(mo_atm%ux(jce1,ice1:ice2,1:kz),mo_atm%vx(jce1:jce2,ici1:ici2,1:kz),mo_atm%vx(jce1:jce2,ice2,1:kz)) [if not already present]
+              Generating implicit copyin(mo_atm%v(jce1:jce2,ici1-1:ici2+2,1:kz),mo_atm%v(jce1:jce2,:,1:kz)) [if not already present]
+              Generating implicit copyout(mo_atm%ux(jci1:jci2,ice1:ice2,1:kz),mo_atm%vx(jce1:jce2,ice1,1:kz)) [if not already present]
+    248, Generating NVIDIA GPU code
+        248,   ! blockidx%x threadidx%x auto-collapsed
+             Loop parallelized across CUDA thread blocks, CUDA threads(128) collapse(3) ! blockidx%x threadidx%x collapsed-innermost
+    248, Generating implicit copyout(atm_v_out(jci1:jci2,ici1:ici2,1:kz)) [if not already present]
+         Generating implicit copyin(mo_atm,mo_atm%vx(jci1:jci2,ici1:ici2,1:kz),mo_atm%ux(jci1:jci2,ici1:ici2,1:kz)) [if not already present]
+         Generating implicit copyout(atm_u_out(jci1:jci2,ici1:ici2,1:kz)) [if not already present]
+    255, Generating NVIDIA GPU code
+        255,   ! blockidx%x threadidx%x auto-collapsed
+             Loop parallelized across CUDA thread blocks, CUDA threads(128) collapse(3) ! blockidx%x threadidx%x collapsed-innermost
+    255, Generating implicit copyin(atm1%v(jci1:jci2+1,ici1:ici2+1,1:kz)) [if not already present]
+         Generating implicit copyout(atm_v_out(jci1:jci2,ici1:ici2,1:kz)) [if not already present]
+         Generating implicit copyin(ps_out(jci1:jci2,ici1:ici2),atm1,atm1%u(jci1:jci2+1,ici1:ici2+1,1:kz)) [if not already present]
+         Generating implicit copyout(atm_u_out(jci1:jci2,ici1:ici2,1:kz)) [if not already present]
+    267, Generating NVIDIA GPU code
+        267,   ! blockidx%x threadidx%x auto-collapsed
+             Loop parallelized across CUDA thread blocks, CUDA threads(128) collapse(3) ! blockidx%x threadidx%x collapsed-innermost
+    267, Generating implicit copyin(omega(jci1:jci2,ici1:ici2,1:kz)) [if not already present]
+         Generating implicit copyout(atm_omega_out(jci1:jci2,ici1:ici2,1:kz)) [if not already present]
+         273, Generating NVIDIA GPU code
+             273,   ! blockidx%x threadidx%x auto-collapsed
+                  Loop parallelized across CUDA thread blocks, CUDA threads(128) collapse(3) ! blockidx%x threadidx%x collapsed-innermost
+         273, Generating implicit copyin(mo_atm) [if not already present]
+              Generating implicit copyout(atm_w_out(jci1:jci2,ici1:ici2,2:kzm1)) [if not already present]
+              Generating implicit copyout(atm_w_out(jci1:jci2,ici1:ici2,kz)) [if not already present]
+              Generating implicit copyin(mo_atm%w(jci1:jci2,ici1:ici2,:),mo_atm%w(jci1:jci2,ici1:ici2,1:kzm1+2)) [if not already present]
+              Generating implicit allocate(atm_w_out(jci1:jci2,ici1:ici2,:)) [if not already present]
+    275, Generating NVIDIA GPU code
+        275,   ! blockidx%x threadidx%x auto-collapsed
+             Loop parallelized across CUDA thread blocks, CUDA threads(128) collapse(3) ! blockidx%x threadidx%x collapsed-innermost
+    275, Generating implicit copyin(atm1,ps_out(jci1:jci2,ici1:ici2)) [if not already present]
+         Generating implicit copyout(atm_w_out(jci1:jci2,ici1:ici2,1:kz)) [if not already present]
+         Generating implicit copyin(atm1%w(jci1:jci2,ici1:ici2,1:kz+1)) [if not already present]
+    282, Generating NVIDIA GPU code
+        282,   ! blockidx%x threadidx%x auto-collapsed
+             Loop parallelized across CUDA thread blocks, CUDA threads(128) collapse(3) ! blockidx%x threadidx%x collapsed-innermost
+    282, Generating implicit copyout(atm_pai_out(jci1:jci2,ici1:ici2,1:kz)) [if not already present]
+         Generating implicit copyin(mo_atm,mo_atm%pai(jci1:jci2,ici1:ici2,1:kz)) [if not already present]
+    287, Generating NVIDIA GPU code
+        287,   ! blockidx%x threadidx%x auto-collapsed
+             Loop parallelized across CUDA thread blocks, CUDA threads(128) collapse(3) ! blockidx%x threadidx%x collapsed-innermost
+    287, Generating implicit copyin(atm1,ps_out(jci1:jci2,ici1:ici2)) [if not already present]
+         Generating implicit copyout(atm_pp_out(jci1:jci2,ici1:ici2,1:kz)) [if not already present]
+         Generating implicit copyin(atm1%pp(jci1:jci2,ici1:ici2,1:kz)) [if not already present]
+    293, Generating NVIDIA GPU code
+        293,   ! blockidx%x threadidx%x auto-collapsed
+             Loop parallelized across CUDA thread blocks, CUDA threads(128) collapse(3) ! blockidx%x threadidx%x collapsed-innermost
+    293, Generating implicit copyout(atm_qv_out(jci1:jci2,ici1:ici2,1:kz)) [if not already present]
+         Generating implicit copyin(mo_atm%qx(jci1:jci2,ici1:ici2,1:kz,1),mo_atm) [if not already present]
+    297, Generating NVIDIA GPU code
+        297,   ! blockidx%x threadidx%x auto-collapsed
+             Loop parallelized across CUDA thread blocks, CUDA threads(128) collapse(3) ! blockidx%x threadidx%x collapsed-innermost
+    297, Generating implicit copyin(atm1) [if not already present]
+         Generating implicit copyout(atm_qv_out(jci1:jci2,ici1:ici2,1:kz)) [if not already present]
+         Generating implicit copyin(ps_out(jci1:jci2,ici1:ici2),atm1%qx(jci1:jci2,ici1:ici2,1:kz,1)) [if not already present]
+    306, Generating NVIDIA GPU code
+        306,   ! blockidx%x threadidx%x auto-collapsed
+             Loop parallelized across CUDA thread blocks, CUDA threads(128) collapse(3) ! blockidx%x threadidx%x collapsed-innermost
+    306, Generating implicit copyout(atm_qc_out(jci1:jci2,ici1:ici2,1:kz)) [if not already present]
+         Generating implicit copyin(mo_atm,mo_atm%qx(jci1:jci2,ici1:ici2,1:kz,2)) [if not already present]
+    310, Generating NVIDIA GPU code
+        310,   ! blockidx%x threadidx%x auto-collapsed
+             Loop parallelized across CUDA thread blocks, CUDA threads(128) collapse(3) ! blockidx%x threadidx%x collapsed-innermost
+    310, Generating implicit copyin(atm1,ps_out(jci1:jci2,ici1:ici2)) [if not already present]
+         Generating implicit copyout(atm_qc_out(jci1:jci2,ici1:ici2,1:kz)) [if not already present]
+         Generating implicit copyin(atm1%qx(jci1:jci2,ici1:ici2,1:kz,2)) [if not already present]
+    317, Generating NVIDIA GPU code
+        317,   ! blockidx%x threadidx%x auto-collapsed
+             Loop parallelized across CUDA thread blocks, CUDA threads(128) collapse(3) ! blockidx%x threadidx%x collapsed-innermost
+    317, Generating implicit copyout(atm_qr_out(jci1:jci2,ici1:ici2,1:kz)) [if not already present]
+         Generating implicit copyin(mo_atm,mo_atm%qx(jci1:jci2,ici1:ici2,1:kz,4)) [if not already present]
+    321, Generating NVIDIA GPU code
+        321,   ! blockidx%x threadidx%x auto-collapsed
+             Loop parallelized across CUDA thread blocks, CUDA threads(128) collapse(3) ! blockidx%x threadidx%x collapsed-innermost
+    321, Generating implicit copyin(atm1,ps_out(jci1:jci2,ici1:ici2)) [if not already present]
+         Generating implicit copyout(atm_qr_out(jci1:jci2,ici1:ici2,1:kz)) [if not already present]
+         Generating implicit copyin(atm1%qx(jci1:jci2,ici1:ici2,1:kz,4)) [if not already present]
+    328, Generating NVIDIA GPU code
+        328,   ! blockidx%x threadidx%x auto-collapsed
+             Loop parallelized across CUDA thread blocks, CUDA threads(128) collapse(3) ! blockidx%x threadidx%x collapsed-innermost
+    328, Generating implicit copyout(atm_qi_out(jci1:jci2,ici1:ici2,1:kz)) [if not already present]
+         Generating implicit copyin(mo_atm%qx(jci1:jci2,ici1:ici2,1:kz,3),mo_atm) [if not already present]
+    332, Generating NVIDIA GPU code
+        332,   ! blockidx%x threadidx%x auto-collapsed
+             Loop parallelized across CUDA thread blocks, CUDA threads(128) collapse(3) ! blockidx%x threadidx%x collapsed-innermost
+    332, Generating implicit copyin(atm1) [if not already present]
+         Generating implicit copyout(atm_qi_out(jci1:jci2,ici1:ici2,1:kz)) [if not already present]
+         Generating implicit copyin(ps_out(jci1:jci2,ici1:ici2),atm1%qx(jci1:jci2,ici1:ici2,1:kz,3)) [if not already present]
+    339, Generating NVIDIA GPU code
+        339,   ! blockidx%x threadidx%x auto-collapsed
+             Loop parallelized across CUDA thread blocks, CUDA threads(128) collapse(3) ! blockidx%x threadidx%x collapsed-innermost
+    339, Generating implicit copyout(atm_qs_out(jci1:jci2,ici1:ici2,1:kz)) [if not already present]
+         Generating implicit copyin(mo_atm,mo_atm%qx(jci1:jci2,ici1:ici2,1:kz,5)) [if not already present]
+    343, Generating NVIDIA GPU code
+        343,   ! blockidx%x threadidx%x auto-collapsed
+             Loop parallelized across CUDA thread blocks, CUDA threads(128) collapse(3) ! blockidx%x threadidx%x collapsed-innermost
+    343, Generating implicit copyin(atm1,ps_out(jci1:jci2,ici1:ici2)) [if not already present]
+         Generating implicit copyout(atm_qs_out(jci1:jci2,ici1:ici2,1:kz)) [if not already present]
+         Generating implicit copyin(atm1%qx(jci1:jci2,ici1:ici2,1:kz,5)) [if not already present]
+    405, Generating NVIDIA GPU code
+        405,   ! blockidx%x threadidx%x auto-collapsed-innermost
+               ! blockidx%x threadidx%x auto-collapsed
+             Loop parallelized across CUDA thread blocks, CUDA threads(128) collapse(3) ! blockidx%x threadidx%x
+    405, Generating implicit copyout(atm_rh_out(:,:,:)) [if not already present]
+         Generating implicit copyin(mo_atm%qx(:,:,:,1),mo_atm) [if not already present]
+    411, Generating NVIDIA GPU code
+        411,   ! blockidx%x threadidx%x auto-collapsed-innermost
+               ! blockidx%x threadidx%x auto-collapsed
+             Loop parallelized across CUDA thread blocks, CUDA threads(128) collapse(3) ! blockidx%x threadidx%x
+    411, Generating implicit copyin(atm1%t(:,:,:),atm1,ps_out(:,:)) [if not already present]
+         Generating implicit copyout(atm_rh_out(:,:,:)) [if not already present]
+         Generating implicit copyin(atm1%qx(:,:,:,1)) [if not already present]
+    419, Generating NVIDIA GPU code
+        419,   ! blockidx%x threadidx%x auto-collapsed
+             Loop parallelized across CUDA thread blocks, CUDA threads(128) collapse(3) ! blockidx%x threadidx%x collapsed-innermost
+    419, Generating implicit copyout(atm_pf_out(jci1:jci2,ici1:ici2,1:kz)) [if not already present]
+         Generating implicit copyin(atms%pf3d(jci1:jci2,ici1:ici2,1:kz),atms) [if not already present]
+    425, Generating NVIDIA GPU code
+        425,   ! blockidx%x threadidx%x auto-collapsed
+             Loop parallelized across CUDA thread blocks, CUDA threads(128) collapse(3) ! blockidx%x threadidx%x collapsed-innermost
+    425, Generating implicit copyout(atm_ph_out(jci1:jci2,ici1:ici2,1:kz)) [if not already present]
+         Generating implicit copyin(sfs,sfs%psa(jci1:jci2,ici1:ici2),sigma(1:kz)) [if not already present]
+    446, Generating NVIDIA GPU code
+        446,   ! blockidx%x threadidx%x auto-collapsed
+             Loop parallelized across CUDA thread blocks, CUDA threads(128) collapse(3) ! blockidx%x threadidx%x collapsed-innermost
+    446, Generating implicit copyin(atm0,atm0%pf(jci1:jci2,ici1:ici2,2:kz),atm1) [if not already present]
+         Generating implicit copyout(atm_ph_out(jci1:jci2,ici1:ici2,2:kz)) [if not already present]
+         Generating implicit copyin(sfs%psa(jci1:jci2,ici1:ici2),sfs,atm1%pp(jci1:jci2,ici1:ici2,1:kz)) [if not already present]
+    452, Generating NVIDIA GPU code
+        452,   ! blockidx%x threadidx%x auto-collapsed
+             Loop parallelized across CUDA thread blocks, CUDA threads(128) collapse(3) ! blockidx%x threadidx%x collapsed-innermost
+    452, Generating implicit copyout(atm_zh_out(jci1:jci2,ici1:ici2,1:kz)) [if not already present]
+         Generating implicit copyin(atms%za(jci1:jci2,ici1:ici2,1:kz),atms) [if not already present]
+    458, Generating NVIDIA GPU code
+        458,   ! blockidx%x threadidx%x auto-collapsed
+             Loop parallelized across CUDA thread blocks, CUDA threads(128) collapse(3) ! blockidx%x threadidx%x collapsed-innermost
+    458, Generating implicit copyout(atm_ph_out(jci1:jci2,ici1:ici2,1:kz)) [if not already present]
+         Generating implicit copyin(mo_atm%pai(jci1:jci2,ici1:ici2,1:kz),mo_atm) [if not already present]
+    463, Generating NVIDIA GPU code
+        463,   ! blockidx%x threadidx%x auto-collapsed
+             Loop parallelized across CUDA thread blocks, CUDA threads(128) collapse(3) ! blockidx%x threadidx%x collapsed-innermost
+    463, Generating implicit copyout(atm_zh_out(jci1:jci2,ici1:ici2,1:kz)) [if not already present]
+         Generating implicit copyin(mo_atm%zeta(jci1:jci2,ici1:ici2,1:kz),mo_atm) [if not already present]
+    469, Generating NVIDIA GPU code
+        469,   ! blockidx%x threadidx%x auto-collapsed
+             Loop parallelized across CUDA thread blocks, CUDA threads(128) collapse(3) ! blockidx%x threadidx%x collapsed-innermost
+    469, Generating implicit copyout(atm_zf_out(jci1:jci2,ici1:ici2,1:kz)) [if not already present]
+         Generating implicit copyin(atms%zq(jci1:jci2,ici1:ici2,1:kz),atms) [if not already present]
+    475, Generating NVIDIA GPU code
+        475,   ! blockidx%x threadidx%x auto-collapsed
+             Loop parallelized across CUDA thread blocks, CUDA threads(128) collapse(3) ! blockidx%x threadidx%x collapsed-innermost
+    475, Generating implicit copyin(rain_ls(jci1:jci2,ici1:ici2,1:kz)) [if not already present]
+         Generating implicit copyout(atm_rainls_out(jci1:jci2,ici1:ici2,1:kz)) [if not already present]
+    481, Generating NVIDIA GPU code
+        481,   ! blockidx%x threadidx%x auto-collapsed
+             Loop parallelized across CUDA thread blocks, CUDA threads(128) collapse(3) ! blockidx%x threadidx%x collapsed-innermost
+    481, Generating implicit copyout(atm_raincc_out(jci1:jci2,ici1:ici2,1:kz)) [if not already present]
+         Generating implicit copyin(rain_cc(jci1:jci2,ici1:ici2,1:kz)) [if not already present]
+    486, Generating NVIDIA GPU code
+        486,   ! blockidx%x threadidx%x auto-collapsed
+             Loop parallelized across CUDA thread blocks, CUDA threads(128) collapse(3) ! blockidx%x threadidx%x collapsed-innermost
+    486, Generating implicit copyin(q_detr(jci1:jci2,ici1:ici2,1:kz)) [if not already present]
+         Generating implicit copyout(atm_q_detr_out(jci1:jci2,ici1:ici2,1:kz)) [if not already present]
+    584, Generating NVIDIA GPU code
+        584,   ! blockidx%x threadidx%x auto-collapsed
+             Loop parallelized across CUDA thread blocks, CUDA threads(128) collapse(3) ! blockidx%x threadidx%x collapsed-innermost
+    584, Generating implicit copyout(atm_tke_out(jci1:jci2,ici1:ici2,1:kz)) [if not already present]
+         Generating implicit copyin(mo_atm,mo_atm%tke(jci1:jci2,ici1:ici2,1:kz)) [if not already present]
+    588, Generating NVIDIA GPU code
+        588,   ! blockidx%x threadidx%x auto-collapsed
+             Loop parallelized across CUDA thread blocks, CUDA threads(128) collapse(3) ! blockidx%x threadidx%x collapsed-innermost
+    588, Generating implicit copyin(atm1) [if not already present]
+         Generating implicit copyout(atm_tke_out(jci1:jci2,ici1:ici2,1:kz)) [if not already present]
+         Generating implicit copyin(atm1%tke(jci1:jci2,ici1:ici2,1:kz)) [if not already present]
+    594, Generating NVIDIA GPU code
+        594,   ! blockidx%x threadidx%x auto-collapsed
+             Loop parallelized across CUDA thread blocks, CUDA threads(128) collapse(3) ! blockidx%x threadidx%x collapsed-innermost
+    594, Generating implicit copyout(atm_kth_out(jci1:jci2,ici1:ici2,1:kz)) [if not already present]
+         Generating implicit copyin(uwstate%kth(jci1:jci2,ici1:ici2,1:kz),uwstate) [if not already present]
+    599, Generating NVIDIA GPU code
+        599,   ! blockidx%x threadidx%x auto-collapsed
+             Loop parallelized across CUDA thread blocks, CUDA threads(128) collapse(3) ! blockidx%x threadidx%x collapsed-innermost
+    599, Generating implicit copyout(atm_kzm_out(jci1:jci2,ici1:ici2,1:kz)) [if not already present]
+         Generating implicit copyin(uwstate,uwstate%kzm(jci1:jci2,ici1:ici2,1:kz)) [if not already present]
+    605, Generating NVIDIA GPU code
+        605,   ! blockidx%x threadidx%x auto-collapsed
+             Loop parallelized across CUDA thread blocks, CUDA threads(128) collapse(3) ! blockidx%x threadidx%x collapsed-innermost
+    605, Generating implicit copyout(atm_tke_out(jci1:jci2,ici1:ici2,1:kz)) [if not already present]
+         Generating implicit copyin(atms%tkepbl(jci1:jci2,ici1:ici2,1:kz),atms) [if not already present]
+    613, Generating NVIDIA GPU code
+        613,   ! blockidx%x threadidx%x auto-collapsed
+             Loop parallelized across CUDA thread blocks, CUDA threads(128) collapse(3) ! blockidx%x threadidx%x collapsed-innermost
+    613, Generating implicit copyin(ccn(jci1:jci2,ici1:ici2,1:kz)) [if not already present]
+         Generating implicit copyout(atm_ccnnum_out(jci1:jci2,ici1:ici2,1:kz)) [if not already present]
+    620, Generating NVIDIA GPU code
+        620,   ! blockidx%x threadidx%x auto-collapsed
+             Loop parallelized across CUDA thread blocks, CUDA threads(128) collapse(3) ! blockidx%x threadidx%x collapsed-innermost
+    620, Generating implicit copyout(atm_qcrit_out(jci1:jci2,ici1:ici2,1:kz)) [if not already present]
+         Generating implicit copyin(qdiag%qcr(jci1:jci2,ici1:ici2,1:kz),qdiag) [if not already present]
+    625, Generating NVIDIA GPU code
+        625,   ! blockidx%x threadidx%x auto-collapsed
+             Loop parallelized across CUDA thread blocks, CUDA threads(128) collapse(3) ! blockidx%x threadidx%x collapsed-innermost
+    625, Generating implicit copyout(atm_qincl_out(jci1:jci2,ici1:ici2,1:kz)) [if not already present]
+         Generating implicit copyin(qdiag%qcl(jci1:jci2,ici1:ici2,1:kz),qdiag) [if not already present]
+    630, Generating NVIDIA GPU code
+        630,   ! blockidx%x threadidx%x auto-collapsed
+             Loop parallelized across CUDA thread blocks, CUDA threads(128) collapse(3) ! blockidx%x threadidx%x collapsed-innermost
+    630, Generating implicit copyout(atm_autoconvr_out(jci1:jci2,ici1:ici2,1:kz)) [if not already present]
+         Generating implicit copyin(qdiag%acr(jci1:jci2,ici1:ici2,1:kz),qdiag) [if not already present]
+    638, Generating NVIDIA GPU code
+        638,   ! blockidx%x threadidx%x auto-collapsed
+             Loop parallelized across CUDA thread blocks, CUDA threads(128) collapse(2) ! blockidx%x threadidx%x collapsed-innermost
+    638, Generating implicit copyout(atm_tpr_out(jci1:jci2,ici1:ici2)) [if not already present]
+         Generating implicit copyin(sfs,sfs%rainnc(jci1:jci2,ici1:ici2),sfs%rainc(jci1:jci2,ici1:ici2)) [if not already present]
+    643, Generating NVIDIA GPU code
+        643,   ! blockidx%x threadidx%x auto-collapsed
+             Loop parallelized across CUDA thread blocks, CUDA threads(128) collapse(2) ! blockidx%x threadidx%x collapsed-innermost
+    643, Generating implicit copyout(atm_tgb_out(jci1:jci2,ici1:ici2)) [if not already present]
+         Generating implicit copyin(sfs%tgbb(jci1:jci2,ici1:ici2),sfs) [if not already present]
+    652, Generating NVIDIA GPU code
+        652,   ! blockidx%x threadidx%x auto-collapsed
+             Loop parallelized across CUDA thread blocks, CUDA threads(128) collapse(3) ! blockidx%x threadidx%x collapsed-innermost
+    652, Generating implicit copyout(atm_tten_adh_out(jci1:jci2,ici1:ici2,1:kz)) [if not already present]
+         Generating implicit copyin(tdiag%adh(jci1:jci2,ici1:ici2,1:kz),tdiag) [if not already present]
+    656, Generating NVIDIA GPU code
+        656,   ! blockidx%x threadidx%x auto-collapsed
+             Loop parallelized across CUDA thread blocks, CUDA threads(128) collapse(3) ! blockidx%x threadidx%x collapsed-innermost
+    656, Generating implicit copyin(ps_out(jci1:jci2,ici1:ici2),tdiag%adh(jci1:jci2,ici1:ici2,1:kz),tdiag) [if not already present]
+         Generating implicit copyout(atm_tten_adh_out(jci1:jci2,ici1:ici2,1:kz)) [if not already present]
+    664, Generating NVIDIA GPU code
+        664,   ! blockidx%x threadidx%x auto-collapsed
+             Loop parallelized across CUDA thread blocks, CUDA threads(128) collapse(3) ! blockidx%x threadidx%x collapsed-innermost
+    664, Generating implicit copyout(atm_tten_adv_out(jci1:jci2,ici1:ici2,1:kz)) [if not already present]
+         Generating implicit copyin(tdiag%adv(jci1:jci2,ici1:ici2,1:kz),tdiag) [if not already present]
+    668, Generating NVIDIA GPU code
+        668,   ! blockidx%x threadidx%x auto-collapsed
+             Loop parallelized across CUDA thread blocks, CUDA threads(128) collapse(3) ! blockidx%x threadidx%x collapsed-innermost
+    668, Generating implicit copyin(ps_out(jci1:jci2,ici1:ici2),tdiag%adv(jci1:jci2,ici1:ici2,1:kz),tdiag) [if not already present]
+         Generating implicit copyout(atm_tten_adv_out(jci1:jci2,ici1:ici2,1:kz)) [if not already present]
+    676, Generating NVIDIA GPU code
+        676,   ! blockidx%x threadidx%x auto-collapsed
+             Loop parallelized across CUDA thread blocks, CUDA threads(128) collapse(3) ! blockidx%x threadidx%x collapsed-innermost
+    676, Generating implicit copyout(atm_tten_tbl_out(jci1:jci2,ici1:ici2,1:kz)) [if not already present]
+         Generating implicit copyin(tdiag%tbl(jci1:jci2,ici1:ici2,1:kz),tdiag) [if not already present]
+    680, Generating NVIDIA GPU code
+        680,   ! blockidx%x threadidx%x auto-collapsed
+             Loop parallelized across CUDA thread blocks, CUDA threads(128) collapse(3) ! blockidx%x threadidx%x collapsed-innermost
+    680, Generating implicit copyin(ps_out(jci1:jci2,ici1:ici2),tdiag%tbl(jci1:jci2,ici1:ici2,1:kz),tdiag) [if not already present]
+         Generating implicit copyout(atm_tten_tbl_out(jci1:jci2,ici1:ici2,1:kz)) [if not already present]
+    688, Generating NVIDIA GPU code
+        688,   ! blockidx%x threadidx%x auto-collapsed
+             Loop parallelized across CUDA thread blocks, CUDA threads(128) collapse(3) ! blockidx%x threadidx%x collapsed-innermost
+    688, Generating implicit copyout(atm_tten_dif_out(jci1:jci2,ici1:ici2,1:kz)) [if not already present]
+         Generating implicit copyin(tdiag%dif(jci1:jci2,ici1:ici2,1:kz),tdiag) [if not already present]
+    692, Generating NVIDIA GPU code
+        692,   ! blockidx%x threadidx%x auto-collapsed
+             Loop parallelized across CUDA thread blocks, CUDA threads(128) collapse(3) ! blockidx%x threadidx%x collapsed-innermost
+    692, Generating implicit copyin(ps_out(jci1:jci2,ici1:ici2),tdiag%dif(jci1:jci2,ici1:ici2,1:kz),tdiag) [if not already present]
+         Generating implicit copyout(atm_tten_dif_out(jci1:jci2,ici1:ici2,1:kz)) [if not already present]
+    700, Generating NVIDIA GPU code
+        700,   ! blockidx%x threadidx%x auto-collapsed
+             Loop parallelized across CUDA thread blocks, CUDA threads(128) collapse(3) ! blockidx%x threadidx%x collapsed-innermost
+    700, Generating implicit copyout(atm_tten_bdy_out(jci1:jci2,ici1:ici2,1:kz)) [if not already present]
+         Generating implicit copyin(tdiag%bdy(jci1:jci2,ici1:ici2,1:kz),tdiag) [if not already present]
+    704, Generating NVIDIA GPU code
+        704,   ! blockidx%x threadidx%x auto-collapsed
+             Loop parallelized across CUDA thread blocks, CUDA threads(128) collapse(3) ! blockidx%x threadidx%x collapsed-innermost
+    704, Generating implicit copyin(ps_out(jci1:jci2,ici1:ici2),tdiag%bdy(jci1:jci2,ici1:ici2,1:kz),tdiag) [if not already present]
+         Generating implicit copyout(atm_tten_bdy_out(jci1:jci2,ici1:ici2,1:kz)) [if not already present]
+    712, Generating NVIDIA GPU code
+        712,   ! blockidx%x threadidx%x auto-collapsed
+             Loop parallelized across CUDA thread blocks, CUDA threads(128) collapse(3) ! blockidx%x threadidx%x collapsed-innermost
+    712, Generating implicit copyout(atm_tten_con_out(jci1:jci2,ici1:ici2,1:kz)) [if not already present]
+         Generating implicit copyin(tdiag%con(jci1:jci2,ici1:ici2,1:kz),tdiag) [if not already present]
+    716, Generating NVIDIA GPU code
+        716,   ! blockidx%x threadidx%x auto-collapsed
+             Loop parallelized across CUDA thread blocks, CUDA threads(128) collapse(3) ! blockidx%x threadidx%x collapsed-innermost
+    716, Generating implicit copyin(ps_out(jci1:jci2,ici1:ici2),tdiag%con(jci1:jci2,ici1:ici2,1:kz),tdiag) [if not already present]
+         Generating implicit copyout(atm_tten_con_out(jci1:jci2,ici1:ici2,1:kz)) [if not already present]
+    724, Generating NVIDIA GPU code
+        724,   ! blockidx%x threadidx%x auto-collapsed
+             Loop parallelized across CUDA thread blocks, CUDA threads(128) collapse(3) ! blockidx%x threadidx%x collapsed-innermost
+    724, Generating implicit copyout(atm_tten_adi_out(jci1:jci2,ici1:ici2,1:kz)) [if not already present]
+         Generating implicit copyin(tdiag%adi(jci1:jci2,ici1:ici2,1:kz),tdiag) [if not already present]
+    728, Generating NVIDIA GPU code
+        728,   ! blockidx%x threadidx%x auto-collapsed
+             Loop parallelized across CUDA thread blocks, CUDA threads(128) collapse(3) ! blockidx%x threadidx%x collapsed-innermost
+    728, Generating implicit copyin(ps_out(jci1:jci2,ici1:ici2),tdiag%adi(jci1:jci2,ici1:ici2,1:kz),tdiag) [if not already present]
+         Generating implicit copyout(atm_tten_adi_out(jci1:jci2,ici1:ici2,1:kz)) [if not already present]
+    736, Generating NVIDIA GPU code
+        736,   ! blockidx%x threadidx%x auto-collapsed
+             Loop parallelized across CUDA thread blocks, CUDA threads(128) collapse(3) ! blockidx%x threadidx%x collapsed-innermost
+    736, Generating implicit copyout(atm_tten_rad_out(jci1:jci2,ici1:ici2,1:kz)) [if not already present]
+         Generating implicit copyin(tdiag%rad(jci1:jci2,ici1:ici2,1:kz),tdiag) [if not already present]
+    740, Generating NVIDIA GPU code
+        740,   ! blockidx%x threadidx%x auto-collapsed
+             Loop parallelized across CUDA thread blocks, CUDA threads(128) collapse(3) ! blockidx%x threadidx%x collapsed-innermost
+    740, Generating implicit copyin(ps_out(jci1:jci2,ici1:ici2),tdiag%rad(jci1:jci2,ici1:ici2,1:kz),tdiag) [if not already present]
+         Generating implicit copyout(atm_tten_rad_out(jci1:jci2,ici1:ici2,1:kz)) [if not already present]
+    748, Generating NVIDIA GPU code
+        748,   ! blockidx%x threadidx%x auto-collapsed
+             Loop parallelized across CUDA thread blocks, CUDA threads(128) collapse(3) ! blockidx%x threadidx%x collapsed-innermost
+    748, Generating implicit copyout(atm_tten_lsc_out(jci1:jci2,ici1:ici2,1:kz)) [if not already present]
+         Generating implicit copyin(tdiag%lsc(jci1:jci2,ici1:ici2,1:kz),tdiag) [if not already present]
+    752, Generating NVIDIA GPU code
+        752,   ! blockidx%x threadidx%x auto-collapsed
+             Loop parallelized across CUDA thread blocks, CUDA threads(128) collapse(3) ! blockidx%x threadidx%x collapsed-innermost
+    752, Generating implicit copyin(ps_out(jci1:jci2,ici1:ici2),tdiag%lsc(jci1:jci2,ici1:ici2,1:kz),tdiag) [if not already present]
+         Generating implicit copyout(atm_tten_lsc_out(jci1:jci2,ici1:ici2,1:kz)) [if not already present]
+    760, Generating NVIDIA GPU code
+        760,   ! blockidx%x threadidx%x auto-collapsed
+             Loop parallelized across CUDA thread blocks, CUDA threads(128) collapse(3) ! blockidx%x threadidx%x collapsed-innermost
+    760, Generating implicit copyout(atm_qten_adh_out(jci1:jci2,ici1:ici2,1:kz)) [if not already present]
+         Generating implicit copyin(qdiag%adh(jci1:jci2,ici1:ici2,1:kz),qdiag) [if not already present]
+    764, Generating NVIDIA GPU code
+        764,   ! blockidx%x threadidx%x auto-collapsed
+             Loop parallelized across CUDA thread blocks, CUDA threads(128) collapse(3) ! blockidx%x threadidx%x collapsed-innermost
+    764, Generating implicit copyin(ps_out(jci1:jci2,ici1:ici2),qdiag%adh(jci1:jci2,ici1:ici2,1:kz),qdiag) [if not already present]
+         Generating implicit copyout(atm_qten_adh_out(jci1:jci2,ici1:ici2,1:kz)) [if not already present]
+    772, Generating NVIDIA GPU code
+        772,   ! blockidx%x threadidx%x auto-collapsed
+             Loop parallelized across CUDA thread blocks, CUDA threads(128) collapse(3) ! blockidx%x threadidx%x collapsed-innermost
+    772, Generating implicit copyout(atm_qten_adv_out(jci1:jci2,ici1:ici2,1:kz)) [if not already present]
+         Generating implicit copyin(qdiag%adv(jci1:jci2,ici1:ici2,1:kz),qdiag) [if not already present]
+    776, Generating NVIDIA GPU code
+        776,   ! blockidx%x threadidx%x auto-collapsed
+             Loop parallelized across CUDA thread blocks, CUDA threads(128) collapse(3) ! blockidx%x threadidx%x collapsed-innermost
+    776, Generating implicit copyin(ps_out(jci1:jci2,ici1:ici2),qdiag%adv(jci1:jci2,ici1:ici2,1:kz),qdiag) [if not already present]
+         Generating implicit copyout(atm_qten_adv_out(jci1:jci2,ici1:ici2,1:kz)) [if not already present]
+    784, Generating NVIDIA GPU code
+        784,   ! blockidx%x threadidx%x auto-collapsed
+             Loop parallelized across CUDA thread blocks, CUDA threads(128) collapse(3) ! blockidx%x threadidx%x collapsed-innermost
+    784, Generating implicit copyout(atm_qten_tbl_out(jci1:jci2,ici1:ici2,1:kz)) [if not already present]
+         Generating implicit copyin(qdiag%tbl(jci1:jci2,ici1:ici2,1:kz),qdiag) [if not already present]
+    788, Generating NVIDIA GPU code
+        788,   ! blockidx%x threadidx%x auto-collapsed
+             Loop parallelized across CUDA thread blocks, CUDA threads(128) collapse(3) ! blockidx%x threadidx%x collapsed-innermost
+    788, Generating implicit copyin(ps_out(jci1:jci2,ici1:ici2),qdiag%tbl(jci1:jci2,ici1:ici2,1:kz),qdiag) [if not already present]
+         Generating implicit copyout(atm_qten_tbl_out(jci1:jci2,ici1:ici2,1:kz)) [if not already present]
+    796, Generating NVIDIA GPU code
+        796,   ! blockidx%x threadidx%x auto-collapsed
+             Loop parallelized across CUDA thread blocks, CUDA threads(128) collapse(3) ! blockidx%x threadidx%x collapsed-innermost
+    796, Generating implicit copyout(atm_qten_dif_out(jci1:jci2,ici1:ici2,1:kz)) [if not already present]
+         Generating implicit copyin(qdiag%dif(jci1:jci2,ici1:ici2,1:kz),qdiag) [if not already present]
+    800, Generating NVIDIA GPU code
+        800,   ! blockidx%x threadidx%x auto-collapsed
+             Loop parallelized across CUDA thread blocks, CUDA threads(128) collapse(3) ! blockidx%x threadidx%x collapsed-innermost
+    800, Generating implicit copyin(ps_out(jci1:jci2,ici1:ici2),qdiag%dif(jci1:jci2,ici1:ici2,1:kz),qdiag) [if not already present]
+         Generating implicit copyout(atm_qten_dif_out(jci1:jci2,ici1:ici2,1:kz)) [if not already present]
+    808, Generating NVIDIA GPU code
+        808,   ! blockidx%x threadidx%x auto-collapsed
+             Loop parallelized across CUDA thread blocks, CUDA threads(128) collapse(3) ! blockidx%x threadidx%x collapsed-innermost
+    808, Generating implicit copyout(atm_qten_bdy_out(jci1:jci2,ici1:ici2,1:kz)) [if not already present]
+         Generating implicit copyin(qdiag%bdy(jci1:jci2,ici1:ici2,1:kz),qdiag) [if not already present]
+    812, Generating NVIDIA GPU code
+        812,   ! blockidx%x threadidx%x auto-collapsed
+             Loop parallelized across CUDA thread blocks, CUDA threads(128) collapse(3) ! blockidx%x threadidx%x collapsed-innermost
+    812, Generating implicit copyin(ps_out(jci1:jci2,ici1:ici2),qdiag%bdy(jci1:jci2,ici1:ici2,1:kz),qdiag) [if not already present]
+         Generating implicit copyout(atm_qten_bdy_out(jci1:jci2,ici1:ici2,1:kz)) [if not already present]
+    820, Generating NVIDIA GPU code
+        820,   ! blockidx%x threadidx%x auto-collapsed
+             Loop parallelized across CUDA thread blocks, CUDA threads(128) collapse(3) ! blockidx%x threadidx%x collapsed-innermost
+    820, Generating implicit copyout(atm_qten_con_out(jci1:jci2,ici1:ici2,1:kz)) [if not already present]
+         Generating implicit copyin(qdiag%con(jci1:jci2,ici1:ici2,1:kz),qdiag) [if not already present]
+    824, Generating NVIDIA GPU code
+        824,   ! blockidx%x threadidx%x auto-collapsed
+             Loop parallelized across CUDA thread blocks, CUDA threads(128) collapse(3) ! blockidx%x threadidx%x collapsed-innermost
+    824, Generating implicit copyin(ps_out(jci1:jci2,ici1:ici2),qdiag%con(jci1:jci2,ici1:ici2,1:kz),qdiag) [if not already present]
+         Generating implicit copyout(atm_qten_con_out(jci1:jci2,ici1:ici2,1:kz)) [if not already present]
+    832, Generating NVIDIA GPU code
+        832,   ! blockidx%x threadidx%x auto-collapsed
+             Loop parallelized across CUDA thread blocks, CUDA threads(128) collapse(3) ! blockidx%x threadidx%x collapsed-innermost
+    832, Generating implicit copyout(atm_qten_adi_out(jci1:jci2,ici1:ici2,1:kz)) [if not already present]
+         Generating implicit copyin(qdiag%adi(jci1:jci2,ici1:ici2,1:kz),qdiag) [if not already present]
+    836, Generating NVIDIA GPU code
+        836,   ! blockidx%x threadidx%x auto-collapsed
+             Loop parallelized across CUDA thread blocks, CUDA threads(128) collapse(3) ! blockidx%x threadidx%x collapsed-innermost
+    836, Generating implicit copyin(ps_out(jci1:jci2,ici1:ici2),qdiag%adi(jci1:jci2,ici1:ici2,1:kz),qdiag) [if not already present]
+         Generating implicit copyout(atm_qten_adi_out(jci1:jci2,ici1:ici2,1:kz)) [if not already present]
+    844, Generating NVIDIA GPU code
+        844,   ! blockidx%x threadidx%x auto-collapsed
+             Loop parallelized across CUDA thread blocks, CUDA threads(128) collapse(3) ! blockidx%x threadidx%x collapsed-innermost
+    844, Generating implicit copyout(atm_qten_rad_out(jci1:jci2,ici1:ici2,1:kz)) [if not already present]
+         Generating implicit copyin(qdiag%rad(jci1:jci2,ici1:ici2,1:kz),qdiag) [if not already present]
+    848, Generating NVIDIA GPU code
+        848,   ! blockidx%x threadidx%x auto-collapsed
+             Loop parallelized across CUDA thread blocks, CUDA threads(128) collapse(3) ! blockidx%x threadidx%x collapsed-innermost
+    848, Generating implicit copyin(ps_out(jci1:jci2,ici1:ici2),qdiag%rad(jci1:jci2,ici1:ici2,1:kz),qdiag) [if not already present]
+         Generating implicit copyout(atm_qten_rad_out(jci1:jci2,ici1:ici2,1:kz)) [if not already present]
+    856, Generating NVIDIA GPU code
+        856,   ! blockidx%x threadidx%x auto-collapsed
+             Loop parallelized across CUDA thread blocks, CUDA threads(128) collapse(3) ! blockidx%x threadidx%x collapsed-innermost
+    856, Generating implicit copyout(atm_qten_lsc_out(jci1:jci2,ici1:ici2,1:kz)) [if not already present]
+         Generating implicit copyin(qdiag%lsc(jci1:jci2,ici1:ici2,1:kz),qdiag) [if not already present]
+    860, Generating NVIDIA GPU code
+        860,   ! blockidx%x threadidx%x auto-collapsed
+             Loop parallelized across CUDA thread blocks, CUDA threads(128) collapse(3) ! blockidx%x threadidx%x collapsed-innermost
+    860, Generating implicit copyin(ps_out(jci1:jci2,ici1:ici2),qdiag%lsc(jci1:jci2,ici1:ici2,1:kz),qdiag) [if not already present]
+         Generating implicit copyout(atm_qten_lsc_out(jci1:jci2,ici1:ici2,1:kz)) [if not already present]
+    869, Generating NVIDIA GPU code
+        869,   ! blockidx%x threadidx%x auto-collapsed
+             Loop parallelized across CUDA thread blocks, CUDA threads(128) collapse(2) ! blockidx%x threadidx%x collapsed-innermost
+    869, Generating implicit copy(ps_out(jci1:jci2,ici1:ici2)) [if not already present]
+    873, Generating NVIDIA GPU code
+        873,   ! blockidx%x threadidx%x auto-collapsed
+             Loop parallelized across CUDA thread blocks, CUDA threads(128) collapse(2) ! blockidx%x threadidx%x collapsed-innermost
+    873, Generating implicit copyin(atm1%pp(jci1:jci2,ici1:ici2,kz)) [if not already present]
+         Generating implicit copyout(ps_out(jci1:jci2,ici1:ici2)) [if not already present]
+         Generating implicit copyin(sfs%psa(jci1:jci2,ici1:ici2),sfs,atm0%ps(jci1:jci2,ici1:ici2),atm1,atm0) [if not already present]
+    892, Generating NVIDIA GPU code
+        892,   ! blockidx%x threadidx%x auto-collapsed
+             Loop parallelized across CUDA thread blocks, CUDA threads(128) collapse(2) ! blockidx%x threadidx%x collapsed-innermost
+    892, Generating implicit copyout(ps_out(jci1:jci2,ici1:ici2)) [if not already present]
+         Generating implicit copyin(sfs%psa(jci1:jci2,ici1:ici2),sfs) [if not already present]
+    896, Generating NVIDIA GPU code
+        896,   ! blockidx%x threadidx%x auto-collapsed
+             Loop parallelized across CUDA thread blocks, CUDA threads(128) collapse(2) ! blockidx%x threadidx%x collapsed-innermost
+    896, Generating implicit copyin(atm1%pp(jci1:jci2,ici1:ici2,kz)) [if not already present]
+         Generating implicit copyout(ps_out(jci1:jci2,ici1:ici2)) [if not already present]
+         Generating implicit copyin(sfs%psa(jci1:jci2,ici1:ici2),sfs,atm0%ps(jci1:jci2,ici1:ici2),atm1,atm0) [if not already present]
+    901, Generating NVIDIA GPU code
+        901,   ! blockidx%x threadidx%x auto-collapsed
+             Loop parallelized across CUDA thread blocks, CUDA threads(128) collapse(2) ! blockidx%x threadidx%x collapsed-innermost
+    901, Generating implicit copyout(ps_out(jci1:jci2,ici1:ici2)) [if not already present]
+         Generating implicit copyin(sfs%psa(jci1:jci2,ici1:ici2),sfs) [if not already present]
+   1052, Generating NVIDIA GPU code
+       1052, Loop parallelized across CUDA thread blocks, CUDA threads(128) collapse(2) ! blockidx%x threadidx%x
+               ! blockidx%x threadidx%x auto-collapsed
+       1054, Loop run sequentially 
+             Generating implicit reduction(+:tmp_sum)
+   1052, Generating implicit copyout(srf_cin_out(jci1:jci2,ici1:ici2),srf_cape_out(jci1:jci2,ici1:ici2)) [if not already present]
+         Generating implicit copyin(mo_atm,mo_atm%p(jci1:jci2,ici1:ici2,1:kz)) [if not already present]
+   1077, Generating NVIDIA GPU code
+       1077, Loop parallelized across CUDA thread blocks, CUDA threads(128) collapse(2) ! blockidx%x threadidx%x
+               ! blockidx%x threadidx%x auto-collapsed
+       1079, Loop run sequentially 
+             Generating implicit reduction(+:tmp_sum)
+   1077, Generating implicit copyout(srf_cin_out(jci1:jci2,ici1:ici2),srf_cape_out(jci1:jci2,ici1:ici2)) [if not already present]
+         Generating implicit copyin(mo_atm,mo_atm%p(jci1:jci2,ici1:ici2,1:kz)) [if not already present]
+   1107, Generating NVIDIA GPU code
+       1107,   ! blockidx%x threadidx%x auto-collapsed
+             Loop parallelized across CUDA thread blocks, CUDA threads(128) collapse(2) ! blockidx%x threadidx%x collapsed-innermost
+   1107, Generating implicit copy(srf_tprw_out(jci1:jci2,ici1:ici2)) [if not already present]
+         Generating implicit copyin(atms%zq(jci1:jci2,ici1:ici2,k:k+1),atms,atms%qxb3d(jci1:jci2,ici1:ici2,k,1),atms%rhob3d(jci1:jci2,ici1:ici2,k)) [if not already present]
+   1199, Generating NVIDIA GPU code
+       1199,   ! blockidx%x threadidx%x auto-collapsed
+             Loop parallelized across CUDA thread blocks, CUDA threads(128) collapse(2) ! blockidx%x threadidx%x collapsed-innermost
+   1199, Generating implicit copyout(ps_out(jci1:jci2,ici1:ici2)) [if not already present]
+         Generating implicit copyin(sfs%psa(jci1:jci2,ici1:ici2),sfs) [if not already present]
+   1203, Generating NVIDIA GPU code
+       1203,   ! blockidx%x threadidx%x auto-collapsed
+             Loop parallelized across CUDA thread blocks, CUDA threads(128) collapse(2) ! blockidx%x threadidx%x collapsed-innermost
+   1203, Generating implicit copyin(atm1%pp(jci1:jci2,ici1:ici2,kz)) [if not already present]
+         Generating implicit copyout(ps_out(jci1:jci2,ici1:ici2)) [if not already present]
+         Generating implicit copyin(sfs%psa(jci1:jci2,ici1:ici2),sfs,atm0%ps(jci1:jci2,ici1:ici2),atm1,atm0) [if not already present]
+   1208, Generating NVIDIA GPU code
+       1208,   ! blockidx%x threadidx%x auto-collapsed
+             Loop parallelized across CUDA thread blocks, CUDA threads(128) collapse(2) ! blockidx%x threadidx%x collapsed-innermost
+   1208, Generating implicit copyout(ps_out(jci1:jci2,ici1:ici2)) [if not already present]
+         Generating implicit copyin(sfs%psa(jci1:jci2,ici1:ici2),sfs) [if not already present]
+   1256, Generating NVIDIA GPU code
+       1256,   ! blockidx%x threadidx%x auto-collapsed
+             Loop parallelized across CUDA thread blocks, CUDA threads(128) collapse(2) ! blockidx%x threadidx%x collapsed-innermost
+   1256, Generating implicit copyout(ps_out(jci1:jci2,ici1:ici2)) [if not already present]
+         Generating implicit copyin(sfs%psa(jci1:jci2,ici1:ici2),sfs) [if not already present]
+   1260, Generating NVIDIA GPU code
+       1260,   ! blockidx%x threadidx%x auto-collapsed
+             Loop parallelized across CUDA thread blocks, CUDA threads(128) collapse(2) ! blockidx%x threadidx%x collapsed-innermost
+   1260, Generating implicit copyin(atm1%pp(jci1:jci2,ici1:ici2,kz)) [if not already present]
+         Generating implicit copyout(ps_out(jci1:jci2,ici1:ici2)) [if not already present]
+         Generating implicit copyin(sfs%psa(jci1:jci2,ici1:ici2),sfs,atm0%ps(jci1:jci2,ici1:ici2),atm1,atm0) [if not already present]
+   1265, Generating NVIDIA GPU code
+       1265,   ! blockidx%x threadidx%x auto-collapsed
+             Loop parallelized across CUDA thread blocks, CUDA threads(128) collapse(2) ! blockidx%x threadidx%x collapsed-innermost
+   1265, Generating implicit copyout(ps_out(jci1:jci2,ici1:ici2)) [if not already present]
+         Generating implicit copyin(sfs%psa(jci1:jci2,ici1:ici2),sfs) [if not already present]
+   1270, Generating NVIDIA GPU code
+       1270,   ! blockidx%x threadidx%x auto-collapsed
+             Loop parallelized across CUDA thread blocks, CUDA threads(128) collapse(3) ! blockidx%x threadidx%x collapsed-innermost
+   1270, Generating implicit copyin(atm1) [if not already present]
+         Generating implicit copyout(opt_pp_out(jci1:jci2,ici1:ici2,1:kz)) [if not already present]
+         Generating implicit copyin(sfs%psa(jci1:jci2,ici1:ici2),sfs,atm1%pp(jci1:jci2,ici1:ici2,1:kz)) [if not already present]
+   1275, Generating NVIDIA GPU code
+       1275,   ! blockidx%x threadidx%x auto-collapsed
+             Loop parallelized across CUDA thread blocks, CUDA threads(128) collapse(3) ! blockidx%x threadidx%x collapsed-innermost
+   1275, Generating implicit copyin(mo_atm) [if not already present]
+         Generating implicit copyout(opt_pai_out(jci1:jci2,ici1:ici2,1:kz)) [if not already present]
+         Generating implicit copyin(mo_atm%pai(jci1:jci2,ici1:ici2,1:kz)) [if not already present]
+   1314, Generating NVIDIA GPU code
+       1314,   ! blockidx%x threadidx%x auto-collapsed
+             Loop parallelized across CUDA thread blocks, CUDA threads(128) collapse(2) ! blockidx%x threadidx%x collapsed-innermost
+   1314, Generating implicit copyout(ps_out(jci1:jci2,ici1:ici2)) [if not already present]
+         Generating implicit copyin(sfs%psa(jci1:jci2,ici1:ici2),sfs) [if not already present]
+   1318, Generating NVIDIA GPU code
+       1318,   ! blockidx%x threadidx%x auto-collapsed
+             Loop parallelized across CUDA thread blocks, CUDA threads(128) collapse(2) ! blockidx%x threadidx%x collapsed-innermost
+   1318, Generating implicit copyin(atm1%pp(jci1:jci2,ici1:ici2,kz)) [if not already present]
+         Generating implicit copyout(ps_out(jci1:jci2,ici1:ici2)) [if not already present]
+         Generating implicit copyin(sfs%psa(jci1:jci2,ici1:ici2),sfs,atm0%ps(jci1:jci2,ici1:ici2),atm1,atm0) [if not already present]
+   1323, Generating NVIDIA GPU code
+       1323,   ! blockidx%x threadidx%x auto-collapsed
+             Loop parallelized across CUDA thread blocks, CUDA threads(128) collapse(2) ! blockidx%x threadidx%x collapsed-innermost
+   1323, Generating implicit copyout(ps_out(jci1:jci2,ici1:ici2)) [if not already present]
+         Generating implicit copyin(sfs%psa(jci1:jci2,ici1:ici2),sfs) [if not already present]
+   1328, Generating NVIDIA GPU code
+       1328,   ! blockidx%x threadidx%x auto-collapsed
+             Loop parallelized across CUDA thread blocks, CUDA threads(128) collapse(3) ! blockidx%x threadidx%x collapsed-innermost
+   1328, Generating implicit copyin(atm1) [if not already present]
+         Generating implicit copyout(che_pp_out(jci1:jci2,ici1:ici2,1:kz)) [if not already present]
+         Generating implicit copyin(sfs%psa(jci1:jci2,ici1:ici2),sfs,atm1%pp(jci1:jci2,ici1:ici2,1:kz)) [if not already present]
+   1333, Generating NVIDIA GPU code
+       1333,   ! blockidx%x threadidx%x auto-collapsed
+             Loop parallelized across CUDA thread blocks, CUDA threads(128) collapse(3) ! blockidx%x threadidx%x collapsed-innermost
+   1333, Generating implicit copyout(che_pai_out(jci1:jci2,ici1:ici2,1:kz)) [if not already present]
+         Generating implicit copyin(mo_atm%pai(jci1:jci2,ici1:ici2,1:kz),mo_atm) [if not already present]
+   1350, Generating NVIDIA GPU code
+       1350,   ! blockidx%x threadidx%x auto-collapsed
+             Loop parallelized across CUDA thread blocks, CUDA threads(128) collapse(2) ! blockidx%x threadidx%x collapsed-innermost
+   1350, Generating implicit copyout(ps_out(jci1:jci2,ici1:ici2)) [if not already present]
+         Generating implicit copyin(sfs%psa(jci1:jci2,ici1:ici2),sfs) [if not already present]
+   1354, Generating NVIDIA GPU code
+       1354,   ! blockidx%x threadidx%x auto-collapsed
+             Loop parallelized across CUDA thread blocks, CUDA threads(128) collapse(2) ! blockidx%x threadidx%x collapsed-innermost
+   1354, Generating implicit copyin(atm1%pp(jci1:jci2,ici1:ici2,kz)) [if not already present]
+         Generating implicit copyout(ps_out(jci1:jci2,ici1:ici2)) [if not already present]
+         Generating implicit copyin(sfs%psa(jci1:jci2,ici1:ici2),sfs,atm0%ps(jci1:jci2,ici1:ici2),atm1,atm0) [if not already present]
+   1359, Generating NVIDIA GPU code
+       1359,   ! blockidx%x threadidx%x auto-collapsed
+             Loop parallelized across CUDA thread blocks, CUDA threads(128) collapse(2) ! blockidx%x threadidx%x collapsed-innermost
+   1359, Generating implicit copyout(ps_out(jci1:jci2,ici1:ici2)) [if not already present]
+         Generating implicit copyin(sfs%psa(jci1:jci2,ici1:ici2),sfs) [if not already present]
+   1383, Generating NVIDIA GPU code
+       1383,   ! blockidx%x threadidx%x auto-collapsed
+             Loop parallelized across CUDA thread blocks, CUDA threads(128) collapse(2) ! blockidx%x threadidx%x collapsed-innermost
+   1383, Generating implicit copyout(ps_out(jci1:jci2,ici1:ici2)) [if not already present]
+         Generating implicit copyin(sfs%psa(jci1:jci2,ici1:ici2),sfs) [if not already present]
+   1387, Generating NVIDIA GPU code
+       1387,   ! blockidx%x threadidx%x auto-collapsed
+             Loop parallelized across CUDA thread blocks, CUDA threads(128) collapse(2) ! blockidx%x threadidx%x collapsed-innermost
+   1387, Generating implicit copyin(atm1%pp(jci1:jci2,ici1:ici2,kz)) [if not already present]
+         Generating implicit copyout(ps_out(jci1:jci2,ici1:ici2)) [if not already present]
+         Generating implicit copyin(sfs%psa(jci1:jci2,ici1:ici2),sfs,atm0%ps(jci1:jci2,ici1:ici2),atm1,atm0) [if not already present]
+   1392, Generating NVIDIA GPU code
+       1392,   ! blockidx%x threadidx%x auto-collapsed
+             Loop parallelized across CUDA thread blocks, CUDA threads(128) collapse(2) ! blockidx%x threadidx%x collapsed-innermost
+   1392, Generating implicit copyout(ps_out(jci1:jci2,ici1:ici2)) [if not already present]
+         Generating implicit copyin(sfs%psa(jci1:jci2,ici1:ici2),sfs) [if not already present]
+   1443, Generating NVIDIA GPU code
+       1443,   ! blockidx%x threadidx%x auto-collapsed
+             Loop parallelized across CUDA thread blocks, CUDA threads(128) collapse(2) ! blockidx%x threadidx%x collapsed-innermost
+   1443, Generating implicit copyout(ps_out(jci1:jci2,ici1:ici2)) [if not already present]
+         Generating implicit copyin(sfs%psa(jci1:jci2,ici1:ici2),sfs) [if not already present]
+   1447, Generating NVIDIA GPU code
+       1447,   ! blockidx%x threadidx%x auto-collapsed
+             Loop parallelized across CUDA thread blocks, CUDA threads(128) collapse(2) ! blockidx%x threadidx%x collapsed-innermost
+   1447, Generating implicit copyin(atm1%pp(jci1:jci2,ici1:ici2,kz)) [if not already present]
+         Generating implicit copyout(ps_out(jci1:jci2,ici1:ici2)) [if not already present]
+         Generating implicit copyin(sfs%psa(jci1:jci2,ici1:ici2),sfs,atm0%ps(jci1:jci2,ici1:ici2),atm1,atm0) [if not already present]
+   1452, Generating NVIDIA GPU code
+       1452,   ! blockidx%x threadidx%x auto-collapsed
+             Loop parallelized across CUDA thread blocks, CUDA threads(128) collapse(2) ! blockidx%x threadidx%x collapsed-innermost
+   1452, Generating implicit copyout(ps_out(jci1:jci2,ici1:ici2)) [if not already present]
+         Generating implicit copyin(sfs%psa(jci1:jci2,ici1:ici2),sfs) [if not already present]
+   1457, Generating NVIDIA GPU code
+       1457,   ! blockidx%x threadidx%x auto-collapsed
+             Loop parallelized across CUDA thread blocks, CUDA threads(128) collapse(3) ! blockidx%x threadidx%x collapsed-innermost
+   1457, Generating implicit copyin(atm1) [if not already present]
+         Generating implicit copyout(rad_pp_out(jci1:jci2,ici1:ici2,1:kz)) [if not already present]
+         Generating implicit copyin(sfs%psa(jci1:jci2,ici1:ici2),sfs,atm1%pp(jci1:jci2,ici1:ici2,1:kz)) [if not already present]
+   1462, Generating NVIDIA GPU code
+       1462,   ! blockidx%x threadidx%x auto-collapsed
+             Loop parallelized across CUDA thread blocks, CUDA threads(128) collapse(3) ! blockidx%x threadidx%x collapsed-innermost
+   1462, Generating implicit copyin(mo_atm) [if not already present]
+         Generating implicit copyout(rad_pai_out(jci1:jci2,ici1:ici2,1:kz)) [if not already present]
+         Generating implicit copyin(mo_atm%pai(jci1:jci2,ici1:ici2,1:kz)) [if not already present]
+   1485, Generating NVIDIA GPU code
+       1485,   ! blockidx%x threadidx%x auto-collapsed
+             Loop parallelized across CUDA thread blocks, CUDA threads(128) collapse(2) ! blockidx%x threadidx%x collapsed-innermost
+   1485, Generating implicit copyout(ps_out(jci1:jci2,ici1:ici2)) [if not already present]
+         Generating implicit copyin(sfs%psa(jci1:jci2,ici1:ici2),sfs) [if not already present]
+   1489, Generating NVIDIA GPU code
+       1489,   ! blockidx%x threadidx%x auto-collapsed
+             Loop parallelized across CUDA thread blocks, CUDA threads(128) collapse(2) ! blockidx%x threadidx%x collapsed-innermost
+   1489, Generating implicit copyin(atm1%pp(jci1:jci2,ici1:ici2,kz)) [if not already present]
+         Generating implicit copyout(ps_out(jci1:jci2,ici1:ici2)) [if not already present]
+         Generating implicit copyin(sfs%psa(jci1:jci2,ici1:ici2),sfs,atm0%ps(jci1:jci2,ici1:ici2),atm1,atm0) [if not already present]
+   1494, Generating NVIDIA GPU code
+       1494,   ! blockidx%x threadidx%x auto-collapsed
+             Loop parallelized across CUDA thread blocks, CUDA threads(128) collapse(2) ! blockidx%x threadidx%x collapsed-innermost
+   1494, Generating implicit copyout(ps_out(jci1:jci2,ici1:ici2)) [if not already present]
+         Generating implicit copyin(sfs%psa(jci1:jci2,ici1:ici2),sfs) [if not already present]
+   1637, Generating NVIDIA GPU code
+       1637,   ! blockidx%x threadidx%x auto-collapsed
+             Loop parallelized across CUDA thread blocks, CUDA threads(128) collapse(3) ! blockidx%x threadidx%x collapsed-innermost
+   1637, Generating implicit copyout(ldmsk1_io(1:nnsg,jci1:jci2,ici1:ici2)) [if not already present]
+         Generating implicit copyin(mdsub%ldmsk(1:nnsg,jci1:jci2,ici1:ici2),mdsub) [if not already present]
+pfwsat:
+      2, Generating acc routine seq
+         Generating NVIDIA GPU code
+wstagtox:
+   2029, Generating NVIDIA GPU code
+       2029,   ! blockidx%x threadidx%x auto-collapsed
+             Loop parallelized across CUDA thread blocks, CUDA threads(128) collapse(3) ! blockidx%x threadidx%x collapsed-innermost
+   2029, Generating implicit copy(w(:,:,:),wx(:,:,:)) [if not already present]
+   2033, Generating NVIDIA GPU code
+       2033,   ! blockidx%x threadidx%x auto-collapsed
+             Loop parallelized across CUDA thread blocks, CUDA threads(128) collapse(2) ! blockidx%x threadidx%x collapsed-innermost
+   2033, Generating implicit copy(wx(:,:,:),w(:,:,:)) [if not already present]
+uvstagtox:
+   2050, Generating NVIDIA GPU code
+       2050,   ! blockidx%x threadidx%x auto-collapsed
+             Loop parallelized across CUDA thread blocks, CUDA threads(128) collapse(3) ! blockidx%x threadidx%x collapsed-innermost
+   2050, Generating implicit copy(ux(:,:,:),u(:,:,:)) [if not already present]
+   2055, Generating NVIDIA GPU code
+       2055,   ! blockidx%x threadidx%x auto-collapsed
+             Loop parallelized across CUDA thread blocks, CUDA threads(128) collapse(2) ! blockidx%x threadidx%x
+   2055, Generating implicit copy(ux(:,:,:),u(:,:,:)) [if not already present]
+   2060, Generating NVIDIA GPU code
+       2060,   ! blockidx%x threadidx%x auto-collapsed
+             Loop parallelized across CUDA thread blocks, CUDA threads(128) collapse(2) ! blockidx%x threadidx%x
+   2060, Generating implicit copy(ux(:,:,:),u(:,:,:)) [if not already present]
+   2067, Generating NVIDIA GPU code
+       2067,   ! blockidx%x threadidx%x auto-collapsed
+             Loop parallelized across CUDA thread blocks, CUDA threads(128) collapse(3) ! blockidx%x threadidx%x collapsed-innermost
+   2067, Generating implicit copy(vx(:,:,:),v(:,:,:)) [if not already present]
+   2072, Generating NVIDIA GPU code
+       2072,   ! blockidx%x threadidx%x auto-collapsed
+             Loop parallelized across CUDA thread blocks, CUDA threads(128) collapse(2) ! blockidx%x threadidx%x collapsed-innermost
+   2072, Generating implicit copy(vx(:,:,:),v(:,:,:)) [if not already present]
+   2077, Generating NVIDIA GPU code
+       2077,   ! blockidx%x threadidx%x auto-collapsed
+             Loop parallelized across CUDA thread blocks, CUDA threads(128) collapse(2) ! blockidx%x threadidx%x collapsed-innermost
+   2077, Generating implicit copy(vx(:,:,:),v(:,:,:)) [if not already present]
+windcompute:
+        2092, Generating NVIDIA GPU code
+            2092,   ! blockidx%x threadidx%x auto-collapsed
+                  Loop parallelized across CUDA thread blocks, CUDA threads(128) collapse(3) ! blockidx%x threadidx%x collapsed-innermost
+        2092, Generating implicit copyin(mo_atm) [if not already present]
+              Generating implicit copyout(mo_atm%ux(jce2,ice1:ice2,1:kz)) [if not already present]
+              Generating implicit copyin(mo_atm%u(jci1-1:jci2+2,ice1:ice2,1:kz),mo_atm%u(:,ice1:ice2,1:kz)) [if not already present]
+              Generating implicit copyout(mo_atm%ux(jce1,ice1:ice2,1:kz),mo_atm%vx(jce1:jce2,ici1:ici2,1:kz),mo_atm%vx(jce1:jce2,ice2,1:kz)) [if not already present]
+              Generating implicit copyin(mo_atm%v(jce1:jce2,ici1-1:ici2+2,1:kz),mo_atm%v(jce1:jce2,:,1:kz)) [if not already present]
+              Generating implicit copyout(mo_atm%ux(jci1:jci2,ice1:ice2,1:kz),mo_atm%vx(jce1:jce2,ice1,1:kz)) [if not already present]
+make[3]: Entering directory '/leonardo/home/userexternal/ctica000/MS_thesis/RegCM/Main'
+mpifort -I/leonardo/home/userexternal/ctica000/MS_thesis/RegCM/external -DNCFILTERS_AVAIL -DNETCDF4_HDF5 -I/leonardo/prod/spack/06/install/0.22/linux-rhel8-icelake/nvhpc-24.5/netcdf-c-4.9.2-ggbu5c62vlol4oe6sgxpjxzvapbge2hk/include -I/leonardo/prod/spack/06/install/0.22/linux-rhel8-icelake/nvhpc-24.5/netcdf-fortran-4.6.1-nvymynen3aoyohew4d7t646sjig4ufl6/include -I/leonardo/prod/spack/06/install/0.22/linux-rhel8-icelake/nvhpc-24.5/netcdf-fortran-4.6.1-nvymynen3aoyohew4d7t646sjig4ufl6/include -I/leonardo/prod/spack/06/install/0.22/linux-rhel8-icelake/nvhpc-24.5/netcdf-c-4.9.2-ggbu5c62vlol4oe6sgxpjxzvapbge2hk/include -I/leonardo/prod/spack/06/install/0.22/linux-rhel8-icelake/nvhpc-24.5/netcdf-fortran-4.6.1-nvymynen3aoyohew4d7t646sjig4ufl6/include -I/leonardo/prod/spack/06/install/0.22/linux-rhel8-icelake/nvhpc-24.5/netcdf-fortran-4.6.1-nvymynen3aoyohew4d7t646sjig4ufl6/include -DCLM45 -DOPENACC -DGPU  -DSTDPAR -I/leonardo/home/userexternal/ctica000/MS_thesis/RegCM/Share  -I./mpplib -I./clmlib -I./netlib -Ichemlib/GAS_CBMZ_NEW -I./chemlib -I./batslib -I./ocnlib -I./cumlib -I./microlib -I./cloudlib -I./radlib -I./pbllib -Iradlib/RRTMG -I./clmlib/clm4.5 -I./oasislib -DUSE_MPI3 -DF2008 -O3 -fast -fastsse -g -byteswapio -g -stdpar=gpu           -gpu=ccall-major,lineinfo,mem:managed -Minfo=accel -c mod_regcm_interface.F90
+make[3]: Leaving directory '/leonardo/home/userexternal/ctica000/MS_thesis/RegCM/Main'
+make[3]: Entering directory '/leonardo/home/userexternal/ctica000/MS_thesis/RegCM/Main'
+mpifort -I/leonardo/home/userexternal/ctica000/MS_thesis/RegCM/external -DNCFILTERS_AVAIL -DNETCDF4_HDF5 -I/leonardo/prod/spack/06/install/0.22/linux-rhel8-icelake/nvhpc-24.5/netcdf-c-4.9.2-ggbu5c62vlol4oe6sgxpjxzvapbge2hk/include -I/leonardo/prod/spack/06/install/0.22/linux-rhel8-icelake/nvhpc-24.5/netcdf-fortran-4.6.1-nvymynen3aoyohew4d7t646sjig4ufl6/include -I/leonardo/prod/spack/06/install/0.22/linux-rhel8-icelake/nvhpc-24.5/netcdf-fortran-4.6.1-nvymynen3aoyohew4d7t646sjig4ufl6/include -I/leonardo/prod/spack/06/install/0.22/linux-rhel8-icelake/nvhpc-24.5/netcdf-c-4.9.2-ggbu5c62vlol4oe6sgxpjxzvapbge2hk/include -I/leonardo/prod/spack/06/install/0.22/linux-rhel8-icelake/nvhpc-24.5/netcdf-fortran-4.6.1-nvymynen3aoyohew4d7t646sjig4ufl6/include -I/leonardo/prod/spack/06/install/0.22/linux-rhel8-icelake/nvhpc-24.5/netcdf-fortran-4.6.1-nvymynen3aoyohew4d7t646sjig4ufl6/include -DCLM45 -DOPENACC -DGPU  -DSTDPAR -I/leonardo/home/userexternal/ctica000/MS_thesis/RegCM/Share  -I./mpplib -I./clmlib -I./netlib -Ichemlib/GAS_CBMZ_NEW -I./chemlib -I./batslib -I./ocnlib -I./cumlib -I./microlib -I./cloudlib -I./radlib -I./pbllib -Iradlib/RRTMG -I./clmlib/clm4.5 -I./oasislib -DUSE_MPI3 -DF2008 -O3 -fast -fastsse -g -byteswapio -g -stdpar=gpu           -gpu=ccall-major,lineinfo,mem:managed -Minfo=accel -c regcm.F90
+make[3]: Leaving directory '/leonardo/home/userexternal/ctica000/MS_thesis/RegCM/Main'
+make[3]: Entering directory '/leonardo/home/userexternal/ctica000/MS_thesis/RegCM/Main'
+mpifort -I/leonardo/home/userexternal/ctica000/MS_thesis/RegCM/external -DNCFILTERS_AVAIL -DNETCDF4_HDF5 -I/leonardo/prod/spack/06/install/0.22/linux-rhel8-icelake/nvhpc-24.5/netcdf-c-4.9.2-ggbu5c62vlol4oe6sgxpjxzvapbge2hk/include -I/leonardo/prod/spack/06/install/0.22/linux-rhel8-icelake/nvhpc-24.5/netcdf-fortran-4.6.1-nvymynen3aoyohew4d7t646sjig4ufl6/include -I/leonardo/prod/spack/06/install/0.22/linux-rhel8-icelake/nvhpc-24.5/netcdf-fortran-4.6.1-nvymynen3aoyohew4d7t646sjig4ufl6/include -I/leonardo/prod/spack/06/install/0.22/linux-rhel8-icelake/nvhpc-24.5/netcdf-c-4.9.2-ggbu5c62vlol4oe6sgxpjxzvapbge2hk/include -I/leonardo/prod/spack/06/install/0.22/linux-rhel8-icelake/nvhpc-24.5/netcdf-fortran-4.6.1-nvymynen3aoyohew4d7t646sjig4ufl6/include -I/leonardo/prod/spack/06/install/0.22/linux-rhel8-icelake/nvhpc-24.5/netcdf-fortran-4.6.1-nvymynen3aoyohew4d7t646sjig4ufl6/include -DCLM45 -DOPENACC -DGPU  -DSTDPAR -I/leonardo/home/userexternal/ctica000/MS_thesis/RegCM/Share  -I./mpplib -I./clmlib -I./netlib -Ichemlib/GAS_CBMZ_NEW -I./chemlib -I./batslib -I./ocnlib -I./cumlib -I./microlib -I./cloudlib -I./radlib -I./pbllib -Iradlib/RRTMG -I./clmlib/clm4.5 -I./oasislib -DUSE_MPI3 -DF2008 -O3 -fast -fastsse -g -byteswapio -g -stdpar=gpu           -gpu=ccall-major,lineinfo,mem:managed -Minfo=accel -c clmsa.F90
+make[3]: Leaving directory '/leonardo/home/userexternal/ctica000/MS_thesis/RegCM/Main'
+make[3]: Entering directory '/leonardo/home/userexternal/ctica000/MS_thesis/RegCM/Main'
+/bin/sh ../libtool  --tag=FC   --mode=link mpifort  -DUSE_MPI3 -DF2008 -O3 -fast -fastsse -g -byteswapio -g -stdpar=gpu           -gpu=ccall-major,lineinfo,mem:managed -Minfo=accel -L/leonardo/home/userexternal/ctica000/MS_thesis/RegCM/external -L/leonardo/prod/spack/06/install/0.22/linux-rhel8-icelake/nvhpc-24.5/netcdf-fortran-4.6.1-nvymynen3aoyohew4d7t646sjig4ufl6/lib -L/leonardo/prod/spack/06/install/0.22/linux-rhel8-icelake/nvhpc-24.5/netcdf-c-4.9.2-ggbu5c62vlol4oe6sgxpjxzvapbge2hk/lib  -traceback -cudalib=nvtx,cusparse -o clmsa clmsa.o abort.o mod_header.o mod_clm_params.o mod_atm_stub.o mod_ncio.o mod_sun.o -mp  -L./clmlib -lclm -L./chemlib -lchem -Lchemlib/GAS_CBMZ_NEW -lcbmz -L./ocnlib -locn -L./microlib -lmicro ./cloudlib/libcloud.a -L./cumlib -lcum -L./radlib -lrad -L./pbllib -lpbl -Lradlib/RRTMG -lrrtmg -L./clmlib/clm4.5 -lclm45 -L./mpplib -lmpp -L/leonardo/home/userexternal/ctica000/MS_thesis/RegCM/Share -lrcmlib -lnetcdff  -L/leonardo/prod/spack/06/install/0.22/linux-rhel8-icelake/nvhpc-24.5/netcdf-c-4.9.2-ggbu5c62vlol4oe6sgxpjxzvapbge2hk/lib -lnetcdf -L/leonardo/prod/spack/06/install/0.22/linux-rhel8-icelake/nvhpc-24.5/netcdf-fortran-4.6.1-nvymynen3aoyohew4d7t646sjig4ufl6/lib -lnetcdff -lnetcdf -lnetcdf -lm -L./netlib -lnetlib -L./batslib -lbats -L/leonardo/home/userexternal/ctica000/MS_thesis/RegCM/external -laerosol -L/leonardo/home/userexternal/ctica000/MS_thesis/RegCM/external -lbmi
+libtool: link: mpifort -DUSE_MPI3 -DF2008 -O3 -fast -fastsse -g -byteswapio -g -stdpar=gpu -gpu=ccall-major,lineinfo,mem:managed -Minfo=accel -traceback -cudalib=nvtx,cusparse -o clmsa clmsa.o abort.o mod_header.o mod_clm_params.o mod_atm_stub.o mod_ncio.o mod_sun.o -mp  -L/leonardo/home/userexternal/ctica000/MS_thesis/RegCM/external -L/leonardo/prod/spack/06/install/0.22/linux-rhel8-icelake/nvhpc-24.5/netcdf-fortran-4.6.1-nvymynen3aoyohew4d7t646sjig4ufl6/lib -L/leonardo/prod/spack/06/install/0.22/linux-rhel8-icelake/nvhpc-24.5/netcdf-c-4.9.2-ggbu5c62vlol4oe6sgxpjxzvapbge2hk/lib -L./clmlib -lclm -L./chemlib -lchem -Lchemlib/GAS_CBMZ_NEW -lcbmz -L./ocnlib -locn -L./microlib -lmicro ./cloudlib/libcloud.a -L./cumlib -lcum -L./radlib -lrad -L./pbllib -lpbl -Lradlib/RRTMG -lrrtmg -L./clmlib/clm4.5 -lclm45 -L./mpplib -lmpp -L/leonardo/home/userexternal/ctica000/MS_thesis/RegCM/Share -lrcmlib -lnetcdff -lnetcdf -lm -L./netlib -lnetlib -L./batslib -lbats -laerosol -lbmi -mp
+make[3]: Leaving directory '/leonardo/home/userexternal/ctica000/MS_thesis/RegCM/Main'
+/leonardo/pub/userexternal/ggiulian/nvhpc/bin/ld: warning: /tmp/pgcudafatvf3K-YJoryBB.o: missing .note.GNU-stack section implies executable stack
+/leonardo/pub/userexternal/ggiulian/nvhpc/bin/ld: NOTE: This behaviour is deprecated and will be removed in a future version of the linker
+make[3]: Entering directory '/leonardo/home/userexternal/ctica000/MS_thesis/RegCM/Main'
+/bin/sh ../libtool  --tag=FC   --mode=link mpifort  -DUSE_MPI3 -DF2008 -O3 -fast -fastsse -g -byteswapio -g -stdpar=gpu           -gpu=ccall-major,lineinfo,mem:managed -Minfo=accel -L/leonardo/home/userexternal/ctica000/MS_thesis/RegCM/external -L/leonardo/prod/spack/06/install/0.22/linux-rhel8-icelake/nvhpc-24.5/netcdf-fortran-4.6.1-nvymynen3aoyohew4d7t646sjig4ufl6/lib -L/leonardo/prod/spack/06/install/0.22/linux-rhel8-icelake/nvhpc-24.5/netcdf-c-4.9.2-ggbu5c62vlol4oe6sgxpjxzvapbge2hk/lib  -traceback -cudalib=nvtx,cusparse -o regcm mod_regcm_interface.o mod_atm_interface.o mod_che_interface.o mod_lm_interface.o mod_cu_interface.o mod_rad_interface.o mod_pbl_interface.o mod_header.o mod_advection.o mod_ncio.o mod_bdycod.o mod_diffusion.o mod_micro_interface.o mod_sun.o mod_savefile.o mod_slice.o mod_init.o mod_vmodes.o mod_split.o mod_output.o mod_tendency.o mod_params.o mod_slabocean.o mod_sldepparam.o mod_sladvection.o abort.o mod_sound.o mod_timefilter.o mod_massck.o mod_moloch.o mod_bmiregcm.o regcm.o   -mp  -L./clmlib -lclm -L./chemlib -lchem -Lchemlib/GAS_CBMZ_NEW -lcbmz -L./ocnlib -locn -L./microlib -lmicro ./cloudlib/libcloud.a -L./cumlib -lcum -L./radlib -lrad -L./pbllib -lpbl -Lradlib/RRTMG -lrrtmg -L./clmlib/clm4.5 -lclm45 -L./mpplib -lmpp -L/leonardo/home/userexternal/ctica000/MS_thesis/RegCM/Share -lrcmlib -lnetcdff  -L/leonardo/prod/spack/06/install/0.22/linux-rhel8-icelake/nvhpc-24.5/netcdf-c-4.9.2-ggbu5c62vlol4oe6sgxpjxzvapbge2hk/lib -lnetcdf -L/leonardo/prod/spack/06/install/0.22/linux-rhel8-icelake/nvhpc-24.5/netcdf-fortran-4.6.1-nvymynen3aoyohew4d7t646sjig4ufl6/lib -lnetcdff -lnetcdf -lnetcdf -lm -L./netlib -lnetlib -L./batslib -lbats -L/leonardo/home/userexternal/ctica000/MS_thesis/RegCM/external -laerosol -L/leonardo/home/userexternal/ctica000/MS_thesis/RegCM/external -lbmi
+libtool: link: mpifort -DUSE_MPI3 -DF2008 -O3 -fast -fastsse -g -byteswapio -g -stdpar=gpu -gpu=ccall-major,lineinfo,mem:managed -Minfo=accel -traceback -cudalib=nvtx,cusparse -o regcm mod_regcm_interface.o mod_atm_interface.o mod_che_interface.o mod_lm_interface.o mod_cu_interface.o mod_rad_interface.o mod_pbl_interface.o mod_header.o mod_advection.o mod_ncio.o mod_bdycod.o mod_diffusion.o mod_micro_interface.o mod_sun.o mod_savefile.o mod_slice.o mod_init.o mod_vmodes.o mod_split.o mod_output.o mod_tendency.o mod_params.o mod_slabocean.o mod_sldepparam.o mod_sladvection.o abort.o mod_sound.o mod_timefilter.o mod_massck.o mod_moloch.o mod_bmiregcm.o regcm.o -mp  -L/leonardo/home/userexternal/ctica000/MS_thesis/RegCM/external -L/leonardo/prod/spack/06/install/0.22/linux-rhel8-icelake/nvhpc-24.5/netcdf-fortran-4.6.1-nvymynen3aoyohew4d7t646sjig4ufl6/lib -L/leonardo/prod/spack/06/install/0.22/linux-rhel8-icelake/nvhpc-24.5/netcdf-c-4.9.2-ggbu5c62vlol4oe6sgxpjxzvapbge2hk/lib -L./clmlib -lclm -L./chemlib -lchem -Lchemlib/GAS_CBMZ_NEW -lcbmz -L./ocnlib -locn -L./microlib -lmicro ./cloudlib/libcloud.a -L./cumlib -lcum -L./radlib -lrad -L./pbllib -lpbl -Lradlib/RRTMG -lrrtmg -L./clmlib/clm4.5 -lclm45 -L./mpplib -lmpp -L/leonardo/home/userexternal/ctica000/MS_thesis/RegCM/Share -lrcmlib -lnetcdff -lnetcdf -lm -L./netlib -lnetlib -L./batslib -lbats -laerosol -lbmi -mp
+make[3]: Leaving directory '/leonardo/home/userexternal/ctica000/MS_thesis/RegCM/Main'
+/leonardo/pub/userexternal/ggiulian/nvhpc/bin/ld: warning: /tmp/pgcudafatCe3KuQbuq_eH.o: missing .note.GNU-stack section implies executable stack
+/leonardo/pub/userexternal/ggiulian/nvhpc/bin/ld: NOTE: This behaviour is deprecated and will be removed in a future version of the linker
+Making all in PostProc
+make[2]: Nothing to be done for 'all'.
