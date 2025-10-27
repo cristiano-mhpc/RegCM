@@ -1,4 +1,4 @@
-!::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+!re::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
 !
 !    This file is part of ICTP RegCM.
 !
@@ -1046,6 +1046,7 @@ module mod_output
         end if
         if ( associated(srf_cape_out) .and. associated(srf_cin_out) ) then
           if ( idynamic == 3 ) then
+            !$acc parallel loop collapse(2) gang vector copyin(mo_atm) copy(srf_cape_out,srf_cin_out) private(i,j,k,kk,p1d,t1d,rh1d)
             do i = ici1, ici2
               do j = jci1, jci2
                 do k = 1, kz
@@ -1060,6 +1061,7 @@ module mod_output
               end do
             end do
           else
+            !$acc parallel loop collapse(2) gang vector copyin(atm1, sfs, ps_out) copy(srf_cape_out,srf_cin_out) private(i,j,k,kk,p1d,t1d,rh1d)
             do i = ici1, ici2
               do j = jci1, jci2
                 do k = 1, kz

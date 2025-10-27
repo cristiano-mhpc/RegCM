@@ -1,0 +1,138 @@
+Failing in Thread:1
+Accelerator Fatal Error: call to cuStreamSynchronize returned error 719 (CUDA_ERROR_LAUNCH_FAILED): Launch failed (often invalid pointer dereference)
+ File: /leonardo/home/userexternal/ctica000/MS_thesis/RegCM/Main/mod_output.F90
+ Function: output:60
+ Line: 1063
+
+Failing in Thread:1
+Accelerator Fatal Error: call to cuStreamSynchronize returned error 719 (CUDA_ERROR_LAUNCH_FAILED): Launch failed (often invalid pointer dereference)
+ File: /leonardo/home/userexternal/ctica000/MS_thesis/RegCM/Main/mod_output.F90
+ Function: output:60
+ Line: 1063
+
+Failing in Thread:1
+Accelerator Fatal Error: call to cuStreamSynchronize returned error 719 (CUDA_ERROR_LAUNCH_FAILED): Launch failed (often invalid pointer dereference)
+ File: /leonardo/home/userexternal/ctica000/MS_thesis/RegCM/Main/mod_output.F90
+ Function: output:60
+ Line: 1063
+
+Failing in Thread:1
+Accelerator Fatal Error: call to cuStreamSynchronize returned error 719 (CUDA_ERROR_LAUNCH_FAILED): Launch failed (often invalid pointer dereference)
+ File: /leonardo/home/userexternal/ctica000/MS_thesis/RegCM/Main/mod_output.F90
+ Function: output:60
+ Line: 1063
+
+Failing in Thread:1
+Accelerator Fatal Error: call to cuStreamSynchronize returned error 719 (CUDA_ERROR_LAUNCH_FAILED): Launch failed (often invalid pointer dereference)
+ File: /leonardo/home/userexternal/ctica000/MS_thesis/RegCM/Main/mod_output.F90
+ Function: output:60
+ Line: 1063
+
+Failing in Thread:1
+Accelerator Fatal Error: call to cuStreamSynchronize returned error 719 (CUDA_ERROR_LAUNCH_FAILED): Launch failed (often invalid pointer dereference)
+ File: /leonardo/home/userexternal/ctica000/MS_thesis/RegCM/Main/mod_output.F90
+ Function: output:60
+ Line: 1063
+
+Failing in Thread:1
+Accelerator Fatal Error: call to cuStreamSynchronize returned error 719 (CUDA_ERROR_LAUNCH_FAILED): Launch failed (often invalid pointer dereference)
+ File: /leonardo/home/userexternal/ctica000/MS_thesis/RegCM/Main/mod_output.F90
+ Function: output:60
+ Line: 1063
+
+Failing in Thread:1
+Accelerator Fatal Error: call to cuStreamSynchronize returned error 719 (CUDA_ERROR_LAUNCH_FAILED): Launch failed (often invalid pointer dereference)
+ File: /leonardo/home/userexternal/ctica000/MS_thesis/RegCM/Main/mod_output.F90
+ Function: output:60
+ Line: 1063
+
+Failing in Thread:1
+Accelerator Fatal Error: call to cuStreamSynchronize returned error 719 (CUDA_ERROR_LAUNCH_FAILED): Launch failed (often invalid pointer dereference)
+ File: /leonardo/home/userexternal/ctica000/MS_thesis/RegCM/Main/mod_output.F90
+ Function: output:60
+ Line: 1063
+
+Failing in Thread:1
+Accelerator Fatal Error: call to cuStreamSynchronize returned error 719 (CUDA_ERROR_LAUNCH_FAILED): Launch failed (often invalid pointer dereference)
+ File: /leonardo/home/userexternal/ctica000/MS_thesis/RegCM/Main/mod_output.F90
+ Function: output:60
+ Line: 1063
+
+Failing in Thread:1
+Accelerator Fatal Error: call to cuStreamSynchronize returned error 719 (CUDA_ERROR_LAUNCH_FAILED): Launch failed (often invalid pointer dereference)
+ File: /leonardo/home/userexternal/ctica000/MS_thesis/RegCM/Main/mod_output.F90
+ Function: output:60
+ Line: 1063
+
+Failing in Thread:1
+Accelerator Fatal Error: call to cuStreamSynchronize returned error 719 (CUDA_ERROR_LAUNCH_FAILED): Launch failed (often invalid pointer dereference)
+ File: /leonardo/home/userexternal/ctica000/MS_thesis/RegCM/Main/mod_output.F90
+ Function: output:60
+ Line: 1063
+
+Failing in Thread:1
+Accelerator Fatal Error: call to cuStreamSynchronize returned error 719 (CUDA_ERROR_LAUNCH_FAILED): Launch failed (often invalid pointer dereference)
+ File: /leonardo/home/userexternal/ctica000/MS_thesis/RegCM/Main/mod_output.F90
+ Function: output:60
+ Line: 1063
+
+Failing in Thread:1
+Accelerator Fatal Error: call to cuStreamSynchronize returned error 719 (CUDA_ERROR_LAUNCH_FAILED): Launch failed (often invalid pointer dereference)
+ File: /leonardo/home/userexternal/ctica000/MS_thesis/RegCM/Main/mod_output.F90
+ Function: output:60
+ Line: 1063
+
+[ perf record: Woken up 3055 times to write data ]
+[ perf record: Woken up 3058 times to write data ]
+[ perf record: Woken up 3057 times to write data ]
+[ perf record: Woken up 3060 times to write data ]
+[ perf record: Woken up 3054 times to write data ]
+[ perf record: Woken up 3059 times to write data ]
+Warning:
+Processed 100953 events and lost 1 chunks!
+
+Check IO/CPU overload!
+
+[ perf record: Woken up 3061 times to write data ]
+[ perf record: Woken up 3053 times to write data ]
+[ perf record: Captured and wrote 763.854 MB /leonardo_scratch/large/userexternal/ctica000/perf/with_IO/sequential_write/perf_22972433/perf.data.rank9 (94754 samples) ]
+[ perf record: Captured and wrote 764.596 MB /leonardo_scratch/large/userexternal/ctica000/perf/with_IO/sequential_write/perf_22972433/perf.data.rank8 (94847 samples) ]
+[ perf record: Captured and wrote 765.138 MB /leonardo_scratch/large/userexternal/ctica000/perf/with_IO/sequential_write/perf_22972433/perf.data.rank11 (94918 samples) ]
+[ perf record: Captured and wrote 764.967 MB /leonardo_scratch/large/userexternal/ctica000/perf/with_IO/sequential_write/perf_22972433/perf.data.rank15 (94898 samples) ]
+[ perf record: Captured and wrote 764.827 MB /leonardo_scratch/large/userexternal/ctica000/perf/with_IO/sequential_write/perf_22972433/perf.data.rank13 (94880 samples) ]
+[ perf record: Captured and wrote 763.627 MB /leonardo_scratch/large/userexternal/ctica000/perf/with_IO/sequential_write/perf_22972433/perf.data.rank12 (94731 samples) ]
+[ perf record: Captured and wrote 765.314 MB /leonardo_scratch/large/userexternal/ctica000/perf/with_IO/sequential_write/perf_22972433/perf.data.rank10 (94936 samples) ]
+[ perf record: Captured and wrote 763.721 MB /leonardo_scratch/large/userexternal/ctica000/perf/with_IO/sequential_write/perf_22972433/perf.data.rank14 (94743 samples) ]
+srun: error: lrdn2152: tasks 8-11: Exited with exit code 1
+srun: error: lrdn2153: tasks 12-15: Exited with exit code 1
+Failing in Thread:1
+Accelerator Fatal Error: call to cuStreamSynchronize returned error 719 (CUDA_ERROR_LAUNCH_FAILED): Launch failed (often invalid pointer dereference)
+ File: /leonardo/home/userexternal/ctica000/MS_thesis/RegCM/Main/mod_output.F90
+ Function: output:60
+ Line: 1063
+
+Failing in Thread:1
+Accelerator Fatal Error: call to cuStreamSynchronize returned error 719 (CUDA_ERROR_LAUNCH_FAILED): Launch failed (often invalid pointer dereference)
+ File: /leonardo/home/userexternal/ctica000/MS_thesis/RegCM/Main/mod_output.F90
+ Function: output:60
+ Line: 1063
+
+[ perf record: Woken up 3057 times to write data ]
+[ perf record: Woken up 2908 times to write data ]
+[ perf record: Woken up 2854 times to write data ]
+[ perf record: Woken up 4449 times to write data ]
+[ perf record: Woken up 4350 times to write data ]
+[ perf record: Woken up 3585 times to write data ]
+[ perf record: Captured and wrote 713.674 MB /leonardo_scratch/large/userexternal/ctica000/perf/with_IO/sequential_write/perf_22972433/perf.data.rank2 (88530 samples) ]
+[ perf record: Captured and wrote 764.695 MB /leonardo_scratch/large/userexternal/ctica000/perf/with_IO/sequential_write/perf_22972433/perf.data.rank4 (94863 samples) ]
+[ perf record: Captured and wrote 764.496 MB /leonardo_scratch/large/userexternal/ctica000/perf/with_IO/sequential_write/perf_22972433/perf.data.rank6 (94838 samples) ]
+[ perf record: Captured and wrote 727.269 MB /leonardo_scratch/large/userexternal/ctica000/perf/with_IO/sequential_write/perf_22972433/perf.data.rank3 (90218 samples) ]
+[ perf record: Captured and wrote 764.147 MB /leonardo_scratch/large/userexternal/ctica000/perf/with_IO/sequential_write/perf_22972433/perf.data.rank7 (94792 samples) ]
+srun: error: lrdn2145: tasks 2-3: Exited with exit code 1
+[ perf record: Captured and wrote 896.648 MB /leonardo_scratch/large/userexternal/ctica000/perf/with_IO/sequential_write/perf_22972433/perf.data.rank0 (110967 samples) ]
+[ perf record: Woken up 3070 times to write data ]
+[ perf record: Woken up 2889 times to write data ]
+[ perf record: Captured and wrote 767.719 MB /leonardo_scratch/large/userexternal/ctica000/perf/with_IO/sequential_write/perf_22972433/perf.data.rank5 (95238 samples) ]
+[ perf record: Captured and wrote 722.249 MB /leonardo_scratch/large/userexternal/ctica000/perf/with_IO/sequential_write/perf_22972433/perf.data.rank1 (89595 samples) ]
+srun: error: lrdn2146: tasks 4-7: Exited with exit code 1
+srun: error: lrdn2145: tasks 0-1: Exited with exit code 1
