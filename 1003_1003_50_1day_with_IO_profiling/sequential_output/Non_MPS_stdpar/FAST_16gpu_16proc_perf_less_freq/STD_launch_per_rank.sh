@@ -11,6 +11,8 @@ if [ -z "$RANK" ]; then
   exit 1
 fi
 
+export CUDA_LAUNCH_BLOCKING=1     # pin runtime error to the exact line
+
 # Assign each local rank to a unique GPU on this node
 export CUDA_VISIBLE_DEVICES=$RANK
 export ACC_DEVICE_TYPE=nvidia

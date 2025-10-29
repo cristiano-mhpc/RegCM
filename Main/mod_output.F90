@@ -64,12 +64,14 @@ module mod_output
     logical :: ldoslab
     logical :: lstartup
     integer(ik4) :: i, j, k, n, kk, itr
-    real(rkx), dimension(kz) :: p1d, t1d, rh1d
+    real(rkx), dimension(kz) :: p1d,t1d,rh1d,piw,qw,tdw,thw,thvw,zw
     real(rkx) :: cell, srffac, radfac, lakfac, subfac, optfac, stsfac
     real(rkx) :: tsurf, t500
     real(rkx), dimension(:,:,:), pointer, contiguous :: qv
     real(rkx), dimension(:,:), pointer, contiguous :: temp500
     type(regcm_projection), save :: pj
+
+    real(rkx)::cape_loc, cin_loc
 #ifdef DEBUG
     character(len=dbgslen) :: subroutine_name = 'output'
     integer(ik4), save :: idindx = 0
@@ -1046,36 +1048,56 @@ module mod_output
         end if
         if ( associated(srf_cape_out) .and. associated(srf_cin_out) ) then
           if ( idynamic == 3 ) then
-            !$acc parallel loop collapse(2) gang vector copyin(mo_atm) copy(srf_cape_out,srf_cin_out) private(i,j,k,kk,p1d,t1d,rh1d)
+            !$acc data copyin(mo_atm%p(jci1:jci2,ici1:ici2,1:kz), &
+            !$acc                 mo_atm%t(jci1:jci2,ici1:ici2,1:kz), &
+            !$acc                 mo_atm%qx(jci1:jci2,ici1:ici2,1:kz,iqv:iqv)) & 
+            !$acc copyout(srf_cape_out(jci1:jci2,ici1:ici2), &
+            !$acc         srf_cin_out(jci1:jci2,ici1:ici2))
+            !$acc parallel loop collapse(2) gang vector private(i,j,k,kk,p1d,t1d,rh1d,piw,cape_loc,cin_loc)
             do i = ici1, ici2
               do j = jci1, jci2
                 do k = 1, kz
-                  kk = kzp1 - k
+                  kk =(kz + 1) - k
                   p1d(kk) = mo_atm%p(j,i,k)
                   t1d(kk) = mo_atm%t(j,i,k)
                   rh1d(kk) = min(d_one,max(d_zero,(mo_atm%qx(j,i,k,iqv) / &
                       pfwsat(mo_atm%t(j,i,k),mo_atm%p(j,i,k)))))
                 end do
-                call getcape(kz,p1d,t1d,rh1d, &
-                  srf_cape_out(j,i),srf_cin_out(j,i))
+                call getcape_gpu(int(kz,ik4),p1d,t1d,rh1d, piw, qw, tdw, thw, thvw, zw, &
+                  cape_loc, cin_loc)
+                  
+                srf_cape_out(j,i) = cape_loc
+                srf_cin_out (j,i) = cin_loc
               end do
             end do
+            !$acc end data
           else
-            !$acc parallel loop collapse(2) gang vector copyin(atm1, sfs, ps_out) copy(srf_cape_out,srf_cin_out) private(i,j,k,kk,p1d,t1d,rh1d)
+            !$acc data copyin(atm1%pr(jci1:jci2,ici1:ici2,1:kz), &
+            !$acc                 atm1%t(jci1:jci2,ici1:ici2,1:kz), &
+            !$acc                 atm1%qx(jci1:jci2,ici1:ici2,1:kz,iqv:iqv), &
+            !$acc                 sfs%psa(jci1:jci2,ici1:ici2), &
+            !$acc                 ps_out(jci1:jci2,ici1:ici2)) &
+            !$acc copyout(srf_cape_out(jci1:jci2,ici1:ici2), &
+            !$acc         srf_cin_out(jci1:jci2,ici1:ici2))
+            !$acc parallel loop collapse(2) gang vector private(i,j,k,kk,p1d,t1d,rh1d,piw,cape_loc,cin_loc)
             do i = ici1, ici2
               do j = jci1, jci2
                 do k = 1, kz
-                  kk = kzp1 - k
+                  kk = (kz + 1) - k
                   p1d(kk) = atm1%pr(j,i,k)
                   t1d(kk) = atm1%t(j,i,k)/sfs%psa(j,i)
                   rh1d(kk) = min(d_one,max(d_zero, &
                      (atm1%qx(j,i,k,iqv)/ps_out(j,i)) / &
                      pfwsat(atm1%t(j,i,k)/ps_out(j,i),atm1%pr(j,i,k))))
                 end do
-                call getcape(kz,p1d,t1d,rh1d, &
-                  srf_cape_out(j,i),srf_cin_out(j,i))
+                call getcape_gpu(int(kz,ik4),p1d,t1d,rh1d,piw,qw,tdw,thw,thvw,zw, &
+                  cape_loc, cin_loc)
+
+                srf_cape_out(j,i) = cape_loc
+                srf_cin_out (j,i) = cin_loc
               end do
             end do
+            !$acc end data 
           end if
         end if
 
