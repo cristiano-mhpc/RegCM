@@ -64,7 +64,7 @@ module mod_output
     logical :: ldoslab
     logical :: lstartup
     integer(ik4) :: i, j, k, n, kk, itr
-    real(rkx), dimension(kz) :: p1d, t1d, rh1d, tdw, piw,qw,thw,thvw,zw
+    real(rkx), allocatable :: p3d(:,:,:), t3d(:,:,:), rh3d(:,:,:), tdw(:,:,:), piw(:,:,:),qw(:,:,:),thw(:,:,:),thvw(:,:,:),zw(:,:,:)
     real(rkx) :: cell, srffac, radfac, lakfac, subfac, optfac, stsfac
     real(rkx) :: tsurf, t500
     real(rkx) :: cape_loc, cin_loc
@@ -1048,42 +1048,46 @@ module mod_output
           end if
         end if
         if ( associated(srf_cape_out) .and. associated(srf_cin_out) ) then
+          allocate(p3d(kz,jci1:jci2,ici1:ici2), t3d(kz,jci1:jci2,ici1:ici2), rh3d(kz,jci1:jci2,ici1:ici2))
+          allocate(piw (kz,jci1:jci2,ici1:ici2), tdw (kz,jci1:jci2,ici1:ici2), qw (kz,jci1:jci2,ici1:ici2))
+          allocate(thw (kz,jci1:jci2,ici1:ici2), thvw(kz,jci1:jci2,ici1:ici2), zw (kz,jci1:jci2,ici1:ici2))
           if ( idynamic == 3 ) then
-            do concurrent(i = ici1:ici2, j = jci1:jci2) local(k,kk,p1d,t1d,rh1d,tdw,piw,qw,thw,thvw,zw,cape_loc,cin_loc)
+            do concurrent(i = ici1:ici2, j = jci1:jci2) local(k,kk,cape_loc, cin_loc)!p1d,t1d,rh1d,tdw,piw,qw,thw,thvw,zw,cape_loc,cin_loc)
               do k = 1, kz
                 kk = (kz + 1) - k
-                p1d(kk) = mo_atm%p(j,i,k)
-                t1d(kk) = mo_atm%t(j,i,k)
-                rh1d(kk) = min(d_one,max(d_zero,(mo_atm%qx(j,i,k,iqv) / &
-                    pfwsat(mo_atm%t(j,i,k),mo_atm%p(j,i,k)))))
+                p3d(kk,j,i) = mo_atm%p(j,i,k)
+                ! t1d(kk) = mo_atm%t(j,i,k)
+                ! rh1d(kk) = min(d_one,max(d_zero,(mo_atm%qx(j,i,k,iqv) / &
+                    ! pfwsat(mo_atm%t(j,i,k),mo_atm%p(j,i,k)))))
               end do
 
-              call getcape_gpu(kz,p1d,t1d,rh1d,tdw,piw,qw,thw,thvw,zw, &
-                cape_loc,cin_loc)
+              ! call getcape_gpu(int(kz,ik4),p1d,t1d,rh1d,tdw,piw,qw,thw,thvw,zw, &
+              !   cape_loc,cin_loc)
 
-                srf_cape_out(j,i) = cape_loc
-                srf_cin_out(j,i) = cin_loc
+                srf_cape_out(j,i) = 0._rkx!cape_loc
+                srf_cin_out(j,i) = 0._rkx!cin_loc
 
             end do
           else
-            do concurrent (i = ici1:ici2, j = jci1:jci2) local(k,kk,p1d,t1d,rh1d,tdw,piw,qw,thw,thvw,zw,cape_loc,cin_loc) 
+            do concurrent (i = ici1:ici2, j = jci1:jci2) local(k,kk,cape_loc,cin_loc)!p1d,t1d,rh1d,tdw,piw,qw,thw,thvw,zw,cape_loc,cin_loc) 
                 do k = 1, kz
                   ! kk = kzp1 - k
                   kk = (kz + 1) - k
-                  p1d(kk) = atm1%pr(j,i,k)
-                  t1d(kk) = atm1%t(j,i,k)/sfs%psa(j,i)
-                  rh1d(kk) = min(d_one,max(d_zero, &
-                     (atm1%qx(j,i,k,iqv)/ps_out(j,i)) / &
-                     pfwsat(atm1%t(j,i,k)/ps_out(j,i),atm1%pr(j,i,k))))
+                  p3d(kk,j,i) = atm1%pr(j,i,k)
+                  ! t1d(kk) = atm1%t(j,i,k)/sfs%psa(j,i)
+                  ! rh1d(kk) = min(d_one,max(d_zero, &
+                     ! (atm1%qx(j,i,k,iqv)/ps_out(j,i)) / &
+                     ! pfwsat(atm1%t(j,i,k)/ps_out(j,i),atm1%pr(j,i,k))))
                 end do
 
-                call getcape_gpu(kz,p1d,t1d,rh1d,tdw,piw,qw,thw,thvw,zw, &
-                  cape_loc,cin_loc)
+                ! call getcape_gpu(int(kz,ik4),p1d,t1d,rh1d,tdw,piw,qw,thw,thvw,zw, &
+                !   cape_loc,cin_loc)
 
-                srf_cape_out(j,i) = cape_loc
-                srf_cin_out(j,i) = cin_loc
+                srf_cape_out(j,i) = 0._rkx!cape_loc
+                srf_cin_out(j,i) = 0._rkx!cin_loc
             end do
           end if
+          deallocate(p3d,t3d,rh3d,tdw,piw,qw,thw,thvw,zw)
         end if
 
         if ( associated(srf_tprw_out) ) then
