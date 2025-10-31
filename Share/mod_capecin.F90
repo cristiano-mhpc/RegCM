@@ -403,9 +403,9 @@ module mod_capecin
       implicit none
 
       integer(ik4), intent(in) :: nk
-      ! real(rkx), intent(in), contiguous :: p(:), t(:), rh(:)
-      real(rkx), intent(in) :: p(nk), t(nk), rh(nk)
-      real(rkx), intent(inout) :: td(nk), pi(nk), q(nk), th(nk), thv(nk), z(nk)
+      real(rkx), intent(in),contiguous :: p(:), t(:), rh(:)
+      ! real(rkx), intent(in) :: p(nk), t(nk), rh(nk)
+      real(rkx), intent(inout),contiguous :: td(:), pi(:), q(:), th(:), thv(:), z(:)
       real(rkx), intent(out) :: cape, cin
 
       logical :: doit, ice, cloud, not_converged

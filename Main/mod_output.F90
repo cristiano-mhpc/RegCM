@@ -1052,40 +1052,41 @@ module mod_output
           allocate(piw (kz,jci1:jci2,ici1:ici2), tdw (kz,jci1:jci2,ici1:ici2), qw (kz,jci1:jci2,ici1:ici2))
           allocate(thw (kz,jci1:jci2,ici1:ici2), thvw(kz,jci1:jci2,ici1:ici2), zw (kz,jci1:jci2,ici1:ici2))
           if ( idynamic == 3 ) then
+            !$acc data create(p3d,t3d,rh3d,tdw,piw,qw,thw,thvw,zw)
             do concurrent(i = ici1:ici2, j = jci1:jci2) local(k,kk,cape_loc, cin_loc)!p1d,t1d,rh1d,tdw,piw,qw,thw,thvw,zw,cape_loc,cin_loc)
               do k = 1, kz
                 kk = (kz + 1) - k
                 p3d(kk,j,i) = mo_atm%p(j,i,k)
-                ! t1d(kk) = mo_atm%t(j,i,k)
-                ! rh1d(kk) = min(d_one,max(d_zero,(mo_atm%qx(j,i,k,iqv) / &
+                ! t3d(kk,j,i) = mo_atm%t(j,i,k)
+                ! rh3d(kk,j,i) = min(d_one,max(d_zero,(mo_atm%qx(j,i,k,iqv) / &
                     ! pfwsat(mo_atm%t(j,i,k),mo_atm%p(j,i,k)))))
               end do
-
-              ! call getcape_gpu(int(kz,ik4),p1d,t1d,rh1d,tdw,piw,qw,thw,thvw,zw, &
+              ! call getcape_gpu(int(kz,ik4),p3d(:,j,i),t3d(:j,i),rh3d(:,j,i),tdw(:,j,i),piw(:,j,i),qw(:,j,i),thw(:,j,i),thvw(:,j,i),zw(:,j,i), &
               !   cape_loc,cin_loc)
 
                 srf_cape_out(j,i) = 0._rkx!cape_loc
-                srf_cin_out(j,i) = 0._rkx!cin_loc
-
+                srf_cin_out(j,i) = 0._rkx!cin_loc  
             end do
+           !$acc end data
           else
+            !$acc data create(p3d,t3d,rh3d,tdw,piw,qw,thw,thvw,zw)
             do concurrent (i = ici1:ici2, j = jci1:jci2) local(k,kk,cape_loc,cin_loc)!p1d,t1d,rh1d,tdw,piw,qw,thw,thvw,zw,cape_loc,cin_loc) 
                 do k = 1, kz
                   ! kk = kzp1 - k
                   kk = (kz + 1) - k
                   p3d(kk,j,i) = atm1%pr(j,i,k)
-                  ! t1d(kk) = atm1%t(j,i,k)/sfs%psa(j,i)
-                  ! rh1d(kk) = min(d_one,max(d_zero, &
+                  ! t3d(kk,j,i) = atm1%t(j,i,k)/sfs%psa(j,i)
+                  ! rh3d(kk,j,i) = min(d_one,max(d_zero, &
                      ! (atm1%qx(j,i,k,iqv)/ps_out(j,i)) / &
                      ! pfwsat(atm1%t(j,i,k)/ps_out(j,i),atm1%pr(j,i,k))))
                 end do
-
-                ! call getcape_gpu(int(kz,ik4),p1d,t1d,rh1d,tdw,piw,qw,thw,thvw,zw, &
-                !   cape_loc,cin_loc)
+                ! call getcape_gpu(int(kz,ik4),p3d(:,j,i),t3d(:j,i),rh3d(:,j,i),tdw(:,j,i),piw(:,j,i),qw(:,j,i),thw(:,j,i),thvw(:,j,i),zw(:,j,i), &
+                ! cape_loc,cin_loc)
 
                 srf_cape_out(j,i) = 0._rkx!cape_loc
                 srf_cin_out(j,i) = 0._rkx!cin_loc
             end do
+            !$acc end data
           end if
           deallocate(p3d,t3d,rh3d,tdw,piw,qw,thw,thvw,zw)
         end if
