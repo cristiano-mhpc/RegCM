@@ -1,0 +1,62 @@
+[ perf record: Woken up 23941 times to write data ]
+[ perf record: Woken up 23999 times to write data ]
+[ perf record: Woken up 23935 times to write data ]
+[ perf record: Woken up 23949 times to write data ]
+[ perf record: Woken up 23937 times to write data ]
+[ perf record: Woken up 23903 times to write data ]
+[ perf record: Woken up 23961 times to write data ]
+[ perf record: Woken up 23906 times to write data ]
+[ perf record: Woken up 25512 times to write data ]
+[ perf record: Woken up 25501 times to write data ]
+[ perf record: Woken up 25325 times to write data ]
+[ perf record: Woken up 25563 times to write data ]
+Warning:
+Processed 780654 events and lost 2 chunks!
+
+Check IO/CPU overload!
+
+Warning:
+Processed 780944 events and lost 1 chunks!
+
+Check IO/CPU overload!
+
+Warning:
+Processed 772384 events and lost 1 chunks!
+
+Check IO/CPU overload!
+
+Warning:
+Processed 773367 events and lost 1 chunks!
+
+Check IO/CPU overload!
+
+[ perf record: Captured and wrote 5985.530 MB /leonardo_scratch/large/userexternal/ctica000/perf/with_IO/sequential_write/perf_23715865/perf.data.rank12 (742822 samples) ]
+[ perf record: Captured and wrote 5987.259 MB /leonardo_scratch/large/userexternal/ctica000/perf/with_IO/sequential_write/perf_23715865/perf.data.rank15 (743028 samples) ]
+Warning:
+Processed 773090 events and lost 1 chunks!
+
+Check IO/CPU overload!
+
+[ perf record: Captured and wrote 5984.420 MB /leonardo_scratch/large/userexternal/ctica000/perf/with_IO/sequential_write/perf_23715865/perf.data.rank5 (742671 samples) ]
+[ perf record: Captured and wrote 5977.076 MB /leonardo_scratch/large/userexternal/ctica000/perf/with_IO/sequential_write/perf_23715865/perf.data.rank6 (741760 samples) ]
+[ perf record: Captured and wrote 5976.125 MB /leonardo_scratch/large/userexternal/ctica000/perf/with_IO/sequential_write/perf_23715865/perf.data.rank4 (741642 samples) ]
+[ perf record: Captured and wrote 5989.550 MB /leonardo_scratch/large/userexternal/ctica000/perf/with_IO/sequential_write/perf_23715865/perf.data.rank14 (743321 samples) ]
+[ perf record: Captured and wrote 5992.531 MB /leonardo_scratch/large/userexternal/ctica000/perf/with_IO/sequential_write/perf_23715865/perf.data.rank7 (743592 samples) ]
+[ perf record: Captured and wrote 5990.283 MB /leonardo_scratch/large/userexternal/ctica000/perf/with_IO/sequential_write/perf_23715865/perf.data.rank13 (743412 samples) ]
+[ perf record: Captured and wrote 6000.292 MB /leonardo_scratch/large/userexternal/ctica000/perf/with_IO/sequential_write/perf_23715865/perf.data.rank10 (744554 samples) ]
+Warning:
+Processed 773431 events and lost 3 chunks!
+
+Check IO/CPU overload!
+
+[ perf record: Captured and wrote 5990.684 MB /leonardo_scratch/large/userexternal/ctica000/perf/with_IO/sequential_write/perf_23715865/perf.data.rank8 (743362 samples) ]
+[ perf record: Captured and wrote 5984.875 MB /leonardo_scratch/large/userexternal/ctica000/perf/with_IO/sequential_write/perf_23715865/perf.data.rank9 (742635 samples) ]
+[ perf record: Captured and wrote 5985.492 MB /leonardo_scratch/large/userexternal/ctica000/perf/with_IO/sequential_write/perf_23715865/perf.data.rank11 (742805 samples) ]
+[ perf record: Woken up 23727 times to write data ]
+[ perf record: Woken up 23791 times to write data ]
+[ perf record: Woken up 23749 times to write data ]
+[ perf record: Woken up 24639 times to write data ]
+[ perf record: Captured and wrote 5932.162 MB /leonardo_scratch/large/userexternal/ctica000/perf/with_IO/sequential_write/perf_23715865/perf.data.rank1 (736186 samples) ]
+[ perf record: Captured and wrote 5937.602 MB /leonardo_scratch/large/userexternal/ctica000/perf/with_IO/sequential_write/perf_23715865/perf.data.rank3 (736861 samples) ]
+[ perf record: Captured and wrote 5948.338 MB /leonardo_scratch/large/userexternal/ctica000/perf/with_IO/sequential_write/perf_23715865/perf.data.rank2 (738193 samples) ]
+[ perf record: Captured and wrote 6160.395 MB /leonardo_scratch/large/userexternal/ctica000/perf/with_IO/sequential_write/perf_23715865/perf.data.rank0 (761691 samples) ]

@@ -1,0 +1,427 @@
+[lrdn1199:136228:0:136228] Caught signal 11 (Segmentation fault: Sent by the kernel at address (nil))
+[lrdn1470:4005946:0:4005946] Caught signal 11 (Segmentation fault: Sent by the kernel at address (nil))
+[lrdn1470:4005943:0:4005943] Caught signal 11 (Segmentation fault: Sent by the kernel at address (nil))
+[lrdn1470:4005944:0:4005944] Caught signal 11 (Segmentation fault: Sent by the kernel at address (nil))
+[lrdn1339:92189:0:92189] Caught signal 11 (Segmentation fault: Sent by the kernel at address (nil))
+[lrdn1374:93996:0:93996] Caught signal 11 (Segmentation fault: Sent by the kernel at address (nil))
+[lrdn1470:4005945:0:4005945] Caught signal 11 (Segmentation fault: Sent by the kernel at address (nil))
+[lrdn1374:93999:0:93999] Caught signal 11 (Segmentation fault: Sent by the kernel at address (nil))
+[lrdn1374:93998:0:93998] Caught signal 11 (Segmentation fault: Sent by the kernel at address (nil))
+[lrdn1374:93997:0:93997] Caught signal 11 (Segmentation fault: Sent by the kernel at address (nil))
+[lrdn1199:136225:0:136225] Caught signal 11 (Segmentation fault: Sent by the kernel at address (nil))
+[lrdn1339:92190:0:92190] Caught signal 11 (Segmentation fault: Sent by the kernel at address (nil))
+[lrdn1339:92192:0:92192] Caught signal 11 (Segmentation fault: Sent by the kernel at address (nil))
+[lrdn1339:92191:0:92191] Caught signal 11 (Segmentation fault: Sent by the kernel at address (nil))
+[lrdn1199:136227:0:136227] Caught signal 11 (Segmentation fault: Sent by the kernel at address (nil))
+[lrdn1199:136226:0:136226] Caught signal 11 (Segmentation fault: Sent by the kernel at address (nil))
+==== backtrace (tid:4005946) ====
+ 0 0x0000000000012cf0 __funlockfile()  :0
+ 1 0x000000000009be41 __GI___libc_free()  :0
+ 2 0x000000000081911b mod_output_output_()  /leonardo/home/userexternal/ctica000/MS_thesis/RegCM/Share/pfwsat.inc:1093
+ 3 0x00000000004496be mod_regcm_interface_rcm_run_()  /leonardo/home/userexternal/ctica000/MS_thesis/RegCM/Main/mod_regcm_interface.F90:281
+ 4 0x0000000000a2bb17 MAIN_()  /leonardo/home/userexternal/ctica000/MS_thesis/RegCM/Main/regcm.F90:83
+ 5 0x00000000004484b1 main()  ???:0
+ 6 0x000000000003ad85 __libc_start_main()  ???:0
+ 7 0x000000000044839e _start()  ???:0
+=================================
+[lrdn1470:4005946] *** Process received signal ***
+[lrdn1470:4005946] Signal: Segmentation fault (11)
+[lrdn1470:4005946] Signal code:  (-6)
+[lrdn1470:4005946] Failing at address: 0x1f485003d203a
+[lrdn1470:4005946] [ 0] /lib64/libpthread.so.0(+0x12cf0)[0x15341ca10cf0]
+[lrdn1470:4005946] [ 1] /lib64/libc.so.6(cfree+0x21)[0x15341bdfbe41]
+[lrdn1470:4005946] [ 2] /leonardo/home/userexternal/ctica000/MS_thesis/RegCM/bin/regcmMPICLM45_OPENACC_GPU_STDPAR(mod_output_output_+0x58e1b)[0x81911b]
+[lrdn1470:4005946] [ 3] /leonardo/home/userexternal/ctica000/MS_thesis/RegCM/bin/regcmMPICLM45_OPENACC_GPU_STDPAR(mod_regcm_interface_rcm_run_+0x7e)[0x4496be]
+[lrdn1470:4005946] [ 4] /leonardo/home/userexternal/ctica000/MS_thesis/RegCM/bin/regcmMPICLM45_OPENACC_GPU_STDPAR(MAIN_+0xd7)[0xa2bb17]
+[lrdn1470:4005946] [ 5] /leonardo/home/userexternal/ctica000/MS_thesis/RegCM/bin/regcmMPICLM45_OPENACC_GPU_STDPAR(main+0x31)[0x4484b1]
+[lrdn1470:4005946] [ 6] /lib64/libc.so.6(__libc_start_main+0xe5)[0x15341bd9ad85]
+[lrdn1470:4005946] [ 7] /leonardo/home/userexternal/ctica000/MS_thesis/RegCM/bin/regcmMPICLM45_OPENACC_GPU_STDPAR(_start+0x2e)[0x44839e]
+[lrdn1470:4005946] *** End of error message ***
+==== backtrace (tid: 136226) ====
+ 0 0x0000000000012cf0 __funlockfile()  :0
+ 1 0x000000000009be41 __GI___libc_free()  :0
+ 2 0x000000000081911b mod_output_output_()  /leonardo/home/userexternal/ctica000/MS_thesis/RegCM/Share/pfwsat.inc:1093
+ 3 0x00000000004496be mod_regcm_interface_rcm_run_()  /leonardo/home/userexternal/ctica000/MS_thesis/RegCM/Main/mod_regcm_interface.F90:281
+ 4 0x0000000000a2bb17 MAIN_()  /leonardo/home/userexternal/ctica000/MS_thesis/RegCM/Main/regcm.F90:83
+ 5 0x00000000004484b1 main()  ???:0
+ 6 0x000000000003ad85 __libc_start_main()  ???:0
+ 7 0x000000000044839e _start()  ???:0
+=================================
+[lrdn1199:136226] *** Process received signal ***
+[lrdn1199:136226] Signal: Segmentation fault (11)
+[lrdn1199:136226] Signal code:  (-6)
+[lrdn1199:136226] Failing at address: 0x1f48500021422
+[lrdn1199:136226] [ 0] /lib64/libpthread.so.0(+0x12cf0)[0x14a2180f7cf0]
+[lrdn1199:136226] [ 1] /lib64/libc.so.6(cfree+0x21)[0x14a2174e2e41]
+[lrdn1199:136226] [ 2] /leonardo/home/userexternal/ctica000/MS_thesis/RegCM/bin/regcmMPICLM45_OPENACC_GPU_STDPAR(mod_output_output_+0x58e1b)[0x81911b]
+[lrdn1199:136226] [ 3] /leonardo/home/userexternal/ctica000/MS_thesis/RegCM/bin/regcmMPICLM45_OPENACC_GPU_STDPAR(mod_regcm_interface_rcm_run_+0x7e)[0x4496be]
+[lrdn1199:136226] [ 4] /leonardo/home/userexternal/ctica000/MS_thesis/RegCM/bin/regcmMPICLM45_OPENACC_GPU_STDPAR(MAIN_+0xd7)[0xa2bb17]
+[lrdn1199:136226] [ 5] /leonardo/home/userexternal/ctica000/MS_thesis/RegCM/bin/regcmMPICLM45_OPENACC_GPU_STDPAR(main+0x31)[0x4484b1]
+[lrdn1199:136226] [ 6] /lib64/libc.so.6(__libc_start_main+0xe5)[0x14a217481d85]
+[lrdn1199:136226] [ 7] /leonardo/home/userexternal/ctica000/MS_thesis/RegCM/bin/regcmMPICLM45_OPENACC_GPU_STDPAR(_start+0x2e)[0x44839e]
+[lrdn1199:136226] *** End of error message ***
+==== backtrace (tid: 136225) ====
+ 0 0x0000000000012cf0 __funlockfile()  :0
+ 1 0x000000000009be41 __GI___libc_free()  :0
+ 2 0x000000000081911b mod_output_output_()  /leonardo/home/userexternal/ctica000/MS_thesis/RegCM/Share/pfwsat.inc:1093
+ 3 0x00000000004496be mod_regcm_interface_rcm_run_()  /leonardo/home/userexternal/ctica000/MS_thesis/RegCM/Main/mod_regcm_interface.F90:281
+ 4 0x0000000000a2bb17 MAIN_()  /leonardo/home/userexternal/ctica000/MS_thesis/RegCM/Main/regcm.F90:83
+ 5 0x00000000004484b1 main()  ???:0
+ 6 0x000000000003ad85 __libc_start_main()  ???:0
+ 7 0x000000000044839e _start()  ???:0
+=================================
+[lrdn1199:136225] *** Process received signal ***
+[lrdn1199:136225] Signal: Segmentation fault (11)
+[lrdn1199:136225] Signal code:  (-6)
+[lrdn1199:136225] Failing at address: 0x1f48500021421
+[lrdn1199:136225] [ 0] /lib64/libpthread.so.0(+0x12cf0)[0x14b87ab34cf0]
+[lrdn1199:136225] [ 1] /lib64/libc.so.6(cfree+0x21)[0x14b879f1fe41]
+[lrdn1199:136225] [ 2] /leonardo/home/userexternal/ctica000/MS_thesis/RegCM/bin/regcmMPICLM45_OPENACC_GPU_STDPAR(mod_output_output_+0x58e1b)[0x81911b]
+[lrdn1199:136225] [ 3] /leonardo/home/userexternal/ctica000/MS_thesis/RegCM/bin/regcmMPICLM45_OPENACC_GPU_STDPAR(mod_regcm_interface_rcm_run_+0x7e)[0x4496be]
+[lrdn1199:136225] [ 4] /leonardo/home/userexternal/ctica000/MS_thesis/RegCM/bin/regcmMPICLM45_OPENACC_GPU_STDPAR(MAIN_+0xd7)[0xa2bb17]
+[lrdn1199:136225] [ 5] /leonardo/home/userexternal/ctica000/MS_thesis/RegCM/bin/regcmMPICLM45_OPENACC_GPU_STDPAR(main+0x31)[0x4484b1]
+[lrdn1199:136225] [ 6] /lib64/libc.so.6(__libc_start_main+0xe5)[0x14b879ebed85]
+[lrdn1199:136225] [ 7] /leonardo/home/userexternal/ctica000/MS_thesis/RegCM/bin/regcmMPICLM45_OPENACC_GPU_STDPAR(_start+0x2e)[0x44839e]
+[lrdn1199:136225] *** End of error message ***
+==== backtrace (tid: 136227) ====
+ 0 0x0000000000012cf0 __funlockfile()  :0
+ 1 0x000000000009be41 __GI___libc_free()  :0
+ 2 0x000000000081911b mod_output_output_()  /leonardo/home/userexternal/ctica000/MS_thesis/RegCM/Share/pfwsat.inc:1093
+ 3 0x00000000004496be mod_regcm_interface_rcm_run_()  /leonardo/home/userexternal/ctica000/MS_thesis/RegCM/Main/mod_regcm_interface.F90:281
+ 4 0x0000000000a2bb17 MAIN_()  /leonardo/home/userexternal/ctica000/MS_thesis/RegCM/Main/regcm.F90:83
+ 5 0x00000000004484b1 main()  ???:0
+ 6 0x000000000003ad85 __libc_start_main()  ???:0
+ 7 0x000000000044839e _start()  ???:0
+=================================
+[lrdn1199:136227] *** Process received signal ***
+[lrdn1199:136227] Signal: Segmentation fault (11)
+[lrdn1199:136227] Signal code:  (-6)
+[lrdn1199:136227] Failing at address: 0x1f48500021423
+[lrdn1199:136227] [ 0] /lib64/libpthread.so.0(+0x12cf0)[0x14f844886cf0]
+[lrdn1199:136227] [ 1] /lib64/libc.so.6(cfree+0x21)[0x14f843c71e41]
+[lrdn1199:136227] [ 2] /leonardo/home/userexternal/ctica000/MS_thesis/RegCM/bin/regcmMPICLM45_OPENACC_GPU_STDPAR(mod_output_output_+0x58e1b)[0x81911b]
+[lrdn1199:136227] [ 3] /leonardo/home/userexternal/ctica000/MS_thesis/RegCM/bin/regcmMPICLM45_OPENACC_GPU_STDPAR(mod_regcm_interface_rcm_run_+0x7e)[0x4496be]
+[lrdn1199:136227] [ 4] /leonardo/home/userexternal/ctica000/MS_thesis/RegCM/bin/regcmMPICLM45_OPENACC_GPU_STDPAR(MAIN_+0xd7)[0xa2bb17]
+[lrdn1199:136227] [ 5] /leonardo/home/userexternal/ctica000/MS_thesis/RegCM/bin/regcmMPICLM45_OPENACC_GPU_STDPAR(main+0x31)[0x4484b1]
+[lrdn1199:136227] [ 6] /lib64/libc.so.6(__libc_start_main+0xe5)[0x14f843c10d85]
+[lrdn1199:136227] [ 7] /leonardo/home/userexternal/ctica000/MS_thesis/RegCM/bin/regcmMPICLM45_OPENACC_GPU_STDPAR(_start+0x2e)[0x44839e]
+[lrdn1199:136227] *** End of error message ***
+==== backtrace (tid:4005945) ====
+ 0 0x0000000000012cf0 __funlockfile()  :0
+ 1 0x000000000009be41 __GI___libc_free()  :0
+ 2 0x000000000081911b mod_output_output_()  /leonardo/home/userexternal/ctica000/MS_thesis/RegCM/Share/pfwsat.inc:1093
+ 3 0x00000000004496be mod_regcm_interface_rcm_run_()  /leonardo/home/userexternal/ctica000/MS_thesis/RegCM/Main/mod_regcm_interface.F90:281
+ 4 0x0000000000a2bb17 MAIN_()  /leonardo/home/userexternal/ctica000/MS_thesis/RegCM/Main/regcm.F90:83
+ 5 0x00000000004484b1 main()  ???:0
+ 6 0x000000000003ad85 __libc_start_main()  ???:0
+ 7 0x000000000044839e _start()  ???:0
+=================================
+[lrdn1470:4005945] *** Process received signal ***
+[lrdn1470:4005945] Signal: Segmentation fault (11)
+[lrdn1470:4005945] Signal code:  (-6)
+[lrdn1470:4005945] Failing at address: 0x1f485003d2039
+==== backtrace (tid:  92190) ====
+[lrdn1470:4005945] [ 0] /lib64/libpthread.so.0(+0x12cf0)[0x14ea855b9cf0]
+==== backtrace (tid:  93996) ====
+ 0 0x0000000000012cf0 __funlockfile()  :0
+==== backtrace (tid:4005944) ====
+ 0 0x0000000000012cf0 __funlockfile()  :0
+ 1 0x000000000009be41 __GI___libc_free()  :0
+ 2 0x000000000081911b mod_output_output_()  /leonardo/home/userexternal/ctica000/MS_thesis/RegCM/Share/pfwsat.inc:1093
+ 3 0x00000000004496be mod_regcm_interface_rcm_run_()  /leonardo/home/userexternal/ctica000/MS_thesis/RegCM/Main/mod_regcm_interface.F90:281
+ 4 0x0000000000a2bb17 MAIN_()  /leonardo/home/userexternal/ctica000/MS_thesis/RegCM/Main/regcm.F90:83
+ 5 0x00000000004484b1 main()  ???:0
+ 6 0x000000000003ad85 __libc_start_main()  ???:0
+ 7 0x000000000044839e _start()  ???:0
+=================================
+==== backtrace (tid:  93998) ====
+ 1 0x000000000009be41 __GI___libc_free()  :0
+[lrdn1470:4005945] [ 1] /lib64/libc.so.6(cfree+0x21)[0x14ea849a4e41]
+ 0 0x0000000000012cf0 __funlockfile()  :0
+ 1 0x000000000009be41 __GI___libc_free()  :0
+ 2 0x000000000081911b mod_output_output_()  /leonardo/home/userexternal/ctica000/MS_thesis/RegCM/Share/pfwsat.inc:1093
+ 3 0x00000000004496be mod_regcm_interface_rcm_run_()  /leonardo/home/userexternal/ctica000/MS_thesis/RegCM/Main/mod_regcm_interface.F90:281
+ 4 0x0000000000a2bb17 MAIN_()  /leonardo/home/userexternal/ctica000/MS_thesis/RegCM/Main/regcm.F90:83
+ 5 0x00000000004484b1 main()  ???:0
+ 6 0x000000000003ad85 __libc_start_main()  ???:0
+ 7 0x000000000044839e _start()  ???:0
+=================================
+ 2 0x000000000081911b mod_output_output_()  /leonardo/home/userexternal/ctica000/MS_thesis/RegCM/Share/pfwsat.inc:1093
+[lrdn1470:4005944] *** Process received signal ***
+ 0 0x0000000000012cf0 __funlockfile()  :0
+ 3 0x00000000004496be mod_regcm_interface_rcm_run_()  /leonardo/home/userexternal/ctica000/MS_thesis/RegCM/Main/mod_regcm_interface.F90:281
+[lrdn1470:4005944] Signal: Segmentation fault (11)
+[lrdn1470:4005944] Signal code:  (-6)
+[lrdn1470:4005944] Failing at address: 0x1f485003d2038
+[lrdn1374:93996] *** Process received signal ***
+ 4 0x0000000000a2bb17 MAIN_()  /leonardo/home/userexternal/ctica000/MS_thesis/RegCM/Main/regcm.F90:83
+[lrdn1470:4005945] [ 2] /leonardo/home/userexternal/ctica000/MS_thesis/RegCM/bin/regcmMPICLM45_OPENACC_GPU_STDPAR(mod_output_output_+0x58e1b)[0x81911b]
+[lrdn1374:93996] Signal: Segmentation fault (11)
+[lrdn1374:93996] Signal code:  (-6)
+[lrdn1374:93996] Failing at address: 0x1f48500016f2c
+ 5 0x00000000004484b1 main()  ???:0
+[lrdn1470:4005945] [ 3] /leonardo/home/userexternal/ctica000/MS_thesis/RegCM/bin/regcmMPICLM45_OPENACC_GPU_STDPAR(mod_regcm_interface_rcm_run_+0x7e)[0x4496be]
+ 1 0x000000000009be41 __GI___libc_free()  :0
+ 6 0x000000000003ad85 __libc_start_main()  ???:0
+[lrdn1470:4005944] [ 0] /lib64/libpthread.so.0(+0x12cf0)[0x147aa7de8cf0]
+==== backtrace (tid:  93997) ====
+ 7 0x000000000044839e _start()  ???:0
+[lrdn1470:4005945] [ 4] /leonardo/home/userexternal/ctica000/MS_thesis/RegCM/bin/regcmMPICLM45_OPENACC_GPU_STDPAR(MAIN_+0xd7)[0xa2bb17]
+ 0 0x0000000000012cf0 __funlockfile()  :0
+ 1 0x000000000009be41 __GI___libc_free()  :0
+ 2 0x000000000081911b mod_output_output_()  /leonardo/home/userexternal/ctica000/MS_thesis/RegCM/Share/pfwsat.inc:1093
+=================================
+[lrdn1470:4005944] [ 1] /lib64/libc.so.6(cfree+0x21)[0x147aa71d3e41]
+ 3 0x00000000004496be mod_regcm_interface_rcm_run_()  /leonardo/home/userexternal/ctica000/MS_thesis/RegCM/Main/mod_regcm_interface.F90:281
+ 4 0x0000000000a2bb17 MAIN_()  /leonardo/home/userexternal/ctica000/MS_thesis/RegCM/Main/regcm.F90:83
+ 5 0x00000000004484b1 main()  ???:0
+ 6 0x000000000003ad85 __libc_start_main()  ???:0
+ 7 0x000000000044839e _start()  ???:0
+[lrdn1339:92190] *** Process received signal ***
+[lrdn1470:4005945] [ 5] /leonardo/home/userexternal/ctica000/MS_thesis/RegCM/bin/regcmMPICLM45_OPENACC_GPU_STDPAR(main+0x31)[0x4484b1]
+=================================
+[lrdn1339:92190] Signal: Segmentation fault (11)
+[lrdn1339:92190] Signal code:  (-6)
+[lrdn1339:92190] Failing at address: 0x1f4850001681e
+[lrdn1470:4005945] [ 6] /lib64/libc.so.6(__libc_start_main+0xe5)[0x14ea84943d85]
+[lrdn1374:93996] [ 0] /lib64/libpthread.so.0(+0x12cf0)[0x14c4b1b68cf0]
+[lrdn1339:92190] [ 0] /lib64/libpthread.so.0(+0x12cf0)[0x147b2c013cf0]
+[lrdn1470:4005944] [ 2] /leonardo/home/userexternal/ctica000/MS_thesis/RegCM/bin/regcmMPICLM45_OPENACC_GPU_STDPAR(mod_output_output_+0x58e1b)[0x81911b]
+ 2 0x000000000081911b mod_output_output_()  /leonardo/home/userexternal/ctica000/MS_thesis/RegCM/Share/pfwsat.inc:1093
+==== backtrace (tid:  92191) ====
+ 0 0x0000000000012cf0 __funlockfile()  :0
+[lrdn1470:4005945] [ 7] /leonardo/home/userexternal/ctica000/MS_thesis/RegCM/bin/regcmMPICLM45_OPENACC_GPU_STDPAR(_start+0x2e)[0x44839e]
+[lrdn1470:4005945] *** End of error message ***
+ 3 0x00000000004496be mod_regcm_interface_rcm_run_()  /leonardo/home/userexternal/ctica000/MS_thesis/RegCM/Main/mod_regcm_interface.F90:281
+ 1 0x000000000009be41 __GI___libc_free()  :0
+ 2 0x000000000081911b mod_output_output_()  /leonardo/home/userexternal/ctica000/MS_thesis/RegCM/Share/pfwsat.inc:1093
+ 3 0x00000000004496be mod_regcm_interface_rcm_run_()  /leonardo/home/userexternal/ctica000/MS_thesis/RegCM/Main/mod_regcm_interface.F90:281
+[lrdn1470:4005944] [ 3] /leonardo/home/userexternal/ctica000/MS_thesis/RegCM/bin/regcmMPICLM45_OPENACC_GPU_STDPAR(mod_regcm_interface_rcm_run_+0x7e)[0x4496be]
+[lrdn1374:93997] *** Process received signal ***
+ 4 0x0000000000a2bb17 MAIN_()  /leonardo/home/userexternal/ctica000/MS_thesis/RegCM/Main/regcm.F90:83
+ 5 0x00000000004484b1 main()  ???:0
+ 6 0x000000000003ad85 __libc_start_main()  ???:0
+ 7 0x000000000044839e _start()  ???:0
+=================================
+[lrdn1470:4005944] [ 4] /leonardo/home/userexternal/ctica000/MS_thesis/RegCM/bin/regcmMPICLM45_OPENACC_GPU_STDPAR(MAIN_+0xd7)[0xa2bb17]
+[lrdn1374:93996] [ 1] /lib64/libc.so.6(cfree+0x21)[0x14c4b0f53e41]
+[lrdn1339:92191] *** Process received signal ***
+[lrdn1470:4005944] [ 5] /leonardo/home/userexternal/ctica000/MS_thesis/RegCM/bin/regcmMPICLM45_OPENACC_GPU_STDPAR(main+0x31)[0x4484b1]
+[lrdn1374:93997] Signal: Segmentation fault (11)
+[lrdn1374:93997] Signal code:  (-6)
+[lrdn1374:93997] Failing at address: 0x1f48500016f2d
+[lrdn1339:92190] [ 1] /lib64/libc.so.6(cfree+0x21)[0x147b2b3fee41]
+==== backtrace (tid:4005943) ====
+ 4 0x0000000000a2bb17 MAIN_()  /leonardo/home/userexternal/ctica000/MS_thesis/RegCM/Main/regcm.F90:83
+[lrdn1339:92191] Signal: Segmentation fault (11)
+[lrdn1339:92191] Signal code:  (-6)
+[lrdn1339:92191] Failing at address: 0x1f4850001681f
+[lrdn1470:4005944] [ 6] /lib64/libc.so.6(__libc_start_main+0xe5)[0x147aa7172d85]
+ 5 0x00000000004484b1 main()  ???:0
+ 6 0x000000000003ad85 __libc_start_main()  ???:0
+ 7 0x000000000044839e _start()  ???:0
+=================================
+[lrdn1339:92190] [ 2] /leonardo/home/userexternal/ctica000/MS_thesis/RegCM/bin/regcmMPICLM45_OPENACC_GPU_STDPAR(mod_output_output_+0x58e1b)[0x81911b]
+ 0 0x0000000000012cf0 __funlockfile()  :0
+ 1 0x000000000009be41 __GI___libc_free()  :0
+[lrdn1374:93996] [ 2] /leonardo/home/userexternal/ctica000/MS_thesis/RegCM/bin/regcmMPICLM45_OPENACC_GPU_STDPAR(mod_output_output_+0x58e1b)[0x81911b]
+[lrdn1339:92190] [ 3] /leonardo/home/userexternal/ctica000/MS_thesis/RegCM/bin/regcmMPICLM45_OPENACC_GPU_STDPAR(mod_regcm_interface_rcm_run_+0x7e)[0x4496be]
+[lrdn1470:4005944] [ 7] /leonardo/home/userexternal/ctica000/MS_thesis/RegCM/bin/regcmMPICLM45_OPENACC_GPU_STDPAR(_start+0x2e)[0x44839e]
+[lrdn1374:93998] *** Process received signal ***
+==== backtrace (tid:  92189) ====
+ 0 0x0000000000012cf0 __funlockfile()  :0
+ 2 0x000000000081911b mod_output_output_()  /leonardo/home/userexternal/ctica000/MS_thesis/RegCM/Share/pfwsat.inc:1093
+ 3 0x00000000004496be mod_regcm_interface_rcm_run_()  /leonardo/home/userexternal/ctica000/MS_thesis/RegCM/Main/mod_regcm_interface.F90:281
+ 4 0x0000000000a2bb17 MAIN_()  /leonardo/home/userexternal/ctica000/MS_thesis/RegCM/Main/regcm.F90:83
+ 5 0x00000000004484b1 main()  ???:0
+ 6 0x000000000003ad85 __libc_start_main()  ???:0
+ 7 0x000000000044839e _start()  ???:0
+[lrdn1374:93996] [ 3] /leonardo/home/userexternal/ctica000/MS_thesis/RegCM/bin/regcmMPICLM45_OPENACC_GPU_STDPAR(mod_regcm_interface_rcm_run_+0x7e)[0x4496be]
+ 1 0x000000000009be41 __GI___libc_free()  :0
+ 2 0x000000000081911b mod_output_output_()  /leonardo/home/userexternal/ctica000/MS_thesis/RegCM/Share/pfwsat.inc:1093
+ 3 0x00000000004496be mod_regcm_interface_rcm_run_()  /leonardo/home/userexternal/ctica000/MS_thesis/RegCM/Main/mod_regcm_interface.F90:281
+ 4 0x0000000000a2bb17 MAIN_()  /leonardo/home/userexternal/ctica000/MS_thesis/RegCM/Main/regcm.F90:83
+ 5 0x00000000004484b1 main()  ???:0
+ 6 0x000000000003ad85 __libc_start_main()  ???:0
+ 7 0x000000000044839e _start()  ???:0
+=================================
+=================================
+[lrdn1374:93998] Signal: Segmentation fault (11)
+[lrdn1374:93998] Signal code:  (-6)
+[lrdn1374:93998] Failing at address: 0x1f48500016f2e
+[lrdn1339:92191] [ 0] /lib64/libpthread.so.0(+0x12cf0)[0x1460a9d17cf0]
+[lrdn1470:4005944] *** End of error message ***
+[lrdn1374:93996] [ 4] /leonardo/home/userexternal/ctica000/MS_thesis/RegCM/bin/regcmMPICLM45_OPENACC_GPU_STDPAR(MAIN_+0xd7)[0xa2bb17]
+[lrdn1339:92191] [ 1] /lib64/libc.so.6(cfree+0x21)[0x1460a9102e41]
+[lrdn1470:4005943] *** Process received signal ***
+[lrdn1374:93997] [ 0] /lib64/libpthread.so.0(+0x12cf0)[0x145af611dcf0]
+[lrdn1339:92189] *** Process received signal ***
+[lrdn1470:4005943] Signal: Segmentation fault (11)
+[lrdn1470:4005943] Signal code:  (-6)
+[lrdn1470:4005943] Failing at address: 0x1f485003d2037
+[lrdn1374:93998] [ 0] /lib64/libpthread.so.0(+0x12cf0)[0x14d0163facf0]
+[lrdn1339:92190] [ 4] /leonardo/home/userexternal/ctica000/MS_thesis/RegCM/bin/regcmMPICLM45_OPENACC_GPU_STDPAR(MAIN_+0xd7)[0xa2bb17]
+[lrdn1470:4005943] [ 0] /lib64/libpthread.so.0(+0x12cf0)[0x14ef9a9f2cf0]
+[lrdn1374:93997] [ 1] /lib64/libc.so.6(cfree+0x21)[0x145af5508e41]
+[lrdn1339:92191] [ 2] /leonardo/home/userexternal/ctica000/MS_thesis/RegCM/bin/regcmMPICLM45_OPENACC_GPU_STDPAR(mod_output_output_+0x58e1b)[0x81911b]
+[lrdn1470:4005943] [ 1] /lib64/libc.so.6(cfree+0x21)[0x14ef99ddde41]
+[lrdn1374:93998] [ 1] /lib64/libc.so.6(cfree+0x21)[0x14d0157e5e41]
+[lrdn1339:92190] [ 5] /leonardo/home/userexternal/ctica000/MS_thesis/RegCM/bin/regcmMPICLM45_OPENACC_GPU_STDPAR(main+0x31)[0x4484b1]
+[lrdn1470:4005943] [ 2] /leonardo/home/userexternal/ctica000/MS_thesis/RegCM/bin/regcmMPICLM45_OPENACC_GPU_STDPAR(mod_output_output_+0x58e1b)[0x81911b]
+[lrdn1374:93997] [ 2] /leonardo/home/userexternal/ctica000/MS_thesis/RegCM/bin/regcmMPICLM45_OPENACC_GPU_STDPAR(mod_output_output_+0x58e1b)[0x81911b]
+[lrdn1339:92191] [ 3] /leonardo/home/userexternal/ctica000/MS_thesis/RegCM/bin/regcmMPICLM45_OPENACC_GPU_STDPAR(mod_regcm_interface_rcm_run_+0x7e)[0x4496be]
+[lrdn1470:4005943] [ 3] /leonardo/home/userexternal/ctica000/MS_thesis/RegCM/bin/regcmMPICLM45_OPENACC_GPU_STDPAR(mod_regcm_interface_rcm_run_+0x7e)[0x4496be]
+[lrdn1374:93998] [ 2] /leonardo/home/userexternal/ctica000/MS_thesis/RegCM/bin/regcmMPICLM45_OPENACC_GPU_STDPAR(mod_output_output_+0x58e1b)[0x81911b]
+[lrdn1339:92190] [ 6] /lib64/libc.so.6(__libc_start_main+0xe5)[0x147b2b39dd85]
+[lrdn1470:4005943] [ 4] /leonardo/home/userexternal/ctica000/MS_thesis/RegCM/bin/regcmMPICLM45_OPENACC_GPU_STDPAR(MAIN_+0xd7)[0xa2bb17]
+[lrdn1374:93996] [ 5] /leonardo/home/userexternal/ctica000/MS_thesis/RegCM/bin/regcmMPICLM45_OPENACC_GPU_STDPAR(main+0x31)[0x4484b1]
+[lrdn1339:92189] Signal: Segmentation fault (11)
+[lrdn1339:92189] Signal code:  (-6)
+[lrdn1339:92189] Failing at address: 0x1f4850001681d
+[lrdn1470:4005943] [ 5] /leonardo/home/userexternal/ctica000/MS_thesis/RegCM/bin/regcmMPICLM45_OPENACC_GPU_STDPAR(main+0x31)[0x4484b1]
+[lrdn1374:93996] [ 6] /lib64/libc.so.6(__libc_start_main+0xe5)[0x14c4b0ef2d85]
+[lrdn1339:92191] [ 4] /leonardo/home/userexternal/ctica000/MS_thesis/RegCM/bin/regcmMPICLM45_OPENACC_GPU_STDPAR(MAIN_+0xd7)[0xa2bb17]
+[lrdn1470:4005943] [ 6] /lib64/libc.so.6(__libc_start_main+0xe5)[0x14ef99d7cd85]
+[lrdn1374:93998] [ 3] /leonardo/home/userexternal/ctica000/MS_thesis/RegCM/bin/regcmMPICLM45_OPENACC_GPU_STDPAR(mod_regcm_interface_rcm_run_+0x7e)[0x4496be]
+[lrdn1339:92191] [ 5] /leonardo/home/userexternal/ctica000/MS_thesis/RegCM/bin/regcmMPICLM45_OPENACC_GPU_STDPAR(main+0x31)[0x4484b1]
+[lrdn1374:93996] [ 7] /leonardo/home/userexternal/ctica000/MS_thesis/RegCM/bin/regcmMPICLM45_OPENACC_GPU_STDPAR(_start+0x2e)[0x44839e]
+[lrdn1374:93996] *** End of error message ***
+[lrdn1339:92191] [ 6] /lib64/libc.so.6(__libc_start_main+0xe5)[0x1460a90a1d85]
+[lrdn1470:4005943] [ 7] /leonardo/home/userexternal/ctica000/MS_thesis/RegCM/bin/regcmMPICLM45_OPENACC_GPU_STDPAR(_start+0x2e)[0x44839e]
+[lrdn1374:93998] [ 4] /leonardo/home/userexternal/ctica000/MS_thesis/RegCM/bin/regcmMPICLM45_OPENACC_GPU_STDPAR(MAIN_+0xd7)[0xa2bb17]
+[lrdn1339:92190] [ 7] /leonardo/home/userexternal/ctica000/MS_thesis/RegCM/bin/regcmMPICLM45_OPENACC_GPU_STDPAR(_start+0x2e)[0x44839e]
+[lrdn1339:92190] *** End of error message ***
+[lrdn1470:4005943] *** End of error message ***
+[lrdn1374:93997] [ 3] /leonardo/home/userexternal/ctica000/MS_thesis/RegCM/bin/regcmMPICLM45_OPENACC_GPU_STDPAR(mod_regcm_interface_rcm_run_+0x7e)[0x4496be]
+[lrdn1339:92191] [ 7] /leonardo/home/userexternal/ctica000/MS_thesis/RegCM/bin/regcmMPICLM45_OPENACC_GPU_STDPAR(_start+0x2e)[0x44839e]
+[lrdn1374:93998] [ 5] /leonardo/home/userexternal/ctica000/MS_thesis/RegCM/bin/regcmMPICLM45_OPENACC_GPU_STDPAR(main+0x31)[0x4484b1]
+[lrdn1339:92189] [ 0] /lib64/libpthread.so.0(+0x12cf0)[0x14be28de4cf0]
+[lrdn1374:93998] [ 6] /lib64/libc.so.6(__libc_start_main+0xe5)[0x14d015784d85]
+[lrdn1339:92191] *** End of error message ***
+[lrdn1374:93998] [ 7] /leonardo/home/userexternal/ctica000/MS_thesis/RegCM/bin/regcmMPICLM45_OPENACC_GPU_STDPAR(_start+0x2e)[0x44839e]
+[lrdn1339:92189] [ 1] /lib64/libc.so.6(cfree+0x21)[0x14be281cfe41]
+[lrdn1374:93998] *** End of error message ***
+[lrdn1339:92189] [ 2] /leonardo/home/userexternal/ctica000/MS_thesis/RegCM/bin/regcmMPICLM45_OPENACC_GPU_STDPAR(mod_output_output_+0x58e1b)[0x81911b]
+[lrdn1374:93997] [ 4] /leonardo/home/userexternal/ctica000/MS_thesis/RegCM/bin/regcmMPICLM45_OPENACC_GPU_STDPAR(MAIN_+0xd7)[0xa2bb17]
+[lrdn1339:92189] [ 3] /leonardo/home/userexternal/ctica000/MS_thesis/RegCM/bin/regcmMPICLM45_OPENACC_GPU_STDPAR(mod_regcm_interface_rcm_run_+0x7e)[0x4496be]
+[lrdn1374:93997] [ 5] /leonardo/home/userexternal/ctica000/MS_thesis/RegCM/bin/regcmMPICLM45_OPENACC_GPU_STDPAR(main+0x31)[0x4484b1]
+[lrdn1374:93997] [ 6] /lib64/libc.so.6(__libc_start_main+0xe5)[0x145af54a7d85]
+[lrdn1339:92189] [ 4] /leonardo/home/userexternal/ctica000/MS_thesis/RegCM/bin/regcmMPICLM45_OPENACC_GPU_STDPAR(MAIN_+0xd7)[0xa2bb17]
+[lrdn1374:93997] [ 7] /leonardo/home/userexternal/ctica000/MS_thesis/RegCM/bin/regcmMPICLM45_OPENACC_GPU_STDPAR(_start+0x2e)[0x44839e]
+[lrdn1339:92189] [ 5] /leonardo/home/userexternal/ctica000/MS_thesis/RegCM/bin/regcmMPICLM45_OPENACC_GPU_STDPAR(main+0x31)[0x4484b1]
+[lrdn1374:93997] *** End of error message ***
+[lrdn1339:92189] [ 6] /lib64/libc.so.6(__libc_start_main+0xe5)[0x14be2816ed85]
+[lrdn1339:92189] [ 7] /leonardo/home/userexternal/ctica000/MS_thesis/RegCM/bin/regcmMPICLM45_OPENACC_GPU_STDPAR(_start+0x2e)[0x44839e]
+[lrdn1339:92189] *** End of error message ***
+==== backtrace (tid:  92192) ====
+ 0 0x0000000000012cf0 __funlockfile()  :0
+ 1 0x000000000009be41 __GI___libc_free()  :0
+ 2 0x000000000081911b mod_output_output_()  /leonardo/home/userexternal/ctica000/MS_thesis/RegCM/Share/pfwsat.inc:1093
+ 3 0x00000000004496be mod_regcm_interface_rcm_run_()  /leonardo/home/userexternal/ctica000/MS_thesis/RegCM/Main/mod_regcm_interface.F90:281
+ 4 0x0000000000a2bb17 MAIN_()  /leonardo/home/userexternal/ctica000/MS_thesis/RegCM/Main/regcm.F90:83
+ 5 0x00000000004484b1 main()  ???:0
+ 6 0x000000000003ad85 __libc_start_main()  ???:0
+ 7 0x000000000044839e _start()  ???:0
+=================================
+[lrdn1339:92192] *** Process received signal ***
+[lrdn1339:92192] Signal: Segmentation fault (11)
+[lrdn1339:92192] Signal code:  (-6)
+[lrdn1339:92192] Failing at address: 0x1f48500016820
+[lrdn1339:92192] [ 0] /lib64/libpthread.so.0(+0x12cf0)[0x152910b3ccf0]
+[lrdn1339:92192] [ 1] /lib64/libc.so.6(cfree+0x21)[0x15290ff27e41]
+[lrdn1339:92192] [ 2] /leonardo/home/userexternal/ctica000/MS_thesis/RegCM/bin/regcmMPICLM45_OPENACC_GPU_STDPAR(mod_output_output_+0x58e1b)[0x81911b]
+[lrdn1339:92192] [ 3] /leonardo/home/userexternal/ctica000/MS_thesis/RegCM/bin/regcmMPICLM45_OPENACC_GPU_STDPAR(mod_regcm_interface_rcm_run_+0x7e)[0x4496be]
+[lrdn1339:92192] [ 4] /leonardo/home/userexternal/ctica000/MS_thesis/RegCM/bin/regcmMPICLM45_OPENACC_GPU_STDPAR(MAIN_+0xd7)[0xa2bb17]
+[lrdn1339:92192] [ 5] /leonardo/home/userexternal/ctica000/MS_thesis/RegCM/bin/regcmMPICLM45_OPENACC_GPU_STDPAR(main+0x31)[0x4484b1]
+[lrdn1339:92192] [ 6] /lib64/libc.so.6(__libc_start_main+0xe5)[0x15290fec6d85]
+[lrdn1339:92192] [ 7] /leonardo/home/userexternal/ctica000/MS_thesis/RegCM/bin/regcmMPICLM45_OPENACC_GPU_STDPAR(_start+0x2e)[0x44839e]
+[lrdn1339:92192] *** End of error message ***
+==== backtrace (tid: 136228) ====
+ 0 0x0000000000012cf0 __funlockfile()  :0
+==== backtrace (tid:  93999) ====
+ 1 0x000000000009be41 __GI___libc_free()  :0
+ 0 0x0000000000012cf0 __funlockfile()  :0
+ 1 0x000000000009be41 __GI___libc_free()  :0
+ 2 0x000000000081911b mod_output_output_()  /leonardo/home/userexternal/ctica000/MS_thesis/RegCM/Share/pfwsat.inc:1093
+ 2 0x000000000081911b mod_output_output_()  /leonardo/home/userexternal/ctica000/MS_thesis/RegCM/Share/pfwsat.inc:1093
+ 3 0x00000000004496be mod_regcm_interface_rcm_run_()  /leonardo/home/userexternal/ctica000/MS_thesis/RegCM/Main/mod_regcm_interface.F90:281
+ 4 0x0000000000a2bb17 MAIN_()  /leonardo/home/userexternal/ctica000/MS_thesis/RegCM/Main/regcm.F90:83
+ 5 0x00000000004484b1 main()  ???:0
+ 6 0x000000000003ad85 __libc_start_main()  ???:0
+ 7 0x000000000044839e _start()  ???:0
+=================================
+ 3 0x00000000004496be mod_regcm_interface_rcm_run_()  /leonardo/home/userexternal/ctica000/MS_thesis/RegCM/Main/mod_regcm_interface.F90:281
+[lrdn1374:93999] *** Process received signal ***
+[lrdn1374:93999] Signal: Segmentation fault (11)
+[lrdn1374:93999] Signal code:  (-6)
+[lrdn1374:93999] Failing at address: 0x1f48500016f2f
+ 4 0x0000000000a2bb17 MAIN_()  /leonardo/home/userexternal/ctica000/MS_thesis/RegCM/Main/regcm.F90:83
+[lrdn1374:93999] [ 0] /lib64/libpthread.so.0(+0x12cf0)[0x149dd74adcf0]
+ 5 0x00000000004484b1 main()  ???:0
+ 6 0x000000000003ad85 __libc_start_main()  ???:0
+[lrdn1374:93999] [ 1] /lib64/libc.so.6(cfree+0x21)[0x149dd6898e41]
+ 7 0x000000000044839e _start()  ???:0
+=================================
+[lrdn1374:93999] [ 2] /leonardo/home/userexternal/ctica000/MS_thesis/RegCM/bin/regcmMPICLM45_OPENACC_GPU_STDPAR(mod_output_output_+0x58e1b)[0x81911b]
+[lrdn1374:93999] [ 3] /leonardo/home/userexternal/ctica000/MS_thesis/RegCM/bin/regcmMPICLM45_OPENACC_GPU_STDPAR(mod_regcm_interface_rcm_run_+0x7e)[0x4496be]
+[lrdn1199:136228] *** Process received signal ***
+[lrdn1374:93999] [ 4] /leonardo/home/userexternal/ctica000/MS_thesis/RegCM/bin/regcmMPICLM45_OPENACC_GPU_STDPAR(MAIN_+0xd7)[0xa2bb17]
+[lrdn1374:93999] [ 5] /leonardo/home/userexternal/ctica000/MS_thesis/RegCM/bin/regcmMPICLM45_OPENACC_GPU_STDPAR(main+0x31)[0x4484b1]
+[lrdn1199:136228] Signal: Segmentation fault (11)
+[lrdn1199:136228] Signal code:  (-6)
+[lrdn1199:136228] Failing at address: 0x1f48500021424
+[lrdn1374:93999] [ 6] /lib64/libc.so.6(__libc_start_main+0xe5)[0x149dd6837d85]
+[lrdn1374:93999] [ 7] /leonardo/home/userexternal/ctica000/MS_thesis/RegCM/bin/regcmMPICLM45_OPENACC_GPU_STDPAR(_start+0x2e)[0x44839e]
+[lrdn1374:93999] *** End of error message ***
+[lrdn1199:136228] [ 0] /lib64/libpthread.so.0(+0x12cf0)[0x1527abfe3cf0]
+[lrdn1199:136228] [ 1] /lib64/libc.so.6(cfree+0x21)[0x1527ab3cee41]
+[lrdn1199:136228] [ 2] /leonardo/home/userexternal/ctica000/MS_thesis/RegCM/bin/regcmMPICLM45_OPENACC_GPU_STDPAR(mod_output_output_+0x58e1b)[0x81911b]
+[lrdn1199:136228] [ 3] /leonardo/home/userexternal/ctica000/MS_thesis/RegCM/bin/regcmMPICLM45_OPENACC_GPU_STDPAR(mod_regcm_interface_rcm_run_+0x7e)[0x4496be]
+[lrdn1199:136228] [ 4] /leonardo/home/userexternal/ctica000/MS_thesis/RegCM/bin/regcmMPICLM45_OPENACC_GPU_STDPAR(MAIN_+0xd7)[0xa2bb17]
+[lrdn1199:136228] [ 5] /leonardo/home/userexternal/ctica000/MS_thesis/RegCM/bin/regcmMPICLM45_OPENACC_GPU_STDPAR(main+0x31)[0x4484b1]
+[lrdn1199:136228] [ 6] /lib64/libc.so.6(__libc_start_main+0xe5)[0x1527ab36dd85]
+[lrdn1199:136228] [ 7] /leonardo/home/userexternal/ctica000/MS_thesis/RegCM/bin/regcmMPICLM45_OPENACC_GPU_STDPAR(_start+0x2e)[0x44839e]
+[lrdn1199:136228] *** End of error message ***
+[ perf record: Woken up 2873 times to write data ]
+[ perf record: Woken up 3096 times to write data ]
+[ perf record: Woken up 2858 times to write data ]
+[ perf record: Woken up 3091 times to write data ]
+[ perf record: Woken up 3100 times to write data ]
+[ perf record: Woken up 3091 times to write data ]
+[ perf record: Woken up 2879 times to write data ]
+[ perf record: Woken up 3102 times to write data ]
+[ perf record: Woken up 3089 times to write data ]
+[ perf record: Woken up 4400 times to write data ]
+[ perf record: Woken up 3099 times to write data ]
+[ perf record: Woken up 3092 times to write data ]
+[ perf record: Woken up 4586 times to write data ]
+[ perf record: Woken up 3092 times to write data ]
+[ perf record: Woken up 3096 times to write data ]
+[ perf record: Captured and wrote 718.841 MB /leonardo_scratch/large/userexternal/ctica000/perf/with_IO/sequential_write/perf_23713109/perf.data.rank1 (89172 samples) ]
+[ perf record: Captured and wrote 715.022 MB /leonardo_scratch/large/userexternal/ctica000/perf/with_IO/sequential_write/perf_23713109/perf.data.rank3 (88698 samples) ]
+[ perf record: Captured and wrote 719.964 MB /leonardo_scratch/large/userexternal/ctica000/perf/with_IO/sequential_write/perf_23713109/perf.data.rank2 (89311 samples) ]
+Warning:
+Processed 102155 events and lost 1 chunks!
+
+Check IO/CPU overload!
+
+[ perf record: Captured and wrote 772.975 MB /leonardo_scratch/large/userexternal/ctica000/perf/with_IO/sequential_write/perf_23713109/perf.data.rank11 (95891 samples) ]
+[ perf record: Captured and wrote 774.002 MB /leonardo_scratch/large/userexternal/ctica000/perf/with_IO/sequential_write/perf_23713109/perf.data.rank8 (96015 samples) ]
+[ perf record: Captured and wrote 774.006 MB /leonardo_scratch/large/userexternal/ctica000/perf/with_IO/sequential_write/perf_23713109/perf.data.rank10 (96015 samples) ]
+[ perf record: Captured and wrote 772.951 MB /leonardo_scratch/large/userexternal/ctica000/perf/with_IO/sequential_write/perf_23713109/perf.data.rank7 (95885 samples) ]
+[ perf record: Captured and wrote 772.778 MB /leonardo_scratch/large/userexternal/ctica000/perf/with_IO/sequential_write/perf_23713109/perf.data.rank4 (95866 samples) ]
+[ perf record: Captured and wrote 774.950 MB /leonardo_scratch/large/userexternal/ctica000/perf/with_IO/sequential_write/perf_23713109/perf.data.rank15 (96137 samples) ]
+[ perf record: Captured and wrote 775.772 MB /leonardo_scratch/large/userexternal/ctica000/perf/with_IO/sequential_write/perf_23713109/perf.data.rank13 (96238 samples) ]
+[ perf record: Captured and wrote 773.217 MB /leonardo_scratch/large/userexternal/ctica000/perf/with_IO/sequential_write/perf_23713109/perf.data.rank9 (95916 samples) ]
+[ perf record: Captured and wrote 775.139 MB /leonardo_scratch/large/userexternal/ctica000/perf/with_IO/sequential_write/perf_23713109/perf.data.rank12 (96160 samples) ]
+[ perf record: Captured and wrote 772.884 MB /leonardo_scratch/large/userexternal/ctica000/perf/with_IO/sequential_write/perf_23713109/perf.data.rank6 (95879 samples) ]
+[ perf record: Captured and wrote 774.269 MB /leonardo_scratch/large/userexternal/ctica000/perf/with_IO/sequential_write/perf_23713109/perf.data.rank14 (96052 samples) ]
+[ perf record: Captured and wrote 773.473 MB /leonardo_scratch/large/userexternal/ctica000/perf/with_IO/sequential_write/perf_23713109/perf.data.rank5 (95952 samples) ]
+[ perf record: Woken up 3651 times to write data ]
+[ perf record: Captured and wrote 913.076 MB /leonardo_scratch/large/userexternal/ctica000/perf/with_IO/sequential_write/perf_23713109/perf.data.rank0 (113005 samples) ]
+srun: error: lrdn1199: tasks 0-3: Segmentation fault
+slurmstepd: error:  mpi/pmix_v3: _errhandler: lrdn1374 [2]: pmixp_client_v2.c:212: Error handler invoked: status = -25, source = [slurm.pmix.23713109.0:8]
+srun: Job step aborted: Waiting up to 182 seconds for job step to finish.
+srun: error: lrdn1339: tasks 4-7: Segmentation fault
+srun: error: lrdn1374: tasks 8-11: Segmentation fault
+srun: error: lrdn1470: tasks 12-15: Segmentation fault
