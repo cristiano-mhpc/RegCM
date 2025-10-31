@@ -1053,7 +1053,7 @@ module mod_output
           allocate(thw (kz,jci1:jci2,ici1:ici2), thvw(kz,jci1:jci2,ici1:ici2), zw (kz,jci1:jci2,ici1:ici2))
           if ( idynamic == 3 ) then
             !$acc data create(p3d,t3d,rh3d,tdw,piw,qw,thw,thvw,zw)
-            do concurrent(i = ici1:ici2, j = jci1:jci2) local(k,kk,cape_loc, cin_loc)!p1d,t1d,rh1d,tdw,piw,qw,thw,thvw,zw,cape_loc,cin_loc)
+            do concurrent(i = ici1:ici2, j = jci1:jci2) local(k,kk,cape_loc, cin_loc)
               do k = 1, kz
                 kk = (kz + 1) - k
                 p3d(kk,j,i) = mo_atm%p(j,i,k)
@@ -1071,7 +1071,7 @@ module mod_output
            !$acc end data
           else
             !$acc data create(p3d,t3d,rh3d,tdw,piw,qw,thw,thvw,zw)
-            do concurrent (i = ici1:ici2, j = jci1:jci2) local(k,kk,cape_loc,cin_loc)!p1d,t1d,rh1d,tdw,piw,qw,thw,thvw,zw,cape_loc,cin_loc) 
+            do concurrent (i = ici1:ici2, j = jci1:jci2) local(k,kk,cape_loc,cin_loc) 
                 do k = 1, kz
                   kk = kzp1 - k
                   ! kk = (kz + 1) - k
