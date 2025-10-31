@@ -1055,7 +1055,8 @@ module mod_output
             !$acc data create(p3d,t3d,rh3d,tdw,piw,qw,thw,thvw,zw)
             do concurrent(i = ici1:ici2, j = jci1:jci2) local(k,kk,cape_loc, cin_loc)
               do k = 1, kz
-                kk = (kz + 1) - k
+                kk = kzp1 - k
+                ! kk = (kz + 1) - k
                 p3d(kk,j,i) = mo_atm%p(j,i,k)
                 t3d(kk,j,i) = mo_atm%t(j,i,k)
                 rh3d(kk,j,i) = min(d_one,max(d_zero,(mo_atm%qx(j,i,k,iqv) / &
@@ -1065,8 +1066,8 @@ module mod_output
                 tdw(:,j,i),piw(:,j,i),qw(:,j,i),thw(:,j,i),thvw(:,j,i),zw(:,j,i), &
                 cape_loc,cin_loc)
 
-                srf_cape_out(j,i) = 0._rkx!cape_loc
-                srf_cin_out(j,i) = 0._rkx!cin_loc  
+                srf_cape_out(j,i) = cape_loc
+                srf_cin_out(j,i) = cin_loc  
             end do
            !$acc end data
           else
@@ -1085,8 +1086,8 @@ module mod_output
                   tdw(:,j,i),piw(:,j,i),qw(:,j,i),thw(:,j,i),thvw(:,j,i),zw(:,j,i), &
                   cape_loc,cin_loc)
 
-                srf_cape_out(j,i) = 0._rkx!cape_loc
-                srf_cin_out(j,i) = 0._rkx!cin_loc
+                srf_cape_out(j,i) = cape_loc
+                srf_cin_out(j,i) = cin_loc
             end do
             !$acc end data
           end if
