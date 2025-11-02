@@ -1,6 +1,4 @@
 This is the profiling branch of the RegCM
 =========================================
 
-In this branch, I keep the data generated from profiling the RegCM model
-for both cases when I/O is turned on and off. The profiling was done using 
-Nsight Systems from NVIDIA. 
+This feauture branch of RegCM includes offloading of the `getcape` subroutine using a combination of `OpenACC` and `do concurrent`. 
