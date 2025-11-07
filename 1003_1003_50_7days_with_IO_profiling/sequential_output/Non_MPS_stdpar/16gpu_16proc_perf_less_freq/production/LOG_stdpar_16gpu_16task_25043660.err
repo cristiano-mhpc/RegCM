@@ -1,0 +1,33 @@
+ energy balance in canopy       1837916 , err=    2.290041618524150     
+ energy balance in canopy       1837921 , err=   -1.808196879552873     
+ energy balance in canopy       1837927 , err=   -2.055902896917175     
+ BalanceCheck: surface flux energy balance error step =       272 point =****** imbalance =   -2.055903 W/m2
+  sabv           =     482.7192165384092     
+  column      =        463008
+  sabg           =     29.76357236892386         29.76357236892386      
+    29.76357236892386     
+  eflx_lwrad_net =     139.6423718955556     
+  eflx_sh_tot    =     211.0133268600900     
+  eflx_lh_tot    =     117.1331150828925     
+  eflx_soil_grnd =     46.74987796571195     
+ -------------- FATAL CALLED ---------------
+  Fatal in file: mod_clm_balancecheck.F90 at line:      735
+ clm model is stopping
+ -------------------------------------------
+ Abort called by computing node             3 at 2025-11-07 09:17:55.661 +0100
+ Execution terminated because of runtime error
+--------------------------------------------------------------------------
+MPI_ABORT was invoked on rank 3 in communicator MPI COMMUNICATOR 3 DUP FROM 0
+with errorcode 1.
+
+NOTE: invoking MPI_ABORT causes Open MPI to kill all MPI processes.
+You may or may not see output from other processes, depending on
+exactly when Open MPI kills them.
+--------------------------------------------------------------------------
+srun: Job step aborted: Waiting up to 182 seconds for job step to finish.
+slurmstepd: error: *** STEP 25043660.0 ON lrdn3258 CANCELLED AT 2025-11-07T09:17:55 ***
+srun: error: lrdn3279: tasks 8-11: Killed
+srun: error: lrdn3286: tasks 12-15: Killed
+srun: error: lrdn3275: tasks 4-7: Killed
+slurmstepd: error:  mpi/pmix_v3: _errhandler: lrdn3258 [0]: pmixp_client_v2.c:212: Error handler invoked: status = -25, source = [slurm.pmix.25043660.0:3]
+srun: error: lrdn3258: tasks 0-3: Killed

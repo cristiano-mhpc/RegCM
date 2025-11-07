@@ -1,0 +1,24 @@
+ In File mod_ncstream.F90 at line:          3391
+ NetCDF: HDF error                                                               
+ In file output//EURR-3_ATM.2009100100.nc
+ Cannot write variable ua
+ Bounds :            1            1            1            1         1000 
+         1000           50            1
+ nc_stream : Cannot write variable ua in file output//EURR-3_ATM.2009100100.nc
+ :             1
+ Abort called by computing node             0 at 2025-11-05 08:26:20.280 +0100
+ Execution terminated because of runtime error
+--------------------------------------------------------------------------
+MPI_ABORT was invoked on rank 0 in communicator MPI COMMUNICATOR 3 DUP FROM 0
+with errorcode 1.
+
+NOTE: invoking MPI_ABORT causes Open MPI to kill all MPI processes.
+You may or may not see output from other processes, depending on
+exactly when Open MPI kills them.
+--------------------------------------------------------------------------
+slurmstepd: error: *** STEP 24530497.0 ON lrdn0776 CANCELLED AT 2025-11-05T08:26:20 ***
+srun: Job step aborted: Waiting up to 182 seconds for job step to finish.
+srun: error: lrdn0776: tasks 0-3: Killed
+srun: error: lrdn1145: tasks 4-7: Killed
+srun: error: lrdn1937: tasks 12-15: Killed
+srun: error: lrdn1756: tasks 8-11: Killed
