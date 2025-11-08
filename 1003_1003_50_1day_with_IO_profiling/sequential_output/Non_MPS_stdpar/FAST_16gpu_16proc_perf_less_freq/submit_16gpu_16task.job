@@ -10,11 +10,11 @@
 #SBATCH --mem=0G
 #SBATCH --gres=tmpfs:100g
 #SBATCH --gres=gpu:4
-#SBATCH --time=6:00:00
+#SBATCH --time=02:00:00
 
 source /leonardo/home/userexternal/ctica000/MS_thesis/RegCM/modules_cuda  
 
-cd /leonardo/home/userexternal/ctica000/MS_thesis/RegCM/1003_1003_50_1day_with_IO_profiling/sequential_output/Non_MPS_stdpar/FAST_16gpu_16proc_perf_less_freq
+cd /leonardo/home/userexternal/ctica000/MS_thesis/RegCM/1003_1003_50_1day_with_IO_profiling/sequential_output/Non_MPS_stdpar/FAST_16gpu_16proc_perf_less_freq 
 
 # Launch
 srun ./STD_launch_per_rank.sh

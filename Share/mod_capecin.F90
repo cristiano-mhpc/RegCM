@@ -402,16 +402,15 @@ module mod_capecin
     pure subroutine getcape_gpu(nk, p, t, rh, pi, q, td, th, thv, z, cape, cin)
       ! for the GPU version, we pass all arrays to avoid having to use automatic 
       ! arrays inside the kernel, which is not seem to be supported on all compilers.
+      implicit none 
 
-      ! use mod_realkinds, only: rkx
-      ! use mod_intkinds,  only: ik4
       integer(ik4), intent(in) :: nk
       real(rkx),    intent(in) :: p(nk), t(nk), rh(nk) 
       real(rkx),    intent(out):: cape, cin
 
       logical :: doit, ice, cloud, not_converged
       integer(ik4) :: k, kmax, n, nloop, i
-      real(rkx),    intent(inout):: pi(nk), q(nk), td(nk), th(nk), thv(nk), z(nk)
+      real(rkx),    intent(inout):: pi(nk),q(nk),td(nk),th(nk),thv(nk),z(nk)
 
       real(rkx) :: the, maxthe, parea, narea, lfc
       real(rkx) :: th1, p1, t1, qv1, ql1, qi1, b1, pi1
@@ -434,7 +433,6 @@ module mod_capecin
 
       ! Get td ,pi,q,th,thv
       do k = 1, nk
-        cape = cape + (p(k)*rp00)**rddcp
         pi(k) = (p(k)*rp00)**rddcp
         td(k) = getdewp(t(k)-tzero,rh(k))
         q(k) = getqvs(p(k),td(k))

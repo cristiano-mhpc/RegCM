@@ -1053,7 +1053,7 @@ module mod_output
             !$acc                 mo_atm%qx(jci1:jci2,ici1:ici2,1:kz,iqv:iqv)) & 
             !$acc copyout(srf_cape_out(jci1:jci2,ici1:ici2), &
             !$acc         srf_cin_out(jci1:jci2,ici1:ici2))
-            !$acc parallel loop collapse(2) gang vector private(i,j,k,kk,p1d,t1d,rh1d,piw,cape_loc,cin_loc)
+            !$acc parallel loop collapse(2) gang vector private(i,j,k,kk,p1d,t1d,rh1d,piw,qw,tdw,thw,thvw,zw,cape_loc,cin_loc)
             do i = ici1, ici2
               do j = jci1, jci2
                 do k = 1, kz
@@ -1079,7 +1079,7 @@ module mod_output
             !$acc                 ps_out(jci1:jci2,ici1:ici2)) &
             !$acc copyout(srf_cape_out(jci1:jci2,ici1:ici2), &
             !$acc         srf_cin_out(jci1:jci2,ici1:ici2))
-            !$acc parallel loop collapse(2) gang vector private(i,j,k,kk,p1d,t1d,rh1d,piw,cape_loc,cin_loc)
+            !$acc parallel loop collapse(2) gang vector private(i,j,k,kk,p1d,t1d,rh1d,piw,qw,tdw,thw,thvw,zw,cape_loc,cin_loc)
             do i = ici1, ici2
               do j = jci1, jci2
                 do k = 1, kz
