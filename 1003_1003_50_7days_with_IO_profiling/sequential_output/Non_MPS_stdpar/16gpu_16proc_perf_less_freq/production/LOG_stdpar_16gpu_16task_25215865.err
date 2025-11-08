@@ -1,0 +1,112 @@
+[ perf record: Woken up 150541 times to write data ]
+[ perf record: Woken up 150722 times to write data ]
+[ perf record: Woken up 150501 times to write data ]
+[ perf record: Woken up 150446 times to write data ]
+[ perf record: Woken up 150229 times to write data ]
+[ perf record: Woken up 150249 times to write data ]
+[ perf record: Woken up 150133 times to write data ]
+[ perf record: Woken up 150073 times to write data ]
+[ perf record: Woken up 150373 times to write data ]
+[ perf record: Woken up 150138 times to write data ]
+[ perf record: Woken up 150366 times to write data ]
+[ perf record: Woken up 150405 times to write data ]
+[ perf record: Woken up 150281 times to write data ]
+[ perf record: Woken up 150398 times to write data ]
+[ perf record: Woken up 150678 times to write data ]
+[ perf record: Woken up 151430 times to write data ]
+Warning:
+Processed 4846875 events and lost 33 chunks!
+
+Check IO/CPU overload!
+
+[ perf record: Captured and wrote 37602.707 MB /leonardo_scratch/large/userexternal/ctica000/perf/with_IO/sequential_write/perf_25215865/perf.data.rank15 (4666761 samples) ]
+Warning:
+Processed 4852872 events and lost 24 chunks!
+
+Check IO/CPU overload!
+
+[ perf record: Captured and wrote 37637.364 MB /leonardo_scratch/large/userexternal/ctica000/perf/with_IO/sequential_write/perf_25215865/perf.data.rank5 (4671043 samples) ]
+Warning:
+Processed 4837749 events and lost 20 chunks!
+
+Check IO/CPU overload!
+
+[ perf record: Captured and wrote 37520.892 MB /leonardo_scratch/large/userexternal/ctica000/perf/with_IO/sequential_write/perf_25215865/perf.data.rank11 (4656589 samples) ]
+Warning:
+Processed 4893272 events and lost 34 chunks!
+
+Check IO/CPU overload!
+
+[ perf record: Captured and wrote 37558.633 MB /leonardo_scratch/large/userexternal/ctica000/perf/with_IO/sequential_write/perf_25215865/perf.data.rank9 (4660625 samples) ]
+Warning:
+Processed 4839781 events and lost 35 chunks!
+
+Check IO/CPU overload!
+
+[ perf record: Captured and wrote 37535.865 MB /leonardo_scratch/large/userexternal/ctica000/perf/with_IO/sequential_write/perf_25215865/perf.data.rank6 (4658446 samples) ]
+Warning:
+Processed 4895044 events and lost 42 chunks!
+
+Check IO/CPU overload!
+
+[ perf record: Captured and wrote 37593.845 MB /leonardo_scratch/large/userexternal/ctica000/perf/with_IO/sequential_write/perf_25215865/perf.data.rank8 (4665031 samples) ]
+Warning:
+Processed 4840618 events and lost 27 chunks!
+
+Check IO/CPU overload!
+
+[ perf record: Captured and wrote 37594.735 MB /leonardo_scratch/large/userexternal/ctica000/perf/with_IO/sequential_write/perf_25215865/perf.data.rank12 (4665839 samples) ]
+Warning:
+Processed 4836773 events and lost 38 chunks!
+
+Check IO/CPU overload!
+
+[ perf record: Captured and wrote 37564.652 MB /leonardo_scratch/large/userexternal/ctica000/perf/with_IO/sequential_write/perf_25215865/perf.data.rank14 (4662105 samples) ]
+Warning:
+Processed 4839853 events and lost 39 chunks!
+
+Check IO/CPU overload!
+
+[ perf record: Captured and wrote 37536.136 MB /leonardo_scratch/large/userexternal/ctica000/perf/with_IO/sequential_write/perf_25215865/perf.data.rank4 (4658480 samples) ]
+Warning:
+Processed 4897663 events and lost 48 chunks!
+
+Check IO/CPU overload!
+
+[ perf record: Captured and wrote 37614.244 MB /leonardo_scratch/large/userexternal/ctica000/perf/with_IO/sequential_write/perf_25215865/perf.data.rank7 (4667563 samples) ]
+Warning:
+Processed 4844773 events and lost 37 chunks!
+
+Check IO/CPU overload!
+
+[ perf record: Captured and wrote 37627.365 MB /leonardo_scratch/large/userexternal/ctica000/perf/with_IO/sequential_write/perf_25215865/perf.data.rank13 (4669889 samples) ]
+Warning:
+Processed 4906582 events and lost 26 chunks!
+
+Check IO/CPU overload!
+
+[ perf record: Captured and wrote 37683.083 MB /leonardo_scratch/large/userexternal/ctica000/perf/with_IO/sequential_write/perf_25215865/perf.data.rank10 (4676106 samples) ]
+Warning:
+Processed 4844555 events and lost 30 chunks!
+
+Check IO/CPU overload!
+
+[ perf record: Captured and wrote 37572.888 MB /leonardo_scratch/large/userexternal/ctica000/perf/with_IO/sequential_write/perf_25215865/perf.data.rank1 (4663042 samples) ]
+Warning:
+Processed 4857147 events and lost 23 chunks!
+
+Check IO/CPU overload!
+
+[ perf record: Captured and wrote 37671.082 MB /leonardo_scratch/large/userexternal/ctica000/perf/with_IO/sequential_write/perf_25215865/perf.data.rank2 (4675229 samples) ]
+Warning:
+Processed 6344312 events and lost 106 chunks!
+
+Check IO/CPU overload!
+
+[ perf record: Captured and wrote 37861.399 MB /leonardo_scratch/large/userexternal/ctica000/perf/with_IO/sequential_write/perf_25215865/perf.data.rank0 (4680149 samples) ]
+Warning:
+Processed 4848266 events and lost 56 chunks!
+
+Check IO/CPU overload!
+
+[ perf record: Captured and wrote 37601.830 MB /leonardo_scratch/large/userexternal/ctica000/perf/with_IO/sequential_write/perf_25215865/perf.data.rank3 (4666634 samples) ]

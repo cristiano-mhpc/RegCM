@@ -431,13 +431,9 @@ module mod_capecin
 
       real(rkx), parameter :: converge = 0.002_rkx
 
-      cape = 0._rkx
-      cin  = 0._rkx
-
       ! Get td,pi,q,th,thv
 
       do k = 1, nk
-        cape = cape + (p(k)*rp00)**rddcp
         pi(k) = (p(k)*rp00)**rddcp
         td(k) = getdewp(t(k)-tzero,rh(k))
         q(k) = getqvs(p(k),td(k))
