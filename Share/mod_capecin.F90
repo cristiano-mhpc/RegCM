@@ -399,18 +399,18 @@ module mod_capecin
 
     ! Device version of getcape
     !$acc routine(getcape_gpu) seq
-    pure subroutine getcape_gpu(nk, p, t, rh, pi, q, td, th, thv, z, cape, cin)
+    pure subroutine getcape_gpu(p, t, rh, pi, q, td, th, thv, z, cape, cin)
       ! for the GPU version, we pass all arrays to avoid having to use automatic 
       ! arrays inside the kernel, which is not seem to be supported on all compilers.
       implicit none 
 
-      integer(ik4), intent(in) :: nk
-      real(rkx),    intent(in) :: p(nk), t(nk), rh(nk) 
+      integer(ik4) :: nk
+      real(rkx),    intent(in), contiguous :: p(:), t(:), rh(:) 
       real(rkx),    intent(out):: cape, cin
 
       logical :: doit, ice, cloud, not_converged
       integer(ik4) :: k, kmax, n, nloop, i
-      real(rkx),    intent(inout):: pi(nk),q(nk),td(nk),th(nk),thv(nk),z(nk)
+      real(rkx),    intent(inout), contiguous :: pi(:),q(:),td(:),th(:),thv(:),z(:)
 
       real(rkx) :: the, maxthe, parea, narea, lfc
       real(rkx) :: th1, p1, t1, qv1, ql1, qi1, b1, pi1
@@ -431,6 +431,8 @@ module mod_capecin
 
       real(rkx), parameter :: converge = 0.002_rkx
 
+      nk = size(p) 
+       
       ! Get td ,pi,q,th,thv
       do k = 1, nk
         pi(k) = (p(k)*rp00)**rddcp
