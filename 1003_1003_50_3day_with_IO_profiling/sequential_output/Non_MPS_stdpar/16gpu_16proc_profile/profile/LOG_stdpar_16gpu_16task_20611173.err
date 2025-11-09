@@ -1,0 +1,167 @@
+WARNING: Device-side CUDA Event completion trace is currently enabled.
+         This may increase runtime overhead and the likelihood of false
+         dependencies across CUDA Streams. If you wish to avoid this, please
+         disable the feature with --cuda-event-trace=false.
+WARNING: Device-side CUDA Event completion trace is currently enabled.
+         This may increase runtime overhead and the likelihood of false
+         dependencies across CUDA Streams. If you wish to avoid this, please
+         disable the feature with --cuda-event-trace=false.
+WARNING: Device-side CUDA Event completion trace is currently enabled.
+         This may increase runtime overhead and the likelihood of false
+         dependencies across CUDA Streams. If you wish to avoid this, please
+         disable the feature with --cuda-event-trace=false.
+WARNING: Device-side CUDA Event completion trace is currently enabled.
+         This may increase runtime overhead and the likelihood of false
+         dependencies across CUDA Streams. If you wish to avoid this, please
+         disable the feature with --cuda-event-trace=false.
+WARNING: Device-side CUDA Event completion trace is currently enabled.
+         This may increase runtime overhead and the likelihood of false
+         dependencies across CUDA Streams. If you wish to avoid this, please
+         disable the feature with --cuda-event-trace=false.
+WARNING: Device-side CUDA Event completion trace is currently enabled.
+         This may increase runtime overhead and the likelihood of false
+         dependencies across CUDA Streams. If you wish to avoid this, please
+         disable the feature with --cuda-event-trace=false.
+WARNING: Device-side CUDA Event completion trace is currently enabled.
+         This may increase runtime overhead and the likelihood of false
+         dependencies across CUDA Streams. If you wish to avoid this, please
+         disable the feature with --cuda-event-trace=false.
+WARNING: Device-side CUDA Event completion trace is currently enabled.
+         This may increase runtime overhead and the likelihood of false
+         dependencies across CUDA Streams. If you wish to avoid this, please
+         disable the feature with --cuda-event-trace=false.
+WARNING: Device-side CUDA Event completion trace is currently enabled.
+         This may increase runtime overhead and the likelihood of false
+         dependencies across CUDA Streams. If you wish to avoid this, please
+         disable the feature with --cuda-event-trace=false.
+WARNING: Device-side CUDA Event completion trace is currently enabled.
+         This may increase runtime overhead and the likelihood of false
+         dependencies across CUDA Streams. If you wish to avoid this, please
+         disable the feature with --cuda-event-trace=false.
+WARNING: Device-side CUDA Event completion trace is currently enabled.
+         This may increase runtime overhead and the likelihood of false
+         dependencies across CUDA Streams. If you wish to avoid this, please
+         disable the feature with --cuda-event-trace=false.
+WARNING: Device-side CUDA Event completion trace is currently enabled.
+         This may increase runtime overhead and the likelihood of false
+         dependencies across CUDA Streams. If you wish to avoid this, please
+         disable the feature with --cuda-event-trace=false.
+WARNING: Device-side CUDA Event completion trace is currently enabled.
+         This may increase runtime overhead and the likelihood of false
+         dependencies across CUDA Streams. If you wish to avoid this, please
+         disable the feature with --cuda-event-trace=false.
+WARNING: Device-side CUDA Event completion trace is currently enabled.
+         This may increase runtime overhead and the likelihood of false
+         dependencies across CUDA Streams. If you wish to avoid this, please
+         disable the feature with --cuda-event-trace=false.
+WARNING: Device-side CUDA Event completion trace is currently enabled.
+         This may increase runtime overhead and the likelihood of false
+         dependencies across CUDA Streams. If you wish to avoid this, please
+         disable the feature with --cuda-event-trace=false.
+WARNING: Device-side CUDA Event completion trace is currently enabled.
+         This may increase runtime overhead and the likelihood of false
+         dependencies across CUDA Streams. If you wish to avoid this, please
+         disable the feature with --cuda-event-trace=false.
+Failing in Thread:1
+Failing in Thread:1
+Accelerator Fatal Error: call to cuStreamSynchronize returned error 700 (CUDA_ERROR_ILLEGAL_ADDRESS): Illegal address during kernel execution
+ File: /leonardo/home/userexternal/ctica000/MS_thesis/RegCM/Share/mod_vertint.F90
+ Function: intlinreg_p:89
+ Line: 104
+
+Accelerator Fatal Error: call to cuStreamSynchronize returned error 700 (CUDA_ERROR_ILLEGAL_ADDRESS): Illegal address during kernel execution
+ File: /leonardo/home/userexternal/ctica000/MS_thesis/RegCM/Share/mod_vertint.F90
+ Function: intlinreg_p:89
+ Line: 104
+
+Failing in Thread:1
+Accelerator Fatal Error: call to cuStreamSynchronize returned error 700 (CUDA_ERROR_ILLEGAL_ADDRESS): Illegal address during kernel execution
+ File: /leonardo/home/userexternal/ctica000/MS_thesis/RegCM/Share/mod_vertint.F90
+ Function: intlinreg_p:89
+ Line: 104
+
+Failing in Thread:1
+Failing in Thread:1
+Accelerator Fatal Error: call to cuStreamSynchronize returned error 700 (CUDA_ERROR_ILLEGAL_ADDRESS): Illegal address during kernel execution
+ File: /leonardo/home/userexternal/ctica000/MS_thesis/RegCM/Share/mod_vertint.F90
+ Function: intlinreg_p:89
+ Line: 104
+
+Accelerator Fatal Error: call to cuStreamSynchronize returned error 700 (CUDA_ERROR_ILLEGAL_ADDRESS): Illegal address during kernel execution
+ File: /leonardo/home/userexternal/ctica000/MS_thesis/RegCM/Share/mod_vertint.F90
+ Function: intlinreg_p:89
+ Line: 104
+
+Failing in Thread:1
+Accelerator Fatal Error: call to cuStreamSynchronize returned error 700 (CUDA_ERROR_ILLEGAL_ADDRESS): Illegal address during kernel execution
+ File: /leonardo/home/userexternal/ctica000/MS_thesis/RegCM/Share/mod_vertint.F90
+ Function: intlinreg_p:89
+ Line: 104
+
+Failing in Thread:1
+Failing in Thread:1
+Accelerator Fatal Error: call to cuStreamSynchronize returned error 700 (CUDA_ERROR_ILLEGAL_ADDRESS): Illegal address during kernel execution
+ File: /leonardo/home/userexternal/ctica000/MS_thesis/RegCM/Share/mod_vertint.F90
+ Function: intlinreg_p:89
+ Line: 104
+
+Accelerator Fatal Error: call to cuStreamSynchronize returned error 700 (CUDA_ERROR_ILLEGAL_ADDRESS): Illegal address during kernel execution
+ File: /leonardo/home/userexternal/ctica000/MS_thesis/RegCM/Share/mod_vertint.F90
+ Function: intlinreg_p:89
+ Line: 104
+
+Failing in Thread:1
+Accelerator Fatal Error: call to cuStreamSynchronize returned error 700 (CUDA_ERROR_ILLEGAL_ADDRESS): Illegal address during kernel execution
+ File: /leonardo/home/userexternal/ctica000/MS_thesis/RegCM/Share/mod_vertint.F90
+ Function: intlinreg_p:89
+ Line: 104
+
+Failing in Thread:1
+Failing in Thread:1
+Accelerator Fatal Error: call to cuStreamSynchronize returned error 700 (CUDA_ERROR_ILLEGAL_ADDRESS): Illegal address during kernel execution
+ File: /leonardo/home/userexternal/ctica000/MS_thesis/RegCM/Share/mod_vertint.F90
+ Function: intlinreg_p:89
+ Line: 104
+
+Accelerator Fatal Error: call to cuStreamSynchronize returned error 700 (CUDA_ERROR_ILLEGAL_ADDRESS): Illegal address during kernel execution
+ File: /leonardo/home/userexternal/ctica000/MS_thesis/RegCM/Share/mod_vertint.F90
+ Function: intlinreg_p:89
+ Line: 104
+
+Failing in Thread:1
+Accelerator Fatal Error: call to cuStreamSynchronize returned error 700 (CUDA_ERROR_ILLEGAL_ADDRESS): Illegal address during kernel execution
+ File: /leonardo/home/userexternal/ctica000/MS_thesis/RegCM/Share/mod_vertint.F90
+ Function: intlinreg_p:89
+ Line: 104
+
+Failing in Thread:1
+Accelerator Fatal Error: call to cuStreamSynchronize returned error 700 (CUDA_ERROR_ILLEGAL_ADDRESS): Illegal address during kernel execution
+ File: /leonardo/home/userexternal/ctica000/MS_thesis/RegCM/Share/mod_vertint.F90
+ Function: intlinreg_p:89
+ Line: 104
+
+Failing in Thread:1
+Failing in Thread:1
+Failing in Thread:1
+Accelerator Fatal Error: call to cuStreamSynchronize returned error 700 (CUDA_ERROR_ILLEGAL_ADDRESS): Illegal address during kernel execution
+ File: /leonardo/home/userexternal/ctica000/MS_thesis/RegCM/Share/mod_vertint.F90
+ Function: intlinreg_p:89
+ Line: 104
+
+Accelerator Fatal Error: call to cuStreamSynchronize returned error 700 (CUDA_ERROR_ILLEGAL_ADDRESS): Illegal address during kernel execution
+ File: /leonardo/home/userexternal/ctica000/MS_thesis/RegCM/Share/mod_vertint.F90
+ Function: intlinreg_p:89
+ Line: 104
+
+Accelerator Fatal Error: call to cuStreamSynchronize returned error 700 (CUDA_ERROR_ILLEGAL_ADDRESS): Illegal address during kernel execution
+ File: /leonardo/home/userexternal/ctica000/MS_thesis/RegCM/Share/mod_vertint.F90
+ Function: intlinreg_p:89
+ Line: 104
+
+slurmstepd: error:  mpi/pmix_v3: _errhandler: lrdn1629 [1]: pmixp_client_v2.c:212: Error handler invoked: status = -25, source = [slurm.pmix.20611173.0:5]
+srun: Job step aborted: Waiting up to 182 seconds for job step to finish.
+slurmstepd: error: *** STEP 20611173.0 ON lrdn1012 CANCELLED AT 2025-09-23T19:28:34 ***
+srun: error: lrdn1642: tasks 8-11: Killed
+srun: error: lrdn1629: tasks 4-7: Killed
+srun: error: lrdn1012: tasks 0-3: Killed
+srun: error: lrdn1766: tasks 12-15: Killed
