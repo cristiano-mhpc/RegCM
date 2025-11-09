@@ -1065,7 +1065,8 @@ module mod_output
                   p3d(kk,j,i) = mo_atm%p(j,i,k)
                   t3d(kk,j,i) = mo_atm%t(j,i,k)
                   rh3d(kk,j,i) = min(d_one,max(d_zero,(mo_atm%qx(j,i,k,iqv) / &
-                      pfwsat(mo_atm%t(j,i,k),mo_atm%p(j,i,k)))))
+                        pfwsat(t3d(kk,j,i),p3d(kk,j,i)))))
+                      ! pfwsat(mo_atm%t(j,i,k),mo_atm%p(j,i,k)))))
                 end do
                 call getcape_gpu(p3d(:,j,i),t3d(:,j,i),rh3d(:,j,i),&
                            tdw(:,j,i),piw(:,j,i),qw(:,j,i),thw(:,j,i),thvw(:,j,i),zw(:,j,i), &
@@ -1094,7 +1095,8 @@ module mod_output
                   t3d(kk,j,i) = atm1%t(j,i,k)/sfs%psa(j,i)
                   rh3d(kk,j,i) = min(d_one,max(d_zero, &
                      (atm1%qx(j,i,k,iqv)/ps_out(j,i)) / &
-                     pfwsat(atm1%t(j,i,k)/ps_out(j,i),atm1%pr(j,i,k))))
+                     pfwsat(atm1%t(j,i,k)/ps_out(j,i),p3d(kk,j,i))))
+                     ! pfwsat(atm1%t(j,i,k)/ps_out(j,i),atm1%pr(j,i,k))))
                 end do
                 call getcape_gpu(p3d(:,j,i),t3d(:,j,i),rh3d(:,j,i),&
                            tdw(:,j,i),piw(:,j,i),qw(:,j,i),thw(:,j,i),thvw(:,j,i),zw(:,j,i), &
