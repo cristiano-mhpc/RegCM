@@ -18,7 +18,7 @@ export ACC_DEVICE_NUM=0
 export BINDIR=/leonardo/home/userexternal/ctica000/MS_thesis/RegCM/bin
 
 # For Perf
-FREQ="${PERF_FREQ:-400}"  # samples/seconds 
+FREQ="${PERF_FREQ:-1000}"  # samples/seconds 
 
 # output directory per job 
 OUTDIR="${PERF_OUTDIR:-$SCRATCH/perf/with_IO/sequential_write/perf_${SLURM_JOB_ID}}" 

@@ -11,6 +11,7 @@
 #SBATCH --gres=tmpfs:100g
 #SBATCH --gres=gpu:4
 #SBATCH --time=03:00:00
+##SBATCH --nodelist=lrdn[0729-0732,0737-0740,0749-0750,0751-0758,0763-0764,0765-0766,0771-0778] # consecutive L1 switches: isw30104, isw30200, isw30202
 
 source /leonardo/home/userexternal/ctica000/MS_thesis/RegCM/modules_cuda  
 
