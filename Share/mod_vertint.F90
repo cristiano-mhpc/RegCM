@@ -21,7 +21,7 @@ module mod_vertint
   use mod_constants
   use mod_message
   use mod_stdatm
-  use mod_interp, only : interp1d
+  use mod_interp, only : interp1d, interp1d_r8_gpu
 
   implicit none
 
@@ -1237,7 +1237,10 @@ module mod_vertint
     real(rkx), pointer, contiguous, dimension(:,:,:), intent(inout) :: frcm
     real(rkx), dimension(kccm) :: xc, fc
     real(rkx), dimension(krcm) :: xr, fr
+    ! Scratch arrays 
+    real(rkx), dimension(kccm) :: zi, zg
     integer(ik4) :: i, j, k, kt, kb
+
     if ( pccm(i1,j1,1) > pccm(i1,j1,kccm) ) then
       kt = kccm
       kb = 1
@@ -1245,6 +1248,10 @@ module mod_vertint
       kt = 1
       kb = kccm
     end if
+
+   !$acc parallel loop gang vector collapse(2)  &
+   !$acc copyin(fccm,pccm,prcm) copy(frcm) & 
+   !$acc private(xc,fc,xr,fr,zi,zg) 
     do j = j1, j2
       do i = i1, i2
         do k = 1 , kccm
@@ -1254,12 +1261,13 @@ module mod_vertint
         do k = 1 , krcm
           xr(k) = (prcm(i,j,k)-pccm(i,j,kt))/(pccm(i,j,kb)-pccm(i,j,kt))
         end do
-        call interp1d(xc,fc,xr,fr,a,e1,e2)
+        call interp1d_r8_gpu(xc,fc,xr,fr,a,e1,e2,zi,zg)
         do k = 1 , krcm
           frcm(i,j,k) = fr(k)
         end do
       end do
     end do
+    !$acc end parallel loop 
   end subroutine intp1_pointer
 
   !

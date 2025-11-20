@@ -507,6 +507,113 @@ module mod_interp
       f(j) = alfa*clin + (1.0_rk8-alfa)*spl
     end do
   end subroutine interp1d_r8
+  
+  !device verions of interp1d_r8 
+  !$acc routine(interp1d_r8_gpu) seq
+  pure subroutine interp1d_r8_gpu(xi,g,xo,f,alfa,ex1,ex2, zi, zg)
+    implicit none
+    real(rk8), dimension(:), intent(in) :: xi, xo, g
+    real(rk8), dimension(:), intent(out) :: f
+    real(rk8), intent(in) :: alfa
+    real(rk8), intent(in) :: ex1
+    real(rk8), intent(in) :: ex2
+
+    ! scratch arrays passed from the caller 
+    real(rk8), dimension(size(xi)), intent(inout) :: zi, zg
+
+    real(rk8) :: zeps, ximed, gmed, fmm, fpp, xmm, xpp
+    real(rk8) :: fm, xm, fp, xp, delx, delxp, delxm
+    real(rk8) :: delx1, delx2, delxs, delx1s, delx2s
+    real(rk8) :: spl, clin
+
+    integer(ik4) :: npi, npo
+    integer(ik4) :: k, j, jj, ir
+
+    npi = size(xi)
+    npo = size(xo)
+    if ( xi(1) >= xi(npi) ) then
+      do k = 1, npi
+        zi(k) = xi(npi-k+1)
+        zg(k) = g(npi-k+1)
+      end do
+    else
+      zi(:) = xi(:)
+      zg(:) = g(:)
+    end if
+
+    zeps = (zi(npi) - zi(1)) * 1.e-6_rk8
+    deinterlace: &
+    do
+      do k = 2, npi
+        if ( zi(k) <= zi(k-1) ) then
+          ximed = 0.5_rk8 * (zi(k) + zi(k-1))
+          zi(k-1) = ximed - zeps
+          zi(k) = ximed + zeps
+          gmed = 0.5_rk8 * (zg(k) + zg(k-1))
+          zg(k-1) = gmed
+          zg(k) = gmed
+        end if
+      end do
+
+      do k = 2, npi
+        if ( zi(k) <= zi(k-1) ) then
+          cycle deinterlace
+        end if
+      end do
+      exit deinterlace
+    end do deinterlace
+
+    do j = 1, npo
+      if ( xo(j) < zi(1) ) then
+        f(j) = zg(1) + ex1*(zg(1)-zg(2))/(zi(1)-zi(2)) * (xo(j)-zi(1))
+        cycle
+      else if ( xo(j) >= zi(npi) ) then
+        f(j) = zg(npi) + ex2*(zg(npi)-zg(npi-1))/(zi(npi)-zi(npi-1)) * &
+               (xo(j)-zi(npi))
+        cycle
+      end if
+      ir = 0
+      do jj = 1, npi
+        if ( xo(j) >= zi(jj) ) ir = ir + 1
+      end do
+      if ( ir == 1 ) then
+        fmm = 2.0_rk8 * zg(1) - zg(2)
+        xmm = 2.0_rk8 * zi(1) - zi(2)
+        fpp = zg(ir+2)
+        xpp = zi(ir+2)
+      else if ( ir == (npi-1) ) then
+        fpp = 2.0_rk8 * zg(npi) - zg(npi-1)
+        xpp = 2.0_rk8 * zi(npi) - zi(npi-1)
+        fmm = zg(ir-1)
+        xmm = zi(ir-1)
+      else
+        fmm = zg(ir-1)
+        xmm = zi(ir-1)
+        fpp = zg(ir+2)
+        xpp = zi(ir+2)
+      end if
+      fm     = zg(ir)
+      xm     = zi(ir)
+      fp     = zg(ir+1)
+      xp     = zi(ir+1)
+      delx   = xp - xm
+      delxp  = xpp - xp
+      delxm  = xm - xmm
+      delx1  = xo(j) - xm
+      delx2  = xp - xo(j)
+      delxs  = delx**2
+      delx1s = delx1**2
+      delx2s = delx2**2
+      spl = fm*(delx2/delx + delx1*delx2s/(delxs*delxm) - delx1s*     &
+            delx2/((delx+delxp)*delxs)) + fp*(delx1/delx +            &
+            delx1s*delx2/(delxs*delxp) - delx1*delx2s/((delx+delxm)*  &
+            delxs)) - fmm * delx1*delx2s/((delx+delxm)*delx*delxm) -  &
+            fpp * delx1s*delx2/((delx+delxp)*delx*delxp)
+      clin = (fm*delx2 + fp*delx1)/delx
+      f(j) = alfa*clin + (1.0_rk8-alfa)*spl
+    end do
+  end subroutine interp1d_r8_gpu
+
 
   subroutine bilinx_2d(b3,b2,alon,alat,hlon,hlat,nlon,nlat,jx,iy)
     implicit none
