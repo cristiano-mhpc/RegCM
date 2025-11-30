@@ -14,8 +14,6 @@
 
 source /leonardo/home/userexternal/ctica000/MS_thesis/RegCM/modules_cuda  
 
-cd /leonardo/home/userexternal/ctica000/MS_thesis/RegCM/1003_1003_50_1day_with_IO_profiling/DCGP_sequential_output/800proc_perf_less_frq
-
 # Launch
 srun ./STD_launch_per_rank.sh
 
