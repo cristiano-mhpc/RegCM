@@ -1,0 +1,24 @@
+0: ALLOCATE: array already allocated
+0: ALLOCATE: array already allocated
+0: ALLOCATE: array already allocated
+0: ALLOCATE: array already allocated
+0: ALLOCATE: array already allocated
+0: ALLOCATE: array already allocated
+0: ALLOCATE: array already allocated
+0: ALLOCATE: array already allocated
+0: ALLOCATE: array already allocated
+0: ALLOCATE: array already allocated
+0: ALLOCATE: array already allocated
+0: ALLOCATE: array already allocated
+0: ALLOCATE: array already allocated
+0: ALLOCATE: array already allocated
+0: ALLOCATE: array already allocated
+0: ALLOCATE: array already allocated
+srun: error: lrdn1231: tasks 12-13,15: Exited with exit code 127
+srun: error: lrdn0450: tasks 1-3: Exited with exit code 127
+srun: error: lrdn1231: task 14: Exited with exit code 127
+srun: error: lrdn1218: tasks 8-10: Exited with exit code 127
+srun: error: lrdn1198: tasks 4,6-7: Exited with exit code 127
+srun: error: lrdn1218: task 11: Exited with exit code 127
+srun: error: lrdn1198: task 5: Exited with exit code 127
+srun: error: lrdn0450: task 0: Exited with exit code 127
