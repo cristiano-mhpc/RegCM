@@ -516,6 +516,7 @@ module mod_interp
     real(rk8), intent(in) :: alfa
     real(rk8), intent(in) :: ex1
     real(rk8), intent(in) :: ex2
+
     ! scratch arrays passed from the caller
     real(rk8), dimension(size(xi)), intent(inout) :: zi, zg
 
