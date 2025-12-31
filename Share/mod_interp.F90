@@ -508,9 +508,8 @@ module mod_interp
     end do
   end subroutine interp1d_r8
 
-
+  !$acc routine(interp1d_r8_gpu) seq
   pure subroutine interp1d_r8_gpu(xi,g,xo,f,alfa,ex1,ex2,zi,zg)
-    !$acc routine seq
     implicit none
     real(rk8), dimension(:), intent(in) :: xi, xo, g
     real(rk8), dimension(:), intent(out) :: f

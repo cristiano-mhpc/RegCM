@@ -1235,40 +1235,13 @@ module mod_vertint
     real(rkx), pointer, contiguous, dimension(:,:,:), intent(in) :: fccm, pccm
     real(rkx), pointer, contiguous, dimension(:,:,:), intent(in) :: prcm
     real(rkx), pointer, contiguous, dimension(:,:,:), intent(inout) :: frcm
-    ! real(rkx), dimension(kccm) :: xc, fc
-    ! real(rkx), dimension(krcm) :: xr, fr
+    real(rkx), dimension(kccm) :: xc, fc
+    real(rkx), dimension(krcm) :: xr, fr
 
-    ! we use a pool of 3d scaratch arrays
-    real(rkx), allocatable, save :: xc3d(:,:,:), xr3d(:,:,:), fc3d(:,:,:),fr3d(:,:,:)  
-    real(rkx), allocatable, save :: zi3d(:,:,:), zg3d(:,:,:)
+    ! scratch arrays 
+    real(rkx), dimension(kccm) :: zi,zg
     integer(ik4) :: i, j, k, kt, kb
 
-    integer, save :: last_i1=-huge(1), last_i2=-huge(1), last_j1=-huge(1), &
-        last_j2=-huge(1), last_kccm=-1, last_krcm=-1
-
-    !-------------------------------
-    ! Allocate/reallocate scratch arrays only if shpae change from last call AND keep 
-    ! device copies consistent with host allocations
-    !-------------------------------
-    if (.not.allocated(xc3d) .or. i1/=last_i1 .or. i2/=last_i2 .or. j1/=last_j1 &
-        .or. j2/=last_j2 .or. kccm/=last_kccm .or. krcm/=last_krcm) then
-
-      if (allocated(xc3d)) then
-        ! Delete old device copies BEFORE deallocating host arrays
-        !$acc exit data delete(xc3d, fc3d, xr3d, fr3d, zi3d, zg3d)
-        deallocate(xc3d, fc3d, xr3d, fr3d, zi3d, zg3d)
-      end if 
-
-      allocate(xc3d(kccm,i1:i2,j1:j2), fc3d(kccm,i1:i2,j1:j2))
-      allocate(xr3d(krcm,i1:i2,j1:j2), fr3d(krcm,i1:i2,j1:j2))
-      allocate(zi3d(kccm,i1:i2,j1:j2), zg3d(kccm,i1:i2,j1:j2))
-
-      !create device copies once (no host-> device copy needed for scratch arrays) 
-      !$acc enter data create(xc3d, fc3d, xr3d, fr3d, zi3d, zg3d) 
-
-      ! set previous bounds/dimensions to current
-      last_i1=i1; last_i2=i2; last_j1=j1; last_j2=j2; last_kccm=kccm; last_krcm=krcm
-    end if
 
     if ( pccm(i1,j1,1) > pccm(i1,j1,kccm) ) then
       kt = kccm
@@ -1277,29 +1250,31 @@ module mod_vertint
       kt = 1
       kb = kccm
     end if
-    !---------------------------------------
-    ! Hybrid region: OpenACC controls data residency; DO CONCURRENT expresses parallelism
-    !---------------------------------------
 
-    !$acc data copyin(fccm,pccm,prcm) copy(frcm) present(xc3d,fc3d,xr3d,fr3d,zi3d,zg3d)
-        do concurrent(j = j1:j2, i = i1:i2) local(k)
+
+    !$acc parallel loop gang vector collapse(2) & 
+    !$acc copyin(fccm,pccm,prcm) copy(frcm) & 
+    !$acc private(xc,fc,xr,fr,zi,zg)
+    do j = j1 , j2
+        do i = i1 , i2
           do k = 1 , kccm
-              xc3d(k,i,j) = (pccm(i,j,k)-pccm(i,j,kt))/(pccm(i,j,kb)-pccm(i,j,kt))
-              fc3d(k,i,j) = fccm(i,j,k) ! To make it contiguous in memory  
+              xc(k) = (pccm(i,j,k)-pccm(i,j,kt))/(pccm(i,j,kb)-pccm(i,j,kt))
+              fc(k) = fccm(i,j,k) ! To make it contiguous in memory  
           end do
 
           do k = 1 , krcm
-              xr3d(k,i,j) = (prcm(i,j,k)-pccm(i,j,kt))/(pccm(i,j,kb)-pccm(i,j,kt))
+              xr(k) = (prcm(i,j,k)-pccm(i,j,kt))/(pccm(i,j,kb)-pccm(i,j,kt))
           end do
 
-          ! call interp1d(xc,fc,xr,fr,a,e1,e2)
-          call interp1d_r8_gpu(xc3d(:,i,j),fc3d(:,i,j),xr3d(:,i,j),fr3d(:,i,j),&
-          a,e1,e2,zi3d(:,i,j),zg3d(:,i,j))
+          call interp1d_r8_gpu(xc,fc,xr,fr,a,e1,e2,zi,zg)
+
           do k = 1 , krcm
-            frcm(i,j,k) = fr3d(k,i,j)
+            frcm(i,j,k) = fr(k)
           end do
+
         end do 
-    !$acc end data
+    end do 
+    !$acc end parallel loop 
   end subroutine intp1_pointer
 
   !
