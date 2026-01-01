@@ -1,0 +1,42 @@
+ WARNING:  CLM step     :                      2748
+ WARNING:  indexc       :        635586
+ WARNING:  ctype(indexc):            64
+ WARNING:  water balance error                        Inf
+ clm urban model is stopping - error is greater than .10
+ indexc=        635586  errh2o=                        Inf
+ ctype(indexc):            64
+ forc_rain    =     0.000000000000000     
+ forc_snow    =    3.7187804350329276E-012
+ endwb        =                        Inf
+ begwb        =    1.8068549042627781E-007
+ qflx_evap_tot=     0.000000000000000     
+ qflx_irrig   =     0.000000000000000     
+ qflx_surf    =     0.000000000000000     
+ qflx_qrgwl   =     0.000000000000000     
+ qflx_drain   =     0.000000000000000     
+ qflx_snwcp_ice   =     0.000000000000000     
+ -------------- FATAL CALLED ---------------
+  Fatal in file: mod_clm_balancecheck.F90 at line:      487
+ clm model is stopping
+ -------------------------------------------
+ Abort called by computing node             4 at 2026-01-01 11:23:43.024 +0100
+ Execution terminated because of runtime error
+--------------------------------------------------------------------------
+MPI_ABORT was invoked on rank 4 in communicator MPI COMMUNICATOR 3 DUP FROM 0
+with errorcode 1.
+
+NOTE: invoking MPI_ABORT causes Open MPI to kill all MPI processes.
+You may or may not see output from other processes, depending on
+exactly when Open MPI kills them.
+--------------------------------------------------------------------------
+srun: Job step aborted: Waiting up to 182 seconds for job step to finish.
+slurmstepd: error: *** STEP 31766922.0 ON lrdn1706 CANCELLED AT 2026-01-01T11:23:43 ***
+srun: error: lrdn1706: tasks 1-3: Killed
+srun: error: lrdn1751: tasks 8-9,11: Killed
+srun: error: lrdn1716: tasks 5-6: Killed
+srun: error: lrdn2007: tasks 12,14-15: Killed
+srun: error: lrdn1751: task 10: Killed
+srun: error: lrdn2007: task 13: Killed
+srun: error: lrdn1716: task 4: Exited with exit code 1
+srun: error: lrdn1716: task 7: Killed
+srun: error: lrdn1706: task 0: Killed
