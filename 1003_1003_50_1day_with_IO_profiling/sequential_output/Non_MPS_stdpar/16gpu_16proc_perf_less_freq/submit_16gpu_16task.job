@@ -14,8 +14,6 @@
 
 source /leonardo/home/userexternal/ctica000/MS_thesis/RegCM/modules_cuda  
 
-cd /leonardo/home/userexternal/ctica000/MS_thesis/RegCM/1003_1003_50_1day_with_IO_profiling/sequential_output/Non_MPS_stdpar/16gpu_16proc_perf_less_freq
-
 # Launch
 srun ./STD_launch_per_rank.sh
 
