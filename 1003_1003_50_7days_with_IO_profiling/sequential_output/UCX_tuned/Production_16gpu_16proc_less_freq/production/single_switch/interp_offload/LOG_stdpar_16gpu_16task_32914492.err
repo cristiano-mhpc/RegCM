@@ -1,0 +1,41 @@
+ energy balance in canopy       6250875 , err=  -0.1475173035898168     
+ energy balance in canopy       6436909 , err=  -0.4145843870088418     
+ energy balance in canopy       6250841 , err=  -0.2929513060406671     
+ energy balance in canopy       6222798 , err=  -0.1972331301487994     
+ energy balance in canopy       6410365 , err=  -0.2923757989148901     
+ energy balance in canopy       6115317 , err=  -0.2445841010344934     
+ BalanceCheck: surface flux energy balance error step =       327 point =****** imbalance =   -0.414584 W/m2
+  sabv           =     0.000000000000000     
+  column      =       1780942
+  sabg           =     0.000000000000000         0.000000000000000      
+    0.000000000000000     
+  eflx_lwrad_net =     32.67161916399880     
+  eflx_sh_tot    =    -31.52813849144089     
+  eflx_lh_tot    =     6.207490433110322     
+  eflx_soil_grnd =    -6.936386718659366     
+ -------------- FATAL CALLED ---------------
+  Fatal in file: mod_clm_balancecheck.F90 at line:      735
+ clm model is stopping
+ -------------------------------------------
+ Abort called by computing node            10 at 2026-01-29 03:05:18.696 +0100
+ Execution terminated because of runtime error
+--------------------------------------------------------------------------
+MPI_ABORT was invoked on rank 10 in communicator MPI COMMUNICATOR 3 DUP FROM 0
+with errorcode 1.
+
+NOTE: invoking MPI_ABORT causes Open MPI to kill all MPI processes.
+You may or may not see output from other processes, depending on
+exactly when Open MPI kills them.
+--------------------------------------------------------------------------
+srun: Job step aborted: Waiting up to 182 seconds for job step to finish.
+slurmstepd: error: *** STEP 32914492.0 ON lrdn1030 CANCELLED AT 2026-01-29T03:05:18 ***
+srun: error: lrdn1038: task 9: Killed
+srun: error: lrdn1038: task 10: Exited with exit code 1
+srun: error: lrdn1030: tasks 1-3: Killed
+srun: error: lrdn1037: tasks 4,6-7: Killed
+srun: error: lrdn1050: tasks 12,14-15: Killed
+srun: error: lrdn1038: task 8: Killed
+srun: error: lrdn1037: task 5: Killed
+srun: error: lrdn1038: task 11: Killed
+srun: error: lrdn1050: task 13: Killed
+srun: error: lrdn1030: task 0: Killed

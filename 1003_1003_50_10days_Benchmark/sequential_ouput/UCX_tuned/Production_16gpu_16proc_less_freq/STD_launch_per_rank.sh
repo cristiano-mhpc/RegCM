@@ -2,7 +2,6 @@
 # launch_per_rank.sh
 
 # Get the rank of the current MPI process
-# RANK=${SLURM_PROCID} # This is global MPI rank, not local
 RANK=${SLURM_LOCALID}
 
 # Optional safety check
@@ -14,7 +13,7 @@ fi
 # Assign each local rank to a unique GPU on this node
 export CUDA_VISIBLE_DEVICES=$RANK
 export ACC_DEVICE_TYPE=nvidia
-export ACC_DEVICE_NUM=0
+export ACC_DEVICE_NUM=$RANK 
 export BINDIR=/leonardo/home/userexternal/ctica000/MS_thesis/RegCM/bin
 
 echo "[Wrapper][Rank $SLURM_PROCID][Local $SLURM_LOCALID] on $(hostname): CUDA_VISIBLE_DEVICES=$CUDA_VISIBLE_DEVICES"
