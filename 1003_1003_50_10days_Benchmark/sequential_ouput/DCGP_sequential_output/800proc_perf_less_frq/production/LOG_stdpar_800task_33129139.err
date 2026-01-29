@@ -1,0 +1,28 @@
+ Permission denied                                                               
+ In File mod_ncstream.F90 at line:           377
+ nc_stream : Cannot create or open file output//EURR-3_ATM.2009100100.nc:  
+            1
+ Abort called by computing node             0 at 2026-01-29 16:30:56.854 +0100
+ Execution terminated because of runtime error
+--------------------------------------------------------------------------
+MPI_ABORT was invoked on rank 0 in communicator MPI COMMUNICATOR 3 DUP FROM 0
+with errorcode 1.
+
+NOTE: invoking MPI_ABORT causes Open MPI to kill all MPI processes.
+You may or may not see output from other processes, depending on
+exactly when Open MPI kills them.
+--------------------------------------------------------------------------
+srun: Job step aborted: Waiting up to 182 seconds for job step to finish.
+slurmstepd: error: *** STEP 33129139.0 ON lrdn4734 CANCELLED AT 2026-01-29T16:30:56 ***
+slurmstepd: error:  mpi/pmix_v3: _errhandler: lrdn4744 [7]: pmixp_client_v2.c:212: Error handler invoked: status = -25, source = [slurm.pmix.33129139.0:781]
+srun: error: lrdn4744: tasks 700-799: Killed
+srun: error: lrdn4742: tasks 500-599: Killed
+slurmstepd: error:  mpi/pmix_v3: _errhandler: lrdn4743 [6]: pmixp_client_v2.c:212: Error handler invoked: status = -25, source = [slurm.pmix.33129139.0:633]
+slurmstepd: error:  mpi/pmix_v3: _errhandler: lrdn4736 [1]: pmixp_client_v2.c:212: Error handler invoked: status = -25, source = [slurm.pmix.33129139.0:121]
+srun: error: lrdn4734: tasks 0-99: Killed
+srun: error: lrdn4736: tasks 100-199: Killed
+srun: error: lrdn4740: tasks 300-399: Killed
+slurmstepd: error:  mpi/pmix_v3: _errhandler: lrdn4741 [4]: pmixp_client_v2.c:212: Error handler invoked: status = -25, source = [slurm.pmix.33129139.0:462]
+srun: error: lrdn4743: tasks 600-699: Killed
+srun: error: lrdn4738: tasks 200-299: Killed
+srun: error: lrdn4741: tasks 400-499: Killed
