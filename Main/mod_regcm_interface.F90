@@ -368,46 +368,52 @@ module mod_regcm_interface
 
 #ifdef OPENACC
   ! subroutine setup_openacc(mpi_rank)
-  !   use openacc, only: acc_device_default, acc_device_kind, &
-  !                 acc_get_device_type, acc_get_num_devices, &
-  !                 acc_set_device_num, acc_init
-  !   implicit none
-  !   integer, intent(in):: mpi_rank
-  !   integer(ik4):: idev, ndev
-  !   integer(acc_device_kind):: dev_type
+    ! use openacc, only: acc_device_default, acc_device_kind, &
+    !               acc_get_device_type, acc_get_num_devices, &
+    !               acc_set_device_num, acc_init
+    ! implicit none
+    ! integer, intent(in):: mpi_rank
+    ! integer(ik4):: idev, ndev
+    ! integer(acc_device_kind):: dev_type
 
-  !   dev_type = acc_get_device_type()
-  !   ndev = acc_get_num_devices(acc_device_default)
-  !   idev = mod(mpi_rank, ndev)
-  !   call acc_set_device_num(idev, dev_type)
-  !   call acc_init(dev_type)
+    ! dev_type = acc_get_device_type()
+    ! ndev = acc_get_num_devices(acc_device_default)
+    ! idev = mod(mpi_rank, ndev)
+    ! call acc_set_device_num(idev, dev_type)
+    ! call acc_init(dev_type)
   ! end subroutine setup_openacc
   subroutine setup_openacc(mpi_rank)
-    use openacc, only: acc_device_default, acc_device_kind, &
-                     acc_get_device_type, acc_get_num_devices, &
+    use openacc, only: acc_device_kind, acc_get_device_type,&
                      acc_set_device_num, acc_init
     implicit none
-    integer, intent(in):: mpi_rank
-    integer(ik4):: idev, ndev
-    integer(acc_device_kind):: dev_type
-    character(len = 16):: env
-    integer:: status
+
+    integer, intent(in)         :: mpi_rank
+    integer(ik4)                :: idev 
+    integer(acc_device_kind)    :: dev_type
+    character(len = 16)         :: env
+    integer                     :: status
+
 
     dev_type = acc_get_device_type()  ! Uses the device type set in the environment via ACC_DEVICE_TYPE
-    call acc_init(dev_type)
   
+    ! We require ACC_DEVICE_NUM to be set by the wrapper
     call get_environment_variable("ACC_DEVICE_NUM", env, status)
-    if (status == 0) then
-       read(env, *) idev
+    if (status /= 0) then
+       ! write(*,*) 'ERROR: ACC_DEVICE_NUM not set for MPI rank', mpi_rank
+       ! stop 1 
+       idev=0
     else
-       ! Assumes all devices are visible.
-       ndev = acc_get_num_devices(acc_device_default)
-       idev = mod(mpi_rank, ndev)
-    end if
+       read(env, *) idev 
+    end if 
+
+    if (idev < 0) then 
+        write(*,*) 'ERROR: invalid ACC_DEVICE_NUM ', idev, ' for MPI rank ' , mpi_rank
+        stop 1 
+    end if 
 
     print *, 'MPI Rank:', mpi_rank, ' using device:', idev
-
     call acc_set_device_num(idev, dev_type)
+    call acc_init(dev_type)
   end subroutine setup_openacc
 #endif
 

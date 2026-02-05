@@ -1,0 +1,14 @@
+NETCDF=/home/ictp/ictp992004/netcdf
+export PATH=$NETCDF/bin:$NETCDF/Linux_x86_64/26.1/compilers/bin:$PATH
+export PATH=$NETCDF/Linux_x86_64/26.1/comm_libs/mpi/bin:$PATH
+export MANPATH=$NETCDF/Linux_x86_64/26.1/compilers/man:$MANPATH
+export LD_LIBRARY_PATH=$NETCDF/lib:$NETCDF/lib64:$LD_LIBRARY_PATH
+export LD_LIBRARY_PATH=$NETCDF/Linux_x86_64/26.1/compilers/lib:$LD_LIBRARY_PATH
+export PKG_CONFIG_PATH=$NETCDF/lib/pkgconfig:$PKG_CONFIG_PATH
+
+module load cmake/3.30.5
+
+
+export FC=nvfortran
+export CC=nvc
+export CXX=nvcc    

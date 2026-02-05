@@ -137,7 +137,7 @@ fi
 
 USE_OPENACC="0"
 # TODO: make this configurable
-PGI_GPU_ARCH="ccall-major"
+PGI_GPU_ARCH="cc90"
 
 AC_ARG_ENABLE(openacc,
   AC_HELP_STRING([--enable-openacc],

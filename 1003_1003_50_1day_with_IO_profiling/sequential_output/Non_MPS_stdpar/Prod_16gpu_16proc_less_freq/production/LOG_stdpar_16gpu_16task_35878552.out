@@ -1,0 +1,10 @@
+
+  This is RegCM development version
+   GIT Revision: 5.0.0-1090-gf5d80 compiled at: data : Feb  5 2026  time: 11:50:05
+
+ Parameter initialization not completed
+ Usage : 
+           /home/ictp/ictp992004/latest_managed/regcmMPICLM45 regcm.in
+  
+ Check argument and namelist syntax
+ ERROR :             1

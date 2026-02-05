@@ -1,0 +1,13 @@
+load CMAKE/3.30.5 (PATH)
+slurmstepd: error: *** JOB 35887353 ON as02r2b12 CANCELLED AT 2026-02-05T16:05:21 ***
+--------------------------------------------------------------------------
+ORTE has lost communication with a remote daemon.
+
+  HNP daemon   : [[1018,0],0] on node as02r2b12
+  Remote daemon: [[1018,0],3] on node as02r4b17
+
+This is usually due to either a failure of the TCP network
+connection to the node, or possibly an internal failure of
+the daemon itself. We cannot recover from this failure, and
+therefore will terminate the job.
+--------------------------------------------------------------------------
