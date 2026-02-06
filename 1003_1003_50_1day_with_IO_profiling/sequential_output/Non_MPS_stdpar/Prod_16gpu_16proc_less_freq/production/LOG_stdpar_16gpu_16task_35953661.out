@@ -1,14 +1,94 @@
+[Wrapper][Rank 00][Local 00] on as02r2b19: CUDA_VISIBLE_DEVICES=0 ACC_DEVICE_NUM=
+[Wrapper][Rank 04][Local 00] on as02r2b27: CUDA_VISIBLE_DEVICES=0 ACC_DEVICE_NUM=
+[Wrapper][Rank 08][Local 00] on as02r2b29: CUDA_VISIBLE_DEVICES=0 ACC_DEVICE_NUM=
+[Wrapper][Rank 12][Local 00] on as02r2b32: CUDA_VISIBLE_DEVICES=0 ACC_DEVICE_NUM=
+[Wrapper][Rank 01][Local 01] on as02r2b19: CUDA_VISIBLE_DEVICES=1 ACC_DEVICE_NUM=
+[Wrapper][Rank 05][Local 01] on as02r2b27: CUDA_VISIBLE_DEVICES=1 ACC_DEVICE_NUM=
+[Wrapper][Rank 13][Local 01] on as02r2b32: CUDA_VISIBLE_DEVICES=1 ACC_DEVICE_NUM=
+[Wrapper][Rank 02][Local 02] on as02r2b19: CUDA_VISIBLE_DEVICES=2 ACC_DEVICE_NUM=
+[Wrapper][Rank 09][Local 01] on as02r2b29: CUDA_VISIBLE_DEVICES=1 ACC_DEVICE_NUM=
+[Wrapper][Rank 14][Local 02] on as02r2b32: CUDA_VISIBLE_DEVICES=2 ACC_DEVICE_NUM=
+[Wrapper][Rank 06][Local 02] on as02r2b27: CUDA_VISIBLE_DEVICES=2 ACC_DEVICE_NUM=
+[Wrapper][Rank 10][Local 02] on as02r2b29: CUDA_VISIBLE_DEVICES=2 ACC_DEVICE_NUM=
+[Wrapper][Rank 07][Local 03] on as02r2b27: CUDA_VISIBLE_DEVICES=3 ACC_DEVICE_NUM=
+[Wrapper][Rank 15][Local 03] on as02r2b32: CUDA_VISIBLE_DEVICES=3 ACC_DEVICE_NUM=
+[Wrapper][Rank 11][Local 03] on as02r2b29: CUDA_VISIBLE_DEVICES=3 ACC_DEVICE_NUM=
+[Wrapper][Rank 03][Local 03] on as02r2b19: CUDA_VISIBLE_DEVICES=3 ACC_DEVICE_NUM=
 
   This is RegCM development version
    GIT Revision: 5.0.0-1335-g4079-dirty compiled at: data : Feb  5 2026  time: 15:50:24
 
- : this run start at  : 2026-02-05 16:00:21+0100
+ MPI rank             3  local_rank             3  sees             1 
+  devices; the OpenACC dev =             0
+ MPI rank             7  local_rank             3  sees             1 
+  devices; the OpenACC dev =             0
+ MPI rank             2  local_rank             2  sees             1 
+  devices; the OpenACC dev =             0
+ MPI rank             0  local_rank             0  sees             1 
+  devices; the OpenACC dev =             0
+ MPI rank             1  local_rank             1  sees             1 
+  devices; the OpenACC dev =             0
+ MPI rank             5  local_rank             1  sees             1 
+  devices; the OpenACC dev =             0
+ MPI rank             4  local_rank             0  sees             1 
+  devices; the OpenACC dev =             0
+ MPI rank             6  local_rank             2  sees             1 
+  devices; the OpenACC dev =             0
+ MPI rank             9  local_rank             1  sees             1 
+  devices; the OpenACC dev =             0
+ MPI rank             8  local_rank             0  sees             1 
+  devices; the OpenACC dev =             0
+ MPI rank            10  local_rank             2  sees             1 
+  devices; the OpenACC dev =             0
+ MPI rank            11  local_rank             3  sees             1 
+  devices; the OpenACC dev =             0
+ MPI rank             3  local_rank             3  CUDA_VISIBLE_DEVICES= 3
+  ndev             1 OpenACC dev=            0
+ MPI rank             7  local_rank             3  CUDA_VISIBLE_DEVICES= 3
+  ndev             1 OpenACC dev=            0
+ MPI rank            13  local_rank             1  sees             1 
+  devices; the OpenACC dev =             0
+ MPI rank            12  local_rank             0  sees             1 
+  devices; the OpenACC dev =             0
+ MPI rank            14  local_rank             2  sees             1 
+  devices; the OpenACC dev =             0
+ MPI rank            15  local_rank             3  sees             1 
+  devices; the OpenACC dev =             0
+ MPI rank             2  local_rank             2  CUDA_VISIBLE_DEVICES= 2
+  ndev             1 OpenACC dev=            0
+ MPI rank             0  local_rank             0  CUDA_VISIBLE_DEVICES= 0
+  ndev             1 OpenACC dev=            0
+ MPI rank             1  local_rank             1  CUDA_VISIBLE_DEVICES= 1
+  ndev             1 OpenACC dev=            0
+ : this run start at  : 2026-02-06 15:01:45+0100
  : it is submitted by : 
- : it is running on   : as02r2b12
+ : it is running on   : as02r2b19
  : it is using        :            16   processors
  : in directory       : 
- /gpfs/home/ictp/ictp549985/RegCM/1003_1003_50_1day_with_IO_profiling/sequential_output/Non_MPS_stdpar/FAST_16gpu_16proc_perf_less_freq
+ /gpfs/home/ictp/ictp549985/RegCM/1003_1003_50_1day_with_IO_profiling/sequential_output/Non_MPS_stdpar/Prod_16gpu_16proc_less_freq
                        
+ MPI rank             6  local_rank             2  CUDA_VISIBLE_DEVICES= 2
+  ndev             1 OpenACC dev=            0
+ MPI rank             5  local_rank             1  CUDA_VISIBLE_DEVICES= 1
+  ndev             1 OpenACC dev=            0
+ MPI rank             4  local_rank             0  CUDA_VISIBLE_DEVICES= 0
+  ndev             1 OpenACC dev=            0
+ MPI rank            10  local_rank             2  CUDA_VISIBLE_DEVICES= 2
+  ndev             1 OpenACC dev=            0
+ MPI rank             8  local_rank             0  CUDA_VISIBLE_DEVICES= 0
+  ndev             1 OpenACC dev=            0
+ MPI rank            11  local_rank             3  CUDA_VISIBLE_DEVICES= 3
+  ndev             1 OpenACC dev=            0
+ MPI rank             9  local_rank             1  CUDA_VISIBLE_DEVICES= 1
+  ndev             1 OpenACC dev=            0
+ MPI rank            12  local_rank             0  CUDA_VISIBLE_DEVICES= 0
+  ndev             1 OpenACC dev=            0
+ MPI rank            13  local_rank             1  CUDA_VISIBLE_DEVICES= 1
+  ndev             1 OpenACC dev=            0
+ MPI rank            15  local_rank             3  CUDA_VISIBLE_DEVICES= 3
+  ndev             1 OpenACC dev=            0
+ MPI rank            14  local_rank             2  CUDA_VISIBLE_DEVICES= 2
+  ndev             1 OpenACC dev=            0
  CPUS DIM1 =             4
  CPUS DIM2 =             4
  
@@ -156,7 +236,7 @@
     run type              = initial
     case title            = RegCM driven CLM4.5
     username              = 
-    hostname              = as02r2b12
+    hostname              = as02r2b19
  input data files:
     PFT physiology = 
  /home/ictp/ictp992004/project/EURR3/RCMDATA/CLM45/pftdata/pft-physiology.c130503.nc
@@ -267,9 +347,9 @@
  Set    10 100% special land-units points to zero slope
  Set    10 100% special land-units points to zero slope
  Set    21 100% special land-units points to zero slope
+ Set    70 100% special land-units points to zero slope
  Set    30 100% special land-units points to zero slope
  Set   120 100% special land-units points to zero slope
- Set    70 100% special land-units points to zero slope
  Attempting to read snow optical properties .....
  SnowOptics_init : 
  /home/ictp/ictp992004/project/EURR3/RCMDATA/CLM45/snicardata/snicar_optics_5bnd_c090915.nc
@@ -368,3 +448,129 @@
  ATM variables written at  2009-09-01 02:00:00 UTC        
  SRF variables written at  2009-09-01 02:00:00 UTC        
  RAD variables written at  2009-09-01 02:00:00 UTC        
+ CLM History variables written
+ ATM variables written at  2009-09-01 03:00:00 UTC        
+ SRF variables written at  2009-09-01 03:00:00 UTC        
+ RAD variables written at  2009-09-01 03:00:00 UTC        
+ $$$  2009-09-01 03:00:00 UTC        
+ $$$ max, min of ps (mb) =  1023.10  685.96
+ CLM History variables written
+ ATM variables written at  2009-09-01 04:00:00 UTC        
+ SRF variables written at  2009-09-01 04:00:00 UTC        
+ RAD variables written at  2009-09-01 04:00:00 UTC        
+ CLM History variables written
+ ATM variables written at  2009-09-01 05:00:00 UTC        
+ SRF variables written at  2009-09-01 05:00:00 UTC        
+ RAD variables written at  2009-09-01 05:00:00 UTC        
+ CLM History variables written
+ ATM variables written at  2009-09-01 06:00:00 UTC        
+ SRF variables written at  2009-09-01 06:00:00 UTC        
+ RAD variables written at  2009-09-01 06:00:00 UTC        
+ SEARCH BC data for 2009090112 , step =      480
+ READY  BC from     2009090106  to 2009090112 
+ $$$  2009-09-01 06:00:00 UTC        
+ $$$ max, min of ps (mb) =  1023.27  685.78
+ CLM History variables written
+ ATM variables written at  2009-09-01 07:00:00 UTC        
+ SRF variables written at  2009-09-01 07:00:00 UTC        
+ RAD variables written at  2009-09-01 07:00:00 UTC        
+ CLM History variables written
+ ATM variables written at  2009-09-01 08:00:00 UTC        
+ SRF variables written at  2009-09-01 08:00:00 UTC        
+ RAD variables written at  2009-09-01 08:00:00 UTC        
+ CLM History variables written
+ ATM variables written at  2009-09-01 09:00:00 UTC        
+ SRF variables written at  2009-09-01 09:00:00 UTC        
+ RAD variables written at  2009-09-01 09:00:00 UTC        
+ $$$  2009-09-01 09:00:00 UTC        
+ $$$ max, min of ps (mb) =  1022.19  686.36
+ CLM History variables written
+ ATM variables written at  2009-09-01 10:00:00 UTC        
+ SRF variables written at  2009-09-01 10:00:00 UTC        
+ RAD variables written at  2009-09-01 10:00:00 UTC        
+ CLM History variables written
+ ATM variables written at  2009-09-01 11:00:00 UTC        
+ SRF variables written at  2009-09-01 11:00:00 UTC        
+ RAD variables written at  2009-09-01 11:00:00 UTC        
+ CLM History variables written
+ ATM variables written at  2009-09-01 12:00:00 UTC        
+ SRF variables written at  2009-09-01 12:00:00 UTC        
+ RAD variables written at  2009-09-01 12:00:00 UTC        
+ SEARCH BC data for 2009090118 , step =      960
+ READY  BC from     2009090112  to 2009090118 
+ $$$  2009-09-01 12:00:00 UTC        
+ $$$ max, min of ps (mb) =  1022.08  686.10
+ CLM History variables written
+ ATM variables written at  2009-09-01 13:00:00 UTC        
+ SRF variables written at  2009-09-01 13:00:00 UTC        
+ RAD variables written at  2009-09-01 13:00:00 UTC        
+ CLM History variables written
+ ATM variables written at  2009-09-01 14:00:00 UTC        
+ SRF variables written at  2009-09-01 14:00:00 UTC        
+ RAD variables written at  2009-09-01 14:00:00 UTC        
+ CLM History variables written
+ ATM variables written at  2009-09-01 15:00:00 UTC        
+ SRF variables written at  2009-09-01 15:00:00 UTC        
+ RAD variables written at  2009-09-01 15:00:00 UTC        
+ $$$  2009-09-01 15:00:00 UTC        
+ $$$ max, min of ps (mb) =  1022.13  685.54
+ CLM History variables written
+ ATM variables written at  2009-09-01 16:00:00 UTC        
+ SRF variables written at  2009-09-01 16:00:00 UTC        
+ RAD variables written at  2009-09-01 16:00:00 UTC        
+ CLM History variables written
+ ATM variables written at  2009-09-01 17:00:00 UTC        
+ SRF variables written at  2009-09-01 17:00:00 UTC        
+ RAD variables written at  2009-09-01 17:00:00 UTC        
+ CLM History variables written
+ ATM variables written at  2009-09-01 18:00:00 UTC        
+ SRF variables written at  2009-09-01 18:00:00 UTC        
+ RAD variables written at  2009-09-01 18:00:00 UTC        
+ SEARCH BC data for 2009090200 , step =     1440
+ READY  BC from     2009090118  to 2009090200 
+ $$$  2009-09-01 18:00:00 UTC        
+ $$$ max, min of ps (mb) =  1021.94  685.21
+ CLM History variables written
+ ATM variables written at  2009-09-01 19:00:00 UTC        
+ SRF variables written at  2009-09-01 19:00:00 UTC        
+ RAD variables written at  2009-09-01 19:00:00 UTC        
+ CLM History variables written
+ ATM variables written at  2009-09-01 20:00:00 UTC        
+ SRF variables written at  2009-09-01 20:00:00 UTC        
+ RAD variables written at  2009-09-01 20:00:00 UTC        
+ CLM History variables written
+ ATM variables written at  2009-09-01 21:00:00 UTC        
+ SRF variables written at  2009-09-01 21:00:00 UTC        
+ RAD variables written at  2009-09-01 21:00:00 UTC        
+ $$$  2009-09-01 21:00:00 UTC        
+ $$$ max, min of ps (mb) =  1022.42  685.24
+ CLM History variables written
+ ATM variables written at  2009-09-01 22:00:00 UTC        
+ SRF variables written at  2009-09-01 22:00:00 UTC        
+ RAD variables written at  2009-09-01 22:00:00 UTC        
+ CLM History variables written
+ ATM variables written at  2009-09-01 23:00:00 UTC        
+ SRF variables written at  2009-09-01 23:00:00 UTC        
+ RAD variables written at  2009-09-01 23:00:00 UTC        
+ Write restart file for CLM at  2009-09-02 00:00:00 UTC        
+ CLM History variables written
+ history tape             1 : no open file to close
+ Closing local history file output//EURR-3.clm.regcm.h1.20090901_03600.nc
+ Writing restart dataset on output/EURR-3.clm.regcm.r.2009090200.nc
+ Writing restart dataset on output//EURR-3.clm.regcm.rh0.2009090200.nc
+ Writing restart dataset on output//EURR-3.clm.regcm.rh1.2009090200.nc
+ Successfully wrote out restart data for CLM 4.5
+ At  2009-09-02 00:00:00 UTC        
+ JDay    244.00000 solar declination angle =   8.35316377 degrees
+                   solar TSI irradiance    =    1355.7983 W/m^2
+ ATM variables written at  2009-09-02 00:00:00 UTC        
+ SRF variables written at  2009-09-02 00:00:00 UTC        
+ STS variables written at  2009-09-02 00:00:00 UTC        
+ RAD variables written at  2009-09-02 00:00:00 UTC        
+ SAV variables written at  2009-09-02 00:00:00 UTC        
+ Final time  2009-09-02 00:00:00 UTC reached.
+ Elapsed seconds of run for this final timeslice :     1439.084    
+ : this run stops at  : 2026-02-06 15:25:45+0100
+ : Run has been completed using            16  processors.
+ : Total elapsed seconds of run :     1440.462116956711     
+ RegCM V5 simulation successfully reached end

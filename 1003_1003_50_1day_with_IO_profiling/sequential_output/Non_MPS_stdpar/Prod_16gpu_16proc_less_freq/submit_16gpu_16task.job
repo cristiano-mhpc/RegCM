@@ -20,6 +20,6 @@ source /gpfs/home/ictp/ictp549985/RegCM/modules_cuda_working_old
 # source /home/ictp/ictp992004/module
 
 # Launch
-# srun ./STD_launch_per_rank.sh
-mpirun --bind-to none --map-by slot -np 16 ./STD_launch_per_rank.sh  
+# mpirun -np 16 $BINDIR/regcmMPICLM45 EURR-3_namelist.in   
+mpirun -np 16 ./STD_launch_per_rank.sh  
 
