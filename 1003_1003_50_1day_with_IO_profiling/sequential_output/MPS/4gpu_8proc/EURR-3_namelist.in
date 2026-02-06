@@ -19,19 +19,10 @@
 
 &terrainparam
     domname = 'EURR-3'
-    smthbdy = .false.
-    lakedpth = .false.
-    lsmoist = .false.
-    fudge_lnd = .false.
-    fudge_lnd_s = .false.
-    fudge_tex = .false.
-    fudge_tex_s = .false.
-    fudge_lak = .false.
-    fudge_lak_s = .false.
     h2opct = 50.0
     h2ohgt = .false.
     dirter = 'input'
-    inpter = '/leonardo_work/ICT25_ESP/RCMDATA'
+    inpter = '/home/ictp/ictp992004/project/EURR3/RCMDATA'
 /
 
 &boundaryparam
@@ -50,18 +41,18 @@
     ibdyfrq = 6
     ssttyp = 'ERA5D'
     dattyp = 'ERA5'
-    gdate1 = 2009090100
-    gdate2 = 2009110100
+    gdate1 = 2009090100,
+    gdate2 = 2009090800,
     calendar = 'gregorian'
     dirglob = 'input'
-    inpglob = '/leonardo_work/ICT25_ESP/RCMDATA'
+    inpglob = '/home/ictp/ictp992004/project/EURR3/RCMDATA'
 /
 
 &restartparam
     ifrest = .false.
-    mdate0 = 2009100100
-    mdate1 = 2009100100
-    mdate2 = 2009100500
+    mdate0 = 2009090100,
+    mdate1 = 2009090100,
+    mdate2 = 2009090200,
 /
 
 &timeparam
@@ -92,7 +83,7 @@
     dirout = 'output'
     lsync = .false.
     do_parallel_netcdf_in = .true.
-    do_parallel_netcdf_out = .true.
+    do_parallel_netcdf_out = .false.
 /
 
 &physicsparam
@@ -113,7 +104,7 @@
     iclimao3 = 1
     isolconst = 0
     iclimaaer = 2
-    radclimpath = '/leonardo_work/ICT25_ESP/RCMDATA/MERRA2/OPPMONTH'
+    radclimpath = '/home/ictp/ictp992004/project/EURR3/RCMDATA/MERRA2/OPPMONTH'
 /
 
 &clm_inparm

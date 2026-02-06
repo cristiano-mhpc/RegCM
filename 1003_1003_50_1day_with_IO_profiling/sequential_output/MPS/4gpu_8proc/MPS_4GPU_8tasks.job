@@ -1,41 +1,49 @@
-#!/bin/bash
+#!/bin/bash 
 
-#SBATCH --account=ICT25_MHPC_0
+#SBATCH --account=ehpc575
 #SBATCH --out=./production/LOG_%x_%j.out
 #SBATCH --err=./production/LOG_%x_%j.err
-#SBATCH --job-name=mps_4gpu_8ranks
+#SBATCH --job-name stdpar_4gpu_8task
 #SBATCH --ntasks-per-node=8
-#SBATCH --partition=boost_usr_prod
-#SBATCH --nodes=1
-#SBATCH --gpus-per-node=4
-#SBATCH --mem=123000
-#SBATCH --time=01-00:00:00
+#SBATCH --partition=acc
+#SBATCH --qos=acc_ehpc
+#SBATCH --nodes=4
+#SBATCH --exclusive
+#SBATCH --gres=tmpfs:100g
+#SBATCH --gres=gpu:4
+#SBATCH --time=01:10:00
 
-source /leonardo/home/userexternal/ctica000/MS_thesis/RegCM/modules_cuda  
+# export BINDIR=/home/ictp/ictp992004/latest_managed
+# export BINDIR=/home/ictp/ictp549985/RegCM/bin
 
-export CUDA_MPS_PIPE_DIRECTORY=$SCRATCH/tmp/mps_${SLURM_JOBID}
+echo "The number for GPUs per node is ${SLURM_GPUS_ON_NODE}" 
 
-export CUDA_MPS_LOG_DIRECTORY=$SCRATCH/tmp/mps_log_${SLURM_JOBID}
+source /gpfs/home/ictp/ictp549985/RegCM/modules_cuda_working_old  
+# source /home/ictp/ictp992004/module
 
-mkdir -p $CUDA_MPS_PIPE_DIRECTORY $CUDA_MPS_LOG_DIRECTORY
+# For MPS 
+export CUDA_MPS_PIPE_DIRECTORY=$TMPDIR/mps_${SLURM_JOBID}_${hostname}
+export CUDA_MPS_LOG_DIRECTORY=$TMPDIR/mps_log_${SLURM_JOBID}_${hostname}
 
-# Start the MPS daemon
-nvidia-cuda-mps-control -d
+# Start MPS on every node (one task per node)
+srun --nodes=${SLURM_JOB_NUM_NODES} --ntasks=${SLURM_JOB_NUM_NODES} --ntasks-per-node=1 \
+  bash -lc '
+    mkdir -p "$CUDA_MPS_PIPE_DIRECTORY" "$CUDA_MPS_LOG_DIRECTORY"
+    nvidia-cuda-mps-control -d
+    nvidia-smi -pm 1 || true
+    echo "[MPS] started on $(hostname)"
+  '
 
-echo "MPS daemon started."
+# Launch
+# mpirun -np 16 $BINDIR/regcmMPICLM45 EURR-3_namelist.in   
+mpirun -np 32 ./MPS_STD_launch_per_rank.sh  
 
-# Let MPS initialize fully
-sleep 3
+# Stop MPS on every node
+srun --nodes=${SLURM_JOB_NUM_NODES} --ntasks=${SLURM_JOB_NUM_NODES} --ntasks-per-node=1 \
+  bash -lc '
+    echo quit | nvidia-cuda-mps-control
+    rm -rf "$CUDA_MPS_PIPE_DIRECTORY" "$CUDA_MPS_LOG_DIRECTORY"
+    echo "[MPS] stopped on $(hostname)"
+  '
 
-# Optional: Enable persistence mode (only needs to be done once per boot)
-nvidia-smi -pm 1
-
-# Launch program
-cd /leonardo/home/userexternal/ctica000/MS_thesis/RegCM/1003_1003_50_5days_Benchmark/with_pnetcdf/MPS/4gpu_8proc 
-
-srun ./MPS_STD_launch_per_rank.sh
-
-# Cleanup: Stop MPS
-echo quit | nvidia-cuda-mps-control
-rm -rf $CUDA_MPS_PIPE_DIRECTORY $CUDA_MPS_LOG_DIRECTORY
 
