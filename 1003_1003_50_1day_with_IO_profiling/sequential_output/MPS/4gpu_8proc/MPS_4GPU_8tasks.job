@@ -6,10 +6,10 @@
 #SBATCH --job-name=mps_4gpu_8ranks
 #SBATCH --ntasks-per-node=8
 #SBATCH --partition=boost_usr_prod
-#SBATCH --nodes=1
+#SBATCH --nodes=4
 #SBATCH --gpus-per-node=4
-#SBATCH --mem=123000
-#SBATCH --time=01-00:00:00
+#SBATCH --mem=0G
+#SBATCH --time=02:00:00
 
 source /leonardo/home/userexternal/ctica000/MS_thesis/RegCM/modules_cuda  
 
@@ -30,8 +30,6 @@ sleep 3
 # Optional: Enable persistence mode (only needs to be done once per boot)
 nvidia-smi -pm 1
 
-# Launch program
-cd /leonardo/home/userexternal/ctica000/MS_thesis/RegCM/1003_1003_50_5days_Benchmark/with_pnetcdf/MPS/4gpu_8proc 
 
 srun ./MPS_STD_launch_per_rank.sh
 

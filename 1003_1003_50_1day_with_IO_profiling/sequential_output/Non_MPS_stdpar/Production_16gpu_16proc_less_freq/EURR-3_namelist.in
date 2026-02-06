@@ -1,5 +1,5 @@
 &dimparam
-    iy = 1003 
+    iy = 1003
     jx = 1003
     kz = 50
 /
@@ -61,7 +61,7 @@
     ifrest = .false.
     mdate0 = 2009100100
     mdate1 = 2009100100
-    mdate2 = 2009101100
+    mdate2 = 2009100200
 /
 
 &timeparam
@@ -75,13 +75,13 @@
     ifsave = .true.
     savfrq = 0.0
     ifatm = .true.
-    atmfrq = 24.0
+    atmfrq = 1.0
     ifrad = .true.
-    radfrq = 24.0
+    radfrq = 1.0
     ifsts = .true.
     ifshf = .true.
     ifsrf = .true.
-    srffrq = 24.0
+    srffrq = 1.0
     ifsub = .true.
     subfrq = 1.0
     iflak = .true.
@@ -92,7 +92,7 @@
     dirout = 'output'
     lsync = .false.
     do_parallel_netcdf_in = .true.
-    do_parallel_netcdf_out = .false.
+    do_parallel_netcdf_out = .true.
 /
 
 &physicsparam

@@ -406,7 +406,6 @@ module mod_regcm_interface
     end if
 
     print *, 'MPI Rank:', mpi_rank, ' using device:', idev
-
     call acc_set_device_num(idev, dev_type)
   end subroutine setup_openacc
 #endif

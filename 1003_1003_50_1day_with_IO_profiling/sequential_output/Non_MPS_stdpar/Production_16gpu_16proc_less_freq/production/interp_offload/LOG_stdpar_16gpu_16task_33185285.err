@@ -1,0 +1,12 @@
+--------------------------------------------------------------------------
+ORTE has lost communication with a remote daemon.
+
+  HNP daemon   : [[261,0],0] on node lrdn2438
+  Remote daemon: [[261,0],2] on node lrdn2622
+
+This is usually due to either a failure of the TCP network
+connection to the node, or possibly an internal failure of
+the daemon itself. We cannot recover from this failure, and
+therefore will terminate the job.
+--------------------------------------------------------------------------
+slurmstepd: error: *** JOB 33185285 ON lrdn2438 CANCELLED AT 2026-01-30T16:48:43 ***

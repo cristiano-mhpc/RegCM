@@ -1,0 +1,51 @@
+#!/bin/bash
+
+#SBATCH --account=ICT25_MHPC_0
+#SBATCH --out=./production/LOG_%x_%j.out
+#SBATCH --err=./production/LOG_%x_%j.err
+#SBATCH --job-name=mps_4gpu_8ranks
+#SBATCH --ntasks-per-node=8
+#SBATCH --partition=boost_usr_prod
+#SBATCH --cpus-per-task=2
+#SBATCH --nodes=4
+#SBATCH --hint=nomultithread
+#SBATCH --gpus-per-node=4
+#SBATCH --mem=0G
+#SBATCH --time=02:00:00
+
+source /leonardo/home/userexternal/ctica000/MS_thesis/RegCM/modules_cuda
+
+# -----------------------------------------------------------------------------
+# CUDA MPS (Multi-Process Service)
+# IMPORTANT for multi-node jobs:
+#   - The MPS daemon must be started on *every* compute node that will run ranks.
+#   - Use node-local paths for the MPS pipe/log dirs (each node has its own /tmp).
+# -----------------------------------------------------------------------------
+export SCRATCH=/leonardo_scratch/large/userexternal/ctica000
+export CUDA_MPS_PIPE_DIRECTORY=/leonardo_scratch/large/userexternal/ctica000/tmp/mps_${USER}_${SLURM_JOBID}
+export CUDA_MPS_LOG_DIRECTORY=/leonardo_scratch/large/userexternal/ctica000/tmp/mps_log_${USER}_${SLURM_JOBID}
+
+# Start MPS on every allocated node (one task per node)
+srun --nodes=$SLURM_JOB_NUM_NODES --ntasks-per-node=1 --exclusive bash -lc '
+  set -euo pipefail
+  export CUDA_MPS_PIPE_DIRECTORY='"$CUDA_MPS_PIPE_DIRECTORY"'
+  export CUDA_MPS_LOG_DIRECTORY='"$CUDA_MPS_LOG_DIRECTORY"'
+  mkdir -p "$CUDA_MPS_PIPE_DIRECTORY" "$CUDA_MPS_LOG_DIRECTORY"
+  nvidia-cuda-mps-control -d
+  sleep 1
+  echo "[MPS check] $(hostname)"
+  pgrep -a nvidia-cuda-mps || true
+  echo get_server_list | nvidia-cuda-mps-control || true
+'
+# Let MPS initialize fully
+sleep 2
+
+# Run the workload (ranks will share 4 GPUs per node via MPS; wrapper assigns ranks→GPU)
+# srun ./MPS_STD_launch_per_rank_edited.sh
+
+# Stop MPS on every allocated node 
+srun --nodes=$SLURM_JOB_NUM_NODES --ntasks-per-node=1 --exclusive bash -lc '
+  export CUDA_MPS_PIPE_DIRECTORY='"$CUDA_MPS_PIPE_DIRECTORY"'
+  echo quit | nvidia-cuda-mps-control || true
+'
+#
