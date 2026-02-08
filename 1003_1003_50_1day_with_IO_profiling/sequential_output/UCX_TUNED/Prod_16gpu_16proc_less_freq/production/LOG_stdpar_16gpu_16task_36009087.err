@@ -1,0 +1,13 @@
+load CMAKE/3.30.5 (PATH)
+slurmstepd: error: *** JOB 36009087 ON as01r1b04 CANCELLED AT 2026-02-08T03:23:14 DUE TO TIME LIMIT ***
+--------------------------------------------------------------------------
+ORTE has lost communication with a remote daemon.
+
+  HNP daemon   : [[404,0],0] on node as01r1b04
+  Remote daemon: [[404,0],3] on node as01r1b12
+
+This is usually due to either a failure of the TCP network
+connection to the node, or possibly an internal failure of
+the daemon itself. We cannot recover from this failure, and
+therefore will terminate the job.
+--------------------------------------------------------------------------

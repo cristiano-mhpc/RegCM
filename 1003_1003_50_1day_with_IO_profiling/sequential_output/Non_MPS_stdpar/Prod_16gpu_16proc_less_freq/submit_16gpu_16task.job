@@ -11,15 +11,15 @@
 #SBATCH --exclusive
 #SBATCH --gres=tmpfs:100g
 #SBATCH --gres=gpu:4
-#SBATCH --time=01:10:00
+#SBATCH --time=00:30:00
 
 # export BINDIR=/home/ictp/ictp992004/latest_managed
-# export BINDIR=/home/ictp/ictp549985/RegCM/bin
+export BINDIR=/home/ictp/ictp549985/RegCM/bin
 
 source /gpfs/home/ictp/ictp549985/RegCM/modules_cuda_working_old  
 # source /home/ictp/ictp992004/module
 
 # Launch
-# mpirun -np 16 $BINDIR/regcmMPICLM45 EURR-3_namelist.in   
-mpirun -np 16 ./STD_launch_per_rank.sh  
+mpirun -np 16 $BINDIR/regcmMPICLM45 EURR-3_namelist.in   
+# mpirun -np 16 ./STD_launch_per_rank.sh  
 

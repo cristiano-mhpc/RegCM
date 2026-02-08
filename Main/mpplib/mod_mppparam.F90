@@ -4640,7 +4640,7 @@ module mod_mppparam
     real(rk8), dimension(ndx), volatile :: rdata
     integer(ik4) :: id, ib1, ib2, iex, k
 
-    !$acc data copy(ml) create(sdata,rdata)
+    !$acc data present(ml) create(sdata,rdata)
 
     do concurrent ( iex = 1:nex, k = k1:k2 )
       id = (k-k1)*nex + iex
@@ -5072,7 +5072,7 @@ module mod_mppparam
     real(rk8), dimension(ndy), volatile :: rdata
     integer(ik4) :: id, ib1, ib2, iex, k
 
-    !$acc data copy(ml) create(sdata,rdata)
+    !$acc data present(ml) create(sdata,rdata)
 
     do concurrent ( iex = 1:nex, k = k1:k2 )
       id = (k-k1)*nex + iex

@@ -1466,21 +1466,14 @@ module mod_moloch
         end do
       end if
 
-      ! if ( ma%has_bdybottom ) then
-      !   do concurrent ( j = jci1:jci2, k = 1:kz )
-      !     wz(j,ice1,k) = wz(j,ici1,k)
-      !   end do
-      ! end if
-      ! if ( ma%has_bdytop ) then
-      !   do concurrent ( j = jci1:jci2, k = 1:kz )
-      !     wz(j,ice2,k) = wz(j,ici2,k)
-      !   end do
-      ! end if
-
-      if ( ma%has_bdybottom .or. ma%has_bdytop ) then
+      if ( ma%has_bdybottom ) then
         do concurrent ( j = jci1:jci2, k = 1:kz )
-          if ( ma%has_bdybottom ) wz(j,ice1,k) = wz(j,ici1,k)
-          if ( ma%has_bdytop   ) wz(j,ice2,k) = wz(j,ici2,k)
+          wz(j,ice1,k) = wz(j,ici1,k)
+        end do
+      end if
+      if ( ma%has_bdytop ) then
+        do concurrent ( j = jci1:jci2, k = 1:kz )
+          wz(j,ice2,k) = wz(j,ici2,k)
         end do
       end if
 
@@ -1517,22 +1510,15 @@ module mod_moloch
                 zpby(j,i,k)*zrfms - zpby(j,i+1,k)*zrfmn + zdv
         end do
 
-        ! if ( ma%has_bdyleft ) then
-        !   do concurrent ( i = ici1:ici2, k = 1:kz )
-        !     p0(jce1,i,k) = p0(jci1,i,k)
-        !   end do
-        ! end if
-
-        ! if ( ma%has_bdyright ) then
-        !   do concurrent ( i = ici1:ici2, k = 1:kz )
-        !     p0(jce2,i,k) = p0(jci2,i,k)
-        !   end do
-        ! end if
-
-        if ( ma%has_bdyleft .or. ma%has_bdyright ) then
+        if ( ma%has_bdyleft ) then
           do concurrent ( i = ici1:ici2, k = 1:kz )
-            if ( ma%has_bdyleft  ) p0(jce1,i,k) = p0(jci1,i,k)
-            if ( ma%has_bdyright ) p0(jce2,i,k) = p0(jci2,i,k)
+            p0(jce1,i,k) = p0(jci1,i,k)
+          end do
+        end if
+
+        if ( ma%has_bdyright ) then
+          do concurrent ( i = ici1:ici2, k = 1:kz )
+            p0(jce2,i,k) = p0(jci2,i,k)
           end do
         end if
 
@@ -1598,25 +1584,17 @@ module mod_moloch
             mx2(j,i) * (zpby(j,i,k)*zrfms - zpby(j,i+1,k)*zrfmn + zdv)
         end do
 
-        ! if ( ma%has_bdyleft ) then
-        !   do concurrent ( i = ici1:ici2, k = 1:kz )
-        !     p0(jce1,i,k) = p0(jci1,i,k)
-        !   end do
-        ! end if
-
-        ! if ( ma%has_bdyright ) then
-        !   do concurrent ( i = ici1:ici2, k = 1:kz )
-        !     p0(jce2,i,k) = p0(jci2,i,k)
-        !   end do
-        ! end if
-        if ( ma%has_bdyleft .or. ma%has_bdyright ) then
+        if ( ma%has_bdyleft ) then
           do concurrent ( i = ici1:ici2, k = 1:kz )
-            if ( ma%has_bdyleft  ) p0(jce1,i,k) = p0(jci1,i,k)
-            if ( ma%has_bdyright ) p0(jce2,i,k) = p0(jci2,i,k)
+            p0(jce1,i,k) = p0(jci1,i,k)
           end do
         end if
 
-
+        if ( ma%has_bdyright ) then
+          do concurrent ( i = ici1:ici2, k = 1:kz )
+            p0(jce2,i,k) = p0(jci2,i,k)
+          end do
+        end if
 
         call exchange_lr(p0,2,jce1,jce2,ici1,ici2,1,kz)
 

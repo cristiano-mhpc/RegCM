@@ -24,5 +24,8 @@ export BINDIR=/gpfs/home/ictp/ictp549985/RegCM/bin
 printf '[Wrapper][Rank %02d][Local %02d] on %s: CUDA_VISIBLE_DEVICES=%s ACC_DEVICE_NUM=%s\n' \
 "$GLOBAL_RANK" "$LOCAL_RANK" "$(hostname)" "$CUDA_VISIBLE_DEVICES" "$ACC_DEVICE_NUM"
 
+echo "[rank $OMPI_COMM_WORLD_RANK local $LOCAL_RANK] GPU=$CUDA_VISIBLE_DEVICES UCX_NET_DEVICES=$UCX_NET_DEVICES CPUSET=$CPUSET NUMA=$NUMA"
+
+
 # Launch the binary
 exec $BINDIR/regcmMPICLM45 EURR-3_namelist.in 

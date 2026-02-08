@@ -1,0 +1,21 @@
+load CMAKE/3.30.5 (PATH)
+./STD_launch_per_rank.sh: line 42: exec: -m: invalid option
+exec: usage: exec [-cl] [-a name] [command [argument ...]] [redirection ...]
+--------------------------------------------------------------------------
+Primary job  terminated normally, but 1 process returned
+a non-zero exit code. Per user-direction, the job has been aborted.
+--------------------------------------------------------------------------
+./STD_launch_per_rank.sh: line 42: exec: -m: invalid option
+exec: usage: exec [-cl] [-a name] [command [argument ...]] [redirection ...]
+./STD_launch_per_rank.sh: line 42: exec: -m: invalid option
+exec: usage: exec [-cl] [-a name] [command [argument ...]] [redirection ...]
+./STD_launch_per_rank.sh: line 42: exec: -m: invalid option
+exec: usage: exec [-cl] [-a name] [command [argument ...]] [redirection ...]
+./STD_launch_per_rank.sh: line 42: exec: -m: invalid option
+exec: usage: exec [-cl] [-a name] [command [argument ...]] [redirection ...]
+./STD_launch_per_rank.sh: line 42: exec: -m: invalid option
+exec: usage: exec [-cl] [-a name] [command [argument ...]] [redirection ...]
+./STD_launch_per_rank.sh: line 42: exec: -m: invalid option
+exec: usage: exec [-cl] [-a name] [command [argument ...]] [redirection ...]
+./STD_launch_per_rank.sh: line 42: exec: -m: invalid option
+exec: usage: exec [-cl] [-a name] [command [argument ...]] [redirection ...]
