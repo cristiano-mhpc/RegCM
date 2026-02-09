@@ -57,7 +57,7 @@
                             selfrefo, forrefo
       use rrlw_vsn, only: hvrkg
 
-      implicit none (type, external)
+      implicit none
       save
 
       hvrkg = '$Revision$'
@@ -2270,7 +2270,7 @@
       use parkind, only : im => kind_im, rb => kind_rb
       use rrlw_kg02, only : fracrefao, fracrefbo, kao, kbo, selfrefo, forrefo
 
-      implicit none (type, external)
+      implicit none
       save
 
 ! Planck fraction mapping level: P = 1053.630 mbar, T = 294.2 K
@@ -4321,7 +4321,7 @@
       use rrlw_kg03, only : fracrefao, fracrefbo, kao, kbo, kao_mn2o, &
                             kbo_mn2o, selfrefo, forrefo
 
-      implicit none (type, external)
+      implicit none
       save
 
 ! Planck fraction mapping level: P=212.7250 mbar, T = 223.06 K
@@ -16295,7 +16295,7 @@
       use parkind, only : im => kind_im, rb => kind_rb
       use rrlw_kg04, only : fracrefao, fracrefbo, kao, kbo, selfrefo, forrefo
 
-      implicit none (type, external)
+      implicit none
       save
 
 ! Planck fraction mapping level : P = 142.5940 mbar, T = 215.70 K
@@ -27123,7 +27123,7 @@
       use rrlw_kg05, only : fracrefao, fracrefbo, kao, kbo, kao_mo3, &
                             selfrefo, forrefo, ccl4o
 
-      implicit none (type, external)
+      implicit none
       save
 
 ! Planck fraction mapping level : P = 473.42 mb, T = 259.83
@@ -38693,7 +38693,7 @@
       use rrlw_kg06, only : fracrefao, kao, kao_mco2, selfrefo, forrefo, &
                             cfc11adjo, cfc12o
 
-      implicit none (type, external)
+      implicit none
       save
 
 ! Planck fraction mapping level : P = 473.4280 mb, T = 259.83 K
@@ -39329,7 +39329,7 @@
       use rrlw_kg07, only : fracrefao, fracrefbo, kao, kbo, kao_mco2, &
                             kbo_mco2, selfrefo, forrefo
 
-      implicit none (type, external)
+      implicit none
       save
 
 ! Planck fraction mapping level : P = 706.27 mb, T = 278.94 K
@@ -44942,7 +44942,7 @@
                             kao_mo3, kbo, kbo_mco2, kbo_mn2o, selfrefo, forrefo, &
                             cfc12o, cfc22adjo
 
-      implicit none (type, external)
+      implicit none
       save
 
 ! Planck fraction mapping level : P=473.4280 mb, T = 259.83 K
@@ -47428,7 +47428,7 @@
       use rrlw_kg09, only : fracrefao, fracrefbo, kao, kbo, kao_mn2o, &
                             kbo_mn2o, selfrefo, forrefo
 
-      implicit none (type, external)
+      implicit none
       save
 
 ! Planck fractions mapping level : P=212.7250 mb, T = 223.06 K
@@ -53039,7 +53039,7 @@
       use parkind, only : im => kind_im, rb => kind_rb
       use rrlw_kg10, only : fracrefao, fracrefbo, kao, kbo, selfrefo, forrefo
 
-      implicit none (type, external)
+      implicit none
       save
 
 ! Planck fraction mapping level : P = 212.7250, T = 223.06 K
@@ -55090,7 +55090,7 @@
       use rrlw_kg11, only : fracrefao, fracrefbo, kao, kbo, kao_mo2, &
                             kbo_mo2, selfrefo, forrefo
 
-      implicit none (type, external)
+      implicit none
       save
 
 ! Planck fraction mapping level : P=1053.63 mb, T= 294.2 K
@@ -57314,7 +57314,7 @@
       use parkind, only : im => kind_im, rb => kind_rb
       use rrlw_kg12, only : fracrefao, kao, selfrefo, forrefo
 
-      implicit none (type, external)
+      implicit none
       save
 
 ! Planck fraction mapping level : P = 174.1640 mbar, T= 215.78 K
@@ -60582,7 +60582,7 @@
       use rrlw_kg13, only : fracrefao, fracrefbo, kao, kao_mco2, kao_mco, &
                             kbo_mo3, selfrefo, forrefo
 
-      implicit none (type, external)
+      implicit none
       save
 
 ! Planck fraction mapping level : P=473.4280 mb, T = 259.83 K
@@ -65397,7 +65397,7 @@
       use parkind, only : im => kind_im, rb => kind_rb
       use rrlw_kg14, only : fracrefao, fracrefbo, kao, kbo, selfrefo, forrefo
 
-      implicit none (type, external)
+      implicit none
       save
 
 ! Planck fraction mapping level : P = 142.5940 mb, T = 215.70 K
@@ -67453,7 +67453,7 @@
       use parkind, only : im => kind_im, rb => kind_rb
       use rrlw_kg15, only : fracrefao, kao, kao_mn2, selfrefo, forrefo
 
-      implicit none (type, external)
+      implicit none
       save
 
 ! Planck fraction mapping level : P = 1053. mb, T = 294.2 K
@@ -71453,7 +71453,7 @@
       use parkind, only : im => kind_im, rb => kind_rb
       use rrlw_kg16, only : fracrefao, fracrefbo, kao, kbo, selfrefo, forrefo
 
-      implicit none (type, external)
+      implicit none
       save
 
 ! Planck fraction mapping level: P = 387.6100 mbar, T = 250.17 K
