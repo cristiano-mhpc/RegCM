@@ -1,23 +1,20 @@
 #!/bin/bash 
 
 #SBATCH --account=ICT25_MHPC_0
-#SBATCH --out=./production/interp_offload/LOG_%x_%j.out
-#SBATCH --err=./production/interp_offload/LOG_%x_%j.err
+#SBATCH --out=./production/heatindex_offload/LOG_%x_%j.out
+#SBATCH --err=./production/heatindex_offload/LOG_%x_%j.err
 #SBATCH --job-name stdpar_16gpu_16task
 #SBATCH --ntasks-per-node=4
 #SBATCH --partition=boost_usr_prod
 #SBATCH --nodes=4
 #SBATCH --mem=0G
+#SBATCH --gres=tmpfs:100g
 #SBATCH --gres=gpu:4
-#SBATCH --cpus-per-task=1                       # Number of CPU cores per task. Needed for CPU binding 
-#SBATCH --distribution=block:block              # Distribute tasks in blocks across nodes
-#SBATCH --signal=USR1@300                       # Send USR1 signal 5 minutes before time limit is reached  
-#SBATCH --time=01:00:00
+#SBATCH --time=00:30:00
 
-# load the environment 
-source /leonardo/home/userexternal/ctica000/MS_thesis/RegCM/modules_cuda
-export BINDIR=/leonardo/home/userexternal/ctica000/MS_thesis/RegCM/bin
+source /leonardo/home/userexternal/ctica000/MS_thesis/RegCM/modules_cuda  
 
 # Launch
-mpirun -np $SLURM_NTASKS --bind-to none --map-by ppr:4:node "$BINDIR/regcmMPICLM45_OPENACC_GPU_STDPAR" EURR-3_namelist.in
+srun ./STD_launch_per_rank.sh
+
 

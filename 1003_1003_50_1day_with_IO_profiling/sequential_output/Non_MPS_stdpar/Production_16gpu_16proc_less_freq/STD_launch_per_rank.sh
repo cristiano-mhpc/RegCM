@@ -1,18 +1,25 @@
 #!/bin/bash
-# STD_launch_per_rank.sh
+# launch_per_rank.sh
 
-# Pick local rank: prefer OpenMPI, fall back to Slurm
-LOCAL_RANK=$OMPI_COMM_WORLD_LOCAL_RANK
-GLOBAL_RANK=$OMPI_COMM_WORLD_RANK
+# Get the rank of the current MPI process
+# RANK=${SLURM_PROCID} # This is global MPI rank, not local
+RANK=${SLURM_LOCALID}
 
-# One GPU per local rank on each node
-export CUDA_VISIBLE_DEVICES=$LOCAL_RANK
+# Optional safety check
+if [ -z "$RANK" ]; then
+  echo "SLURM_LOCALID not set; this script should be run under srun."
+  exit 1
+fi
+
+export CUDA_LAUNCH_BLOCKING=1     # pin runtime error to the exact line
+
+# Assign each local rank to a unique GPU on this node
+export CUDA_VISIBLE_DEVICES=$RANK
+export ACC_DEVICE_TYPE=nvidia
+export ACC_DEVICE_NUM=0
 export BINDIR=/leonardo/home/userexternal/ctica000/MS_thesis/RegCM/bin
 
-printf '[Wrapper][Rank %02d][Local %02d] on %s: CUDA_VISIBLE_DEVICES=%s ACC_DEVICE_NUM=%s\n' \
-       "$GLOBAL_RANK" "$LOCAL_RANK" "$(hostname)" "$CUDA_VISIBLE_DEVICES" "$ACC_DEVICE_NUM"
+echo "[Wrapper][Rank $SLURM_PROCID][Local $SLURM_LOCALID] on $(hostname): CUDA_VISIBLE_DEVICES=$CUDA_VISIBLE_DEVICES"
 
-echo "rank=$OMPI_COMM_WORLD_RANK local=$OMPI_COMM_WORLD_LOCAL_RANK host=$(hostname) CVD=$CUDA_VISIBLE_DEVICES"
-
-exec "$BINDIR/regcmMPICLM45_OPENACC_GPU_STDPAR" EURR-3_namelist.in
-
+# Launch the binary
+exec $BINDIR/regcmMPICLM45_OPENACC_GPU_STDPAR EURR-3_namelist.in 

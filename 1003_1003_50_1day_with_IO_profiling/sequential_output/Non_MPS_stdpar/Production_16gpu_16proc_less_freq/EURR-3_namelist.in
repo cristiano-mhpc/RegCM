@@ -92,7 +92,7 @@
     dirout = 'output'
     lsync = .false.
     do_parallel_netcdf_in = .true.
-    do_parallel_netcdf_out = .true.
+    do_parallel_netcdf_out = .false.
 /
 
 &physicsparam
