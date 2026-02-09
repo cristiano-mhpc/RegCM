@@ -1,0 +1,13 @@
+Failing in Thread:1
+Accelerator Fatal Error: call to cuCtxCreate returned error 214 (CUDA_ERROR_ECC_UNCORRECTABLE): uncorrectable ECC error encountered
+
+[ perf record: Woken up 1535 times to write data ]
+[ perf record: Captured and wrote 2.827 MB /leonardo_scratch/large/userexternal/ctica000/perf/with_IO/sequential_write/perf_33772062/perf.data.rank13 (315 samples) ]
+srun: error: lrdn2997: task 13: Exited with exit code 1
+slurmstepd: error:  mpi/pmix_v3: _errhandler: lrdn2997 [3]: pmixp_client_v2.c:212: Error handler invoked: status = -25, source = [slurm.pmix.33772062.0:13]
+srun: Job step aborted: Waiting up to 122 seconds for job step to finish.
+slurmstepd: error: *** STEP 33772062.0 ON lrdn0585 CANCELLED AT 2026-02-08T19:07:22 ***
+srun: error: lrdn2997: tasks 12,14-15: Killed
+srun: error: lrdn0585: tasks 0-3: Killed
+srun: error: lrdn1954: tasks 4-7: Killed
+srun: error: lrdn2032: tasks 8-11: Killed
