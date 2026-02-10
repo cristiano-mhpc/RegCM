@@ -250,6 +250,7 @@ module mod_heatindex
 #else
   pure function find_eqvar(ta,rh)
 #endif
+    !$acc routine seq 
     implicit none
     real(rkx), dimension(4) :: find_eqvar
     real(rkx), intent(in) :: ta, rh
