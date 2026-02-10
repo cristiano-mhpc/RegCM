@@ -1,8 +1,8 @@
 #!/bin/bash 
 
-#SBATCH --account=ICT25_ESP_0
-#SBATCH --out=./production/interp_offload/LOG_%x_%j.out
-#SBATCH --err=./production/interp_offload/LOG_%x_%j.err
+#SBATCH --account=ICT25_MHPC_0
+#SBATCH --out=./production/heatindex_offload/LOG_%x_%j.out
+#SBATCH --err=./production/heatindex_offload/LOG_%x_%j.err
 #SBATCH --job-name stdpar_16gpu_16task
 #SBATCH --ntasks-per-node=4
 #SBATCH --partition=boost_usr_prod
@@ -15,7 +15,7 @@
 #SBATCH --distribution=block:block              # Distribute tasks in blocks across nodes
 
 #SBATCH --signal=USR1@300                       # Send USR1 signal 5 minutes before time limit is reached  
-#SBATCH --time=03:00:00
+#SBATCH --time=0:40:00
 
 # Topology-aware placement (keep nodes under a single leaf switch if possible)
 ##SBATCH --switches=1@7-00:00:00                 # wait up to 7days for compact placement

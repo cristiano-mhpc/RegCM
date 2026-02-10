@@ -1102,6 +1102,7 @@ module mod_lm_interface
           end do
         end if
         if ( associated(srf_htindx_out) ) then
+         !$acc parallel loop collapse(2) gang vector 
           do i = ici1, ici2
             do j = jci1, jci2
               tas = sum(lms%t2m(:,j,i))*rdnnsg

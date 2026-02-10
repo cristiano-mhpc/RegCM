@@ -155,6 +155,7 @@ module mod_heatindex
 
   ! heat transfer resistance through air, exposed part of skin, k m^2/w
   pure real(rkx) function ra(ts,ta)
+    !$acc routine seq 
     implicit none
     real(rkx), intent(in) :: ts, ta
     real(rkx) :: hc, phi_rad, hr
@@ -166,6 +167,7 @@ module mod_heatindex
 
   ! heat transfer resistance through air, clothed part of skin, k m^2/w
   pure real(rkx) function ra_bar(tf,ta)
+    !$acc routine seq 
     implicit none
     real(rkx), intent(in) :: tf, ta
     real(rkx) :: hc, phi_rad, hr
@@ -191,6 +193,7 @@ module mod_heatindex
 #else
   pure type(eqvar) function initial_find_eqvar(ta,rh) result(res)
 #endif
+    !$acc routine seq 
     implicit none
     real(rkx), intent(in) :: ta, rh
     real(rkx) :: pa, phi, rf, rs, dtcdt, ts, ts_bar
@@ -299,6 +302,7 @@ module mod_heatindex
 #else
   pure real(rkx) function find_t(eqvar_indx, eqvar)
 #endif
+    !$acc routine seq 
     implicit none
     integer, intent(in) :: eqvar_indx
     real(rkx), intent(in) :: eqvar
@@ -330,6 +334,7 @@ module mod_heatindex
 #else
   pure real(rkx) function heatindex(ta,rh)
 #endif
+    !$acc routine seq 
     implicit none
     real(rkx), intent(in) :: ta, rh
     type(eqvar) :: initial
@@ -358,6 +363,7 @@ module mod_heatindex
 #else
   pure real(rkx) function solve1(ta,pa,rs,x1,x2,err,maxiter)
 #endif
+    !$acc routine seq 
     implicit none
     real(rkx), intent(in) :: ta, pa, rs, x1, x2, err
     integer, intent(in) :: maxiter
@@ -396,6 +402,7 @@ module mod_heatindex
 #else
   pure real(rkx) function solve2(ta,pa,rs,x1,x2,err,maxiter)
 #endif
+    !$acc routine seq 
     implicit none
     real(rkx), intent(in) :: ta, pa, rs, x1, x2, err
     integer, intent(in) :: maxiter
@@ -434,6 +441,7 @@ module mod_heatindex
 #else
   pure real(rkx) function solve3(ta,pa,rs,ts_bar,x1,x2,err,maxiter)
 #endif
+    !$acc routine seq 
     implicit none
     real(rkx), intent(in) :: ta, pa, rs, ts_bar, x1, x2, err
     integer, intent(in) :: maxiter
@@ -598,6 +606,7 @@ module mod_heatindex
 #else
   pure real(rkx) function solveii(eqvar)
 #endif
+    !$acc routine seq 
     implicit none
     real(rkx), intent(in) :: eqvar
     integer :: iter
