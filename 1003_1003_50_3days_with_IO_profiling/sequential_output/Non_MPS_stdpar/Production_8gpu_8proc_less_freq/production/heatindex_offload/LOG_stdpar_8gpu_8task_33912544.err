@@ -1,0 +1,5 @@
+srun: error: lrdn2518: tasks 5-7: User defined signal 1
+srun: error: lrdn2263: tasks 1,3: User defined signal 1
+srun: error: lrdn2518: task 4: User defined signal 1
+srun: error: lrdn2263: task 2: User defined signal 1
+srun: error: lrdn2263: task 0: User defined signal 1

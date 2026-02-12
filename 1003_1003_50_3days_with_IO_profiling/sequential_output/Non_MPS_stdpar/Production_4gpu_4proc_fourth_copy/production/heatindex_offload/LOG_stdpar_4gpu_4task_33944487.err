@@ -1,0 +1,37 @@
+ energy balance in canopy       6796194 , err=  -0.1067415732907507     
+ energy balance in canopy       6796202 , err=  -0.1510689561935001     
+ energy balance in canopy       6796208 , err=  -0.1488682496913371     
+ energy balance in canopy       6796214 , err=  -0.2881883001390809     
+ energy balance in canopy       6796216 , err=  -0.1622311517482382     
+ energy balance in canopy       6796224 , err=  -0.1646211849796371     
+ energy balance in canopy       6796230 , err=  -0.1616363593526008     
+ energy balance in canopy       6796236 , err=  -0.3427469786115840     
+ energy balance in canopy       6796238 , err=  -0.1584376596290588     
+ BalanceCheck: surface flux energy balance error step =       184 point =****** imbalance =   -0.158438 W/m2
+  sabv           =     0.000000000000000     
+  column      =       1876470
+  sabg           =     0.000000000000000         0.000000000000000      
+    0.000000000000000     
+  eflx_lwrad_net =     31.81489676814471     
+  eflx_sh_tot    =    -10.85036222033947     
+  eflx_lh_tot    =     8.268533911004235     
+  eflx_soil_grnd =    -29.07463079918037     
+ -------------- FATAL CALLED ---------------
+  Fatal in file: mod_clm_balancecheck.F90 at line:      735
+ clm model is stopping
+ -------------------------------------------
+ Abort called by computing node             2 at 2026-02-11 15:35:04.579 +0100
+ Execution terminated because of runtime error
+--------------------------------------------------------------------------
+MPI_ABORT was invoked on rank 2 in communicator MPI COMMUNICATOR 3 DUP FROM 0
+with errorcode 1.
+
+NOTE: invoking MPI_ABORT causes Open MPI to kill all MPI processes.
+You may or may not see output from other processes, depending on
+exactly when Open MPI kills them.
+--------------------------------------------------------------------------
+slurmstepd: error: *** STEP 33944487.0 ON lrdn1324 CANCELLED AT 2026-02-11T15:35:04 ***
+srun: Job step aborted: Waiting up to 182 seconds for job step to finish.
+srun: error: lrdn1324: tasks 1,3: Killed
+srun: error: lrdn1324: task 2: Exited with exit code 1
+srun: error: lrdn1324: task 0: Killed

@@ -1,0 +1,3 @@
+slurmstepd: error: *** JOB 33916711 ON lrdn1648 CANCELLED AT 2026-02-10T23:25:57 DUE TO TIME LIMIT ***
+slurmstepd: error: *** STEP 33916711.0 ON lrdn1648 CANCELLED AT 2026-02-10T23:25:57 DUE TO TIME LIMIT ***
+srun: Job step aborted: Waiting up to 122 seconds for job step to finish.

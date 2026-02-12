@@ -1,0 +1,12 @@
+Failing in Thread:1
+Accelerator Fatal Error: call to cuStreamSynchronize returned error 700 (CUDA_ERROR_ILLEGAL_ADDRESS): Illegal address during kernel execution
+ File: /leonardo/home/userexternal/ctica000/MS_thesis/RegCM/Main/clmlib/clm4.5/mod_clm_canopyfluxes.F90
+ Function: photosynthesis:1617
+ Line: 2217
+
+srun: error: lrdn1277: task 1: Exited with exit code 1
+slurmstepd: error:  mpi/pmix_v3: _errhandler: lrdn1277 [0]: pmixp_client_v2.c:212: Error handler invoked: status = -25, source = [slurm.pmix.33936145.0:1]
+srun: Job step aborted: Waiting up to 122 seconds for job step to finish.
+slurmstepd: error: *** STEP 33936145.0 ON lrdn1277 CANCELLED AT 2026-02-11T13:16:45 ***
+srun: error: lrdn1277: tasks 2-3: Killed
+srun: error: lrdn1277: task 0: Killed

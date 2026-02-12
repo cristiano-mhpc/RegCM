@@ -1,0 +1,3 @@
+srun: error: lrdn3332: tasks 1,3: User defined signal 1
+srun: error: lrdn3332: task 2: User defined signal 1
+srun: error: lrdn3332: task 0: User defined signal 1

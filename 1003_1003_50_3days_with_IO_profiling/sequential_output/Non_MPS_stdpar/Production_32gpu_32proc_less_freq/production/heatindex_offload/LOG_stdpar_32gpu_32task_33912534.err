@@ -1,0 +1,17 @@
+srun: error: lrdn2218: tasks 14-15: User defined signal 1
+srun: error: lrdn2368: tasks 20,23: User defined signal 1
+srun: error: lrdn0807: tasks 1-3: User defined signal 1
+srun: error: lrdn2226: tasks 16-17,19: User defined signal 1
+srun: error: lrdn1165: tasks 4-5,7: User defined signal 1
+srun: error: lrdn2226: task 18: User defined signal 1
+srun: error: lrdn2218: tasks 12-13: User defined signal 1
+srun: error: lrdn1588: tasks 8-10: User defined signal 1
+srun: error: lrdn2368: task 21: User defined signal 1
+srun: error: lrdn2506: tasks 24,26-27: User defined signal 1
+srun: error: lrdn2368: task 22: User defined signal 1
+srun: error: lrdn1165: task 6: User defined signal 1
+srun: error: lrdn1588: task 11: User defined signal 1
+srun: error: lrdn2506: task 25: User defined signal 1
+srun: error: lrdn2549: tasks 28-30: User defined signal 1
+srun: error: lrdn2549: task 31: User defined signal 1
+srun: error: lrdn0807: task 0: User defined signal 1
