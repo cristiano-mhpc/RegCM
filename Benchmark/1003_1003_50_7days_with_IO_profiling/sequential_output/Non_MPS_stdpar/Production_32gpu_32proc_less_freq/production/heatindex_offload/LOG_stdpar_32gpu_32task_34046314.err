@@ -1,0 +1,51 @@
+ WARNING:  CLM step     :                       393
+ WARNING:  indexc       :       2274469
+ WARNING:  ctype(indexc):            64
+ WARNING:  water balance error                        Inf
+ clm urban model is stopping - error is greater than .10
+ indexc=       2274469  errh2o=                        Inf
+ ctype(indexc):            64
+ forc_rain    =     0.000000000000000     
+ forc_snow    =    4.8928415101943164E-009
+ endwb        =                        Inf
+ begwb        =    1.2317299363964071E-004
+ qflx_evap_tot=     0.000000000000000     
+ qflx_irrig   =     0.000000000000000     
+ qflx_surf    =     0.000000000000000     
+ qflx_qrgwl   =     0.000000000000000     
+ qflx_drain   =     0.000000000000000     
+ qflx_snwcp_ice   =     0.000000000000000     
+ -------------- FATAL CALLED ---------------
+  Fatal in file: mod_clm_balancecheck.F90 at line:      490
+ clm model is stopping
+ -------------------------------------------
+ Abort called by computing node            29 at 2026-02-13 01:12:45.836 +0100
+ Execution terminated because of runtime error
+--------------------------------------------------------------------------
+MPI_ABORT was invoked on rank 29 in communicator MPI COMMUNICATOR 3 DUP FROM 0
+with errorcode 1.
+
+NOTE: invoking MPI_ABORT causes Open MPI to kill all MPI processes.
+You may or may not see output from other processes, depending on
+exactly when Open MPI kills them.
+--------------------------------------------------------------------------
+srun: Job step aborted: Waiting up to 182 seconds for job step to finish.
+slurmstepd: error: *** STEP 34046314.0 ON lrdn2029 CANCELLED AT 2026-02-13T01:12:45 ***
+srun: error: lrdn2360: tasks 20,23: Killed
+srun: error: lrdn2029: tasks 1,3: Killed
+srun: error: lrdn2181: tasks 14-15: Killed
+srun: error: lrdn2143: tasks 4,7: Killed
+srun: error: lrdn2161: tasks 8,10: Killed
+srun: error: lrdn2374: task 24: Killed
+srun: error: lrdn2196: tasks 16,18: Killed
+srun: error: lrdn2029: task 2: Killed
+srun: error: lrdn2360: tasks 21-22: Killed
+srun: error: lrdn2181: task 13: Killed
+srun: error: lrdn2181: task 12: Killed
+srun: error: lrdn2143: tasks 5-6: Killed
+srun: error: lrdn2196: tasks 17,19: Killed
+srun: error: lrdn2161: tasks 9,11: Killed
+srun: error: lrdn2374: tasks 25-27: Killed
+srun: error: lrdn2920: tasks 28,30-31: Killed
+srun: error: lrdn2920: task 29: Exited with exit code 1
+srun: error: lrdn2029: task 0: Killed
