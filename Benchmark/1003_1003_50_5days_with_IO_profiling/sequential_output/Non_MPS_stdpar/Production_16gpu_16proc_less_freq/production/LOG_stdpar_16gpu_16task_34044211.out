@@ -1,0 +1,16 @@
+[Wrapper][Rank 0][Local 0] on lrdn1293.leonardo.local: CUDA_VISIBLE_DEVICES=0
+[Wrapper][Rank 2][Local 2] on lrdn1293.leonardo.local: CUDA_VISIBLE_DEVICES=2
+[Wrapper][Rank 3][Local 3] on lrdn1293.leonardo.local: CUDA_VISIBLE_DEVICES=3
+[Wrapper][Rank 1][Local 1] on lrdn1293.leonardo.local: CUDA_VISIBLE_DEVICES=1
+[Wrapper][Rank 10][Local 2] on lrdn1321.leonardo.local: CUDA_VISIBLE_DEVICES=2
+[Wrapper][Rank 5][Local 1] on lrdn1320.leonardo.local: CUDA_VISIBLE_DEVICES=1
+[Wrapper][Rank 13][Local 1] on lrdn1436.leonardo.local: CUDA_VISIBLE_DEVICES=1
+[Wrapper][Rank 9][Local 1] on lrdn1321.leonardo.local: CUDA_VISIBLE_DEVICES=1
+[Wrapper][Rank 8][Local 0] on lrdn1321.leonardo.local: CUDA_VISIBLE_DEVICES=0
+[Wrapper][Rank 11][Local 3] on lrdn1321.leonardo.local: CUDA_VISIBLE_DEVICES=3
+[Wrapper][Rank 4][Local 0] on lrdn1320.leonardo.local: CUDA_VISIBLE_DEVICES=0
+[Wrapper][Rank 7][Local 3] on lrdn1320.leonardo.local: CUDA_VISIBLE_DEVICES=3
+[Wrapper][Rank 6][Local 2] on lrdn1320.leonardo.local: CUDA_VISIBLE_DEVICES=2
+[Wrapper][Rank 15][Local 3] on lrdn1436.leonardo.local: CUDA_VISIBLE_DEVICES=3
+[Wrapper][Rank 12][Local 0] on lrdn1436.leonardo.local: CUDA_VISIBLE_DEVICES=0
+[Wrapper][Rank 14][Local 2] on lrdn1436.leonardo.local: CUDA_VISIBLE_DEVICES=2

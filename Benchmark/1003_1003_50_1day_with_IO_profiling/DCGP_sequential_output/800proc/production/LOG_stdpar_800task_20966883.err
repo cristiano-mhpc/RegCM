@@ -1,0 +1,17 @@
+[LOG_CAT_MCAST] VMC Failed to join multicast, is_root 1. Unexpected event was received: event=13, str=RDMA_CM_EVENT_MULTICAST_ERROR, status=-22
+[LOG_CAT_MCAST] MCAST rank=3: Error in initializing vmc communicator
+[LOG_CAT_P2P] Failed to create MCAST comm
+[LOG_CAT_MCAST] MCAST rank=2: Error in initializing vmc communicator
+[LOG_CAT_P2P] Failed to create MCAST comm
+[LOG_CAT_MCAST] MCAST rank=6: Error in initializing vmc communicator
+[LOG_CAT_P2P] Failed to create MCAST comm
+[LOG_CAT_MCAST] MCAST rank=7: Error in initializing vmc communicator
+[LOG_CAT_P2P] Failed to create MCAST comm
+[LOG_CAT_MCAST] MCAST rank=1: Error in initializing vmc communicator
+[LOG_CAT_P2P] Failed to create MCAST comm
+[LOG_CAT_MCAST] MCAST rank=0: Error in initializing vmc communicator
+[LOG_CAT_P2P] Failed to create MCAST comm
+[LOG_CAT_MCAST] MCAST rank=4: Error in initializing vmc communicator
+[LOG_CAT_P2P] Failed to create MCAST comm
+[LOG_CAT_MCAST] MCAST rank=5: Error in initializing vmc communicator
+[LOG_CAT_P2P] Failed to create MCAST comm
