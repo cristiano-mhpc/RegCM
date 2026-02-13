@@ -1,834 +1,0 @@
-
-  This is RegCM development version
-   GIT Revision: 5.0.0-944-g5801-dirty compiled at: data : Sep 15 2025  time: 13:46:38
-
- MPI Rank:            0  using device:            0
- : this run start at  : 2025-09-15 18:44:57+0200
- : it is submitted by : 
- : it is running on   : lrdn0927.leonardo.local
- : it is using        :            16   processors
- : in directory       : 
- /leonardo/home/userexternal/ctica000/MS_thesis/RegCM/253_253_50_1day_Benchmark/sequential_output/Non_MPS_stdpar/16gpu_16proc_profile
-                       
- CPUS DIM1 =             4
- CPUS DIM2 =             4
- 
- Reading model namelist file
- Using default non-hydrostatc parameters.
- Using default microphysical parameter.
- Using default Holtslag parameter.
- Initial date of the global simulation:  2009-10-01 00:00:00 UTC        
- Initial date of this run             :  2009-10-01 00:00:00 UTC        
- Final date of this run               :  2009-10-02 00:00:00 UTC        
- Total simulation length              :            24  hours
- Timestep in seconds =   45.000000
- Reading Domain file : input/EURR-3_DOMAIN000.nc
- Advection timestep =    15.000 (factor  3)
- Max. Courant number for horizontal advection =    0.9538
- Sound waves timestep =     3.000 (factor  5)
- Courant number of horizontal sound waves =    0.4512
- Setting IPCC scenario to SSP585  
- Load GHG for 200910 SSP585
- Model will output required CORDEX variables.
- Create SAV files :   T
- Create ATM files :   T
- Create RAD files :   T
- Create SRF files :   T
- Create STS files :   T
- Create SHF files :   F
- Frequency in days for new files:    1.0
- Monthly SAV files are written
- Frequency in hours to create ATM :    1.0
- Frequency in hours to create RAD :    1.0
- Frequency in hours to create SRF :    1.0
- Physical Parameterizations
-  Lateral Boundary conditions :  5
-  Semi-Lagrangian Advection   :  0
-  Land cumulus conv. scheme   :  0
-  Ocean cumulus conv. scheme  :  0
-  Moisture schem              :  2
-  Ocean Flux scheme           :  2
-  Zeng roughness formula      :  1
-  Zeng roughness method       :  1
-  Coupling with ocean         :  0
-  Coupling with wave          :  0
-  Coupling with COP           :  0
-  Pressure gradient force     :  0
-  Prescribed LW emissivity    :  0
-  Lake model in BATS          :  0
-  Simulate diurnal sst cycle  :  0
-  Simulate sea ice cover      :  1
-  Enable chem/aerosol model   :  0
-  Large scale LWP as convect. :  1
-  Cloud fraction scheme       :  0
-  Marine stratocumulus        :  0
-  Climate O3 dataset          :  1
-  Climate Aerosol dataset     :  2
- Boundary Pameterizations
-  Num. of bndy points cross  :  31
-  Num. of bndy points dot    :  31
-  Nudge value high range     :  6.000000
-  Nudge value medium range   :  4.000000
-  Nudge value low range      :  2.000000
-  Nm paramter                : -1.000000
-  Dm paramter                : -1.000000
- Model Timestep Pameterizations
-  time step for dynamical model in seconds :          45.000000
-  time step for surface   model in seconds :         450.000000
-  time step for cumulus   model in seconds :         225.000000
-  time step for radiation model in seconds :        1350.000000
-  time step for emission  model in seconds :       48600.000000
- Nudging coefficients F1=    0.033333, F2=    0.000000
-  # Nudging coefficient profile #
-     5.95       5.86       5.76       5.67       5.57       5.48       5.38    
-     5.28       5.19       5.09       5.00       4.90       4.81       4.71    
-     4.62       4.52       4.43       4.33       4.24       4.14       4.05    
-     3.97       3.90       3.83       3.76       3.69       3.62       3.55    
-     3.48       3.41       3.34       3.27       3.20       3.14       3.07    
-     3.00       2.93       2.86       2.79       2.72       2.65       2.58    
-     2.52       2.45       2.38       2.31       2.24       2.17       2.10    
-     2.10       2.03    
- Model top at     30000.00000000000       m
- Domain grid parameters:
-  Map Projection        : ROTLLR
-  Dot Grid Full Extent  : 1003x1003x 50
-  Model Grid Spacing    :    3.335968 km
-  Proj Center Latitude  :   50.000000 deg
-  Proj Center longitude :    6.600000 deg
-  Pole Latitude         :   40.000000 deg
-  Pole longitude        :  186.600000 deg
- Holtslag PBL Scheme
-  ricr_ocn     =    0.250000
-  ricr_lnd     =    0.250000
-  zhnew_fac    =    0.250000
-  ifaholt      =  0
-  ifaholtth10  =  2
-  holtth10iter =    1
- Cloud fraction schemes parameters
-  # of bottom no cloud model levels :  0
-  Maximum relative humidity         :    1.010000
-  Minimum relative humidity         :    0.010000
-  RH0 temperature threshold         :  238.000000
-  Relative humidity thresholds: Land =    0.800000 Ocean =    0.900000
-  Maximum total cloud cover for rad :    0.750000
-  Conv. CF UMF factor deep cumulus  :    0.140000
-  Conv. CF UMF factor deep cumulus  :    0.140000
-  Conv. CF UMF factor k2            :  500.000000
-  Surface radiation hack            :           F
-  Vavrus-Waliser Arctic cloud fix   :           T
- Convective Cloud Cover parameters after resolution scaling
-  Maximum Convective Cloud Cover :    0.750000
-  Convective Cloud Water         :    0.000300
- The surface energy budget is used to calculate the ground temperature.
- The radiation is computed every   23. minutes.
- Relaxation boundary conditions (exponential method)
- READY IC DATA for  2009-10-01 00:00:00 UTC        
- SEARCH BC data for 2009100106 , step =        0
- READY  BC from     2009100100  to 2009100106 
- Computing weights, R =     348.80780029 .......... Done.
- Reading Initial Ozone Data...
-  # Updated ozone profile #
-    0.765E-05  0.694E-05  0.569E-05  0.413E-05  0.280E-05  0.178E-05  0.101E-05
-    0.544E-06  0.304E-06  0.192E-06  0.138E-06  0.104E-06  0.848E-07  0.726E-07
-    0.682E-07  0.663E-07  0.652E-07  0.645E-07  0.639E-07  0.633E-07  0.628E-07
-    0.619E-07  0.606E-07  0.593E-07  0.580E-07  0.564E-07  0.549E-07  0.535E-07
-    0.524E-07  0.516E-07  0.508E-07  0.501E-07  0.496E-07  0.493E-07  0.490E-07
-    0.487E-07  0.487E-07  0.487E-07  0.487E-07  0.487E-07  0.487E-07  0.485E-07
-    0.483E-07  0.481E-07  0.480E-07  0.478E-07  0.477E-07  0.475E-07  0.475E-07
-    0.475E-07  0.475E-07  0.475E-07
- Read solar forcing total irradiance data...
- Updating orbit parameters at  2009-10-01 00:00:00 UTC        
- At  2009-10-01 00:00:00 UTC        
- JDay    273.00000 solar declination angle =  -2.71002168 degrees
-                   solar TSI irradiance    =    1355.8045 W/m^2
- CLM version: 4.5 - RegCM 5.0.0-944-g5801-dirty
- Attempting to initialize the land model .....
- Mask given by RegCM model has a total of        487659  land points
- Attempting to initialize run control settings .....
- Read in clm_inparm namelist from: EURR-3_namelist.in
- Read in clm_hydrology1_inparm namelist
- Read in clm_soilhydrology_inparm namelist
- Successfully initialized run control settings
- 
- define run:
-    source                = Community Land Model CLM4.5
-    model_version         = 5.0.0-944-g5801-dirty
-    run type              = initial
-    case title            = RegCM driven CLM4.5
-    username              = 
-    hostname              = lrdn0927.leonardo.local
- input data files:
-    PFT physiology = 
- /leonardo_work/ICT25_ESP/RCMDATA/CLM45/pftdata/pft-physiology.c130503.nc
-    surface data   = input/EURR-3_CLM45_surface.nc
-    land frac data = input/EURR-3_DOMAIN000.nc
-    enable_megan_emission                                 :   F
-    enable_urban_landunit                                 :   T
-    enable_more_crop_pft                                  :   F
-    SNICAR optical = 
- /leonardo_work/ICT25_ESP/RCMDATA/CLM45/snicardata/snicar_optics_5bnd_c090915.nc
-    SNICAR aging = 
- /leonardo_work/ICT25_ESP/RCMDATA/CLM45/snicardata/snicar_drdt_bst_fit_60_c070416.nc
-    initial data is from RegCM atm model
-    atmospheric forcing data is from RegCM atm model
- Large file support for output files is ON
- model physics parameters:
-    flag for random perturbation test is not set
-    CO2 volume mixing ratio   (umol/mol)   =     355.0000000000000     
-    land albedos  (unitless 0-1)   =    0.8000000000000000     
-    ice albedos   (unitless 0-1)   =    0.5500000000000000     
-    urban air conditioning/heating and wasteheat   = ON_WASTEHEAT    
-    urban traffic flux   =   F
-    more vertical layers =   F
-    maxpatch_pft         =            17
-    allocate_all_vegpfts =   T
-    perchroot (PWS based on unfrozen layers only) =   F
-    perchroot (PWS based on time-integrated active layer only) =   F
- 
- Lake Model Namelists:
- Hostetler eddy increase low    :     25.00000000000000     
- Hostetler eddy increase factor :     10.00000000000000     
- Albedo melting lakes (visible) :   0.1000000000000000     
- Albedo melting lakes (NIR)     :   0.1000000000000000     
- Attempting to read ldomain from input/EURR-3_DOMAIN000.nc
-   domain_check set       = domain_set
-   domain_check decomped  =   T
-   domain_check ns        =       1000000
-   domain_check ni,nj     =          1000         1000
-   domain_check clmlevel  = gridcell
-   domain_check nbeg,nend =             1        30478
-   domain_check lonc      =    -6.952402887032403      
-    24.59687917126162     
-   domain_check latc      =     33.94779705280406      
-    37.84380937993370     
-   domain_check mask      =             1            1
-   domain_check frac      =     100.0000000000000      
-    100.0000000000000     
-   domain_check topo      =     0.000000000000000      
-    2621.892182716621     
-   domain_check area      =     10.74947992534302      
-    10.88670215012493     
-   domain_check pftm      =             1            1
-  
-  Reading in urban input data from surface data file ...
-  UrbanInput : input/EURR-3_CLM45_surface.nc
-  Sucessfully read urban input data
- 
- Attempting to read PFT physiological data .....
- Successfully read PFT physiological data
- Attempting to read surface boundary data .....
- Checked LAT/LON compliance
- Successfully read surface boundary data
- 
-  Surface Grid Characteristics
-    total number of gridcells =        487659
-    total number of landunits =       1169625
-    total number of columns   =       2379439
-    total number of pfts      =       9206259
-  
- ---clm_ptrs_check:
-    clm_ptrs_check: g index ranges - OK
-    clm_ptrs_check: l index ranges - OK
-    clm_ptrs_check: c index ranges - OK
-    clm_ptrs_check: p index ranges - OK
-    clm_ptrs_check: g mono increasing - OK
-    clm_ptrs_check: l mono increasing - OK
-    clm_ptrs_check: c mono increasing - OK
-    clm_ptrs_check: p mono increasing - OK
-    clm_ptrs_check: tree consistent - OK
-  
- Attempting to initialize time invariant variables
- Attempting to read soil color, sand and clay boundary data .....
- WARNING:: ETALAKE not found on surface data set.
- All lake columns will have eta set equal to default value
- WARNING:: LAKEFETCH not found on surface data set.
- All lake columns will have fetch set equal to default value
- Successfully read fmax, soil color, sand and clay boundary data
- 
- Attempting to read organic matter data .....
-  organicrd : input/EURR-3_CLM45_surface.nc
- Successfully read organic matter data
- 
-  # zsoi #
-    0.710E-02  0.279E-01  0.623E-01  0.119      0.212      0.366      0.620    
-     1.04       1.73       2.86       4.74       7.83       12.9       21.3    
-     21.3       35.2    
-  # zisoi #
-     0.00      0.175E-01  0.451E-01  0.906E-01  0.166      0.289      0.493    
-    0.829       1.38       2.30       3.80       6.28       10.4       17.1    
-     17.1       28.3       42.1    
-  # dzsoi #
-    0.175E-01  0.276E-01  0.455E-01  0.750E-01  0.124      0.204      0.336    
-    0.554      0.913       1.51       2.48       4.09       6.75       11.1    
-     11.1       13.9    
- dzsoi_decomp    1.000000000000000     
- Attempting to read snow optical properties .....
- SnowOptics_init : 
- /leonardo_work/ICT25_ESP/RCMDATA/CLM45/snicardata/snicar_optics_5bnd_c090915.nc
- Successfully read snow optical properties
- Attempting to read snow aging parameters .....
- Successfully read snow aging properties
- Successfully initialized time invariant variables
- CLM_hist_printflds : number of master fields =           241
- Setting initial data to non-spun up values
- Attempting to initialize time invariant variables for lakes
- CLM timestep appears to differ from 1800s. 
- Adjusting minimum snow layer thickness over lakes to maintain stability.
- New minimum thickness is    2.0000000000000000E-002 .
- Successfully initialized time invariant variables for lakes
- Setting initial data to non-spun up values for lake points
- Initializing clm2 history files
- There will be a total of             2  history tapes
- History tape             1  write frequency is MONTHLY
- All fields on history tape             1  are grid averaged
- Output precision on history tape             1 =            2
- History tape             2  write frequency =             1
- All fields on history tape             2  are grid averaged
- Output precision on history tape             2 =            2
- hist tape =             1  written with dov2xy=   T
- hist tape =             2  written with dov2xy=   T
- Successfully initialized clm2 history files
- Successfully initialized the land model
- begin initial run at:  2009-10-01 00:00:00 UTC
- Attempting to read monthly vegetation data .....
- At  2009-10-01 00:00:00 UTC
- Month =            10  Day =             1
- Reading months :             9           10
- Successfully read monthly vegetation data for
- month            10
- Restrict outout to CORDEX variables
- Opening new output file output//EURR-3_ATM.2009100100.nc
- Opening new output file output//EURR-3_SRF.2009100100.nc
- Opening new output file output//EURR-3_STS.2009100100.nc
- Opening new output file output//EURR-3_RAD.2009100100.nc
- ATM variables written at  2009-10-01 00:00:00 UTC        
- Computing weights, R =      89.00187683 .......... Done.
- Reading EXT,SSA,ASY Data...
- AEROPP file open 
- /leonardo_work/ICT25_ESP/RCMDATA/MERRA2/OPPMONTH/MERRA2_OPPMONTH_wb3.200909.nc
- AEROPP file open 
- /leonardo_work/ICT25_ESP/RCMDATA/MERRA2/OPPMONTH/MERRA2_OPPMONTH_wb3.200910.nc
- AEROPP file open 
- /leonardo_work/ICT25_ESP/RCMDATA/MERRA2/OPPMONTH/MERRA2_OPPMONTH_wb6.200909.nc
- AEROPP file open 
- /leonardo_work/ICT25_ESP/RCMDATA/MERRA2/OPPMONTH/MERRA2_OPPMONTH_wb6.200910.nc
- AEROPP file open 
- /leonardo_work/ICT25_ESP/RCMDATA/MERRA2/OPPMONTH/MERRA2_OPPMONTH_wb10.200909.nc
- AEROPP file open 
- /leonardo_work/ICT25_ESP/RCMDATA/MERRA2/OPPMONTH/MERRA2_OPPMONTH_wb10.200910.nc
- AEROPP file open 
- /leonardo_work/ICT25_ESP/RCMDATA/MERRA2/OPPMONTH/MERRA2_OPPMONTH_wb13.200909.nc
- AEROPP file open 
- /leonardo_work/ICT25_ESP/RCMDATA/MERRA2/OPPMONTH/MERRA2_OPPMONTH_wb13.200910.nc
- AEROPP file open 
- /leonardo_work/ICT25_ESP/RCMDATA/MERRA2/OPPMONTH/MERRA2_OPPMONTH_wb19.200909.nc
- AEROPP file open 
- /leonardo_work/ICT25_ESP/RCMDATA/MERRA2/OPPMONTH/MERRA2_OPPMONTH_wb19.200910.nc
-  # Updated VIS ext profile #
-    0.196E-05  0.568E-05  0.207E-04  0.770E-04  0.396E-03  0.111E-02  0.190E-02
-    0.237E-02  0.247E-02  0.268E-02  0.275E-02  0.242E-02  0.206E-02  0.190E-02
-    0.178E-02  0.163E-02  0.148E-02  0.140E-02  0.137E-02  0.137E-02  0.140E-02
-    0.152E-02  0.173E-02  0.199E-02  0.226E-02  0.250E-02  0.270E-02  0.289E-02
-    0.311E-02  0.334E-02  0.352E-02  0.367E-02  0.375E-02  0.378E-02  0.379E-02
-    0.383E-02  0.390E-02  0.401E-02  0.422E-02  0.448E-02  0.471E-02  0.503E-02
-    0.545E-02  0.582E-02  0.608E-02  0.601E-02  0.580E-02  0.537E-02  0.495E-02
-    0.495E-02  0.458E-02
-  # Updated VIS ssa profile #
-    0.916      0.917      0.931      0.953      0.974      0.980      0.974    
-    0.964      0.955      0.953      0.953      0.949      0.940      0.933    
-    0.927      0.920      0.913      0.908      0.903      0.899      0.898    
-    0.898      0.899      0.899      0.900      0.902      0.904      0.905    
-    0.907      0.908      0.909      0.911      0.913      0.915      0.917    
-    0.919      0.922      0.926      0.932      0.939      0.943      0.949    
-    0.955      0.960      0.963      0.964      0.964      0.964      0.964    
-    0.964      0.963    
-  # Updated VIS asy profile #
-    0.661      0.662      0.666      0.671      0.678      0.685      0.691    
-    0.698      0.706      0.725      0.742      0.748      0.744      0.739    
- MPI Rank:           13  using device:            0
- MPI Rank:            4  using device:            0
- MPI Rank:           10  using device:            0
- Set    30 100% special land-units points to zero slope
- MPI Rank:           12  using device:            0
- Set    10 100% special land-units points to zero slope
- MPI Rank:           15  using device:            0
- Set     1 100% special land-units points to zero slope
- MPI Rank:           14  using device:            0
- Set    10 100% special land-units points to zero slope
- MPI Rank:            5  using device:            0
- Set    21 100% special land-units points to zero slope
- MPI Rank:            6  using device:            0
- MPI Rank:            7  using device:            0
- Set   120 100% special land-units points to zero slope
- MPI Rank:           11  using device:            0
- MPI Rank:            8  using device:            0
- MPI Rank:            9  using device:            0
- Set    70 100% special land-units points to zero slope
- MPI Rank:            1  using device:            0
- Set    10 100% special land-units points to zero slope
- MPI Rank:            3  using device:            0
- MPI Rank:            2  using device:            0
-    0.734      0.729      0.724      0.721      0.718      0.715      0.713    
-    0.714      0.714      0.715      0.715      0.716      0.718      0.720    
-    0.723      0.725      0.727      0.731      0.733      0.735      0.737    
-    0.740      0.742      0.746      0.752      0.759      0.764      0.770    
-    0.776      0.783      0.787      0.788      0.788      0.788      0.786    
-    0.786      0.786    
- Final time  2009-10-01 00:01:30 UTC reached.
- Elapsed seconds of run for this final timeslice :     2382.046    
- : this run stops at  : 2025-09-15 19:24:39+0200
- : Run has been completed using            16  processors.
- : Total elapsed seconds of run :     2383.150324106216     
- RegCM V5 simulation successfully reached end
-Collecting data...
-Generating '/leonardo_scratch/large/userexternal/ctica000/tmp_new_nsys_one_rank_16gpu/rank_0/nsys-report-876f.qdstrm'
-[1/7] [0%                          ] nsys_rank0.nsys-rep[1/7] [0%                          ] nsys_rank0.nsys-rep[1/7] [9%                          ] nsys_rank0.nsys-rep[1/7] [8%                          ] nsys_rank0.nsys-rep[1/7] [9%                          ] nsys_rank0.nsys-rep[1/7] [8%                          ] nsys_rank0.nsys-rep[1/7] [9%                          ] nsys_rank0.nsys-rep[1/7] [8%                          ] nsys_rank0.nsys-rep[1/7] [7%                          ] nsys_rank0.nsys-rep[1/7] [8%                          ] nsys_rank0.nsys-rep[1/7] [7%                          ] nsys_rank0.nsys-rep[1/7] [11%                         ] nsys_rank0.nsys-rep[1/7] [10%                         ] nsys_rank0.nsys-rep[1/7] [11%                         ] nsys_rank0.nsys-rep[1/7] [10%                         ] nsys_rank0.nsys-rep[1/7] [9%                          ] nsys_rank0.nsys-rep[1/7] [11%                         ] nsys_rank0.nsys-rep[1/7] [12%                         ] nsys_rank0.nsys-rep[1/7] [11%                         ] nsys_rank0.nsys-rep[1/7] [12%                         ] nsys_rank0.nsys-rep[1/7] [=15%                        ] nsys_rank0.nsys-rep[1/7] [==18%                       ] nsys_rank0.nsys-rep[1/7] [==20%                       ] nsys_rank0.nsys-rep[1/7] [===22%                      ] nsys_rank0.nsys-rep[1/7] [===24%                      ] nsys_rank0.nsys-rep[1/7] [===23%                      ] nsys_rank0.nsys-rep[1/7] [====26%                     ] nsys_rank0.nsys-rep[1/7] [====25%                     ] nsys_rank0.nsys-rep[1/7] [====27%                     ] nsys_rank0.nsys-rep[1/7] [====26%                     ] nsys_rank0.nsys-rep[1/7] [====28%                     ] nsys_rank0.nsys-rep[1/7] [=====30%                    ] nsys_rank0.nsys-rep[1/7] [=====29%                    ] nsys_rank0.nsys-rep[1/7] [=====31%                    ] nsys_rank0.nsys-rep[1/7] [=====30%                    ] nsys_rank0.nsys-rep[1/7] [=====32%                    ] nsys_rank0.nsys-rep[1/7] [======34%                   ] nsys_rank0.nsys-rep[1/7] [======33%                   ] nsys_rank0.nsys-rep[1/7] [======35%                   ] nsys_rank0.nsys-rep[1/7] [======34%                   ] nsys_rank0.nsys-rep[1/7] [=======36%                  ] nsys_rank0.nsys-rep[1/7] [======35%                   ] nsys_rank0.nsys-rep[1/7] [=======36%                  ] nsys_rank0.nsys-rep[1/7] [======35%                   ] nsys_rank0.nsys-rep[1/7] [======34%                   ] nsys_rank0.nsys-rep[1/7] [======33%                   ] nsys_rank0.nsys-rep[1/7] [=====32%                    ] nsys_rank0.nsys-rep[1/7] [=====31%                    ] nsys_rank0.nsys-rep[1/7] [=====30%                    ] nsys_rank0.nsys-rep[1/7] [=====29%                    ] nsys_rank0.nsys-rep[1/7] [====28%                     ] nsys_rank0.nsys-rep[1/7] [====27%                     ] nsys_rank0.nsys-rep[1/7] [====26%                     ] nsys_rank0.nsys-rep[1/7] [====25%                     ] nsys_rank0.nsys-rep[1/7] [===24%                      ] nsys_rank0.nsys-rep[1/7] [===23%                      ] nsys_rank0.nsys-rep[1/7] [===22%                      ] nsys_rank0.nsys-rep[1/7] [==21%                       ] nsys_rank0.nsys-rep[1/7] [==20%                       ] nsys_rank0.nsys-rep[1/7] [==19%                       ] nsys_rank0.nsys-rep[1/7] [==18%                       ] nsys_rank0.nsys-rep[1/7] [=17%                        ] nsys_rank0.nsys-rep[1/7] [=16%                        ] nsys_rank0.nsys-rep[1/7] [=15%                        ] nsys_rank0.nsys-rep[1/7] [14%                         ] nsys_rank0.nsys-rep[1/7] [13%                         ] nsys_rank0.nsys-rep[1/7] [12%                         ] nsys_rank0.nsys-rep[1/7] [11%                         ] nsys_rank0.nsys-rep[1/7] [10%                         ] nsys_rank0.nsys-rep[1/7] [9%                          ] nsys_rank0.nsys-rep[1/7] [8%                          ] nsys_rank0.nsys-rep[1/7] [7%                          ] nsys_rank0.nsys-rep[1/7] [6%                          ] nsys_rank0.nsys-rep[1/7] [5%                          ] nsys_rank0.nsys-rep[1/7] [6%                          ] nsys_rank0.nsys-rep[1/7] [7%                          ] nsys_rank0.nsys-rep[1/7] [8%                          ] nsys_rank0.nsys-rep[1/7] [9%                          ] nsys_rank0.nsys-rep[1/7] [10%                         ] nsys_rank0.nsys-rep[1/7] [11%                         ] nsys_rank0.nsys-rep[1/7] [12%                         ] nsys_rank0.nsys-rep[1/7] [13%                         ] nsys_rank0.nsys-rep[1/7] [14%                         ] nsys_rank0.nsys-rep[1/7] [=15%                        ] nsys_rank0.nsys-rep[1/7] [=16%                        ] nsys_rank0.nsys-rep[1/7] [=17%                        ] nsys_rank0.nsys-rep[1/7] [==18%                       ] nsys_rank0.nsys-rep[1/7] [==19%                       ] nsys_rank0.nsys-rep[1/7] [==20%                       ] nsys_rank0.nsys-rep[1/7] [==21%                       ] nsys_rank0.nsys-rep[1/7] [===22%                      ] nsys_rank0.nsys-rep[1/7] [===23%                      ] nsys_rank0.nsys-rep[1/7] [===24%                      ] nsys_rank0.nsys-rep[1/7] [====25%                     ] nsys_rank0.nsys-rep[1/7] [====26%                     ] nsys_rank0.nsys-rep[1/7] [====27%                     ] nsys_rank0.nsys-rep[1/7] [====28%                     ] nsys_rank0.nsys-rep[1/7] [=====29%                    ] nsys_rank0.nsys-rep[1/7] [=====30%                    ] nsys_rank0.nsys-rep[1/7] [=====31%                    ] nsys_rank0.nsys-rep[1/7] [=====32%                    ] nsys_rank0.nsys-rep[1/7] [======33%                   ] nsys_rank0.nsys-rep[1/7] [======34%                   ] nsys_rank0.nsys-rep[1/7] [======35%                   ] nsys_rank0.nsys-rep[1/7] [=======36%                  ] nsys_rank0.nsys-rep[1/7] [=======37%                  ] nsys_rank0.nsys-rep[1/7] [=======38%                  ] nsys_rank0.nsys-rep[1/7] [=======39%                  ] nsys_rank0.nsys-rep[1/7] [========40%                 ] nsys_rank0.nsys-rep[1/7] [========41%                 ] nsys_rank0.nsys-rep[1/7] [========42%                 ] nsys_rank0.nsys-rep[1/7] [=========43%                ] nsys_rank0.nsys-rep[1/7] [=========44%                ] nsys_rank0.nsys-rep[1/7] [=========45%                ] nsys_rank0.nsys-rep[1/7] [=========46%                ] nsys_rank0.nsys-rep[1/7] [==========47%               ] nsys_rank0.nsys-rep[1/7] [==========48%               ] nsys_rank0.nsys-rep[1/7] [==========49%               ] nsys_rank0.nsys-rep[1/7] [===========50%              ] nsys_rank0.nsys-rep[1/7] [===========51%              ] nsys_rank0.nsys-rep[1/7] [===========52%              ] nsys_rank0.nsys-rep[1/7] [===========53%              ] nsys_rank0.nsys-rep[1/7] [============54%             ] nsys_rank0.nsys-rep[1/7] [============55%             ] nsys_rank0.nsys-rep[1/7] [============56%             ] nsys_rank0.nsys-rep[1/7] [============57%             ] nsys_rank0.nsys-rep[1/7] [=============58%            ] nsys_rank0.nsys-rep[1/7] [=============59%            ] nsys_rank0.nsys-rep[1/7] [=============60%            ] nsys_rank0.nsys-rep[1/7] [==============61%           ] nsys_rank0.nsys-rep[1/7] [==============62%           ] nsys_rank0.nsys-rep[1/7] [==============63%           ] nsys_rank0.nsys-rep[1/7] [==============64%           ] nsys_rank0.nsys-rep[1/7] [===============65%          ] nsys_rank0.nsys-rep[1/7] [===============66%          ] nsys_rank0.nsys-rep[1/7] [===============67%          ] nsys_rank0.nsys-rep[1/7] [================68%         ] nsys_rank0.nsys-rep[1/7] [================69%         ] nsys_rank0.nsys-rep[1/7] [================70%         ] nsys_rank0.nsys-rep[1/7] [================71%         ] nsys_rank0.nsys-rep[1/7] [=================72%        ] nsys_rank0.nsys-rep[1/7] [=================73%        ] nsys_rank0.nsys-rep[1/7] [=================74%        ] nsys_rank0.nsys-rep[1/7] [==================75%       ] nsys_rank0.nsys-rep[1/7] [==================76%       ] nsys_rank0.nsys-rep[1/7] [========================100%] nsys_rank0.nsys-rep[1/7] [========================100%] nsys_rank0.nsys-rep
-[2/7] [0%                          ] nsys_rank0.sqlite[2/7] [1%                          ] nsys_rank0.sqlite[2/7] [2%                          ] nsys_rank0.sqlite[2/7] [3%                          ] nsys_rank0.sqlite[2/7] [4%                          ] nsys_rank0.sqlite[2/7] [5%                          ] nsys_rank0.sqlite[2/7] [6%                          ] nsys_rank0.sqlite[2/7] [7%                          ] nsys_rank0.sqlite[2/7] [8%                          ] nsys_rank0.sqlite[2/7] [9%                          ] nsys_rank0.sqlite[2/7] [10%                         ] nsys_rank0.sqlite[2/7] [11%                         ] nsys_rank0.sqlite[2/7] [12%                         ] nsys_rank0.sqlite[2/7] [13%                         ] nsys_rank0.sqlite[2/7] [14%                         ] nsys_rank0.sqlite[2/7] [=15%                        ] nsys_rank0.sqlite[2/7] [=16%                        ] nsys_rank0.sqlite[2/7] [=17%                        ] nsys_rank0.sqlite[2/7] [==18%                       ] nsys_rank0.sqlite[2/7] [==19%                       ] nsys_rank0.sqlite[2/7] [==20%                       ] nsys_rank0.sqlite[2/7] [==21%                       ] nsys_rank0.sqlite[2/7] [===22%                      ] nsys_rank0.sqlite[2/7] [===23%                      ] nsys_rank0.sqlite[2/7] [===24%                      ] nsys_rank0.sqlite[2/7] [====25%                     ] nsys_rank0.sqlite[2/7] [====26%                     ] nsys_rank0.sqlite[2/7] [====27%                     ] nsys_rank0.sqlite[2/7] [====28%                     ] nsys_rank0.sqlite[2/7] [=====29%                    ] nsys_rank0.sqlite[2/7] [=====30%                    ] nsys_rank0.sqlite[2/7] [=====31%                    ] nsys_rank0.sqlite[2/7] [=====32%                    ] nsys_rank0.sqlite[2/7] [======33%                   ] nsys_rank0.sqlite[2/7] [======34%                   ] nsys_rank0.sqlite[2/7] [======35%                   ] nsys_rank0.sqlite[2/7] [=======36%                  ] nsys_rank0.sqlite[2/7] [=======37%                  ] nsys_rank0.sqlite[2/7] [=======38%                  ] nsys_rank0.sqlite[2/7] [=======39%                  ] nsys_rank0.sqlite[2/7] [========40%                 ] nsys_rank0.sqlite[2/7] [========41%                 ] nsys_rank0.sqlite[2/7] [========42%                 ] nsys_rank0.sqlite[2/7] [=========43%                ] nsys_rank0.sqlite[2/7] [=========44%                ] nsys_rank0.sqlite[2/7] [=========45%                ] nsys_rank0.sqlite[2/7] [=========46%                ] nsys_rank0.sqlite[2/7] [==========47%               ] nsys_rank0.sqlite[2/7] [==========48%               ] nsys_rank0.sqlite[2/7] [==========49%               ] nsys_rank0.sqlite[2/7] [===========50%              ] nsys_rank0.sqlite[2/7] [===========51%              ] nsys_rank0.sqlite[2/7] [===========52%              ] nsys_rank0.sqlite[2/7] [===========53%              ] nsys_rank0.sqlite[2/7] [============54%             ] nsys_rank0.sqlite[2/7] [============55%             ] nsys_rank0.sqlite[2/7] [============56%             ] nsys_rank0.sqlite[2/7] [============57%             ] nsys_rank0.sqlite[2/7] [=============58%            ] nsys_rank0.sqlite[2/7] [=============59%            ] nsys_rank0.sqlite[2/7] [=============60%            ] nsys_rank0.sqlite[2/7] [==============61%           ] nsys_rank0.sqlite[2/7] [==============62%           ] nsys_rank0.sqlite[2/7] [==============63%           ] nsys_rank0.sqlite[2/7] [==============64%           ] nsys_rank0.sqlite[2/7] [===============65%          ] nsys_rank0.sqlite[2/7] [===============66%          ] nsys_rank0.sqlite[2/7] [===============67%          ] nsys_rank0.sqlite[2/7] [================68%         ] nsys_rank0.sqlite[2/7] [================69%         ] nsys_rank0.sqlite[2/7] [================70%         ] nsys_rank0.sqlite[2/7] [================71%         ] nsys_rank0.sqlite[2/7] [=================72%        ] nsys_rank0.sqlite[2/7] [=================73%        ] nsys_rank0.sqlite[2/7] [=================74%        ] nsys_rank0.sqlite[2/7] [==================75%       ] nsys_rank0.sqlite[2/7] [==================76%       ] nsys_rank0.sqlite[2/7] [==================77%       ] nsys_rank0.sqlite[2/7] [==================78%       ] nsys_rank0.sqlite[2/7] [===================79%      ] nsys_rank0.sqlite[2/7] [===================80%      ] nsys_rank0.sqlite[2/7] [===================81%      ] nsys_rank0.sqlite[2/7] [===================82%      ] nsys_rank0.sqlite[2/7] [====================83%     ] nsys_rank0.sqlite[2/7] [====================84%     ] nsys_rank0.sqlite[2/7] [====================85%     ] nsys_rank0.sqlite[2/7] [=====================86%    ] nsys_rank0.sqlite[2/7] [=====================87%    ] nsys_rank0.sqlite[2/7] [=====================88%    ] nsys_rank0.sqlite[2/7] [=====================89%    ] nsys_rank0.sqlite[2/7] [======================90%   ] nsys_rank0.sqlite[2/7] [======================91%   ] nsys_rank0.sqlite[2/7] [======================92%   ] nsys_rank0.sqlite[2/7] [=======================93%  ] nsys_rank0.sqlite[2/7] [=======================94%  ] nsys_rank0.sqlite[2/7] [=======================95%  ] nsys_rank0.sqlite[2/7] [=======================96%  ] nsys_rank0.sqlite[2/7] [========================97% ] nsys_rank0.sqlite[2/7] [========================98% ] nsys_rank0.sqlite[2/7] [========================99% ] nsys_rank0.sqlite[2/7] [========================100%] nsys_rank0.sqlite[2/7] [========================100%] nsys_rank0.sqlite
-[3/7] Executing 'nvtx_sum' stats report
-
- Time (%)  Total Time (ns)  Instances      Avg (ns)           Med (ns)          Min (ns)         Max (ns)         StdDev (ns)      Style             Range           
- --------  ---------------  ---------  -----------------  -----------------  ---------------  ---------------  -----------------  -------  --------------------------
-     33.2  171,487,742,382          2   85,743,871,191.0   85,743,871,191.0      266,329,926  171,221,412,456  120,883,498,135.3  PushPop  :moloch                   
-     33.1  170,928,433,800          2   85,464,216,900.0   85,464,216,900.0       38,954,122  170,889,479,678  120,809,565,189.9  PushPop  :physical_parametrizations
-     31.5  162,450,047,167          1  162,450,047,167.0  162,450,047,167.0  162,450,047,167  162,450,047,167                0.0  PushPop  :updateaero_2             
-      1.1    5,516,102,681          1    5,516,102,681.0    5,516,102,681.0    5,516,102,681    5,516,102,681                0.0  PushPop  :surface_model            
-      0.5    2,362,330,085          1    2,362,330,085.0    2,362,330,085.0    2,362,330,085    2,362,330,085                0.0  PushPop  :radiation                
-      0.5    2,362,039,887          1    2,362,039,887.0    2,362,039,887.0    2,362,039,887    2,362,039,887                0.0  PushPop  :colmod3                  
-      0.0      240,544,739          6       40,090,789.8       42,955,657.0       30,766,296       48,036,918        6,972,665.6  PushPop  :sound                    
-      0.0      238,857,127          6       39,809,521.2       26,947,425.5       20,797,570       86,182,303       26,366,302.1  PushPop  :advection                
-      0.0      188,738,666          2       94,369,333.0       94,369,333.0       28,421,080      160,317,586       93,264,913.8  PushPop  :microscheme              
-      0.0      179,635,813          1      179,635,813.0      179,635,813.0      179,635,813      179,635,813                0.0  PushPop  :updateo3                 
-      0.0      134,800,309          2       67,400,154.5       67,400,154.5        8,906,675      125,893,634       82,722,272.0  PushPop  :pblscheme                
-      0.0      134,794,785          2       67,397,392.5       67,397,392.5        8,904,537      125,890,248       82,721,389.6  PushPop  :holtbl                   
-      0.0       85,026,099          1       85,026,099.0       85,026,099.0       85,026,099       85,026,099                0.0  PushPop  :surface_albedo           
-      0.0       51,135,318          1       51,135,318.0       51,135,318.0       51,135,318       51,135,318                0.0  PushPop  :BandDiagonal_gpu         
-      0.0       42,124,831          2       21,062,415.5       21,062,415.5          659,923       41,464,908       28,853,481.6  PushPop  :reset_tendencies         
-      0.0       19,434,560          2        9,717,280.0        9,717,280.0        5,371,804       14,062,756        6,145,431.1  PushPop  :boundary                 
-      0.0        9,150,932          2        4,575,466.0        4,575,466.0          616,182        8,534,750        5,599,273.1  PushPop  :cldfrac                  
-      0.0        3,629,521          2        1,814,760.5        1,814,760.5        1,799,908        1,829,613           21,004.6  PushPop  :mkslice                  
-      0.0        1,682,094          2          841,047.0          841,047.0          757,089          925,005          118,734.5  PushPop  :uvstagtox                
-      0.0            2,586          2            1,293.0            1,293.0              432            2,154            1,217.6  PushPop  :cucloud                  
-
-[4/7] Executing 'cuda_api_sum' stats report
-
- Time (%)  Total Time (ns)  Num Calls     Avg (ns)      Med (ns)     Min (ns)    Max (ns)    StdDev (ns)            Name          
- --------  ---------------  ----------  ------------  ------------  ----------  -----------  ------------  -----------------------
-     60.3    7,444,930,192  13,431,925         554.3         327.0         277   27,083,019      42,943.2  cuEventQuery           
-     28.2    3,478,006,100      10,122     343,608.6       7,513.5       1,105  607,245,094   7,886,069.6  cuStreamSynchronize    
-      5.1      633,764,738         100   6,337,647.4     287,703.5         139  350,113,441  35,368,266.3  cuMemFree_v2           
-      4.3      532,071,145      66,922       7,950.6       4,475.0       2,849    7,327,318      75,347.1  cuMemcpyAsync          
-      0.7       82,321,285           1  82,321,285.0  82,321,285.0  82,321,285   82,321,285           0.0  cuModuleLoadDataEx     
-      0.4       51,251,567         144     355,913.7      68,515.5      24,373   20,575,805   2,067,727.5  cuMemAllocManaged      
-      0.3       39,919,042      63,254         631.1         360.0         264    4,447,605      20,686.0  cuEventRecord          
-      0.2       29,090,331       3,874       7,509.1       2,577.5       1,949   14,525,234     234,278.5  cuLaunchKernel         
-      0.2       23,809,927           1  23,809,927.0  23,809,927.0  23,809,927   23,809,927           0.0  cuMemHostAlloc         
-      0.1       11,563,354       4,079       2,834.9       2,245.0       1,710      434,591       6,988.8  cuMemcpyHtoDAsync_v2   
-      0.1        8,034,069          17     472,592.3     183,958.0     116,756    3,270,950     864,514.3  cuMemHostRegister_v2   
-      0.0        5,266,463          17     309,791.9     141,954.0      76,052    1,702,452     518,232.4  cuMemHostUnregister    
-      0.0        3,857,041           1   3,857,041.0   3,857,041.0   3,857,041    3,857,041           0.0  cudaFree               
-      0.0        1,073,869          27      39,772.9      10,184.0       1,811      335,956      75,164.9  cuMemAlloc_v2          
-      0.0          741,380          53      13,988.3      12,584.0      10,255       25,247       3,755.1  cuMemcpyDtoHAsync_v2   
-      0.0          695,177           1     695,177.0     695,177.0     695,177      695,177           0.0  cuMemAllocHost_v2      
-      0.0          694,569       1,456         477.0         412.0         384       61,965       1,620.5  cuEventDestroy_v2      
-      0.0          357,258           2     178,629.0     178,629.0      12,851      344,407     234,445.5  cudaLaunchKernel       
-      0.0          300,948       1,456         206.7         183.0         164        7,720         210.9  cuEventCreate          
-      0.0          237,921           2     118,960.5     118,960.5         303      237,618     167,807.0  cuCtxSetCurrent        
-      0.0          181,591           9      20,176.8       9,354.0       1,297      124,884      39,526.7  cuStreamCreate         
-      0.0          155,739           1     155,739.0     155,739.0     155,739      155,739           0.0  cudaGetDeviceProperties
-      0.0           73,874         384         192.4         141.5          73        2,257         215.2  cuGetProcAddress       
-      0.0           60,611           9       6,734.6       4,810.0       3,477       12,238       3,656.0  cuStreamDestroy_v2     
-      0.0           55,344          13       4,257.2       2,101.0       1,623       11,438       3,392.6  cuMemsetD32Async       
-      0.0            4,357           2       2,178.5       2,178.5       1,905        2,452         386.8  cuInit                 
-      0.0              655           1         655.0         655.0         655          655           0.0  cuModuleGetLoadingMode 
-
-[5/7] Executing 'cuda_gpu_kern_sum' stats report
-
- Time (%)  Total Time (ns)  Instances    Avg (ns)       Med (ns)      Min (ns)     Max (ns)    StdDev (ns)                               Name                             
- --------  ---------------  ---------  -------------  -------------  -----------  -----------  ------------  -------------------------------------------------------------
-     19.6      607,240,515          1  607,240,515.0  607,240,515.0  607,240,515  607,240,515           0.0  mod_rad_radiation_radabs_2378_gpu                            
-      9.7      300,342,394          1  300,342,394.0  300,342,394.0  300,342,394  300,342,394           0.0  mod_rad_aerosol_aeroppt_2157_gpu                             
-      9.0      280,577,029          1  280,577,029.0  280,577,029.0  280,577,029  280,577,029           0.0  mod_rad_colmod3_colmod3_410_gpu                              
-      7.4      227,976,711         19   11,998,774.3   12,530,174.0      180,160   13,603,778   2,892,198.7  mod_rad_radiation_radcsw_4172_gpu                            
-      5.3      164,871,088          1  164,871,088.0  164,871,088.0  164,871,088  164,871,088           0.0  mod_rad_radiation_radcsw_3841_gpu                            
-      4.4      137,011,464          1  137,011,464.0  137,011,464.0  137,011,464  137,011,464           0.0  mod_rad_aerosol_read_aeroppdata_1975_gpu                     
-      3.3      102,202,425          1  102,202,425.0  102,202,425.0  102,202,425  102,202,425           0.0  mod_rad_radiation_radclw_4728_gpu                            
-      3.1       95,716,873          2   47,858,436.5   47,858,436.5   15,872,039   79,844,834  45,235,597.2  mod_rad_radiation_radclw_4629_gpu                            
-      1.3       39,663,393          2   19,831,696.5   19,831,696.5    4,510,667   35,152,726  21,667,207.7  mod_micro_nogtom_nogtom_430_gpu                              
-      1.1       35,576,631          2   17,788,315.5   17,788,315.5    1,725,380   33,851,251  22,716,421.2  mod_micro_nogtom_nogtom_424_gpu                              
-      1.1       35,067,189          1   35,067,189.0   35,067,189.0   35,067,189   35,067,189           0.0  mod_rad_radiation_radcsw_3839_gpu                            
-      1.1       35,048,912         70      500,698.7       56,304.0       31,904    3,938,729   1,194,231.7  mod_mppparam_real8_3d_exchange_3254_gpu                      
-      1.1       33,116,306          1   33,116,306.0   33,116,306.0   33,116,306   33,116,306           0.0  mod_rad_colmod3_colmod3_707_gpu                              
-      1.0       31,982,766          1   31,982,766.0   31,982,766.0   31,982,766   31,982,766           0.0  mod_rad_radiation_trcplk_1407_gpu                            
-      1.0       31,829,807          2   15,914,903.5   15,914,903.5   15,758,983   16,070,824     220,504.9  mod_micro_nogtom_nogtom_638_gpu                              
-      0.9       28,855,558          1   28,855,558.0   28,855,558.0   28,855,558   28,855,558           0.0  mod_rad_radiation_trcpth_3505_gpu                            
-      0.9       28,706,248          2   14,353,124.0   14,353,124.0    9,942,553   18,763,695   6,237,489.3  mod_clm_banddiagonal_banddiagonal_gpu_390_gpu                
-      0.8       25,779,838          1   25,779,838.0   25,779,838.0   25,779,838   25,779,838           0.0  mod_rad_colmod3_colmod3_406_gpu                              
-      0.7       21,458,932          1   21,458,932.0   21,458,932.0   21,458,932   21,458,932           0.0  mod_rad_colmod3_colmod3_429_gpu                              
-      0.6       19,740,911          2    9,870,455.5    9,870,455.5    2,256,677   17,484,234  10,767,508.8  mod_micro_nogtom_nogtom_407_gpu                              
-      0.6       17,592,907          2    8,796,453.5    8,796,453.5      326,305   17,266,602  11,978,598.9  mod_micro_nogtom_nogtom_552_gpu                              
-      0.5       17,008,169          2    8,504,084.5    8,504,084.5      176,064   16,832,105  11,777,599.5  mod_micro_nogtom_nogtom_470_gpu                              
-      0.5       16,770,282          1   16,770,282.0   16,770,282.0   16,770,282   16,770,282           0.0  mod_rad_outrad_radout_114_gpu                                
-      0.5       16,525,386          2    8,262,693.0    8,262,693.0      233,377   16,292,009  11,355,167.6  mod_pbl_holtbl_holtbl_579_gpu                                
-      0.5       16,098,377          2    8,049,188.5    8,049,188.5      130,016   15,968,361  11,199,401.2  mod_pbl_holtbl_holtbl_214_gpu                                
-      0.5       15,815,050         30      527,168.3      237,537.0      226,016    4,900,140   1,093,811.5  mod_moloch_sound_1092_gpu                                    
-      0.5       15,744,006          1   15,744,006.0   15,744,006.0   15,744,006   15,744,006           0.0  mod_rad_aerosol_aeroppt_2191_gpu                             
-      0.5       15,214,822          2    7,607,411.0    7,607,411.0      190,657   15,024,165  10,488,874.1  mod_moloch_moloch_348_gpu__4                                 
-      0.4       13,708,067          1   13,708,067.0   13,708,067.0   13,708,067   13,708,067           0.0  mod_clm_tridiagonal_tridiagonal_gpu_94_gpu                   
-      0.4       13,266,049          1   13,266,049.0   13,266,049.0   13,266,049   13,266,049           0.0  mod_rad_outrad_radout_153_gpu                                
-      0.4       12,153,342          1   12,153,342.0   12,153,342.0   12,153,342   12,153,342           0.0  mod_rad_radiation_radtpl_1511_gpu                            
-      0.4       12,069,853          1   12,069,853.0   12,069,853.0   12,069,853   12,069,853           0.0  mod_rad_colmod3_colmod3_490_gpu                              
-      0.4       11,805,341          1   11,805,341.0   11,805,341.0   11,805,341   11,805,341           0.0  mod_rad_radiation_radems_3137_gpu                            
-      0.4       11,014,779          1   11,014,779.0   11,014,779.0   11,014,779   11,014,779           0.0  mod_rad_radiation_radinp_3407_gpu                            
-      0.4       10,874,591         60      181,243.2      126,992.0      124,768    3,372,680     418,998.9  mod_moloch_wafone_1504_gpu                                   
-      0.3       10,816,955          2    5,408,477.5    5,408,477.5      227,585   10,589,370   7,326,888.4  mod_pbl_holtbl_holtbl_654_gpu                                
-      0.3       10,504,760         60      175,079.3      116,192.0      114,977    3,647,945     455,944.7  mod_moloch_wafone_1431_gpu                                   
-      0.3        9,940,248          2    4,970,124.0    4,970,124.0      132,064    9,808,184   6,842,050.1  mod_pbl_holtbl_holtbl_166_gpu                                
-      0.3        9,795,960          1    9,795,960.0    9,795,960.0    9,795,960    9,795,960           0.0  mod_rad_colmod3_colmod3_353_gpu                              
-      0.3        9,776,758          3    3,258,919.3      190,721.0      190,208    9,395,829   5,314,719.7  mod_slice_mkslice_139_gpu                                    
-      0.3        9,737,496          1    9,737,496.0    9,737,496.0    9,737,496    9,737,496           0.0  mod_rad_radiation_radctl_5153_gpu                            
-      0.3        9,596,055          1    9,596,055.0    9,596,055.0    9,596,055    9,596,055           0.0  mod_rad_radiation_radclw_4515_gpu                            
-      0.3        9,350,935          2    4,675,467.5    4,675,467.5       57,472    9,293,463   6,530,831.9  mod_moloch_moloch_348_gpu__3                                 
-      0.3        9,176,726          1    9,176,726.0    9,176,726.0    9,176,726    9,176,726           0.0  mod_rad_colmod3_colmod3_439_gpu                              
-      0.3        8,918,102         60      148,635.0       70,992.0       69,664    2,557,702     421,342.7  mod_moloch_wafone_1410_gpu                                   
-      0.3        8,459,125          1    8,459,125.0    8,459,125.0    8,459,125    8,459,125           0.0  mod_rad_colmod3_colmod3_544_gpu                              
-      0.3        8,173,428         21      389,210.9      356,384.0      178,817      716,866     169,215.3  mod_mppparam_cartesian_to_linear_real8_grid_subgrid_19362_gpu
-      0.3        8,164,179         60      136,069.6       82,352.0       72,640    3,249,672     408,856.9  mod_moloch_wafone_1486_gpu                                   
-      0.2        7,137,624         60      118,960.4      118,816.0      117,857      121,185         666.6  mod_moloch_wafone_1461_gpu                                   
-      0.2        7,046,607          1    7,046,607.0    7,046,607.0    7,046,607    7,046,607           0.0  mod_params_param_2361_gpu__3                                 
-      0.2        7,032,598         60      117,210.0       62,880.0       59,520    2,943,976     371,860.9  mod_moloch_wafone_1530_gpu                                   
-      0.2        6,956,790        132       52,703.0       40,048.0       30,208      537,793      62,350.7  mod_mppparam_real8_3d_exchange_left_right_bottom_top_4015_gpu
-      0.2        6,917,775          1    6,917,775.0    6,917,775.0    6,917,775    6,917,775           0.0  mod_params_param_2361_gpu__4                                 
-      0.2        6,891,504         18      382,861.3      241,873.0      178,272    2,126,917     450,075.6  mod_mppparam_global_to_linear_real8_grid_subgrid_19807_gpu   
-      0.2        6,889,682          2    3,444,841.0    3,444,841.0      145,985    6,743,697   4,665,286.9  mod_pbl_holtbl_holtbl_187_gpu                                
-      0.2        6,850,031          1    6,850,031.0    6,850,031.0    6,850,031    6,850,031           0.0  mod_init_init_200_gpu                                        
-      0.2        6,802,258         60      113,371.0      113,312.5      111,361      116,352         929.2  mod_moloch_wafone_1548_gpu                                   
-      0.2        6,795,057          2    3,397,528.5    3,397,528.5       75,040    6,720,017   4,698,708.3  mod_pbl_holtbl_holtbl_157_gpu                                
-      0.2        6,771,023          1    6,771,023.0    6,771,023.0    6,771,023    6,771,023           0.0  mod_init_init_158_gpu                                        
-      0.2        6,669,712          1    6,669,712.0    6,669,712.0    6,669,712    6,669,712           0.0  mod_rad_colmod3_colmod3_414_gpu                              
-      0.2        6,615,472          1    6,615,472.0    6,615,472.0    6,615,472    6,615,472           0.0  mod_rad_aerosol_read_aeroppdata_1932_gpu                     
-      0.2        6,562,800          2    3,281,400.0    3,281,400.0      167,584    6,395,216   4,403,600.8  mod_moloch_moloch_348_gpu__7                                 
-      0.2        6,490,128          1    6,490,128.0    6,490,128.0    6,490,128    6,490,128           0.0  mod_output_output_246_gpu                                    
-      0.2        6,485,487          2    3,242,743.5    3,242,743.5      109,568    6,375,919   4,430,979.3  mod_moloch_moloch_374_gpu                                    
-      0.2        6,057,071          2    3,028,535.5    3,028,535.5       46,240    6,010,831   4,217,602.7  mod_micro_nogtom_nogtom_2046_gpu                             
-      0.2        6,033,999          1    6,033,999.0    6,033,999.0    6,033,999    6,033,999           0.0  mod_rad_aerosol_aeroppt_2209_gpu                             
-      0.2        5,999,498         49      122,438.7      150,080.0        5,920      259,584      78,199.4  mod_bdycod_init_bdy_898_gpu__1                               
-      0.2        5,969,198          1    5,969,198.0    5,969,198.0    5,969,198    5,969,198           0.0  mod_rad_colmod3_colmod3_455_gpu                              
-      0.2        5,914,285         49      120,699.7      146,816.0        5,760      251,873      76,094.9  mod_bdycod_init_bdy_899_gpu__1                               
-      0.2        5,895,854          1    5,895,854.0    5,895,854.0    5,895,854    5,895,854           0.0  mod_rad_colmod3_colmod3_674_gpu                              
-      0.2        5,744,206          1    5,744,206.0    5,744,206.0    5,744,206    5,744,206           0.0  mod_rad_colmod3_colmod3_447_gpu                              
-      0.2        5,428,429         49      110,784.3      123,200.0        4,768      377,665      81,903.7  mod_init_init_239_gpu                                        
-      0.2        4,871,341          2    2,435,670.5    2,435,670.5    1,870,661    3,000,680     799,044.1  mod_clm_banddiagonal_banddiagonal_gpu_410_gpu                
-      0.2        4,696,014         30      156,533.8       41,120.0       40,896    3,491,209     629,820.0  mod_moloch_sound_1174_gpu                                    
-      0.2        4,684,040         30      156,134.7       41,920.0       41,280    3,462,760     624,522.3  mod_moloch_sound_1171_gpu                                    
-      0.1        4,641,769         30      154,725.6      155,217.0      145,216      158,945       3,062.7  mod_moloch_sound_1145_gpu                                    
-      0.1        4,616,107         30      153,870.2       41,216.0       40,896    3,406,312     614,289.0  mod_moloch_sound_1081_gpu__8                                 
-      0.1        4,596,432         38      120,958.7      119,233.0       88,256      156,289      32,621.8  mod_rad_radiation_radclr_1967_gpu                            
-      0.1        4,254,825         60       70,913.8       70,688.0       69,985       74,336         967.7  mod_moloch_wafone_1440_gpu                                   
-      0.1        4,148,101         30      138,270.0      137,328.0      132,928      147,137       3,984.8  mod_moloch_sound_1130_gpu                                    
-      0.1        3,832,301         30      127,743.4      117,936.5      117,089      404,737      52,322.0  mod_moloch_sound_1180_gpu                                    
-      0.1        3,797,930          2    1,898,965.0    1,898,965.0       41,312    3,756,618   2,627,118.1  mod_pbl_holtbl_holtbl_559_gpu                                
-      0.1        3,748,457          1    3,748,457.0    3,748,457.0    3,748,457    3,748,457           0.0  mod_bdycod_init_bdy_877_gpu                                  
-      0.1        3,747,722          2    1,873,861.0    1,873,861.0      209,505    3,538,217   2,353,754.8  mod_micro_nogtom_nogtom_447_gpu                              
-      0.1        3,687,785          1    3,687,785.0    3,687,785.0    3,687,785    3,687,785           0.0  mod_init_init_155_gpu                                        
-      0.1        3,679,753          1    3,679,753.0    3,679,753.0    3,679,753    3,679,753           0.0  mod_output_output_244_gpu                                    
-      0.1        3,673,896          1    3,673,896.0    3,673,896.0    3,673,896    3,673,896           0.0  mod_init_init_152_gpu                                        
-      0.1        3,671,656          3    1,223,885.3       76,544.0       76,352    3,518,760   1,987,419.8  mod_slice_mkslice_132_gpu                                    
-      0.1        3,668,234          6      611,372.3       41,568.0       40,929    3,460,809   1,395,933.2  mod_moloch_advection_1323_gpu                                
-      0.1        3,649,769          1    3,649,769.0    3,649,769.0    3,649,769    3,649,769           0.0  mod_output_output_244_gpu__3                                 
-      0.1        3,643,882          2    1,821,941.0    1,821,941.0      147,105    3,496,777   2,368,575.8  mod_pbl_holtbl_holtbl_339_gpu                                
-      0.1        3,623,369          1    3,623,369.0    3,623,369.0    3,623,369    3,623,369           0.0  mod_bdycod_init_bdy_900_gpu                                  
-      0.1        3,616,201         30      120,540.0      100,176.0       99,168      659,714     101,891.3  mod_moloch_sound_1055_gpu                                    
-      0.1        3,615,208          1    3,615,208.0    3,615,208.0    3,615,208    3,615,208           0.0  mod_bdycod_init_bdy_879_gpu                                  
-      0.1        3,584,168          2    1,792,084.0    1,792,084.0       30,176    3,553,992   2,491,714.2  mod_moloch_moloch_348_gpu__2                                 
-      0.1        3,581,672          1    3,581,672.0    3,581,672.0    3,581,672    3,581,672           0.0  mod_bdycod_init_bdy_878_gpu                                  
-      0.1        3,581,545          1    3,581,545.0    3,581,545.0    3,581,545    3,581,545           0.0  mod_init_init_206_gpu                                        
-      0.1        3,560,457          2    1,780,228.5    1,780,228.5       25,184    3,535,273   2,482,007.7  mod_pbl_holtbl_holtbl_1037_gpu                               
-      0.1        3,554,185          2    1,777,092.5    1,777,092.5       25,248    3,528,937   2,477,482.3  mod_pbl_holtbl_holtbl_916_gpu                                
-      0.1        3,545,161          1    3,545,161.0    3,545,161.0    3,545,161    3,545,161           0.0  mod_output_output_232_gpu                                    
-      0.1        3,544,104          1    3,544,104.0    3,544,104.0    3,544,104    3,544,104           0.0  mod_output_output_291_gpu                                    
-      0.1        3,538,281          1    3,538,281.0    3,538,281.0    3,538,281    3,538,281           0.0  mod_output_output_326_gpu                                    
-      0.1        3,520,297          2    1,760,148.5    1,760,148.5       64,800    3,455,497   2,397,584.8  mod_moloch_moloch_409_gpu                                    
-      0.1        3,519,848          2    1,759,924.0    1,759,924.0       29,440    3,490,408   2,447,273.9  mod_moloch_moloch_348_gpu__1                                 
-      0.1        3,500,777          2    1,750,388.5    1,750,388.5       77,408    3,423,369   2,365,951.7  mod_bdycod_monudgeuv_3728_gpu                                
-      0.1        3,500,136          3    1,166,712.0       63,232.0       62,912    3,373,992   1,911,560.6  mod_slice_mkslice_150_gpu                                    
-      0.1        3,499,144          1    3,499,144.0    3,499,144.0    3,499,144    3,499,144           0.0  mod_params_param_2361_gpu__5                                 
-      0.1        3,486,025          2    1,743,012.5    1,743,012.5       29,088    3,456,937   2,423,855.3  mod_moloch_moloch_348_gpu                                    
-      0.1        3,474,728          2    1,737,364.0    1,737,364.0      201,888    3,272,840   2,171,491.0  mod_micro_nogtom_nogtom_410_gpu                              
-      0.1        3,465,320          2    1,732,660.0    1,732,660.0       25,184    3,440,136   2,414,735.7  mod_pbl_holtbl_holtbl_979_gpu                                
-      0.1        3,443,912          1    3,443,912.0    3,443,912.0    3,443,912    3,443,912           0.0  mod_init_init_215_gpu                                        
-      0.1        3,442,344          1    3,442,344.0    3,442,344.0    3,442,344    3,442,344           0.0  mod_bdycod_init_bdy_880_gpu                                  
-      0.1        3,424,872          2    1,712,436.0    1,712,436.0       51,040    3,373,832   2,349,568.8  mod_micro_interface_cldfrac_250_gpu                          
-      0.1        3,423,497          2    1,711,748.5    1,711,748.5      110,177    3,313,320   2,264,964.1  mod_pbl_holtbl_holtbl_1056_gpu                               
-      0.1        3,419,624          2    1,709,812.0    1,709,812.0       73,504    3,346,120   2,314,089.0  mod_bdycod_monudgeuv_3732_gpu                                
-      0.1        3,416,969          1    3,416,969.0    3,416,969.0    3,416,969    3,416,969           0.0  mod_output_output_280_gpu                                    
-      0.1        3,388,392          1    3,388,392.0    3,388,392.0    3,388,392    3,388,392           0.0  mod_output_output_304_gpu                                    
-      0.1        3,381,991         30      112,733.0      112,224.5      111,297      115,424       1,247.1  mod_moloch_sound_1194_gpu                                    
-      0.1        3,376,840          3    1,125,613.3       58,656.0       58,560    3,259,624   1,848,107.4  mod_slice_mkslice_154_gpu                                    
-      0.1        3,376,808          2    1,688,404.0    1,688,404.0       77,792    3,299,016   2,277,749.3  mod_pbl_holtbl_holtbl_537_gpu                                
-      0.1        3,373,320          2    1,686,660.0    1,686,660.0       38,304    3,335,016   2,331,127.4  mod_pbl_holtbl_holtbl_556_gpu                                
-      0.1        3,352,457          2    1,676,228.5    1,676,228.5       37,312    3,315,145   2,317,777.9  mod_pbl_holtbl_holtbl_540_gpu                                
-      0.1        3,332,488          1    3,332,488.0    3,332,488.0    3,332,488    3,332,488           0.0  mod_output_output_271_gpu                                    
-      0.1        3,319,079          1    3,319,079.0    3,319,079.0    3,319,079    3,319,079           0.0  mod_init_init_209_gpu                                        
-      0.1        3,309,031          1    3,309,031.0    3,309,031.0    3,309,031    3,309,031           0.0  mod_init_init_225_gpu                                        
-      0.1        3,297,832          2    1,648,916.0    1,648,916.0       44,160    3,253,672   2,269,467.7  mod_cloud_subex_subex_cldfrac_55_gpu                         
-      0.1        3,247,080         76       42,724.7       36,337.0       29,217       89,888      16,206.3  mod_mppparam_real8_3d_exchange_bottom_top_5077_gpu           
-      0.1        3,216,295          1    3,216,295.0    3,216,295.0    3,216,295    3,216,295           0.0  mod_rad_colmod3_colmod3_328_gpu                              
-      0.1        3,185,608          1    3,185,608.0    3,185,608.0    3,185,608    3,185,608           0.0  mod_rad_colmod3_colmod3_504_gpu                              
-      0.1        3,170,888          1    3,170,888.0    3,170,888.0    3,170,888    3,170,888           0.0  mod_init_init_926_gpu                                        
-      0.1        3,108,551         76       40,902.0       33,056.5       29,152       93,184      14,126.7  mod_mppparam_real8_3d_exchange_left_right_4645_gpu           
-      0.1        3,101,863          2    1,550,931.5    1,550,931.5       43,808    3,058,055   2,131,394.5  mod_micro_nogtom_nogtom_452_gpu                              
-      0.1        3,020,007          2    1,510,003.5    1,510,003.5       25,088    2,994,919   2,099,987.6  mod_micro_nogtom_nogtom_591_gpu                              
-      0.1        2,872,135          1    2,872,135.0    2,872,135.0    2,872,135    2,872,135           0.0  mod_rad_radiation_radoz2_1446_gpu                            
-      0.1        2,863,302          1    2,863,302.0    2,863,302.0    2,863,302    2,863,302           0.0  mod_rad_colmod3_colmod3_451_gpu                              
-      0.1        2,855,620         19      150,295.8       88,736.0       88,448    1,257,987     268,239.8  mod_rad_radiation_radded_1683_gpu                            
-      0.1        2,821,736         70       40,310.5       43,760.0        3,136       86,273      24,662.9  mod_mppparam_real8_3d_exchange_3296_gpu                      
-      0.1        2,747,500         60       45,791.7       35,648.0       32,928      282,561      42,551.6  mod_moloch_wafone_1405_gpu                                   
-      0.1        2,664,966          1    2,664,966.0    2,664,966.0    2,664,966    2,664,966           0.0  mod_rad_colmod3_colmod3_364_gpu                              
-      0.1        2,543,525          1    2,543,525.0    2,543,525.0    2,543,525    2,543,525           0.0  mod_params_param_2233_gpu                                    
-      0.1        2,492,550          1    2,492,550.0    2,492,550.0    2,492,550    2,492,550           0.0  mod_init_init_169_gpu                                        
-      0.1        2,483,494          1    2,483,494.0    2,483,494.0    2,483,494    2,483,494           0.0  mod_rad_radiation_radcsw_3852_gpu                            
-      0.1        2,475,530         30       82,517.7       82,992.5       77,665       84,800       1,540.5  mod_moloch_sound_1138_gpu                                    
-      0.1        2,365,092         30       78,836.4       78,608.0       77,376       81,089         822.6  mod_moloch_sound_1084_gpu                                    
-      0.1        2,086,885          2    1,043,442.5    1,043,442.5    1,039,682    1,047,203       5,318.2  mod_micro_nogtom_nogtom_1929_gpu                             
-      0.1        2,077,607         30       69,253.6       63,632.5       62,913      140,704      16,555.8  mod_moloch_sound_1043_gpu                                    
-      0.1        1,845,349          1    1,845,349.0    1,845,349.0    1,845,349    1,845,349           0.0  mod_lm_interface_surface_model_468_gpu                       
-      0.1        1,823,524          1    1,823,524.0    1,823,524.0    1,823,524    1,823,524           0.0  mod_rad_radiation_aermix_1353_gpu                            
-      0.1        1,818,789         30       60,626.3       60,512.0       59,073       62,432         866.0  mod_moloch_sound_1081_gpu__5                                 
-      0.1        1,794,053         30       59,801.8       53,376.0       51,872      247,617      35,488.6  mod_moloch_sound_1081_gpu__4                                 
-      0.1        1,749,251          2      874,625.5      874,625.5      398,464    1,350,787     673,394.1  mod_earth_ll2xyz_arrays_143_gpu                              
-      0.1        1,745,604          1    1,745,604.0    1,745,604.0    1,745,604    1,745,604           0.0  mod_init_init_182_gpu                                        
-      0.1        1,672,610         30       55,753.7       55,488.0       54,368       58,048       1,027.3  mod_moloch_sound_1081_gpu__9                                 
-      0.1        1,666,020          2      833,010.0      833,010.0      301,217    1,364,803     752,068.9  void gpsv_qr<double, double, (int)256>(T1 *, T1 *, T1 *, T1 …
-      0.1        1,651,683         30       55,056.1       54,928.0       53,729       57,376         934.3  mod_moloch_sound_1164_gpu                                    
-      0.1        1,626,469          2      813,234.5      813,234.5      127,009    1,499,460     970,469.4  mod_pbl_holtbl_holtbl_227_gpu                                
-      0.0        1,464,641         19       77,086.4       80,480.0       72,768       80,576       3,796.4  mod_rad_radiation_radcsw_3983_gpu                            
-      0.0        1,365,219         70       19,503.1        3,312.5        2,656      315,361      43,433.2  mod_mppparam_real8_3d_exchange_3302_gpu                      
-      0.0        1,354,147          1    1,354,147.0    1,354,147.0    1,354,147    1,354,147           0.0  mod_rad_radiation_trcplk_1400_gpu                            
-      0.0        1,258,182         19       66,220.1       66,113.0       66,017       67,904         413.2  mod_rad_radiation_radcsw_4077_gpu                            
-      0.0        1,161,731          1    1,161,731.0    1,161,731.0    1,161,731    1,161,731           0.0  mod_clm_banddiagonal_banddiagonal_gpu_321_gpu                
-      0.0        1,154,499         70       16,492.8        4,160.0        2,720      102,944      25,426.0  mod_mppparam_real8_3d_exchange_3260_gpu                      
-      0.0        1,142,498         10      114,249.8      133,905.0       28,608      139,616      45,190.1  mod_micro_nogtom_nogtom_2059_gpu                             
-      0.0        1,084,933         19       57,101.7       57,120.0       57,024       57,217          47.0  mod_rad_radiation_radcsw_4124_gpu                            
-      0.0        1,025,569          2      512,784.5      512,784.5      269,600      755,969     343,914.8  mod_micro_nogtom_nogtom_2080_gpu                             
-      0.0          994,787          1      994,787.0      994,787.0      994,787      994,787           0.0  mod_output_output_94_gpu                                     
-      0.0          948,353        132        7,184.5        3,056.0        2,688       77,472      14,080.3  mod_mppparam_real8_3d_exchange_left_right_bottom_top_4033_gpu
-      0.0          929,474          3      309,824.7      388,129.0        8,960      532,385     270,355.5  mod_sun_zenitm_351_gpu                                       
-      0.0          912,994          1      912,994.0      912,994.0      912,994      912,994           0.0  mod_rad_radiation_radcsw_3830_gpu                            
-      0.0          829,922          1      829,922.0      829,922.0      829,922      829,922           0.0  mod_rad_colmod3_colmod3_703_gpu                              
-      0.0          687,617          1      687,617.0      687,617.0      687,617      687,617           0.0  mod_bdycod_init_bdy_887_gpu                                  
-      0.0          676,066          2      338,033.0      338,033.0      337,793      338,273         339.4  mod_micro_nogtom_nogtom_595_gpu                              
-      0.0          660,770        132        5,005.8        3,392.0        2,720       57,025       8,573.1  mod_mppparam_real8_3d_exchange_left_right_bottom_top_4027_gpu
-      0.0          644,194        132        4,880.3        3,312.0        3,008       86,497       9,402.8  mod_mppparam_real8_3d_exchange_left_right_bottom_top_4021_gpu
-      0.0          604,033          2      302,016.5      302,016.5      154,176      449,857     209,078.0  mod_bdycod_monudge2d_4532_gpu                                
-      0.0          573,985          2      286,992.5      286,992.5        7,136      566,849     395,776.9  mod_pbl_holtbl_holtbl_171_gpu                                
-      0.0          558,401         30       18,613.4        5,120.0        4,800      405,345      73,043.1  mod_moloch_sound_1031_gpu                                    
-      0.0          531,074          1      531,074.0      531,074.0      531,074      531,074           0.0  mod_clm_regcm_land_to_atmosphere_797_gpu                     
-      0.0          508,129          2      254,064.5      254,064.5      108,320      399,809     206,113.8  mod_kdtree2_build_tree_350_gpu                               
-      0.0          500,769          2      250,384.5      250,384.5      239,041      261,728      16,042.1  mod_moloch_physical_parametrizations_1981_gpu                
-      0.0          496,833          3      165,611.0      178,049.0      133,984      184,800      27,597.0  mod_slice_mkslice_374_gpu                                    
-      0.0          496,545          3      165,515.0        8,480.0        8,288      479,777     272,158.9  mod_slice_mkslice_348_gpu                                    
-      0.0          494,849          1      494,849.0      494,849.0      494,849      494,849           0.0  mod_init_init_923_gpu                                        
-      0.0          478,145          1      478,145.0      478,145.0      478,145      478,145           0.0  mod_params_param_2361_gpu                                    
-      0.0          476,994          2      238,497.0      238,497.0       33,345      443,649     290,128.7  mod_bdycod_monudgeuv_3859_gpu                                
-      0.0          469,185          2      234,592.5      234,592.5      226,977      242,208      10,769.9  mod_pbl_holtbl_holtbl_874_gpu                                
-      0.0          467,105          2      233,552.5      233,552.5      227,776      239,329       8,169.2  mod_pbl_holtbl_holtbl_811_gpu                                
-      0.0          466,945          2      233,472.5      233,472.5      227,809      239,136       8,009.4  mod_pbl_holtbl_holtbl_996_gpu                                
-      0.0          465,985          2      232,992.5      232,992.5        8,960      457,025     316,829.8  mod_pbl_holtbl_holtbl_248_gpu                                
-      0.0          464,930          2      232,465.0      232,465.0      223,521      241,409      12,648.7  mod_pbl_holtbl_holtbl_938_gpu                                
-      0.0          461,601          1      461,601.0      461,601.0      461,601      461,601           0.0  mod_rad_radiation_radclw_4575_gpu                            
-      0.0          456,065         76        6,000.9        4,112.0        3,936       61,664       9,283.3  mod_mppparam_real8_3d_exchange_left_right_4651_gpu           
-      0.0          455,682          1      455,682.0      455,682.0      455,682      455,682           0.0  mod_rad_radiation_radclw_4746_gpu                            
-      0.0          455,233          3      151,744.3      153,729.0      136,832      164,672      14,025.7  mod_slice_mkslice_366_gpu                                    
-      0.0          449,505          6       74,917.5       74,752.0       74,208       76,352         750.9  mod_bdycod_monudge3d_4221_gpu                                
-      0.0          448,896          6       74,816.0       75,296.0       71,776       76,160       1,706.1  mod_moloch_sound_1240_gpu                                    
-      0.0          437,473          1      437,473.0      437,473.0      437,473      437,473           0.0  mod_rad_colmod3_colmod3_612_gpu                              
-      0.0          435,873          1      435,873.0      435,873.0      435,873      435,873           0.0  mod_micro_nogtom_init_nogtom_325_gpu                         
-      0.0          433,217          1      433,217.0      433,217.0      433,217      433,217           0.0  mod_clm_banddiagonal_banddiagonal_gpu_318_gpu                
-      0.0          432,353        132        3,275.4        3,136.0        2,976        4,768         313.7  mod_mppparam_real8_3d_exchange_left_right_bottom_top_4061_gpu
-      0.0          422,976          2      211,488.0      211,488.0      136,896      286,080     105,489.0  mod_micro_interface_cldfrac_263_gpu                          
-      0.0          407,233          6       67,872.2        3,376.0        2,688      213,472     100,942.4  mod_moloch_sound_1014_gpu                                    
-      0.0          406,625          2      203,312.5      203,312.5       38,240      368,385     233,447.8  mod_bdycod_monudgeuv_3934_gpu                                
-      0.0          396,769          1      396,769.0      396,769.0      396,769      396,769           0.0  mod_rad_radiation_radcsw_4308_gpu                            
-      0.0          368,897          2      184,448.5      184,448.5       33,024      335,873     214,146.6  mod_bdycod_monudgeuv_3874_gpu                                
-      0.0          368,449        132        2,791.3        2,688.0        2,592        5,920         310.3  mod_mppparam_real8_3d_exchange_left_right_bottom_top_4077_gpu
-      0.0          362,817          4       90,704.3       67,168.0       57,824      170,657      53,999.4  mod_mppparam_real8_3d_exchange_left_bottom_5545_gpu          
-      0.0          359,745          1      359,745.0      359,745.0      359,745      359,745           0.0  mod_rad_colmod3_colmod3_622_gpu                              
-      0.0          354,721          6       59,120.2        5,040.0        4,896      329,153     132,288.8  mod_moloch_advection_1323_gpu__1                             
-      0.0          346,529          1      346,529.0      346,529.0      346,529      346,529           0.0  mod_moloch_allocate_moloch_234_gpu                           
-      0.0          340,001          2      170,000.5      170,000.5      169,985      170,016          21.9  mod_micro_nogtom_nogtom_1932_gpu                             
-      0.0          318,817          2      159,408.5      159,408.5       37,984      280,833     171,720.2  mod_bdycod_monudgeuv_3919_gpu                                
-      0.0          309,120          1      309,120.0      309,120.0      309,120      309,120           0.0  mod_output_output_271_gpu__1                                 
-      0.0          295,108         76        3,883.0        2,944.0        2,880       61,344       6,686.1  mod_mppparam_real8_3d_exchange_bottom_top_5083_gpu           
-      0.0          291,616          4       72,904.0       72,064.0       44,960      102,528      25,208.8  mod_mppparam_real8_3d_exchange_left_bottom_5579_gpu          
-      0.0          283,233          1      283,233.0      283,233.0      283,233      283,233           0.0  mod_init_init_962_gpu                                        
-      0.0          280,096          1      280,096.0      280,096.0      280,096      280,096           0.0  mod_init_init_340_gpu                                        
-      0.0          279,456          3       93,152.0        7,776.0        7,552      264,128     148,069.6  mod_slice_mkslice_127_gpu                                    
-      0.0          274,114         60        4,568.6        4,544.0        4,160        5,088         209.6  mod_moloch_wafone_1515_gpu                                   
-      0.0          273,825          1      273,825.0      273,825.0      273,825      273,825           0.0  mod_rad_colmod3_colmod3_421_gpu                              
-      0.0          271,648         76        3,574.3        3,520.0        3,424        4,192         157.6  mod_mppparam_real8_3d_exchange_left_right_4679_gpu           
-      0.0          265,248          6       44,208.0       44,192.0       44,064       44,448         147.0  mod_moloch_advection_1358_gpu__3                             
-      0.0          263,138          2      131,569.0      131,569.0      131,073      132,065         701.4  mod_moloch_moloch_480_gpu                                    
-      0.0          262,880          2      131,440.0      131,440.0      131,040      131,840         565.7  mod_moloch_moloch_368_gpu                                    
-      0.0          262,752          6       43,792.0       43,408.0       43,296       45,600         895.5  mod_moloch_advection_1319_gpu__3                             
-      0.0          250,849          1      250,849.0      250,849.0      250,849      250,849           0.0  mod_output_output_641_gpu                                    
-      0.0          250,048          1      250,048.0      250,048.0      250,048      250,048           0.0  mod_bdycod_init_bdy_899_gpu                                  
-      0.0          248,736          1      248,736.0      248,736.0      248,736      248,736           0.0  mod_init_init_286_gpu                                        
-      0.0          245,601          6       40,933.5       40,928.5       40,768       41,216         166.2  mod_moloch_advection_1361_gpu                                
-      0.0          244,515          6       40,752.5       40,608.5       40,032       42,112         722.5  mod_moloch_advection_1319_gpu                                
-      0.0          237,569          1      237,569.0      237,569.0      237,569      237,569           0.0  mod_init_init_273_gpu                                        
-      0.0          234,048          2      117,024.0      117,024.0      115,104      118,944       2,715.3  mod_pbl_holtbl_holtbl_1096_gpu                               
-      0.0          230,017         70        3,286.0        3,136.0        3,104        3,680         190.9  mod_mppparam_real8_3d_exchange_3288_gpu                      
-      0.0          227,360          6       37,893.3       37,968.0       37,568       38,048         182.6  mod_moloch_advection_1358_gpu                                
-      0.0          226,848          1      226,848.0      226,848.0      226,848      226,848           0.0  mod_params_param_2770_gpu                                    
-      0.0          226,112          1      226,112.0      226,112.0      226,112      226,112           0.0  mod_cu_interface_allocate_cumulus_100_gpu                    
-      0.0          225,889          3       75,296.3       72,673.0       72,384       80,832       4,796.2  mod_slice_mkslice_119_gpu                                    
-      0.0          225,089          1      225,089.0      225,089.0      225,089      225,089           0.0  mod_bdycod_init_bdy_898_gpu                                  
-      0.0          224,896          6       37,482.7       37,440.0       37,280       37,728         166.5  mod_bdycod_monudge3d_4318_gpu                                
-      0.0          222,049         76        2,921.7        2,880.0        2,848        3,392         125.7  mod_mppparam_real8_3d_exchange_bottom_top_5111_gpu           
-      0.0          220,480          2      110,240.0      110,240.0        4,704      215,776     149,250.4  mod_bdycod_monudge2d_4623_gpu                                
-      0.0          217,345          1      217,345.0      217,345.0      217,345      217,345           0.0  mod_bdycod_init_bdy_897_gpu                                  
-      0.0          209,345          1      209,345.0      209,345.0      209,345      209,345           0.0  mod_init_init_283_gpu                                        
-      0.0          204,737          2      102,368.5      102,368.5       39,872      164,865      88,383.4  mod_mppparam_real8_2d_exchange_left_bottom_5448_gpu          
-      0.0          202,529          1      202,529.0      202,529.0      202,529      202,529           0.0  mod_params_param_2310_gpu                                    
-      0.0          200,961          6       33,493.5       33,392.0       33,216       33,952         287.6  mod_bdycod_monudge3d_4288_gpu                                
-      0.0          197,665          2       98,832.5       98,832.5       98,273       99,392         791.3  mod_moloch_moloch_353_gpu                                    
-      0.0          196,834         70        2,811.9        2,720.0        2,624        3,168         171.1  mod_mppparam_real8_3d_exchange_3329_gpu                      
-      0.0          190,144          2       95,072.0       95,072.0       94,976       95,168         135.8  mod_pbl_holtbl_holtbl_854_gpu                                
-      0.0          189,184          2       94,592.0       94,592.0       92,160       97,024       3,439.4  mod_pbl_holtbl_holtbl_1078_gpu                               
-      0.0          188,608          2       94,304.0       94,304.0       33,728      154,880      85,667.4  mod_pbl_holtbl_holtbl_364_gpu                                
-      0.0          185,985          1      185,985.0      185,985.0      185,985      185,985           0.0  mod_rad_outrad_radout_108_gpu                                
-      0.0          185,729          1      185,729.0      185,729.0      185,729      185,729           0.0  mod_init_init_222_gpu                                        
-      0.0          185,152          1      185,152.0      185,152.0      185,152      185,152           0.0  mod_output_output_227_gpu                                    
-      0.0          182,337         60        3,038.9        3,008.0        2,912        3,456         109.6  mod_moloch_wafone_1471_gpu                                   
-      0.0          176,064          1      176,064.0      176,064.0      176,064      176,064           0.0  mod_rad_colmod3_colmod3_711_gpu                              
-      0.0          173,313          1      173,313.0      173,313.0      173,313      173,313           0.0  mod_init_init_212_gpu                                        
-      0.0          168,992          2       84,496.0       84,496.0       84,448       84,544          67.9  mod_moloch_moloch_510_gpu                                    
-      0.0          155,712          2       77,856.0       77,856.0       76,864       78,848       1,402.9  mod_pbl_holtbl_holtbl_624_gpu                                
-      0.0          152,321          2       76,160.5       76,160.5       76,097       76,224          89.8  mod_pbl_holtbl_holtbl_804_gpu                                
-      0.0          152,160          2       76,080.0       76,080.0       75,872       76,288         294.2  mod_pbl_holtbl_holtbl_699_gpu                                
-      0.0          149,088          2       74,544.0       74,544.0       73,568       75,520       1,380.3  mod_pbl_holtbl_holtbl_931_gpu                                
-      0.0          148,992          2       74,496.0       74,496.0       74,272       74,720         316.8  mod_micro_interface_cldfrac_344_gpu                          
-      0.0          141,441          2       70,720.5       70,720.5       70,624       70,817         136.5  mod_pbl_holtbl_holtbl_867_gpu                                
-      0.0          137,153          1      137,153.0      137,153.0      137,153      137,153           0.0  mod_params_param_2361_gpu__1                                 
-      0.0          136,480         30        4,549.3        4,544.0        4,160        4,960         175.3  mod_moloch_sound_1081_gpu__2                                 
-      0.0          133,825          1      133,825.0      133,825.0      133,825      133,825           0.0  mod_init_init_904_gpu                                        
-      0.0          130,688          2       65,344.0       65,344.0        4,928      125,760      85,441.1  mod_bdycod_monudge2d_4595_gpu                                
-      0.0          129,216          2       64,608.0       64,608.0        3,424      125,792      86,527.2  mod_pbl_holtbl_holtbl_292_gpu                                
-      0.0          127,136          2       63,568.0       63,568.0        3,712      123,424      84,649.2  mod_pbl_holtbl_holtbl_544_gpu                                
-      0.0          125,729          3       41,909.7       40,481.0       40,288       44,960       2,643.4  mod_slice_mkslice_136_gpu                                    
-      0.0          125,568          1      125,568.0      125,568.0      125,568      125,568           0.0  mod_params_param_2743_gpu                                    
-      0.0          124,801          2       62,400.5       62,400.5       62,016       62,785         543.8  mod_pbl_holtbl_holtbl_983_gpu                                
-      0.0          124,385          2       62,192.5       62,192.5       61,696       62,689         702.2  mod_pbl_holtbl_holtbl_920_gpu                                
-      0.0          123,489          2       61,744.5       61,744.5       61,184       62,305         792.7  mod_pbl_holtbl_holtbl_1041_gpu                               
-      0.0          123,424          2       61,712.0       61,712.0       58,464       64,960       4,593.4  mod_pbl_holtbl_holtbl_469_gpu                                
-      0.0          123,296          2       61,648.0       61,648.0       60,320       62,976       1,878.1  mod_moloch_physical_parametrizations_1977_gpu                
-      0.0          122,913          2       61,456.5       61,456.5       61,441       61,472          21.9  mod_moloch_physical_parametrizations_1956_gpu                
-      0.0          121,440          2       60,720.0       60,720.0       60,704       60,736          22.6  mod_moloch_physical_parametrizations_1959_gpu                
-      0.0          121,216          2       60,608.0       60,608.0       59,808       61,408       1,131.4  mod_moloch_physical_parametrizations_1953_gpu                
-      0.0          120,416          2       60,208.0       60,208.0       59,424       60,992       1,108.7  mod_moloch_moloch_530_gpu                                    
-      0.0          118,849          2       59,424.5       59,424.5       58,593       60,256       1,175.9  mod_pbl_holtbl_holtbl_1101_gpu                               
-      0.0          117,440          2       58,720.0       58,720.0       53,792       63,648       6,969.2  mod_moloch_physical_parametrizations_1868_gpu                
-      0.0          116,288          2       58,144.0       58,144.0       55,424       60,864       3,846.7  mod_pbl_holtbl_holtbl_379_gpu                                
-      0.0          115,104          2       57,552.0       57,552.0       57,536       57,568          22.6  mod_moloch_moloch_474_gpu                                    
-      0.0          115,104          4       28,776.0       28,528.0        3,840       54,208      28,723.4  mod_mppparam_real8_3d_exchange_left_bottom_5551_gpu          
-      0.0          112,673          1      112,673.0      112,673.0      112,673      112,673           0.0  mod_rad_colmod3_colmod3_393_gpu                              
-      0.0          112,096          2       56,048.0       56,048.0       52,416       59,680       5,136.4  mod_pbl_holtbl_holtbl_1085_gpu                               
-      0.0          111,328          1      111,328.0      111,328.0      111,328      111,328           0.0  mod_init_init_229_gpu                                        
-      0.0          108,512          2       54,256.0       54,256.0       53,888       54,624         520.4  mod_pbl_holtbl_holtbl_1068_gpu                               
-      0.0           95,552         30        3,185.1        3,120.0        2,944        3,616         175.8  mod_moloch_sound_1081_gpu                                    
-      0.0           94,880         30        3,162.7        3,104.0        2,880        3,616         194.2  mod_moloch_sound_1037_gpu                                    
-      0.0           93,760          1       93,760.0       93,760.0       93,760       93,760           0.0  mod_rad_radiation_radclw_4888_gpu                            
-      0.0           87,168          2       43,584.0       43,584.0       43,424       43,744         226.3  mod_moloch_moloch_567_gpu__3                                 
-      0.0           84,993          2       42,496.5       42,496.5       41,088       43,905       1,991.9  mod_pbl_holtbl_holtbl_634_gpu                                
-      0.0           83,808          2       41,904.0       41,904.0       41,760       42,048         203.6  mod_cloud_subex_subex_cldfrac_93_gpu                         
-      0.0           83,104          1       83,104.0       83,104.0       83,104       83,104           0.0  mod_init_init_898_gpu                                        
-      0.0           80,352          2       40,176.0       40,176.0       38,560       41,792       2,285.4  mod_pbl_holtbl_holtbl_631_gpu                                
-      0.0           79,617          2       39,808.5       39,808.5       39,617       40,000         270.8  mod_moloch_moloch_567_gpu                                    
-      0.0           78,880          2       39,440.0       39,440.0       38,336       40,544       1,561.3  mod_pbl_holtbl_holtbl_797_gpu                                
-      0.0           77,730          2       38,865.0       38,865.0       38,177       39,553         973.0  mod_micro_interface_cldfrac_259_gpu                          
-      0.0           77,024          1       77,024.0       77,024.0       77,024       77,024           0.0  mod_init_init_895_gpu                                        
-      0.0           72,256          2       36,128.0       36,128.0       35,872       36,384         362.0  mod_micro_interface_cldfrac_331_gpu                          
-      0.0           66,656          4       16,664.0        3,200.0        2,656       57,600      27,292.3  mod_mppparam_real8_3d_exchange_left_bottom_5585_gpu          
-      0.0           66,144         12        5,512.0        5,376.0        4,832        6,656         550.4  mod_bdycod_bdyval_2178_gpu                                   
-      0.0           58,240          1       58,240.0       58,240.0       58,240       58,240           0.0  mod_rad_radiation_radctl_5068_gpu                            
-      0.0           57,568          1       57,568.0       57,568.0       57,568       57,568           0.0  mod_init_init_218_gpu                                        
-      0.0           54,241          3       18,080.3       18,080.0       17,505       18,656         575.5  mod_bdycod_bdyval_1841_gpu                                   
-      0.0           48,960         19        2,576.8        2,560.0        2,560        2,656          32.6  mod_rad_radiation_radcsw_4275_gpu                            
-      0.0           48,896         19        2,573.5        2,560.0        2,528        2,752          53.7  mod_rad_radiation_radcsw_4214_gpu                            
-      0.0           47,649         12        3,970.8        3,952.0        3,552        4,544         311.6  mod_bdycod_bdyval_2214_gpu                                   
-      0.0           46,560          2       23,280.0       23,280.0       22,208       24,352       1,516.0  mod_pbl_holtbl_holtbl_428_gpu                                
-      0.0           40,704          1       40,704.0       40,704.0       40,704       40,704           0.0  mod_rad_colmod3_colmod3_507_gpu                              
-      0.0           29,536          6        4,922.7        4,896.0        4,896        5,024          51.3  mod_moloch_advection_1361_gpu__1                             
-      0.0           28,352          6        4,725.3        4,720.0        4,672        4,800          43.7  mod_moloch_advection_1358_gpu__2                             
-      0.0           28,000          6        4,666.7        4,608.0        4,416        4,960         219.3  mod_moloch_advection_1319_gpu__1                             
-      0.0           27,680          2       13,840.0       13,840.0       13,280       14,400         792.0  mod_pbl_holtbl_holtbl_446_gpu                                
-      0.0           23,520          1       23,520.0       23,520.0       23,520       23,520           0.0  mod_rad_radiation_radcsw_3843_gpu                            
-      0.0           22,912          3        7,637.3        7,552.0        7,488        7,872         205.7  mod_bdycod_bdyval_1602_gpu                                   
-      0.0           21,696          3        7,232.0        7,392.0        6,592        7,712         576.9  mod_bdycod_bdyval_1599_gpu                                   
-      0.0           21,120          1       21,120.0       21,120.0       21,120       21,120           0.0  mod_rad_radiation_radcsw_4326_gpu                            
-      0.0           19,840          6        3,306.7        3,280.0        3,168        3,552         141.2  mod_moloch_advection_1319_gpu__4                             
-      0.0           19,424          6        3,237.3        3,264.0        3,104        3,296          68.4  mod_moloch_advection_1358_gpu__5                             
-      0.0           17,280          3        5,760.0        5,568.0        5,568        6,144         332.6  mod_slice_mkslice_123_gpu                                    
-      0.0           16,864          6        2,810.7        2,752.0        2,720        3,008         120.4  mod_moloch_sound_1243_gpu                                    
-      0.0           15,840          3        5,280.0        5,440.0        4,896        5,504         334.1  mod_bdycod_bdyval_1875_gpu                                   
-      0.0           15,072          3        5,024.0        4,960.0        4,448        5,664         610.5  mod_bdycod_bdyval_1577_gpu                                   
-      0.0           14,880          1       14,880.0       14,880.0       14,880       14,880           0.0  mod_rad_radiation_radctl_5193_gpu                            
-      0.0           14,336          2        7,168.0        7,168.0        6,752        7,584         588.3  mod_moloch_moloch_517_gpu                                    
-      0.0           13,824          2        6,912.0        6,912.0        6,368        7,456         769.3  mod_pbl_holtbl_holtbl_274_gpu                                
-      0.0           13,568          3        4,522.7        4,480.0        3,712        5,376         832.8  mod_slice_mkslice_116_gpu                                    
-      0.0           12,640          1       12,640.0       12,640.0       12,640       12,640           0.0  mod_rad_radiation_radctl_5085_gpu                            
-      0.0           11,168          3        3,722.7        3,808.0        3,488        3,872         205.7  mod_bdycod_bdyval_1618_gpu                                   
-      0.0           10,720          3        3,573.3        3,648.0        3,328        3,744         217.8  mod_bdycod_bdyval_1615_gpu                                   
-      0.0            9,824          1        9,824.0        9,824.0        9,824        9,824           0.0  mod_init_init_966_gpu                                        
-      0.0            9,056          2        4,528.0        4,528.0        4,416        4,640         158.4  mod_moloch_moloch_567_gpu__1                                 
-      0.0            9,024          1        9,024.0        9,024.0        9,024        9,024           0.0  mod_rad_radiation_radcsw_4334_gpu                            
-      0.0            8,800          2        4,400.0        4,400.0        4,320        4,480         113.1  mod_pbl_holtbl_holtbl_1071_gpu                               
-      0.0            8,192          3        2,730.7        2,816.0        2,400        2,976         297.3  mod_bdycod_bdyval_1587_gpu                                   
-      0.0            8,000          2        4,000.0        4,000.0        3,808        4,192         271.5  mod_pbl_holtbl_holtbl_1088_gpu                               
-      0.0            7,648          1        7,648.0        7,648.0        7,648        7,648           0.0  mod_rad_colmod3_colmod3_511_gpu                              
-      0.0            7,424          1        7,424.0        7,424.0        7,424        7,424           0.0  mod_rad_radiation_radclw_4779_gpu                            
-      0.0            7,424          1        7,424.0        7,424.0        7,424        7,424           0.0  mod_rad_radiation_radcsw_3819_gpu                            
-      0.0            6,912          1        6,912.0        6,912.0        6,912        6,912           0.0  mod_init_init_931_gpu                                        
-      0.0            6,592          1        6,592.0        6,592.0        6,592        6,592           0.0  mod_params_param_2320_gpu                                    
-      0.0            6,592          2        3,296.0        3,296.0        3,264        3,328          45.3  mod_moloch_moloch_567_gpu__4                                 
-      0.0            5,696          2        2,848.0        2,848.0        2,720        2,976         181.0  mod_pbl_holtbl_holtbl_1053_gpu                               
-      0.0            5,632          2        2,816.0        2,816.0        2,688        2,944         181.0  mod_pbl_holtbl_holtbl_1075_gpu                               
-      0.0            5,376          2        2,688.0        2,688.0        2,624        2,752          90.5  mod_mppparam_real8_2d_exchange_left_bottom_5453_gpu          
-      0.0            5,248          1        5,248.0        5,248.0        5,248        5,248           0.0  mod_output_output_244_gpu__1                                 
-      0.0            4,928          2        2,464.0        2,464.0        2,336        2,592         181.0  mod_mppparam_real8_2d_exchange_left_bottom_5484_gpu          
-      0.0            4,864          1        4,864.0        4,864.0        4,864        4,864           0.0  mod_rad_radiation_radclw_4769_gpu                            
-      0.0            4,704          2        2,352.0        2,352.0        2,208        2,496         203.6  mod_mppparam_real8_2d_exchange_left_bottom_5479_gpu          
-      0.0            4,224          1        4,224.0        4,224.0        4,224        4,224           0.0  mod_output_output_244_gpu__4                                 
-      0.0            3,936          1        3,936.0        3,936.0        3,936        3,936           0.0  mod_params_param_2266_gpu                                    
-      0.0            3,520          1        3,520.0        3,520.0        3,520        3,520           0.0  mod_rad_radiation_radclw_4802_gpu                            
-      0.0            3,488          1        3,488.0        3,488.0        3,488        3,488           0.0  mod_moloch_init_moloch_307_gpu                               
-      0.0            3,296          1        3,296.0        3,296.0        3,296        3,296           0.0  mod_rad_radiation_radclw_4807_gpu                            
-      0.0            3,040          1        3,040.0        3,040.0        3,040        3,040           0.0  mod_rad_radiation_radcsw_4316_gpu                            
-      0.0            2,816          1        2,816.0        2,816.0        2,816        2,816           0.0  mod_rad_radiation_radclw_4802_gpu__red                       
-      0.0            2,560          1        2,560.0        2,560.0        2,560        2,560           0.0  mod_rad_radiation_radclw_4789_gpu                            
-
-[6/7] Executing 'cuda_gpu_mem_time_sum' stats report
-
- Time (%)  Total Time (ns)   Count   Avg (ns)   Med (ns)   Min (ns)  Max (ns)   StdDev (ns)               Operation              
- --------  ---------------  -------  ---------  ---------  --------  ---------  -----------  ------------------------------------
-     49.6    6,545,696,704   55,845  117,211.9  113,632.0     1,600    579,042     89,520.9  [CUDA memcpy Device-to-Host]        
-     30.1    3,971,352,609  928,844    4,275.6    2,751.0     1,983     85,409      4,917.6  [CUDA memcpy Unified Host-to-Device]
-     12.5    1,646,767,027  236,411    6,965.7    2,079.0     1,599     70,144      9,866.5  [CUDA memcpy Unified Device-to-Host]
-      6.3      837,206,768   14,609   57,307.6   25,216.0       960  1,038,787     73,303.5  [CUDA memcpy Host-to-Device]        
-      1.4      191,188,688      600  318,647.8  343,217.0    84,704  1,684,772    108,453.7  [CUDA memcpy Device-to-Device]      
-      0.0           14,656       13    1,127.4    1,024.0       992      1,504        195.2  [CUDA memset]                       
-
-[7/7] Executing 'cuda_gpu_mem_size_sum' stats report
-
- Total (MB)   Count   Avg (MB)  Med (MB)  Min (MB)  Max (MB)  StdDev (MB)               Operation              
- ----------  -------  --------  --------  --------  --------  -----------  ------------------------------------
- 43,663.278  928,844     0.047     0.008     0.004     1.044        0.119  [CUDA memcpy Unified Host-to-Device]
- 31,846.351  236,411     0.135     0.004     0.004     1.044        0.253  [CUDA memcpy Unified Device-to-Host]
- 24,833.194   55,845     0.445     0.498     0.000     0.504        0.128  [CUDA memcpy Device-to-Host]        
-  4,092.623   14,609     0.280     0.274     0.000     0.504        0.229  [CUDA memcpy Host-to-Device]        
-    267.974      600     0.447     0.500     0.128     0.504        0.104  [CUDA memcpy Device-to-Device]      
-      0.000       13     0.000     0.000     0.000     0.000        0.000  [CUDA memset]                       
-
-Generated:
-	/leonardo_scratch/large/userexternal/ctica000/profile_new_nsys_16gpu/nsys_rank0.nsys-rep
-	/leonardo_scratch/large/userexternal/ctica000/profile_new_nsys_16gpu/nsys_rank0.sqlite
