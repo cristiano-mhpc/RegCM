@@ -1,0 +1,82 @@
+load CMAKE/3.30.5 (PATH)
+[as03r1b24:3088779:a:3088817] proto_select.c:210  Assertion `init_params.rkey_config_key->ep_cfg_index == ep_cfg_index' failed: rkey->ep_cfg_index=5 ep_cfg_index=8
+==== backtrace (tid:3088817) ====
+ 0 0x0000000000069ec5 ucp_proto_select_init_protocols()  /build-result/src/hpcx-v2.25.1-gcc-doca_ofed-redhat8-cuda12-x86_64/ucx-be940c1de97a134a6a9c4b131e91db6b8d1711f1/src/ucp/proto/proto_select.c:207
+ 1 0x000000000006b4b7 ucp_proto_select_elem_init()  /build-result/src/hpcx-v2.25.1-gcc-doca_ofed-redhat8-cuda12-x86_64/ucx-be940c1de97a134a6a9c4b131e91db6b8d1711f1/src/ucp/proto/proto_select.c:478
+ 2 0x000000000006b803 ucp_proto_select_lookup_slow()  /build-result/src/hpcx-v2.25.1-gcc-doca_ofed-redhat8-cuda12-x86_64/ucx-be940c1de97a134a6a9c4b131e91db6b8d1711f1/src/ucp/proto/proto_select.c:541
+ 3 0x000000000008181d ucp_proto_rndv_ctrl_select_remote_proto()  /build-result/src/hpcx-v2.25.1-gcc-doca_ofed-redhat8-cuda12-x86_64/ucx-be940c1de97a134a6a9c4b131e91db6b8d1711f1/src/ucp/rndv/proto_rndv.c:181
+ 4 0x0000000000082029 ucp_proto_rndv_ctrl_probe()  /build-result/src/hpcx-v2.25.1-gcc-doca_ofed-redhat8-cuda12-x86_64/ucx-be940c1de97a134a6a9c4b131e91db6b8d1711f1/src/ucp/rndv/proto_rndv.c:452
+ 5 0x000000000008ec28 ucp_proto_rndv_rtr_mtype_probe()  /build-result/src/hpcx-v2.25.1-gcc-doca_ofed-redhat8-cuda12-x86_64/ucx-be940c1de97a134a6a9c4b131e91db6b8d1711f1/src/ucp/rndv/rndv_rtr.c:452
+ 6 0x0000000000069dd7 ucp_proto_select_init_protocols()  /build-result/src/hpcx-v2.25.1-gcc-doca_ofed-redhat8-cuda12-x86_64/ucx-be940c1de97a134a6a9c4b131e91db6b8d1711f1/src/ucp/proto/proto_select.c:220
+ 7 0x000000000006b4b7 ucp_proto_select_elem_init()  /build-result/src/hpcx-v2.25.1-gcc-doca_ofed-redhat8-cuda12-x86_64/ucx-be940c1de97a134a6a9c4b131e91db6b8d1711f1/src/ucp/proto/proto_select.c:478
+ 8 0x000000000006b803 ucp_proto_select_lookup_slow()  /build-result/src/hpcx-v2.25.1-gcc-doca_ofed-redhat8-cuda12-x86_64/ucx-be940c1de97a134a6a9c4b131e91db6b8d1711f1/src/ucp/proto/proto_select.c:541
+ 9 0x000000000008181d ucp_proto_rndv_ctrl_select_remote_proto()  /build-result/src/hpcx-v2.25.1-gcc-doca_ofed-redhat8-cuda12-x86_64/ucx-be940c1de97a134a6a9c4b131e91db6b8d1711f1/src/ucp/rndv/proto_rndv.c:181
+10 0x0000000000082029 ucp_proto_rndv_ctrl_probe()  /build-result/src/hpcx-v2.25.1-gcc-doca_ofed-redhat8-cuda12-x86_64/ucx-be940c1de97a134a6a9c4b131e91db6b8d1711f1/src/ucp/rndv/proto_rndv.c:452
+11 0x0000000000082317 ucp_proto_rndv_rts_probe()  /build-result/src/hpcx-v2.25.1-gcc-doca_ofed-redhat8-cuda12-x86_64/ucx-be940c1de97a134a6a9c4b131e91db6b8d1711f1/src/ucp/rndv/proto_rndv.c:557
+12 0x0000000000069dd7 ucp_proto_select_init_protocols()  /build-result/src/hpcx-v2.25.1-gcc-doca_ofed-redhat8-cuda12-x86_64/ucx-be940c1de97a134a6a9c4b131e91db6b8d1711f1/src/ucp/proto/proto_select.c:220
+13 0x000000000006b4b7 ucp_proto_select_elem_init()  /build-result/src/hpcx-v2.25.1-gcc-doca_ofed-redhat8-cuda12-x86_64/ucx-be940c1de97a134a6a9c4b131e91db6b8d1711f1/src/ucp/proto/proto_select.c:478
+14 0x000000000006b803 ucp_proto_select_lookup_slow()  /build-result/src/hpcx-v2.25.1-gcc-doca_ofed-redhat8-cuda12-x86_64/ucx-be940c1de97a134a6a9c4b131e91db6b8d1711f1/src/ucp/proto/proto_select.c:541
+15 0x000000000006c83f ucp_proto_select_lookup()  /build-result/src/hpcx-v2.25.1-gcc-doca_ofed-redhat8-cuda12-x86_64/ucx-be940c1de97a134a6a9c4b131e91db6b8d1711f1/src/ucp/proto/proto_select.inl:98
+16 0x000000000006c83f ucp_proto_select_short_init()  /build-result/src/hpcx-v2.25.1-gcc-doca_ofed-redhat8-cuda12-x86_64/ucx-be940c1de97a134a6a9c4b131e91db6b8d1711f1/src/ucp/proto/proto_select.c:715
+17 0x0000000000041e44 ucp_ep_select_short_init()  /build-result/src/hpcx-v2.25.1-gcc-doca_ofed-redhat8-cuda12-x86_64/ucx-be940c1de97a134a6a9c4b131e91db6b8d1711f1/src/ucp/core/ucp_ep.c:3896
+18 0x0000000000041e44 ucp_ep_config_proto_init()  /build-result/src/hpcx-v2.25.1-gcc-doca_ofed-redhat8-cuda12-x86_64/ucx-be940c1de97a134a6a9c4b131e91db6b8d1711f1/src/ucp/core/ucp_ep.c:3940
+19 0x0000000000041e44 ucp_ep_set_cfg_index()  /build-result/src/hpcx-v2.25.1-gcc-doca_ofed-redhat8-cuda12-x86_64/ucx-be940c1de97a134a6a9c4b131e91db6b8d1711f1/src/ucp/core/ucp_ep.c:3963
+20 0x00000000000cf986 ucp_wireup_init_lanes()  /build-result/src/hpcx-v2.25.1-gcc-doca_ofed-redhat8-cuda12-x86_64/ucx-be940c1de97a134a6a9c4b131e91db6b8d1711f1/src/ucp/wireup/wireup.c:1949
+21 0x00000000000cc582 ucp_wireup_process_request()  /build-result/src/hpcx-v2.25.1-gcc-doca_ofed-redhat8-cuda12-x86_64/ucx-be940c1de97a134a6a9c4b131e91db6b8d1711f1/src/ucp/wireup/wireup.c:717
+22 0x00000000000cd031 ucp_wireup_msg_handler()  /build-result/src/hpcx-v2.25.1-gcc-doca_ofed-redhat8-cuda12-x86_64/ucx-be940c1de97a134a6a9c4b131e91db6b8d1711f1/src/ucp/wireup/wireup.c:992
+23 0x000000000002c52f uct_iface_invoke_am()  /build-result/src/hpcx-v2.25.1-gcc-doca_ofed-redhat8-cuda12-x86_64/ucx-be940c1de97a134a6a9c4b131e91db6b8d1711f1/src/uct/base/uct_iface.h:969
+24 0x000000000002c52f uct_ud_ep_process_rx()  /build-result/src/hpcx-v2.25.1-gcc-doca_ofed-redhat8-cuda12-x86_64/ucx-be940c1de97a134a6a9c4b131e91db6b8d1711f1/src/uct/ib/ud/base/ud_ep.c:1082
+25 0x0000000000031d79 uct_ud_verbs_iface_poll_rx()  /build-result/src/hpcx-v2.25.1-gcc-doca_ofed-redhat8-cuda12-x86_64/ucx-be940c1de97a134a6a9c4b131e91db6b8d1711f1/src/uct/ib/ud/verbs/ud_verbs.c:460
+26 0x0000000000031d79 uct_ud_verbs_iface_async_progress()  /build-result/src/hpcx-v2.25.1-gcc-doca_ofed-redhat8-cuda12-x86_64/ucx-be940c1de97a134a6a9c4b131e91db6b8d1711f1/src/uct/ib/ud/verbs/ud_verbs.c:480
+27 0x0000000000032c9b uct_ud_iface_async_progress()  /build-result/src/hpcx-v2.25.1-gcc-doca_ofed-redhat8-cuda12-x86_64/ucx-be940c1de97a134a6a9c4b131e91db6b8d1711f1/src/uct/ib/ud/base/ud_inl.h:275
+28 0x0000000000032c9b uct_ud_verbs_iface_async_handler()  /build-result/src/hpcx-v2.25.1-gcc-doca_ofed-redhat8-cuda12-x86_64/ucx-be940c1de97a134a6a9c4b131e91db6b8d1711f1/src/uct/ib/ud/verbs/ud_verbs.c:548
+29 0x000000000004927c ucs_async_handler_invoke()  /build-result/src/hpcx-v2.25.1-gcc-doca_ofed-redhat8-cuda12-x86_64/ucx-be940c1de97a134a6a9c4b131e91db6b8d1711f1/src/ucs/async/async.c:268
+30 0x000000000004927c ucs_async_handler_dispatch()  /build-result/src/hpcx-v2.25.1-gcc-doca_ofed-redhat8-cuda12-x86_64/ucx-be940c1de97a134a6a9c4b131e91db6b8d1711f1/src/ucs/async/async.c:290
+31 0x0000000000049445 ucs_async_dispatch_handlers()  /build-result/src/hpcx-v2.25.1-gcc-doca_ofed-redhat8-cuda12-x86_64/ucx-be940c1de97a134a6a9c4b131e91db6b8d1711f1/src/ucs/async/async.c:322
+32 0x000000000004c256 ucs_async_thread_ev_handler()  /build-result/src/hpcx-v2.25.1-gcc-doca_ofed-redhat8-cuda12-x86_64/ucx-be940c1de97a134a6a9c4b131e91db6b8d1711f1/src/ucs/async/thread.c:88
+33 0x000000000006f3b3 ucs_event_set_wait()  /build-result/src/hpcx-v2.25.1-gcc-doca_ofed-redhat8-cuda12-x86_64/ucx-be940c1de97a134a6a9c4b131e91db6b8d1711f1/src/ucs/sys/event_set.c:215
+34 0x000000000004c39c ucs_async_thread_func()  /build-result/src/hpcx-v2.25.1-gcc-doca_ofed-redhat8-cuda12-x86_64/ucx-be940c1de97a134a6a9c4b131e91db6b8d1711f1/src/ucs/async/thread.c:131
+35 0x000000000009f802 start_thread()  ???:0
+36 0x000000000003f450 __clone3()  :0
+=================================
+[as03r1b24:3088779] *** Process received signal ***
+[as03r1b24:3088779] Signal: Aborted (6)
+[as03r1b24:3088779] Signal code:  (-6)
+[as03r1b24:3088779] [ 0] /lib64/libc.so.6(+0x54df0)[0x7f1ee7439df0]
+[as03r1b24:3088779] [ 1] /lib64/libc.so.6(+0xa154c)[0x7f1ee748654c]
+[as03r1b24:3088779] [ 2] /lib64/libc.so.6(raise+0x16)[0x7f1ee7439d46]
+[as03r1b24:3088779] [ 3] /lib64/libc.so.6(abort+0xd3)[0x7f1ee740d7f3]
+[as03r1b24:3088779] [ 4] /gpfs/home/ictp/ictp992004/netcdf/Linux_x86_64/26.1/comm_libs/12.9/hpcx/hpcx-2.25.1/ucx/mt/lib/libucs.so.0(+0x5f365)[0x7f1de0cc8365]
+[as03r1b24:3088779] [ 5] /gpfs/home/ictp/ictp992004/netcdf/Linux_x86_64/26.1/comm_libs/12.9/hpcx/hpcx-2.25.1/ucx/mt/lib/libucs.so.0(+0x5f437)[0x7f1de0cc8437]
+[as03r1b24:3088779] [ 6] /gpfs/home/ictp/ictp992004/netcdf/Linux_x86_64/26.1/comm_libs/12.9/hpcx/hpcx-2.25.1/ucx/mt/lib/libucp.so.0(+0x69ec5)[0x7f1ee49a7ec5]
+[as03r1b24:3088779] [ 7] /gpfs/home/ictp/ictp992004/netcdf/Linux_x86_64/26.1/comm_libs/12.9/hpcx/hpcx-2.25.1/ucx/mt/lib/libucp.so.0(+0x6b4b7)[0x7f1ee49a94b7]
+[as03r1b24:3088779] [ 8] /gpfs/home/ictp/ictp992004/netcdf/Linux_x86_64/26.1/comm_libs/12.9/hpcx/hpcx-2.25.1/ucx/mt/lib/libucp.so.0(ucp_proto_select_lookup_slow+0xf3)[0x7f1ee49a9803]
+[as03r1b24:3088779] [ 9] /gpfs/home/ictp/ictp992004/netcdf/Linux_x86_64/26.1/comm_libs/12.9/hpcx/hpcx-2.25.1/ucx/mt/lib/libucp.so.0(+0x8181d)[0x7f1ee49bf81d]
+[as03r1b24:3088779] [10] /gpfs/home/ictp/ictp992004/netcdf/Linux_x86_64/26.1/comm_libs/12.9/hpcx/hpcx-2.25.1/ucx/mt/lib/libucp.so.0(ucp_proto_rndv_ctrl_probe+0x109)[0x7f1ee49c0029]
+[as03r1b24:3088779] [11] /gpfs/home/ictp/ictp992004/netcdf/Linux_x86_64/26.1/comm_libs/12.9/hpcx/hpcx-2.25.1/ucx/mt/lib/libucp.so.0(+0x8ec28)[0x7f1ee49ccc28]
+[as03r1b24:3088779] [12] /gpfs/home/ictp/ictp992004/netcdf/Linux_x86_64/26.1/comm_libs/12.9/hpcx/hpcx-2.25.1/ucx/mt/lib/libucp.so.0(+0x69dd7)[0x7f1ee49a7dd7]
+[as03r1b24:3088779] [13] /gpfs/home/ictp/ictp992004/netcdf/Linux_x86_64/26.1/comm_libs/12.9/hpcx/hpcx-2.25.1/ucx/mt/lib/libucp.so.0(+0x6b4b7)[0x7f1ee49a94b7]
+[as03r1b24:3088779] [14] /gpfs/home/ictp/ictp992004/netcdf/Linux_x86_64/26.1/comm_libs/12.9/hpcx/hpcx-2.25.1/ucx/mt/lib/libucp.so.0(ucp_proto_select_lookup_slow+0xf3)[0x7f1ee49a9803]
+[as03r1b24:3088779] [15] /gpfs/home/ictp/ictp992004/netcdf/Linux_x86_64/26.1/comm_libs/12.9/hpcx/hpcx-2.25.1/ucx/mt/lib/libucp.so.0(+0x8181d)[0x7f1ee49bf81d]
+[as03r1b24:3088779] [16] /gpfs/home/ictp/ictp992004/netcdf/Linux_x86_64/26.1/comm_libs/12.9/hpcx/hpcx-2.25.1/ucx/mt/lib/libucp.so.0(ucp_proto_rndv_ctrl_probe+0x109)[0x7f1ee49c0029]
+[as03r1b24:3088779] [17] /gpfs/home/ictp/ictp992004/netcdf/Linux_x86_64/26.1/comm_libs/12.9/hpcx/hpcx-2.25.1/ucx/mt/lib/libucp.so.0(ucp_proto_rndv_rts_probe+0x117)[0x7f1ee49c0317]
+[as03r1b24:3088779] [18] /gpfs/home/ictp/ictp992004/netcdf/Linux_x86_64/26.1/comm_libs/12.9/hpcx/hpcx-2.25.1/ucx/mt/lib/libucp.so.0(+0x69dd7)[0x7f1ee49a7dd7]
+[as03r1b24:3088779] [19] /gpfs/home/ictp/ictp992004/netcdf/Linux_x86_64/26.1/comm_libs/12.9/hpcx/hpcx-2.25.1/ucx/mt/lib/libucp.so.0(+0x6b4b7)[0x7f1ee49a94b7]
+[as03r1b24:3088779] [20] /gpfs/home/ictp/ictp992004/netcdf/Linux_x86_64/26.1/comm_libs/12.9/hpcx/hpcx-2.25.1/ucx/mt/lib/libucp.so.0(ucp_proto_select_lookup_slow+0xf3)[0x7f1ee49a9803]
+[as03r1b24:3088779] [21] /gpfs/home/ictp/ictp992004/netcdf/Linux_x86_64/26.1/comm_libs/12.9/hpcx/hpcx-2.25.1/ucx/mt/lib/libucp.so.0(ucp_proto_select_short_init+0x29f)[0x7f1ee49aa83f]
+[as03r1b24:3088779] [22] /gpfs/home/ictp/ictp992004/netcdf/Linux_x86_64/26.1/comm_libs/12.9/hpcx/hpcx-2.25.1/ucx/mt/lib/libucp.so.0(ucp_ep_set_cfg_index+0xd4)[0x7f1ee497fe44]
+[as03r1b24:3088779] [23] /gpfs/home/ictp/ictp992004/netcdf/Linux_x86_64/26.1/comm_libs/12.9/hpcx/hpcx-2.25.1/ucx/mt/lib/libucp.so.0(ucp_wireup_init_lanes+0x226)[0x7f1ee4a0d986]
+[as03r1b24:3088779] [24] /gpfs/home/ictp/ictp992004/netcdf/Linux_x86_64/26.1/comm_libs/12.9/hpcx/hpcx-2.25.1/ucx/mt/lib/libucp.so.0(+0xcc582)[0x7f1ee4a0a582]
+[as03r1b24:3088779] [25] /gpfs/home/ictp/ictp992004/netcdf/Linux_x86_64/26.1/comm_libs/12.9/hpcx/hpcx-2.25.1/ucx/mt/lib/libucp.so.0(+0xcd031)[0x7f1ee4a0b031]
+[as03r1b24:3088779] [26] /gpfs/home/ictp/ictp992004/netcdf/Linux_x86_64/26.1/comm_libs/12.9/hpcx/hpcx-2.25.1/ucx/mt/lib/ucx/libuct_ib.so.0(uct_ud_ep_process_rx+0x1ef)[0x7f1de00df52f]
+[as03r1b24:3088779] [27] /gpfs/home/ictp/ictp992004/netcdf/Linux_x86_64/26.1/comm_libs/12.9/hpcx/hpcx-2.25.1/ucx/mt/lib/ucx/libuct_ib.so.0(+0x31d79)[0x7f1de00e4d79]
+[as03r1b24:3088779] [28] /gpfs/home/ictp/ictp992004/netcdf/Linux_x86_64/26.1/comm_libs/12.9/hpcx/hpcx-2.25.1/ucx/mt/lib/ucx/libuct_ib.so.0(+0x32c9b)[0x7f1de00e5c9b]
+[as03r1b24:3088779] [29] /gpfs/home/ictp/ictp992004/netcdf/Linux_x86_64/26.1/comm_libs/12.9/hpcx/hpcx-2.25.1/ucx/mt/lib/libucs.so.0(+0x4927c)[0x7f1de0cb227c]
+[as03r1b24:3088779] *** End of error message ***
+--------------------------------------------------------------------------
+Primary job  terminated normally, but 1 process returned
+a non-zero exit code. Per user-direction, the job has been aborted.
+--------------------------------------------------------------------------
+--------------------------------------------------------------------------
+mpirun noticed that process rank 0 with PID 0 on node as03r1b24 exited on signal 6 (Aborted).
+--------------------------------------------------------------------------

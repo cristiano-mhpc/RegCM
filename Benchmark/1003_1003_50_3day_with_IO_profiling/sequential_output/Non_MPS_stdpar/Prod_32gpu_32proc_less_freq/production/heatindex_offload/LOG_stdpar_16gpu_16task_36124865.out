@@ -1,0 +1,240 @@
+[Wrapper][Rank 00][Local 00] on as07r1b11: CUDA_VISIBLE_DEVICES=0 ACC_DEVICE_NUM=0
+[Wrapper][Rank 16][Local 00] on as07r1b15: CUDA_VISIBLE_DEVICES=0 ACC_DEVICE_NUM=0
+[Wrapper][Rank 20][Local 00] on as07r5b05: CUDA_VISIBLE_DEVICES=0 ACC_DEVICE_NUM=0
+[Wrapper][Rank 08][Local 00] on as07r1b13: CUDA_VISIBLE_DEVICES=0 ACC_DEVICE_NUM=0
+[Wrapper][Rank 12][Local 00] on as07r1b14: CUDA_VISIBLE_DEVICES=0 ACC_DEVICE_NUM=0
+[Wrapper][Rank 24][Local 00] on as07r5b07: CUDA_VISIBLE_DEVICES=0 ACC_DEVICE_NUM=0
+[Wrapper][Rank 04][Local 00] on as07r1b12: CUDA_VISIBLE_DEVICES=0 ACC_DEVICE_NUM=0
+[Wrapper][Rank 28][Local 00] on as07r5b12: CUDA_VISIBLE_DEVICES=0 ACC_DEVICE_NUM=0
+[Wrapper][Rank 01][Local 01] on as07r1b11: CUDA_VISIBLE_DEVICES=1 ACC_DEVICE_NUM=0
+[Wrapper][Rank 17][Local 01] on as07r1b15: CUDA_VISIBLE_DEVICES=1 ACC_DEVICE_NUM=0
+[Wrapper][Rank 13][Local 01] on as07r1b14: CUDA_VISIBLE_DEVICES=1 ACC_DEVICE_NUM=0
+[Wrapper][Rank 05][Local 01] on as07r1b12: CUDA_VISIBLE_DEVICES=1 ACC_DEVICE_NUM=0
+[Wrapper][Rank 29][Local 01] on as07r5b12: CUDA_VISIBLE_DEVICES=1 ACC_DEVICE_NUM=0
+[Wrapper][Rank 09][Local 01] on as07r1b13: CUDA_VISIBLE_DEVICES=1 ACC_DEVICE_NUM=0
+[Wrapper][Rank 25][Local 01] on as07r5b07: CUDA_VISIBLE_DEVICES=1 ACC_DEVICE_NUM=0
+[Wrapper][Rank 21][Local 01] on as07r5b05: CUDA_VISIBLE_DEVICES=1 ACC_DEVICE_NUM=0
+[Wrapper][Rank 02][Local 02] on as07r1b11: CUDA_VISIBLE_DEVICES=2 ACC_DEVICE_NUM=0
+[Wrapper][Rank 06][Local 02] on as07r1b12: CUDA_VISIBLE_DEVICES=2 ACC_DEVICE_NUM=0
+[Wrapper][Rank 18][Local 02] on as07r1b15: CUDA_VISIBLE_DEVICES=2 ACC_DEVICE_NUM=0
+[Wrapper][Rank 14][Local 02] on as07r1b14: CUDA_VISIBLE_DEVICES=2 ACC_DEVICE_NUM=0
+[Wrapper][Rank 30][Local 02] on as07r5b12: CUDA_VISIBLE_DEVICES=2 ACC_DEVICE_NUM=0
+[Wrapper][Rank 10][Local 02] on as07r1b13: CUDA_VISIBLE_DEVICES=2 ACC_DEVICE_NUM=0
+[Wrapper][Rank 26][Local 02] on as07r5b07: CUDA_VISIBLE_DEVICES=2 ACC_DEVICE_NUM=0
+[Wrapper][Rank 22][Local 02] on as07r5b05: CUDA_VISIBLE_DEVICES=2 ACC_DEVICE_NUM=0
+[Wrapper][Rank 31][Local 03] on as07r5b12: CUDA_VISIBLE_DEVICES=3 ACC_DEVICE_NUM=0
+[Wrapper][Rank 07][Local 03] on as07r1b12: CUDA_VISIBLE_DEVICES=3 ACC_DEVICE_NUM=0
+[Wrapper][Rank 11][Local 03] on as07r1b13: CUDA_VISIBLE_DEVICES=3 ACC_DEVICE_NUM=0
+[Wrapper][Rank 19][Local 03] on as07r1b15: CUDA_VISIBLE_DEVICES=3 ACC_DEVICE_NUM=0
+[Wrapper][Rank 03][Local 03] on as07r1b11: CUDA_VISIBLE_DEVICES=3 ACC_DEVICE_NUM=0
+[Wrapper][Rank 23][Local 03] on as07r5b05: CUDA_VISIBLE_DEVICES=3 ACC_DEVICE_NUM=0
+[Wrapper][Rank 27][Local 03] on as07r5b07: CUDA_VISIBLE_DEVICES=3 ACC_DEVICE_NUM=0
+[Wrapper][Rank 15][Local 03] on as07r1b14: CUDA_VISIBLE_DEVICES=3 ACC_DEVICE_NUM=0
+
+  This is RegCM development version
+   GIT Revision: 5.0.0-1335-g4079-dirty compiled at: data : Feb  8 2026  time: 15:23:33
+
+ MPI rank            19  local_rank             3  sees             1 
+  devices; the OpenACC dev =             0
+ MPI rank            27  local_rank             3  sees             1 
+  devices; the OpenACC dev =             0
+ MPI rank            15  local_rank             3  sees             1 
+  devices; the OpenACC dev =             0
+ MPI rank            13  local_rank             1  sees             1 
+  devices; the OpenACC dev =             0
+ MPI rank            14  local_rank             2  sees             1 
+  devices; the OpenACC dev =             0
+ MPI rank            12  local_rank             0  sees             1 
+  devices; the OpenACC dev =             0
+ MPI rank            31  local_rank             3  sees             1 
+  devices; the OpenACC dev =             0
+ MPI rank            11  local_rank             3  sees             1 
+  devices; the OpenACC dev =             0
+ MPI rank            16  local_rank             0  sees             1 
+  devices; the OpenACC dev =             0
+ MPI rank            17  local_rank             1  sees             1 
+  devices; the OpenACC dev =             0
+ MPI rank            18  local_rank             2  sees             1 
+  devices; the OpenACC dev =             0
+ MPI rank            25  local_rank             1  sees             1 
+  devices; the OpenACC dev =             0
+ MPI rank            24  local_rank             0  sees             1 
+  devices; the OpenACC dev =             0
+ MPI rank            26  local_rank             2  sees             1 
+  devices; the OpenACC dev =             0
+ MPI rank            20  local_rank             0  sees             1 
+  devices; the OpenACC dev =             0
+ MPI rank            21  local_rank             1  sees             1 
+  devices; the OpenACC dev =             0
+ MPI rank            23  local_rank             3  sees             1 
+  devices; the OpenACC dev =             0
+ MPI rank            22  local_rank             2  sees             1 
+  devices; the OpenACC dev =             0
+ MPI rank             7  local_rank             3  sees             1 
+  devices; the OpenACC dev =             0
+ MPI rank            28  local_rank             0  sees             1 
+  devices; the OpenACC dev =             0
+ MPI rank            29  local_rank             1  sees             1 
+  devices; the OpenACC dev =             0
+ MPI rank            30  local_rank             2  sees             1 
+  devices; the OpenACC dev =             0
+ MPI rank             0  local_rank             0  sees             1 
+  devices; the OpenACC dev =             0
+ MPI rank             1  local_rank             1  sees             1 
+  devices; the OpenACC dev =             0
+ MPI rank             3  local_rank             3  sees             1 
+  devices; the OpenACC dev =             0
+ MPI rank             2  local_rank             2  sees             1 
+  devices; the OpenACC dev =             0
+ MPI rank             6  local_rank             2  sees             1 
+  devices; the OpenACC dev =             0
+ MPI rank             8  local_rank             0  sees             1 
+  devices; the OpenACC dev =             0
+ MPI rank             4  local_rank             0  sees             1 
+  devices; the OpenACC dev =             0
+ MPI rank             5  local_rank             1  sees             1 
+  devices; the OpenACC dev =             0
+ MPI rank            10  local_rank             2  sees             1 
+  devices; the OpenACC dev =             0
+ MPI rank             9  local_rank             1  sees             1 
+  devices; the OpenACC dev =             0
+ MPI rank            19  local_rank             3  CUDA_VISIBLE_DEVICES= 3
+  ndev             1 OpenACC dev=            0
+ MPI rank            27  local_rank             3  CUDA_VISIBLE_DEVICES= 3
+  ndev             1 OpenACC dev=            0
+ MPI rank            16  local_rank             0  CUDA_VISIBLE_DEVICES= 0
+  ndev             1 OpenACC dev=            0
+ MPI rank            25  local_rank             1  CUDA_VISIBLE_DEVICES= 1
+  ndev             1 OpenACC dev=            0
+ MPI rank            18  local_rank             2  CUDA_VISIBLE_DEVICES= 2
+  ndev             1 OpenACC dev=            0
+ MPI rank            17  local_rank             1  CUDA_VISIBLE_DEVICES= 1
+  ndev             1 OpenACC dev=            0
+ MPI rank            24  local_rank             0  CUDA_VISIBLE_DEVICES= 0
+  ndev             1 OpenACC dev=            0
+ MPI rank            26  local_rank             2  CUDA_VISIBLE_DEVICES= 2
+  ndev             1 OpenACC dev=            0
+ MPI rank            11  local_rank             3  CUDA_VISIBLE_DEVICES= 3
+  ndev             1 OpenACC dev=            0
+ MPI rank            31  local_rank             3  CUDA_VISIBLE_DEVICES= 3
+  ndev             1 OpenACC dev=            0
+ MPI rank            28  local_rank             0  CUDA_VISIBLE_DEVICES= 0
+  ndev             1 OpenACC dev=            0
+ MPI rank            29  local_rank             1  CUDA_VISIBLE_DEVICES= 1
+  ndev             1 OpenACC dev=            0
+ MPI rank             7  local_rank             3  CUDA_VISIBLE_DEVICES= 3
+  ndev             1 OpenACC dev=            0
+ MPI rank             6  local_rank             2  CUDA_VISIBLE_DEVICES= 2
+  ndev             1 OpenACC dev=            0
+ MPI rank            30  local_rank             2  CUDA_VISIBLE_DEVICES= 2
+  ndev             1 OpenACC dev=            0
+ MPI rank             8  local_rank             0  CUDA_VISIBLE_DEVICES= 0
+  ndev             1 OpenACC dev=            0
+ MPI rank             4  local_rank             0  CUDA_VISIBLE_DEVICES= 0
+  ndev             1 OpenACC dev=            0
+ MPI rank             5  local_rank             1  CUDA_VISIBLE_DEVICES= 1
+  ndev             1 OpenACC dev=            0
+ MPI rank            10  local_rank             2  CUDA_VISIBLE_DEVICES= 2
+  ndev             1 OpenACC dev=            0
+ MPI rank             9  local_rank             1  CUDA_VISIBLE_DEVICES= 1
+  ndev             1 OpenACC dev=            0
+ MPI rank            12  local_rank             0  CUDA_VISIBLE_DEVICES= 0
+  ndev             1 OpenACC dev=            0
+ MPI rank            15  local_rank             3  CUDA_VISIBLE_DEVICES= 3
+  ndev             1 OpenACC dev=            0
+ MPI rank            13  local_rank             1  CUDA_VISIBLE_DEVICES= 1
+  ndev             1 OpenACC dev=            0
+ MPI rank            14  local_rank             2  CUDA_VISIBLE_DEVICES= 2
+  ndev             1 OpenACC dev=            0
+ MPI rank            22  local_rank             2  CUDA_VISIBLE_DEVICES= 2
+  ndev             1 OpenACC dev=            0
+ MPI rank            20  local_rank             0  CUDA_VISIBLE_DEVICES= 0
+  ndev             1 OpenACC dev=            0
+ MPI rank            21  local_rank             1  CUDA_VISIBLE_DEVICES= 1
+  ndev             1 OpenACC dev=            0
+ MPI rank            23  local_rank             3  CUDA_VISIBLE_DEVICES= 3
+  ndev             1 OpenACC dev=            0
+ MPI rank             2  local_rank             2  CUDA_VISIBLE_DEVICES= 2
+  ndev             1 OpenACC dev=            0
+ MPI rank             1  local_rank             1  CUDA_VISIBLE_DEVICES= 1
+  ndev             1 OpenACC dev=            0
+ MPI rank             0  local_rank             0  CUDA_VISIBLE_DEVICES= 0
+  ndev             1 OpenACC dev=            0
+ MPI rank             3  local_rank             3  CUDA_VISIBLE_DEVICES= 3
+  ndev             1 OpenACC dev=            0
+ : this run start at  : 2026-02-10 22:55:40+0100
+ : it is submitted by : 
+ : it is running on   : as07r1b11
+ : it is using        :            32   processors
+ : in directory       : 
+ /gpfs/home/ictp/ictp549985/RegCM/1003_1003_50_3day_with_IO_profiling/sequential_output/Non_MPS_stdpar/Prod_32gpu_32proc_less_freq
+                       
+ CPUS DIM1 =             8
+ CPUS DIM2 =             4
+ 
+ Reading model namelist file
+ Using default non-hydrostatc parameters.
+ Using default microphysical parameter.
+ Using default Holtslag parameter.
+ Initial date of the global simulation:  2009-09-01 00:00:00 UTC        
+ Initial date of this run             :  2009-09-01 00:00:00 UTC        
+ Final date of this run               :  2009-09-04 00:00:00 UTC        
+ Total simulation length              :            72  hours
+ Timestep in seconds =   45.000000
+ Reading Domain file : input/EURR-3_DOMAIN000.nc
+ Advection timestep =    15.000 (factor  3)
+ Max. Courant number for horizontal advection =    0.9538
+ Sound waves timestep =     3.000 (factor  5)
+ Courant number of horizontal sound waves =    0.4512
+ Setting IPCC scenario to SSP585  
+ Load GHG for 200909 SSP585
+ Model will output required CORDEX variables.
+ Create SAV files :   T
+ Create ATM files :   T
+ Create RAD files :   T
+ Create SRF files :   T
+ Create STS files :   T
+ Create SHF files :   F
+ Create OPT files :   F
+ Frequency in days for new files:    1.0
+ Monthly SAV files are written
+ Frequency in hours to create ATM :    1.0
+ Frequency in hours to create RAD :    1.0
+ Frequency in hours to create SRF :    1.0
+ Physical Parameterizations
+  Lateral Boundary conditions :  5
+  Semi-Lagrangian Advection   :  0
+  Land cumulus conv. scheme   :  0
+  Ocean cumulus conv. scheme  :  0
+  Moisture schem              :  2
+  Ocean Flux scheme           :  2
+  Zeng roughness formula      :  1
+  Zeng roughness method       :  1
+  Coupling with ocean         :  0
+  Coupling with wave          :  0
+  Coupling with COP           :  0
+  Pressure gradient force     :  0
+  Prescribed LW emissivity    :  0
+  Lake model in BATS          :  0
+  Simulate diurnal sst cycle  :  0
+  Simulate sea ice cover      :  1
+  Enable chem/aerosol model   :  0
+  Large scale LWP as convect. :  1
+  Cloud fraction scheme       :  0
+  Marine stratocumulus        :  0
+  Climate O3 dataset          :  1
+  Climate Aerosol dataset     :  2
+ Boundary Pameterizations
+  Num. of bndy points cross  :  31
+  Num. of bndy points dot    :  31
+  Nudge value high range     :  6.000000
+  Nudge value medium range   :  4.000000
+  Nudge value low range      :  2.000000
+  Nm paramter                : -1.000000
+  Dm paramter                : -1.000000
+ Model Timestep Pameterizations
+  time step for dynamical model in seconds :          45.000000
+  time step for surface   model in seconds :         450.000000
+  time step for cumulus   model in seconds :         225.000000
+  time step for radiation model in seconds :        1350.000000
+  time step for emission  model in seconds :       48600.000000
