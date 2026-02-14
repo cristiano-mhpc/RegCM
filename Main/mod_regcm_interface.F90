@@ -368,46 +368,78 @@ module mod_regcm_interface
 
 #ifdef OPENACC
   ! subroutine setup_openacc(mpi_rank)
-  !   use openacc, only: acc_device_default, acc_device_kind, &
-  !                 acc_get_device_type, acc_get_num_devices, &
-  !                 acc_set_device_num, acc_init
-  !   implicit none
-  !   integer, intent(in):: mpi_rank
-  !   integer(ik4):: idev, ndev
-  !   integer(acc_device_kind):: dev_type
+    ! use openacc, only: acc_device_default, acc_device_kind, &
+    !               acc_get_device_type, acc_get_num_devices, &
+    !               acc_set_device_num, acc_init
+    ! implicit none
+    ! integer, intent(in):: mpi_rank
+    ! integer(ik4):: idev, ndev
+    ! integer(acc_device_kind):: dev_type
 
-  !   dev_type = acc_get_device_type()
-  !   ndev = acc_get_num_devices(acc_device_default)
-  !   idev = mod(mpi_rank, ndev)
-  !   call acc_set_device_num(idev, dev_type)
-  !   call acc_init(dev_type)
+    ! dev_type = acc_get_device_type()
+    ! ndev = acc_get_num_devices(acc_device_default)
+    ! idev = mod(mpi_rank, ndev)
+    ! call acc_set_device_num(idev, dev_type)
+    ! call acc_init(dev_type)
   ! end subroutine setup_openacc
   subroutine setup_openacc(mpi_rank)
-    use openacc, only: acc_device_default, acc_device_kind, &
-                     acc_get_device_type, acc_get_num_devices, &
-                     acc_set_device_num, acc_init
+    use openacc, only: acc_device_default, acc_device_kind, acc_get_device_type,&
+                     acc_set_device_num, acc_init, acc_get_num_devices
     implicit none
-    integer, intent(in):: mpi_rank
-    integer(ik4):: idev, ndev
-    integer(acc_device_kind):: dev_type
-    character(len = 16):: env
-    integer:: status
 
-    dev_type = acc_get_device_type()  ! Uses the device type set in the environment via ACC_DEVICE_TYPE
-    call acc_init(dev_type)
+    integer, intent(in)         :: mpi_rank
+    integer(acc_device_kind)    :: dev_type
+    integer                     :: idev,ndev 
+    integer                     :: st,ios 
+    character(len=64)           :: cvd
+    character(len=32)           :: s
+    integer                     :: local_rank 
+
+    dev_type = acc_get_device_type()  
   
-    call get_environment_variable("ACC_DEVICE_NUM", env, status)
-    if (status == 0) then
-       read(env, *) idev
-    else
-       ! Assumes all devices are visible.
-       ndev = acc_get_num_devices(acc_device_default)
-       idev = mod(mpi_rank, ndev)
+    ! How many GPUs are visible to me? 
+    ndev = acc_get_num_devices(acc_device_default)
+    if (ndev <= 0 ) ndev  = acc_get_num_devices(dev_type)
+
+    if (ndev <= 0) then 
+        idev = 0
+        call acc_set_device_num(idev, dev_type)
+        call acc_init(dev_type)
+        print *, "MPI rank", mpi_rank, " ndev <= 0; forcing OpenACC dev =0" 
+        return 
+    end if 
+
+    ! Prefer OpenMPI node-local rank (workd with mpirun, no slurm needed)
+    local_rank = -1 
+    s = ""
+    call get_environment_variable("OMPI_COMM_WORLD_LOCAL_RANK", s, status=st)
+    ! successfull. Read-in OMPI_COMM_WORLD_LOCAL_RANK
+    if (st == 0 .and. len_trim(s) > 0) then
+      read(s, *, iostat=ios) local_rank
+      if (ios /= 0) local_rank = -1
     end if
 
-    print *, 'MPI Rank:', mpi_rank, ' using device:', idev
+    if (local_rank >= 0) then
+       idev = mod(local_rank, ndev)
+       print *, "MPI rank ", mpi_rank, " local_rank ", local_rank, " sees ", ndev, " devices; the OpenACC dev = ", idev
+    else
+       idev = 0 !mod(mpi_rank, ndev)
+       print *, "MPI rank ", mpi_rank, " no OMPI local rank; sees ", ndev, " devices; the OpenACC dev= ", idev
+    end if
 
     call acc_set_device_num(idev, dev_type)
+    call acc_init(dev_type)
+
+    ! Debug print (optional but useful)
+    cvd = ""
+    call get_environment_variable("CUDA_VISIBLE_DEVICES", cvd, status=st)
+    if (st == 0 .and. len_trim(cvd) > 0) then
+       print *, "MPI rank ", mpi_rank, " local_rank ", local_rank, " CUDA_VISIBLE_DEVICES= ", trim(cvd), &
+                " ndev ", ndev, "OpenACC dev=", idev
+    else
+       print *, "MPI rank ", mpi_rank, " local_rank ", local_rank, " CUDA_VISIBLE_DEVICES not set ", &
+                " ndev ", ndev, "OpenACC dev=", idev
+    end if
   end subroutine setup_openacc
 #endif
 

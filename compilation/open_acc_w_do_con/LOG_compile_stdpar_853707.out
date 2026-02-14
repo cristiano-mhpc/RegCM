@@ -1,0 +1,443 @@
+Making distclean in external
+make[1]: Entering directory '/orfeo/cephfs/home/external/ctica/MS_thesis/RegCM/external'
+rm -rf .libs _libs
+rm -f *.mod *__genmod.* *opt.yaml *optrpt
+test -z "libaerosol.a libbmi.a" || rm -f libaerosol.a libbmi.a
+rm -f *.o
+rm -f *.lo
+rm -f *.tab.c
+test -z "" || rm -f 
+test . = "." || test -z "" || rm -f 
+rm -f *.mod *__genmod.* *opt.yaml *optrpt mpif.h
+rm -f TAGS ID GTAGS GRTAGS GSYMS GPATH tags
+rm -f ./.deps/collective.Po
+rm -f ./.deps/comm.Po
+rm -f ./.deps/group.Po
+rm -f ./.deps/handles.Po
+rm -f ./.deps/list.Po
+rm -f ./.deps/mpi.Po
+rm -f ./.deps/pack.Po
+rm -f ./.deps/recv.Po
+rm -f ./.deps/req.Po
+rm -f ./.deps/send.Po
+rm -f ./.deps/time.Po
+rm -f Makefile
+make[1]: Leaving directory '/orfeo/cephfs/home/external/ctica/MS_thesis/RegCM/external'
+Making distclean in Share
+make[1]: Entering directory '/orfeo/cephfs/home/external/ctica/MS_thesis/RegCM/Share'
+rm -rf .libs _libs
+rm -f *.mod *__genmod.* *opt.yaml *optrpt
+test -z "librcmlib.a" || rm -f librcmlib.a
+rm -f *.o
+rm -f *.lo
+rm -f *.tab.c
+test -z "" || rm -f 
+test . = "." || test -z "" || rm -f 
+rm -f *.mod *__genmod.* *opt.yaml *optrpt
+rm -f TAGS ID GTAGS GRTAGS GSYMS GPATH tags
+rm -f Makefile
+make[1]: Leaving directory '/orfeo/cephfs/home/external/ctica/MS_thesis/RegCM/Share'
+Making distclean in PreProc
+make[1]: Entering directory '/orfeo/cephfs/home/external/ctica/MS_thesis/RegCM/PreProc'
+Making distclean in Terrain
+make[2]: Entering directory '/orfeo/cephfs/home/external/ctica/MS_thesis/RegCM/PreProc/Terrain'
+ rm -f terrain
+rm -rf .libs _libs
+rm -f *.mod *__genmod.* *opt.yaml *optrpt
+rm -f *.o
+rm -f *.lo
+rm -f *.tab.c
+test -z "" || rm -f 
+test . = "." || test -z "" || rm -f 
+rm -f *.mod *__genmod.* *opt.yaml *optrpt
+rm -f TAGS ID GTAGS GRTAGS GSYMS GPATH tags
+rm -f Makefile
+make[2]: Leaving directory '/orfeo/cephfs/home/external/ctica/MS_thesis/RegCM/PreProc/Terrain'
+Making distclean in ICBC
+make[2]: Entering directory '/orfeo/cephfs/home/external/ctica/MS_thesis/RegCM/PreProc/ICBC'
+Making distclean in cmip6
+make[3]: Entering directory '/orfeo/cephfs/home/external/ctica/MS_thesis/RegCM/PreProc/ICBC/cmip6'
+rm -rf .libs _libs
+rm -f *.mod *__genmod.* *opt.yaml *optrpt
+test -z "libcmip6.a" || rm -f libcmip6.a
+rm -f *.o
+rm -f *.lo
+rm -f *.tab.c
+test -z "" || rm -f 
+test . = "." || test -z "" || rm -f 
+rm -f *.mod *__genmod.* *opt.yaml *optrpt
+rm -f TAGS ID GTAGS GRTAGS GSYMS GPATH tags
+rm -f Makefile
+make[3]: Leaving directory '/orfeo/cephfs/home/external/ctica/MS_thesis/RegCM/PreProc/ICBC/cmip6'
+make[3]: Entering directory '/orfeo/cephfs/home/external/ctica/MS_thesis/RegCM/PreProc/ICBC'
+ rm -f sst icbc chem_icbc clmbc pgwbc pgw_icbc
+rm -rf .libs _libs
+rm -f *.mod *__genmod.* *opt.yaml *optrpt
+rm -f *.o
+rm -f *.lo
+rm -f *.tab.c
+test -z "" || rm -f 
+test . = "." || test -z "" || rm -f 
+rm -f *.mod *__genmod.* *opt.yaml *optrpt
+rm -f TAGS ID GTAGS GRTAGS GSYMS GPATH tags
+make[3]: Leaving directory '/orfeo/cephfs/home/external/ctica/MS_thesis/RegCM/PreProc/ICBC'
+rm -f Makefile
+make[2]: Leaving directory '/orfeo/cephfs/home/external/ctica/MS_thesis/RegCM/PreProc/ICBC'
+Making distclean in CLM
+make[2]: Entering directory '/orfeo/cephfs/home/external/ctica/MS_thesis/RegCM/PreProc/CLM'
+rm -rf .libs _libs
+rm -f *.mod *__genmod.* *opt.yaml *optrpt
+rm -f *.o
+rm -f *.lo
+rm -f *.tab.c
+test -z "" || rm -f 
+test . = "." || test -z "" || rm -f 
+rm -f *.mod *__genmod.* *opt.yaml *optrpt
+rm -f TAGS ID GTAGS GRTAGS GSYMS GPATH tags
+rm -f Makefile
+make[2]: Leaving directory '/orfeo/cephfs/home/external/ctica/MS_thesis/RegCM/PreProc/CLM'
+Making distclean in CLM45
+make[2]: Entering directory '/orfeo/cephfs/home/external/ctica/MS_thesis/RegCM/PreProc/CLM45'
+ rm -f mksurfdata interpinic
+rm -rf .libs _libs
+rm -f *.mod *__genmod.* *opt.yaml *optrpt
+rm -f *.o
+rm -f *.lo
+rm -f *.tab.c
+test -z "" || rm -f 
+test . = "." || test -z "" || rm -f 
+rm -f *.mod *__genmod.* *opt.yaml *optrpt
+rm -f TAGS ID GTAGS GRTAGS GSYMS GPATH tags
+rm -f Makefile
+make[2]: Leaving directory '/orfeo/cephfs/home/external/ctica/MS_thesis/RegCM/PreProc/CLM45'
+Making distclean in CH_EMISSIONS
+make[2]: Entering directory '/orfeo/cephfs/home/external/ctica/MS_thesis/RegCM/PreProc/CH_EMISSIONS'
+Making distclean in interpolation
+make[3]: Entering directory '/orfeo/cephfs/home/external/ctica/MS_thesis/RegCM/PreProc/CH_EMISSIONS/interpolation'
+Making distclean in tools
+make[4]: Entering directory '/orfeo/cephfs/home/external/ctica/MS_thesis/RegCM/PreProc/CH_EMISSIONS/interpolation/tools'
+Making distclean in REGCM_grid
+make[5]: Entering directory '/orfeo/cephfs/home/external/ctica/MS_thesis/RegCM/PreProc/CH_EMISSIONS/interpolation/tools/REGCM_grid'
+ rm -f emcre_grid
+rm -rf .libs _libs
+rm -f *.mod *__genmod.* *opt.yaml *optrpt
+rm -f *.o
+rm -f *.lo
+rm -f *.tab.c
+test -z "" || rm -f 
+test . = "." || test -z "" || rm -f 
+rm -f *.mod *__genmod.* *opt.yaml *optrpt
+rm -f TAGS ID GTAGS GRTAGS GSYMS GPATH tags
+rm -f Makefile
+make[5]: Leaving directory '/orfeo/cephfs/home/external/ctica/MS_thesis/RegCM/PreProc/CH_EMISSIONS/interpolation/tools/REGCM_grid'
+make[5]: Entering directory '/orfeo/cephfs/home/external/ctica/MS_thesis/RegCM/PreProc/CH_EMISSIONS/interpolation/tools'
+rm -rf .libs _libs
+rm -f *.lo
+test -z "" || rm -f 
+test . = "." || test -z "" || rm -f 
+rm -f TAGS ID GTAGS GRTAGS GSYMS GPATH tags
+make[5]: Leaving directory '/orfeo/cephfs/home/external/ctica/MS_thesis/RegCM/PreProc/CH_EMISSIONS/interpolation/tools'
+rm -f Makefile
+make[4]: Leaving directory '/orfeo/cephfs/home/external/ctica/MS_thesis/RegCM/PreProc/CH_EMISSIONS/interpolation/tools'
+make[4]: Entering directory '/orfeo/cephfs/home/external/ctica/MS_thesis/RegCM/PreProc/CH_EMISSIONS/interpolation'
+rm -rf .libs _libs
+rm -f *.lo
+test -z "" || rm -f 
+test . = "." || test -z "" || rm -f 
+rm -f TAGS ID GTAGS GRTAGS GSYMS GPATH tags
+make[4]: Leaving directory '/orfeo/cephfs/home/external/ctica/MS_thesis/RegCM/PreProc/CH_EMISSIONS/interpolation'
+rm -f Makefile
+make[3]: Leaving directory '/orfeo/cephfs/home/external/ctica/MS_thesis/RegCM/PreProc/CH_EMISSIONS/interpolation'
+make[3]: Entering directory '/orfeo/cephfs/home/external/ctica/MS_thesis/RegCM/PreProc/CH_EMISSIONS'
+rm -rf .libs _libs
+rm -f *.lo
+test -z "" || rm -f 
+test . = "." || test -z "" || rm -f 
+rm -f TAGS ID GTAGS GRTAGS GSYMS GPATH tags
+make[3]: Leaving directory '/orfeo/cephfs/home/external/ctica/MS_thesis/RegCM/PreProc/CH_EMISSIONS'
+rm -f Makefile
+make[2]: Leaving directory '/orfeo/cephfs/home/external/ctica/MS_thesis/RegCM/PreProc/CH_EMISSIONS'
+make[2]: Entering directory '/orfeo/cephfs/home/external/ctica/MS_thesis/RegCM/PreProc'
+rm -rf .libs _libs
+rm -f *.lo
+test -z "" || rm -f 
+test . = "." || test -z "" || rm -f 
+rm -f TAGS ID GTAGS GRTAGS GSYMS GPATH tags
+make[2]: Leaving directory '/orfeo/cephfs/home/external/ctica/MS_thesis/RegCM/PreProc'
+rm -f Makefile
+make[1]: Leaving directory '/orfeo/cephfs/home/external/ctica/MS_thesis/RegCM/PreProc'
+Making distclean in Main
+make[1]: Entering directory '/orfeo/cephfs/home/external/ctica/MS_thesis/RegCM/Main'
+Making distclean in mpplib
+make[2]: Entering directory '/orfeo/cephfs/home/external/ctica/MS_thesis/RegCM/Main/mpplib'
+rm -rf .libs _libs
+rm -f *.mod *__genmod.* *opt.yaml *optrpt
+test -z "libmpp.a" || rm -f libmpp.a
+rm -f *.o
+rm -f *.lo
+rm -f *.tab.c
+test -z "" || rm -f 
+test . = "." || test -z "" || rm -f 
+rm -f *.mod *__genmod.* *opt.yaml *optrpt
+rm -f TAGS ID GTAGS GRTAGS GSYMS GPATH tags
+rm -f Makefile
+make[2]: Leaving directory '/orfeo/cephfs/home/external/ctica/MS_thesis/RegCM/Main/mpplib'
+Making distclean in netlib
+make[2]: Entering directory '/orfeo/cephfs/home/external/ctica/MS_thesis/RegCM/Main/netlib'
+rm -rf .libs _libs
+rm -f *.mod *__genmod.* *opt.yaml *optrpt
+test -z "libnetlib.a" || rm -f libnetlib.a
+rm -f *.o
+rm -f *.lo
+rm -f *.tab.c
+test -z "" || rm -f 
+test . = "." || test -z "" || rm -f 
+rm -f *.mod *__genmod.* *opt.yaml *optrpt
+rm -f TAGS ID GTAGS GRTAGS GSYMS GPATH tags
+rm -f Makefile
+make[2]: Leaving directory '/orfeo/cephfs/home/external/ctica/MS_thesis/RegCM/Main/netlib'
+Making distclean in batslib
+make[2]: Entering directory '/orfeo/cephfs/home/external/ctica/MS_thesis/RegCM/Main/batslib'
+rm -rf .libs _libs
+rm -f *.mod *__genmod.* *opt.yaml *optrpt
+test -z "libbats.a" || rm -f libbats.a
+rm -f *.o
+rm -f *.lo
+rm -f *.tab.c
+test -z "" || rm -f 
+test . = "." || test -z "" || rm -f 
+rm -f *.mod *__genmod.* *opt.yaml *optrpt
+rm -f TAGS ID GTAGS GRTAGS GSYMS GPATH tags
+rm -f Makefile
+make[2]: Leaving directory '/orfeo/cephfs/home/external/ctica/MS_thesis/RegCM/Main/batslib'
+Making distclean in ocnlib
+make[2]: Entering directory '/orfeo/cephfs/home/external/ctica/MS_thesis/RegCM/Main/ocnlib'
+rm -rf .libs _libs
+rm -f *.mod *__genmod.* *opt.yaml *optrpt
+test -z "libocn.a" || rm -f libocn.a
+rm -f *.o
+rm -f *.lo
+rm -f *.tab.c
+test -z "" || rm -f 
+test . = "." || test -z "" || rm -f 
+rm -f *.mod *__genmod.* *opt.yaml *optrpt
+rm -f TAGS ID GTAGS GRTAGS GSYMS GPATH tags
+rm -f Makefile
+make[2]: Leaving directory '/orfeo/cephfs/home/external/ctica/MS_thesis/RegCM/Main/ocnlib'
+Making distclean in chemlib
+make[2]: Entering directory '/orfeo/cephfs/home/external/ctica/MS_thesis/RegCM/Main/chemlib'
+Making distclean in GAS_CBMZ_NEW
+make[3]: Entering directory '/orfeo/cephfs/home/external/ctica/MS_thesis/RegCM/Main/chemlib/GAS_CBMZ_NEW'
+rm -rf .libs _libs
+rm -f *.mod *__genmod.* *opt.yaml *optrpt
+test -z "libcbmz.a" || rm -f libcbmz.a
+rm -f *.o
+rm -f *.lo
+rm -f *.tab.c
+test -z "" || rm -f 
+test . = "." || test -z "" || rm -f 
+rm -f *.mod *__genmod.* *opt.yaml *optrpt
+rm -f TAGS ID GTAGS GRTAGS GSYMS GPATH tags
+rm -f Makefile
+make[3]: Leaving directory '/orfeo/cephfs/home/external/ctica/MS_thesis/RegCM/Main/chemlib/GAS_CBMZ_NEW'
+make[3]: Entering directory '/orfeo/cephfs/home/external/ctica/MS_thesis/RegCM/Main/chemlib'
+rm -rf .libs _libs
+rm -f *.mod *__genmod.* *opt.yaml *optrpt
+test -z "libchem.a" || rm -f libchem.a
+rm -f *.o
+rm -f *.lo
+rm -f *.tab.c
+test -z "" || rm -f 
+test . = "." || test -z "" || rm -f 
+rm -f *.mod *__genmod.* *opt.yaml *optrpt
+rm -f TAGS ID GTAGS GRTAGS GSYMS GPATH tags
+make[3]: Leaving directory '/orfeo/cephfs/home/external/ctica/MS_thesis/RegCM/Main/chemlib'
+rm -f Makefile
+make[2]: Leaving directory '/orfeo/cephfs/home/external/ctica/MS_thesis/RegCM/Main/chemlib'
+Making distclean in clmlib
+make[2]: Entering directory '/orfeo/cephfs/home/external/ctica/MS_thesis/RegCM/Main/clmlib'
+Making distclean in clm4.5
+make[3]: Entering directory '/orfeo/cephfs/home/external/ctica/MS_thesis/RegCM/Main/clmlib/clm4.5'
+rm -rf .libs _libs
+rm -f *.mod *__genmod.* *opt.yaml *optrpt
+test -z "libclm45.a" || rm -f libclm45.a
+rm -f *.o
+rm -f *.lo
+rm -f *.tab.c
+test -z "" || rm -f 
+test . = "." || test -z "" || rm -f 
+rm -f *.mod *__genmod.* *opt.yaml *optrpt
+rm -f TAGS ID GTAGS GRTAGS GSYMS GPATH tags
+rm -f Makefile
+make[3]: Leaving directory '/orfeo/cephfs/home/external/ctica/MS_thesis/RegCM/Main/clmlib/clm4.5'
+make[3]: Entering directory '/orfeo/cephfs/home/external/ctica/MS_thesis/RegCM/Main/clmlib'
+rm -rf .libs _libs
+rm -f *.mod *__genmod.* *opt.yaml *optrpt
+test -z "libclm.a" || rm -f libclm.a
+rm -f *.o
+rm -f *.lo
+rm -f *.tab.c
+test -z "" || rm -f 
+test . = "." || test -z "" || rm -f 
+rm -f *.mod *__genmod.* *opt.yaml *optrpt
+rm -f TAGS ID GTAGS GRTAGS GSYMS GPATH tags
+make[3]: Leaving directory '/orfeo/cephfs/home/external/ctica/MS_thesis/RegCM/Main/clmlib'
+rm -f ./.deps/f_wrappers.Po
+rm -f ./.deps/get_zeits.Po
+rm -f ./.deps/gptl.Po
+rm -f ./.deps/gptl_papi.Po
+rm -f ./.deps/gptlutil.Po
+rm -f ./.deps/shr_jlcp.Po
+rm -f ./.deps/shr_vmath_fwrap.Po
+rm -f ./.deps/threadutil.Po
+rm -f Makefile
+make[2]: Leaving directory '/orfeo/cephfs/home/external/ctica/MS_thesis/RegCM/Main/clmlib'
+Making distclean in microlib
+make[2]: Entering directory '/orfeo/cephfs/home/external/ctica/MS_thesis/RegCM/Main/microlib'
+rm -rf .libs _libs
+rm -f *.mod *__genmod.* *opt.yaml *optrpt
+test -z "libmicro.a" || rm -f libmicro.a
+rm -f *.o
+rm -f *.lo
+rm -f *.tab.c
+test -z "" || rm -f 
+test . = "." || test -z "" || rm -f 
+rm -f *.mod *__genmod.* *opt.yaml *optrpt
+rm -f TAGS ID GTAGS GRTAGS GSYMS GPATH tags
+rm -f Makefile
+make[2]: Leaving directory '/orfeo/cephfs/home/external/ctica/MS_thesis/RegCM/Main/microlib'
+Making distclean in cloudlib
+make[2]: Entering directory '/orfeo/cephfs/home/external/ctica/MS_thesis/RegCM/Main/cloudlib'
+rm -rf .libs _libs
+rm -f *.mod *__genmod.* *opt.yaml *optrpt
+test -z "libcloud.a" || rm -f libcloud.a
+rm -f *.o
+rm -f *.lo
+rm -f *.tab.c
+test -z "" || rm -f 
+test . = "." || test -z "" || rm -f 
+rm -f *.mod *__genmod.* *opt.yaml *optrpt
+rm -f TAGS ID GTAGS GRTAGS GSYMS GPATH tags
+rm -f Makefile
+make[2]: Leaving directory '/orfeo/cephfs/home/external/ctica/MS_thesis/RegCM/Main/cloudlib'
+Making distclean in cumlib
+make[2]: Entering directory '/orfeo/cephfs/home/external/ctica/MS_thesis/RegCM/Main/cumlib'
+rm -rf .libs _libs
+rm -f *.mod *__genmod.* *opt.yaml *optrpt
+test -z "libcum.a" || rm -f libcum.a
+rm -f *.o
+rm -f *.lo
+rm -f *.tab.c
+test -z "" || rm -f 
+test . = "." || test -z "" || rm -f 
+rm -f *.mod *__genmod.* *opt.yaml *optrpt
+rm -f TAGS ID GTAGS GRTAGS GSYMS GPATH tags
+rm -f Makefile
+make[2]: Leaving directory '/orfeo/cephfs/home/external/ctica/MS_thesis/RegCM/Main/cumlib'
+Making distclean in radlib
+make[2]: Entering directory '/orfeo/cephfs/home/external/ctica/MS_thesis/RegCM/Main/radlib'
+Making distclean in RRTMG
+make[3]: Entering directory '/orfeo/cephfs/home/external/ctica/MS_thesis/RegCM/Main/radlib/RRTMG'
+rm -rf .libs _libs
+rm -f *.mod *__genmod.* *opt.yaml *optrpt
+test -z "librrtmg.a" || rm -f librrtmg.a
+rm -f *.o
+rm -f *.lo
+rm -f *.tab.c
+test -z "" || rm -f 
+test . = "." || test -z "" || rm -f 
+rm -f *.mod *__genmod.* *opt.yaml *optrpt
+rm -f TAGS ID GTAGS GRTAGS GSYMS GPATH tags
+rm -f Makefile
+make[3]: Leaving directory '/orfeo/cephfs/home/external/ctica/MS_thesis/RegCM/Main/radlib/RRTMG'
+make[3]: Entering directory '/orfeo/cephfs/home/external/ctica/MS_thesis/RegCM/Main/radlib'
+rm -rf .libs _libs
+rm -f *.mod *__genmod.* *opt.yaml *optrpt
+test -z "librad.a" || rm -f librad.a
+rm -f *.o
+rm -f *.lo
+rm -f *.tab.c
+test -z "" || rm -f 
+test . = "." || test -z "" || rm -f 
+rm -f *.mod *__genmod.* *opt.yaml *optrpt
+rm -f TAGS ID GTAGS GRTAGS GSYMS GPATH tags
+make[3]: Leaving directory '/orfeo/cephfs/home/external/ctica/MS_thesis/RegCM/Main/radlib'
+rm -f Makefile
+make[2]: Leaving directory '/orfeo/cephfs/home/external/ctica/MS_thesis/RegCM/Main/radlib'
+Making distclean in pbllib
+make[2]: Entering directory '/orfeo/cephfs/home/external/ctica/MS_thesis/RegCM/Main/pbllib'
+rm -rf .libs _libs
+rm -f *.mod *__genmod.* *opt.yaml *optrpt
+test -z "libpbl.a" || rm -f libpbl.a
+rm -f *.o
+rm -f *.lo
+rm -f *.tab.c
+test -z "" || rm -f 
+test . = "." || test -z "" || rm -f 
+rm -f *.mod *__genmod.* *opt.yaml *optrpt
+rm -f TAGS ID GTAGS GRTAGS GSYMS GPATH tags
+rm -f Makefile
+make[2]: Leaving directory '/orfeo/cephfs/home/external/ctica/MS_thesis/RegCM/Main/pbllib'
+Making distclean in oasislib
+make[2]: Entering directory '/orfeo/cephfs/home/external/ctica/MS_thesis/RegCM/Main/oasislib'
+rm -rf .libs _libs
+rm -f *.mod *__genmod.* *opt.yaml *optrpt
+test -z "liboasis.a" || rm -f liboasis.a
+rm -f *.o
+rm -f *.lo
+rm -f *.tab.c
+test -z "" || rm -f 
+test . = "." || test -z "" || rm -f 
+rm -f *.mod *__genmod.* *opt.yaml *optrpt
+rm -f TAGS ID GTAGS GRTAGS GSYMS GPATH tags
+rm -f Makefile
+make[2]: Leaving directory '/orfeo/cephfs/home/external/ctica/MS_thesis/RegCM/Main/oasislib'
+make[2]: Entering directory '/orfeo/cephfs/home/external/ctica/MS_thesis/RegCM/Main'
+ rm -f regcm clmsa
+rm -rf .libs _libs
+rm -f *.mod *__genmod.* *opt.yaml *optrpt
+rm -f *.o
+rm -f *.lo
+rm -f *.tab.c
+test -z "" || rm -f 
+test . = "." || test -z "" || rm -f 
+rm -f *.mod *__genmod.* *opt.yaml *optrpt
+rm -f TAGS ID GTAGS GRTAGS GSYMS GPATH tags
+make[2]: Leaving directory '/orfeo/cephfs/home/external/ctica/MS_thesis/RegCM/Main'
+rm -f Makefile
+make[1]: Leaving directory '/orfeo/cephfs/home/external/ctica/MS_thesis/RegCM/Main'
+Making distclean in PostProc
+make[1]: Entering directory '/orfeo/cephfs/home/external/ctica/MS_thesis/RegCM/PostProc'
+ rm -f sigma2p sigma2z GrADSNcPlot GrADSNcPrepare clm45_1dto2d
+rm -rf .libs _libs
+rm -f *.mod *__genmod.* *opt.yaml *optrpt
+rm -f *.o
+rm -f *.lo
+rm -f *.tab.c
+test -z "" || rm -f 
+test . = "." || test -z "" || rm -f 
+rm -f *.mod *__genmod.* *opt.yaml *optrpt
+rm -f TAGS ID GTAGS GRTAGS GSYMS GPATH tags
+rm -f Makefile
+make[1]: Leaving directory '/orfeo/cephfs/home/external/ctica/MS_thesis/RegCM/PostProc'
+make[1]: Entering directory '/orfeo/cephfs/home/external/ctica/MS_thesis/RegCM'
+rm -rf .libs _libs
+rm -f *.lo
+test -z "" || rm -f 
+test . = "." || test -z "" || rm -f 
+rm -f config.h stamp-h1
+rm -f libtool config.lt
+rm -f TAGS ID GTAGS GRTAGS GSYMS GPATH tags
+rm -f cscope.out cscope.in.out cscope.po.out cscope.files
+make[1]: Leaving directory '/orfeo/cephfs/home/external/ctica/MS_thesis/RegCM'
+rm -f config.status config.cache config.log configure.lineno config.status.lineno
+rm -f Makefile
+checking for a BSD-compatible install... /usr/bin/install -c
+checking whether build environment is sane... yes
+checking for a race-free mkdir -p... /usr/bin/mkdir -p
+checking for gawk... gawk
+checking whether make sets $(MAKE)... yes
+checking whether make supports nested variables... yes
+checking whether make supports the include directive... yes (GNU style)
+checking for gcc... nvc
+checking whether the C compiler works... no

@@ -1,0 +1,4 @@
+configure: error: in '/orfeo/cephfs/home/external/ctica/MS_thesis/RegCM':
+configure: error: C compiler cannot create executables
+See 'config.log' for more details
+make: *** No rule to make target 'install'.  Stop.

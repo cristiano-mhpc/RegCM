@@ -1,2 +1,0 @@
-slurmstepd: error: Detected 1 oom-kill event(s) in StepId=16925777.0. Some of your processes may have been killed by the cgroup out-of-memory handler.
-srun: error: lrdn3370: task 0: Out Of Memory

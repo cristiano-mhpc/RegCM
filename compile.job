@@ -1,0 +1,23 @@
+#!/bin/bash 
+
+#SBATCH --account=external
+#SBATCH --out=./compilation/open_acc_w_do_con/LOG_%x_%j.out
+#SBATCH --err=./compilation/open_acc_w_do_con/LOG_%x_%j.err
+#SBATCH --job-name compile_stdpar
+#SBATCH --ntasks-per-node=1
+#SBATCH --partition=H100
+#SBATCH --nodes=1
+#SBATCH --mem=20G
+#SBATCH --time=01:00:00 
+
+source ~/sw/orfeo-h100/env/regcm_h100.sh
+
+make distclean 
+
+./configure --enable-clm45 --enable-openacc-stdpar
+
+make -j 8 LDFLAGS="$LDFLAGS $CUDA_NVTX_LIBS"
+
+make install 
+
+

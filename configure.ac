@@ -137,7 +137,7 @@ fi
 
 USE_OPENACC="0"
 # TODO: make this configurable
-PGI_GPU_ARCH="ccall-major"
+PGI_GPU_ARCH="cc90"
 
 AC_ARG_ENABLE(openacc,
   AC_HELP_STRING([--enable-openacc],
@@ -169,36 +169,13 @@ if eval "test x"$USE_OPENACC" = x3"; then
   AC_SUBST(AM_CPPFLAGS)
 fi
 
-
 AC_ARG_ENABLE(openacc-stdpar,
   AC_HELP_STRING([--enable-openacc-stdpar],
                  [Compile OpenACC directives with stdpar (only for PGI fortran compilation)]),
                  [USE_OPENACC="4"]
 )
 if eval "test x"$USE_OPENACC" = x4"; then
-  AM_CPPFLAGS="\$(DEFINE)OPENACC \$(DEFINE)GPU $AM_CPPFLAGS -DSTDPAR"
-  AC_SUBST(AM_CPPFLAGS)
-fi
-
-
-AC_ARG_ENABLE(openacc-multicore,
-  AC_HELP_STRING([--enable-openacc-multicore],
-                 [Compile with multicore CPU target]),
-                 [USE_OPENACC="5"]
-)
-if eval "test x"$USE_OPENACC" = x5"; then
-  AM_CPPFLAGS="\$(DEFINE)OPENACC  \$(DEFINE)MULTICORE $AM_CPPFLAGS"
-  AC_SUBST(AM_CPPFLAGS)
-fi
-
-
-AC_ARG_ENABLE(openacc-host,
-  AC_HELP_STRING([--enable-openacc-host],
-                 [Compile for CPU target in serial mode]),
-                 [USE_OPENACC="6"]
-)
-if eval "test x"$USE_OPENACC" = x6"; then
-  AM_CPPFLAGS="\$(DEFINE)OPENACC $\$(DEFINE)HOST CAM_CPPFLAGS"
+  AM_CPPFLAGS="\$(DEFINE)OPENACC $AM_CPPFLAGS -DSTDPAR"
   AC_SUBST(AM_CPPFLAGS)
 fi
 
@@ -558,10 +535,10 @@ if test -z "$COMPILER_INTEL_LLVM_TRUE"; then
   if eval "test x$DEBUG = x1"; then
     OMPFLAGS=""
   else
-    OMPFLAGS="-qopenmp -qopt-report"
+    OMPFLAGS="-qopenmp"
   fi
   FCFLAGS="$FCFLAGS -convert big_endian -assume byterecl \
-           -heap-arrays -fPIC $OMPFLAGS"
+           -heap-arrays -qopt-report -fPIC"
   CPRDEF="INTEL"
   AC_SUBST(FCFLAGS)
   AC_SUBST(OMPFLAGS)
@@ -665,8 +642,7 @@ if eval "test x$DEBUG = x1"; then
   fi
   if test -z "$COMPILER_GNU_TRUE"; then
     if test -z "${osname##Linux}"; then
-      # FCFLAGS="-O0 -g -pg -fbacktrace \
-       FCFLAGS="-O0 -g -fbacktrace \
+      FCFLAGS="-O0 -g -pg -fbacktrace \
             -fdump-core -Wall -pedantic -Wconversion -Wsurprising -Waliasing \
             -Wampersand -Warray-bounds -Wcharacter-truncation -Wuninitialized \
             -Wline-truncation -Wintrinsics-std -Wno-tabs -Wunderflow \
@@ -739,8 +715,7 @@ else
       FCFLAGS="-O3 -finline-functions -mtune=native -ftree-vectorize \
                -march=native $FCFLAGS" # -ftree-parallelize-loops=2"
       if eval "test x"$USE_PROF" = x1"; then
-        # FCFLAGS="-g -pg $FCFLAGS"
-        FCFLAGS="-g $FCFLAGS"
+        FCFLAGS="-g -pg $FCFLAGS"
       fi
     else
       # MacOSX may choke on using AVX extensions...
@@ -795,52 +770,8 @@ else
     AC_SUBST(NOOPTFC)
   fi
   if test -z "$COMPILER_PGI_TRUE"; then
-    # NOOPTFC="-O1 $FCFLAGS -g -pg"
-    NOOPTFC="-O1 $FCFLAGS -g"
-    # FCFLAGS="-O3 -fast -fastsse $FCFLAGS -g -pg"
-    FCFLAGS="-O3 -fast -fastsse $FCFLAGS -g"
-    if eval "test x"$USE_OPENACC" = x1"; then
-      FCFLAGS="$FCFLAGS -acc=gpu -gpu=$PGI_GPU_ARCH,lineinfo -Minfo=accel"
-      NOOPTFC="$NOOPTFC -acc=gpu -gpu=$PGI_GPU_ARCH,lineinfo -Minfo=accel"
-      LDFLAGS="$LDFLAGS -traceback -cudalib=nvtx,cusparse"
-    fi
-    if eval "test x"$USE_OPENACC" = x2"; then
-      FCFLAGS="$NOOPTFC -acc=gpu \
-          -gpu="${PGI_GPU_ARCH}",autocompare -Minfo=accel"
-      NOOPTFC="$NOOPTFC -acc=gpu \
-          -gpu="${PGI_GPU_ARCH}",autocompare -Minfo=accel"
-      LDFLAGS="$LDFLAGS -traceback -cudalib=nvtx,cusparse"
-    fi
-    if eval "test x"$USE_OPENACC" = x3"; then
-      FCFLAGS="$FCFLAGS -acc=gpu \
-          -gpu=$PGI_GPU_ARCH,lineinfo,managed -Minfo=accel"
-      NOOPTFC="$NOOPTFC -acc=gpu \
-          -gpu=$PGI_GPU_ARCH,lineinfo,mem:managed -Minfo=accel"
-      LDFLAGS="$LDFLAGS -traceback -cudalib=nvtx,cusparse"
-    fi
-    if eval "test x"$USE_OPENACC" = x4"; then
-      FCFLAGS="$FCFLAGS -stdpar=gpu \
-          -gpu=$PGI_GPU_ARCH,lineinfo,mem:managed -Minfo=accel"
-      NOOPTFC="$NOOPTFC -stdpar=gpu \
-          -gpu=$PGI_GPU_ARCH,lineinfo,mem:managed -Minfo=accel"
-      LDFLAGS="$LDFLAGS -traceback -cudalib=nvtx,cusparse"
-    fi
-    if eval "test x"$USE_OPENACC" = x5"; then
-      FCFLAGS="$FCFLAGS -stdpar=multicore \
-          -Minfo=accel"
-      NOOPTFC="$NOOPTFC -stdpar=multicore \
-          -Minfo=accel"
-      LDFLAGS="$LDFLAGS -traceback -cudalib=nvtx"
-    fi
-    if eval "test x"$USE_OPENACC" = x6"; then
-      FCFLAGS="$FCFLAGS -stdpar=host \
-          -Minfo=accel"
-      NOOPTFC="$NOOPTFC -stdpar=host \
-          -Minfo=accel"
-      LDFLAGS="$LDFLAGS -traceback -cudalib=nvtx"
-    fi
-    AC_SUBST(FCFLAGS)
-    AC_SUBST(FCFLAGS)
+    NOOPTFC="-O1 $FCFLAGS"
+    FCFLAGS="-O3 -fast -fastsse $FCFLAGS"
     AC_SUBST(FCFLAGS)
     AC_SUBST(NOOPTFC)
   fi
@@ -851,6 +782,38 @@ else
     CPRDEF="GNU"
     AC_SUBST(NOOPTFC)
   fi
+fi
+
+if test -z "$COMPILER_PGI_TRUE"; then
+  if eval "test x"$USE_OPENACC" = x1"; then
+    FCFLAGS="$FCFLAGS -acc=gpu -gpu=$PGI_GPU_ARCH,lineinfo -Minfo=accel"
+    NOOPTFC="$NOOPTFC -acc=gpu -gpu=$PGI_GPU_ARCH,lineinfo -Minfo=accel"
+    LDFLAGS="$LDFLAGS -traceback -cudalib=nvtx,cusparse"
+  fi
+  if eval "test x"$USE_OPENACC" = x2"; then
+    FCFLAGS="$NOOPTFC -acc=gpu \
+        -gpu="${PGI_GPU_ARCH}",autocompare -Minfo=accel"
+    NOOPTFC="$NOOPTFC -acc=gpu \
+        -gpu="${PGI_GPU_ARCH}",autocompare -Minfo=accel"
+    LDFLAGS="$LDFLAGS -traceback -cudalib=nvtx,cusparse"
+  fi
+  if eval "test x"$USE_OPENACC" = x3"; then
+    FCFLAGS="$FCFLAGS -acc=gpu \
+        -gpu=$PGI_GPU_ARCH,lineinfo,mem:managed -Minfo=accel"
+    NOOPTFC="$NOOPTFC -acc=gpu \
+        -gpu=$PGI_GPU_ARCH,lineinfo,mem:managed -Minfo=accel"
+    LDFLAGS="$LDFLAGS -traceback -cudalib=nvtx,cusparse"
+  fi
+  if eval "test x"$USE_OPENACC" = x4"; then
+    FCFLAGS="$FCFLAGS -stdpar=gpu \
+        -gpu=$PGI_GPU_ARCH,lineinfo,mem:managed -Minfo=accel"
+    NOOPTFC="$NOOPTFC -stdpar=gpu \
+        -gpu=$PGI_GPU_ARCH,lineinfo,mem:managed -Minfo=accel"
+    LDFLAGS="$LDFLAGS -traceback -cudalib=nvtx,cusparse"
+  fi
+  AC_SUBST(FCFLAGS)
+  AC_SUBST(NOOPTFC)
+  AC_SUBST(LDFLAGS)
 fi
 
 RR_PATH_NETCDF

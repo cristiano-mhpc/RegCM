@@ -1,0 +1,22 @@
+#!/bin/bash 
+
+#SBATCH --account=external
+#SBATCH --out=./production/interp_offload/LOG_%x_%j.out
+#SBATCH --err=./production/interp_offload/LOG_%x_%j.err
+#SBATCH --job-name stdpar_16gpu_16task
+#SBATCH --ntasks-per-node=8
+#SBATCH --partition=DGX
+#SBATCH --nodes=2
+#SBATCH --mem=0G
+#SBATCH --gres=gpu:A100:8
+#SBATCH --cpus-per-task=1                       # Number of CPU cores per task. Needed for CPU binding 
+#SBATCH --distribution=block:block              # Distribute tasks in blocks across nodes
+#SBATCH --signal=USR1@300                       # Send USR1 signal 5 minutes before time limit is reached  
+#SBATCH --time=02:00:00
+
+source ~/sw/orfeo-h100/env/regcm_h100.sh
+
+# Launch
+# srun ./STD_launch_per_rank.sh
+
+mpirun --bind-to none --map-by slot -np 8 ./STD_launch_per_rank.sh

@@ -1,0 +1,8 @@
+[Wrapper][Rank 00][Local 00] on dgx003.hpc.rd.areasciencepark.it: CUDA_VISIBLE_DEVICES=0 ACC_DEVICE_NUM=0
+[Wrapper][Rank 01][Local 01] on dgx003.hpc.rd.areasciencepark.it: CUDA_VISIBLE_DEVICES=1 ACC_DEVICE_NUM=0
+[Wrapper][Rank 02][Local 02] on dgx003.hpc.rd.areasciencepark.it: CUDA_VISIBLE_DEVICES=2 ACC_DEVICE_NUM=0
+[Wrapper][Rank 04][Local 04] on dgx003.hpc.rd.areasciencepark.it: CUDA_VISIBLE_DEVICES=4 ACC_DEVICE_NUM=0
+[Wrapper][Rank 05][Local 05] on dgx003.hpc.rd.areasciencepark.it: CUDA_VISIBLE_DEVICES=5 ACC_DEVICE_NUM=0
+[Wrapper][Rank 03][Local 03] on dgx003.hpc.rd.areasciencepark.it: CUDA_VISIBLE_DEVICES=3 ACC_DEVICE_NUM=0
+[Wrapper][Rank 06][Local 06] on dgx003.hpc.rd.areasciencepark.it: CUDA_VISIBLE_DEVICES=6 ACC_DEVICE_NUM=0
+[Wrapper][Rank 07][Local 07] on dgx003.hpc.rd.areasciencepark.it: CUDA_VISIBLE_DEVICES=7 ACC_DEVICE_NUM=0

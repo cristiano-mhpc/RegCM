@@ -1,4 +1,4 @@
-This is the profiling branch of the RegCM
+This is the profiling branch of the RegCM on the ORFEO HPC cluster. 
 =========================================
 
-This feauture branch of RegCM includes offloading of the `getcape` subroutine using a combination of `OpenACC` and `do concurrent`. 
+This feauture branch of RegCM includes offloading of the `getcape` subroutine using a combination of `OpenACC` and `do concurrent`.  
