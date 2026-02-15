@@ -1,0 +1,13 @@
+Failing in Thread:1
+Accelerator Fatal Error: call to cuMemcpyHtoDAsync returned error 1 (CUDA_ERROR_INVALID_VALUE): Invalid value
+ File: /leonardo/home/userexternal/ctica000/MS_thesis/ICTP_Regcm/RegCM/Main/clmlib/clm4.5/mod_clm_slaketemperature.F90
+ Function: soilthermprop_lake:1201
+ Line: 1349
+
+srun: error: lrdn0701: task 1: Exited with exit code 1
+slurmstepd: error:  mpi/pmix_v3: _errhandler: lrdn0701 [0]: pmixp_client_v2.c:212: Error handler invoked: status = -25, source = [slurm.pmix.34103755.0:1]
+slurmstepd: error: *** STEP 34103755.0 ON lrdn0701 CANCELLED AT 2026-02-14T01:53:38 ***
+srun: Job step aborted: Waiting up to 182 seconds for job step to finish.
+srun: error: lrdn0701: task 3: Killed
+srun: error: lrdn0701: task 2: Killed
+srun: error: lrdn0701: task 0: Killed
