@@ -19,19 +19,10 @@
 
 &terrainparam
     domname = 'EURR-3'
-    smthbdy = .false.
-    lakedpth = .false.
-    lsmoist = .false.
-    fudge_lnd = .false.
-    fudge_lnd_s = .false.
-    fudge_tex = .false.
-    fudge_tex_s = .false.
-    fudge_lak = .false.
-    fudge_lak_s = .false.
     h2opct = 50.0
     h2ohgt = .false.
     dirter = 'input'
-    inpter = '/leonardo_work/ICT25_ESP/RCMDATA'
+    inpter = '/orfeo/cephfs/home/ictp/ggiuliani/EURR3/RCMDATA'
 /
 
 &boundaryparam
@@ -50,18 +41,18 @@
     ibdyfrq = 6
     ssttyp = 'ERA5D'
     dattyp = 'ERA5'
-    gdate1 = 2009090100
-    gdate2 = 2009110100
+    gdate1 = 2009090100,
+    gdate2 = 2009090800,
     calendar = 'gregorian'
     dirglob = 'input'
-    inpglob = '/leonardo_work/ICT25_ESP/RCMDATA'
+    inpglob = '/orfeo/cephfs/home/ictp/ggiuliani/EURR3/RCMDATA'
 /
 
 &restartparam
     ifrest = .false.
-    mdate0 = 2009100100
-    mdate1 = 2009100100
-    mdate2 = 2009100800
+    mdate0 = 2009090100,
+    mdate1 = 2009090100,
+    mdate2 = 2009090800,
 /
 
 &timeparam
@@ -75,13 +66,13 @@
     ifsave = .true.
     savfrq = 0.0
     ifatm = .true.
-    atmfrq = 24.0! set to 24.0
+    atmfrq = 24.0
     ifrad = .true.
-    radfrq = 24.0! set to 24.0
+    radfrq = 24.0
     ifsts = .true.
     ifshf = .true.
     ifsrf = .true.
-    srffrq = 24.0 !set this to 24.0
+    srffrq = 1.0
     ifsub = .true.
     subfrq = 1.0
     iflak = .true.
@@ -108,12 +99,11 @@
     scenario = 'SSP585'
     idcsst = 0
     iseaice = 1
-    iconvlwp = 1
     icldfrac = 0
     iclimao3 = 1
     isolconst = 0
     iclimaaer = 2
-    radclimpath = '/leonardo_work/ICT25_ESP/RCMDATA/MERRA2/OPPMONTH'
+    radclimpath = '/orfeo/cephfs/home/ictp/ggiuliani/EURR3/RCMDATA/MERRA2/OPPMONTH'
 /
 
 &clm_inparm

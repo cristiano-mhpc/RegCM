@@ -1,0 +1,4 @@
+[Wrapper][Rank 00][Local 00] on dgx004.hpc.rd.areasciencepark.it: CUDA_VISIBLE_DEVICES=0 ACC_DEVICE_NUM=0
+[Wrapper][Rank 01][Local 01] on dgx004.hpc.rd.areasciencepark.it: CUDA_VISIBLE_DEVICES=1 ACC_DEVICE_NUM=0
+[Wrapper][Rank 03][Local 03] on dgx004.hpc.rd.areasciencepark.it: CUDA_VISIBLE_DEVICES=3 ACC_DEVICE_NUM=0
+[Wrapper][Rank 02][Local 02] on dgx004.hpc.rd.areasciencepark.it: CUDA_VISIBLE_DEVICES=2 ACC_DEVICE_NUM=0

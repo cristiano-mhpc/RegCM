@@ -1,30 +1,27 @@
 #!/bin/bash 
 
-#SBATCH --account=ICT25_ESP_0
-#SBATCH --out=./production/interp_offload/LOG_%x_%j.out
-#SBATCH --err=./production/interp_offload/LOG_%x_%j.err
-#SBATCH --job-name stdpar_16gpu_16task
-#SBATCH --ntasks-per-node=4
-#SBATCH --partition=boost_usr_prod
-#SBATCH --nodes=4
-#SBATCH --mem=0G
-#SBATCH --gres=tmpfs:100g
-#SBATCH --gres=gpu:4
-
+#SBATCH --account=external
+#SBATCH --out=./production/heatindex_offload/LOG_%x_%j.out
+#SBATCH --err=./production/heatindex_offload/LOG_%x_%j.err
+#SBATCH --job-name 7d_16gpu_16task
+#SBATCH --ntasks-per-node=8
+#SBATCH --partition=H100
+#SBATCH --nodes=2
+#SBATCH --exclusive 
+#SBATCH --gres=gpu:H100:8
 #SBATCH --cpus-per-task=1                       # Number of CPU cores per task. Needed for CPU binding 
 #SBATCH --distribution=block:block              # Distribute tasks in blocks across nodes
+#SBATCH --time=03:30:00
 
-#SBATCH --signal=USR1@300                       # Send USR1 signal 5 minutes before time limit is reached  
-#SBATCH --time=04:00:00
+# export BINDIR=/u/external/ctica/MS_thesis/RegCM/bin
 
-# Topology-aware placement (keep nodes under a single leaf switch if possible)
-##SBATCH --switches=1@7-00:00:00                 # wait up to 7days for compact placement
-
-# #SBATCH --nodelist=lrdn[0909-0912,0917-0920,0929-0930] # All in L1 switches: isw10104
-
-source /leonardo/home/userexternal/ctica000/MS_thesis/RegCM/modules_cuda  
+# load the environment 
+source ~/sw/orfeo-h100/env/regcm_h100.sh
 
 # Launch
-srun ./STD_launch_per_rank.sh
+# mpirun -np $SLURM_NTASKS $BINDIR/regcmMPICLM45 EURR-3_namelist.in   
+
+# srun ./STD_launch_per_rank.sh
+mpirun --bind-to none --map-by slot -np $SLURM_NTASKS ./STD_launch_per_rank.sh
 
 
