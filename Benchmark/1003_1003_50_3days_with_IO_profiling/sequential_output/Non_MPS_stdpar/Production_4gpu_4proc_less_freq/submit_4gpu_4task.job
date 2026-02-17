@@ -11,7 +11,7 @@
 #SBATCH --gres=gpu:H100:4
 #SBATCH --cpus-per-task=1                       # Number of CPU cores per task. Needed for CPU binding 
 #SBATCH --distribution=block:block              # Distribute tasks in blocks across nodes
-#SBATCH --time=10:30:00
+#SBATCH --time=20:30:00
 
 # export BINDIR=/u/external/ctica/MS_thesis/RegCM/bin
 
