@@ -443,3 +443,87 @@ Loading netcdf-fortran/4.6.1--hpcx-mpi--2.19--nvhpc--24.5
  $$$  2009-10-01 18:00:00 UTC        
  $$$ max, min of ps (mb) =  1028.98  677.88
  CLM History variables written
+ SRF variables written at  2009-10-01 19:00:00 UTC        
+ RAD variables written at  2009-10-01 19:00:00 UTC        
+ CLM History variables written
+ SRF variables written at  2009-10-01 20:00:00 UTC        
+ RAD variables written at  2009-10-01 20:00:00 UTC        
+ CLM History variables written
+ SRF variables written at  2009-10-01 21:00:00 UTC        
+ RAD variables written at  2009-10-01 21:00:00 UTC        
+ $$$  2009-10-01 21:00:00 UTC        
+ $$$ max, min of ps (mb) =  1028.75  677.63
+ CLM History variables written
+ SRF variables written at  2009-10-01 22:00:00 UTC        
+ RAD variables written at  2009-10-01 22:00:00 UTC        
+ CLM History variables written
+ SRF variables written at  2009-10-01 23:00:00 UTC        
+ RAD variables written at  2009-10-01 23:00:00 UTC        
+ CLM History variables written
+ At  2009-10-02 00:00:00 UTC        
+ JDay    274.00000 solar declination angle =  -3.09798020 degrees
+                   solar TSI irradiance    =    1355.8045 W/m^2
+ ATM variables written at  2009-10-02 00:00:00 UTC        
+ SRF variables written at  2009-10-02 00:00:00 UTC        
+ STS variables written at  2009-10-02 00:00:00 UTC        
+ RAD variables written at  2009-10-02 00:00:00 UTC        
+ Opening new output file output//EURR-3_ATM.2009100200.nc
+ Opening new output file output//EURR-3_SRF.2009100200.nc
+ Opening new output file output//EURR-3_STS.2009100200.nc
+ Opening new output file output//EURR-3_RAD.2009100200.nc
+ Elapsed seconds of run for this period :     2824.277    
+ SEARCH BC data for 2009100206 , step =     1920
+ READY  BC from     2009100200  to 2009100206 
+ $$$  2009-10-02 00:00:00 UTC        
+ $$$ max, min of ps (mb) =  1028.54  677.42
+ CLM History variables written
+ SRF variables written at  2009-10-02 01:00:00 UTC        
+ RAD variables written at  2009-10-02 01:00:00 UTC        
+ CLM History variables written
+ SRF variables written at  2009-10-02 02:00:00 UTC        
+ RAD variables written at  2009-10-02 02:00:00 UTC        
+ CLM History variables written
+ SRF variables written at  2009-10-02 03:00:00 UTC        
+ RAD variables written at  2009-10-02 03:00:00 UTC        
+ $$$  2009-10-02 03:00:00 UTC        
+ $$$ max, min of ps (mb) =  1027.90  676.87
+ CLM History variables written
+ SRF variables written at  2009-10-02 04:00:00 UTC        
+ RAD variables written at  2009-10-02 04:00:00 UTC        
+ CLM History variables written
+ SRF variables written at  2009-10-02 05:00:00 UTC        
+ RAD variables written at  2009-10-02 05:00:00 UTC        
+ CLM History variables written
+ SRF variables written at  2009-10-02 06:00:00 UTC        
+ RAD variables written at  2009-10-02 06:00:00 UTC        
+ SEARCH BC data for 2009100212 , step =     2400
+ READY  BC from     2009100206  to 2009100212 
+ $$$  2009-10-02 06:00:00 UTC        
+ $$$ max, min of ps (mb) =  1027.15  676.49
+ CLM History variables written
+ SRF variables written at  2009-10-02 07:00:00 UTC        
+ RAD variables written at  2009-10-02 07:00:00 UTC        
+ CLM History variables written
+ SRF variables written at  2009-10-02 08:00:00 UTC        
+ RAD variables written at  2009-10-02 08:00:00 UTC        
+ CLM History variables written
+ SRF variables written at  2009-10-02 09:00:00 UTC        
+ RAD variables written at  2009-10-02 09:00:00 UTC        
+ $$$  2009-10-02 09:00:00 UTC        
+ $$$ max, min of ps (mb) =  1026.51  677.06
+ CLM History variables written
+ SRF variables written at  2009-10-02 10:00:00 UTC        
+ RAD variables written at  2009-10-02 10:00:00 UTC        
+ CLM History variables written
+ SRF variables written at  2009-10-02 11:00:00 UTC        
+ RAD variables written at  2009-10-02 11:00:00 UTC        
+ CLM History variables written
+ SRF variables written at  2009-10-02 12:00:00 UTC        
+ RAD variables written at  2009-10-02 12:00:00 UTC        
+ SEARCH BC data for 2009100218 , step =     2880
+ READY  BC from     2009100212  to 2009100218 
+ $$$  2009-10-02 12:00:00 UTC        
+ $$$ max, min of ps (mb) =  1025.69  677.07
+ CLM History variables written
+ SRF variables written at  2009-10-02 13:00:00 UTC        
+ RAD variables written at  2009-10-02 13:00:00 UTC   
