@@ -3,10 +3,10 @@
 #SBATCH --account=ICT25_MHPC_0
 #SBATCH --out=./production/heatindex_offload/LOG_%x_%j.out
 #SBATCH --err=./production/heatindex_offload/LOG_%x_%j.err
-#SBATCH --job-name stdpar_8gpu_8task
+#SBATCH --job-name stdpar_4gpu_4task
 #SBATCH --ntasks-per-node=4
 #SBATCH --partition=boost_usr_prod
-#SBATCH --nodes=2
+#SBATCH --nodes=1
 #SBATCH --mem=0G
 #SBATCH --gres=tmpfs:100g
 #SBATCH --gres=gpu:4
