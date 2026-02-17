@@ -1,0 +1,30 @@
+ energy balance in canopy       8212971 , err=  -0.2814065396300727     
+ energy balance in canopy       8212988 , err=  -0.2371276948729843     
+ BalanceCheck: surface flux energy balance error step =       181 point =****** imbalance =   -0.237128 W/m2
+  sabv           =     0.000000000000000     
+  column      =       2185921
+  sabg           =     0.000000000000000         0.000000000000000      
+    0.000000000000000     
+  eflx_lwrad_net =     19.41019746504827     
+  eflx_sh_tot    =    -9.052439064040176     
+  eflx_lh_tot    =     3.126081192831992     
+  eflx_soil_grnd =    -13.24671189896726     
+ -------------- FATAL CALLED ---------------
+  Fatal in file: mod_clm_balancecheck.F90 at line:      735
+ clm model is stopping
+ -------------------------------------------
+ Abort called by computing node             3 at 2026-02-17 01:55:17.267 +0100
+ Execution terminated because of runtime error
+--------------------------------------------------------------------------
+MPI_ABORT was invoked on rank 3 in communicator MPI COMMUNICATOR 3 DUP FROM 0
+with errorcode 1.
+
+NOTE: invoking MPI_ABORT causes Open MPI to kill all MPI processes.
+You may or may not see output from other processes, depending on
+exactly when Open MPI kills them.
+--------------------------------------------------------------------------
+srun: Job step aborted: Waiting up to 182 seconds for job step to finish.
+slurmstepd: error: *** STEP 34296550.0 ON lrdn0198 CANCELLED AT 2026-02-17T01:55:18 ***
+srun: error: lrdn0198: tasks 1-2: Killed
+srun: error: lrdn0198: task 3: Exited with exit code 1
+srun: error: lrdn0198: task 0: Killed
