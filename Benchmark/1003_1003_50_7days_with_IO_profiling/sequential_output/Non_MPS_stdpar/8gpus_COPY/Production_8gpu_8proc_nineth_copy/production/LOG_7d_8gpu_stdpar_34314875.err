@@ -1,0 +1,15 @@
+Failing in Thread:1
+Accelerator Fatal Error: call to cuStreamSynchronize returned error 700 (CUDA_ERROR_ILLEGAL_ADDRESS): Illegal address during kernel execution
+ File: /leonardo/home/userexternal/ctica000/MS_thesis/ICTP_Regcm/RegCM/Main/clmlib/clm4.5/mod_clm_soilhydrology.F90
+ Function: soilwater:761
+ Line: 915
+
+srun: error: lrdn0982: task 7: Exited with exit code 1
+slurmstepd: error:  mpi/pmix_v3: _errhandler: lrdn0982 [1]: pmixp_client_v2.c:212: Error handler invoked: status = -25, source = [slurm.pmix.34314875.0:7]
+slurmstepd: error: *** STEP 34314875.0 ON lrdn0933 CANCELLED AT 2026-02-17T16:24:43 ***
+srun: Job step aborted: Waiting up to 122 seconds for job step to finish.
+srun: error: lrdn0982: tasks 5-6: Killed
+srun: error: lrdn0982: task 4: Killed
+srun: error: lrdn0933: tasks 1-2: Killed
+srun: error: lrdn0933: task 3: Killed
+srun: error: lrdn0933: task 0: Killed
