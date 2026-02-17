@@ -1,9 +1,9 @@
 #!/bin/bash 
 
 #SBATCH --account=ICT25_MHPC_0
-#SBATCH --out=./production/heatindex_offload/LOG_%x_%j.out
-#SBATCH --err=./production/heatindex_offload/LOG_%x_%j.err
-#SBATCH --job-name stdpar_8gpu_8task
+#SBATCH --out=./production/LOG_%x_%j.out
+#SBATCH --err=./production/LOG_%x_%j.err
+#SBATCH --job-name 7d_8gpu_stdpar
 #SBATCH --ntasks-per-node=4
 #SBATCH --partition=boost_usr_prod
 #SBATCH --nodes=2
