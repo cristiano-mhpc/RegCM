@@ -1,0 +1,25 @@
+#!/bin/bash 
+
+#SBATCH --account=ehpc575
+#SBATCH --out=./production/heatindex_offload/LOG_%x_%j.out
+#SBATCH --err=./production/heatindex_offload/LOG_%x_%j.err
+#SBATCH --job-name stdpar_16gpu_16task
+#SBATCH --ntasks-per-node=4
+#SBATCH --partition=acc
+#SBATCH --qos=acc_ehpc
+#SBATCH --nodes=1
+#SBATCH --exclusive
+#SBATCH --gres=tmpfs:100g
+#SBATCH --gres=gpu:4
+#SBATCH --time=08:30:00
+
+# export BINDIR=/home/ictp/ictp992004/latest_managed
+# export BINDIR=/home/ictp/ictp549985/RegCM/bin
+
+source /gpfs/home/ictp/ictp549985/RegCM/modules_cuda_working_old  
+# source /home/ictp/ictp992004/module
+
+# Launch
+# srun ./STD_launch_per_rank.sh
+mpirun -np 4 ./STD_launch_per_rank.sh  
+
