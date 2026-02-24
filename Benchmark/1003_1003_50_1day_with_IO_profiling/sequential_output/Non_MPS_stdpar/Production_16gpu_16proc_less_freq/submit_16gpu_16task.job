@@ -1,13 +1,13 @@
 #!/bin/bash 
 
-#SBATCH --account=ICT25_MHPC_0
+#SBATCH --account=ICT26_ESP_0
 #SBATCH --out=./production/LOG_%x_%j.out
 #SBATCH --err=./production/LOG_%x_%j.err
 #SBATCH --job-name stdpar_16gpu_16task
 #SBATCH --ntasks-per-node=4
 #SBATCH --partition=boost_usr_prod
 #SBATCH --nodes=4
-#SBATCH --mem=0G
+#SBATCH --exclusive 
 #SBATCH --gres=tmpfs:100g
 #SBATCH --gres=gpu:4
 #SBATCH --time=00:30:00

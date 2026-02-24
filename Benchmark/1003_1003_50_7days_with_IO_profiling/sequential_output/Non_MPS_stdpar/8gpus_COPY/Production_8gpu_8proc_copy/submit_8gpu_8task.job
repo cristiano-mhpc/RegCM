@@ -1,6 +1,6 @@
 #!/bin/bash 
 
-#SBATCH --account=ICT25_MHPC_0
+#SBATCH --account=ICT26_MHPC_0
 #SBATCH --out=./production/LOG_%x_%j.out
 #SBATCH --err=./production/LOG_%x_%j.err
 #SBATCH --job-name 7d_8gpu_stdpar
