@@ -19,7 +19,8 @@ export BINDIR=/orfeo/cephfs/home/external/ctica/ICTP_RegCM/RegCM/bin
 source /u/ictp/ggiuliani/regcm.sh
 
 # Launch
-mpirun --bind-to none --map-by slot -np $SLURM_NTASKS $BINDIR/regcmMPICLM45 EURR-3_namelist.in   
+# mpirun --bind-to none --map-by slot -np $SLURM_NTASKS $BINDIR/regcmMPICLM45 EURR-3_namelist.in   
+mpirun $SLURM_NTASKS $BINDIR/regcmMPICLM45 EURR-3_namelist.in   
 
 # mpirun --bind-to none --map-by slot -np $SLURM_NTASKS ./STD_launch_per_rank.sh
 

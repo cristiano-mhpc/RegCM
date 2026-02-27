@@ -19,7 +19,7 @@ export CUDA_VISIBLE_DEVICES=$LOCAL_RANK
 export ACC_DEVICE_TYPE=nvidia
 export ACC_DEVICE_NUM=0
 
-export BINDIR=/u/external/ctica/MS_thesis/RegCM/bin
+export BINDIR=/orfeo/cephfs/home/external/ctica/ICTP_RegCM/RegCM/bin
 
 printf '[Wrapper][Rank %02d][Local %02d] on %s: CUDA_VISIBLE_DEVICES=%s ACC_DEVICE_NUM=%s\n' \
 "$GLOBAL_RANK" "$LOCAL_RANK" "$(hostname)" "$CUDA_VISIBLE_DEVICES" "$ACC_DEVICE_NUM"

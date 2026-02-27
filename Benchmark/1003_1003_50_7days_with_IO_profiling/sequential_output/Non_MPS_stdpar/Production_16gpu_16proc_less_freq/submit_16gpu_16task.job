@@ -1,9 +1,9 @@
 #!/bin/bash 
 
 #SBATCH --account=external
-#SBATCH --out=./production/heatindex_offload/LOG_%x_%j.out
-#SBATCH --err=./production/heatindex_offload/LOG_%x_%j.err
-#SBATCH --job-name 7d_16gpu_16task
+#SBATCH --out=./production/LOG_%x_%j.out
+#SBATCH --err=./production/LOG_%x_%j.err
+#SBATCH --job-name 7d_16task_16gpu
 #SBATCH --ntasks-per-node=8
 #SBATCH --partition=H100
 #SBATCH --nodes=2
@@ -11,17 +11,16 @@
 #SBATCH --gres=gpu:H100:8
 #SBATCH --cpus-per-task=1                       # Number of CPU cores per task. Needed for CPU binding 
 #SBATCH --distribution=block:block              # Distribute tasks in blocks across nodes
-#SBATCH --time=03:30:00
+#SBATCH --time=05:30:00
 
-# export BINDIR=/u/external/ctica/MS_thesis/RegCM/bin
+export BINDIR=/orfeo/cephfs/home/external/ctica/ICTP_RegCM/RegCM/bin
 
 # load the environment 
-source ~/sw/orfeo-h100/env/regcm_h100.sh
+source /u/ictp/ggiuliani/regcm.sh
 
 # Launch
-# mpirun -np $SLURM_NTASKS $BINDIR/regcmMPICLM45 EURR-3_namelist.in   
+mpirun --bind-to none --map-by slot -np $SLURM_NTASKS $BINDIR/regcmMPICLM45 EURR-3_namelist.in   
 
-# srun ./STD_launch_per_rank.sh
-mpirun --bind-to none --map-by slot -np $SLURM_NTASKS ./STD_launch_per_rank.sh
+# mpirun --bind-to none --map-by slot -np $SLURM_NTASKS ./STD_launch_per_rank.sh
 
 
