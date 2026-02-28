@@ -9,9 +9,9 @@
 #SBATCH --nodes=1
 #SBATCH --exclusive 
 #SBATCH --gres=gpu:H100:4
-#SBATCH --cpus-per-task=1                       # Number of CPU cores per task. Needed for CPU binding 
-#SBATCH --distribution=block:block              # Distribute tasks in blocks across nodes
-#SBATCH --time=11:30:00
+# #SBATCH --cpus-per-task=1                       # Number of CPU cores per task. Needed for CPU binding 
+# #SBATCH --distribution=block:block              # Distribute tasks in blocks across nodes
+#SBATCH --time=09:30:00
 
 export BINDIR=/orfeo/cephfs/home/external/ctica/ICTP_RegCM/RegCM/bin
 
@@ -19,8 +19,8 @@ export BINDIR=/orfeo/cephfs/home/external/ctica/ICTP_RegCM/RegCM/bin
 source /u/ictp/ggiuliani/regcm.sh
 
 # Launch
-# mpirun --bind-to none --map-by slot -np $SLURM_NTASKS $BINDIR/regcmMPICLM45 EURR-3_namelist.in   
-mpirun $SLURM_NTASKS $BINDIR/regcmMPICLM45 EURR-3_namelist.in   
+mpirun --bind-to none --map-by slot -np $SLURM_NTASKS $BINDIR/regcmMPICLM45 EURR-3_namelist.in   
+# mpirun $SLURM_NTASKS $BINDIR/regcmMPICLM45 EURR-3_namelist.in   
 
 # mpirun --bind-to none --map-by slot -np $SLURM_NTASKS ./STD_launch_per_rank.sh
 
