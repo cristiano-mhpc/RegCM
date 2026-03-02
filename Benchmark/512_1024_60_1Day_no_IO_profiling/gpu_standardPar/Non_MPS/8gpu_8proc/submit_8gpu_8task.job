@@ -14,8 +14,11 @@
 
 source /gpfs/home/ictp/ictp549985/RegCM/modules_cuda_working_old  
 
+export BINDIR=/home/ictp/ictp549985/RegCM/bin
+
 # Launch
-mpirun -np $SLURM_NTASKS ./STD_launch_per_rank.sh  
+# mpirun -np $SLURM_NTASKS $BINDIR/regcmMPIOPENACC isc24_small.in
+mpirun -np $SLURM_NTASKS $BINDIR/regcmMPIOPENACC isc24_small.in
 
 
 
