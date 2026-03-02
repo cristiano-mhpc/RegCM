@@ -1,0 +1,22 @@
+#!/bin/bash 
+
+#SBATCH --account=ICT26_MHPC
+#SBATCH --out=./production/LOG_%x_%j.out
+#SBATCH --err=./production/LOG_%x_%j.err
+#SBATCH --job-name stdpar_800task
+#SBATCH --ntasks-per-node=100
+#SBATCH --cpus-per-task=1 
+#SBATCH --partition=dcgp_usr_prod
+#SBATCH --nodes=8
+#SBATCH --exclusive 
+#SBATCH --gres=tmpfs:50g
+#SBATCH --time=15:00:00
+
+export BINDIR=/leonardo/home/userexternal/ctica000/MS_thesis/RegCM/bin
+
+source /leonardo/home/userexternal/ctica000/MS_thesis/RegCM/modules_cuda  
+
+# Launch
+mpirun -np $SLURM_NTASKS $BINDIR/regcmMPICLM45  EURR-3_namelist.in
+
+
