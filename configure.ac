@@ -137,7 +137,7 @@ fi
 
 USE_OPENACC="0"
 # TODO: make this configurable
-PGI_GPU_ARCH="ccall-major"
+PGI_GPU_ARCH="cc90"
 
 AC_ARG_ENABLE(openacc,
   AC_HELP_STRING([--enable-openacc],
@@ -815,9 +815,9 @@ if test -z "$COMPILER_PGI_TRUE"; then
   fi
   if eval "test x"$USE_OPENACC" = x3"; then
     FCFLAGS="$FCFLAGS -acc=gpu \
-        -gpu=$PGI_GPU_ARCH,lineinfo,mem:managed -Minfo=accel"
+        -gpu=$PGI_GPU_ARCH,lineinfo,mem:unified -Minfo=accel"
     NOOPTFC="$NOOPTFC -acc=gpu \
-        -gpu=$PGI_GPU_ARCH,lineinfo,mem:managed -Minfo=accel"
+        -gpu=$PGI_GPU_ARCH,lineinfo,mem:unified -Minfo=accel"
     LDFLAGS="$LDFLAGS -traceback -cudalib=nvtx,cusparse"
   fi
   if eval "test x"$USE_OPENACC" = x4"; then
