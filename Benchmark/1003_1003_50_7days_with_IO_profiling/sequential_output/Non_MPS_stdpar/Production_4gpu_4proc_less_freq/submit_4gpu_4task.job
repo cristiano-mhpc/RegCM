@@ -7,10 +7,9 @@
 #SBATCH --ntasks-per-node=4
 #SBATCH --partition=H100
 #SBATCH --nodes=1
+#SBATCH --nodelist=dgx004 
 #SBATCH --exclusive 
 #SBATCH --gres=gpu:H100:4
-# #SBATCH --cpus-per-task=1                       # Number of CPU cores per task. Needed for CPU binding 
-# #SBATCH --distribution=block:block              # Distribute tasks in blocks across nodes
 #SBATCH --time=09:30:00
 
 export BINDIR=/orfeo/cephfs/home/external/ctica/ICTP_RegCM/RegCM/bin

@@ -3,14 +3,15 @@
 #SBATCH --account=external
 #SBATCH --out=./production/LOG_%x_%j.out
 #SBATCH --err=./production/LOG_%x_%j.err
-#SBATCH --job-name 7d_4gpu_4ask
-#SBATCH --ntasks-per-node=4
+#SBATCH --job-name 7d_8g_8t
+#SBATCH --ntasks-per-node=8
 #SBATCH --partition=H100
 #SBATCH --nodes=1
-#SBATCH --gres=gpu:H100:4
-#SBATCH --cpus-per-task=1                       # Number of CPU cores per task. Needed for CPU binding 
-#SBATCH --distribution=block:block              # Distribute tasks in blocks across nodes
-#SBATCH --time=11:30:00
+#SBATCH --gres=gpu:H100:8
+#SBATCH --exclusive 
+# #SBATCH --cpus-per-task=1                       # Number of CPU cores per task. Needed for CPU binding 
+# #SBATCH --distribution=block:block              # Distribute tasks in blocks across nodes
+#SBATCH --time=05:30:00
 
 export BINDIR=/orfeo/cephfs/home/external/ctica/ICTP_RegCM/RegCM/bin
 
