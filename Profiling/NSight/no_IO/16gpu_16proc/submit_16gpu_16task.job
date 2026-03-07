@@ -1,0 +1,19 @@
+#!/bin/bash 
+
+#SBATCH --account=ICT26_ESP_0
+#SBATCH --out=./production/LOG_%x_%j.out
+#SBATCH --err=./production/LOG_%x_%j.err
+#SBATCH --job-name 7d_16gpu_nIO_profile
+#SBATCH --ntasks-per-node=4
+#SBATCH --partition=boost_usr_prod
+#SBATCH --nodes=4
+#SBATCH --exclusive 
+#SBATCH --gres=gpu:4
+#SBATCH --gres=tmpfs:100g
+#SBATCH --time=03:00:00
+
+source /leonardo/home/userexternal/ctica000/MS_thesis/RegCM/modules_cuda  
+
+# Launch
+srun ./profile_STD_launch_per_rank.sh 
+
