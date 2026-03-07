@@ -1,0 +1,11 @@
+[ perf record: Woken up 143427 times to write data ]
+[ perf record: Woken up 144224 times to write data ]
+[ perf record: Woken up 144326 times to write data ]
+[ perf record: Woken up 145803 times to write data ]
+[ perf record: Woken up 144791 times to write data ]
+[ perf record: Woken up 144967 times to write data ]
+[ perf record: Woken up 144710 times to write data ]
+[ perf record: Woken up 145315 times to write data ]
+slurmstepd: error: *** JOB 35754622 ON lrdn1725 CANCELLED AT 2026-03-06T16:09:41 DUE TO TIME LIMIT ***
+slurmstepd: error: *** STEP 35754622.0 ON lrdn1725 CANCELLED AT 2026-03-06T16:09:41 DUE TO TIME LIMIT ***
+srun: Job step aborted: Waiting up to 122 seconds for job step to finish.
