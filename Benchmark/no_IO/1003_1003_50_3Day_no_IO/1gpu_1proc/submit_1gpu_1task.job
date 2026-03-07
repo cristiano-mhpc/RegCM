@@ -1,0 +1,20 @@
+#!/bin/bash 
+
+#SBATCH --out=./production/LOG_%x_%j.out
+#SBATCH --err=./production/LOG_%x_%j.err
+#SBATCH --job-name 3d_1gpu_noIO
+#SBATCH --ntasks-per-node=1
+#SBATCH --partition=gh
+#SBATCH --exclusive
+#SBATCH --nodes=1
+#SBATCH --time=04:00:00
+
+source ~/env/regcm_thea.sh  
+
+export BINDIR=/global/home/users/ctica/MS_thesis/RegCM/bin
+
+# Launch
+mpirun -np $SLURM_NTASKS $BINDIR/regcmMPIOPENACC isc24_small.in
+
+
+
