@@ -1,0 +1,23 @@
+#!/bin/bash 
+
+#SBATCH --account=ICT26_ESP_0
+#SBATCH --out=./production/LOG_%x_%j.out
+#SBATCH --err=./production/LOG_%x_%j.err
+#SBATCH --job-name 5d_1gpu_noIO
+#SBATCH --ntasks-per-node=1
+#SBATCH --partition=boost_usr_prod
+#SBATCH --nodes=1 
+#SBATCH --exclusive 
+#SBATCH --gres=tmpfs:100G 
+#SBATCH --gres=gpu:1
+#SBATCH --time=07:30:00
+
+source /leonardo/home/userexternal/ctica000/MS_thesis/RegCM/modules_cuda  
+
+export BINDIR=/leonardo/home/userexternal/ctica000/MS_thesis/RegCM/bin
+
+# Launch
+# srun ./STD_launch_per_rank.sh
+mpirun -np $SLURM_NTASKS $BINDIR/regcmMPIOPENACC_STDPAR_RCEMIP isc24_small.in
+
+

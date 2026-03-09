@@ -1,0 +1,42 @@
+WARNING: Device-side CUDA Event completion trace is currently enabled.
+         This may increase runtime overhead and the likelihood of false
+         dependencies across CUDA Streams. If you wish to avoid this, please
+         disable the feature with --cuda-event-trace=false.
+WARNING: Device-side CUDA Event completion trace is currently enabled.
+         This may increase runtime overhead and the likelihood of false
+         dependencies across CUDA Streams. If you wish to avoid this, please
+         disable the feature with --cuda-event-trace=false.
+WARNING: Device-side CUDA Event completion trace is currently enabled.
+         This may increase runtime overhead and the likelihood of false
+         dependencies across CUDA Streams. If you wish to avoid this, please
+         disable the feature with --cuda-event-trace=false.
+WARNING: Device-side CUDA Event completion trace is currently enabled.
+         This may increase runtime overhead and the likelihood of false
+         dependencies across CUDA Streams. If you wish to avoid this, please
+         disable the feature with --cuda-event-trace=false.
+WARNING: Device-side CUDA Event completion trace is currently enabled.
+         This may increase runtime overhead and the likelihood of false
+         dependencies across CUDA Streams. If you wish to avoid this, please
+         disable the feature with --cuda-event-trace=false.
+WARNING: Device-side CUDA Event completion trace is currently enabled.
+         This may increase runtime overhead and the likelihood of false
+         dependencies across CUDA Streams. If you wish to avoid this, please
+         disable the feature with --cuda-event-trace=false.
+WARNING: Device-side CUDA Event completion trace is currently enabled.
+         This may increase runtime overhead and the likelihood of false
+         dependencies across CUDA Streams. If you wish to avoid this, please
+         disable the feature with --cuda-event-trace=false.
+WARNING: Device-side CUDA Event completion trace is currently enabled.
+         This may increase runtime overhead and the likelihood of false
+         dependencies across CUDA Streams. If you wish to avoid this, please
+         disable the feature with --cuda-event-trace=false.
+slurmstepd: error:  mpi/pmix_v3: _errhandler: lrdn2246 [1]: pmixp_client_v2.c:212: Error handler invoked: status = -25, source = [slurm.pmix.37286835.0:5]
+slurmstepd: error: Detected 1 oom_kill event in StepId=37286835.0. Some of the step tasks have been OOM Killed.
+srun: Job step aborted: Waiting up to 122 seconds for job step to finish.
+slurmstepd: error: *** STEP 37286835.0 ON lrdn2245 CANCELLED AT 2026-03-09T00:03:42 ***
+slurmstepd: error: *** STEP 37286835.0 ON lrdn2245 CANCELLED AT 2026-03-09T00:03:42 ***
+slurmstepd: error:  mpi/pmix_v3: _errhandler: lrdn2246 [1]: pmixp_client_v2.c:212: Error handler invoked: status = -25, source = [slurm.pmix.37286835.0:6]
+slurmstepd: error:  mpi/pmix_v3: _errhandler: lrdn2245 [0]: pmixp_client_v2.c:212: Error handler invoked: status = -25, source = [slurm.pmix.37286835.0:1]
+srun: error: lrdn2245: tasks 0-3: Killed
+slurmstepd: error:  mpi/pmix_v3: _errhandler: lrdn2246 [1]: pmixp_client_v2.c:212: Error handler invoked: status = -25, source = [slurm.pmix.37286835.0:7]
+srun: error: lrdn2246: tasks 4-7: Out Of Memory

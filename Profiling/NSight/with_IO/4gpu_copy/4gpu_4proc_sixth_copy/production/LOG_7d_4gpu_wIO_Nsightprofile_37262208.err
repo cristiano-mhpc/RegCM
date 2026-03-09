@@ -1,0 +1,22 @@
+WARNING: Device-side CUDA Event completion trace is currently enabled.
+         This may increase runtime overhead and the likelihood of false
+         dependencies across CUDA Streams. If you wish to avoid this, please
+         disable the feature with --cuda-event-trace=false.
+WARNING: Device-side CUDA Event completion trace is currently enabled.
+         This may increase runtime overhead and the likelihood of false
+         dependencies across CUDA Streams. If you wish to avoid this, please
+         disable the feature with --cuda-event-trace=false.
+WARNING: Device-side CUDA Event completion trace is currently enabled.
+         This may increase runtime overhead and the likelihood of false
+         dependencies across CUDA Streams. If you wish to avoid this, please
+         disable the feature with --cuda-event-trace=false.
+WARNING: Device-side CUDA Event completion trace is currently enabled.
+         This may increase runtime overhead and the likelihood of false
+         dependencies across CUDA Streams. If you wish to avoid this, please
+         disable the feature with --cuda-event-trace=false.
+slurmstepd: error:  mpi/pmix_v3: _errhandler: lrdn0550 [0]: pmixp_client_v2.c:212: Error handler invoked: status = -25, source = [slurm.pmix.37262208.0:0]
+slurmstepd: error: *** STEP 37262208.0 ON lrdn0550 CANCELLED AT 2026-03-08T22:12:28 ***
+srun: Job step aborted: Waiting up to 182 seconds for job step to finish.
+slurmstepd: error: Detected 1 oom_kill event in StepId=37262208.0. Some of the step tasks have been OOM Killed.
+slurmstepd: error:  mpi/pmix_v3: _errhandler: lrdn0550 [0]: pmixp_client_v2.c:212: Error handler invoked: status = -25, source = [slurm.pmix.37262208.0:3]
+srun: error: lrdn0550: tasks 0-3: Out Of Memory
