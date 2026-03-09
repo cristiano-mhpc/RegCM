@@ -1,0 +1,41 @@
+WARNING: Device-side CUDA Event completion trace is currently enabled.
+         This may increase runtime overhead and the likelihood of false
+         dependencies across CUDA Streams. If you wish to avoid this, please
+         disable the feature with --cuda-event-trace=false.
+WARNING: Device-side CUDA Event completion trace is currently enabled.
+         This may increase runtime overhead and the likelihood of false
+         dependencies across CUDA Streams. If you wish to avoid this, please
+         disable the feature with --cuda-event-trace=false.
+WARNING: Device-side CUDA Event completion trace is currently enabled.
+         This may increase runtime overhead and the likelihood of false
+         dependencies across CUDA Streams. If you wish to avoid this, please
+         disable the feature with --cuda-event-trace=false.
+WARNING: Device-side CUDA Event completion trace is currently enabled.
+         This may increase runtime overhead and the likelihood of false
+         dependencies across CUDA Streams. If you wish to avoid this, please
+         disable the feature with --cuda-event-trace=false.
+srun: error: Munge decode failed: Expired credential
+srun: auth/munge: _print_cred: ENCODED: Sun Mar 08 22:18:35 2026
+srun: auth/munge: _print_cred: DECODED: Sun Mar 08 22:27:37 2026
+srun: error: slurm_unpack_received_msg: [[10.128.255.221]:57646] auth_g_verify: SRUN_NODE_FAIL has authentication error: Unspecified error
+srun: error: slurm_unpack_received_msg: [[10.128.255.221]:57646] Protocol authentication error
+srun: error: Munge decode failed: Expired credential
+srun: auth/munge: _print_cred: ENCODED: Sun Mar 08 22:18:35 2026
+srun: auth/munge: _print_cred: DECODED: Sun Mar 08 22:27:37 2026
+srun: error: slurm_unpack_received_msg: [[10.128.255.221]:57648] auth_g_verify: SRUN_JOB_COMPLETE has authentication error: Unspecified error
+srun: error: slurm_unpack_received_msg: [[10.128.255.221]:57648] Protocol authentication error
+slurmstepd: error:  mpi/pmix_v3: _errhandler: lrdn0376 [0]: pmixp_client_v2.c:212: Error handler invoked: status = -25, source = [slurm.pmix.37262178.0:0]
+SKIPPED: /leonardo_scratch/large/userexternal/ctica000/NSight/with_IO/4gpu_4proc/Nsight_37262178/sys_rank0.sqlite does not contain NV Tools Extension (NVTX) data.
+SKIPPED: /leonardo_scratch/large/userexternal/ctica000/NSight/with_IO/4gpu_4proc/Nsight_37262178/sys_rank0.sqlite does not contain OS Runtime trace data.
+SKIPPED: /leonardo_scratch/large/userexternal/ctica000/NSight/with_IO/4gpu_4proc/Nsight_37262178/sys_rank0.sqlite does not contain CUDA trace data.
+SKIPPED: /leonardo_scratch/large/userexternal/ctica000/NSight/with_IO/4gpu_4proc/Nsight_37262178/sys_rank0.sqlite does not contain CUDA kernel data.
+SKIPPED: /leonardo_scratch/large/userexternal/ctica000/NSight/with_IO/4gpu_4proc/Nsight_37262178/sys_rank0.sqlite does not contain GPU memory data.
+SKIPPED: /leonardo_scratch/large/userexternal/ctica000/NSight/with_IO/4gpu_4proc/Nsight_37262178/sys_rank0.sqlite does not contain GPU memory data.
+SKIPPED: /leonardo_scratch/large/userexternal/ctica000/NSight/with_IO/4gpu_4proc/Nsight_37262178/sys_rank0.sqlite does not contain CUDA memory transfers data.
+SKIPPED: /leonardo_scratch/large/userexternal/ctica000/NSight/with_IO/4gpu_4proc/Nsight_37262178/sys_rank0.sqlite does not contain CUDA memory transfers data.
+SKIPPED: /leonardo_scratch/large/userexternal/ctica000/NSight/with_IO/4gpu_4proc/Nsight_37262178/sys_rank0.sqlite does not contain CUDA Unified Memory CPU page faults data.
+slurmstepd: error: Detected 1 oom_kill event in StepId=37262178.0. Some of the step tasks have been OOM Killed.
+srun: error: lrdn0376: task 0: Out Of Memory
+slurmstepd: error: If munged is up, restart with --num-threads=10
+slurmstepd: error: Munge encode failed: Failed to access "/run/munge/munge.socket.2": No such file or directory (Did you start munged?)
+slurmstepd: error: slurm_buffers_pack_msg: auth_g_create: REQUEST_COMPLETE_BATCH_SCRIPT has authentication error

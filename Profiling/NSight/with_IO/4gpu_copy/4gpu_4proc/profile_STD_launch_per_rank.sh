@@ -28,7 +28,7 @@ export TMPDIR=$TMPDIR_BASE/rank_${SLURM_PROCID}
 mkdir -p "$TMPDIR"
 
 # Set output path for Nsight profile
-NSYS_OUT="$SCRATCH/NSight/with_IO/16gpu_16proc/nsys_rank${SLURM_PROCID}"
+NSYS_OUT="$SCRATCH/NSight/with_IO/4gpu_4proc/Nsight_${SLURM_JOB_ID}/sys_rank${SLURM_PROCID}"
 mkdir -p "$NSYS_OUT" 
 umask 007   # files created with 600 permissions 
 
