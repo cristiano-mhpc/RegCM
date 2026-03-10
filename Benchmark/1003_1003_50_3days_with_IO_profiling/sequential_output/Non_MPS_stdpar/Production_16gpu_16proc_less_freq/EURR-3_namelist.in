@@ -31,7 +31,7 @@
     h2opct = 50.0
     h2ohgt = .false.
     dirter = 'input'
-    inpter = '/leonardo_work/ICT25_ESP/RCMDATA'
+    inpter = '/leonardo_work/ICT26_ESP/RCMDATA'
 /
 
 &boundaryparam
@@ -54,7 +54,7 @@
     gdate2 = 2009110100
     calendar = 'gregorian'
     dirglob = 'input'
-    inpglob = '/leonardo_work/ICT25_ESP/RCMDATA'
+    inpglob = '/leonardo_work/ICT26_ESP/RCMDATA'
 /
 
 &restartparam
@@ -113,7 +113,7 @@
     iclimao3 = 1
     isolconst = 0
     iclimaaer = 2
-    radclimpath = '/leonardo_work/ICT25_ESP/RCMDATA/MERRA2/OPPMONTH'
+    radclimpath = '/leonardo_work/ICT26_ESP/RCMDATA/MERRA2/OPPMONTH'
 /
 
 &clm_inparm
