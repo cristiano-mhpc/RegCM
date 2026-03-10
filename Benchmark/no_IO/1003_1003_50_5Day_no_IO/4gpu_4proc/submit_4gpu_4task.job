@@ -2,7 +2,7 @@
 
 #SBATCH --out=./production/LOG_%x_%j.out
 #SBATCH --err=./production/LOG_%x_%j.err
-#SBATCH --job-name 3d_4gpu_noIO
+#SBATCH --job-name 5d_4gpu_noIO
 #SBATCH --ntasks-per-node=1
 #SBATCH --partition=gh
 #SBATCH --nodes=4

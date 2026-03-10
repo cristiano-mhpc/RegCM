@@ -1,0 +1,3 @@
+/global/exafs/users/ctica/.software_stack/sw/nvhpc/Linux_aarch64/26.1/comm_libs/13.1/hpcx/latest/ompi/bin/mpirun: line 20: 3766098 Killed                  $MY_DIR/.bin/$EXE "$@"
+slurmstepd: error: slurm_get_node_energy: Connection refused
+slurmstepd: error: _get_joules_task: can't get info from slurmd
