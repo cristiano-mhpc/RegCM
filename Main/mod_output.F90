@@ -1,4 +1,4 @@
-!::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+!re::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
 !
 !    This file is part of ICTP RegCM.
 !
@@ -64,15 +64,14 @@ module mod_output
     logical :: ldoslab
     logical :: lstartup
     integer(ik4) :: i, j, k, n, kk, itr
-    real(rkx), allocatable :: p3d(:,:,:), t3d(:,:,:), rh3d(:,:,:), tdw(:,:,:), piw(:,:,:),qw(:,:,:),thw(:,:,:),thvw(:,:,:),zw(:,:,:)
+    real(rkx), dimension(kz) :: p1d,t1d,rh1d,piw,qw,tdw,thw,thvw,zw
     real(rkx) :: cell, srffac, radfac, lakfac, subfac, optfac, stsfac
     real(rkx) :: tsurf, t500
-    real(rkx) :: cape_loc, cin_loc
     real(rkx), dimension(:,:,:), pointer, contiguous :: qv
     real(rkx), dimension(:,:), pointer, contiguous :: temp500
     type(regcm_projection), save :: pj
 
-
+    real(rkx)::cape_loc, cin_loc
 #ifdef DEBUG
     character(len=dbgslen) :: subroutine_name = 'output'
     integer(ik4), save :: idindx = 0
@@ -1048,50 +1047,58 @@ module mod_output
           end if
         end if
         if ( associated(srf_cape_out) .and. associated(srf_cin_out) ) then
-          allocate(p3d(kz,jci1:jci2,ici1:ici2), t3d(kz,jci1:jci2,ici1:ici2), rh3d(kz,jci1:jci2,ici1:ici2))
-          allocate(piw (kz,jci1:jci2,ici1:ici2), tdw (kz,jci1:jci2,ici1:ici2), qw (kz,jci1:jci2,ici1:ici2))
-          allocate(thw (kz,jci1:jci2,ici1:ici2), thvw(kz,jci1:jci2,ici1:ici2), zw (kz,jci1:jci2,ici1:ici2))
           if ( idynamic == 3 ) then
-            !$acc data create(p3d,t3d,rh3d,tdw,piw,qw,thw,thvw,zw)
-            do concurrent(i = ici1:ici2, j = jci1:jci2) local(k,kk,cape_loc, cin_loc)
-              do k = 1, kz
-                kk = kzp1 - k
-                ! kk = (kz + 1) - k
-                p3d(kk,j,i) = mo_atm%p(j,i,k)
-                t3d(kk,j,i) = mo_atm%t(j,i,k)
-                rh3d(kk,j,i) = min(d_one,max(d_zero,(mo_atm%qx(j,i,k,iqv) / &
-                    pfwsat(mo_atm%t(j,i,k),mo_atm%p(j,i,k)))))
-              end do
-              call getcape_gpu(int(kz,ik4),p3d(:,j,i),t3d(:,j,i),rh3d(:,j,i),&
-                tdw(:,j,i),piw(:,j,i),qw(:,j,i),thw(:,j,i),thvw(:,j,i),zw(:,j,i), &
-                cape_loc,cin_loc)
-
-                srf_cape_out(j,i) = cape_loc
-                srf_cin_out(j,i) = cin_loc  
-            end do
-           !$acc end data
-          else
-            !$acc data create(p3d,t3d,rh3d,tdw,piw,qw,thw,thvw,zw)
-            do concurrent (i = ici1:ici2, j = jci1:jci2) local(k,kk,cape_loc,cin_loc) 
+            !$acc data copyin(mo_atm%p(jci1:jci2,ici1:ici2,1:kz), &
+            !$acc                 mo_atm%t(jci1:jci2,ici1:ici2,1:kz), &
+            !$acc                 mo_atm%qx(jci1:jci2,ici1:ici2,1:kz,iqv:iqv)) & 
+            !$acc copyout(srf_cape_out(jci1:jci2,ici1:ici2), &
+            !$acc         srf_cin_out(jci1:jci2,ici1:ici2))
+            !$acc parallel loop collapse(2) gang vector private(i,j,k,kk,p1d,t1d,rh1d,piw,cape_loc,cin_loc)
+            do i = ici1, ici2
+              do j = jci1, jci2
                 do k = 1, kz
-                  kk = kzp1 - k
-                  ! kk = (kz + 1) - k
-                  p3d(kk,j,i) = atm1%pr(j,i,k)
-                  t3d(kk,j,i) = atm1%t(j,i,k)/sfs%psa(j,i)
-                  rh3d(kk,j,i) = min(d_one,max(d_zero, &
+                  kk =(kz + 1) - k
+                  p1d(kk) = mo_atm%p(j,i,k)
+                  t1d(kk) = mo_atm%t(j,i,k)
+                  rh1d(kk) = min(d_one,max(d_zero,(mo_atm%qx(j,i,k,iqv) / &
+                      pfwsat(mo_atm%t(j,i,k),mo_atm%p(j,i,k)))))
+                end do
+                call getcape_gpu(int(kz,ik4),p1d,t1d,rh1d, piw, qw, tdw, thw, thvw, zw, &
+                  cape_loc, cin_loc)
+                  
+                srf_cape_out(j,i) = cape_loc
+                srf_cin_out (j,i) = cin_loc
+              end do
+            end do
+            !$acc end data
+          else
+            !$acc data copyin(atm1%pr(jci1:jci2,ici1:ici2,1:kz), &
+            !$acc                 atm1%t(jci1:jci2,ici1:ici2,1:kz), &
+            !$acc                 atm1%qx(jci1:jci2,ici1:ici2,1:kz,iqv:iqv), &
+            !$acc                 sfs%psa(jci1:jci2,ici1:ici2), &
+            !$acc                 ps_out(jci1:jci2,ici1:ici2)) &
+            !$acc copyout(srf_cape_out(jci1:jci2,ici1:ici2), &
+            !$acc         srf_cin_out(jci1:jci2,ici1:ici2))
+            !$acc parallel loop collapse(2) gang vector private(i,j,k,kk,p1d,t1d,rh1d,piw,cape_loc,cin_loc)
+            do i = ici1, ici2
+              do j = jci1, jci2
+                do k = 1, kz
+                  kk = (kz + 1) - k
+                  p1d(kk) = atm1%pr(j,i,k)
+                  t1d(kk) = atm1%t(j,i,k)/sfs%psa(j,i)
+                  rh1d(kk) = min(d_one,max(d_zero, &
                      (atm1%qx(j,i,k,iqv)/ps_out(j,i)) / &
                      pfwsat(atm1%t(j,i,k)/ps_out(j,i),atm1%pr(j,i,k))))
                 end do
-                call getcape_gpu(int(kz,ik4),p3d(:,j,i),t3d(:,j,i),rh3d(:,j,i), &
-                  tdw(:,j,i),piw(:,j,i),qw(:,j,i),thw(:,j,i),thvw(:,j,i),zw(:,j,i), &
-                  cape_loc,cin_loc)
+                call getcape_gpu(int(kz,ik4),p1d,t1d,rh1d,piw,qw,tdw,thw,thvw,zw, &
+                  cape_loc, cin_loc)
 
                 srf_cape_out(j,i) = cape_loc
-                srf_cin_out(j,i) = cin_loc
+                srf_cin_out (j,i) = cin_loc
+              end do
             end do
-            !$acc end data
+            !$acc end data 
           end if
-          deallocate(p3d,t3d,rh3d,tdw,piw,qw,thw,thvw,zw)
         end if
 
         if ( associated(srf_tprw_out) ) then

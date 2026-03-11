@@ -55,6 +55,7 @@ module mod_capecin
   real(rkx), dimension(jtb,itb) :: ttbl
 
   contains
+
   !$acc routine(getdewp) seq
   pure real(rkx) function getdewp(tc,rh)
     implicit none
@@ -99,8 +100,7 @@ module mod_capecin
     getthe = t * ( (100000.0_rkx/p)**(0.2854_rkx*(1.0_rkx-0.28_rkx*q)) ) * &
              exp( ((3376.0_rkx/tlcl)-2.54_rkx)*q*(1.0_rkx+0.81_rkx*q) )
   end function getthe
-
-  !
+  
   !
   !  getcape - a fortran90 subroutine to calculate Convective Available
   !            Potential Energy (CAPE) from a sounding.
@@ -130,15 +130,16 @@ module mod_capecin
   !
   !            cin - Convective Inhibition (J/kg) (real)
   !
+  !$acc routine(getcape) seq 
   pure subroutine getcape(nk,p,t,rh,cape,cin)
     implicit none
 
     integer(ik4), intent(in) :: nk
-    real(rkx), intent(in),contiguous :: p(:), t(:), rh(:)
+    real(rkx), dimension(nk), intent(in) :: p, t, rh
     real(rkx), intent(out) :: cape, cin
 
     logical :: doit, ice, cloud, not_converged
-    integer(ik4) :: k, kmax, n, nloop, i
+    integer(ik4) :: k, kmax, n, nloop, i 
     real(rkx), dimension(nk) :: td, pi, q, th, thv, z
 
     real(rkx) :: the, maxthe, parea, narea, lfc
@@ -393,24 +394,24 @@ module mod_capecin
       end if
 
     end do
-
     
     end subroutine getcape
 
+    ! Device version of getcape
+    !$acc routine(getcape_gpu) seq
+    pure subroutine getcape_gpu(nk, p, t, rh, pi, q, td, th, thv, z, cape, cin)
+      ! for the GPU version, we pass all arrays to avoid having to use automatic 
+      ! arrays inside the kernel, which is not seem to be supported on all compilers.
 
-    !$acc routine(getcape_gpu) seq 
-    pure subroutine getcape_gpu(nk,p,t,rh,td,pi,q,th,thv,z,cape,cin)
-      implicit none
-
+      ! use mod_realkinds, only: rkx
+      ! use mod_intkinds,  only: ik4
       integer(ik4), intent(in) :: nk
-      real(rkx), intent(in),contiguous :: p(:), t(:), rh(:)
-      ! real(rkx), intent(in) :: p(nk), t(nk), rh(nk)
-      real(rkx), intent(inout),contiguous :: td(:), pi(:), q(:), th(:), thv(:), z(:)
-      real(rkx), intent(out) :: cape, cin
+      real(rkx),    intent(in) :: p(nk), t(nk), rh(nk) 
+      real(rkx),    intent(out):: cape, cin
 
       logical :: doit, ice, cloud, not_converged
       integer(ik4) :: k, kmax, n, nloop, i
-      ! real(rkx), dimension(nk) :: td, pi, q, th, thv, z
+      real(rkx),    intent(inout):: pi(nk), q(nk), td(nk), th(nk), thv(nk), z(nk)
 
       real(rkx) :: the, maxthe, parea, narea, lfc
       real(rkx) :: th1, p1, t1, qv1, ql1, qi1, b1, pi1
@@ -431,9 +432,9 @@ module mod_capecin
 
       real(rkx), parameter :: converge = 0.002_rkx
 
-      ! Get td,pi,q,th,thv
-
+      ! Get td ,pi,q,th,thv
       do k = 1, nk
+        cape = cape + (p(k)*rp00)**rddcp
         pi(k) = (p(k)*rp00)**rddcp
         td(k) = getdewp(t(k)-tzero,rh(k))
         q(k) = getqvs(p(k),td(k))
@@ -662,10 +663,9 @@ module mod_capecin
           ! stop if b < 0 and p < 100 mb
           doit = .false.
         end if
-
       end do
-
     end subroutine getcape_gpu
+
 
 
     ! This routine computes a surface to 500mb lifted index.

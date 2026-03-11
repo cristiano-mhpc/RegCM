@@ -1,26 +1,16 @@
 #!/bin/bash 
 
-#SBATCH --account=ICT25_ESP_0
+#SBATCH --account=ICT26_ESP_0
 #SBATCH --out=./production/heatindex_offload/LOG_%x_%j.out
 #SBATCH --err=./production/heatindex_offload/LOG_%x_%j.err
-#SBATCH --job-name stdpar_16gpu_16task
+#SBATCH --job-name=7d_16gpu_noIO 
 #SBATCH --ntasks-per-node=4
 #SBATCH --partition=boost_usr_prod
 #SBATCH --nodes=4
-#SBATCH --mem=0G
+#SBATCH --exclusive 
 #SBATCH --gres=tmpfs:100g
 #SBATCH --gres=gpu:4
-
-#SBATCH --cpus-per-task=1                       # Number of CPU cores per task. Needed for CPU binding 
-#SBATCH --distribution=block:block              # Distribute tasks in blocks across nodes
-
-#SBATCH --signal=USR1@300                       # Send USR1 signal 5 minutes before time limit is reached  
 #SBATCH --time=04:00:00
-
-# Topology-aware placement (keep nodes under a single leaf switch if possible)
-##SBATCH --switches=1@7-00:00:00                 # wait up to 7days for compact placement
-
-# #SBATCH --nodelist=lrdn[1029-1032,1037-1040,1049-1050] # All in L1 switches: isw31104
 
 source /leonardo/home/userexternal/ctica000/MS_thesis/RegCM/modules_cuda  
 

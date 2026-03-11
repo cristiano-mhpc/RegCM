@@ -1,38 +1,30 @@
-Loading netcdf-fortran/4.6.1--hpcx-mpi--2.19--nvhpc--24.5
-  Loading requirement: glibc/2.28--gcc--12.2.0-gi6mmti bzip2/1.0.8-ib3znej
-    gcc-runtime/12.2.0--gcc--12.2.0-dqfwf7y lz4/1.9.4--gcc--12.2.0-dcavnmi
-    snappy/1.1.10--gcc--12.2.0-gagtosp zlib-ng/2.1.6-jkgunjc zstd/1.5.6-uq5yyux
-    c-blosc/1.21.5--gcc--12.2.0-buk7w2l hpcx-mpi/2.19 pkgconf/2.2.0
-    hdf5/1.14.3--hpcx-mpi--2.19--nvhpc--24.5 libaec/1.0.6--gcc--12.2.0-blqbmai
-    parallel-netcdf/1.12.3--hpcx-mpi--2.19--nvhpc--24.5
-    netcdf-c/4.9.2--hpcx-mpi--2.19--nvhpc--24.5
-[Wrapper][Rank 10][Local 2] on lrdn0116.leonardo.local: CUDA_VISIBLE_DEVICES=2
-[Wrapper][Rank 3][Local 3] on lrdn0008.leonardo.local: CUDA_VISIBLE_DEVICES=3
-[Wrapper][Rank 8][Local 0] on lrdn0116.leonardo.local: CUDA_VISIBLE_DEVICES=0
-[Wrapper][Rank 9][Local 1] on lrdn0116.leonardo.local: CUDA_VISIBLE_DEVICES=1
-[Wrapper][Rank 11][Local 3] on lrdn0116.leonardo.local: CUDA_VISIBLE_DEVICES=3
-[Wrapper][Rank 0][Local 0] on lrdn0008.leonardo.local: CUDA_VISIBLE_DEVICES=0
-[Wrapper][Rank 2][Local 2] on lrdn0008.leonardo.local: CUDA_VISIBLE_DEVICES=2
-[Wrapper][Rank 1][Local 1] on lrdn0008.leonardo.local: CUDA_VISIBLE_DEVICES=1
-[Wrapper][Rank 6][Local 2] on lrdn0052.leonardo.local: CUDA_VISIBLE_DEVICES=2
-[Wrapper][Rank 13][Local 1] on lrdn0193.leonardo.local: CUDA_VISIBLE_DEVICES=1
-[Wrapper][Rank 7][Local 3] on lrdn0052.leonardo.local: CUDA_VISIBLE_DEVICES=3
-[Wrapper][Rank 4][Local 0] on lrdn0052.leonardo.local: CUDA_VISIBLE_DEVICES=0
-[Wrapper][Rank 5][Local 1] on lrdn0052.leonardo.local: CUDA_VISIBLE_DEVICES=1
-[Wrapper][Rank 14][Local 2] on lrdn0193.leonardo.local: CUDA_VISIBLE_DEVICES=2
-[Wrapper][Rank 15][Local 3] on lrdn0193.leonardo.local: CUDA_VISIBLE_DEVICES=3
-[Wrapper][Rank 12][Local 0] on lrdn0193.leonardo.local: CUDA_VISIBLE_DEVICES=0
+[Wrapper][Rank 0][Local 0] on lrdn0159.leonardo.local: CUDA_VISIBLE_DEVICES=0
+[Wrapper][Rank 3][Local 3] on lrdn0159.leonardo.local: CUDA_VISIBLE_DEVICES=3
+[Wrapper][Rank 1][Local 1] on lrdn0159.leonardo.local: CUDA_VISIBLE_DEVICES=1
+[Wrapper][Rank 2][Local 2] on lrdn0159.leonardo.local: CUDA_VISIBLE_DEVICES=2
+[Wrapper][Rank 13][Local 1] on lrdn1965.leonardo.local: CUDA_VISIBLE_DEVICES=1
+[Wrapper][Rank 9][Local 1] on lrdn1669.leonardo.local: CUDA_VISIBLE_DEVICES=1
+[Wrapper][Rank 5][Local 1] on lrdn1309.leonardo.local: CUDA_VISIBLE_DEVICES=1
+[Wrapper][Rank 15][Local 3] on lrdn1965.leonardo.local: CUDA_VISIBLE_DEVICES=3
+[Wrapper][Rank 14][Local 2] on lrdn1965.leonardo.local: CUDA_VISIBLE_DEVICES=2
+[Wrapper][Rank 12][Local 0] on lrdn1965.leonardo.local: CUDA_VISIBLE_DEVICES=0
+[Wrapper][Rank 8][Local 0] on lrdn1669.leonardo.local: CUDA_VISIBLE_DEVICES=0
+[Wrapper][Rank 10][Local 2] on lrdn1669.leonardo.local: CUDA_VISIBLE_DEVICES=2
+[Wrapper][Rank 11][Local 3] on lrdn1669.leonardo.local: CUDA_VISIBLE_DEVICES=3
+[Wrapper][Rank 4][Local 0] on lrdn1309.leonardo.local: CUDA_VISIBLE_DEVICES=0
+[Wrapper][Rank 7][Local 3] on lrdn1309.leonardo.local: CUDA_VISIBLE_DEVICES=3
+[Wrapper][Rank 6][Local 2] on lrdn1309.leonardo.local: CUDA_VISIBLE_DEVICES=2
 
   This is RegCM development version
-   GIT Revision: 5.0.0-944-g5801-dirty compiled at: data : Dec 31 2025  time: 14:44:47
+   GIT Revision: 5.0.0-944-g5801-dirty compiled at: data : Mar 10 2026  time: 13:13:16
 
  MPI Rank:            0  using device:            0
- : this run start at  : 2025-12-31 19:42:32+0100
+ : this run start at  : 2026-03-10 16:53:19+0100
  : it is submitted by : 
- : it is running on   : lrdn0008.leonardo.local
+ : it is running on   : lrdn0159.leonardo.local
  : it is using        :            16   processors
  : in directory       : 
- /leonardo/home/userexternal/ctica000/MS_thesis/RegCM/1003_1003_50_3day_with_IO_profiling/sequential_output/Non_MPS_stdpar/Production_16gpu_16proc_less_freq
+ /leonardo/home/userexternal/ctica000/MS_thesis/RegCM/Benchmark/1003_1003_50_1day_with_IO_profiling/sequential_output/Non_MPS_stdpar/Production_16gpu_16proc_less_freq
                        
  CPUS DIM1 =             4
  CPUS DIM2 =             4
@@ -43,8 +35,8 @@ Loading netcdf-fortran/4.6.1--hpcx-mpi--2.19--nvhpc--24.5
  Using default Holtslag parameter.
  Initial date of the global simulation:  2009-10-01 00:00:00 UTC        
  Initial date of this run             :  2009-10-01 00:00:00 UTC        
- Final date of this run               :  2009-10-04 00:00:00 UTC        
- Total simulation length              :            72  hours
+ Final date of this run               :  2009-10-02 00:00:00 UTC        
+ Total simulation length              :            24  hours
  Timestep in seconds =   45.000000
  Reading Domain file : input/EURR-3_DOMAIN000.nc
  Advection timestep =    15.000 (factor  3)
@@ -181,19 +173,19 @@ Loading netcdf-fortran/4.6.1--hpcx-mpi--2.19--nvhpc--24.5
     run type              = initial
     case title            = RegCM driven CLM4.5
     username              = 
-    hostname              = lrdn0008.leonardo.local
+    hostname              = lrdn0159.leonardo.local
  input data files:
     PFT physiology = 
- /leonardo_work/ICT25_ESP/RCMDATA/CLM45/pftdata/pft-physiology.c130503.nc
+ /leonardo_work/ICT26_ESP/RCMDATA/CLM45/pftdata/pft-physiology.c130503.nc
     surface data   = input/EURR-3_CLM45_surface.nc
     land frac data = input/EURR-3_DOMAIN000.nc
     enable_megan_emission                                 :   F
     enable_urban_landunit                                 :   T
     enable_more_crop_pft                                  :   F
     SNICAR optical = 
- /leonardo_work/ICT25_ESP/RCMDATA/CLM45/snicardata/snicar_optics_5bnd_c090915.nc
+ /leonardo_work/ICT26_ESP/RCMDATA/CLM45/snicardata/snicar_optics_5bnd_c090915.nc
     SNICAR aging = 
- /leonardo_work/ICT25_ESP/RCMDATA/CLM45/snicardata/snicar_drdt_bst_fit_60_c070416.nc
+ /leonardo_work/ICT26_ESP/RCMDATA/CLM45/snicardata/snicar_drdt_bst_fit_60_c070416.nc
     initial data is from RegCM atm model
     atmospheric forcing data is from RegCM atm model
  Large file support for output files is ON
@@ -289,7 +281,7 @@ Loading netcdf-fortran/4.6.1--hpcx-mpi--2.19--nvhpc--24.5
  dzsoi_decomp    1.000000000000000     
  Attempting to read snow optical properties .....
  SnowOptics_init : 
- /leonardo_work/ICT25_ESP/RCMDATA/CLM45/snicardata/snicar_optics_5bnd_c090915.nc
+ /leonardo_work/ICT26_ESP/RCMDATA/CLM45/snicardata/snicar_optics_5bnd_c090915.nc
  Successfully read snow optical properties
  Attempting to read snow aging parameters .....
  Successfully read snow aging properties
@@ -330,25 +322,25 @@ Loading netcdf-fortran/4.6.1--hpcx-mpi--2.19--nvhpc--24.5
  Computing weights, R =      89.00187683 .......... Done.
  Reading EXT,SSA,ASY Data...
  AEROPP file open 
- /leonardo_work/ICT25_ESP/RCMDATA/MERRA2/OPPMONTH/MERRA2_OPPMONTH_wb3.200909.nc
+ /leonardo_work/ICT26_ESP/RCMDATA/MERRA2/OPPMONTH/MERRA2_OPPMONTH_wb3.200909.nc
  AEROPP file open 
- /leonardo_work/ICT25_ESP/RCMDATA/MERRA2/OPPMONTH/MERRA2_OPPMONTH_wb3.200910.nc
+ /leonardo_work/ICT26_ESP/RCMDATA/MERRA2/OPPMONTH/MERRA2_OPPMONTH_wb3.200910.nc
  AEROPP file open 
- /leonardo_work/ICT25_ESP/RCMDATA/MERRA2/OPPMONTH/MERRA2_OPPMONTH_wb6.200909.nc
+ /leonardo_work/ICT26_ESP/RCMDATA/MERRA2/OPPMONTH/MERRA2_OPPMONTH_wb6.200909.nc
  AEROPP file open 
- /leonardo_work/ICT25_ESP/RCMDATA/MERRA2/OPPMONTH/MERRA2_OPPMONTH_wb6.200910.nc
+ /leonardo_work/ICT26_ESP/RCMDATA/MERRA2/OPPMONTH/MERRA2_OPPMONTH_wb6.200910.nc
  AEROPP file open 
- /leonardo_work/ICT25_ESP/RCMDATA/MERRA2/OPPMONTH/MERRA2_OPPMONTH_wb10.200909.nc
+ /leonardo_work/ICT26_ESP/RCMDATA/MERRA2/OPPMONTH/MERRA2_OPPMONTH_wb10.200909.nc
  AEROPP file open 
- /leonardo_work/ICT25_ESP/RCMDATA/MERRA2/OPPMONTH/MERRA2_OPPMONTH_wb10.200910.nc
+ /leonardo_work/ICT26_ESP/RCMDATA/MERRA2/OPPMONTH/MERRA2_OPPMONTH_wb10.200910.nc
  AEROPP file open 
- /leonardo_work/ICT25_ESP/RCMDATA/MERRA2/OPPMONTH/MERRA2_OPPMONTH_wb13.200909.nc
+ /leonardo_work/ICT26_ESP/RCMDATA/MERRA2/OPPMONTH/MERRA2_OPPMONTH_wb13.200909.nc
  AEROPP file open 
- /leonardo_work/ICT25_ESP/RCMDATA/MERRA2/OPPMONTH/MERRA2_OPPMONTH_wb13.200910.nc
+ /leonardo_work/ICT26_ESP/RCMDATA/MERRA2/OPPMONTH/MERRA2_OPPMONTH_wb13.200910.nc
  AEROPP file open 
- /leonardo_work/ICT25_ESP/RCMDATA/MERRA2/OPPMONTH/MERRA2_OPPMONTH_wb19.200909.nc
+ /leonardo_work/ICT26_ESP/RCMDATA/MERRA2/OPPMONTH/MERRA2_OPPMONTH_wb19.200909.nc
  AEROPP file open 
- /leonardo_work/ICT25_ESP/RCMDATA/MERRA2/OPPMONTH/MERRA2_OPPMONTH_wb19.200910.nc
+ /leonardo_work/ICT26_ESP/RCMDATA/MERRA2/OPPMONTH/MERRA2_OPPMONTH_wb19.200910.nc
   # Updated VIS ext profile #
     0.196E-05  0.568E-05  0.207E-04  0.770E-04  0.396E-03  0.111E-02  0.190E-02
     0.237E-02  0.247E-02  0.268E-02  0.275E-02  0.242E-02  0.206E-02  0.190E-02
@@ -435,7 +427,7 @@ Loading netcdf-fortran/4.6.1--hpcx-mpi--2.19--nvhpc--24.5
  SRF variables written at  2009-10-01 15:00:00 UTC        
  RAD variables written at  2009-10-01 15:00:00 UTC        
  $$$  2009-10-01 15:00:00 UTC        
- $$$ max, min of ps (mb) =  1029.07  678.17
+ $$$ max, min of ps (mb) =  1029.07  678.16
  CLM History variables written
  SRF variables written at  2009-10-01 16:00:00 UTC        
  RAD variables written at  2009-10-01 16:00:00 UTC        
@@ -452,6 +444,25 @@ Loading netcdf-fortran/4.6.1--hpcx-mpi--2.19--nvhpc--24.5
  CLM History variables written
  SRF variables written at  2009-10-01 19:00:00 UTC        
  RAD variables written at  2009-10-01 19:00:00 UTC        
+ MPI Rank:            4  using device:            0
+ MPI Rank:            5  using device:            0
+ Set    21 100% special land-units points to zero slope
+ MPI Rank:            7  using device:            0
+ Set   120 100% special land-units points to zero slope
+ MPI Rank:            6  using device:            0
+ MPI Rank:           12  using device:            0
+ Set    10 100% special land-units points to zero slope
+ MPI Rank:           13  using device:            0
+ MPI Rank:           14  using device:            0
+ Set    10 100% special land-units points to zero slope
+ MPI Rank:           15  using device:            0
+ Set     1 100% special land-units points to zero slope
+ MPI Rank:            8  using device:            0
+ MPI Rank:            9  using device:            0
+ Set    70 100% special land-units points to zero slope
+ MPI Rank:           10  using device:            0
+ Set    30 100% special land-units points to zero slope
+ MPI Rank:           11  using device:            0
  CLM History variables written
  SRF variables written at  2009-10-01 20:00:00 UTC        
  RAD variables written at  2009-10-01 20:00:00 UTC        
@@ -459,14 +470,21 @@ Loading netcdf-fortran/4.6.1--hpcx-mpi--2.19--nvhpc--24.5
  SRF variables written at  2009-10-01 21:00:00 UTC        
  RAD variables written at  2009-10-01 21:00:00 UTC        
  $$$  2009-10-01 21:00:00 UTC        
- $$$ max, min of ps (mb) =  1028.75  677.64
+ $$$ max, min of ps (mb) =  1028.75  677.63
  CLM History variables written
  SRF variables written at  2009-10-01 22:00:00 UTC        
  RAD variables written at  2009-10-01 22:00:00 UTC        
  CLM History variables written
  SRF variables written at  2009-10-01 23:00:00 UTC        
  RAD variables written at  2009-10-01 23:00:00 UTC        
+ Write restart file for CLM at  2009-10-02 00:00:00 UTC        
  CLM History variables written
+ history tape             1 : no open file to close
+ Closing local history file output//EURR-3.clm.regcm.h1.20091001_03600.nc
+ Writing restart dataset on output/EURR-3.clm.regcm.r.2009100200.nc
+ Writing restart dataset on output//EURR-3.clm.regcm.rh0.2009100200.nc
+ Writing restart dataset on output//EURR-3.clm.regcm.rh1.2009100200.nc
+ Successfully wrote out restart data for CLM 4.5
  At  2009-10-02 00:00:00 UTC        
  JDay    274.00000 solar declination angle =  -3.09798020 degrees
                    solar TSI irradiance    =    1355.8045 W/m^2
@@ -474,252 +492,14 @@ Loading netcdf-fortran/4.6.1--hpcx-mpi--2.19--nvhpc--24.5
  SRF variables written at  2009-10-02 00:00:00 UTC        
  STS variables written at  2009-10-02 00:00:00 UTC        
  RAD variables written at  2009-10-02 00:00:00 UTC        
- Opening new output file output//EURR-3_ATM.2009100200.nc
- Opening new output file output//EURR-3_SRF.2009100200.nc
- Opening new output file output//EURR-3_STS.2009100200.nc
- Opening new output file output//EURR-3_RAD.2009100200.nc
- Elapsed seconds of run for this period :     1611.762    
- SEARCH BC data for 2009100206 , step =     1920
- READY  BC from     2009100200  to 2009100206 
- $$$  2009-10-02 00:00:00 UTC        
- $$$ max, min of ps (mb) =  1028.54  677.43
- CLM History variables written
- SRF variables written at  2009-10-02 01:00:00 UTC        
- RAD variables written at  2009-10-02 01:00:00 UTC        
- CLM History variables written
- SRF variables written at  2009-10-02 02:00:00 UTC        
- RAD variables written at  2009-10-02 02:00:00 UTC        
- CLM History variables written
- SRF variables written at  2009-10-02 03:00:00 UTC        
- RAD variables written at  2009-10-02 03:00:00 UTC        
- $$$  2009-10-02 03:00:00 UTC        
- $$$ max, min of ps (mb) =  1027.90  676.88
- CLM History variables written
- SRF variables written at  2009-10-02 04:00:00 UTC        
- RAD variables written at  2009-10-02 04:00:00 UTC        
- CLM History variables written
- SRF variables written at  2009-10-02 05:00:00 UTC        
- RAD variables written at  2009-10-02 05:00:00 UTC        
- CLM History variables written
- SRF variables written at  2009-10-02 06:00:00 UTC        
- RAD variables written at  2009-10-02 06:00:00 UTC        
- SEARCH BC data for 2009100212 , step =     2400
- READY  BC from     2009100206  to 2009100212 
- $$$  2009-10-02 06:00:00 UTC        
- $$$ max, min of ps (mb) =  1027.15  676.49
- CLM History variables written
- SRF variables written at  2009-10-02 07:00:00 UTC        
- RAD variables written at  2009-10-02 07:00:00 UTC        
- CLM History variables written
- SRF variables written at  2009-10-02 08:00:00 UTC        
- RAD variables written at  2009-10-02 08:00:00 UTC        
- CLM History variables written
- SRF variables written at  2009-10-02 09:00:00 UTC        
- RAD variables written at  2009-10-02 09:00:00 UTC        
- $$$  2009-10-02 09:00:00 UTC        
- $$$ max, min of ps (mb) =  1026.51  677.05
- CLM History variables written
- SRF variables written at  2009-10-02 10:00:00 UTC        
- RAD variables written at  2009-10-02 10:00:00 UTC        
- CLM History variables written
- SRF variables written at  2009-10-02 11:00:00 UTC        
- RAD variables written at  2009-10-02 11:00:00 UTC        
- CLM History variables written
- SRF variables written at  2009-10-02 12:00:00 UTC        
- RAD variables written at  2009-10-02 12:00:00 UTC        
- SEARCH BC data for 2009100218 , step =     2880
- READY  BC from     2009100212  to 2009100218 
- $$$  2009-10-02 12:00:00 UTC        
- $$$ max, min of ps (mb) =  1025.67  677.01
- CLM History variables written
- SRF variables written at  2009-10-02 13:00:00 UTC        
- RAD variables written at  2009-10-02 13:00:00 UTC        
- CLM History variables written
- SRF variables written at  2009-10-02 14:00:00 UTC        
- RAD variables written at  2009-10-02 14:00:00 UTC        
- CLM History variables written
- SRF variables written at  2009-10-02 15:00:00 UTC        
- RAD variables written at  2009-10-02 15:00:00 UTC        
- $$$  2009-10-02 15:00:00 UTC        
- $$$ max, min of ps (mb) =  1024.69  677.65
- CLM History variables written
- SRF variables written at  2009-10-02 16:00:00 UTC        
- RAD variables written at  2009-10-02 16:00:00 UTC        
- CLM History variables written
- SRF variables written at  2009-10-02 17:00:00 UTC        
- RAD variables written at  2009-10-02 17:00:00 UTC        
- CLM History variables written
- SRF variables written at  2009-10-02 18:00:00 UTC        
- RAD variables written at  2009-10-02 18:00:00 UTC        
- SEARCH BC data for 2009100300 , step =     3360
- READY  BC from     2009100218  to 2009100300 
- $$$  2009-10-02 18:00:00 UTC        
- $$$ max, min of ps (mb) =  1023.90  677.23
- CLM History variables written
- SRF variables written at  2009-10-02 19:00:00 UTC        
- RAD variables written at  2009-10-02 19:00:00 UTC        
- CLM History variables written
- SRF variables written at  2009-10-02 20:00:00 UTC        
- RAD variables written at  2009-10-02 20:00:00 UTC        
- CLM History variables written
- SRF variables written at  2009-10-02 21:00:00 UTC        
- RAD variables written at  2009-10-02 21:00:00 UTC        
- $$$  2009-10-02 21:00:00 UTC        
- $$$ max, min of ps (mb) =  1022.86  677.18
- CLM History variables written
- SRF variables written at  2009-10-02 22:00:00 UTC        
- RAD variables written at  2009-10-02 22:00:00 UTC        
- CLM History variables written
- SRF variables written at  2009-10-02 23:00:00 UTC        
- RAD variables written at  2009-10-02 23:00:00 UTC        
- CLM History variables written
- At  2009-10-03 00:00:00 UTC        
- JDay    275.00000 solar declination angle =  -3.48539047 degrees
-                   solar TSI irradiance    =    1355.8045 W/m^2
- ATM variables written at  2009-10-03 00:00:00 UTC        
- SRF variables written at  2009-10-03 00:00:00 UTC        
- STS variables written at  2009-10-03 00:00:00 UTC        
- RAD variables written at  2009-10-03 00:00:00 UTC        
- Opening new output file output//EURR-3_ATM.2009100300.nc
- Opening new output file output//EURR-3_SRF.2009100300.nc
- Opening new output file output//EURR-3_STS.2009100300.nc
- Opening new output file output//EURR-3_RAD.2009100300.nc
- Elapsed seconds of run for this period :     1429.178    
- SEARCH BC data for 2009100306 , step =     3840
- READY  BC from     2009100300  to 2009100306 
- $$$  2009-10-03 00:00:00 UTC        
- $$$ max, min of ps (mb) =  1022.17  677.48
- CLM History variables written
- SRF variables written at  2009-10-03 01:00:00 UTC        
- RAD variables written at  2009-10-03 01:00:00 UTC        
- CLM History variables written
- SRF variables written at  2009-10-03 02:00:00 UTC        
- RAD variables written at  2009-10-03 02:00:00 UTC        
- CLM History variables written
- SRF variables written at  2009-10-03 03:00:00 UTC        
- RAD variables written at  2009-10-03 03:00:00 UTC        
- $$$  2009-10-03 03:00:00 UTC        
- $$$ max, min of ps (mb) =  1021.09  677.62
- CLM History variables written
- SRF variables written at  2009-10-03 04:00:00 UTC        
- RAD variables written at  2009-10-03 04:00:00 UTC        
- CLM History variables written
- SRF variables written at  2009-10-03 05:00:00 UTC        
- RAD variables written at  2009-10-03 05:00:00 UTC        
- CLM History variables written
- SRF variables written at  2009-10-03 06:00:00 UTC        
- RAD variables written at  2009-10-03 06:00:00 UTC        
- SEARCH BC data for 2009100312 , step =     4320
- READY  BC from     2009100306  to 2009100312 
- $$$  2009-10-03 06:00:00 UTC        
- $$$ max, min of ps (mb) =  1020.69  677.76
- CLM History variables written
- SRF variables written at  2009-10-03 07:00:00 UTC        
- RAD variables written at  2009-10-03 07:00:00 UTC        
- CLM History variables written
- SRF variables written at  2009-10-03 08:00:00 UTC        
- MPI Rank:           13  using device:            0
- MPI Rank:           14  using device:            0
- Set    10 100% special land-units points to zero slope
- MPI Rank:           15  using device:            0
- Set     1 100% special land-units points to zero slope
- MPI Rank:           12  using device:            0
- Set    10 100% special land-units points to zero slope
- MPI Rank:            5  using device:            0
- Set    21 100% special land-units points to zero slope
- MPI Rank:            7  using device:            0
- Set   120 100% special land-units points to zero slope
- MPI Rank:            6  using device:            0
- MPI Rank:            4  using device:            0
- MPI Rank:            9  using device:            0
- Set    70 100% special land-units points to zero slope
- MPI Rank:           10  using device:            0
- Set    30 100% special land-units points to zero slope
- MPI Rank:           11  using device:            0
- MPI Rank:            8  using device:            0
- RAD variables written at  2009-10-03 08:00:00 UTC        
- CLM History variables written
- SRF variables written at  2009-10-03 09:00:00 UTC        
- RAD variables written at  2009-10-03 09:00:00 UTC        
- $$$  2009-10-03 09:00:00 UTC        
- $$$ max, min of ps (mb) =  1020.83  678.57
- CLM History variables written
- SRF variables written at  2009-10-03 10:00:00 UTC        
- RAD variables written at  2009-10-03 10:00:00 UTC        
- CLM History variables written
- SRF variables written at  2009-10-03 11:00:00 UTC        
- RAD variables written at  2009-10-03 11:00:00 UTC        
- CLM History variables written
- SRF variables written at  2009-10-03 12:00:00 UTC        
- RAD variables written at  2009-10-03 12:00:00 UTC        
- SEARCH BC data for 2009100318 , step =     4800
- READY  BC from     2009100312  to 2009100318 
- $$$  2009-10-03 12:00:00 UTC        
- $$$ max, min of ps (mb) =  1020.82  678.98
- CLM History variables written
- SRF variables written at  2009-10-03 13:00:00 UTC        
- RAD variables written at  2009-10-03 13:00:00 UTC        
- CLM History variables written
- SRF variables written at  2009-10-03 14:00:00 UTC        
- RAD variables written at  2009-10-03 14:00:00 UTC        
- CLM History variables written
- SRF variables written at  2009-10-03 15:00:00 UTC        
- RAD variables written at  2009-10-03 15:00:00 UTC        
- $$$  2009-10-03 15:00:00 UTC        
- $$$ max, min of ps (mb) =  1019.91  679.19
- CLM History variables written
- SRF variables written at  2009-10-03 16:00:00 UTC        
- RAD variables written at  2009-10-03 16:00:00 UTC        
- CLM History variables written
- SRF variables written at  2009-10-03 17:00:00 UTC        
- RAD variables written at  2009-10-03 17:00:00 UTC        
- CLM History variables written
- SRF variables written at  2009-10-03 18:00:00 UTC        
- RAD variables written at  2009-10-03 18:00:00 UTC        
- SEARCH BC data for 2009100400 , step =     5280
- READY  BC from     2009100318  to 2009100400 
- $$$  2009-10-03 18:00:00 UTC        
- $$$ max, min of ps (mb) =  1018.99  679.30
- CLM History variables written
- SRF variables written at  2009-10-03 19:00:00 UTC        
- RAD variables written at  2009-10-03 19:00:00 UTC        
- CLM History variables written
- SRF variables written at  2009-10-03 20:00:00 UTC        
- RAD variables written at  2009-10-03 20:00:00 UTC        
- CLM History variables written
- SRF variables written at  2009-10-03 21:00:00 UTC        
- RAD variables written at  2009-10-03 21:00:00 UTC        
- $$$  2009-10-03 21:00:00 UTC        
- $$$ max, min of ps (mb) =  1018.76  678.93
- CLM History variables written
- SRF variables written at  2009-10-03 22:00:00 UTC        
- RAD variables written at  2009-10-03 22:00:00 UTC        
- CLM History variables written
- SRF variables written at  2009-10-03 23:00:00 UTC        
- RAD variables written at  2009-10-03 23:00:00 UTC        
- Write restart file for CLM at  2009-10-04 00:00:00 UTC        
- CLM History variables written
- history tape             1 : no open file to close
- Closing local history file output//EURR-3.clm.regcm.h1.20091001_03600.nc
- Writing restart dataset on output/EURR-3.clm.regcm.r.2009100400.nc
- Writing restart dataset on output//EURR-3.clm.regcm.rh0.2009100400.nc
- Writing restart dataset on output//EURR-3.clm.regcm.rh1.2009100400.nc
- Successfully wrote out restart data for CLM 4.5
- At  2009-10-04 00:00:00 UTC        
- JDay    276.00000 solar declination angle =  -3.87215439 degrees
-                   solar TSI irradiance    =    1355.8045 W/m^2
- ATM variables written at  2009-10-04 00:00:00 UTC        
- SRF variables written at  2009-10-04 00:00:00 UTC        
- STS variables written at  2009-10-04 00:00:00 UTC        
- RAD variables written at  2009-10-04 00:00:00 UTC        
- SAV variables written at  2009-10-04 00:00:00 UTC        
- Final time  2009-10-04 00:00:00 UTC reached.
- Elapsed seconds of run for this final timeslice :     1492.051    
- : this run stops at  : 2025-12-31 20:58:05+0100
+ SAV variables written at  2009-10-02 00:00:00 UTC        
+ Final time  2009-10-02 00:00:00 UTC reached.
+ Elapsed seconds of run for this final timeslice :     1488.008    
+ : this run stops at  : 2026-03-10 17:18:08+0100
  : Run has been completed using            16  processors.
- : Total elapsed seconds of run :     4534.040143966675     
- MPI Rank:            2  using device:            0
- MPI Rank:            3  using device:            0
+ : Total elapsed seconds of run :     1489.132092952728     
+ RegCM V5 simulation successfully reached end
  MPI Rank:            1  using device:            0
  Set    10 100% special land-units points to zero slope
- RegCM V5 simulation successfully reached end
+ MPI Rank:            2  using device:            0
+ MPI Rank:            3  using device:            0
