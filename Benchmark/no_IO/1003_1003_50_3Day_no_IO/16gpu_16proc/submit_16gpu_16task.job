@@ -1,0 +1,24 @@
+#!/bin/bash 
+
+#SBATCH --account=ehpc575
+#SBATCH --out=./production/LOG_%x_%j.out
+#SBATCH --err=./production/LOG_%x_%j.err
+#SBATCH --job-name 3d_16gpu_noIO
+#SBATCH --ntasks-per-node=4
+#SBATCH --partition=acc
+#SBATCH --qos=acc_ehpc
+#SBATCH --nodes=4
+#SBATCH --gres=gpu:4
+#SBATCH --exclusive
+#SBATCH --time=03:00:00
+
+source /gpfs/home/ictp/ictp549985/RegCM/modules_cuda_working_old  
+
+export BINDIR=/home/ictp/ictp549985/RegCM/bin
+
+# Launch
+# mpirun -np $SLURM_NTASKS $BINDIR/regcmMPIOPENACC isc24_small.in
+mpirun -np $SLURM_NTASKS $BINDIR/regcmMPIOPENACC isc24_small.in
+
+
+
