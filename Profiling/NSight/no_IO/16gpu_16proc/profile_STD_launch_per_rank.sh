@@ -39,7 +39,6 @@ $NSYS_BIN profile \
   --sample=process-tree \
   --backtrace=dwarf \
   --output "$NSYS_OUT" \
-  --sampling-trigger=perf \
   --sampling-period=1000000 \ 
   --trace=nvtx,mpi,cuda,osrt \
   --mpi-impl=openmpi \

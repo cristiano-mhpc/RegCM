@@ -1,0 +1,100 @@
+WARNING: Device-side CUDA Event completion trace is currently enabled.
+         This may increase runtime overhead and the likelihood of false
+         dependencies across CUDA Streams. If you wish to avoid this, please
+         disable the feature with --cuda-event-trace=false.
+WARNING: Device-side CUDA Event completion trace is currently enabled.
+         This may increase runtime overhead and the likelihood of false
+         dependencies across CUDA Streams. If you wish to avoid this, please
+         disable the feature with --cuda-event-trace=false.
+WARNING: Device-side CUDA Event completion trace is currently enabled.
+         This may increase runtime overhead and the likelihood of false
+         dependencies across CUDA Streams. If you wish to avoid this, please
+         disable the feature with --cuda-event-trace=false.
+WARNING: Device-side CUDA Event completion trace is currently enabled.
+         This may increase runtime overhead and the likelihood of false
+         dependencies across CUDA Streams. If you wish to avoid this, please
+         disable the feature with --cuda-event-trace=false.
+WARNING: Device-side CUDA Event completion trace is currently enabled.
+         This may increase runtime overhead and the likelihood of false
+         dependencies across CUDA Streams. If you wish to avoid this, please
+         disable the feature with --cuda-event-trace=false.
+WARNING: Device-side CUDA Event completion trace is currently enabled.
+         This may increase runtime overhead and the likelihood of false
+         dependencies across CUDA Streams. If you wish to avoid this, please
+         disable the feature with --cuda-event-trace=false.
+WARNING: Device-side CUDA Event completion trace is currently enabled.
+         This may increase runtime overhead and the likelihood of false
+         dependencies across CUDA Streams. If you wish to avoid this, please
+         disable the feature with --cuda-event-trace=false.
+WARNING: Device-side CUDA Event completion trace is currently enabled.
+         This may increase runtime overhead and the likelihood of false
+         dependencies across CUDA Streams. If you wish to avoid this, please
+         disable the feature with --cuda-event-trace=false.
+WARNING: Device-side CUDA Event completion trace is currently enabled.
+         This may increase runtime overhead and the likelihood of false
+         dependencies across CUDA Streams. If you wish to avoid this, please
+         disable the feature with --cuda-event-trace=false.
+WARNING: Device-side CUDA Event completion trace is currently enabled.
+         This may increase runtime overhead and the likelihood of false
+         dependencies across CUDA Streams. If you wish to avoid this, please
+         disable the feature with --cuda-event-trace=false.
+WARNING: Device-side CUDA Event completion trace is currently enabled.
+         This may increase runtime overhead and the likelihood of false
+         dependencies across CUDA Streams. If you wish to avoid this, please
+         disable the feature with --cuda-event-trace=false.
+WARNING: Device-side CUDA Event completion trace is currently enabled.
+         This may increase runtime overhead and the likelihood of false
+         dependencies across CUDA Streams. If you wish to avoid this, please
+         disable the feature with --cuda-event-trace=false.
+WARNING: Device-side CUDA Event completion trace is currently enabled.
+         This may increase runtime overhead and the likelihood of false
+         dependencies across CUDA Streams. If you wish to avoid this, please
+         disable the feature with --cuda-event-trace=false.
+WARNING: Device-side CUDA Event completion trace is currently enabled.
+         This may increase runtime overhead and the likelihood of false
+         dependencies across CUDA Streams. If you wish to avoid this, please
+         disable the feature with --cuda-event-trace=false.
+WARNING: Device-side CUDA Event completion trace is currently enabled.
+         This may increase runtime overhead and the likelihood of false
+         dependencies across CUDA Streams. If you wish to avoid this, please
+         disable the feature with --cuda-event-trace=false.
+WARNING: Device-side CUDA Event completion trace is currently enabled.
+         This may increase runtime overhead and the likelihood of false
+         dependencies across CUDA Streams. If you wish to avoid this, please
+         disable the feature with --cuda-event-trace=false.
+Executable ' ' not found in current directory or standard search paths
+Executable ' ' not found in current directory or standard search paths
+/leonardo/home/userexternal/ctica000/MS_thesis/RegCM/Profiling/NSight/no_IO/16gpu_16proc/./profile_STD_launch_per_rank.sh: line 44: --trace=nvtx,mpi,cuda,osrt: command not found
+/leonardo/home/userexternal/ctica000/MS_thesis/RegCM/Profiling/NSight/no_IO/16gpu_16proc/./profile_STD_launch_per_rank.sh: line 44: --trace=nvtx,mpi,cuda,osrt: command not found
+Executable ' ' not found in current directory or standard search paths
+Executable ' ' not found in current directory or standard search paths
+/leonardo/home/userexternal/ctica000/MS_thesis/RegCM/Profiling/NSight/no_IO/16gpu_16proc/./profile_STD_launch_per_rank.sh: line 44: --trace=nvtx,mpi,cuda,osrt: command not found
+Executable ' ' not found in current directory or standard search paths
+/leonardo/home/userexternal/ctica000/MS_thesis/RegCM/Profiling/NSight/no_IO/16gpu_16proc/./profile_STD_launch_per_rank.sh: line 44: --trace=nvtx,mpi,cuda,osrt: command not found
+Executable ' ' not found in current directory or standard search paths
+/leonardo/home/userexternal/ctica000/MS_thesis/RegCM/Profiling/NSight/no_IO/16gpu_16proc/./profile_STD_launch_per_rank.sh: line 44: --trace=nvtx,mpi,cuda,osrt: command not found
+/leonardo/home/userexternal/ctica000/MS_thesis/RegCM/Profiling/NSight/no_IO/16gpu_16proc/./profile_STD_launch_per_rank.sh: line 44: --trace=nvtx,mpi,cuda,osrt: command not found
+Executable ' ' not found in current directory or standard search paths
+Executable ' ' not found in current directory or standard search paths
+/leonardo/home/userexternal/ctica000/MS_thesis/RegCM/Profiling/NSight/no_IO/16gpu_16proc/./profile_STD_launch_per_rank.sh: line 44: --trace=nvtx,mpi,cuda,osrt: command not found
+/leonardo/home/userexternal/ctica000/MS_thesis/RegCM/Profiling/NSight/no_IO/16gpu_16proc/./profile_STD_launch_per_rank.sh: line 44: --trace=nvtx,mpi,cuda,osrt: command not found
+Executable ' ' not found in current directory or standard search paths
+Executable ' ' not found in current directory or standard search paths
+Executable ' ' not found in current directory or standard search paths
+/leonardo/home/userexternal/ctica000/MS_thesis/RegCM/Profiling/NSight/no_IO/16gpu_16proc/./profile_STD_launch_per_rank.sh: line 44: --trace=nvtx,mpi,cuda,osrt: command not found
+/leonardo/home/userexternal/ctica000/MS_thesis/RegCM/Profiling/NSight/no_IO/16gpu_16proc/./profile_STD_launch_per_rank.sh: line 44: --trace=nvtx,mpi,cuda,osrt: command not found
+/leonardo/home/userexternal/ctica000/MS_thesis/RegCM/Profiling/NSight/no_IO/16gpu_16proc/./profile_STD_launch_per_rank.sh: line 44: --trace=nvtx,mpi,cuda,osrt: command not found
+Executable ' ' not found in current directory or standard search paths
+/leonardo/home/userexternal/ctica000/MS_thesis/RegCM/Profiling/NSight/no_IO/16gpu_16proc/./profile_STD_launch_per_rank.sh: line 44: --trace=nvtx,mpi,cuda,osrt: command not found
+Executable ' ' not found in current directory or standard search paths
+/leonardo/home/userexternal/ctica000/MS_thesis/RegCM/Profiling/NSight/no_IO/16gpu_16proc/./profile_STD_launch_per_rank.sh: line 44: --trace=nvtx,mpi,cuda,osrt: command not found
+Executable ' ' not found in current directory or standard search paths
+/leonardo/home/userexternal/ctica000/MS_thesis/RegCM/Profiling/NSight/no_IO/16gpu_16proc/./profile_STD_launch_per_rank.sh: line 44: --trace=nvtx,mpi,cuda,osrt: command not found
+Executable ' ' not found in current directory or standard search paths
+/leonardo/home/userexternal/ctica000/MS_thesis/RegCM/Profiling/NSight/no_IO/16gpu_16proc/./profile_STD_launch_per_rank.sh: line 44: --trace=nvtx,mpi,cuda,osrt: command not found
+srun: error: lrdn0777: tasks 12-15: Exited with exit code 127
+Executable ' ' not found in current directory or standard search paths
+/leonardo/home/userexternal/ctica000/MS_thesis/RegCM/Profiling/NSight/no_IO/16gpu_16proc/./profile_STD_launch_per_rank.sh: line 44: --trace=nvtx,mpi,cuda,osrt: command not found
+srun: error: lrdn0737: tasks 8-11: Exited with exit code 127
+srun: error: lrdn0014: tasks 0-3: Exited with exit code 127
+srun: error: lrdn0023: tasks 4-7: Exited with exit code 127
