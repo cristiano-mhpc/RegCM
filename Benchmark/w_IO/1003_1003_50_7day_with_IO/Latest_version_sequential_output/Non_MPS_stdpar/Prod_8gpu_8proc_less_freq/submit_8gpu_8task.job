@@ -3,7 +3,7 @@
 #SBATCH --account=ehpc575
 #SBATCH --out=./production/after_netcdf_reformat/LOG_%x_%j.out
 #SBATCH --err=./production/after_netcdf_reformat/LOG_%x_%j.err
-#SBATCH --job-name stdpar_16gpu_16task
+#SBATCH --job-name 7d_8gpu_with_io
 #SBATCH --ntasks-per-node=4
 #SBATCH --partition=acc
 #SBATCH --qos=acc_ehpc
