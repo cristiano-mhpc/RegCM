@@ -266,7 +266,7 @@ module mod_clm_regcm
     if ( rcmtimer%integrating( ) ) then
       ! Final timestep
       if ( rcmtimer%next_is_endtime ) then
-        rstwr = .true.
+        rstwr = ifsave
         nlend = .true.
         if ( (lfdomonth(nextr) .and. lmidnight(nextr)) ) then
           nlomon = .true.
@@ -345,7 +345,7 @@ module mod_clm_regcm
     if ( rcmtimer%integrating( ) ) then
       ! Final timestep
       if ( rcmtimer%next_is_endtime ) then
-        rstwr = .true.
+        rstwr = ifsave
         nlend = .true.
         if ( (lfdomonth(nextr) .and. lmidnight(nextr)) ) then
           nlomon = .true.

@@ -61,23 +61,23 @@
 /
 
 &outparam
-    ifcordex = .false.
-    outnwf = 0.0
-    ifsave = .false.
+    ifcordex = .true.
+    outnwf = 1.0
+    ifsave = .true.
     savfrq = 0.0
-    ifatm = .false.
+    ifatm = .true.
     atmfrq = 1.0
-    ifrad = .false.
+    ifrad = .true.
     radfrq = 1.0
-    ifsts = .false.
-    ifshf = .false.
-    ifsrf = .false.
+    ifsts = .true.
+    ifshf = .true.
+    ifsrf = .true.
     srffrq = 1.0
-    ifsub = .false.
+    ifsub = .true.
     subfrq = 1.0
-    iflak = .false.
+    iflak = .true.
     lakfrq = 1.0
-    ifchem = .false.
+    ifchem = .true.
     ifopt = .false.
     chemfrq = 1.0
     dirout = 'output'
@@ -112,9 +112,10 @@
     fsnowoptics = 'snicar_optics_5bnd_c090915.nc'
     fsnowaging = 'snicar_drdt_bst_fit_60_c070416.nc'
     urban_hac = 'ON_WASTEHEAT'
-    hist_empty_htapes = .true.
-    hist_nhtfrq = 0
-    wrtdia = .false.
+    hist_nhtfrq = 0, 1
+    hist_fincl2(1:13) = 'EFLX_LH_TOT_U', 'FGR_U', 'FIRA_U', 'FSA_U', 'FSH_U',
+                        'FSM_U', 'QRUNOFF_U', 'RH2M_U', 'SoilAlpha_U', 'TG_U',
+                        'TREFMNAV_U', 'TREFMXAV_U', 'TSA_U'
 /
 
 &clm_soilhydrology_inparm
@@ -124,9 +125,4 @@
 
 &clm_hydrology1_inparm
     oldfflag = 0
-/
-
-
-&clmparam
-  clmfrq = 99999.0
 /

@@ -1,8 +1,8 @@
 #!/bin/bash 
 
 #SBATCH --account=ehpc575
-#SBATCH --out=./production/level2_decomp/LOG_%x_%j.out
-#SBATCH --err=./production/level2_decomp/LOG_%x_%j.err
+#SBATCH --out=./production/disabled_output/LOG_%x_%j.out
+#SBATCH --err=./production/disabled_output/LOG_%x_%j.err
 #SBATCH --job-name 7d_4gpu_wIO
 #SBATCH --ntasks-per-node=4
 #SBATCH --partition=acc
