@@ -11,14 +11,14 @@ if [ -z "$LOCAL_RANK" ]; then
   exit 1
 fi
 
-export CUDA_LAUNCH_BLOCKING=1     # pin runtime error to the exact line
+# Benchmark mode: keep GPU launches asynchronous (no debug serialization)
+unset CUDA_LAUNCH_BLOCKING
 
 # Assign each local rank to a unique GPU on this node
 export CUDA_VISIBLE_DEVICES=$LOCAL_RANK
 export ACC_DEVICE_TYPE=nvidia
 export ACC_DEVICE_NUM=0
 
-# export BINDIR=/home/ictp/ictp992004/latest_managed
 export BINDIR=/home/ictp/ictp549985/RegCM/bin
 
 printf '[Wrapper][Rank %02d][Local %02d] on %s: CUDA_VISIBLE_DEVICES=%s ACC_DEVICE_NUM=%s\n' \

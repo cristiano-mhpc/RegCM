@@ -11,7 +11,8 @@ if [ -z "$LOCAL_RANK" ]; then
   exit 1
 fi
 
-export CUDA_LAUNCH_BLOCKING=1     # pin runtime error to the exact line
+# Benchmark mode: keep GPU launches asynchronous (no debug serialization)
+unset CUDA_LAUNCH_BLOCKING
 
 # Assign each local rank to a unique GPU on this node
 export CUDA_VISIBLE_DEVICES=$LOCAL_RANK

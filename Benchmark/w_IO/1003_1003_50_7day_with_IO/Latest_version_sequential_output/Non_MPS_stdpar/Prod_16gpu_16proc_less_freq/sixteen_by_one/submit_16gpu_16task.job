@@ -3,18 +3,18 @@
 #SBATCH --account=ehpc575
 #SBATCH --out=./production/disabled_output/more_mpirun_options/LOG_%x_%j.out
 #SBATCH --err=./production/disabled_output/more_mpirun_options/LOG_%x_%j.err
-#SBATCH --job-name 7d_4gpu_wIO
+#SBATCH --job-name stdpar_16gpu_16task
 #SBATCH --ntasks-per-node=4
 #SBATCH --partition=acc
 #SBATCH --qos=acc_ehpc
-#SBATCH --nodes=1
+#SBATCH --nodes=4
 #SBATCH --exclusive
 #SBATCH --gres=tmpfs:100g
 #SBATCH --gres=gpu:4
-#SBATCH --time=07:30:00
-
+#SBATCH --time=02:00:00
 
 source /gpfs/home/ictp/ictp549985/RegCM/modules_cuda_working_old  
+# source /home/ictp/ictp992004/module
 
 export OMP_NUM_THREADS=1
 
