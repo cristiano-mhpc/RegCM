@@ -25,6 +25,7 @@ module mod_clm_regcm
   use mod_clm_decomp, only : procinfo, get_proc_bounds
   use mod_clm_megan
   use mod_clm_drydep, only : n_drydep
+  use mpi, only : mpi_wtime
   use netcdf
   implicit none
 
@@ -42,6 +43,13 @@ module mod_clm_regcm
   real(rkx), dimension(:,:), pointer, contiguous :: rcp
   real(rkx), dimension(:,:), pointer, contiguous :: crupre, acp0, acp1, acp2
   real(rk8), dimension(:,:,:), pointer, contiguous :: emis2d
+
+#ifdef TIMING_STUDY
+  real(rk8), save, public :: t_cpl_a2l = 0.0_rk8
+  real(rk8), save, public :: t_cpl_l2a = 0.0_rk8
+  real(rk8), save, public :: t_clm_drv = 0.0_rk8
+  integer(ik8), save, public :: n_clm_calls = 0_ik8
+#endif
 
   type(h_interpolator) :: hint
 
@@ -318,9 +326,18 @@ module mod_clm_regcm
     type(rcm_time_interval) :: tdiff, triff
     type(rcm_time_and_date) :: nextt, nextr
     character(len=64) :: rdate
+#ifdef TIMING_STUDY
+    real(rk8) :: t0ts
+#endif
     !@acc call nvtxStartRange("runclm45")
     !@acc call nvtxStartRange("atmosphere_to_land")
+#ifdef TIMING_STUDY
+    t0ts = mpi_wtime()
+#endif
     call atmosphere_to_land(lm)
+#ifdef TIMING_STUDY
+    t_cpl_a2l = t_cpl_a2l + (mpi_wtime() - t0ts)
+#endif
     !@acc call nvtxEndRange
     ! Compute NEXT calday
     tdiff = dtsrf
@@ -383,9 +400,22 @@ module mod_clm_regcm
     end if
 
     ! Run CLM
+#ifdef TIMING_STUDY
+    t0ts = mpi_wtime()
+#endif
     call clm_drv(doalb,caldayp1,declinp1,declinp,rstwr,nlend,nlomon,rdate)
+#ifdef TIMING_STUDY
+    t_clm_drv = t_clm_drv + (mpi_wtime() - t0ts)
+#endif
     !@acc call nvtxStartRange("land_to_atmosphere")
+#ifdef TIMING_STUDY
+    t0ts = mpi_wtime()
+#endif
     call land_to_atmosphere(lm,lms)
+#ifdef TIMING_STUDY
+    t_cpl_l2a = t_cpl_l2a + (mpi_wtime() - t0ts)
+    n_clm_calls = n_clm_calls + 1_ik8
+#endif
     !@acc call nvtxEndRange
     !@acc call nvtxEndRange
   end subroutine runclm45

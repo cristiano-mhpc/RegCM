@@ -48,6 +48,11 @@ module mod_regcm_interface
 #ifdef OASIS
   use mod_oasis_interface
 #endif
+#ifdef TIMING_STUDY
+#ifdef CLM45
+  use mod_clm_regcm, only : t_cpl_a2l, t_cpl_l2a, t_clm_drv, n_clm_calls
+#endif
+#endif
   use mpi
   implicit none
 
@@ -58,6 +63,11 @@ module mod_regcm_interface
   public :: atm_model
 
   real(rk8) :: extime
+
+#ifdef TIMING_STUDY
+  real(rk8) :: t_atm_moloch = 0.0_rk8
+  real(rk8) :: t_wait_barrier = 0.0_rk8
+#endif
 
   type atm_model
     character(len=5) :: model_name = 'RegCM'
@@ -235,6 +245,10 @@ module mod_regcm_interface
     implicit none
     real(rk8), intent(in) :: timestr   ! starting time-step
     real(rk8), intent(in) :: timeend   ! ending   time-step
+#ifdef TIMING_STUDY
+    real(rk8) :: t0ts
+    integer(ik4) :: ierr
+#endif
 
     do while ( extime >= timestr .and. extime < timeend )
       !
@@ -262,7 +276,13 @@ module mod_regcm_interface
       ! Compute tendencies
       !
       if ( idynamic == 3 ) then
+#ifdef TIMING_STUDY
+        t0ts = mpi_wtime()
+#endif
         call moloch
+#ifdef TIMING_STUDY
+        t_atm_moloch = t_atm_moloch + (mpi_wtime() - t0ts)
+#endif
       else
         call tend
       end if
@@ -316,6 +336,12 @@ module mod_regcm_interface
         end if
       end if
 
+#ifdef TIMING_STUDY
+      t0ts = mpi_wtime()
+      call mpi_barrier(mycomm, ierr)
+      t_wait_barrier = t_wait_barrier + (mpi_wtime() - t0ts)
+#endif
+
     end do
 
 #ifdef DEBUG
@@ -327,6 +353,11 @@ module mod_regcm_interface
 
   subroutine RCM_finalize
     implicit none
+#ifdef TIMING_STUDY
+    real(rk8) :: tloc, tmin, tmax, tsum
+    integer(ik8) :: cmin, cmax, csum
+    integer(ik4) :: ierr
+#endif
 
     if ( myid == italk ) then
       write(stdout,*) 'Final time ', trim(rcmtimer%str( )), ' reached.'
@@ -340,6 +371,75 @@ module mod_regcm_interface
 #ifdef CLM
     call t_prf('timing_all',mpicom)
     call t_finalizef()
+#endif
+
+#ifdef TIMING_STUDY
+    if ( myid == italk ) then
+      write(stdout,*) 'TIMING_STUDY: min avg max across ranks (seconds)'
+    end if
+
+    tloc = t_atm_moloch
+    call mpi_reduce(tloc, tmin, 1, mpi_double_precision, mpi_min, italk, mycomm, ierr)
+    call mpi_reduce(tloc, tmax, 1, mpi_double_precision, mpi_max, italk, mycomm, ierr)
+    call mpi_reduce(tloc, tsum, 1, mpi_double_precision, mpi_sum, italk, mycomm, ierr)
+    if ( myid == italk ) then
+      write(stdout,'(a,3(1x,f12.3))') 'TIMING_STUDY atm_moloch    :', &
+                                      tmin, tsum/real(nproc,rk8), tmax
+    end if
+
+    tloc = t_wait_barrier
+    call mpi_reduce(tloc, tmin, 1, mpi_double_precision, mpi_min, italk, mycomm, ierr)
+    call mpi_reduce(tloc, tmax, 1, mpi_double_precision, mpi_max, italk, mycomm, ierr)
+    call mpi_reduce(tloc, tsum, 1, mpi_double_precision, mpi_sum, italk, mycomm, ierr)
+    if ( myid == italk ) then
+      write(stdout,'(a,3(1x,f12.3))') 'TIMING_STUDY wait_barrier  :', &
+                                      tmin, tsum/real(nproc,rk8), tmax
+    end if
+
+#ifdef CLM45
+    tloc = t_cpl_a2l
+    call mpi_reduce(tloc, tmin, 1, mpi_double_precision, mpi_min, italk, mycomm, ierr)
+    call mpi_reduce(tloc, tmax, 1, mpi_double_precision, mpi_max, italk, mycomm, ierr)
+    call mpi_reduce(tloc, tsum, 1, mpi_double_precision, mpi_sum, italk, mycomm, ierr)
+    if ( myid == italk ) then
+      write(stdout,'(a,3(1x,f12.3))') 'TIMING_STUDY cpl_atm2land :', &
+                                      tmin, tsum/real(nproc,rk8), tmax
+    end if
+
+    tloc = t_clm_drv
+    call mpi_reduce(tloc, tmin, 1, mpi_double_precision, mpi_min, italk, mycomm, ierr)
+    call mpi_reduce(tloc, tmax, 1, mpi_double_precision, mpi_max, italk, mycomm, ierr)
+    call mpi_reduce(tloc, tsum, 1, mpi_double_precision, mpi_sum, italk, mycomm, ierr)
+    if ( myid == italk ) then
+      write(stdout,'(a,3(1x,f12.3))') 'TIMING_STUDY clm_drv       :', &
+                                      tmin, tsum/real(nproc,rk8), tmax
+    end if
+
+    tloc = t_cpl_l2a
+    call mpi_reduce(tloc, tmin, 1, mpi_double_precision, mpi_min, italk, mycomm, ierr)
+    call mpi_reduce(tloc, tmax, 1, mpi_double_precision, mpi_max, italk, mycomm, ierr)
+    call mpi_reduce(tloc, tsum, 1, mpi_double_precision, mpi_sum, italk, mycomm, ierr)
+    if ( myid == italk ) then
+      write(stdout,'(a,3(1x,f12.3))') 'TIMING_STUDY cpl_land2atm :', &
+                                      tmin, tsum/real(nproc,rk8), tmax
+    end if
+
+    tloc = t_cpl_a2l + t_clm_drv + t_cpl_l2a
+    call mpi_reduce(tloc, tmin, 1, mpi_double_precision, mpi_min, italk, mycomm, ierr)
+    call mpi_reduce(tloc, tmax, 1, mpi_double_precision, mpi_max, italk, mycomm, ierr)
+    call mpi_reduce(tloc, tsum, 1, mpi_double_precision, mpi_sum, italk, mycomm, ierr)
+    if ( myid == italk ) then
+      write(stdout,'(a,3(1x,f12.3))') 'TIMING_STUDY clm_total     :', &
+                                      tmin, tsum/real(nproc,rk8), tmax
+    end if
+
+    call mpi_reduce(n_clm_calls, cmin, 1, mpi_integer8, mpi_min, italk, mycomm, ierr)
+    call mpi_reduce(n_clm_calls, cmax, 1, mpi_integer8, mpi_max, italk, mycomm, ierr)
+    call mpi_reduce(n_clm_calls, csum, 1, mpi_integer8, mpi_sum, italk, mycomm, ierr)
+    if ( myid == italk ) then
+      write(stdout,'(a,3(1x,i12))') 'TIMING_STUDY clm_calls     :', cmin, csum/nproc, cmax
+    end if
+#endif
 #endif
 
     if ( iclimao3 == 1 ) then

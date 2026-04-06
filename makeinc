@@ -46,6 +46,7 @@ ifeq ($(findstring DCLM45, $(CPPFLAGS)),DCLM45)
 endif
 
 #CPPFLAGS += $(DEFINE)RCEMIP
+CPPFLAGS += $(DEFINE)TIMING_STUDY
 
 space :=
 space +=
