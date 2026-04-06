@@ -357,6 +357,8 @@ module mod_regcm_interface
     real(rk8) :: tloc, tmin, tmax, tsum
     integer(ik8) :: cmin, cmax, csum
     integer(ik4) :: ierr
+    integer(ik4) :: lndpts_local, idx_min, idx_max
+    integer(ik4), allocatable :: lndpts_all(:)
 #endif
 
     if ( myid == italk ) then
@@ -397,6 +399,21 @@ module mod_regcm_interface
     end if
 
 #ifdef CLM45
+    lndpts_local = lndcomm%linear_npoint_sg(myid+1)
+    if ( myid == italk ) then
+      allocate(lndpts_all(nproc))
+    end if
+    call mpi_gather(lndpts_local, 1, mpi_integer, lndpts_all, 1, mpi_integer, &
+                    italk, mycomm, ierr)
+    if ( myid == italk ) then
+      idx_min = minloc(lndpts_all, dim=1)
+      idx_max = maxloc(lndpts_all, dim=1)
+      write(stdout,'(a,3(1x,i12),a,i6,a,i6)') 'TIMING_STUDY lnd_points   :', &
+        minval(lndpts_all), nint(real(sum(lndpts_all),rk8)/real(nproc,rk8)), &
+        maxval(lndpts_all), ' min_rank=', idx_min-1, ' max_rank=', idx_max-1
+      deallocate(lndpts_all)
+    end if
+
     tloc = t_cpl_a2l
     call mpi_reduce(tloc, tmin, 1, mpi_double_precision, mpi_min, italk, mycomm, ierr)
     call mpi_reduce(tloc, tmax, 1, mpi_double_precision, mpi_max, italk, mycomm, ierr)
