@@ -1,8 +1,8 @@
 #!/bin/bash 
 
 #SBATCH --account=ehpc575
-#SBATCH --out=./production/disabled_output/more_mpirun_options/breakdown_time/LOG_%x_%j.out
-#SBATCH --err=./production/disabled_output/more_mpirun_options/breakdown_time/LOG_%x_%j.err
+#SBATCH --out=./production/disabled_output/more_mpirun_options/breakdown_time/clm_imbalance/LOG_%x_%j.out
+#SBATCH --err=./production/disabled_output/more_mpirun_options/breakdown_time/clm_imbalance/LOG_%x_%j.err
 #SBATCH --job-name 7d_8gpu_with_io
 #SBATCH --ntasks-per-node=4
 #SBATCH --partition=acc
