@@ -131,6 +131,7 @@ module mod_clm_driver
   use mod_clm_urban, only : UrbanAlbedo, UrbanRadiation, UrbanFluxes
   use mod_clm_snicar, only : SnowAge_grain
   use mod_clm_atmlnd, only : clm_map2gcell
+  use mpi, only : mpi_wtime
 
   implicit none
 
@@ -139,6 +140,16 @@ module mod_clm_driver
   save
 
   public :: clm_drv            ! clm physics,history, restart writes
+
+#ifdef TIMING_STUDY
+  real(rk8), save, public :: t_clm_hyd1 = 0.0_rk8
+  real(rk8), save, public :: t_clm_bio1 = 0.0_rk8
+  real(rk8), save, public :: t_clm_urbanflux = 0.0_rk8
+  real(rk8), save, public :: t_clm_canopy = 0.0_rk8
+  real(rk8), save, public :: t_clm_bio2 = 0.0_rk8
+  real(rk8), save, public :: t_clm_hyd2 = 0.0_rk8
+  real(rk8), save, public :: t_clm_map2gcell = 0.0_rk8
+#endif
 
   contains
   !
@@ -176,6 +187,9 @@ module mod_clm_driver
     integer(ik4)  :: kyr      ! thousand years, equals 2 at end of first year
 #endif
     character(len=256) :: filer  ! restart file name
+#ifdef TIMING_STUDY
+    real(rk8) :: t0ts
+#endif
     !FAB
 #if (defined CN)
     logical, save  :: lfirstcall = .false.
@@ -381,11 +395,17 @@ module mod_clm_driver
     ! Hydrology1
     ! =======================================================================
     !@acc call nvtxStartRange("Hydrology1")
+#ifdef TIMING_STUDY
+    t0ts = mpi_wtime()
+#endif
     call Hydrology1(begc,endc,begp,endp, &
                     filter%num_nolakec,  &
                     filter%nolakec,      &
                     filter%num_nolakep,  &
                     filter%nolakep)
+#ifdef TIMING_STUDY
+    t_clm_hyd1 = t_clm_hyd1 + (mpi_wtime() - t0ts)
+#endif
     !@acc call nvtxEndRange
 
     ! =======================================================================
@@ -413,11 +433,17 @@ module mod_clm_driver
     ! temperature from previous time step.
     ! =======================================================================
     !@acc call nvtxStartRange("Biogeophysics1")
+#ifdef TIMING_STUDY
+    t0ts = mpi_wtime()
+#endif
     call Biogeophysics1(begg,endg,begc,endc,begp,endp, &
                         filter%num_nolakec,            &
                         filter%nolakec,                &
                         filter%num_nolakep,            &
                         filter%nolakep)
+#ifdef TIMING_STUDY
+    t_clm_bio1 = t_clm_bio1 + (mpi_wtime() - t0ts)
+#endif
     !@acc call nvtxEndRange
     ! =======================================================================
     ! Determine bare soil or snow-covered vegetation surface temperature and
@@ -432,6 +458,9 @@ module mod_clm_driver
     !@acc call nvtxEndRange
     ! Fluxes for all Urban landunits
     !@acc call nvtxStartRange("UrbanFluxes")
+#ifdef TIMING_STUDY
+    t0ts = mpi_wtime()
+#endif
     call UrbanFluxes(begp,endp,begl,endl,begc,endc, &
                      filter%num_nourbanl,           &
                      filter%nourbanl,               &
@@ -439,6 +468,9 @@ module mod_clm_driver
                      filter%urbanl,                 &
                      filter%num_urbanp,             &
                      filter%urbanp)
+#ifdef TIMING_STUDY
+    t_clm_urbanflux = t_clm_urbanflux + (mpi_wtime() - t0ts)
+#endif
     !@acc call nvtxEndRange
     ! =======================================================================
     ! Determine non snow-covered vegetation surface temperature and fluxes
@@ -446,8 +478,14 @@ module mod_clm_driver
     ! canopy, and leaf water change by evapotranspiration
     ! =======================================================================
     !@acc call nvtxStartRange("CanopyFluxes")
+#ifdef TIMING_STUDY
+    t0ts = mpi_wtime()
+#endif
     call CanopyFluxes(begg,endg,begc,endc,begp,endp,filter%num_nolakep,  &
                       filter%nolakep)
+#ifdef TIMING_STUDY
+    t_clm_canopy = t_clm_canopy + (mpi_wtime() - t0ts)
+#endif
     !@acc call nvtxEndRange
     ! =======================================================================
     ! Determine lake temperature and surface fluxes
@@ -489,6 +527,9 @@ module mod_clm_driver
     ! update surface fluxes for new ground temperature.
     ! =======================================================================
     !@acc call nvtxStartRange("Biogeophysics2")
+#ifdef TIMING_STUDY
+    t0ts = mpi_wtime()
+#endif
     call Biogeophysics2(begl,endl,begc,endc,begp,endp, &
                         filter%num_urbanl,             &
                         filter%urbanl,                 &
@@ -496,6 +537,9 @@ module mod_clm_driver
                         filter%nolakec,                &
                         filter%num_nolakep,            &
                         filter%nolakep)
+#ifdef TIMING_STUDY
+    t_clm_bio2 = t_clm_bio2 + (mpi_wtime() - t0ts)
+#endif
     !@acc call nvtxEndRange
     ! =======================================================================
     ! Perform averaging from PFT level to column level
@@ -507,6 +551,9 @@ module mod_clm_driver
     ! Vertical (column) soil and surface hydrology
     ! =======================================================================
     !@acc call nvtxStartRange("Hydrology2")
+#ifdef TIMING_STUDY
+    t0ts = mpi_wtime()
+#endif
     call Hydrology2(begc,endc,             &
                     filter%num_nolakec,    &
                     filter%nolakec,        &
@@ -518,6 +565,9 @@ module mod_clm_driver
                     filter%snowc,          &
                     filter%num_nosnowc,    &
                     filter%nosnowc)
+#ifdef TIMING_STUDY
+    t_clm_hyd2 = t_clm_hyd2 + (mpi_wtime() - t0ts)
+#endif
     !@acc call nvtxEndRange
     ! =======================================================================
     ! Lake hydrology
@@ -653,7 +703,13 @@ module mod_clm_driver
     !  (l2as and l2af derived types)
     ! =======================================================================
     !@acc call nvtxStartRange("clm_map2gcell")
+#ifdef TIMING_STUDY
+    t0ts = mpi_wtime()
+#endif
     call clm_map2gcell( )
+#ifdef TIMING_STUDY
+    t_clm_map2gcell = t_clm_map2gcell + (mpi_wtime() - t0ts)
+#endif
     !@acc call nvtxEndRange
     ! =======================================================================
     ! Update accumulators

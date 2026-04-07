@@ -51,6 +51,9 @@ module mod_regcm_interface
 #ifdef TIMING_STUDY
 #ifdef CLM45
   use mod_clm_regcm, only : t_cpl_a2l, t_cpl_l2a, t_clm_drv, n_clm_calls
+  use mod_clm_decomp, only : get_proc_total
+  use mod_clm_driver, only : t_clm_hyd1, t_clm_bio1, t_clm_urbanflux, &
+                              t_clm_canopy, t_clm_bio2, t_clm_hyd2, t_clm_map2gcell
 #endif
 #endif
   use mpi
@@ -360,6 +363,7 @@ module mod_regcm_interface
     integer(ik4) :: lndpts_local, idx_min, idx_max
     integer(ik4) :: ncells_local, nlunits_local, ncols_local, npfts_local
     integer(ik4) :: ncols_min, ncols_max, npfts_min, npfts_max
+    integer(ik4) :: isum
     integer(ik4), allocatable :: lndpts_all(:)
 #endif
 
@@ -420,18 +424,18 @@ module mod_regcm_interface
 
     call mpi_reduce(ncols_local, ncols_min, 1, mpi_integer, mpi_min, italk, mycomm, ierr)
     call mpi_reduce(ncols_local, ncols_max, 1, mpi_integer, mpi_max, italk, mycomm, ierr)
-    call mpi_reduce(ncols_local, csum, 1, mpi_integer8, mpi_sum, italk, mycomm, ierr)
+    call mpi_reduce(ncols_local, isum, 1, mpi_integer, mpi_sum, italk, mycomm, ierr)
     if ( myid == italk ) then
       write(stdout,'(a,3(1x,i12))') 'TIMING_STUDY clm_ncols    :', &
-                                  ncols_min, csum/nproc, ncols_max
+                                  ncols_min, isum/nproc, ncols_max
     end if
 
     call mpi_reduce(npfts_local, npfts_min, 1, mpi_integer, mpi_min, italk, mycomm, ierr)
     call mpi_reduce(npfts_local, npfts_max, 1, mpi_integer, mpi_max, italk, mycomm, ierr)
-    call mpi_reduce(npfts_local, csum, 1, mpi_integer8, mpi_sum, italk, mycomm, ierr)
+    call mpi_reduce(npfts_local, isum, 1, mpi_integer, mpi_sum, italk, mycomm, ierr)
     if ( myid == italk ) then
       write(stdout,'(a,3(1x,i12))') 'TIMING_STUDY clm_npfts    :', &
-                                  npfts_min, csum/nproc, npfts_max
+                                  npfts_min, isum/nproc, npfts_max
     end if
 
     tloc = t_cpl_a2l
@@ -449,6 +453,69 @@ module mod_regcm_interface
     call mpi_reduce(tloc, tsum, 1, mpi_double_precision, mpi_sum, italk, mycomm, ierr)
     if ( myid == italk ) then
       write(stdout,'(a,3(1x,f12.3))') 'TIMING_STUDY clm_drv       :', &
+                                      tmin, tsum/real(nproc,rk8), tmax
+    end if
+
+    tloc = t_clm_hyd1
+    call mpi_reduce(tloc, tmin, 1, mpi_double_precision, mpi_min, italk, mycomm, ierr)
+    call mpi_reduce(tloc, tmax, 1, mpi_double_precision, mpi_max, italk, mycomm, ierr)
+    call mpi_reduce(tloc, tsum, 1, mpi_double_precision, mpi_sum, italk, mycomm, ierr)
+    if ( myid == italk ) then
+      write(stdout,'(a,3(1x,f12.3))') 'TIMING_STUDY clm_hyd1      :', &
+                                      tmin, tsum/real(nproc,rk8), tmax
+    end if
+
+    tloc = t_clm_bio1
+    call mpi_reduce(tloc, tmin, 1, mpi_double_precision, mpi_min, italk, mycomm, ierr)
+    call mpi_reduce(tloc, tmax, 1, mpi_double_precision, mpi_max, italk, mycomm, ierr)
+    call mpi_reduce(tloc, tsum, 1, mpi_double_precision, mpi_sum, italk, mycomm, ierr)
+    if ( myid == italk ) then
+      write(stdout,'(a,3(1x,f12.3))') 'TIMING_STUDY clm_bio1      :', &
+                                      tmin, tsum/real(nproc,rk8), tmax
+    end if
+
+    tloc = t_clm_urbanflux
+    call mpi_reduce(tloc, tmin, 1, mpi_double_precision, mpi_min, italk, mycomm, ierr)
+    call mpi_reduce(tloc, tmax, 1, mpi_double_precision, mpi_max, italk, mycomm, ierr)
+    call mpi_reduce(tloc, tsum, 1, mpi_double_precision, mpi_sum, italk, mycomm, ierr)
+    if ( myid == italk ) then
+      write(stdout,'(a,3(1x,f12.3))') 'TIMING_STUDY clm_urbanflux :', &
+                                      tmin, tsum/real(nproc,rk8), tmax
+    end if
+
+    tloc = t_clm_canopy
+    call mpi_reduce(tloc, tmin, 1, mpi_double_precision, mpi_min, italk, mycomm, ierr)
+    call mpi_reduce(tloc, tmax, 1, mpi_double_precision, mpi_max, italk, mycomm, ierr)
+    call mpi_reduce(tloc, tsum, 1, mpi_double_precision, mpi_sum, italk, mycomm, ierr)
+    if ( myid == italk ) then
+      write(stdout,'(a,3(1x,f12.3))') 'TIMING_STUDY clm_canopy    :', &
+                                      tmin, tsum/real(nproc,rk8), tmax
+    end if
+
+    tloc = t_clm_bio2
+    call mpi_reduce(tloc, tmin, 1, mpi_double_precision, mpi_min, italk, mycomm, ierr)
+    call mpi_reduce(tloc, tmax, 1, mpi_double_precision, mpi_max, italk, mycomm, ierr)
+    call mpi_reduce(tloc, tsum, 1, mpi_double_precision, mpi_sum, italk, mycomm, ierr)
+    if ( myid == italk ) then
+      write(stdout,'(a,3(1x,f12.3))') 'TIMING_STUDY clm_bio2      :', &
+                                      tmin, tsum/real(nproc,rk8), tmax
+    end if
+
+    tloc = t_clm_hyd2
+    call mpi_reduce(tloc, tmin, 1, mpi_double_precision, mpi_min, italk, mycomm, ierr)
+    call mpi_reduce(tloc, tmax, 1, mpi_double_precision, mpi_max, italk, mycomm, ierr)
+    call mpi_reduce(tloc, tsum, 1, mpi_double_precision, mpi_sum, italk, mycomm, ierr)
+    if ( myid == italk ) then
+      write(stdout,'(a,3(1x,f12.3))') 'TIMING_STUDY clm_hyd2      :', &
+                                      tmin, tsum/real(nproc,rk8), tmax
+    end if
+
+    tloc = t_clm_map2gcell
+    call mpi_reduce(tloc, tmin, 1, mpi_double_precision, mpi_min, italk, mycomm, ierr)
+    call mpi_reduce(tloc, tmax, 1, mpi_double_precision, mpi_max, italk, mycomm, ierr)
+    call mpi_reduce(tloc, tsum, 1, mpi_double_precision, mpi_sum, italk, mycomm, ierr)
+    if ( myid == italk ) then
+      write(stdout,'(a,3(1x,f12.3))') 'TIMING_STUDY clm_map2gcell :', &
                                       tmin, tsum/real(nproc,rk8), tmax
     end if
 
