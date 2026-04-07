@@ -358,6 +358,8 @@ module mod_regcm_interface
     integer(ik8) :: cmin, cmax, csum
     integer(ik4) :: ierr
     integer(ik4) :: lndpts_local, idx_min, idx_max
+    integer(ik4) :: ncells_local, nlunits_local, ncols_local, npfts_local
+    integer(ik4) :: ncols_min, ncols_max, npfts_min, npfts_max
     integer(ik4), allocatable :: lndpts_all(:)
 #endif
 
@@ -399,6 +401,8 @@ module mod_regcm_interface
     end if
 
 #ifdef CLM45
+    call get_proc_total(ncells_local, nlunits_local, ncols_local, npfts_local)
+
     lndpts_local = lndcomm%linear_npoint_sg(myid+1)
     if ( myid == italk ) then
       allocate(lndpts_all(nproc))
@@ -412,6 +416,22 @@ module mod_regcm_interface
         minval(lndpts_all), nint(real(sum(lndpts_all),rk8)/real(nproc,rk8)), &
         maxval(lndpts_all), ' min_rank=', idx_min-1, ' max_rank=', idx_max-1
       deallocate(lndpts_all)
+    end if
+
+    call mpi_reduce(ncols_local, ncols_min, 1, mpi_integer, mpi_min, italk, mycomm, ierr)
+    call mpi_reduce(ncols_local, ncols_max, 1, mpi_integer, mpi_max, italk, mycomm, ierr)
+    call mpi_reduce(ncols_local, csum, 1, mpi_integer8, mpi_sum, italk, mycomm, ierr)
+    if ( myid == italk ) then
+      write(stdout,'(a,3(1x,i12))') 'TIMING_STUDY clm_ncols    :', &
+                                  ncols_min, csum/nproc, ncols_max
+    end if
+
+    call mpi_reduce(npfts_local, npfts_min, 1, mpi_integer, mpi_min, italk, mycomm, ierr)
+    call mpi_reduce(npfts_local, npfts_max, 1, mpi_integer, mpi_max, italk, mycomm, ierr)
+    call mpi_reduce(npfts_local, csum, 1, mpi_integer8, mpi_sum, italk, mycomm, ierr)
+    if ( myid == italk ) then
+      write(stdout,'(a,3(1x,i12))') 'TIMING_STUDY clm_npfts    :', &
+                                  npfts_min, csum/nproc, npfts_max
     end if
 
     tloc = t_cpl_a2l
