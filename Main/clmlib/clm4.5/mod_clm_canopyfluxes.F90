@@ -34,6 +34,15 @@ module mod_clm_canopyfluxes
 
   public :: CanopyFluxes !Calculates the leaf temperature and leaf fluxes
 
+#ifdef TIMING_STUDY
+  integer(ik8), save, public :: n_canopy_calls = 0_ik8
+  integer(ik8), save, public :: canopy_pft_total = 0_ik8
+  integer(ik8), save, public :: canopy_pft_iter_total = 0_ik8
+  integer(ik8), save, public :: canopy_iter_max = 0_ik8
+  integer(ik8), save, public :: canopy_irrig_active_total = 0_ik8
+  integer(ik8), save, public :: canopy_dense_total = 0_ik8
+#endif
+
   ! true => btran is based only on unfrozen soil levels
   logical,  public :: perchroot     = .false.
   ! true  => btran is based on active layer (defined over two years);
@@ -318,6 +327,9 @@ module mod_clm_canopyfluxes
    integer(ik4), parameter :: itmax = 40
    ! minimum number of iteration [-]
    integer(ik4), parameter :: itmin = 2
+#ifdef TIMING_STUDY
+   integer(ik8) :: pft_iter_work_call, irrig_active_call, dense_call
+#endif
    ! Minimum LAI for irrigation
    real(rk8), parameter :: irrig_min_lai = 0.0_rk8
    ! Irrigate when btran falls below 0.999999 rather than 1 to
@@ -764,6 +776,14 @@ module mod_clm_canopyfluxes
      end if
    end do
 
+#ifdef TIMING_STUDY
+   pft_iter_work_call = 0_ik8
+   irrig_active_call = 0_ik8
+   dense_call = 0_ik8
+   n_canopy_calls = n_canopy_calls + 1_ik8
+   canopy_pft_total = canopy_pft_total + int(fn,ik8)
+#endif
+
    ! Initialize
 
    do concurrent ( f = 1:fn )
@@ -779,10 +799,10 @@ module mod_clm_canopyfluxes
      btran2(p)  = btran0
    end do
 
-   do concurrent ( f = 1:fn )
-     p = filterp(f)
-     c = pcolumn(p)
-     g = pgridcell(p)
+    do concurrent ( f = 1:fn )
+      p = filterp(f)
+      c = pcolumn(p)
+      g = pgridcell(p)
      dayl = daylength(lat(g),decl(c))
      ! calculate dayl_factor as the ratio of (current:max dayl)^2
      ! set a minimum of 0.01 (1%) for the dayl_factor
@@ -918,10 +938,19 @@ module mod_clm_canopyfluxes
        end if
      else  ! non-irrig pft or elai<=irrig_min_lai or btran>irrig_btran_thresh
        check_for_irrig(p)       = .false.
-     end if
-   end do
+      end if
+    end do
 
-   ! Now 'measure' soil water for the grid cells identified above and see
+#ifdef TIMING_STUDY
+    do f = 1, fn
+      p = filterp(f)
+      if ( check_for_irrig(p) ) irrig_active_call = irrig_active_call + 1_ik8
+    end do
+    canopy_irrig_active_total = canopy_irrig_active_total + irrig_active_call
+    canopy_dense_total = canopy_dense_total + dense_call
+#endif
+
+    ! Now 'measure' soil water for the grid cells identified above and see
    ! if the soil is dry enough to warrant irrigation
    !$acc kernels
    frozen_soil(lbc:ubc) = .false.
@@ -971,8 +1000,15 @@ module mod_clm_canopyfluxes
      displa(p) = egvf * displa(p)
      z0mv(p)   = exp(egvf * log(z0mv(p)) + (1._rk8 - egvf) * log(z0mg(c)))
      z0hv(p)   = z0mv(p)
-     z0qv(p)   = z0mv(p)
-   end do
+      z0qv(p)   = z0mv(p)
+    end do
+
+#ifdef TIMING_STUDY
+    do f = 1, fn
+      p = filterp(f)
+      if ( elai(p) + esai(p) > 25.0_rk8 ) dense_call = dense_call + 1_ik8
+    end do
+#endif
 
    found = .false.
 #ifdef STDPAR_FIXED
@@ -1068,6 +1104,10 @@ module mod_clm_canopyfluxes
    ! Begin stability iteration
 
    ITERATION : do while (itlef <= itmax .and. fn > 0)
+
+#ifdef TIMING_STUDY
+      pft_iter_work_call = pft_iter_work_call + int(fn,ik8)
+#endif
 
      ! Determine friction velocity, and potential temperature and humidity
      ! profiles of the surface boundary layer
@@ -1392,9 +1432,14 @@ module mod_clm_canopyfluxes
          end if
        end do
      end if
-   end do ITERATION     ! End stability iteration
+    end do ITERATION     ! End stability iteration
 
-   fn = fnorig
+#ifdef TIMING_STUDY
+    canopy_pft_iter_total = canopy_pft_iter_total + pft_iter_work_call
+    canopy_iter_max = max(canopy_iter_max, int(itlef,ik8))
+#endif
+
+    fn = fnorig
    !$acc kernels
    filterp(1:fn) = fporig(1:fn)
    !$acc end kernels

@@ -54,6 +54,8 @@ module mod_regcm_interface
   use mod_clm_decomp, only : get_proc_total
   use mod_clm_driver, only : t_clm_hyd1, t_clm_bio1, t_clm_urbanflux, &
                               t_clm_canopy, t_clm_bio2, t_clm_hyd2, t_clm_map2gcell
+  use mod_clm_canopyfluxes, only : n_canopy_calls, canopy_pft_total, canopy_pft_iter_total, &
+                                    canopy_iter_max, canopy_irrig_active_total, canopy_dense_total
 #endif
 #endif
   use mpi
@@ -542,6 +544,48 @@ module mod_regcm_interface
     call mpi_reduce(n_clm_calls, csum, 1, mpi_integer8, mpi_sum, italk, mycomm, ierr)
     if ( myid == italk ) then
       write(stdout,'(a,3(1x,i12))') 'TIMING_STUDY clm_calls     :', cmin, csum/nproc, cmax
+    end if
+
+    call mpi_reduce(n_canopy_calls, cmin, 1, mpi_integer8, mpi_min, italk, mycomm, ierr)
+    call mpi_reduce(n_canopy_calls, cmax, 1, mpi_integer8, mpi_max, italk, mycomm, ierr)
+    call mpi_reduce(n_canopy_calls, csum, 1, mpi_integer8, mpi_sum, italk, mycomm, ierr)
+    if ( myid == italk ) then
+      write(stdout,'(a,3(1x,i12))') 'TIMING_STUDY canopy_calls  :', cmin, csum/nproc, cmax
+    end if
+
+    call mpi_reduce(canopy_pft_total, cmin, 1, mpi_integer8, mpi_min, italk, mycomm, ierr)
+    call mpi_reduce(canopy_pft_total, cmax, 1, mpi_integer8, mpi_max, italk, mycomm, ierr)
+    call mpi_reduce(canopy_pft_total, csum, 1, mpi_integer8, mpi_sum, italk, mycomm, ierr)
+    if ( myid == italk ) then
+      write(stdout,'(a,3(1x,i12))') 'TIMING_STUDY canopy_pfts   :', cmin, csum/nproc, cmax
+    end if
+
+    call mpi_reduce(canopy_pft_iter_total, cmin, 1, mpi_integer8, mpi_min, italk, mycomm, ierr)
+    call mpi_reduce(canopy_pft_iter_total, cmax, 1, mpi_integer8, mpi_max, italk, mycomm, ierr)
+    call mpi_reduce(canopy_pft_iter_total, csum, 1, mpi_integer8, mpi_sum, italk, mycomm, ierr)
+    if ( myid == italk ) then
+      write(stdout,'(a,3(1x,i12))') 'TIMING_STUDY canopy_work   :', cmin, csum/nproc, cmax
+    end if
+
+    call mpi_reduce(canopy_iter_max, cmin, 1, mpi_integer8, mpi_min, italk, mycomm, ierr)
+    call mpi_reduce(canopy_iter_max, cmax, 1, mpi_integer8, mpi_max, italk, mycomm, ierr)
+    call mpi_reduce(canopy_iter_max, csum, 1, mpi_integer8, mpi_sum, italk, mycomm, ierr)
+    if ( myid == italk ) then
+      write(stdout,'(a,3(1x,i12))') 'TIMING_STUDY canopy_itmax  :', cmin, csum/nproc, cmax
+    end if
+
+    call mpi_reduce(canopy_irrig_active_total, cmin, 1, mpi_integer8, mpi_min, italk, mycomm, ierr)
+    call mpi_reduce(canopy_irrig_active_total, cmax, 1, mpi_integer8, mpi_max, italk, mycomm, ierr)
+    call mpi_reduce(canopy_irrig_active_total, csum, 1, mpi_integer8, mpi_sum, italk, mycomm, ierr)
+    if ( myid == italk ) then
+      write(stdout,'(a,3(1x,i12))') 'TIMING_STUDY canopy_irrig  :', cmin, csum/nproc, cmax
+    end if
+
+    call mpi_reduce(canopy_dense_total, cmin, 1, mpi_integer8, mpi_min, italk, mycomm, ierr)
+    call mpi_reduce(canopy_dense_total, cmax, 1, mpi_integer8, mpi_max, italk, mycomm, ierr)
+    call mpi_reduce(canopy_dense_total, csum, 1, mpi_integer8, mpi_sum, italk, mycomm, ierr)
+    if ( myid == italk ) then
+      write(stdout,'(a,3(1x,i12))') 'TIMING_STUDY canopy_dense  :', cmin, csum/nproc, cmax
     end if
 #endif
 #endif
