@@ -1,0 +1,22 @@
+#!/bin/bash 
+
+#SBATCH --account=ehpc575
+#SBATCH --out=./production/canopy_flux_instru/LOG_%x_%j.out
+#SBATCH --err=./production/canopy_flux_instru/LOG_%x_%j.err
+#SBATCH --job-name stdpar_16gpu_16task
+#SBATCH --ntasks-per-node=4
+#SBATCH --partition=acc
+#SBATCH --qos=acc_ehpc
+#SBATCH --nodes=4
+#SBATCH --exclusive
+#SBATCH --gres=tmpfs:100g
+#SBATCH --gres=gpu:4
+#SBATCH --time=02:00:00
+
+source /gpfs/home/ictp/ictp549985/RegCM/modules_cuda_working_old  
+# source /home/ictp/ictp992004/module
+
+export OMP_NUM_THREADS=1
+
+# Launch with explicit deterministic mapping/binding
+mpirun --map-by ppr:4:node --bind-to core --rank-by slot -np $SLURM_NTASKS ./STD_launch_per_rank.sh
