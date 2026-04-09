@@ -332,11 +332,9 @@ module mod_clm_canopyfluxes
    integer(ik4), parameter :: itmax = 40
    ! minimum number of iteration [-]
    integer(ik4), parameter :: itmin = 2
-#ifdef TIMING_STUDY
    integer(ik8) :: pft_iter_work_call, irrig_active_call, dense_call
    integer(ik8) :: day_layers_call, ci_solve_call
    integer(ik8) :: hybrid_iter_call, brent_call, ci_eval_call
-#endif
    ! Minimum LAI for irrigation
    real(rk8), parameter :: irrig_min_lai = 0.0_rk8
    ! Irrigate when btran falls below 0.999999 rather than 1 to
@@ -1209,24 +1207,16 @@ module mod_clm_canopyfluxes
       call Photosynthesis(fn, filterp, lbg, ubg, lbp, ubp, svpts, eah,   &
               o2, co2, rb, dayl_factor, c3flag, ac, aj, ap, ag, an,      &
               vcmax_z, cp, kc, ko, qe, tpu_z, kp_z, theta_cj, forc_pbot, &
-              bbb, mbb, phase='sun'                                       &
-#ifdef TIMING_STUDY
-              , day_layers_call, ci_solve_call, hybrid_iter_call,         &
-              brent_call, ci_eval_call
-#endif
-              )
+              bbb, mbb, phase='sun', day_layers_call, ci_solve_call,      &
+              hybrid_iter_call, brent_call, ci_eval_call)
      if ( use_c13 ) then
        call Fractionation (lbp, ubp, fn, filterp, phase='sun')
      endif
       call Photosynthesis(fn, filterp, lbg, ubg, lbp, ubp, svpts, eah,   &
               o2, co2, rb, dayl_factor, c3flag, ac, aj, ap, ag, an,      &
               vcmax_z, cp, kc, ko, qe, tpu_z, kp_z, theta_cj, forc_pbot, &
-              bbb, mbb, phase='sha'                                       &
-#ifdef TIMING_STUDY
-              , day_layers_call, ci_solve_call, hybrid_iter_call,         &
-              brent_call, ci_eval_call
-#endif
-              )
+              bbb, mbb, phase='sha', day_layers_call, ci_solve_call,      &
+              hybrid_iter_call, brent_call, ci_eval_call)
      if ( use_c13 ) then
        call Fractionation(lbp, ubp, fn, filterp, phase='sha')
      end if
@@ -1697,13 +1687,9 @@ module mod_clm_canopyfluxes
   subroutine Photosynthesis(fn, filterp, lbg, ubg, lbp, ubp, esat_tv, eair,  &
                             oair, cair, rb, dayl_factor, c3flag, ac, aj, ap, &
                             ag, an, vcmax_z, cp, kc, ko, qe, tpu_z, kp_z,    &
-                            theta_cj, forc_pbot, bbb, mbb, phase              &
-#ifdef TIMING_STUDY
-                            , day_layers_sum, ci_solve_sum,                   &
-                            hybrid_iters_sum, brent_calls_sum,                &
-                            ci_func_eval_sum                                   &
-#endif
-                            )
+                            theta_cj, forc_pbot, bbb, mbb, phase,             &
+                            day_layers_sum, ci_solve_sum, hybrid_iters_sum,   &
+                            brent_calls_sum, ci_func_eval_sum)
     use mod_clm_varcon, only : rgas, tfrz
     implicit none
     integer(ik4), intent(in)    :: fn            ! size of pft filter
@@ -1723,13 +1709,11 @@ module mod_clm_canopyfluxes
     ! scalar (0-1) for daylength
     real(rk8), intent(in)    :: dayl_factor(lbp:ubp)
     character(len=*), intent(in) :: phase  ! 'sun' or 'sha'
-#ifdef TIMING_STUDY
     integer(ik8), intent(inout) :: day_layers_sum
     integer(ik8), intent(inout) :: ci_solve_sum
     integer(ik8), intent(inout) :: hybrid_iters_sum
     integer(ik8), intent(inout) :: brent_calls_sum
     integer(ik8), intent(inout) :: ci_func_eval_sum
-#endif
 
     integer(ik4), pointer, contiguous :: pgridcell(:)! pft's gridcell index
     integer(ik4), pointer, contiguous :: ivt(:)      ! pft vegetation type
@@ -1911,11 +1895,9 @@ module mod_clm_canopyfluxes
     ! leaf boundary layer conductance (umol H2O/m**2/s)
     real(rk8),pointer, contiguous :: gb_mol(:)
 
-#ifdef TIMING_STUDY
     integer(ik8) :: day_layers_local, ci_solve_local
     integer(ik8) :: hybrid_iters_local, brent_calls_local, ci_eval_local
     integer(ik4) :: hybrid_iters_i, brent_calls_i, ci_eval_i
-#endif
 
     ! Rubisco-limited contribution to psn_z (umol CO2/m**2/s)
      real(rk8) :: psn_wc_z(lbp:ubp,nlevcan)
@@ -2313,13 +2295,11 @@ module mod_clm_canopyfluxes
     !====================================================
 
     rsmax0 = 2.e4_rk8
-#ifdef TIMING_STUDY
     day_layers_local = 0_ik8
     ci_solve_local = 0_ik8
     hybrid_iters_local = 0_ik8
     brent_calls_local = 0_ik8
     ci_eval_local = 0_ik8
-#endif
 #ifdef STDPAR_FIXED
     do concurrent ( f = 1:fn )
 #else
@@ -2359,10 +2339,8 @@ module mod_clm_canopyfluxes
 
         else                                     ! day time
 
-#ifdef TIMING_STUDY
           day_layers_local = day_layers_local + 1_ik8
           ci_solve_local = ci_solve_local + 1_ik8
-#endif
 
           !now the constraint is no longer needed, Jinyun Tang
           ceair = min( eair(p),  esat_tv(p) )
@@ -2392,17 +2370,12 @@ module mod_clm_canopyfluxes
                 c3flag(p), ac(p,iv), aj(p,iv), ap(p,iv), ag(p,iv), &
                 an(p,iv), vcmax_z(p,iv), cp(p), kc(p), ko(p),      &
                 qe(p), tpu_z(p,iv), kp_z(p,iv), theta_cj(p),       &
-                forc_pbot(g), bbb(p), mbb(p)                        &
-#ifdef TIMING_STUDY
-                , hybrid_iters_i, brent_calls_i, ci_eval_i
-#endif
-                )
+                forc_pbot(g), bbb(p), mbb(p), hybrid_iters_i,       &
+                brent_calls_i, ci_eval_i)
 
-#ifdef TIMING_STUDY
           hybrid_iters_local = hybrid_iters_local + int(hybrid_iters_i,ik8)
           brent_calls_local = brent_calls_local + int(brent_calls_i,ik8)
           ci_eval_local = ci_eval_local + int(ci_eval_i,ik8)
-#endif
 
           ! End of ci iteration.  Check for an < 0, in which case gs_mol = bbb
 
@@ -2462,13 +2435,11 @@ module mod_clm_canopyfluxes
       end do       ! canopy layer loop
     end do          ! pft loop
 
-#ifdef TIMING_STUDY
     day_layers_sum = day_layers_sum + day_layers_local
     ci_solve_sum = ci_solve_sum + ci_solve_local
     hybrid_iters_sum = hybrid_iters_sum + hybrid_iters_local
     brent_calls_sum = brent_calls_sum + brent_calls_local
     ci_func_eval_sum = ci_func_eval_sum + ci_eval_local
-#endif
 
     !================================================
     ! Canopy photosynthesis and stomatal conductance
@@ -2754,11 +2725,7 @@ module mod_clm_canopyfluxes
   pure subroutine hybrid(x0, gb_mol, je, cair, oair, lmr_z, par_z, rh_can, &
                     gs_mol, c3flag, ac, aj, ap, ag, an, vcmax_z, cp,  &
                     kc, ko, qe, tpu_z, kp_z, theta_cj, forc_pbot,     &
-                    bbb, mbb                                           &
-#ifdef TIMING_STUDY
-                    , iter_used, brent_calls, ci_eval_calls
-#endif
-                    )
+                    bbb, mbb, iter_used, brent_calls, ci_eval_calls)
     !$acc routine seq
     implicit none
     !initial guess and final value of the solution
@@ -2810,11 +2777,9 @@ module mod_clm_canopyfluxes
     real(rk8), intent(in) :: bbb
     ! Ball-Berry slope of conductance-photosynthesis relationship
     real(rk8), intent(in) :: mbb
-#ifdef TIMING_STUDY
     integer(ik4), intent(out) :: iter_used
     integer(ik4), intent(out) :: brent_calls
     integer(ik4), intent(out) :: ci_eval_calls
-#endif
 
     !number of iterations used, for record only
     integer(ik4) :: iter
@@ -2825,23 +2790,17 @@ module mod_clm_canopyfluxes
     real(rk8), parameter :: eps1= 1.e-4_rk8
     integer(ik4),  parameter :: itmax = 40 !maximum number of iterations
     real(rk8) :: tol,minx,minf
-#ifdef TIMING_STUDY
     integer(ik4) :: brent_iters, brent_evals
-#endif
 
-#ifdef TIMING_STUDY
     iter_used = 0
     brent_calls = 0
     ci_eval_calls = 0
-#endif
 
     call ci_func(x0, f0, gb_mol, je, cair, oair, lmr_z, par_z,   &
                  rh_can, gs_mol, c3flag, ac, aj, ap, ag, an,     &
                  vcmax_z, cp, kc, ko, qe, tpu_z, kp_z, theta_cj, &
                  forc_pbot, bbb, mbb)
-#ifdef TIMING_STUDY
     ci_eval_calls = ci_eval_calls + 1
-#endif
     if ( f0 == 0.0_rk8 ) return
 
     minx = x0
@@ -2851,9 +2810,7 @@ module mod_clm_canopyfluxes
                  rh_can, gs_mol, c3flag, ac, aj, ap, ag, an,     &
                  vcmax_z, cp, kc, ko, qe, tpu_z, kp_z, theta_cj, &
                  forc_pbot, bbb, mbb)
-#ifdef TIMING_STUDY
     ci_eval_calls = ci_eval_calls + 1
-#endif
 
     if ( f1 == 0.0_rk8 ) then
       x0 = x1
@@ -2882,9 +2839,7 @@ module mod_clm_canopyfluxes
                    rh_can, gs_mol, c3flag, ac, aj, ap, ag, an,    &
                    vcmax_z, cp,kc, ko, qe, tpu_z, kp_z, theta_cj, &
                    forc_pbot, bbb, mbb)
-#ifdef TIMING_STUDY
       ci_eval_calls = ci_eval_calls + 1
-#endif
       if ( f1 < minf ) then
         minx = x1
         minf = f1
@@ -2901,15 +2856,11 @@ module mod_clm_canopyfluxes
         call brent(x, x0, x1, f0, f1, tol,  gb_mol, je, cair, oair, &
                    lmr_z, par_z, rh_can, gs_mol, c3flag, ac, aj, ap, &
                    ag, an, vcmax_z, cp, kc, ko, qe, tpu_z, kp_z, &
-                   theta_cj, forc_pbot, bbb, mbb                    &
-#ifdef TIMING_STUDY
-                   , brent_iters, brent_evals
-#endif
-                   )
-#ifdef TIMING_STUDY
+                   theta_cj, forc_pbot, bbb, mbb, brent_iters,       &
+                   brent_evals)
+
         brent_calls = brent_calls + 1
         ci_eval_calls = ci_eval_calls + brent_evals
-#endif
         x0 = x
         exit
       end if
@@ -2923,15 +2874,11 @@ module mod_clm_canopyfluxes
                      rh_can, gs_mol, c3flag, ac, aj, ap, ag, an,     &
                      vcmax_z, cp, kc, ko, qe, tpu_z, kp_z, theta_cj, &
                      forc_pbot, bbb, mbb)
-#ifdef TIMING_STUDY
         ci_eval_calls = ci_eval_calls + 1
-#endif
         exit
       end if
     end do
-#ifdef TIMING_STUDY
     iter_used = iter
-#endif
   end subroutine hybrid
 
   !
@@ -2942,11 +2889,7 @@ module mod_clm_canopyfluxes
   pure subroutine brent(x,x1,x2,f1,f2,tol,gb_mol,je,cair,oair,  &
                    lmr_z,par_z,rh_can,gs_mol,c3flag,ac,aj, &
                    ap,ag,an,vcmax_z,cp,kc,ko,qe,tpu_z,kp_z,&
-                   theta_cj,forc_pbot,bbb,mbb              &
-#ifdef TIMING_STUDY
-                   , iter_used, ci_eval_calls
-#endif
-                   )
+                   theta_cj,forc_pbot,bbb,mbb, iter_used, ci_eval_calls)
     !$acc routine seq
     implicit none
     ! indepedent variable of the single value function ci_func(x)
@@ -3003,10 +2946,8 @@ module mod_clm_canopyfluxes
     real(rk8), intent(in) :: bbb
     ! Ball-Berry slope of conductance-photosynthesis relationship
     real(rk8), intent(in) :: mbb
-#ifdef TIMING_STUDY
     integer(ik4), intent(out) :: iter_used
     integer(ik4), intent(out) :: ci_eval_calls
-#endif
 
     integer(ik4) :: iter
     real(rk8) :: a,b,c,d,e,fa,fb,fc,p,q,r,s,tol1,xm
@@ -3018,9 +2959,7 @@ module mod_clm_canopyfluxes
     c = b
     fc = fb
     iter = 0
-#ifdef TIMING_STUDY
     ci_eval_calls = 0
-#endif
     do
       if ( iter == itmax ) exit
       iter = iter + 1
@@ -3080,15 +3019,11 @@ module mod_clm_canopyfluxes
                    rh_can, gs_mol, c3flag, ac, aj,  ap, ag, an,    &
                    vcmax_z, cp, kc, ko, qe, tpu_z, kp_z, theta_cj, &
                    forc_pbot, bbb, mbb)
-#ifdef TIMING_STUDY
       ci_eval_calls = ci_eval_calls + 1
-#endif
       if ( fb == 0._rk8 ) exit
     end do
     x = b
-#ifdef TIMING_STUDY
     iter_used = iter
-#endif
   end subroutine brent
 
 end module mod_clm_canopyfluxes
