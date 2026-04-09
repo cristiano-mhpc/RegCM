@@ -1,8 +1,8 @@
 #!/bin/bash 
 
 #SBATCH --account=ehpc575
-#SBATCH --out=./production/full_clm_instru/LOG_%x_%j.out
-#SBATCH --err=./production/full_clm_instru/LOG_%x_%j.err
+#SBATCH --out=./production/canopy_flux_instru/LOG_%x_%j.out
+#SBATCH --err=./production/canopy_flux_instru/LOG_%x_%j.err
 #SBATCH --job-name 16gpu_16task_2_by_8
 #SBATCH --ntasks-per-node=4
 #SBATCH --partition=acc
