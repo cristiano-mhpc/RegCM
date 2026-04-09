@@ -361,12 +361,14 @@ module mod_regcm_interface
 #ifdef TIMING_STUDY
     real(rk8) :: tloc, tmin, tmax, tsum
     integer(ik8) :: cmin, cmax, csum
-    integer(ik4) :: ierr
+    integer(ik4) :: ierr, irank
     integer(ik4) :: lndpts_local, idx_min, idx_max
     integer(ik4) :: ncells_local, nlunits_local, ncols_local, npfts_local
     integer(ik4) :: ncols_min, ncols_max, npfts_min, npfts_max
     integer(ik4) :: isum
     integer(ik4), allocatable :: lndpts_all(:)
+    real(rk8), allocatable :: rank_clm_canopy(:)
+    integer(ik8), allocatable :: rank_canopy_work(:), rank_canopy_pfts(:), rank_canopy_itmax(:)
 #endif
 
     if ( myid == italk ) then
@@ -587,6 +589,39 @@ module mod_regcm_interface
     if ( myid == italk ) then
       write(stdout,'(a,3(1x,i12))') 'TIMING_STUDY canopy_dense  :', cmin, csum/nproc, cmax
     end if
+
+    allocate(rank_clm_canopy(max(1,nproc)))
+    allocate(rank_canopy_work(max(1,nproc)), rank_canopy_pfts(max(1,nproc)), &
+             rank_canopy_itmax(max(1,nproc)))
+
+    call mpi_gather(t_clm_canopy, 1, mpi_double_precision, rank_clm_canopy, 1, &
+                    mpi_double_precision, italk, mycomm, ierr)
+    call mpi_gather(canopy_pft_iter_total, 1, mpi_integer8, rank_canopy_work, 1, &
+                    mpi_integer8, italk, mycomm, ierr)
+    call mpi_gather(canopy_pft_total, 1, mpi_integer8, rank_canopy_pfts, 1, &
+                    mpi_integer8, italk, mycomm, ierr)
+    call mpi_gather(canopy_iter_max, 1, mpi_integer8, rank_canopy_itmax, 1, &
+                    mpi_integer8, italk, mycomm, ierr)
+
+    if ( myid == italk ) then
+      write(stdout,'(a,1x,i0)') 'TIMING_STUDY_RANK_BEGIN nproc=', nproc
+      write(stdout,'(a)') 'TIMING_STUDY_RANK rank clm_canopy_s canopy_work canopy_pfts canopy_itmax canopy_s_per_work'
+      do irank = 1, nproc
+        if ( rank_canopy_work(irank) > 0_ik8 ) then
+          write(stdout,'(a,1x,i4,1x,f12.3,1x,i14,1x,i14,1x,i8,1x,es12.4)') &
+              'TIMING_STUDY_RANK', irank-1, rank_clm_canopy(irank), rank_canopy_work(irank), &
+              rank_canopy_pfts(irank), rank_canopy_itmax(irank), &
+              rank_clm_canopy(irank)/real(rank_canopy_work(irank),rk8)
+        else
+          write(stdout,'(a,1x,i4,1x,f12.3,1x,i14,1x,i14,1x,i8,1x,a)') &
+              'TIMING_STUDY_RANK', irank-1, rank_clm_canopy(irank), rank_canopy_work(irank), &
+              rank_canopy_pfts(irank), rank_canopy_itmax(irank), 'nan'
+        end if
+      end do
+      write(stdout,'(a)') 'TIMING_STUDY_RANK_END'
+      flush(stdout)
+    end if
+    deallocate(rank_clm_canopy, rank_canopy_work, rank_canopy_pfts, rank_canopy_itmax)
 #endif
 #endif
 
