@@ -55,7 +55,10 @@ module mod_regcm_interface
   use mod_clm_driver, only : t_clm_hyd1, t_clm_bio1, t_clm_urbanflux, &
                               t_clm_canopy, t_clm_bio2, t_clm_hyd2, t_clm_map2gcell
   use mod_clm_canopyfluxes, only : n_canopy_calls, canopy_pft_total, canopy_pft_iter_total, &
-                                    canopy_iter_max, canopy_irrig_active_total, canopy_dense_total
+                                    canopy_iter_max, canopy_irrig_active_total, canopy_dense_total, &
+                                    canopy_day_layers_total, canopy_ci_solve_total, &
+                                    canopy_hybrid_iter_total, canopy_brent_total, &
+                                    canopy_ci_func_eval_total
 #endif
 #endif
   use mpi
@@ -369,6 +372,9 @@ module mod_regcm_interface
     integer(ik4), allocatable :: lndpts_all(:)
     real(rk8), allocatable :: rank_clm_canopy(:)
     integer(ik8), allocatable :: rank_canopy_work(:), rank_canopy_pfts(:), rank_canopy_itmax(:)
+    integer(ik8), allocatable :: rank_canopy_daylayers(:), rank_canopy_ci_solve(:)
+    integer(ik8), allocatable :: rank_canopy_hybrid_iter(:), rank_canopy_brent(:)
+    integer(ik8), allocatable :: rank_canopy_ci_eval(:)
 #endif
 
     if ( myid == italk ) then
@@ -590,9 +596,47 @@ module mod_regcm_interface
       write(stdout,'(a,3(1x,i12))') 'TIMING_STUDY canopy_dense  :', cmin, csum/nproc, cmax
     end if
 
+    call mpi_reduce(canopy_day_layers_total, cmin, 1, mpi_integer8, mpi_min, italk, mycomm, ierr)
+    call mpi_reduce(canopy_day_layers_total, cmax, 1, mpi_integer8, mpi_max, italk, mycomm, ierr)
+    call mpi_reduce(canopy_day_layers_total, csum, 1, mpi_integer8, mpi_sum, italk, mycomm, ierr)
+    if ( myid == italk ) then
+      write(stdout,'(a,3(1x,i12))') 'TIMING_STUDY canopy_daylay :', cmin, csum/nproc, cmax
+    end if
+
+    call mpi_reduce(canopy_ci_solve_total, cmin, 1, mpi_integer8, mpi_min, italk, mycomm, ierr)
+    call mpi_reduce(canopy_ci_solve_total, cmax, 1, mpi_integer8, mpi_max, italk, mycomm, ierr)
+    call mpi_reduce(canopy_ci_solve_total, csum, 1, mpi_integer8, mpi_sum, italk, mycomm, ierr)
+    if ( myid == italk ) then
+      write(stdout,'(a,3(1x,i12))') 'TIMING_STUDY canopy_cisolv :', cmin, csum/nproc, cmax
+    end if
+
+    call mpi_reduce(canopy_hybrid_iter_total, cmin, 1, mpi_integer8, mpi_min, italk, mycomm, ierr)
+    call mpi_reduce(canopy_hybrid_iter_total, cmax, 1, mpi_integer8, mpi_max, italk, mycomm, ierr)
+    call mpi_reduce(canopy_hybrid_iter_total, csum, 1, mpi_integer8, mpi_sum, italk, mycomm, ierr)
+    if ( myid == italk ) then
+      write(stdout,'(a,3(1x,i12))') 'TIMING_STUDY canopy_hyiter :', cmin, csum/nproc, cmax
+    end if
+
+    call mpi_reduce(canopy_brent_total, cmin, 1, mpi_integer8, mpi_min, italk, mycomm, ierr)
+    call mpi_reduce(canopy_brent_total, cmax, 1, mpi_integer8, mpi_max, italk, mycomm, ierr)
+    call mpi_reduce(canopy_brent_total, csum, 1, mpi_integer8, mpi_sum, italk, mycomm, ierr)
+    if ( myid == italk ) then
+      write(stdout,'(a,3(1x,i12))') 'TIMING_STUDY canopy_brent  :', cmin, csum/nproc, cmax
+    end if
+
+    call mpi_reduce(canopy_ci_func_eval_total, cmin, 1, mpi_integer8, mpi_min, italk, mycomm, ierr)
+    call mpi_reduce(canopy_ci_func_eval_total, cmax, 1, mpi_integer8, mpi_max, italk, mycomm, ierr)
+    call mpi_reduce(canopy_ci_func_eval_total, csum, 1, mpi_integer8, mpi_sum, italk, mycomm, ierr)
+    if ( myid == italk ) then
+      write(stdout,'(a,3(1x,i12))') 'TIMING_STUDY canopy_cieval :', cmin, csum/nproc, cmax
+    end if
+
     allocate(rank_clm_canopy(max(1,nproc)))
     allocate(rank_canopy_work(max(1,nproc)), rank_canopy_pfts(max(1,nproc)), &
              rank_canopy_itmax(max(1,nproc)))
+    allocate(rank_canopy_daylayers(max(1,nproc)), rank_canopy_ci_solve(max(1,nproc)))
+    allocate(rank_canopy_hybrid_iter(max(1,nproc)), rank_canopy_brent(max(1,nproc)), &
+             rank_canopy_ci_eval(max(1,nproc)))
 
     call mpi_gather(t_clm_canopy, 1, mpi_double_precision, rank_clm_canopy, 1, &
                     mpi_double_precision, italk, mycomm, ierr)
@@ -602,26 +646,42 @@ module mod_regcm_interface
                     mpi_integer8, italk, mycomm, ierr)
     call mpi_gather(canopy_iter_max, 1, mpi_integer8, rank_canopy_itmax, 1, &
                     mpi_integer8, italk, mycomm, ierr)
+    call mpi_gather(canopy_day_layers_total, 1, mpi_integer8, rank_canopy_daylayers, 1, &
+                    mpi_integer8, italk, mycomm, ierr)
+    call mpi_gather(canopy_ci_solve_total, 1, mpi_integer8, rank_canopy_ci_solve, 1, &
+                    mpi_integer8, italk, mycomm, ierr)
+    call mpi_gather(canopy_hybrid_iter_total, 1, mpi_integer8, rank_canopy_hybrid_iter, 1, &
+                    mpi_integer8, italk, mycomm, ierr)
+    call mpi_gather(canopy_brent_total, 1, mpi_integer8, rank_canopy_brent, 1, &
+                    mpi_integer8, italk, mycomm, ierr)
+    call mpi_gather(canopy_ci_func_eval_total, 1, mpi_integer8, rank_canopy_ci_eval, 1, &
+                    mpi_integer8, italk, mycomm, ierr)
 
     if ( myid == italk ) then
       write(stdout,'(a,1x,i0)') 'TIMING_STUDY_RANK_BEGIN nproc=', nproc
-      write(stdout,'(a)') 'TIMING_STUDY_RANK rank clm_canopy_s canopy_work canopy_pfts canopy_itmax canopy_s_per_work'
+      write(stdout,'(a)') 'TIMING_STUDY_RANK rank clm_canopy_s canopy_work canopy_pfts canopy_itmax canopy_daylay canopy_cisolv canopy_hyiter canopy_brent canopy_cieval canopy_s_per_work'
       do irank = 1, nproc
         if ( rank_canopy_work(irank) > 0_ik8 ) then
-          write(stdout,'(a,1x,i4,1x,f12.3,1x,i14,1x,i14,1x,i8,1x,es12.4)') &
+          write(stdout,'(a,1x,i4,1x,f12.3,1x,i14,1x,i14,1x,i8,1x,i14,1x,i14,1x,i14,1x,i14,1x,i14,1x,es12.4)') &
               'TIMING_STUDY_RANK', irank-1, rank_clm_canopy(irank), rank_canopy_work(irank), &
-              rank_canopy_pfts(irank), rank_canopy_itmax(irank), &
+              rank_canopy_pfts(irank), rank_canopy_itmax(irank), rank_canopy_daylayers(irank), &
+              rank_canopy_ci_solve(irank), rank_canopy_hybrid_iter(irank), rank_canopy_brent(irank), &
+              rank_canopy_ci_eval(irank), &
               rank_clm_canopy(irank)/real(rank_canopy_work(irank),rk8)
         else
-          write(stdout,'(a,1x,i4,1x,f12.3,1x,i14,1x,i14,1x,i8,1x,a)') &
+          write(stdout,'(a,1x,i4,1x,f12.3,1x,i14,1x,i14,1x,i8,1x,i14,1x,i14,1x,i14,1x,i14,1x,i14,1x,a)') &
               'TIMING_STUDY_RANK', irank-1, rank_clm_canopy(irank), rank_canopy_work(irank), &
-              rank_canopy_pfts(irank), rank_canopy_itmax(irank), 'nan'
+              rank_canopy_pfts(irank), rank_canopy_itmax(irank), rank_canopy_daylayers(irank), &
+              rank_canopy_ci_solve(irank), rank_canopy_hybrid_iter(irank), rank_canopy_brent(irank), &
+              rank_canopy_ci_eval(irank), 'nan'
         end if
       end do
       write(stdout,'(a)') 'TIMING_STUDY_RANK_END'
       flush(stdout)
     end if
-    deallocate(rank_clm_canopy, rank_canopy_work, rank_canopy_pfts, rank_canopy_itmax)
+    deallocate(rank_clm_canopy, rank_canopy_work, rank_canopy_pfts, rank_canopy_itmax, &
+               rank_canopy_daylayers, rank_canopy_ci_solve, rank_canopy_hybrid_iter, &
+               rank_canopy_brent, rank_canopy_ci_eval)
 #endif
 #endif
 
