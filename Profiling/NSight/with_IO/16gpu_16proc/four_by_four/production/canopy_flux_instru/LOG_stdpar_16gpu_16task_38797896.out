@@ -1,0 +1,48 @@
+[Wrapper][Rank 00][Local 00] on as02r1b12: CUDA_VISIBLE_DEVICES=0 ACC_DEVICE_NUM=0
+[Wrapper][Rank 04][Local 00] on as04r3b16: CUDA_VISIBLE_DEVICES=0 ACC_DEVICE_NUM=0
+[Wrapper][Rank 08][Local 00] on as04r4b27: CUDA_VISIBLE_DEVICES=0 ACC_DEVICE_NUM=0
+[Wrapper][Rank 05][Local 01] on as04r3b16: CUDA_VISIBLE_DEVICES=1 ACC_DEVICE_NUM=0
+[Wrapper][Rank 12][Local 00] on as04r5b08: CUDA_VISIBLE_DEVICES=0 ACC_DEVICE_NUM=0
+[Wrapper][Rank 09][Local 01] on as04r4b27: CUDA_VISIBLE_DEVICES=1 ACC_DEVICE_NUM=0
+[Wrapper][Rank 01][Local 01] on as02r1b12: CUDA_VISIBLE_DEVICES=1 ACC_DEVICE_NUM=0
+[Wrapper][Rank 13][Local 01] on as04r5b08: CUDA_VISIBLE_DEVICES=1 ACC_DEVICE_NUM=0
+[Wrapper][Rank 06][Local 02] on as04r3b16: CUDA_VISIBLE_DEVICES=2 ACC_DEVICE_NUM=0
+[Wrapper][Rank 10][Local 02] on as04r4b27: CUDA_VISIBLE_DEVICES=2 ACC_DEVICE_NUM=0
+[Wrapper][Rank 14][Local 02] on as04r5b08: CUDA_VISIBLE_DEVICES=2 ACC_DEVICE_NUM=0
+[Wrapper][Rank 02][Local 02] on as02r1b12: CUDA_VISIBLE_DEVICES=2 ACC_DEVICE_NUM=0
+[Wrapper][Rank 07][Local 03] on as04r3b16: CUDA_VISIBLE_DEVICES=3 ACC_DEVICE_NUM=0
+[Wrapper][Rank 11][Local 03] on as04r4b27: CUDA_VISIBLE_DEVICES=3 ACC_DEVICE_NUM=0
+[Wrapper][Rank 03][Local 03] on as02r1b12: CUDA_VISIBLE_DEVICES=3 ACC_DEVICE_NUM=0
+[Wrapper][Rank 15][Local 03] on as04r5b08: CUDA_VISIBLE_DEVICES=3 ACC_DEVICE_NUM=0
+[Wrapper][Rank 13] NSYS_MODE=canopy PROFILE_RANKS=0,7,15 should_profile_rank=0
+[Wrapper][Rank 13] profiling disabled; running model directly
+[Wrapper][Rank 14] NSYS_MODE=canopy PROFILE_RANKS=0,7,15 should_profile_rank=0
+[Wrapper][Rank 12] NSYS_MODE=canopy PROFILE_RANKS=0,7,15 should_profile_rank=0
+[Wrapper][Rank 14] profiling disabled; running model directly
+[Wrapper][Rank 12] profiling disabled; running model directly
+[Wrapper][Rank 11] NSYS_MODE=canopy PROFILE_RANKS=0,7,15 should_profile_rank=0
+[Wrapper][Rank 11] profiling disabled; running model directly
+[Wrapper][Rank 15] NSYS_MODE=canopy PROFILE_RANKS=0,7,15 should_profile_rank=1
+[Wrapper][Rank 15] profiling mode=canopy output=/gpfs/scratch/ehpc575/NSight/with_IO/16gpu_16proc/Nsight_38797896/sys_rank15
+[Wrapper][Rank 05] NSYS_MODE=canopy PROFILE_RANKS=0,7,15 should_profile_rank=0
+[Wrapper][Rank 08] NSYS_MODE=canopy PROFILE_RANKS=0,7,15 should_profile_rank=0
+[Wrapper][Rank 10] NSYS_MODE=canopy PROFILE_RANKS=0,7,15 should_profile_rank=0
+[Wrapper][Rank 10] profiling disabled; running model directly
+[Wrapper][Rank 08] profiling disabled; running model directly
+[Wrapper][Rank 09] NSYS_MODE=canopy PROFILE_RANKS=0,7,15 should_profile_rank=0
+[Wrapper][Rank 09] profiling disabled; running model directly
+[Wrapper][Rank 05] profiling disabled; running model directly
+[Wrapper][Rank 06] NSYS_MODE=canopy PROFILE_RANKS=0,7,15 should_profile_rank=0
+[Wrapper][Rank 06] profiling disabled; running model directly
+[Wrapper][Rank 04] NSYS_MODE=canopy PROFILE_RANKS=0,7,15 should_profile_rank=0
+[Wrapper][Rank 04] profiling disabled; running model directly
+[Wrapper][Rank 07] NSYS_MODE=canopy PROFILE_RANKS=0,7,15 should_profile_rank=1
+[Wrapper][Rank 07] profiling mode=canopy output=/gpfs/scratch/ehpc575/NSight/with_IO/16gpu_16proc/Nsight_38797896/sys_rank7
+[Wrapper][Rank 01] NSYS_MODE=canopy PROFILE_RANKS=0,7,15 should_profile_rank=0
+[Wrapper][Rank 00] NSYS_MODE=canopy PROFILE_RANKS=0,7,15 should_profile_rank=1
+[Wrapper][Rank 02] NSYS_MODE=canopy PROFILE_RANKS=0,7,15 should_profile_rank=0
+[Wrapper][Rank 01] profiling disabled; running model directly
+[Wrapper][Rank 02] profiling disabled; running model directly
+[Wrapper][Rank 00] profiling mode=canopy output=/gpfs/scratch/ehpc575/NSight/with_IO/16gpu_16proc/Nsight_38797896/sys_rank0
+[Wrapper][Rank 03] NSYS_MODE=canopy PROFILE_RANKS=0,7,15 should_profile_rank=0
+[Wrapper][Rank 03] profiling disabled; running model directly

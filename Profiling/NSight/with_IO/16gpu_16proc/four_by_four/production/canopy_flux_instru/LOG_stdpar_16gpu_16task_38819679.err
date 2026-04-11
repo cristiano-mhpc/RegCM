@@ -1,0 +1,106 @@
+load CMAKE/3.30.5 (PATH)
+WARNING: The version of the system or its configuration does not allow enabling CPU profiling:
+- CPU IP/backtrace sampling will be disabled.
+- CPU context switch tracing will be disabled.
+Try the 'nsys status --environment' command to learn more.
+
+WARNING: The version of the system or its configuration does not allow enabling CPU profiling:
+- CPU IP/backtrace sampling will be disabled.
+- CPU context switch tracing will be disabled.
+Try the 'nsys status --environment' command to learn more.
+
+WARNING: The version of the system or its configuration does not allow enabling CPU profiling:
+- CPU IP/backtrace sampling will be disabled.
+- CPU context switch tracing will be disabled.
+Try the 'nsys status --environment' command to learn more.
+
+WARNING: The version of the system or its configuration does not allow enabling CPU profiling:
+- CPU IP/backtrace sampling will be disabled.
+- CPU context switch tracing will be disabled.
+Try the 'nsys status --environment' command to learn more.
+
+WARNING: The version of the system or its configuration does not allow enabling CPU profiling:
+- CPU IP/backtrace sampling will be disabled.
+- CPU context switch tracing will be disabled.
+Try the 'nsys status --environment' command to learn more.
+
+WARNING: The version of the system or its configuration does not allow enabling CPU profiling:
+- CPU IP/backtrace sampling will be disabled.
+- CPU context switch tracing will be disabled.
+Try the 'nsys status --environment' command to learn more.
+
+WARNING: The version of the system or its configuration does not allow enabling CPU profiling:
+- CPU IP/backtrace sampling will be disabled.
+- CPU context switch tracing will be disabled.
+Try the 'nsys status --environment' command to learn more.
+
+WARNING: The version of the system or its configuration does not allow enabling CPU profiling:
+- CPU IP/backtrace sampling will be disabled.
+- CPU context switch tracing will be disabled.
+Try the 'nsys status --environment' command to learn more.
+
+WARNING: The version of the system or its configuration does not allow enabling CPU profiling:
+- CPU IP/backtrace sampling will be disabled.
+- CPU context switch tracing will be disabled.
+Try the 'nsys status --environment' command to learn more.
+
+WARNING: The version of the system or its configuration does not allow enabling CPU profiling:
+- CPU IP/backtrace sampling will be disabled.
+- CPU context switch tracing will be disabled.
+Try the 'nsys status --environment' command to learn more.
+
+WARNING: The version of the system or its configuration does not allow enabling CPU profiling:
+- CPU IP/backtrace sampling will be disabled.
+- CPU context switch tracing will be disabled.
+Try the 'nsys status --environment' command to learn more.
+
+WARNING: The version of the system or its configuration does not allow enabling CPU profiling:
+- CPU IP/backtrace sampling will be disabled.
+- CPU context switch tracing will be disabled.
+Try the 'nsys status --environment' command to learn more.
+
+WARNING: The version of the system or its configuration does not allow enabling CPU profiling:
+- CPU IP/backtrace sampling will be disabled.
+- CPU context switch tracing will be disabled.
+Try the 'nsys status --environment' command to learn more.
+
+WARNING: The version of the system or its configuration does not allow enabling CPU profiling:
+- CPU IP/backtrace sampling will be disabled.
+- CPU context switch tracing will be disabled.
+Try the 'nsys status --environment' command to learn more.
+
+WARNING: The version of the system or its configuration does not allow enabling CPU profiling:
+- CPU IP/backtrace sampling will be disabled.
+- CPU context switch tracing will be disabled.
+Try the 'nsys status --environment' command to learn more.
+
+WARNING: The version of the system or its configuration does not allow enabling CPU profiling:
+- CPU IP/backtrace sampling will be disabled.
+- CPU context switch tracing will be disabled.
+Try the 'nsys status --environment' command to learn more.
+
+Executable '/home/ictp/ictp549985/RegCM/bin/regcmMPICML45' not found in current directory or standard search paths
+--------------------------------------------------------------------------
+Primary job  terminated normally, but 1 process returned
+a non-zero exit code. Per user-direction, the job has been aborted.
+--------------------------------------------------------------------------
+Executable '/home/ictp/ictp549985/RegCM/bin/regcmMPICML45' not found in current directory or standard search paths
+Executable '/home/ictp/ictp549985/RegCM/bin/regcmMPICML45' not found in current directory or standard search paths
+Executable '/home/ictp/ictp549985/RegCM/bin/regcmMPICML45' not found in current directory or standard search paths
+Executable '/home/ictp/ictp549985/RegCM/bin/regcmMPICML45' not found in current directory or standard search paths
+Executable '/home/ictp/ictp549985/RegCM/bin/regcmMPICML45' not found in current directory or standard search paths
+Executable '/home/ictp/ictp549985/RegCM/bin/regcmMPICML45' not found in current directory or standard search paths
+Executable '/home/ictp/ictp549985/RegCM/bin/regcmMPICML45' not found in current directory or standard search paths
+Executable '/home/ictp/ictp549985/RegCM/bin/regcmMPICML45' not found in current directory or standard search paths
+Executable '/home/ictp/ictp549985/RegCM/bin/regcmMPICML45' not found in current directory or standard search paths
+Executable '/home/ictp/ictp549985/RegCM/bin/regcmMPICML45' not found in current directory or standard search paths
+Executable '/home/ictp/ictp549985/RegCM/bin/regcmMPICML45' not found in current directory or standard search paths
+Executable '/home/ictp/ictp549985/RegCM/bin/regcmMPICML45' not found in current directory or standard search paths
+Executable '/home/ictp/ictp549985/RegCM/bin/regcmMPICML45' not found in current directory or standard search paths
+--------------------------------------------------------------------------
+mpirun detected that one or more processes exited with non-zero status, thus causing
+the job to be terminated. The first process to do so was:
+
+  Process name: [[55100,1],13]
+  Exit code:    1
+--------------------------------------------------------------------------

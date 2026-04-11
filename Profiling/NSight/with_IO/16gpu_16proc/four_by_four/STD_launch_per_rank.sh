@@ -22,6 +22,7 @@ export ACC_DEVICE_NUM=0
 #------------
 # Nsight Systems Profiling
 #-----------------------
+NSYS_BIN="/apps/ACC/NVIDIA-HPC-SDK/25.7/Linux_x86_64/25.7/compilers/bin/nsys"
 export SCRATCH=/gpfs/scratch/ehpc575
 export BINDIR=/home/ictp/ictp549985/RegCM/bin
 INPUT_FILE=EURR-3_namelist.in
@@ -40,19 +41,18 @@ NSYS_OUT="$NSYS_DIR/sys_rank${GLOBAL_RANK}"
 mkdir -p "$NSYS_DIR"
 umask 007   # files created with 600 permissions 
 
-NSYS_MODE=${NSYS_MODE:-canopy}
-PROFILE_RANKS=${PROFILE_RANKS:-all}
+NSYS_MODE=$(printf '%s' "${NSYS_MODE:-canopy}" | tr -d '[:space:]')
+PROFILE_RANKS=$(printf '%s' "${PROFILE_RANKS:-all}" | tr -d '[:space:]')
 
 should_profile_rank=0
-if [ "$PROFILE_RANKS" = "all" ]; then
-  should_profile_rank=1 else
-  for rank in ${PROFILE_RANKS//,/ }; do
-    if [ "$rank" = "$GLOBAL_RANK" ]; then
-      should_profile_rank=1
-      break
-    fi
-  done
+if [ -z "$PROFILE_RANKS" ] || [ "$PROFILE_RANKS" = "all" ]; then
+  should_profile_rank=1
+elif [[ ",$PROFILE_RANKS," == *,"$GLOBAL_RANK",* ]]; then
+  should_profile_rank=1
 fi
+
+printf '[Wrapper][Rank %02d] NSYS_MODE=%s PROFILE_RANKS=%s should_profile_rank=%d\n' \
+  "$GLOBAL_RANK" "$NSYS_MODE" "$PROFILE_RANKS" "$should_profile_rank"
 
 if [ "$should_profile_rank" -eq 1 ]; then
   NSYS_ARGS=(
@@ -69,6 +69,7 @@ if [ "$should_profile_rank" -eq 1 ]; then
   if [ "$NSYS_MODE" = "canopy" ]; then
     NSYS_ARGS+=(
       --capture-range=nvtx
+      --nvtx-capture=CanopyFluxes
       --capture-range-end=repeat:1
       --sample=none
       --cpuctxsw=none
@@ -77,7 +78,7 @@ if [ "$should_profile_rank" -eq 1 ]; then
 
   printf '[Wrapper][Rank %02d] profiling mode=%s output=%s\n' \
     "$GLOBAL_RANK" "$NSYS_MODE" "$NSYS_OUT"
-  nsys "${NSYS_ARGS[@]}" "$BINDIR/regcmMPICLM45" "$INPUT_FILE"
+  $NSYS_BIN "${NSYS_ARGS[@]}" "$BINDIR/regcmMPICLM45" "$INPUT_FILE"
 else
   printf '[Wrapper][Rank %02d] profiling disabled; running model directly\n' \
     "$GLOBAL_RANK"

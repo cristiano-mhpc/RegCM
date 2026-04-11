@@ -1,0 +1,42 @@
+load CMAKE/3.30.5 (PATH)
+[as05r3b32:1548668:0:1548702] Caught signal 11 (Segmentation fault: address not mapped to object at address 0x5445840993d55)
+==== backtrace (tid:1548702) ====
+ 0 0x0000000000054df0 __GI___sigaction()  :0
+ 1 0x00000000000ce2fc __strlen_evex()  :0
+ 2 0x00000000004a355d glAccum()  ???:0
+ 3 0x00000000004a56c8 glAccum()  ???:0
+ 4 0x00000000004b7ed9 glAccum()  ???:0
+ 5 0x00000000004aa574 glAccum()  ???:0
+ 6 0x000000000015894a cuptiEnumMetrics()  ???:0
+ 7 0x000000000015aa0e cuptiEnumMetrics()  ???:0
+ 8 0x00000000002fec1d cuptiOpenMpInitialize_v2()  ???:0
+ 9 0x000000000009f802 start_thread()  ???:0
+10 0x000000000003f450 __clone3()  :0
+=================================
+[as05r3b32:1548668] *** Process received signal ***
+[as05r3b32:1548668] Signal: Segmentation fault (11)
+[as05r3b32:1548668] Signal code:  (-6)
+[as05r3b32:1548668] Failing at address: 0xd1620017a17c
+[as05r3b32:1548668] [ 0] /lib64/libc.so.6(+0x54df0)[0x7f72a1c78df0]
+[as05r3b32:1548668] [ 1] /lib64/libc.so.6(+0xce2fc)[0x7f72a1cf22fc]
+[as05r3b32:1548668] [ 2] /gpfs/home/ictp/ictp992004/netcdf/Linux_x86_64/26.1/profilers/13.1/Nsight_Systems/target-linux-x64/libToolsInjection64.so(+0x4a355d)[0x7f729eb1755d]
+[as05r3b32:1548668] [ 3] /gpfs/home/ictp/ictp992004/netcdf/Linux_x86_64/26.1/profilers/13.1/Nsight_Systems/target-linux-x64/libToolsInjection64.so(+0x4a56c8)[0x7f729eb196c8]
+[as05r3b32:1548668] [ 4] /gpfs/home/ictp/ictp992004/netcdf/Linux_x86_64/26.1/profilers/13.1/Nsight_Systems/target-linux-x64/libToolsInjection64.so(+0x4b7ed9)[0x7f729eb2bed9]
+[as05r3b32:1548668] [ 5] /gpfs/home/ictp/ictp992004/netcdf/Linux_x86_64/26.1/profilers/13.1/Nsight_Systems/target-linux-x64/libToolsInjection64.so(+0x4aa574)[0x7f729eb1e574]
+[as05r3b32:1548668] [ 6] /gpfs/home/ictp/ictp992004/netcdf/Linux_x86_64/26.1/profilers/13.1/Nsight_Systems/target-linux-x64/libcupti.so.12.9(+0x15894a)[0x7f6efee5494a]
+[as05r3b32:1548668] [ 7] /gpfs/home/ictp/ictp992004/netcdf/Linux_x86_64/26.1/profilers/13.1/Nsight_Systems/target-linux-x64/libcupti.so.12.9(+0x15aa0e)[0x7f6efee56a0e]
+[as05r3b32:1548668] [ 8] /gpfs/home/ictp/ictp992004/netcdf/Linux_x86_64/26.1/profilers/13.1/Nsight_Systems/target-linux-x64/libcupti.so.12.9(+0x2fec1d)[0x7f6efeffac1d]
+[as05r3b32:1548668] [ 9] /lib64/libc.so.6(+0x9f802)[0x7f72a1cc3802]
+[as05r3b32:1548668] [10] /lib64/libc.so.6(+0x3f450)[0x7f72a1c63450]
+[as05r3b32:1548668] *** End of error message ***
+--------------------------------------------------------------------------
+Primary job  terminated normally, but 1 process returned
+a non-zero exit code. Per user-direction, the job has been aborted.
+--------------------------------------------------------------------------
+--------------------------------------------------------------------------
+mpirun detected that one or more processes exited with non-zero status, thus causing
+the job to be terminated. The first process to do so was:
+
+  Process name: [[41359,1],13]
+  Exit code:    139
+--------------------------------------------------------------------------

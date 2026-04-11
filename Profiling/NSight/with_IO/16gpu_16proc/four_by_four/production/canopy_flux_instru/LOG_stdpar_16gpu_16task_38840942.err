@@ -1,0 +1,42 @@
+load CMAKE/3.30.5 (PATH)
+[as06r4b27:1461528:0:1461567] Caught signal 11 (Segmentation fault: address not mapped to object at address 0x5bc8857023089)
+==== backtrace (tid:1461567) ====
+ 0 0x0000000000054df0 __GI___sigaction()  :0
+ 1 0x00000000000ce2fc __strlen_evex()  :0
+ 2 0x0000000000498d9d glAccum()  ???:0
+ 3 0x000000000049ac78 glAccum()  ???:0
+ 4 0x00000000004ab9c1 glAccum()  ???:0
+ 5 0x000000000049f1ad glAccum()  ???:0
+ 6 0x000000000015834a cuptiEnumMetrics()  ???:0
+ 7 0x000000000015a40e cuptiEnumMetrics()  ???:0
+ 8 0x00000000002fe69d cuptiOpenMpInitialize_v2()  ???:0
+ 9 0x000000000009f802 start_thread()  ???:0
+10 0x000000000003f450 __clone3()  :0
+=================================
+[as06r4b27:1461528] *** Process received signal ***
+[as06r4b27:1461528] Signal: Segmentation fault (11)
+[as06r4b27:1461528] Signal code:  (-6)
+[as06r4b27:1461528] Failing at address: 0xd16200164d18
+[as06r4b27:1461528] [ 0] /lib64/libc.so.6(+0x54df0)[0x7fd8a018cdf0]
+[as06r4b27:1461528] [ 1] /lib64/libc.so.6(+0xce2fc)[0x7fd8a02062fc]
+[as06r4b27:1461528] [ 2] /gpfs/apps/MN5/ACC/NVIDIA-HPC-SDK/25.7/Linux_x86_64/25.7/profilers/Nsight_Systems/target-linux-x64/libToolsInjection64.so(+0x498d9d)[0x7fd89d053d9d]
+[as06r4b27:1461528] [ 3] /gpfs/apps/MN5/ACC/NVIDIA-HPC-SDK/25.7/Linux_x86_64/25.7/profilers/Nsight_Systems/target-linux-x64/libToolsInjection64.so(+0x49ac78)[0x7fd89d055c78]
+[as06r4b27:1461528] [ 4] /gpfs/apps/MN5/ACC/NVIDIA-HPC-SDK/25.7/Linux_x86_64/25.7/profilers/Nsight_Systems/target-linux-x64/libToolsInjection64.so(+0x4ab9c1)[0x7fd89d0669c1]
+[as06r4b27:1461528] [ 5] /gpfs/apps/MN5/ACC/NVIDIA-HPC-SDK/25.7/Linux_x86_64/25.7/profilers/Nsight_Systems/target-linux-x64/libToolsInjection64.so(+0x49f1ad)[0x7fd89d05a1ad]
+[as06r4b27:1461528] [ 6] /gpfs/apps/MN5/ACC/NVIDIA-HPC-SDK/25.7/Linux_x86_64/25.7/profilers/Nsight_Systems/target-linux-x64/libcupti.so.12.9(+0x15834a)[0x7fd604bb234a]
+[as06r4b27:1461528] [ 7] /gpfs/apps/MN5/ACC/NVIDIA-HPC-SDK/25.7/Linux_x86_64/25.7/profilers/Nsight_Systems/target-linux-x64/libcupti.so.12.9(+0x15a40e)[0x7fd604bb440e]
+[as06r4b27:1461528] [ 8] /gpfs/apps/MN5/ACC/NVIDIA-HPC-SDK/25.7/Linux_x86_64/25.7/profilers/Nsight_Systems/target-linux-x64/libcupti.so.12.9(+0x2fe69d)[0x7fd604d5869d]
+[as06r4b27:1461528] [ 9] /lib64/libc.so.6(+0x9f802)[0x7fd8a01d7802]
+[as06r4b27:1461528] [10] /lib64/libc.so.6(+0x3f450)[0x7fd8a0177450]
+[as06r4b27:1461528] *** End of error message ***
+--------------------------------------------------------------------------
+Primary job  terminated normally, but 1 process returned
+a non-zero exit code. Per user-direction, the job has been aborted.
+--------------------------------------------------------------------------
+--------------------------------------------------------------------------
+mpirun detected that one or more processes exited with non-zero status, thus causing
+the job to be terminated. The first process to do so was:
+
+  Process name: [[53204,1],11]
+  Exit code:    139
+--------------------------------------------------------------------------

@@ -1,0 +1,24 @@
+load CMAKE/3.30.5 (PATH)
+option '--force-overwrite' cannot be specified more than once
+
+usage: nsys profile [<args>] [application] [<application args>]
+Try 'nsys profile --help' for more information.
+--------------------------------------------------------------------------
+Primary job  terminated normally, but 1 process returned
+a non-zero exit code. Per user-direction, the job has been aborted.
+--------------------------------------------------------------------------
+option '--force-overwrite' cannot be specified more than once
+
+usage: nsys profile [<args>] [application] [<application args>]
+Try 'nsys profile --help' for more information.
+option '--force-overwrite' cannot be specified more than once
+
+usage: nsys profile [<args>] [application] [<application args>]
+Try 'nsys profile --help' for more information.
+--------------------------------------------------------------------------
+mpirun detected that one or more processes exited with non-zero status, thus causing
+the job to be terminated. The first process to do so was:
+
+  Process name: [[38426,1],0]
+  Exit code:    1
+--------------------------------------------------------------------------
