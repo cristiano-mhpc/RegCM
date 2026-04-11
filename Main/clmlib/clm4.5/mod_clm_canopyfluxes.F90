@@ -1207,7 +1207,7 @@ module mod_clm_canopyfluxes
       call Photosynthesis(fn, filterp, lbg, ubg, lbp, ubp, svpts, eah,   &
               o2, co2, rb, dayl_factor, c3flag, ac, aj, ap, ag, an,      &
               vcmax_z, cp, kc, ko, qe, tpu_z, kp_z, theta_cj, forc_pbot, &
-              bbb, mbb, phase='sun', day_layers_call, ci_solve_call,      &
+              bbb, mbb, 'sun', day_layers_call, ci_solve_call,            &
               hybrid_iter_call, brent_call, ci_eval_call)
      if ( use_c13 ) then
        call Fractionation (lbp, ubp, fn, filterp, phase='sun')
@@ -1215,7 +1215,7 @@ module mod_clm_canopyfluxes
       call Photosynthesis(fn, filterp, lbg, ubg, lbp, ubp, svpts, eah,   &
               o2, co2, rb, dayl_factor, c3flag, ac, aj, ap, ag, an,      &
               vcmax_z, cp, kc, ko, qe, tpu_z, kp_z, theta_cj, forc_pbot, &
-              bbb, mbb, phase='sha', day_layers_call, ci_solve_call,      &
+              bbb, mbb, 'sha', day_layers_call, ci_solve_call,            &
               hybrid_iter_call, brent_call, ci_eval_call)
      if ( use_c13 ) then
        call Fractionation(lbp, ubp, fn, filterp, phase='sha')
