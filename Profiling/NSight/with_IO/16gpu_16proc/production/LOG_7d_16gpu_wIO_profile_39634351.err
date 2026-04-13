@@ -62,6 +62,3 @@ WARNING: Device-side CUDA Event completion trace is currently enabled.
          This may increase runtime overhead and the likelihood of false
          dependencies across CUDA Streams. If you wish to avoid this, please
          disable the feature with --cuda-event-trace=false.
-srun: Job step aborted: Waiting up to 122 seconds for job step to finish.
-slurmstepd: error: *** STEP 37189513.0 ON lrdn2801 CANCELLED AT 2026-03-08T14:50:20 DUE TO TIME LIMIT ***
-slurmstepd: error: *** JOB 37189513 ON lrdn2801 CANCELLED AT 2026-03-08T14:50:20 DUE TO TIME LIMIT ***

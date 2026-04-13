@@ -36,10 +36,7 @@ umask 007   # files created with 600 permissions
 $NSYS_BIN profile \
   --force-overwrite true \
   --stats=true \
-  --sample=process-tree \
-  --backtrace=dwarf \
   --output "$NSYS_OUT" \
-  --sampling-period=1000000 \
   --trace=nvtx,mpi,cuda,osrt \
   --mpi-impl=openmpi \
   --cuda-um-cpu-page-faults=true \
