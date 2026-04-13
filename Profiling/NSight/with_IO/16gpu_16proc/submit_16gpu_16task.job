@@ -8,9 +8,9 @@
 #SBATCH --partition=boost_usr_prod
 #SBATCH --nodes=4 
 #SBATCH --exclusive 
-#SBATCH --gres=tmpfs:100G 
+#SBATCH --gres=tmpfs:200G 
 #SBATCH --gres=gpu:4
-#SBATCH --time=03:30:00
+#SBATCH --time=08:30:00
 
 source /leonardo/home/userexternal/ctica000/MS_thesis/RegCM/modules_cuda  
 

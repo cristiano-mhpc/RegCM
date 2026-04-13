@@ -1,0 +1,249 @@
+WARNING: Device-side CUDA Event completion trace is currently enabled.
+         This may increase runtime overhead and the likelihood of false
+         dependencies across CUDA Streams. If you wish to avoid this, please
+         disable the feature with --cuda-event-trace=false.
+WARNING: Device-side CUDA Event completion trace is currently enabled.
+         This may increase runtime overhead and the likelihood of false
+         dependencies across CUDA Streams. If you wish to avoid this, please
+         disable the feature with --cuda-event-trace=false.
+WARNING: Device-side CUDA Event completion trace is currently enabled.
+         This may increase runtime overhead and the likelihood of false
+         dependencies across CUDA Streams. If you wish to avoid this, please
+         disable the feature with --cuda-event-trace=false.
+WARNING: Device-side CUDA Event completion trace is currently enabled.
+         This may increase runtime overhead and the likelihood of false
+         dependencies across CUDA Streams. If you wish to avoid this, please
+         disable the feature with --cuda-event-trace=false.
+WARNING: Device-side CUDA Event completion trace is currently enabled.
+         This may increase runtime overhead and the likelihood of false
+         dependencies across CUDA Streams. If you wish to avoid this, please
+         disable the feature with --cuda-event-trace=false.
+WARNING: Device-side CUDA Event completion trace is currently enabled.
+         This may increase runtime overhead and the likelihood of false
+         dependencies across CUDA Streams. If you wish to avoid this, please
+         disable the feature with --cuda-event-trace=false.
+WARNING: Device-side CUDA Event completion trace is currently enabled.
+         This may increase runtime overhead and the likelihood of false
+         dependencies across CUDA Streams. If you wish to avoid this, please
+         disable the feature with --cuda-event-trace=false.
+WARNING: Device-side CUDA Event completion trace is currently enabled.
+         This may increase runtime overhead and the likelihood of false
+         dependencies across CUDA Streams. If you wish to avoid this, please
+         disable the feature with --cuda-event-trace=false.
+slurmstepd: error:  mpi/pmix_v3: _errhandler: lrdn2077 [1]: pmixp_client_v2.c:212: Error handler invoked: status = -25, source = [slurm.pmix.39623801.0:5]
+srun: error: Munge decode failed: Expired credential
+[lrdn2021:599643:0:599643] ib_mlx5_log.c:184  Transport retry count exceeded on mlx5_0:1/IB (synd 0x15 vend 0x81 hw_synd 0/0)
+[lrdn2021:599643:0:599643] ib_mlx5_log.c:184  RC QP 0x40ea wqe[21273]: SEND --e [inl len 87] [rqpn 0x6dc5 dlid=5470 sl=0 port=1 src_path_bits=0]
+[lrdn2021:599640:0:599640] ib_mlx5_log.c:184  Transport retry count exceeded on mlx5_0:1/IB (synd 0x15 vend 0x81 hw_synd 0/0)
+[lrdn2021:599640:0:599640] ib_mlx5_log.c:184  RC QP 0x40e8 wqe[21272]: SEND --e [inl len 87] [rqpn 0x6dc7 dlid=5470 sl=0 port=1 src_path_bits=0]
+[lrdn2021:599639:0:599639] ib_mlx5_log.c:184  Transport retry count exceeded on mlx5_0:1/IB (synd 0x15 vend 0x81 hw_synd 0/0)
+[lrdn2021:599639:0:599639] ib_mlx5_log.c:184  RC QP 0x40eb wqe[21265]: SEND --e [inl len 87] [rqpn 0x6dc4 dlid=5470 sl=0 port=1 src_path_bits=0]
+srun: auth/munge: _print_cred: ENCODED: Sun Apr 12 06:02:09 2026
+srun: auth/munge: _print_cred: DECODED: Sun Apr 12 06:08:30 2026
+srun: error: slurm_unpack_received_msg: [[10.128.255.221]:34054] auth_g_verify: SRUN_NODE_FAIL has authentication error: Unspecified error
+srun: error: slurm_unpack_received_msg: [[10.128.255.221]:34054] Protocol authentication error
+srun: error: Munge decode failed: Expired credential
+srun: auth/munge: _print_cred: ENCODED: Sun Apr 12 06:02:16 2026
+srun: auth/munge: _print_cred: DECODED: Sun Apr 12 06:08:31 2026
+srun: error: slurm_unpack_received_msg: [[lrdn2077-interconnect-1.leonardo.local]:48328] auth_g_verify: MESSAGE_TASK_EXIT has authentication error: Unspecified error
+srun: error: slurm_unpack_received_msg: [[lrdn2077-interconnect-1.leonardo.local]:48328] Protocol authentication error
+srun: error: Munge decode failed: Expired credential
+srun: auth/munge: _print_cred: ENCODED: Sun Apr 12 06:02:09 2026
+srun: auth/munge: _print_cred: DECODED: Sun Apr 12 06:08:31 2026
+srun: error: slurm_unpack_received_msg: [[10.128.255.221]:34064] auth_g_verify: SRUN_JOB_COMPLETE has authentication error: Unspecified error
+srun: error: slurm_unpack_received_msg: [[10.128.255.221]:34064] Protocol authentication error
+srun: error: lrdn2077: tasks 4-7: Terminated
+srun: error: slurm_send_node_msg: [socket:[2400832448]] slurm_bufs_sendto(msg_type=RESPONSE_SLURM_RC) failed: Unexpected missing socket error
+srun: error: lrdn2077: tasks 4-7: Terminated
+srun: error: Task 4 reported exit for a second time.
+srun: error: Task 5 reported exit for a second time.
+srun: error: Task 6 reported exit for a second time.
+srun: error: Task 7 reported exit for a second time.
+srun: error: slurm_send_node_msg: [socket:[2400832452]] slurm_bufs_sendto(msg_type=RESPONSE_SLURM_RC) failed: Unexpected missing socket error
+srun: error: lrdn2077: tasks 4-7: Terminated
+srun: error: Task 4 reported exit for a second time.
+srun: error: Task 5 reported exit for a second time.
+srun: error: Task 6 reported exit for a second time.
+srun: error: Task 7 reported exit for a second time.
+slurmstepd: error:  mpi/pmix_v3: _errhandler: lrdn2021 [0]: pmixp_client_v2.c:212: Error handler invoked: status = -25, source = [slurm.pmix.39623801.0:0]
+==== backtrace (tid: 599640) ====
+ 0 0x0000000000028e60 uct_ib_mlx5_completion_with_err()  /build-result/src/hpcx-v2.19-gcc-mlnx_ofed-redhat7-cuda12-x86_64/ucx-7bb2722ff2187a0cad557ae4a6afa090569f83fb/src/uct/ib/mlx5/ib_mlx5_log.c:179
+ 1 0x0000000000043cd7 uct_rc_mlx5_iface_handle_failure()  /build-result/src/hpcx-v2.19-gcc-mlnx_ofed-redhat7-cuda12-x86_64/ucx-7bb2722ff2187a0cad557ae4a6afa090569f83fb/src/uct/ib/rc/accel/rc_mlx5_iface.c:299
+ 2 0x0000000000029f75 uct_ib_mlx5_check_completion()  /build-result/src/hpcx-v2.19-gcc-mlnx_ofed-redhat7-cuda12-x86_64/ucx-7bb2722ff2187a0cad557ae4a6afa090569f83fb/src/uct/ib/mlx5/ib_mlx5.c:476
+ 3 0x00000000000451bf uct_ib_mlx5_poll_cq()  /build-result/src/hpcx-v2.19-gcc-mlnx_ofed-redhat7-cuda12-x86_64/ucx-7bb2722ff2187a0cad557ae4a6afa090569f83fb/src/uct/ib/mlx5/ib_mlx5.inl:148
+ 4 0x00000000000451bf uct_rc_mlx5_iface_progress()  /build-result/src/hpcx-v2.19-gcc-mlnx_ofed-redhat7-cuda12-x86_64/ucx-7bb2722ff2187a0cad557ae4a6afa090569f83fb/src/uct/ib/rc/accel/rc_mlx5_iface.c:190
+ 5 0x00000000000451bf uct_rc_mlx5_iface_progress_cyclic()  /build-result/src/hpcx-v2.19-gcc-mlnx_ofed-redhat7-cuda12-x86_64/ucx-7bb2722ff2187a0cad557ae4a6afa090569f83fb/src/uct/ib/rc/accel/rc_mlx5_iface.c:195
+ 6 0x00000000000512aa ucs_callbackq_dispatch()  /build-result/src/hpcx-v2.19-gcc-mlnx_ofed-redhat7-cuda12-x86_64/ucx-7bb2722ff2187a0cad557ae4a6afa090569f83fb/src/ucs/datastruct/callbackq.h:215
+ 7 0x00000000000512aa uct_worker_progress()  /build-result/src/hpcx-v2.19-gcc-mlnx_ofed-redhat7-cuda12-x86_64/ucx-7bb2722ff2187a0cad557ae4a6afa090569f83fb/src/uct/api/uct.h:2787
+ 8 0x00000000000512aa ucp_worker_progress()  /build-result/src/hpcx-v2.19-gcc-mlnx_ofed-redhat7-cuda12-x86_64/ucx-7bb2722ff2187a0cad557ae4a6afa090569f83fb/src/ucp/core/ucp_worker.c:2996
+ 9 0x0000000000036b9c opal_progress()  /var/jenkins/workspace/rel_nv_lib_hpcx_cuda12_x86_64/work/rebuild_ompi/ompi/build/opal/../../opal/runtime/opal_progress.c:231
+10 0x000000000003d5e5 ompi_sync_wait_mt()  /var/jenkins/workspace/rel_nv_lib_hpcx_cuda12_x86_64/work/rebuild_ompi/ompi/build/opal/../../opal/threads/wait_sync.c:85
+11 0x000000000004ea98 ompi_request_default_wait_all()  /var/jenkins/workspace/rel_nv_lib_hpcx_cuda12_x86_64/work/rebuild_ompi/ompi/build/ompi/../../ompi/request/req_wait.c:234
+12 0x0000000000007b94 mca_coll_basic_neighbor_alltoallv_cart()  /var/jenkins/workspace/rel_nv_lib_hpcx_cuda12_x86_64/work/rebuild_ompi/ompi/build/ompi/mca/coll/basic/../../../../../ompi/mca/coll/basic/coll_basic_neighbor_alltoallv.c:118
+13 0x0000000000007b94 mca_coll_basic_neighbor_alltoallv()  /var/jenkins/workspace/rel_nv_lib_hpcx_cuda12_x86_64/work/rebuild_ompi/ompi/build/ompi/mca/coll/basic/../../../../../ompi/mca/coll/basic/coll_basic_neighbor_alltoallv.c:250
+14 0x000000000006f0c7 PMPI_Neighbor_alltoallv()  /var/jenkins/workspace/rel_nv_lib_hpcx_cuda12_x86_64/work/rebuild_ompi/ompi/build/ompi/mpi/c/profile/pneighbor_alltoallv.c:148
+15 0x000000000004b648 ompi_neighbor_alltoallv_f()  /var/jenkins/workspace/rel_nv_lib_hpcx_cuda12_x86_64/work/rebuild_ompi/ompi/build/ompi/mpi/fortran/mpif-h/profile/pneighbor_alltoallv_f.c:100
+16 0x000000000170badc mod_mppparam_real8_3d_exchange_left_right_()  /leonardo/home/userexternal/ctica000/MS_thesis/RegCM/Main/mpplib/mod_mppparam.F90:4525
+17 0x0000000000a15d66 mod_moloch_wafone_()  /leonardo/home/userexternal/ctica000/MS_thesis/RegCM/Main/mod_moloch.F90:1529
+18 0x0000000000a04844 mod_moloch_advection_()  /leonardo/home/userexternal/ctica000/MS_thesis/RegCM/Main/mod_moloch.F90:1341
+19 0x00000000009c3080 mod_moloch_moloch_()  /leonardo/home/userexternal/ctica000/MS_thesis/RegCM/Main/mod_moloch.F90:447
+20 0x00000000004496a0 mod_regcm_interface_rcm_run_()  /leonardo/home/userexternal/ctica000/MS_thesis/RegCM/Main/mod_regcm_interface.F90:265
+21 0x0000000000a3f997 MAIN_()  /leonardo/home/userexternal/ctica000/MS_thesis/RegCM/Main/regcm.F90:83
+22 0x00000000004484b1 main()  ???:0
+23 0x000000000003ad85 __libc_start_main()  ???:0
+24 0x000000000044839e _start()  ???:0
+=================================
+[lrdn2021:599640] *** Process received signal ***
+[lrdn2021:599640] Signal: Aborted (6)
+[lrdn2021:599640] Signal code:  (-6)
+[lrdn2021:599640] [ 0] /leonardo/prod/spack/06/install/0.22/linux-rhel8-icelake/gcc-8.5.0/nvhpc-24.5-torlmnyzcexnrs6pq4cccabv7ehkv3xy/Linux_x86_64/24.5/comm_libs/12.4/hpcx/hpcx-2.19/ompi/lib/libopen-pal.so.40(+0x76f5a)[0x150e27645f5a]
+[lrdn2021:599640] [ 1] /leonardo/prod/opt/compilers/nvhpc/25.3/binary/Linux_x86_64/25.3/profilers/Nsight_Systems/target-linux-x64/libToolsInjection64.so(+0x4a7776)[0x150e26b10776]
+[lrdn2021:599640] [ 2] /lib64/libpthread.so.0(+0x12cf0)[0x150e2a562cf0]
+[lrdn2021:599640] [ 3] /lib64/libc.so.6(gsignal+0x10f)[0x150e29900acf]
+[lrdn2021:599640] [ 4] /lib64/libc.so.6(abort+0x127)[0x150e298d3ea5]
+[lrdn2021:599640] [ 5] /leonardo/prod/spack/06/install/0.22/linux-rhel8-icelake/gcc-8.5.0/nvhpc-24.5-torlmnyzcexnrs6pq4cccabv7ehkv3xy/Linux_x86_64/24.5/comm_libs/12.4/hpcx/hpcx-2.19/ucx/mt/lib/libucs.so.0(ucs_fatal_error_message+0x55)[0x150e0da207d5]
+[lrdn2021:599640] [ 6] /leonardo/prod/spack/06/install/0.22/linux-rhel8-icelake/gcc-8.5.0/nvhpc-24.5-torlmnyzcexnrs6pq4cccabv7ehkv3xy/Linux_x86_64/24.5/comm_libs/12.4/hpcx/hpcx-2.19/ucx/mt/lib/libucs.so.0(ucs_log_default_handler+0x6e4)[0x150e0da25184]
+[lrdn2021:599640] [ 7] /leonardo/prod/spack/06/install/0.22/linux-rhel8-icelake/gcc-8.5.0/nvhpc-24.5-torlmnyzcexnrs6pq4cccabv7ehkv3xy/Linux_x86_64/24.5/comm_libs/12.4/hpcx/hpcx-2.19/ucx/mt/lib/libucs.so.0(ucs_log_dispatch+0xdf)[0x150e0da2572f]
+[lrdn2021:599640] [ 8] /leonardo/prod/spack/06/install/0.22/linux-rhel8-icelake/gcc-8.5.0/nvhpc-24.5-torlmnyzcexnrs6pq4cccabv7ehkv3xy/Linux_x86_64/24.5/comm_libs/12.4/hpcx/hpcx-2.19/ucx/mt/lib/ucx/libuct_ib.so.0(uct_ib_mlx5_completion_with_err+0x710)[0x150e03428e60]
+[lrdn2021:599640] [ 9] /leonardo/prod/spack/06/install/0.22/linux-rhel8-icelake/gcc-8.5.0/nvhpc-24.5-torlmnyzcexnrs6pq4cccabv7ehkv3xy/Linux_x86_64/24.5/comm_libs/12.4/hpcx/hpcx-2.19/ucx/mt/lib/ucx/libuct_ib.so.0(+0x43cd7)[0x150e03443cd7]
+[lrdn2021:599640] [10] /leonardo/prod/spack/06/install/0.22/linux-rhel8-icelake/gcc-8.5.0/nvhpc-24.5-torlmnyzcexnrs6pq4cccabv7ehkv3xy/Linux_x86_64/24.5/comm_libs/12.4/hpcx/hpcx-2.19/ucx/mt/lib/ucx/libuct_ib.so.0(uct_ib_mlx5_check_completion+0x65)[0x150e03429f75]
+[lrdn2021:599640] [11] /leonardo/prod/spack/06/install/0.22/linux-rhel8-icelake/gcc-8.5.0/nvhpc-24.5-torlmnyzcexnrs6pq4cccabv7ehkv3xy/Linux_x86_64/24.5/comm_libs/12.4/hpcx/hpcx-2.19/ucx/mt/lib/ucx/libuct_ib.so.0(+0x451bf)[0x150e034451bf]
+[lrdn2021:599640] [12] /leonardo/prod/spack/06/install/0.22/linux-rhel8-icelake/gcc-8.5.0/nvhpc-24.5-torlmnyzcexnrs6pq4cccabv7ehkv3xy/Linux_x86_64/24.5/comm_libs/12.4/hpcx/hpcx-2.19/ucx/mt/lib/libucp.so.0(ucp_worker_progress+0x6a)[0x150e1412d2aa]
+[lrdn2021:599640] [13] /leonardo/prod/spack/06/install/0.22/linux-rhel8-icelake/gcc-8.5.0/nvhpc-24.5-torlmnyzcexnrs6pq4cccabv7ehkv3xy/Linux_x86_64/24.5/comm_libs/12.4/hpcx/hpcx-2.19/ompi/lib/libopen-pal.so.40(opal_progress+0x2c)[0x150e27605b9c]
+[lrdn2021:599640] [14] /leonardo/prod/spack/06/install/0.22/linux-rhel8-icelake/gcc-8.5.0/nvhpc-24.5-torlmnyzcexnrs6pq4cccabv7ehkv3xy/Linux_x86_64/24.5/comm_libs/12.4/hpcx/hpcx-2.19/ompi/lib/libopen-pal.so.40(ompi_sync_wait_mt+0xb5)[0x150e2760c5e5]
+[lrdn2021:599640] [15] /leonardo/prod/spack/06/install/0.22/linux-rhel8-icelake/gcc-8.5.0/nvhpc-24.5-torlmnyzcexnrs6pq4cccabv7ehkv3xy/Linux_x86_64/24.5/comm_libs/12.4/hpcx/hpcx-2.19/ompi/lib/libmpi.so.40(ompi_request_default_wait_all+0x388)[0x150e47218a98]
+[lrdn2021:599640] [16] /leonardo/prod/spack/06/install/0.22/linux-rhel8-icelake/gcc-8.5.0/nvhpc-24.5-torlmnyzcexnrs6pq4cccabv7ehkv3xy/Linux_x86_64/24.5/comm_libs/12.4/hpcx/hpcx-2.19/ompi/lib/openmpi/mca_coll_basic.so(mca_coll_basic_neighbor_alltoallv+0xa14)[0x150df9df6b94]
+[lrdn2021:599640] [17] /leonardo/prod/spack/06/install/0.22/linux-rhel8-icelake/gcc-8.5.0/nvhpc-24.5-torlmnyzcexnrs6pq4cccabv7ehkv3xy/Linux_x86_64/24.5/comm_libs/12.4/hpcx/hpcx-2.19/ompi/lib/libmpi.so.40(MPI_Neighbor_alltoallv+0x47)[0x150e472390c7]
+[lrdn2021:599640] [18] /leonardo/prod/spack/06/install/0.22/linux-rhel8-icelake/gcc-8.5.0/nvhpc-24.5-torlmnyzcexnrs6pq4cccabv7ehkv3xy/Linux_x86_64/24.5/comm_libs/12.4/hpcx/hpcx-2.19/ompi/lib/libmpi_mpifh.so.40(pmpi_neighbor_alltoallv+0xb8)[0x150e47521648]
+[lrdn2021:599640] [19] /leonardo/home/userexternal/ctica000/MS_thesis/RegCM/bin/regcmMPICLM45_OPENACC_STDPAR(mod_mppparam_real8_3d_exchange_left_right_+0x61c)[0x170badc]
+[lrdn2021:599640] [20] /leonardo/home/userexternal/ctica000/MS_thesis/RegCM/bin/regcmMPICLM45_OPENACC_STDPAR(mod_moloch_wafone_+0xc466)[0xa15d66]
+[lrdn2021:599640] [21] /leonardo/home/userexternal/ctica000/MS_thesis/RegCM/bin/regcmMPICLM45_OPENACC_STDPAR(mod_moloch_advection_+0x5144)[0xa04844]
+[lrdn2021:599640] [22] /leonardo/home/userexternal/ctica000/MS_thesis/RegCM/bin/regcmMPICLM45_OPENACC_STDPAR(mod_moloch_moloch_+0xe380)[0x9c3080]
+[lrdn2021:599640] [23] /leonardo/home/userexternal/ctica000/MS_thesis/RegCM/bin/regcmMPICLM45_OPENACC_STDPAR(mod_regcm_interface_rcm_run_+0x60)[0x4496a0]
+[lrdn2021:599640] [24] /leonardo/home/userexternal/ctica000/MS_thesis/RegCM/bin/regcmMPICLM45_OPENACC_STDPAR(MAIN_+0xd7)[0xa3f997]
+[lrdn2021:599640] [25] /leonardo/home/userexternal/ctica000/MS_thesis/RegCM/bin/regcmMPICLM45_OPENACC_STDPAR(main+0x31)[0x4484b1]
+[lrdn2021:599640] [26] /lib64/libc.so.6(__libc_start_main+0xe5)[0x150e298ecd85]
+[lrdn2021:599640] [27] /leonardo/home/userexternal/ctica000/MS_thesis/RegCM/bin/regcmMPICLM45_OPENACC_STDPAR(_start+0x2e)[0x44839e]
+[lrdn2021:599640] *** End of error message ***
+==== backtrace (tid: 599639) ====
+ 0 0x0000000000028e60 uct_ib_mlx5_completion_with_err()  /build-result/src/hpcx-v2.19-gcc-mlnx_ofed-redhat7-cuda12-x86_64/ucx-7bb2722ff2187a0cad557ae4a6afa090569f83fb/src/uct/ib/mlx5/ib_mlx5_log.c:179
+ 1 0x0000000000043cd7 uct_rc_mlx5_iface_handle_failure()  /build-result/src/hpcx-v2.19-gcc-mlnx_ofed-redhat7-cuda12-x86_64/ucx-7bb2722ff2187a0cad557ae4a6afa090569f83fb/src/uct/ib/rc/accel/rc_mlx5_iface.c:299
+ 2 0x0000000000029f75 uct_ib_mlx5_check_completion()  /build-result/src/hpcx-v2.19-gcc-mlnx_ofed-redhat7-cuda12-x86_64/ucx-7bb2722ff2187a0cad557ae4a6afa090569f83fb/src/uct/ib/mlx5/ib_mlx5.c:476
+ 3 0x00000000000451bf uct_ib_mlx5_poll_cq()  /build-result/src/hpcx-v2.19-gcc-mlnx_ofed-redhat7-cuda12-x86_64/ucx-7bb2722ff2187a0cad557ae4a6afa090569f83fb/src/uct/ib/mlx5/ib_mlx5.inl:148
+ 4 0x00000000000451bf uct_rc_mlx5_iface_progress()  /build-result/src/hpcx-v2.19-gcc-mlnx_ofed-redhat7-cuda12-x86_64/ucx-7bb2722ff2187a0cad557ae4a6afa090569f83fb/src/uct/ib/rc/accel/rc_mlx5_iface.c:190
+ 5 0x00000000000451bf uct_rc_mlx5_iface_progress_cyclic()  /build-result/src/hpcx-v2.19-gcc-mlnx_ofed-redhat7-cuda12-x86_64/ucx-7bb2722ff2187a0cad557ae4a6afa090569f83fb/src/uct/ib/rc/accel/rc_mlx5_iface.c:195
+ 6 0x00000000000512aa ucs_callbackq_dispatch()  /build-result/src/hpcx-v2.19-gcc-mlnx_ofed-redhat7-cuda12-x86_64/ucx-7bb2722ff2187a0cad557ae4a6afa090569f83fb/src/ucs/datastruct/callbackq.h:215
+ 7 0x00000000000512aa uct_worker_progress()  /build-result/src/hpcx-v2.19-gcc-mlnx_ofed-redhat7-cuda12-x86_64/ucx-7bb2722ff2187a0cad557ae4a6afa090569f83fb/src/uct/api/uct.h:2787
+ 8 0x00000000000512aa ucp_worker_progress()  /build-result/src/hpcx-v2.19-gcc-mlnx_ofed-redhat7-cuda12-x86_64/ucx-7bb2722ff2187a0cad557ae4a6afa090569f83fb/src/ucp/core/ucp_worker.c:2996
+ 9 0x0000000000036b9c opal_progress()  /var/jenkins/workspace/rel_nv_lib_hpcx_cuda12_x86_64/work/rebuild_ompi/ompi/build/opal/../../opal/runtime/opal_progress.c:231
+10 0x000000000003d5e5 ompi_sync_wait_mt()  /var/jenkins/workspace/rel_nv_lib_hpcx_cuda12_x86_64/work/rebuild_ompi/ompi/build/opal/../../opal/threads/wait_sync.c:85
+11 0x000000000004ea98 ompi_request_default_wait_all()  /var/jenkins/workspace/rel_nv_lib_hpcx_cuda12_x86_64/work/rebuild_ompi/ompi/build/ompi/../../ompi/request/req_wait.c:234
+12 0x0000000000007b94 mca_coll_basic_neighbor_alltoallv_cart()  /var/jenkins/workspace/rel_nv_lib_hpcx_cuda12_x86_64/work/rebuild_ompi/ompi/build/ompi/mca/coll/basic/../../../../../ompi/mca/coll/basic/coll_basic_neighbor_alltoallv.c:118
+13 0x0000000000007b94 mca_coll_basic_neighbor_alltoallv()  /var/jenkins/workspace/rel_nv_lib_hpcx_cuda12_x86_64/work/rebuild_ompi/ompi/build/ompi/mca/coll/basic/../../../../../ompi/mca/coll/basic/coll_basic_neighbor_alltoallv.c:250
+14 0x000000000006f0c7 PMPI_Neighbor_alltoallv()  /var/jenkins/workspace/rel_nv_lib_hpcx_cuda12_x86_64/work/rebuild_ompi/ompi/build/ompi/mpi/c/profile/pneighbor_alltoallv.c:148
+15 0x000000000004b648 ompi_neighbor_alltoallv_f()  /var/jenkins/workspace/rel_nv_lib_hpcx_cuda12_x86_64/work/rebuild_ompi/ompi/build/ompi/mpi/fortran/mpif-h/profile/pneighbor_alltoallv_f.c:100
+16 0x000000000170badc mod_mppparam_real8_3d_exchange_left_right_()  /leonardo/home/userexternal/ctica000/MS_thesis/RegCM/Main/mpplib/mod_mppparam.F90:4525
+17 0x0000000000a15d66 mod_moloch_wafone_()  /leonardo/home/userexternal/ctica000/MS_thesis/RegCM/Main/mod_moloch.F90:1529
+18 0x0000000000a04844 mod_moloch_advection_()  /leonardo/home/userexternal/ctica000/MS_thesis/RegCM/Main/mod_moloch.F90:1341
+19 0x00000000009c3080 mod_moloch_moloch_()  /leonardo/home/userexternal/ctica000/MS_thesis/RegCM/Main/mod_moloch.F90:447
+20 0x00000000004496a0 mod_regcm_interface_rcm_run_()  /leonardo/home/userexternal/ctica000/MS_thesis/RegCM/Main/mod_regcm_interface.F90:265
+21 0x0000000000a3f997 MAIN_()  /leonardo/home/userexternal/ctica000/MS_thesis/RegCM/Main/regcm.F90:83
+22 0x00000000004484b1 main()  ???:0
+23 0x000000000003ad85 __libc_start_main()  ???:0
+24 0x000000000044839e _start()  ???:0
+=================================
+[lrdn2021:599639] *** Process received signal ***
+[lrdn2021:599639] Signal: Aborted (6)
+[lrdn2021:599639] Signal code:  (-6)
+[lrdn2021:599639] [ 0] /leonardo/prod/spack/06/install/0.22/linux-rhel8-icelake/gcc-8.5.0/nvhpc-24.5-torlmnyzcexnrs6pq4cccabv7ehkv3xy/Linux_x86_64/24.5/comm_libs/12.4/hpcx/hpcx-2.19/ompi/lib/libopen-pal.so.40(+0x76f5a)[0x1467df827f5a]
+[lrdn2021:599639] [ 1] /leonardo/prod/opt/compilers/nvhpc/25.3/binary/Linux_x86_64/25.3/profilers/Nsight_Systems/target-linux-x64/libToolsInjection64.so(+0x4a7776)[0x1467decf2776]
+[lrdn2021:599639] [ 2] /lib64/libpthread.so.0(+0x12cf0)[0x1467e2744cf0]
+[lrdn2021:599639] [ 3] /lib64/libc.so.6(gsignal+0x10f)[0x1467e1ae2acf]
+[lrdn2021:599639] [ 4] /lib64/libc.so.6(abort+0x127)[0x1467e1ab5ea5]
+[lrdn2021:599639] [ 5] /leonardo/prod/spack/06/install/0.22/linux-rhel8-icelake/gcc-8.5.0/nvhpc-24.5-torlmnyzcexnrs6pq4cccabv7ehkv3xy/Linux_x86_64/24.5/comm_libs/12.4/hpcx/hpcx-2.19/ucx/mt/lib/libucs.so.0(ucs_fatal_error_message+0x55)[0x1467c5c247d5]
+[lrdn2021:599639] [ 6] /leonardo/prod/spack/06/install/0.22/linux-rhel8-icelake/gcc-8.5.0/nvhpc-24.5-torlmnyzcexnrs6pq4cccabv7ehkv3xy/Linux_x86_64/24.5/comm_libs/12.4/hpcx/hpcx-2.19/ucx/mt/lib/libucs.so.0(ucs_log_default_handler+0x6e4)[0x1467c5c29184]
+[lrdn2021:599639] [ 7] /leonardo/prod/spack/06/install/0.22/linux-rhel8-icelake/gcc-8.5.0/nvhpc-24.5-torlmnyzcexnrs6pq4cccabv7ehkv3xy/Linux_x86_64/24.5/comm_libs/12.4/hpcx/hpcx-2.19/ucx/mt/lib/libucs.so.0(ucs_log_dispatch+0xdf)[0x1467c5c2972f]
+[lrdn2021:599639] [ 8] /leonardo/prod/spack/06/install/0.22/linux-rhel8-icelake/gcc-8.5.0/nvhpc-24.5-torlmnyzcexnrs6pq4cccabv7ehkv3xy/Linux_x86_64/24.5/comm_libs/12.4/hpcx/hpcx-2.19/ucx/mt/lib/ucx/libuct_ib.so.0(uct_ib_mlx5_completion_with_err+0x710)[0x1467bac90e60]
+[lrdn2021:599639] [ 9] /leonardo/prod/spack/06/install/0.22/linux-rhel8-icelake/gcc-8.5.0/nvhpc-24.5-torlmnyzcexnrs6pq4cccabv7ehkv3xy/Linux_x86_64/24.5/comm_libs/12.4/hpcx/hpcx-2.19/ucx/mt/lib/ucx/libuct_ib.so.0(+0x43cd7)[0x1467bacabcd7]
+[lrdn2021:599639] [10] /leonardo/prod/spack/06/install/0.22/linux-rhel8-icelake/gcc-8.5.0/nvhpc-24.5-torlmnyzcexnrs6pq4cccabv7ehkv3xy/Linux_x86_64/24.5/comm_libs/12.4/hpcx/hpcx-2.19/ucx/mt/lib/ucx/libuct_ib.so.0(uct_ib_mlx5_check_completion+0x65)[0x1467bac91f75]
+[lrdn2021:599639] [11] /leonardo/prod/spack/06/install/0.22/linux-rhel8-icelake/gcc-8.5.0/nvhpc-24.5-torlmnyzcexnrs6pq4cccabv7ehkv3xy/Linux_x86_64/24.5/comm_libs/12.4/hpcx/hpcx-2.19/ucx/mt/lib/ucx/libuct_ib.so.0(+0x451bf)[0x1467bacad1bf]
+[lrdn2021:599639] [12] /leonardo/prod/spack/06/install/0.22/linux-rhel8-icelake/gcc-8.5.0/nvhpc-24.5-torlmnyzcexnrs6pq4cccabv7ehkv3xy/Linux_x86_64/24.5/comm_libs/12.4/hpcx/hpcx-2.19/ucx/mt/lib/libucp.so.0(ucp_worker_progress+0x6a)[0x1467cc0a82aa]
+[lrdn2021:599639] [13] /leonardo/prod/spack/06/install/0.22/linux-rhel8-icelake/gcc-8.5.0/nvhpc-24.5-torlmnyzcexnrs6pq4cccabv7ehkv3xy/Linux_x86_64/24.5/comm_libs/12.4/hpcx/hpcx-2.19/ompi/lib/libopen-pal.so.40(opal_progress+0x2c)[0x1467df7e7b9c]
+[lrdn2021:599639] [14] /leonardo/prod/spack/06/install/0.22/linux-rhel8-icelake/gcc-8.5.0/nvhpc-24.5-torlmnyzcexnrs6pq4cccabv7ehkv3xy/Linux_x86_64/24.5/comm_libs/12.4/hpcx/hpcx-2.19/ompi/lib/libopen-pal.so.40(ompi_sync_wait_mt+0xb5)[0x1467df7ee5e5]
+[lrdn2021:599639] [15] /leonardo/prod/spack/06/install/0.22/linux-rhel8-icelake/gcc-8.5.0/nvhpc-24.5-torlmnyzcexnrs6pq4cccabv7ehkv3xy/Linux_x86_64/24.5/comm_libs/12.4/hpcx/hpcx-2.19/ompi/lib/libmpi.so.40(ompi_request_default_wait_all+0x388)[0x1467ff3faa98]
+[lrdn2021:599639] [16] /leonardo/prod/spack/06/install/0.22/linux-rhel8-icelake/gcc-8.5.0/nvhpc-24.5-torlmnyzcexnrs6pq4cccabv7ehkv3xy/Linux_x86_64/24.5/comm_libs/12.4/hpcx/hpcx-2.19/ompi/lib/openmpi/mca_coll_basic.so(mca_coll_basic_neighbor_alltoallv+0xa14)[0x1467b2bf2b94]
+[lrdn2021:599639] [17] /leonardo/prod/spack/06/install/0.22/linux-rhel8-icelake/gcc-8.5.0/nvhpc-24.5-torlmnyzcexnrs6pq4cccabv7ehkv3xy/Linux_x86_64/24.5/comm_libs/12.4/hpcx/hpcx-2.19/ompi/lib/libmpi.so.40(MPI_Neighbor_alltoallv+0x47)[0x1467ff41b0c7]
+[lrdn2021:599639] [18] /leonardo/prod/spack/06/install/0.22/linux-rhel8-icelake/gcc-8.5.0/nvhpc-24.5-torlmnyzcexnrs6pq4cccabv7ehkv3xy/Linux_x86_64/24.5/comm_libs/12.4/hpcx/hpcx-2.19/ompi/lib/libmpi_mpifh.so.40(pmpi_neighbor_alltoallv+0xb8)[0x1467ff703648]
+[lrdn2021:599639] [19] /leonardo/home/userexternal/ctica000/MS_thesis/RegCM/bin/regcmMPICLM45_OPENACC_STDPAR(mod_mppparam_real8_3d_exchange_left_right_+0x61c)[0x170badc]
+[lrdn2021:599639] [20] /leonardo/home/userexternal/ctica000/MS_thesis/RegCM/bin/regcmMPICLM45_OPENACC_STDPAR(mod_moloch_wafone_+0xc466)[0xa15d66]
+[lrdn2021:599639] [21] /leonardo/home/userexternal/ctica000/MS_thesis/RegCM/bin/regcmMPICLM45_OPENACC_STDPAR(mod_moloch_advection_+0x5144)[0xa04844]
+[lrdn2021:599639] [22] /leonardo/home/userexternal/ctica000/MS_thesis/RegCM/bin/regcmMPICLM45_OPENACC_STDPAR(mod_moloch_moloch_+0xe380)[0x9c3080]
+[lrdn2021:599639] [23] /leonardo/home/userexternal/ctica000/MS_thesis/RegCM/bin/regcmMPICLM45_OPENACC_STDPAR(mod_regcm_interface_rcm_run_+0x60)[0x4496a0]
+[lrdn2021:599639] [24] /leonardo/home/userexternal/ctica000/MS_thesis/RegCM/bin/regcmMPICLM45_OPENACC_STDPAR(MAIN_+0xd7)[0xa3f997]
+[lrdn2021:599639] [25] /leonardo/home/userexternal/ctica000/MS_thesis/RegCM/bin/regcmMPICLM45_OPENACC_STDPAR(main+0x31)[0x4484b1]
+[lrdn2021:599639] [26] /lib64/libc.so.6(__libc_start_main+0xe5)[0x1467e1aced85]
+[lrdn2021:599639] [27] /leonardo/home/userexternal/ctica000/MS_thesis/RegCM/bin/regcmMPICLM45_OPENACC_STDPAR(_start+0x2e)[0x44839e]
+[lrdn2021:599639] *** End of error message ***
+==== backtrace (tid: 599643) ====
+ 0 0x0000000000028e60 uct_ib_mlx5_completion_with_err()  /build-result/src/hpcx-v2.19-gcc-mlnx_ofed-redhat7-cuda12-x86_64/ucx-7bb2722ff2187a0cad557ae4a6afa090569f83fb/src/uct/ib/mlx5/ib_mlx5_log.c:179
+ 1 0x0000000000043cd7 uct_rc_mlx5_iface_handle_failure()  /build-result/src/hpcx-v2.19-gcc-mlnx_ofed-redhat7-cuda12-x86_64/ucx-7bb2722ff2187a0cad557ae4a6afa090569f83fb/src/uct/ib/rc/accel/rc_mlx5_iface.c:299
+ 2 0x0000000000029f75 uct_ib_mlx5_check_completion()  /build-result/src/hpcx-v2.19-gcc-mlnx_ofed-redhat7-cuda12-x86_64/ucx-7bb2722ff2187a0cad557ae4a6afa090569f83fb/src/uct/ib/mlx5/ib_mlx5.c:476
+ 3 0x00000000000451bf uct_ib_mlx5_poll_cq()  /build-result/src/hpcx-v2.19-gcc-mlnx_ofed-redhat7-cuda12-x86_64/ucx-7bb2722ff2187a0cad557ae4a6afa090569f83fb/src/uct/ib/mlx5/ib_mlx5.inl:148
+ 4 0x00000000000451bf uct_rc_mlx5_iface_progress()  /build-result/src/hpcx-v2.19-gcc-mlnx_ofed-redhat7-cuda12-x86_64/ucx-7bb2722ff2187a0cad557ae4a6afa090569f83fb/src/uct/ib/rc/accel/rc_mlx5_iface.c:190
+ 5 0x00000000000451bf uct_rc_mlx5_iface_progress_cyclic()  /build-result/src/hpcx-v2.19-gcc-mlnx_ofed-redhat7-cuda12-x86_64/ucx-7bb2722ff2187a0cad557ae4a6afa090569f83fb/src/uct/ib/rc/accel/rc_mlx5_iface.c:195
+ 6 0x00000000000512aa ucs_callbackq_dispatch()  /build-result/src/hpcx-v2.19-gcc-mlnx_ofed-redhat7-cuda12-x86_64/ucx-7bb2722ff2187a0cad557ae4a6afa090569f83fb/src/ucs/datastruct/callbackq.h:215
+ 7 0x00000000000512aa uct_worker_progress()  /build-result/src/hpcx-v2.19-gcc-mlnx_ofed-redhat7-cuda12-x86_64/ucx-7bb2722ff2187a0cad557ae4a6afa090569f83fb/src/uct/api/uct.h:2787
+ 8 0x00000000000512aa ucp_worker_progress()  /build-result/src/hpcx-v2.19-gcc-mlnx_ofed-redhat7-cuda12-x86_64/ucx-7bb2722ff2187a0cad557ae4a6afa090569f83fb/src/ucp/core/ucp_worker.c:2996
+ 9 0x0000000000036b9c opal_progress()  /var/jenkins/workspace/rel_nv_lib_hpcx_cuda12_x86_64/work/rebuild_ompi/ompi/build/opal/../../opal/runtime/opal_progress.c:231
+10 0x000000000003d5e5 ompi_sync_wait_mt()  /var/jenkins/workspace/rel_nv_lib_hpcx_cuda12_x86_64/work/rebuild_ompi/ompi/build/opal/../../opal/threads/wait_sync.c:85
+11 0x000000000004ea98 ompi_request_default_wait_all()  /var/jenkins/workspace/rel_nv_lib_hpcx_cuda12_x86_64/work/rebuild_ompi/ompi/build/ompi/../../ompi/request/req_wait.c:234
+12 0x0000000000007b94 mca_coll_basic_neighbor_alltoallv_cart()  /var/jenkins/workspace/rel_nv_lib_hpcx_cuda12_x86_64/work/rebuild_ompi/ompi/build/ompi/mca/coll/basic/../../../../../ompi/mca/coll/basic/coll_basic_neighbor_alltoallv.c:118
+13 0x0000000000007b94 mca_coll_basic_neighbor_alltoallv()  /var/jenkins/workspace/rel_nv_lib_hpcx_cuda12_x86_64/work/rebuild_ompi/ompi/build/ompi/mca/coll/basic/../../../../../ompi/mca/coll/basic/coll_basic_neighbor_alltoallv.c:250
+14 0x000000000006f0c7 PMPI_Neighbor_alltoallv()  /var/jenkins/workspace/rel_nv_lib_hpcx_cuda12_x86_64/work/rebuild_ompi/ompi/build/ompi/mpi/c/profile/pneighbor_alltoallv.c:148
+15 0x000000000004b648 ompi_neighbor_alltoallv_f()  /var/jenkins/workspace/rel_nv_lib_hpcx_cuda12_x86_64/work/rebuild_ompi/ompi/build/ompi/mpi/fortran/mpif-h/profile/pneighbor_alltoallv_f.c:100
+16 0x000000000170badc mod_mppparam_real8_3d_exchange_left_right_()  /leonardo/home/userexternal/ctica000/MS_thesis/RegCM/Main/mpplib/mod_mppparam.F90:4525
+17 0x0000000000a15d66 mod_moloch_wafone_()  /leonardo/home/userexternal/ctica000/MS_thesis/RegCM/Main/mod_moloch.F90:1529
+18 0x0000000000a04844 mod_moloch_advection_()  /leonardo/home/userexternal/ctica000/MS_thesis/RegCM/Main/mod_moloch.F90:1341
+19 0x00000000009c3080 mod_moloch_moloch_()  /leonardo/home/userexternal/ctica000/MS_thesis/RegCM/Main/mod_moloch.F90:447
+20 0x00000000004496a0 mod_regcm_interface_rcm_run_()  /leonardo/home/userexternal/ctica000/MS_thesis/RegCM/Main/mod_regcm_interface.F90:265
+21 0x0000000000a3f997 MAIN_()  /leonardo/home/userexternal/ctica000/MS_thesis/RegCM/Main/regcm.F90:83
+22 0x00000000004484b1 main()  ???:0
+23 0x000000000003ad85 __libc_start_main()  ???:0
+24 0x000000000044839e _start()  ???:0
+=================================
+[lrdn2021:599643] *** Process received signal ***
+[lrdn2021:599643] Signal: Aborted (6)
+[lrdn2021:599643] Signal code:  (-6)
+[lrdn2021:599643] [ 0] /leonardo/prod/spack/06/install/0.22/linux-rhel8-icelake/gcc-8.5.0/nvhpc-24.5-torlmnyzcexnrs6pq4cccabv7ehkv3xy/Linux_x86_64/24.5/comm_libs/12.4/hpcx/hpcx-2.19/ompi/lib/libopen-pal.so.40(+0x76f5a)[0x14cec1283f5a]
+[lrdn2021:599643] [ 1] /leonardo/prod/opt/compilers/nvhpc/25.3/binary/Linux_x86_64/25.3/profilers/Nsight_Systems/target-linux-x64/libToolsInjection64.so(+0x4a7776)[0x14cec074e776]
+[lrdn2021:599643] [ 2] /lib64/libpthread.so.0(+0x12cf0)[0x14cec41a0cf0]
+[lrdn2021:599643] [ 3] /lib64/libc.so.6(gsignal+0x10f)[0x14cec353eacf]
+[lrdn2021:599643] [ 4] /lib64/libc.so.6(abort+0x127)[0x14cec3511ea5]
+[lrdn2021:599643] [ 5] /leonardo/prod/spack/06/install/0.22/linux-rhel8-icelake/gcc-8.5.0/nvhpc-24.5-torlmnyzcexnrs6pq4cccabv7ehkv3xy/Linux_x86_64/24.5/comm_libs/12.4/hpcx/hpcx-2.19/ucx/mt/lib/libucs.so.0(ucs_fatal_error_message+0x55)[0x14cea36b57d5]
+[lrdn2021:599643] [ 6] /leonardo/prod/spack/06/install/0.22/linux-rhel8-icelake/gcc-8.5.0/nvhpc-24.5-torlmnyzcexnrs6pq4cccabv7ehkv3xy/Linux_x86_64/24.5/comm_libs/12.4/hpcx/hpcx-2.19/ucx/mt/lib/libucs.so.0(ucs_log_default_handler+0x6e4)[0x14cea36ba184]
+[lrdn2021:599643] [ 7] /leonardo/prod/spack/06/install/0.22/linux-rhel8-icelake/gcc-8.5.0/nvhpc-24.5-torlmnyzcexnrs6pq4cccabv7ehkv3xy/Linux_x86_64/24.5/comm_libs/12.4/hpcx/hpcx-2.19/ucx/mt/lib/libucs.so.0(ucs_log_dispatch+0xdf)[0x14cea36ba72f]
+[lrdn2021:599643] [ 8] /leonardo/prod/spack/06/install/0.22/linux-rhel8-icelake/gcc-8.5.0/nvhpc-24.5-torlmnyzcexnrs6pq4cccabv7ehkv3xy/Linux_x86_64/24.5/comm_libs/12.4/hpcx/hpcx-2.19/ucx/mt/lib/ucx/libuct_ib.so.0(uct_ib_mlx5_completion_with_err+0x710)[0x14cea0310e60]
+[lrdn2021:599643] [ 9] /leonardo/prod/spack/06/install/0.22/linux-rhel8-icelake/gcc-8.5.0/nvhpc-24.5-torlmnyzcexnrs6pq4cccabv7ehkv3xy/Linux_x86_64/24.5/comm_libs/12.4/hpcx/hpcx-2.19/ucx/mt/lib/ucx/libuct_ib.so.0(+0x43cd7)[0x14cea032bcd7]
+[lrdn2021:599643] [10] /leonardo/prod/spack/06/install/0.22/linux-rhel8-icelake/gcc-8.5.0/nvhpc-24.5-torlmnyzcexnrs6pq4cccabv7ehkv3xy/Linux_x86_64/24.5/comm_libs/12.4/hpcx/hpcx-2.19/ucx/mt/lib/ucx/libuct_ib.so.0(uct_ib_mlx5_check_completion+0x65)[0x14cea0311f75]
+[lrdn2021:599643] [11] /leonardo/prod/spack/06/install/0.22/linux-rhel8-icelake/gcc-8.5.0/nvhpc-24.5-torlmnyzcexnrs6pq4cccabv7ehkv3xy/Linux_x86_64/24.5/comm_libs/12.4/hpcx/hpcx-2.19/ucx/mt/lib/ucx/libuct_ib.so.0(+0x451bf)[0x14cea032d1bf]
+[lrdn2021:599643] [12] /leonardo/prod/spack/06/install/0.22/linux-rhel8-icelake/gcc-8.5.0/nvhpc-24.5-torlmnyzcexnrs6pq4cccabv7ehkv3xy/Linux_x86_64/24.5/comm_libs/12.4/hpcx/hpcx-2.19/ucx/mt/lib/libucp.so.0(ucp_worker_progress+0x6a)[0x14ceac0782aa]
+[lrdn2021:599643] [13] /leonardo/prod/spack/06/install/0.22/linux-rhel8-icelake/gcc-8.5.0/nvhpc-24.5-torlmnyzcexnrs6pq4cccabv7ehkv3xy/Linux_x86_64/24.5/comm_libs/12.4/hpcx/hpcx-2.19/ompi/lib/libopen-pal.so.40(opal_progress+0x2c)[0x14cec1243b9c]
+[lrdn2021:599643] [14] /leonardo/prod/spack/06/install/0.22/linux-rhel8-icelake/gcc-8.5.0/nvhpc-24.5-torlmnyzcexnrs6pq4cccabv7ehkv3xy/Linux_x86_64/24.5/comm_libs/12.4/hpcx/hpcx-2.19/ompi/lib/libopen-pal.so.40(ompi_sync_wait_mt+0xb5)[0x14cec124a5e5]
+[lrdn2021:599643] [15] /leonardo/prod/spack/06/install/0.22/linux-rhel8-icelake/gcc-8.5.0/nvhpc-24.5-torlmnyzcexnrs6pq4cccabv7ehkv3xy/Linux_x86_64/24.5/comm_libs/12.4/hpcx/hpcx-2.19/ompi/lib/libmpi.so.40(ompi_request_default_wait_all+0x388)[0x14cee0e56a98]
+[lrdn2021:599643] [16] /leonardo/prod/spack/06/install/0.22/linux-rhel8-icelake/gcc-8.5.0/nvhpc-24.5-torlmnyzcexnrs6pq4cccabv7ehkv3xy/Linux_x86_64/24.5/comm_libs/12.4/hpcx/hpcx-2.19/ompi/lib/openmpi/mca_coll_basic.so(mca_coll_basic_neighbor_alltoallv+0xa14)[0x14ce987e5b94]
+[lrdn2021:599643] [17] /leonardo/prod/spack/06/install/0.22/linux-rhel8-icelake/gcc-8.5.0/nvhpc-24.5-torlmnyzcexnrs6pq4cccabv7ehkv3xy/Linux_x86_64/24.5/comm_libs/12.4/hpcx/hpcx-2.19/ompi/lib/libmpi.so.40(MPI_Neighbor_alltoallv+0x47)[0x14cee0e770c7]
+[lrdn2021:599643] [18] /leonardo/prod/spack/06/install/0.22/linux-rhel8-icelake/gcc-8.5.0/nvhpc-24.5-torlmnyzcexnrs6pq4cccabv7ehkv3xy/Linux_x86_64/24.5/comm_libs/12.4/hpcx/hpcx-2.19/ompi/lib/libmpi_mpifh.so.40(pmpi_neighbor_alltoallv+0xb8)[0x14cee115f648]
+[lrdn2021:599643] [19] /leonardo/home/userexternal/ctica000/MS_thesis/RegCM/bin/regcmMPICLM45_OPENACC_STDPAR(mod_mppparam_real8_3d_exchange_left_right_+0x61c)[0x170badc]
+[lrdn2021:599643] [20] /leonardo/home/userexternal/ctica000/MS_thesis/RegCM/bin/regcmMPICLM45_OPENACC_STDPAR(mod_moloch_wafone_+0xc466)[0xa15d66]
+[lrdn2021:599643] [21] /leonardo/home/userexternal/ctica000/MS_thesis/RegCM/bin/regcmMPICLM45_OPENACC_STDPAR(mod_moloch_advection_+0x5144)[0xa04844]
+[lrdn2021:599643] [22] /leonardo/home/userexternal/ctica000/MS_thesis/RegCM/bin/regcmMPICLM45_OPENACC_STDPAR(mod_moloch_moloch_+0xe380)[0x9c3080]
+[lrdn2021:599643] [23] /leonardo/home/userexternal/ctica000/MS_thesis/RegCM/bin/regcmMPICLM45_OPENACC_STDPAR(mod_regcm_interface_rcm_run_+0x60)[0x4496a0]
+[lrdn2021:599643] [24] /leonardo/home/userexternal/ctica000/MS_thesis/RegCM/bin/regcmMPICLM45_OPENACC_STDPAR(MAIN_+0xd7)[0xa3f997]
+[lrdn2021:599643] [25] /leonardo/home/userexternal/ctica000/MS_thesis/RegCM/bin/regcmMPICLM45_OPENACC_STDPAR(main+0x31)[0x4484b1]
+[lrdn2021:599643] [26] /lib64/libc.so.6(__libc_start_main+0xe5)[0x14cec352ad85]
+[lrdn2021:599643] [27] /leonardo/home/userexternal/ctica000/MS_thesis/RegCM/bin/regcmMPICLM45_OPENACC_STDPAR(_start+0x2e)[0x44839e]
+[lrdn2021:599643] *** End of error message ***
+slurmstepd: error:  mpi/pmix_v3: _errhandler: lrdn2021 [0]: pmixp_client_v2.c:212: Error handler invoked: status = -25, source = [slurm.pmix.39623801.0:1]
+slurmstepd: error: Detected 1 oom_kill event in StepId=39623801.0. Some of the step tasks have been OOM Killed.
+srun: error: lrdn2021: task 3: Out Of Memory
+srun: Force Terminated StepId=39623801.0
