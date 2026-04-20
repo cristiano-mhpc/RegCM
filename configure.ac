@@ -786,8 +786,8 @@ else
     AC_SUBST(NOOPTFC)
   fi
   if test -z "$COMPILER_PGI_TRUE"; then
-    NOOPTFC="-O1 $FCFLAGS"
-    FCFLAGS="-O3 -fast -fastsse $FCFLAGS"
+    NOOPTFC="-O1 $FCFLAGS -g"
+    FCFLAGS="-O3 -fast -fastsse $FCFLAGS -g"
     AC_SUBST(FCFLAGS)
     AC_SUBST(NOOPTFC)
   fi

@@ -1,0 +1,125 @@
+unload CMAKE/3.30.5 (PATH)
+load CMAKE/3.30.5 (PATH)
+WARNING: CPU IP/backtrace sampling not supported, disabling.
+Try the 'nsys status --environment' command to learn more.
+
+WARNING: CPU context switch tracing not supported, disabling.
+Try the 'nsys status --environment' command to learn more.
+
+WARNING: CPU IP/backtrace sampling not supported, disabling.
+Try the 'nsys status --environment' command to learn more.
+
+WARNING: CPU context switch tracing not supported, disabling.
+Try the 'nsys status --environment' command to learn more.
+
+WARNING: CPU IP/backtrace sampling not supported, disabling.
+Try the 'nsys status --environment' command to learn more.
+
+WARNING: CPU context switch tracing not supported, disabling.
+Try the 'nsys status --environment' command to learn more.
+
+WARNING: CPU IP/backtrace sampling not supported, disabling.
+Try the 'nsys status --environment' command to learn more.
+
+WARNING: CPU context switch tracing not supported, disabling.
+Try the 'nsys status --environment' command to learn more.
+
+WARNING: CPU IP/backtrace sampling not supported, disabling.
+Try the 'nsys status --environment' command to learn more.
+
+WARNING: CPU context switch tracing not supported, disabling.
+Try the 'nsys status --environment' command to learn more.
+
+WARNING: CPU IP/backtrace sampling not supported, disabling.
+Try the 'nsys status --environment' command to learn more.
+
+WARNING: CPU context switch tracing not supported, disabling.
+Try the 'nsys status --environment' command to learn more.
+
+WARNING: CPU IP/backtrace sampling not supported, disabling.
+Try the 'nsys status --environment' command to learn more.
+
+WARNING: CPU context switch tracing not supported, disabling.
+Try the 'nsys status --environment' command to learn more.
+
+WARNING: CPU IP/backtrace sampling not supported, disabling.
+Try the 'nsys status --environment' command to learn more.
+
+WARNING: CPU context switch tracing not supported, disabling.
+Try the 'nsys status --environment' command to learn more.
+
+WARNING: CPU IP/backtrace sampling not supported, disabling.
+Try the 'nsys status --environment' command to learn more.
+
+WARNING: CPU context switch tracing not supported, disabling.
+Try the 'nsys status --environment' command to learn more.
+
+WARNING: CPU IP/backtrace sampling not supported, disabling.
+Try the 'nsys status --environment' command to learn more.
+
+WARNING: CPU context switch tracing not supported, disabling.
+Try the 'nsys status --environment' command to learn more.
+
+WARNING: CPU IP/backtrace sampling not supported, disabling.
+Try the 'nsys status --environment' command to learn more.
+
+WARNING: CPU context switch tracing not supported, disabling.
+Try the 'nsys status --environment' command to learn more.
+
+WARNING: CPU IP/backtrace sampling not supported, disabling.
+Try the 'nsys status --environment' command to learn more.
+
+WARNING: CPU context switch tracing not supported, disabling.
+Try the 'nsys status --environment' command to learn more.
+
+WARNING: CPU IP/backtrace sampling not supported, disabling.
+Try the 'nsys status --environment' command to learn more.
+
+WARNING: CPU context switch tracing not supported, disabling.
+Try the 'nsys status --environment' command to learn more.
+
+WARNING: CPU IP/backtrace sampling not supported, disabling.
+Try the 'nsys status --environment' command to learn more.
+
+WARNING: CPU context switch tracing not supported, disabling.
+Try the 'nsys status --environment' command to learn more.
+
+WARNING: CPU IP/backtrace sampling not supported, disabling.
+Try the 'nsys status --environment' command to learn more.
+
+WARNING: CPU context switch tracing not supported, disabling.
+Try the 'nsys status --environment' command to learn more.
+
+WARNING: CPU IP/backtrace sampling not supported, disabling.
+Try the 'nsys status --environment' command to learn more.
+
+WARNING: CPU context switch tracing not supported, disabling.
+Try the 'nsys status --environment' command to learn more.
+
+Executable '/home/ictp/ictp549985/RegCM/bin/regcmMPICML45' not found in current directory or standard search paths
+Executable '/home/ictp/ictp549985/RegCM/bin/regcmMPICML45' not found in current directory or standard search paths
+Executable '/home/ictp/ictp549985/RegCM/bin/regcmMPICML45' not found in current directory or standard search paths
+Executable '/home/ictp/ictp549985/RegCM/bin/regcmMPICML45' not found in current directory or standard search paths
+--------------------------------------------------------------------------
+Primary job  terminated normally, but 1 process returned
+a non-zero exit code. Per user-direction, the job has been aborted.
+--------------------------------------------------------------------------
+Executable '/home/ictp/ictp549985/RegCM/bin/regcmMPICML45' not found in current directory or standard search paths
+Executable '/home/ictp/ictp549985/RegCM/bin/regcmMPICML45' not found in current directory or standard search paths
+Executable '/home/ictp/ictp549985/RegCM/bin/regcmMPICML45' not found in current directory or standard search paths
+Executable '/home/ictp/ictp549985/RegCM/bin/regcmMPICML45' not found in current directory or standard search paths
+Executable '/home/ictp/ictp549985/RegCM/bin/regcmMPICML45' not found in current directory or standard search paths
+Executable '/home/ictp/ictp549985/RegCM/bin/regcmMPICML45' not found in current directory or standard search paths
+Executable '/home/ictp/ictp549985/RegCM/bin/regcmMPICML45' not found in current directory or standard search paths
+Executable '/home/ictp/ictp549985/RegCM/bin/regcmMPICML45' not found in current directory or standard search paths
+Executable '/home/ictp/ictp549985/RegCM/bin/regcmMPICML45' not found in current directory or standard search paths
+Executable '/home/ictp/ictp549985/RegCM/bin/regcmMPICML45' not found in current directory or standard search paths
+Executable '/home/ictp/ictp549985/RegCM/bin/regcmMPICML45' not found in current directory or standard search paths
+Executable '/home/ictp/ictp549985/RegCM/bin/regcmMPICML45' not found in current directory or standard search paths
+--------------------------------------------------------------------------
+mpirun detected that one or more processes exited with non-zero status, thus causing
+the job to be terminated. The first process to do so was:
+
+  Process name: [[28158,1],0]
+  Exit code:    1
+--------------------------------------------------------------------------

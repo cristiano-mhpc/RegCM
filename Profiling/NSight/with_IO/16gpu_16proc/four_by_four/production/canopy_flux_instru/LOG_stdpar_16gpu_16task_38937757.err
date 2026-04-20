@@ -1,0 +1,52 @@
+unload CMAKE/3.30.5 (PATH)
+load CMAKE/3.30.5 (PATH)
+Connection to Agent lost. This is most likely a bug. Internal reason: 'End of file'.
+Please refer to the troubleshooting section of the docs:
+https://docs.nvidia.com/nsight-systems/UserGuide/index.html#troubleshooting
+--------------------------------------------------------------------------
+Primary job  terminated normally, but 1 process returned
+a non-zero exit code. Per user-direction, the job has been aborted.
+--------------------------------------------------------------------------
+Connection to Agent lost. This is most likely a bug. Internal reason: 'End of file'.
+Please refer to the troubleshooting section of the docs:
+https://docs.nvidia.com/nsight-systems/UserGuide/index.html#troubleshooting
+Connection to Agent lost. This is most likely a bug. Internal reason: 'End of file'.
+Please refer to the troubleshooting section of the docs:
+https://docs.nvidia.com/nsight-systems/UserGuide/index.html#troubleshooting
+Connection to Agent lost. This is most likely a bug. Internal reason: 'End of file'.
+Please refer to the troubleshooting section of the docs:
+https://docs.nvidia.com/nsight-systems/UserGuide/index.html#troubleshooting
+Connection to Agent lost. This is most likely a bug. Internal reason: 'End of file'.
+Please refer to the troubleshooting section of the docs:
+https://docs.nvidia.com/nsight-systems/UserGuide/index.html#troubleshooting
+Connection to Agent lost. This is most likely a bug. Internal reason: 'End of file'.
+Please refer to the troubleshooting section of the docs:
+https://docs.nvidia.com/nsight-systems/UserGuide/index.html#troubleshooting
+Connection to Agent lost. This is most likely a bug. Internal reason: 'End of file'.
+Please refer to the troubleshooting section of the docs:
+https://docs.nvidia.com/nsight-systems/UserGuide/index.html#troubleshooting
+Connection to Agent lost. This is most likely a bug. Internal reason: 'End of file'.
+Please refer to the troubleshooting section of the docs:
+https://docs.nvidia.com/nsight-systems/UserGuide/index.html#troubleshooting
+Connection to Agent lost. This is most likely a bug. Internal reason: 'End of file'.
+Please refer to the troubleshooting section of the docs:
+https://docs.nvidia.com/nsight-systems/UserGuide/index.html#troubleshooting
+Connection to Agent lost. This is most likely a bug. Internal reason: 'End of file'.
+Please refer to the troubleshooting section of the docs:
+https://docs.nvidia.com/nsight-systems/UserGuide/index.html#troubleshooting
+Connection to Agent lost. This is most likely a bug. Internal reason: 'End of file'.
+Please refer to the troubleshooting section of the docs:
+https://docs.nvidia.com/nsight-systems/UserGuide/index.html#troubleshooting
+Connection to Agent lost. This is most likely a bug. Internal reason: 'End of file'.
+Please refer to the troubleshooting section of the docs:
+https://docs.nvidia.com/nsight-systems/UserGuide/index.html#troubleshooting
+Connection to Agent lost. This is most likely a bug. Internal reason: 'End of file'.
+Please refer to the troubleshooting section of the docs:
+https://docs.nvidia.com/nsight-systems/UserGuide/index.html#troubleshooting
+--------------------------------------------------------------------------
+mpirun detected that one or more processes exited with non-zero status, thus causing
+the job to be terminated. The first process to do so was:
+
+  Process name: [[49857,1],1]
+  Exit code:    1
+--------------------------------------------------------------------------

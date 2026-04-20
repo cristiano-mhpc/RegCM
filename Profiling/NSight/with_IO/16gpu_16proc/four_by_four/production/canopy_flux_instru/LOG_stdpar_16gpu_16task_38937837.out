@@ -1,0 +1,48 @@
+[Wrapper][Rank 00][Local 00] on as07r3b19: CUDA_VISIBLE_DEVICES=0 ACC_DEVICE_NUM=0
+[Wrapper][Rank 04][Local 00] on as07r3b20: CUDA_VISIBLE_DEVICES=0 ACC_DEVICE_NUM=0
+[Wrapper][Rank 08][Local 00] on as07r3b22: CUDA_VISIBLE_DEVICES=0 ACC_DEVICE_NUM=0
+[Wrapper][Rank 12][Local 00] on as07r3b23: CUDA_VISIBLE_DEVICES=0 ACC_DEVICE_NUM=0
+[Wrapper][Rank 05][Local 01] on as07r3b20: CUDA_VISIBLE_DEVICES=1 ACC_DEVICE_NUM=0
+[Wrapper][Rank 09][Local 01] on as07r3b22: CUDA_VISIBLE_DEVICES=1 ACC_DEVICE_NUM=0
+[Wrapper][Rank 01][Local 01] on as07r3b19: CUDA_VISIBLE_DEVICES=1 ACC_DEVICE_NUM=0
+[Wrapper][Rank 13][Local 01] on as07r3b23: CUDA_VISIBLE_DEVICES=1 ACC_DEVICE_NUM=0
+[Wrapper][Rank 02][Local 02] on as07r3b19: CUDA_VISIBLE_DEVICES=2 ACC_DEVICE_NUM=0
+[Wrapper][Rank 10][Local 02] on as07r3b22: CUDA_VISIBLE_DEVICES=2 ACC_DEVICE_NUM=0
+[Wrapper][Rank 06][Local 02] on as07r3b20: CUDA_VISIBLE_DEVICES=2 ACC_DEVICE_NUM=0
+[Wrapper][Rank 14][Local 02] on as07r3b23: CUDA_VISIBLE_DEVICES=2 ACC_DEVICE_NUM=0
+[Wrapper][Rank 11][Local 03] on as07r3b22: CUDA_VISIBLE_DEVICES=3 ACC_DEVICE_NUM=0
+[Wrapper][Rank 07][Local 03] on as07r3b20: CUDA_VISIBLE_DEVICES=3 ACC_DEVICE_NUM=0
+[Wrapper][Rank 03][Local 03] on as07r3b19: CUDA_VISIBLE_DEVICES=3 ACC_DEVICE_NUM=0
+[Wrapper][Rank 15][Local 03] on as07r3b23: CUDA_VISIBLE_DEVICES=3 ACC_DEVICE_NUM=0
+[Wrapper][Rank 12] NSYS_MODE=minimal PROFILE_RANKS=all should_profile_rank=1
+[Wrapper][Rank 12] profiling mode=minimal output=/gpfs/scratch/ehpc575/NSight/with_IO/16gpu_16proc/Nsight_38937837/sys_rank12
+[Wrapper][Rank 00] NSYS_MODE=minimal PROFILE_RANKS=all should_profile_rank=1
+[Wrapper][Rank 00] profiling mode=minimal output=/gpfs/scratch/ehpc575/NSight/with_IO/16gpu_16proc/Nsight_38937837/sys_rank0
+[Wrapper][Rank 02] NSYS_MODE=minimal PROFILE_RANKS=all should_profile_rank=1
+[Wrapper][Rank 02] profiling mode=minimal output=/gpfs/scratch/ehpc575/NSight/with_IO/16gpu_16proc/Nsight_38937837/sys_rank2
+[Wrapper][Rank 01] NSYS_MODE=minimal PROFILE_RANKS=all should_profile_rank=1
+[Wrapper][Rank 03] NSYS_MODE=minimal PROFILE_RANKS=all should_profile_rank=1
+[Wrapper][Rank 01] profiling mode=minimal output=/gpfs/scratch/ehpc575/NSight/with_IO/16gpu_16proc/Nsight_38937837/sys_rank1
+[Wrapper][Rank 03] profiling mode=minimal output=/gpfs/scratch/ehpc575/NSight/with_IO/16gpu_16proc/Nsight_38937837/sys_rank3
+[Wrapper][Rank 06] NSYS_MODE=minimal PROFILE_RANKS=all should_profile_rank=1
+[Wrapper][Rank 06] profiling mode=minimal output=/gpfs/scratch/ehpc575/NSight/with_IO/16gpu_16proc/Nsight_38937837/sys_rank6
+[Wrapper][Rank 11] NSYS_MODE=minimal PROFILE_RANKS=all should_profile_rank=1
+[Wrapper][Rank 11] profiling mode=minimal output=/gpfs/scratch/ehpc575/NSight/with_IO/16gpu_16proc/Nsight_38937837/sys_rank11
+[Wrapper][Rank 14] NSYS_MODE=minimal PROFILE_RANKS=all should_profile_rank=1
+[Wrapper][Rank 14] profiling mode=minimal output=/gpfs/scratch/ehpc575/NSight/with_IO/16gpu_16proc/Nsight_38937837/sys_rank14
+[Wrapper][Rank 15] NSYS_MODE=minimal PROFILE_RANKS=all should_profile_rank=1
+[Wrapper][Rank 15] profiling mode=minimal output=/gpfs/scratch/ehpc575/NSight/with_IO/16gpu_16proc/Nsight_38937837/sys_rank15
+[Wrapper][Rank 10] NSYS_MODE=minimal PROFILE_RANKS=all should_profile_rank=1
+[Wrapper][Rank 10] profiling mode=minimal output=/gpfs/scratch/ehpc575/NSight/with_IO/16gpu_16proc/Nsight_38937837/sys_rank10
+[Wrapper][Rank 09] NSYS_MODE=minimal PROFILE_RANKS=all should_profile_rank=1
+[Wrapper][Rank 13] NSYS_MODE=minimal PROFILE_RANKS=all should_profile_rank=1
+[Wrapper][Rank 09] profiling mode=minimal output=/gpfs/scratch/ehpc575/NSight/with_IO/16gpu_16proc/Nsight_38937837/sys_rank9
+[Wrapper][Rank 13] profiling mode=minimal output=/gpfs/scratch/ehpc575/NSight/with_IO/16gpu_16proc/Nsight_38937837/sys_rank13
+[Wrapper][Rank 08] NSYS_MODE=minimal PROFILE_RANKS=all should_profile_rank=1
+[Wrapper][Rank 08] profiling mode=minimal output=/gpfs/scratch/ehpc575/NSight/with_IO/16gpu_16proc/Nsight_38937837/sys_rank8
+[Wrapper][Rank 07] NSYS_MODE=minimal PROFILE_RANKS=all should_profile_rank=1
+[Wrapper][Rank 07] profiling mode=minimal output=/gpfs/scratch/ehpc575/NSight/with_IO/16gpu_16proc/Nsight_38937837/sys_rank7
+[Wrapper][Rank 05] NSYS_MODE=minimal PROFILE_RANKS=all should_profile_rank=1
+[Wrapper][Rank 05] profiling mode=minimal output=/gpfs/scratch/ehpc575/NSight/with_IO/16gpu_16proc/Nsight_38937837/sys_rank5
+[Wrapper][Rank 04] NSYS_MODE=minimal PROFILE_RANKS=all should_profile_rank=1
+[Wrapper][Rank 04] profiling mode=minimal output=/gpfs/scratch/ehpc575/NSight/with_IO/16gpu_16proc/Nsight_38937837/sys_rank4

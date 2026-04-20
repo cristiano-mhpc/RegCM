@@ -1,0 +1,14 @@
+unload CMAKE/3.30.5 (PATH)
+load CMAKE/3.30.5 (PATH)
+slurmstepd: error: *** JOB 38938170 ON as03r1b10 CANCELLED AT 2026-04-12T22:31:04 ***
+--------------------------------------------------------------------------
+ORTE has lost communication with a remote daemon.
+
+  HNP daemon   : [[25823,0],0] on node as03r1b10
+  Remote daemon: [[25823,0],2] on node as03r3b01
+
+This is usually due to either a failure of the TCP network
+connection to the node, or possibly an internal failure of
+the daemon itself. We cannot recover from this failure, and
+therefore will terminate the job.
+--------------------------------------------------------------------------

@@ -1,0 +1,25 @@
+unload CMAKE/3.30.5 (PATH)
+load CMAKE/3.30.5 (PATH)
+Unknown command: rofile
+Unknown command: rofile
+Unknown command: rofile
+--------------------------------------------------------------------------
+Primary job  terminated normally, but 1 process returned
+a non-zero exit code. Per user-direction, the job has been aborted.
+--------------------------------------------------------------------------
+Unknown command: rofile
+Unknown command: rofile
+Unknown command: rofile
+Unknown command: rofile
+Unknown command: rofile
+Unknown command: rofile
+Unknown command: rofile
+Unknown command: rofile
+Unknown command: rofile
+--------------------------------------------------------------------------
+mpirun detected that one or more processes exited with non-zero status, thus causing
+the job to be terminated. The first process to do so was:
+
+  Process name: [[64645,1],11]
+  Exit code:    1
+--------------------------------------------------------------------------

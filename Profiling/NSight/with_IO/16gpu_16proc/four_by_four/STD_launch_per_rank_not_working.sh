@@ -30,8 +30,8 @@ INPUT_FILE=EURR-3_namelist.in
 printf '[Wrapper][Rank %02d][Local %02d] on %s: CUDA_VISIBLE_DEVICES=%s ACC_DEVICE_NUM=%s\n' \
 "$GLOBAL_RANK" "$LOCAL_RANK" "$(hostname)" "$CUDA_VISIBLE_DEVICES" "$ACC_DEVICE_NUM"
 
-# Set a unique temp directory using node-local storage for the Nsight agent
-TMPDIR_BASE=${SLURM_TMPDIR:-/tmp}/nsys_${SLURM_JOB_ID}
+# Set a unique temp directory using a rank-unique suffix
+TMPDIR_BASE=$SCRATCH/tmp_nsys
 export TMPDIR=$TMPDIR_BASE/rank_${GLOBAL_RANK}
 mkdir -p "$TMPDIR"
 
@@ -41,7 +41,7 @@ NSYS_OUT="$NSYS_DIR/sys_rank${GLOBAL_RANK}"
 mkdir -p "$NSYS_DIR"
 umask 007   # files created with 600 permissions 
 
-NSYS_MODE=$(printf '%s' "${NSYS_MODE:-minimal}" | tr -d '[:space:]')
+NSYS_MODE=$(printf '%s' "${NSYS_MODE:-canopy}" | tr -d '[:space:]')
 PROFILE_RANKS=$(printf '%s' "${PROFILE_RANKS:-all}" | tr -d '[:space:]')
 
 should_profile_rank=0
@@ -61,17 +61,24 @@ if [ "$should_profile_rank" -eq 1 ]; then
     --stats=true
     --output "$NSYS_OUT"
     --trace=cuda,openacc
-    --sample=none
-    --cpuctxsw=none
+    --cuda-um-cpu-page-faults=true
+    --cuda-um-gpu-page-faults=true
+    --cuda-memory-usage=true
   )
+
+  if [ "$NSYS_MODE" = "canopy" ]; then
+    NSYS_ARGS+=(
+      --capture-range=nvtx
+      --nvtx-capture=CanopyFluxes
+      --capture-range-end=repeat:1
+      --sample=none
+      --cpuctxsw=none
+    )
+  fi
 
   printf '[Wrapper][Rank %02d] profiling mode=%s output=%s\n' \
     "$GLOBAL_RANK" "$NSYS_MODE" "$NSYS_OUT"
-  if [ "$NSYS_MODE" = "selftest" ]; then
-    nsys "${NSYS_ARGS[@]}" /bin/true
-  else
-    nsys "${NSYS_ARGS[@]}" "$BINDIR/regcmMPICLM45" "$INPUT_FILE"
-  fi
+  $NSYS_BIN "${NSYS_ARGS[@]}" "$BINDIR/regcmMPICLM45" "$INPUT_FILE"
 else
   printf '[Wrapper][Rank %02d] profiling disabled; running model directly\n' \
     "$GLOBAL_RANK"

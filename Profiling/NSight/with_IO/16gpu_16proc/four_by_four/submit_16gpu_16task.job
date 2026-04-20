@@ -1,42 +1,5 @@
 #!/bin/bash
 
-# Usage:
-#   sbatch submit_16gpu_16task.job
-#
-# Default behavior:
-#   - launches 16 MPI ranks on 4 nodes with 4 ranks/GPUs per node
-#   - each rank is pinned to one GPU by the wrapper script
-#   - Nsight Systems runs in canopy-only mode by default:
-#       NSYS_MODE=canopy
-#     This relies on the NVTX CanopyFluxes range in the model and captures
-#     only the first matching canopy region per profiled rank.
-#
-# Optional environment overrides:
-#   - profile only selected MPI ranks:
-#       PROFILE_RANKS=0 sbatch submit_16gpu_16task.job
-#       PROFILE_RANKS=0,7,15 sbatch submit_16gpu_16task.job
-#     Default:
-#       PROFILE_RANKS=all
-#
-#   - switch profiling mode:
-#       NSYS_MODE=canopy sbatch submit_16gpu_16task.job
-#       NSYS_MODE=full   sbatch submit_16gpu_16task.job
-#     Modes:
-#       canopy : capture only the first NVTX CanopyFluxes region
-#       full   : profile the full model run for selected ranks
-#
-# Output:
-#   - model stdout/stderr:
-#       ./production/canopy_flux_instru/LOG_<jobname>_<jobid>.out/.err
-#   - Nsight Systems reports:
-#       $SCRATCH/NSight/with_IO/16gpu_16proc/Nsight_<jobid>/
-#
-# Notes:
-#   - the wrapper expects Open MPI rank variables because the job is launched
-#     with mpirun
-#   - set PROFILE_RANKS to a small subset for lighter profiling runs
-#   - for canopy scaling studies, PROFILE_RANKS=0,15 is a reasonable first pass
-
 #SBATCH --account=ehpc575
 #SBATCH --out=./production/canopy_flux_instru/LOG_%x_%j.out
 #SBATCH --err=./production/canopy_flux_instru/LOG_%x_%j.err
@@ -47,7 +10,7 @@
 #SBATCH --qos=acc_ehpc
 #SBATCH --nodes=4
 #SBATCH --exclusive
-#SBATCH --gres=tmpfs:100g
+#SBATCH --gres=tmpfs:300g
 #SBATCH --gres=gpu:4
 #SBATCH --time=02:00:00
 
@@ -55,7 +18,7 @@ source /gpfs/home/ictp/ictp549985/RegCM/modules_cuda_working_old
 # source /home/ictp/ictp992004/module
 
 export OMP_NUM_THREADS=1
-export NSYS_MODE=${NSYS_MODE:-canopy}
+export NSYS_MODE=${NSYS_MODE:-minimal}
 export PROFILE_RANKS=${PROFILE_RANKS:-all}
 
 # Launch with explicit deterministic mapping/binding
