@@ -49,6 +49,10 @@ module mod_regcm_interface
   use mod_oasis_interface
 #endif
 #ifdef TIMING_STUDY
+  use mod_time_partition, only : tp_init, tp_switch, tp_finalize, tp_get_acc, tp_get_names, &
+                                 SEC_ATM, SEC_IO, SEC_MPI_WAIT, SEC_OTHER, NSEC
+#endif
+#ifdef TIMING_STUDY
 #ifdef CLM45
   use mod_clm_regcm, only : t_cpl_a2l, t_cpl_l2a, t_clm_drv, n_clm_calls
   use mod_clm_decomp, only : get_proc_total
@@ -258,7 +262,14 @@ module mod_regcm_interface
     integer(ik4) :: ierr
 #endif
 
+#ifdef TIMING_STUDY
+    call tp_init()
+#endif
+
     do while ( extime >= timestr .and. extime < timeend )
+#ifdef TIMING_STUDY
+      call tp_switch(SEC_OTHER)
+#endif
       !
       ! Retrieve information from the driver
       !
@@ -283,6 +294,9 @@ module mod_regcm_interface
       !
       ! Compute tendencies
       !
+#ifdef TIMING_STUDY
+      call tp_switch(SEC_ATM)
+#endif
       if ( idynamic == 3 ) then
 #ifdef TIMING_STUDY
         t0ts = mpi_wtime()
@@ -294,6 +308,9 @@ module mod_regcm_interface
       else
         call tend
       end if
+#ifdef TIMING_STUDY
+      call tp_switch(SEC_OTHER)
+#endif
       !
       ! Send OASIS fields
       !
@@ -308,7 +325,13 @@ module mod_regcm_interface
       !
       ! Write output for this timestep if requested
       !
+#ifdef TIMING_STUDY
+      call tp_switch(SEC_IO)
+#endif
       call output
+#ifdef TIMING_STUDY
+      call tp_switch(SEC_OTHER)
+#endif
       !
       ! Boundary code
       !
@@ -345,9 +368,11 @@ module mod_regcm_interface
       end if
 
 #ifdef TIMING_STUDY
+      call tp_switch(SEC_MPI_WAIT)
       t0ts = mpi_wtime()
       call mpi_barrier(mycomm, ierr)
       t_wait_barrier = t_wait_barrier + (mpi_wtime() - t0ts)
+      call tp_switch(SEC_OTHER)
 #endif
 
     end do
@@ -363,8 +388,10 @@ module mod_regcm_interface
     implicit none
 #ifdef TIMING_STUDY
     real(rk8) :: tloc, tmin, tmax, tsum
+    real(rk8) :: tp_acc(0:NSEC), tp_sum
+    character(len=16) :: tp_names(0:NSEC)
     integer(ik8) :: cmin, cmax, csum
-    integer(ik4) :: ierr, irank
+    integer(ik4) :: ierr, irank, isec
     integer(ik4) :: lndpts_local, idx_min, idx_max
     integer(ik4) :: ncells_local, nlunits_local, ncols_local, npfts_local
     integer(ik4) :: ncols_min, ncols_max, npfts_min, npfts_max
@@ -392,8 +419,37 @@ module mod_regcm_interface
 #endif
 
 #ifdef TIMING_STUDY
+    call tp_finalize()
+    call tp_get_acc(tp_acc)
+    call tp_get_names(tp_names)
+
+    tp_sum = 0.0_rk8
+    do isec = 1, NSEC
+      tp_sum = tp_sum + tp_acc(isec)
+    end do
+
     if ( myid == italk ) then
       write(stdout,*) 'TIMING_STUDY: min avg max across ranks (seconds)'
+    end if
+
+    do isec = 1, NSEC
+      tloc = tp_acc(isec)
+      call mpi_reduce(tloc, tmin, 1, mpi_double_precision, mpi_min, italk, mycomm, ierr)
+      call mpi_reduce(tloc, tmax, 1, mpi_double_precision, mpi_max, italk, mycomm, ierr)
+      call mpi_reduce(tloc, tsum, 1, mpi_double_precision, mpi_sum, italk, mycomm, ierr)
+      if ( myid == italk ) then
+        write(stdout,'(a,1x,a,1x,3(1x,f12.3))') 'TIMING_PART', trim(tp_names(isec)), &
+                                                tmin, tsum/real(nproc,rk8), tmax
+      end if
+    end do
+
+    tloc = tp_sum
+    call mpi_reduce(tloc, tmin, 1, mpi_double_precision, mpi_min, italk, mycomm, ierr)
+    call mpi_reduce(tloc, tmax, 1, mpi_double_precision, mpi_max, italk, mycomm, ierr)
+    call mpi_reduce(tloc, tsum, 1, mpi_double_precision, mpi_sum, italk, mycomm, ierr)
+    if ( myid == italk ) then
+      write(stdout,'(a,1x,a,1x,3(1x,f12.3))') 'TIMING_PART', 'total', &
+                                              tmin, tsum/real(nproc,rk8), tmax
     end if
 
     tloc = t_atm_moloch

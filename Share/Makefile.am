@@ -26,11 +26,11 @@ librcmlib_a_SOURCES = mod_constants.F90 mod_date.F90 mod_space.F90 mod_hgt.F90 \
                       mod_domain.F90 mod_intkinds.F90 mod_ncstream_types.F90 \
                       mod_ncstream.F90 mod_sunorbit.F90 mod_nhinterp.F90 \
                       mod_sigma.F90 mod_capecin.F90 mod_stdatm.F90 \
-                      mod_rdldtr.F90 mod_intldtr.F90 mod_kdtree2_priority.F90 \
-                      mod_kdtree2.F90 mod_earth.F90 mod_kdinterp.F90 \
-                      mod_spbarcoord.F90 mod_posix.F90 mod_zita.F90 \
-                      mod_isaatm.F90 mod_hash.F90 mod_sort.F90 \
-                      mod_heatindex.F90
+                       mod_rdldtr.F90 mod_intldtr.F90 mod_kdtree2_priority.F90 \
+                       mod_kdtree2.F90 mod_earth.F90 mod_kdinterp.F90 \
+                       mod_spbarcoord.F90 mod_posix.F90 mod_zita.F90 \
+                       mod_isaatm.F90 mod_hash.F90 mod_sort.F90 \
+                       mod_heatindex.F90 mod_time_partition.F90
 
 %.o: %.F90
 	$(FC) $(CPPFLAGS) $(OMPFLAGS) $(GITVER) $(FCFLAGS) -c $<

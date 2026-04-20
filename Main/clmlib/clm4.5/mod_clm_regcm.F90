@@ -25,6 +25,9 @@ module mod_clm_regcm
   use mod_clm_decomp, only : procinfo, get_proc_bounds
   use mod_clm_megan
   use mod_clm_drydep, only : n_drydep
+#ifdef TIMING_STUDY
+  use mod_time_partition, only : tp_switch, SEC_CLM_A2L, SEC_CLM_DRV, SEC_CLM_L2A, SEC_OTHER
+#endif
   use mpi, only : mpi_wtime
   use netcdf
   implicit none
@@ -334,6 +337,9 @@ module mod_clm_regcm
 #ifdef TIMING_STUDY
     t0ts = mpi_wtime()
 #endif
+#ifdef TIMING_STUDY
+    call tp_switch(SEC_CLM_A2L)
+#endif
     call atmosphere_to_land(lm)
 #ifdef TIMING_STUDY
     t_cpl_a2l = t_cpl_a2l + (mpi_wtime() - t0ts)
@@ -403,6 +409,9 @@ module mod_clm_regcm
 #ifdef TIMING_STUDY
     t0ts = mpi_wtime()
 #endif
+#ifdef TIMING_STUDY
+    call tp_switch(SEC_CLM_DRV)
+#endif
     call clm_drv(doalb,caldayp1,declinp1,declinp,rstwr,nlend,nlomon,rdate)
 #ifdef TIMING_STUDY
     t_clm_drv = t_clm_drv + (mpi_wtime() - t0ts)
@@ -411,10 +420,16 @@ module mod_clm_regcm
 #ifdef TIMING_STUDY
     t0ts = mpi_wtime()
 #endif
+#ifdef TIMING_STUDY
+    call tp_switch(SEC_CLM_L2A)
+#endif
     call land_to_atmosphere(lm,lms)
 #ifdef TIMING_STUDY
     t_cpl_l2a = t_cpl_l2a + (mpi_wtime() - t0ts)
     n_clm_calls = n_clm_calls + 1_ik8
+#endif
+#ifdef TIMING_STUDY
+    call tp_switch(SEC_OTHER)
 #endif
     !@acc call nvtxEndRange
     !@acc call nvtxEndRange
