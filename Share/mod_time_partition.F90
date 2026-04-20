@@ -8,7 +8,6 @@ module mod_time_partition
 
   use mod_realkinds
   use mod_intkinds
-  use mpi, only : mpi_wtime
 
   implicit none
 
@@ -45,7 +44,7 @@ contains
     ! Initialize partition accumulators and start in SEC_OTHER.
     acc = 0.0_rk8
     cur = SEC_OTHER
-    tlast = mpi_wtime()
+    tlast = tp_wtime()
     started = .true.
   end subroutine tp_init
 
@@ -56,7 +55,7 @@ contains
 
     if (.not. started) call tp_init()
 
-    now = mpi_wtime()
+    now = tp_wtime()
     if (cur >= SEC_NONE .and. cur <= NSEC) then
       acc(cur) = acc(cur) + (now - tlast)
     end if
@@ -89,5 +88,17 @@ contains
     names(SEC_MPI_WAIT) = 'mpi_wait'
     names(SEC_OTHER) = 'other'
   end subroutine tp_get_names
+
+  pure real(rk8) function tp_wtime()
+    ! Monotonic wall-clock estimate from system_clock.
+    integer(ik8) :: count, rate
+
+    call system_clock(count, rate)
+    if (rate > 0_ik8) then
+      tp_wtime = real(count, rk8) / real(rate, rk8)
+    else
+      tp_wtime = 0.0_rk8
+    end if
+  end function tp_wtime
 
 end module mod_time_partition
