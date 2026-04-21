@@ -50,7 +50,8 @@ module mod_regcm_interface
 #endif
 #ifdef TIMING_STUDY
   use mod_time_partition, only : tp_init, tp_switch, tp_finalize, tp_get_acc, tp_get_names, &
-                                 SEC_ATM, SEC_IO, SEC_MPI_WAIT, SEC_OTHER, NSEC
+                                 SEC_ATM, SEC_CLM_A2L, SEC_CLM_DRV, SEC_CLM_L2A, &
+                                 SEC_IO, SEC_MPI_WAIT, SEC_OTHER, NSEC
 #endif
 #ifdef TIMING_STUDY
 #ifdef CLM45
@@ -450,10 +451,10 @@ module mod_regcm_interface
           tp_rank_total = tp_rank_total + rank_part(irank,isec)
         end do
         write(stdout,'(a,1x,i4,8(1x,f12.3))') 'TIMING_PART_RANK', irank-1, &
-            rank_part(irank,SEC_ATM), rank_part(irank,SEC_CLM_A2L), &
-            rank_part(irank,SEC_CLM_DRV), rank_part(irank,SEC_CLM_L2A), &
-            rank_part(irank,SEC_IO), rank_part(irank,SEC_MPI_WAIT), &
-            rank_part(irank,SEC_OTHER), tp_rank_total
+            rank_part(irank,int(SEC_ATM)), rank_part(irank,int(SEC_CLM_A2L)), &
+            rank_part(irank,int(SEC_CLM_DRV)), rank_part(irank,int(SEC_CLM_L2A)), &
+            rank_part(irank,int(SEC_IO)), rank_part(irank,int(SEC_MPI_WAIT)), &
+            rank_part(irank,int(SEC_OTHER)), tp_rank_total
       end do
       write(stdout,'(a)') 'TIMING_PART_RANK_END'
     end if
