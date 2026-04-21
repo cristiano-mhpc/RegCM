@@ -389,6 +389,7 @@ module mod_regcm_interface
 #ifdef TIMING_STUDY
     real(rk8) :: tloc, tmin, tmax, tsum
     real(rk8) :: tp_acc(0:NSEC), tp_sum
+    real(rk8) :: tp_rank_total
     character(len=16) :: tp_names(0:NSEC)
     integer(ik8) :: cmin, cmax, csum
     integer(ik4) :: ierr, irank, isec
@@ -402,6 +403,7 @@ module mod_regcm_interface
     integer(ik8), allocatable :: rank_canopy_daylayers(:), rank_canopy_ci_solve(:)
     integer(ik8), allocatable :: rank_canopy_hybrid_iter(:), rank_canopy_brent(:)
     integer(ik8), allocatable :: rank_canopy_ci_eval(:)
+    real(rk8), allocatable :: rank_part(:,:)
 #endif
 
     if ( myid == italk ) then
@@ -432,6 +434,30 @@ module mod_regcm_interface
       write(stdout,*) 'TIMING_STUDY: min avg max across ranks (seconds)'
     end if
 
+    allocate(rank_part(max(1,nproc),0:NSEC))
+    do isec = 0, NSEC
+      tloc = tp_acc(isec)
+      call mpi_gather(tloc, 1, mpi_double_precision, rank_part(:,isec), 1, &
+                      mpi_double_precision, italk, mycomm, ierr)
+    end do
+
+    if ( myid == italk ) then
+      write(stdout,'(a,1x,i0)') 'TIMING_PART_RANK_BEGIN nproc=', nproc
+      write(stdout,'(a)') 'TIMING_PART_RANK rank atm clm_a2l clm_drv clm_l2a io mpi_wait other total'
+      do irank = 1, nproc
+        tp_rank_total = 0.0_rk8
+        do isec = 1, NSEC
+          tp_rank_total = tp_rank_total + rank_part(irank,isec)
+        end do
+        write(stdout,'(a,1x,i4,8(1x,f12.3))') 'TIMING_PART_RANK', irank-1, &
+            rank_part(irank,SEC_ATM), rank_part(irank,SEC_CLM_A2L), &
+            rank_part(irank,SEC_CLM_DRV), rank_part(irank,SEC_CLM_L2A), &
+            rank_part(irank,SEC_IO), rank_part(irank,SEC_MPI_WAIT), &
+            rank_part(irank,SEC_OTHER), tp_rank_total
+      end do
+      write(stdout,'(a)') 'TIMING_PART_RANK_END'
+    end if
+
     do isec = 1, NSEC
       tloc = tp_acc(isec)
       call mpi_reduce(tloc, tmin, 1, mpi_double_precision, mpi_min, italk, mycomm, ierr)
@@ -450,7 +476,10 @@ module mod_regcm_interface
     if ( myid == italk ) then
       write(stdout,'(a,1x,a,1x,3(1x,f12.3))') 'TIMING_PART', 'total', &
                                               tmin, tsum/real(nproc,rk8), tmax
+      write(stdout,'(a)') '------------------------------------------------------------'
     end if
+
+    deallocate(rank_part)
 
     tloc = t_atm_moloch
     call mpi_reduce(tloc, tmin, 1, mpi_double_precision, mpi_min, italk, mycomm, ierr)
