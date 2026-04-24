@@ -786,8 +786,8 @@ else
     AC_SUBST(NOOPTFC)
   fi
   if test -z "$COMPILER_PGI_TRUE"; then
-    NOOPTFC="-O1 $FCFLAGS -g"
-    FCFLAGS="-O3 -fast -fastsse $FCFLAGS -g"
+    NOOPTFC="-O1 $FCFLAGS"
+    FCFLAGS="-O3 -fast -fastsse $FCFLAGS"
     AC_SUBST(FCFLAGS)
     AC_SUBST(NOOPTFC)
   fi
@@ -815,16 +815,16 @@ if test -z "$COMPILER_PGI_TRUE"; then
   fi
   if eval "test x"$USE_OPENACC" = x3"; then
     FCFLAGS="$FCFLAGS -acc=gpu \
-        -gpu=$PGI_GPU_ARCH,lineinfo,mem:managed -Minfo=accel"
+        -gpu=$PGI_GPU_ARCH,lineinfo,mem:unified -Minfo=accel"
     NOOPTFC="$NOOPTFC -acc=gpu \
-        -gpu=$PGI_GPU_ARCH,lineinfo,mem:managed -Minfo=accel"
+        -gpu=$PGI_GPU_ARCH,lineinfo,mem:unified -Minfo=accel"
     LDFLAGS="$LDFLAGS -traceback -cudalib=nvtx,cusparse"
   fi
   if eval "test x"$USE_OPENACC" = x4"; then
     FCFLAGS="$FCFLAGS -stdpar=gpu \
-        -gpu=$PGI_GPU_ARCH,lineinfo,mem:managed -Minfo=accel"
+        -gpu=$PGI_GPU_ARCH,lineinfo,mem:unified -Minfo=accel"
     NOOPTFC="$NOOPTFC -stdpar=gpu \
-        -gpu=$PGI_GPU_ARCH,lineinfo,mem:managed -Minfo=accel"
+        -gpu=$PGI_GPU_ARCH,lineinfo,mem:unified -Minfo=accel"
     LDFLAGS="$LDFLAGS -traceback -cudalib=nvtx,cusparse"
   fi
   AC_SUBST(FCFLAGS)
