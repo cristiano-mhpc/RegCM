@@ -5,7 +5,8 @@
 #SBATCH --job-name stdpar_2gpu_1d
 #SBATCH --ntasks-per-node=1
 #SBATCH --partition=gh
-#SBATCH --nodes=2
+#SBATCH --nodes=4
+#SBATCH --exclusive 
 #SBATCH --time=04:00:00
 
 export BINDIR=/global/home/users/ctica/MS_thesis/RegCM/bin

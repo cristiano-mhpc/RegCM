@@ -31,7 +31,7 @@
     h2opct = 50.0
     h2ohgt = .false.
     dirter = 'input'
-    inpter = '/global/exafs/users/ctica/EURR3/RCMDATA'
+    inpter = '/global/scratch/users/ctica/EURR3/RCMDATA'
 /
 
 &boundaryparam
@@ -54,7 +54,7 @@
     gdate2 = 2009090800
     calendar = 'gregorian'
     dirglob = 'input'
-    inpglob = '/global/exafs/users/ctica/EURR3/RCMDATA'
+    inpglob = '/global/scratch/users/ctica/EURR3/RCMDATA'
 /
 
 &restartparam
@@ -113,7 +113,7 @@
     iclimao3 = 1
     isolconst = 0
     iclimaaer = 2
-    radclimpath = '/global/exafs/users/ctica/EURR3/RCMDATA/MERRA2/OPPMONTH'
+    radclimpath = '/global/scratch/users/ctica/EURR3/RCMDATA/MERRA2/OPPMONTH'
 /
 
 &clm_inparm
