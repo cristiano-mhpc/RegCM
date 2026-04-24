@@ -1,0 +1,21 @@
+WARNING: Device-side CUDA Event completion trace is currently enabled.
+         This may increase runtime overhead and the likelihood of false
+         dependencies across CUDA Streams. If you wish to avoid this, please
+         disable the feature with --cuda-event-trace=false.
+WARNING: Device-side CUDA Event completion trace is currently enabled.
+         This may increase runtime overhead and the likelihood of false
+         dependencies across CUDA Streams. If you wish to avoid this, please
+         disable the feature with --cuda-event-trace=false.
+WARNING: Device-side CUDA Event completion trace is currently enabled.
+         This may increase runtime overhead and the likelihood of false
+         dependencies across CUDA Streams. If you wish to avoid this, please
+         disable the feature with --cuda-event-trace=false.
+WARNING: Device-side CUDA Event completion trace is currently enabled.
+         This may increase runtime overhead and the likelihood of false
+         dependencies across CUDA Streams. If you wish to avoid this, please
+         disable the feature with --cuda-event-trace=false.
+ Permission denied                                                               
+srun: Job step aborted: Waiting up to 182 seconds for job step to finish.
+ In File mod_ncstream.F90 at line:           378slurmstepd: error: *** STEP 37287909.0 ON lrdn2286 CANCELLED AT 2026-03-08T23:42:05 ***
+slurmstepd: error:  mpi/pmix_v3: _errhandler: lrdn2286 [0]: pmixp_client_v2.c:212: Error handler invoked: status = -25, source = [slurm.pmix.37287909.0:3]
+srun: error: lrdn2286: tasks 0-3: Killed
