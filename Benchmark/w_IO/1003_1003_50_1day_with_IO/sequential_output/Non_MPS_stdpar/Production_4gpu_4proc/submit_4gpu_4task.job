@@ -1,0 +1,19 @@
+#!/bin/bash 
+
+#SBATCH --out=./production/LOG_%x_%j.out
+#SBATCH --err=./production/LOG_%x_%j.err
+#SBATCH --job-name 1d_4_gpu
+#SBATCH --ntasks-per-node=1
+#SBATCH --partition=gh
+#SBATCH --nodes=4
+#SBATCH --exclusive 
+#SBATCH --time=04:00:00
+
+export BINDIR=/global/home/users/ctica/MS_thesis/RegCM/bin
+
+source ~/env/regcm_thea.sh  
+
+# Launch
+# srun ./STD_launch_per_rank.sh
+mpirun -np $SLURM_NTASKS $BINDIR/regcmMPICLM45 EURR-3_namelist.in 
+
