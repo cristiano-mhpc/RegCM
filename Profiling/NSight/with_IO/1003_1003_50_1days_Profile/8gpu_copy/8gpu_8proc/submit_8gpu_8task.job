@@ -3,18 +3,17 @@
 #SBATCH --account=ICT26_ESP_0
 #SBATCH --out=./production/LOG_%x_%j.out
 #SBATCH --err=./production/LOG_%x_%j.err
-#SBATCH --job-name 1d_4gpu_wIO
+#SBATCH --job-name 1d_8gpu_wIO_Nsight_profile
 #SBATCH --ntasks-per-node=4
 #SBATCH --partition=boost_usr_prod
-#SBATCH --nodes=1
+#SBATCH --nodes=2 
 #SBATCH --exclusive 
-#SBATCH --gres=tmpfs:100g
+#SBATCH --gres=tmpfs:400G 
 #SBATCH --gres=gpu:4
-#SBATCH --time=01:30:00
+#SBATCH --time=05:30:00
 
 source /leonardo/home/userexternal/ctica000/MS_thesis/RegCM/modules_cuda  
 
 # Launch
-srun ./STD_launch_per_rank.sh
-
+srun ./profile_STD_launch_per_rank.sh 
 

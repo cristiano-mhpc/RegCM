@@ -12,6 +12,14 @@
 #SBATCH --gres=gpu:4
 #SBATCH --time=07:00:00
 
+
+
+# improve fault localization, not performance
+CUDA_LAUNCH_BLOCKING=1  # forces GPU calls to be synchronous, so errors are reported closer to the true failing operation  
+
+NVCOMPILER_ACC_NOTIFY=3 # makes NVHPC/OpenACC print kernel launch + data movement info
+
+
 source /leonardo/home/userexternal/ctica000/MS_thesis/RegCM/modules_cuda  
 
 # Launch
