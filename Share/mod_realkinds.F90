@@ -129,29 +129,45 @@ module mod_realkinds
     !$acc routine seq
     implicit none
     real(rk8), intent(in) :: x
+#ifdef OPENACC
+    is_nan_double = ( (x /= x) .or. ((x > 0.0_rk8) .eqv. (x <= 0.0_rk8)) )
+#else
     is_nan_double = (ieee_class(x) == ieee_quiet_nan .or. &
                      ieee_class(x) == ieee_signaling_nan)
+#endif
   end function is_nan_double
 
   logical elemental function is_inf_double(x)
     implicit none
     real(rk8), intent(in) :: x
+#ifdef OPENACC
+    is_inf_double = ( x > huge(x) )
+#else
     is_inf_double = (ieee_class(x) == ieee_negative_inf .or. &
                      ieee_class(x) == ieee_positive_inf)
+#endif
   end function is_inf_double
 
   logical elemental function is_nan_single(x)
     implicit none
     real(rk4), intent(in) :: x
+#ifdef OPENACC
+    is_nan_single = ( (x /= x) .or. ((x > 0.0_rk4) .eqv. (x <= 0.0_rk4)) )
+#else
     is_nan_single = (ieee_class(x) == ieee_quiet_nan .or. &
                      ieee_class(x) == ieee_signaling_nan)
+#endif
   end function is_nan_single
 
   logical elemental function is_inf_single(x)
     implicit none
     real(rk4), intent(in) :: x
+#ifdef OPENACC
+    is_inf_single = ( x > huge(x) )
+#else
     is_inf_single = (ieee_class(x) == ieee_negative_inf .or. &
                      ieee_class(x) == ieee_positive_inf)
+#endif
   end function is_inf_single
 
 #else
