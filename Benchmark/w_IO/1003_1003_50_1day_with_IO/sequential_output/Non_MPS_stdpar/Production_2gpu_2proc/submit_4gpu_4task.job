@@ -2,10 +2,10 @@
 
 #SBATCH --out=./production/LOG_%x_%j.out
 #SBATCH --err=./production/LOG_%x_%j.err
-#SBATCH --job-name 1d_4_gpu
+#SBATCH --job-name 1d_3_gpu
 #SBATCH --ntasks-per-node=1
 #SBATCH --partition=gh
-#SBATCH --nodes=4
+#SBATCH --nodes=3
 #SBATCH --exclusive 
 #SBATCH --time=04:00:00
 
