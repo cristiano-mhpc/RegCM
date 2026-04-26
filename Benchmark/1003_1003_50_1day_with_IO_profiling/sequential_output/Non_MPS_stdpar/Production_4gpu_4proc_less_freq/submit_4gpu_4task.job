@@ -3,22 +3,25 @@
 #SBATCH --account=external
 #SBATCH --out=./production/LOG_%x_%j.out
 #SBATCH --err=./production/LOG_%x_%j.err
-#SBATCH --job-name 7d_16task_16gpu
-#SBATCH --ntasks-per-node=8
+#SBATCH --job-name 1d_4g_wIO
+#SBATCH --ntasks-per-node=4
 #SBATCH --partition=H100
-#SBATCH --nodes=2
+#SBATCH --nodes=1
+#SBATCH --nodelist=dgx004
+#SBATCH --gres=gpu:H100:4
 #SBATCH --exclusive 
-#SBATCH --gres=gpu:H100:8
-#SBATCH --time=05:30:00
+#SBATCH --time=02:00:00
+
 
 export BINDIR=/orfeo/cephfs/home/external/ctica/ICTP_RegCM/RegCM/bin
+
 
 # load the environment 
 source /u/ictp/ggiuliani/regcm.sh
 
+
 # Launch
 mpirun -np $SLURM_NTASKS $BINDIR/regcmMPICLM45 EURR-3_namelist.in   
 
-# mpirun --bind-to none --map-by slot -np $SLURM_NTASKS ./STD_launch_per_rank.sh
 
 

@@ -1,0 +1,20 @@
+--------------------------------------------------------------------------
+Open MPI tried to bind a new process, but something went wrong.  The
+process was killed without launching the target application.  Your job
+will now abort.
+
+  Local host:        dgx004
+  Application name:  /orfeo/cephfs/home/external/ctica/ICTP_RegCM/RegCM/bin/regcmMPIOPENACC
+  Error message:     hwloc_set_cpubind returned "Error" for bitmap "0"
+  Location:          ../../../../../orte/mca/rtc/hwloc/rtc_hwloc.c:382
+--------------------------------------------------------------------------
+--------------------------------------------------------------------------
+mpirun was unable to start the specified application as it encountered an
+error:
+
+Error code: -125
+Error name: The specified application failed to start
+Node: dgx004
+
+when attempting to start process rank 0.
+--------------------------------------------------------------------------

@@ -1,0 +1,162 @@
+
+  This is RegCM development version
+   GIT Revision: 5.0.0-1117-ga8bb0 compiled at: data : Feb 28 2026  time: 16:03:14
+
+ : this run start at  : 2026-03-19 02:50:41+0100
+ : it is submitted by : ctica
+ : it is running on   : dgx004.hpc.rd.areasciencepark.it
+ : it is using        :             2   processors
+ : in directory       : 
+ /orfeo/cephfs/home/external/ctica/ICTP_RegCM/RegCM/Benchmark/no_IO/1003_1003_50_3day_no_IO/2gpu_2proc
+                       
+ CPUS DIM1 =             2
+ CPUS DIM2 =             1
+ 
+ Reading model namelist file
+ Using default microphysical parameter.
+ Initial date of the global simulation:  1900-01-01 00:00:00 UTC        
+ Initial date of this run             :  1900-01-01 00:00:00 UTC        
+ Final date of this run               :  1900-01-04 00:00:00 UTC        
+ Total simulation length              :            72  hours
+ Timestep in seconds =   45.000000
+ Advection timestep =    15.000 (factor  3)
+ Max. Courant number for horizontal advection =    1.5910
+ Sound waves timestep =     3.000 (factor  5)
+ Courant number of horizontal sound waves =    0.7525
+ Setting IPCC scenario to CONST   
+ Selected value at year          1900
+ Create SAV files :   F
+ Create ATM files :   F
+ Create RAD files :   F
+ Create SRF files :   F
+ Create STS files :   F
+ Create SHF files :   F
+ Create OPT files :   F
+ Monthly new files are created
+ Monthly SAV files are written
+ Frequency in hours to create ATM :    3.0
+ Frequency in hours to create RAD :    3.0
+ Frequency in hours to create SRF :    3.0
+ Physical Parameterizations
+  Lateral Boundary conditions :  0
+  Semi-Lagrangian Advection   :  0
+  Land cumulus conv. scheme   :  0
+  Ocean cumulus conv. scheme  :  0
+  Moisture schem              :  2
+  Ocean Flux scheme           :  2
+  Zeng roughness formula      :  1
+  Zeng roughness method       :  1
+  Coupling with ocean         :  0
+  Coupling with wave          :  0
+  Coupling with COP           :  0
+  Pressure gradient force     :  0
+  Prescribed LW emissivity    :  0
+  Lake model in BATS          :  0
+  Simulate diurnal sst cycle  :  0
+  Simulate sea ice cover      :  0
+  Enable chem/aerosol model   :  0
+  Large scale LWP as convect. :  0
+  Cloud fraction scheme       :  7
+  Marine stratocumulus        :  0
+  Climate O3 dataset          :  0
+  Climate Aerosol dataset     :  0
+ Model Timestep Pameterizations
+  time step for dynamical model in seconds :          45.000000
+  time step for surface   model in seconds :         540.000000
+  time step for cumulus   model in seconds :         270.000000
+  time step for radiation model in seconds :        1620.000000
+  time step for emission  model in seconds :       58320.000000
+Vertical level height profile: 
+  1    27.61
+  2    86.03
+  3   149.01
+  4   216.88
+  5   290.05
+  6   368.91
+  7   453.92
+  8   545.55
+  9   644.31
+ 10   750.76
+ 11   865.51
+ 12   989.19
+ 13  1122.51
+ 14  1266.21
+ 15  1421.10
+ 16  1588.05
+ 17  1768.01
+ 18  1961.98
+ 19  2171.06
+ 20  2396.42
+ 21  2639.34
+ 22  2901.18
+ 23  3183.41
+ 24  3487.62
+ 25  3815.52
+ 26  4168.96
+ 27  4549.93
+ 28  4960.57
+ 29  5403.19
+ 30  5880.29
+ 31  6394.55
+ 32  6948.85
+ 33  7546.33
+ 34  8190.34
+ 35  8884.51
+ 36  9632.75
+ 37 10439.26
+ 38 11308.59
+ 39 12245.62
+ 40 13255.64
+ 41 14344.31
+ 42 15517.78
+ 43 16782.64
+ 44 18146.02
+ 45 19615.58
+ 46 21199.59
+ 47 22906.98
+ 48 24747.34
+ 49 26731.04
+ 50 28869.24
+ Model top at     30000.00000000000       m
+ Domain grid parameters:
+  Map Projection        : NORMER
+  Dot Grid Full Extent  : 1003x1003x 50
+  Model Grid Spacing    :    2.000000 km
+  Proj Center Latitude  :    0.000000 deg
+  Proj Center longitude :   90.000000 deg
+ Holtslag PBL Scheme
+  ricr_ocn     =    0.250000
+  ricr_lnd     =    0.250000
+  zhnew_fac    =    0.250000
+  ifaholt      =  0
+  ifaholtth10  =  2
+  holtth10iter =    1
+ Cloud fraction schemes parameters
+  # of bottom no cloud model levels :  1
+  Maximum relative humidity         :    1.010000
+  Minimum relative humidity         :    0.010000
+  Maximum total cloud cover for rad :    1.000000
+  Conv. CF UMF factor deep cumulus  :    0.140000
+  Conv. CF UMF factor deep cumulus  :    0.140000
+  Conv. CF UMF factor k2            :  500.000000
+  Surface radiation hack            :           F
+  Vavrus-Waliser Arctic cloud fix   :           T
+ Convective Cloud Cover parameters after resolution scaling
+  Maximum Convective Cloud Cover :    1.000000
+  Convective Cloud Water         :    0.000300
+ The surface energy budget is used to calculate the ground temperature.
+ The radiation is computed every   27. minutes.
+ The lateral boundary conditions are fixed.
+ Successfully read in surface temperature.
+  # Ozone profile #
+    0.170E-04  0.160E-04  0.129E-04  0.872E-05  0.480E-05  0.210E-05  0.714E-06
+    0.185E-06  0.360E-07  0.527E-08  0.600E-09  0.561E-10  0.447E-11  0.100E-11
+    0.100E-11  0.100E-11  0.100E-11  0.100E-11  0.100E-11  0.100E-11  0.100E-11
+    0.100E-11  0.100E-11  0.100E-11  0.100E-11  0.100E-11  0.100E-11  0.100E-11
+    0.100E-11  0.100E-11  0.100E-11  0.100E-11  0.100E-11  0.100E-11  0.100E-11
+    0.100E-11  0.100E-11  0.100E-11  0.100E-11  0.100E-11  0.100E-11  0.100E-11
+    0.100E-11  0.100E-11  0.100E-11  0.100E-11  0.100E-11  0.100E-11  0.100E-11
+    0.100E-11  0.100E-11  0.100E-11
+ At  1900-01-01 00:00:00 UTC        
+ JDay      0.00000 solar zenith angle = 42.05 degrees
+                   solar TSI irradiance    =     340.0000 W/m^2

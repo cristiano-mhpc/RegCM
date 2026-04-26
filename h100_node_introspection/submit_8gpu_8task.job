@@ -1,0 +1,57 @@
+#!/bin/bash
+
+#SBATCH --account=external
+#SBATCH --out=./introspection/LOG_%x_%j.out
+#SBATCH --err=./introspection/LOG_%x_%j.err
+#SBATCH --job-name=node_intro_8gpu
+#SBATCH --partition=H100
+#SBATCH --nodelist=dgx004
+#SBATCH --nodes=1
+#SBATCH --ntasks=1
+#SBATCH --gres=gpu:H100:8
+#SBATCH --exclusive
+#SBATCH --time=00:10:00
+
+cd "$SLURM_SUBMIT_DIR" || exit 1
+
+echo "===== hostname =====" > topo_info.txt
+hostname >> topo_info.txt 2>&1
+
+echo -e "\n===== date =====" >> topo_info.txt
+date >> topo_info.txt 2>&1
+
+echo -e "\n===== nvidia-smi -L =====" >> topo_info.txt
+nvidia-smi -L >> topo_info.txt 2>&1
+nvidia-smi -L > gpu_list.txt 2>&1
+
+echo -e "\n===== nvidia-smi topo -m =====" >> topo_info.txt
+nvidia-smi topo -m >> topo_info.txt 2>&1
+nvidia-smi topo -m > gpu_topology.txt 2>&1
+
+echo -e "\n===== numactl --hardware =====" >> topo_info.txt
+numactl --hardware >> topo_info.txt 2>&1
+numactl --hardware > numa.txt 2>&1
+
+echo -e "\n===== lscpu =====" >> topo_info.txt
+lscpu >> topo_info.txt 2>&1
+lscpu > cpu.txt 2>&1
+
+echo -e "\n===== ibstat =====" >> topo_info.txt
+ibstat >> topo_info.txt 2>&1
+ibstat > infiniband.txt 2>&1
+
+echo -e "\n===== ibdev2netdev =====" >> topo_info.txt
+ibdev2netdev >> topo_info.txt 2>&1
+ibdev2netdev > ibdev2netdev.txt 2>&1
+
+echo -e "\n===== ucx_info -d =====" >> topo_info.txt
+ucx_info -d >> topo_info.txt 2>&1
+ucx_info -d > ucx_devices.txt 2>&1
+
+echo -e "\n===== ompi_info | grep -i cuda =====" >> topo_info.txt
+(ompi_info | grep -i cuda) >> topo_info.txt 2>&1
+(ompi_info | grep -i cuda) > ompi_cuda.txt 2>&1
+
+echo -e "\n===== ompi_info | grep -i ucx =====" >> topo_info.txt
+(ompi_info | grep -i ucx) >> topo_info.txt 2>&1
+(ompi_info | grep -i ucx) > ompi_ucx.txt 2>&1

@@ -1,8 +1,8 @@
 #!/bin/bash 
 
 #SBATCH --account=external
-#SBATCH --out=./production/hand_tuned/LOG_%x_%j.out
-#SBATCH --err=./production/hand_tuned/LOG_%x_%j.err
+#SBATCH --out=./production/hand_tuned_level_2/LOG_%x_%j.out
+#SBATCH --err=./production/hand_tuned_level_2/LOG_%x_%j.err
 #SBATCH --job-name 7d_8g_8t
 #SBATCH --ntasks-per-node=8
 #SBATCH --partition=H100

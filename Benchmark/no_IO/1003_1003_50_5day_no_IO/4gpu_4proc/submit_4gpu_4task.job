@@ -1,0 +1,22 @@
+#!/bin/bash 
+
+#SBATCH --account=external
+#SBATCH --out=./production/LOG_%x_%j.out
+#SBATCH --err=./production/LOG_%x_%j.err
+#SBATCH --job-name 5d_4g_noIO
+#SBATCH --ntasks-per-node=4
+#SBATCH --partition=H100
+#SBATCH --nodes=1
+#SBATCH --nodelist=dgx004
+#SBATCH --gres=gpu:H100:4
+#SBATCH --exclusive 
+#SBATCH --time=04:20:00
+
+source /u/ictp/ggiuliani/regcm.sh
+
+export BINDIR=/orfeo/cephfs/home/external/ctica/ICTP_RegCM/RegCM/bin
+
+# Launch
+mpirun -np $SLURM_NTASKS $BINDIR/regcmMPIOPENACC isc24_small.in
+
+

@@ -2,12 +2,12 @@
   This is RegCM development version
    GIT Revision: 5.0.0-1117-ga8bb0 compiled at: data : Feb 28 2026  time: 16:03:14
 
- : this run start at  : 2026-03-04 23:32:07+0100
+ : this run start at  : 2026-03-08 04:15:52+0100
  : it is submitted by : ctica
  : it is running on   : dgx004.hpc.rd.areasciencepark.it
  : it is using        :             4   processors
  : in directory       : 
- /orfeo/cephfs/home/external/ctica/ICTP_RegCM/RegCM/Benchmark/no_IO/512_1024_60_1Day_no_IO_profiling/4gpu_4proc
+ /orfeo/cephfs/home/external/ctica/ICTP_RegCM/RegCM/Benchmark/no_IO/512_1024_60_1Day_no_IO_profiling/2gpu_2proc
                        
  CPUS DIM1 =             4
  CPUS DIM2 =             1
@@ -197,114 +197,114 @@ Vertical level height profile:
  $$$  1900-01-02 09:00:00 UTC        
  $$$ max, min of ps (mb) =  1022.07 1021.97
  $$$  1900-01-02 12:00:00 UTC        
- $$$ max, min of ps (mb) =  1022.57 1022.23
+ $$$ max, min of ps (mb) =  1022.58 1022.20
  $$$  1900-01-02 15:00:00 UTC        
- $$$ max, min of ps (mb) =  1022.90 1022.47
+ $$$ max, min of ps (mb) =  1022.89 1022.47
  $$$  1900-01-02 18:00:00 UTC        
- $$$ max, min of ps (mb) =  1023.13 1022.94
+ $$$ max, min of ps (mb) =  1023.15 1022.94
  $$$  1900-01-02 21:00:00 UTC        
  $$$ max, min of ps (mb) =  1023.58 1023.41
  At  1900-01-03 00:00:00 UTC        
  JDay      2.00000 solar zenith angle = 42.05 degrees
                    solar TSI irradiance    =     340.0000 W/m^2
  $$$  1900-01-03 00:00:00 UTC        
- $$$ max, min of ps (mb) =  1024.07 1023.87
+ $$$ max, min of ps (mb) =  1024.06 1023.87
  $$$  1900-01-03 03:00:00 UTC        
- $$$ max, min of ps (mb) =  1024.54 1024.33
+ $$$ max, min of ps (mb) =  1024.56 1024.25
  $$$  1900-01-03 06:00:00 UTC        
- $$$ max, min of ps (mb) =  1025.00 1023.60
+ $$$ max, min of ps (mb) =  1024.94 1023.48
  $$$  1900-01-03 09:00:00 UTC        
- $$$ max, min of ps (mb) =  1025.04 1024.26
+ $$$ max, min of ps (mb) =  1024.97 1024.37
  $$$  1900-01-03 12:00:00 UTC        
- $$$ max, min of ps (mb) =  1025.30 1024.58
+ $$$ max, min of ps (mb) =  1025.33 1024.68
  $$$  1900-01-03 15:00:00 UTC        
- $$$ max, min of ps (mb) =  1025.76 1024.52
+ $$$ max, min of ps (mb) =  1025.70 1024.73
  $$$  1900-01-03 18:00:00 UTC        
- $$$ max, min of ps (mb) =  1026.22 1024.93
+ $$$ max, min of ps (mb) =  1026.34 1024.90
  $$$  1900-01-03 21:00:00 UTC        
- $$$ max, min of ps (mb) =  1026.73 1025.03
+ $$$ max, min of ps (mb) =  1026.67 1024.73
  At  1900-01-04 00:00:00 UTC        
  JDay      3.00000 solar zenith angle = 42.05 degrees
                    solar TSI irradiance    =     340.0000 W/m^2
  $$$  1900-01-04 00:00:00 UTC        
- $$$ max, min of ps (mb) =  1026.99 1025.00
+ $$$ max, min of ps (mb) =  1026.96 1024.94
  $$$  1900-01-04 03:00:00 UTC        
- $$$ max, min of ps (mb) =  1027.26 1025.33
+ $$$ max, min of ps (mb) =  1027.22 1025.12
  $$$  1900-01-04 06:00:00 UTC        
- $$$ max, min of ps (mb) =  1027.57 1025.39
+ $$$ max, min of ps (mb) =  1027.47 1024.92
  $$$  1900-01-04 09:00:00 UTC        
- $$$ max, min of ps (mb) =  1027.81 1025.81
+ $$$ max, min of ps (mb) =  1027.82 1025.35
  $$$  1900-01-04 12:00:00 UTC        
- $$$ max, min of ps (mb) =  1028.29 1025.88
+ $$$ max, min of ps (mb) =  1028.17 1025.61
  $$$  1900-01-04 15:00:00 UTC        
- $$$ max, min of ps (mb) =  1028.35 1025.93
+ $$$ max, min of ps (mb) =  1028.26 1025.55
  $$$  1900-01-04 18:00:00 UTC        
- $$$ max, min of ps (mb) =  1028.53 1026.11
+ $$$ max, min of ps (mb) =  1028.56 1025.87
  $$$  1900-01-04 21:00:00 UTC        
- $$$ max, min of ps (mb) =  1028.75 1026.21
+ $$$ max, min of ps (mb) =  1028.70 1025.91
  At  1900-01-05 00:00:00 UTC        
  JDay      4.00000 solar zenith angle = 42.05 degrees
                    solar TSI irradiance    =     340.0000 W/m^2
  $$$  1900-01-05 00:00:00 UTC        
- $$$ max, min of ps (mb) =  1028.94 1026.24
+ $$$ max, min of ps (mb) =  1028.88 1026.34
  $$$  1900-01-05 03:00:00 UTC        
- $$$ max, min of ps (mb) =  1029.25 1026.49
+ $$$ max, min of ps (mb) =  1029.09 1026.36
  $$$  1900-01-05 06:00:00 UTC        
- $$$ max, min of ps (mb) =  1029.26 1026.64
+ $$$ max, min of ps (mb) =  1029.23 1026.56
  $$$  1900-01-05 09:00:00 UTC        
- $$$ max, min of ps (mb) =  1029.47 1026.75
+ $$$ max, min of ps (mb) =  1029.53 1026.52
  $$$  1900-01-05 12:00:00 UTC        
- $$$ max, min of ps (mb) =  1029.65 1027.31
+ $$$ max, min of ps (mb) =  1029.67 1026.98
  $$$  1900-01-05 15:00:00 UTC        
- $$$ max, min of ps (mb) =  1029.89 1027.39
+ $$$ max, min of ps (mb) =  1029.81 1027.21
  $$$  1900-01-05 18:00:00 UTC        
- $$$ max, min of ps (mb) =  1030.07 1027.94
+ $$$ max, min of ps (mb) =  1030.11 1027.72
  $$$  1900-01-05 21:00:00 UTC        
- $$$ max, min of ps (mb) =  1030.35 1028.31
+ $$$ max, min of ps (mb) =  1030.27 1028.17
  At  1900-01-06 00:00:00 UTC        
  JDay      5.00000 solar zenith angle = 42.05 degrees
                    solar TSI irradiance    =     340.0000 W/m^2
  $$$  1900-01-06 00:00:00 UTC        
- $$$ max, min of ps (mb) =  1030.75 1028.26
+ $$$ max, min of ps (mb) =  1030.60 1028.51
  $$$  1900-01-06 03:00:00 UTC        
- $$$ max, min of ps (mb) =  1030.95 1029.08
+ $$$ max, min of ps (mb) =  1030.84 1028.68
  $$$  1900-01-06 06:00:00 UTC        
- $$$ max, min of ps (mb) =  1031.39 1029.41
+ $$$ max, min of ps (mb) =  1031.21 1029.29
  $$$  1900-01-06 09:00:00 UTC        
- $$$ max, min of ps (mb) =  1031.59 1029.67
+ $$$ max, min of ps (mb) =  1031.50 1029.51
  $$$  1900-01-06 12:00:00 UTC        
- $$$ max, min of ps (mb) =  1031.93 1030.01
+ $$$ max, min of ps (mb) =  1031.82 1029.67
  $$$  1900-01-06 15:00:00 UTC        
- $$$ max, min of ps (mb) =  1032.26 1030.26
+ $$$ max, min of ps (mb) =  1032.22 1029.93
  $$$  1900-01-06 18:00:00 UTC        
- $$$ max, min of ps (mb) =  1032.57 1030.84
+ $$$ max, min of ps (mb) =  1032.47 1030.59
  $$$  1900-01-06 21:00:00 UTC        
- $$$ max, min of ps (mb) =  1032.96 1030.94
+ $$$ max, min of ps (mb) =  1032.81 1030.70
  At  1900-01-07 00:00:00 UTC        
  JDay      6.00000 solar zenith angle = 42.05 degrees
                    solar TSI irradiance    =     340.0000 W/m^2
  $$$  1900-01-07 00:00:00 UTC        
- $$$ max, min of ps (mb) =  1033.27 1031.39
+ $$$ max, min of ps (mb) =  1033.15 1031.38
  $$$  1900-01-07 03:00:00 UTC        
- $$$ max, min of ps (mb) =  1033.57 1031.73
+ $$$ max, min of ps (mb) =  1033.38 1031.36
  $$$  1900-01-07 06:00:00 UTC        
- $$$ max, min of ps (mb) =  1033.91 1031.67
+ $$$ max, min of ps (mb) =  1033.78 1031.85
  $$$  1900-01-07 09:00:00 UTC        
- $$$ max, min of ps (mb) =  1034.18 1032.19
+ $$$ max, min of ps (mb) =  1034.15 1032.16
  $$$  1900-01-07 12:00:00 UTC        
- $$$ max, min of ps (mb) =  1034.51 1032.82
+ $$$ max, min of ps (mb) =  1034.43 1032.53
  $$$  1900-01-07 15:00:00 UTC        
- $$$ max, min of ps (mb) =  1034.95 1032.98
+ $$$ max, min of ps (mb) =  1034.74 1032.88
  $$$  1900-01-07 18:00:00 UTC        
- $$$ max, min of ps (mb) =  1035.25 1033.25
+ $$$ max, min of ps (mb) =  1035.08 1033.24
  $$$  1900-01-07 21:00:00 UTC        
- $$$ max, min of ps (mb) =  1035.49 1033.80
+ $$$ max, min of ps (mb) =  1035.36 1033.45
  At  1900-01-08 00:00:00 UTC        
  JDay      7.00000 solar zenith angle = 42.05 degrees
                    solar TSI irradiance    =     340.0000 W/m^2
  Final time  1900-01-08 00:00:00 UTC reached.
- Elapsed seconds of run for this final timeslice :     3394.721    
- : this run stops at  : 2026-03-05 00:28:42+0100
+ Elapsed seconds of run for this final timeslice :     3404.428    
+ : this run stops at  : 2026-03-08 05:12:34+0100
  : Run has been completed using             4  processors.
- : Total elapsed seconds of run :     3395.354870080948     
+ : Total elapsed seconds of run :     3405.061288118362     
  RegCM V5 simulation successfully reached end

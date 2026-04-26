@@ -1,0 +1,16 @@
+
+  This is RegCM development version
+   GIT Revision: 5.0.0-1117-ga8bb0 compiled at: data : Feb 28 2026  time: 16:03:14
+
+ : this run start at  : 2026-03-10 03:59:58+0100
+ : it is submitted by : ctica
+ : it is running on   : dgx004.hpc.rd.areasciencepark.it
+ : it is using        :             2   processors
+ : in directory       : 
+ /orfeo/cephfs/home/external/ctica/ICTP_RegCM/RegCM/Benchmark/no_IO/1003_1003_50_5day_no_IO/2gpu_2proc
+                       
+ CPUS DIM1 =             2
+ CPUS DIM2 =             1
+ 
+ Reading model namelist file
+ Using default microphysical parameter.
