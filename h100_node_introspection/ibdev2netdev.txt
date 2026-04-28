@@ -1,0 +1,8 @@
+mlx5_0 port 1 ==> ibp26s0 (Up)
+mlx5_1 port 1 ==> ibp60s0 (Up)
+mlx5_2 port 1 ==> ibp77s0 (Up)
+mlx5_3 port 1 ==> ibp94s0 (Up)
+mlx5_4 port 1 ==> ibp156s0 (Up)
+mlx5_5 port 1 ==> ibp188s0 (Up)
+mlx5_6 port 1 ==> ibp204s0 (Up)
+mlx5_7 port 1 ==> ibp220s0 (Up)

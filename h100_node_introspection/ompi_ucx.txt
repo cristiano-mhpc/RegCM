@@ -1,0 +1,1 @@
+/var/spool/slurm/d/job1161033/slurm_script: line 57: ompi_info: command not found
