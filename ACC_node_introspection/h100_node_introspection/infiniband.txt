@@ -1,0 +1,102 @@
+CA 'mlx5_0'
+	CA type: MT4129
+	Number of ports: 1
+	Firmware version: 28.39.2048
+	Hardware version: 0
+	Node GUID: 0xa088c20300687af0
+	System image GUID: 0xa088c20300687af0
+	Port 1:
+		State: Active
+		Physical state: LinkUp
+		Rate: 200
+		Base lid: 10409
+		LMC: 0
+		SM lid: 909
+		Capability mask: 0xa751e848
+		Port GUID: 0xa088c20300687af0
+		Link layer: InfiniBand
+CA 'mlx5_1'
+	CA type: MT4129
+	Number of ports: 1
+	Firmware version: 28.39.2048
+	Hardware version: 0
+	Node GUID: 0xa088c20300687aec
+	System image GUID: 0xa088c20300687aec
+	Port 1:
+		State: Active
+		Physical state: LinkUp
+		Rate: 200
+		Base lid: 10393
+		LMC: 0
+		SM lid: 909
+		Capability mask: 0xa751e848
+		Port GUID: 0xa088c20300687aec
+		Link layer: InfiniBand
+CA 'mlx5_2'
+	CA type: MT4127
+	Number of ports: 1
+	Firmware version: 26.36.1010
+	Hardware version: 0
+	Node GUID: 0x0800380300bc6854
+	System image GUID: 0x0800380300bc6854
+	Port 1:
+		State: Active
+		Physical state: LinkUp
+		Rate: 25
+		Base lid: 0
+		LMC: 0
+		SM lid: 0
+		Capability mask: 0x00010000
+		Port GUID: 0x0a0038fffebc6854
+		Link layer: Ethernet
+CA 'mlx5_3'
+	CA type: MT4127
+	Number of ports: 1
+	Firmware version: 26.36.1010
+	Hardware version: 0
+	Node GUID: 0x0800380300bc6855
+	System image GUID: 0x0800380300bc6854
+	Port 1:
+		State: Down
+		Physical state: Disabled
+		Rate: 40
+		Base lid: 0
+		LMC: 0
+		SM lid: 0
+		Capability mask: 0x00010000
+		Port GUID: 0x0a0038fffebc6855
+		Link layer: Ethernet
+CA 'mlx5_4'
+	CA type: MT4129
+	Number of ports: 1
+	Firmware version: 28.39.2048
+	Hardware version: 0
+	Node GUID: 0xa088c20300687af4
+	System image GUID: 0xa088c20300687af4
+	Port 1:
+		State: Active
+		Physical state: LinkUp
+		Rate: 200
+		Base lid: 10425
+		LMC: 0
+		SM lid: 909
+		Capability mask: 0xa751e848
+		Port GUID: 0xa088c20300687af4
+		Link layer: InfiniBand
+CA 'mlx5_5'
+	CA type: MT4129
+	Number of ports: 1
+	Firmware version: 28.39.2048
+	Hardware version: 0
+	Node GUID: 0xa088c20300687af8
+	System image GUID: 0xa088c20300687af8
+	Port 1:
+		State: Active
+		Physical state: LinkUp
+		Rate: 200
+		Base lid: 10442
+		LMC: 0
+		SM lid: 909
+		Capability mask: 0xa751e848
+		Port GUID: 0xa088c20300687af8
+		Link layer: InfiniBand

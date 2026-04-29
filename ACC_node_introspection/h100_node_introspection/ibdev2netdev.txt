@@ -1,0 +1,6 @@
+mlx5_0 port 1 ==> ib0 (Up)
+mlx5_1 port 1 ==> ib1 (Up)
+mlx5_2 port 1 ==> ens3f0np0 (Up)
+mlx5_3 port 1 ==> ens3f1np1 (Down)
+mlx5_4 port 1 ==> ib2 (Up)
+mlx5_5 port 1 ==> ib3 (Up)

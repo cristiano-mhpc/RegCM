@@ -1,0 +1,1 @@
+/scratch/slurm/job39719652/slurm_script: line 54: ompi_info: command not found
