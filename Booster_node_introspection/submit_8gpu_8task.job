@@ -5,7 +5,6 @@
 #SBATCH --err=./introspection/LOG_%x_%j.err
 #SBATCH --job-name=node_intro_8gpu
 #SBATCH --partition=boost_usr_prod
-#SBATCH --nodelist=dgx004
 #SBATCH --nodes=1
 #SBATCH --mem=0G
 #SBATCH --gres=gpu:4
