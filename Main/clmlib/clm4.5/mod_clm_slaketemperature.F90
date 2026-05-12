@@ -1346,11 +1346,11 @@ module mod_clm_slaketemperature
       end if
     end do
 
-    do fc=1, num_lakec 
+    do fc = 1, num_lakec 
       c = filter_lakec(fc)
       ! For top soil layer.
       tktopsoillay(c) = thk(c,1)
-      write(*,*) num_lakec, fc, c
+      ! write(*,*) num_lakec, fc, c
     end do
 
     ! Soil heat capacity, from de Vires (1963)

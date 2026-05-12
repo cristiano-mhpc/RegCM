@@ -6,7 +6,7 @@ Loading netcdf-fortran/4.6.1--hpcx-mpi--2.19--nvhpc--24.5
     hdf5/1.14.3--hpcx-mpi--2.19--nvhpc--24.5 libaec/1.0.6--gcc--12.2.0-blqbmai
     parallel-netcdf/1.12.3--hpcx-mpi--2.19--nvhpc--24.5
     netcdf-c/4.9.2--hpcx-mpi--2.19--nvhpc--24.5
-[Wrapper][Rank 0][Local 0] on lrdn3321.leonardo.local: CUDA_VISIBLE_DEVICES=0
-[Wrapper][Rank 3][Local 3] on lrdn3321.leonardo.local: CUDA_VISIBLE_DEVICES=3
-[Wrapper][Rank 1][Local 1] on lrdn3321.leonardo.local: CUDA_VISIBLE_DEVICES=1
-[Wrapper][Rank 2][Local 2] on lrdn3321.leonardo.local: CUDA_VISIBLE_DEVICES=2
+[Wrapper][Rank 1][Local 1] on lrdn3041.leonardo.local: CUDA_VISIBLE_DEVICES=1
+[Wrapper][Rank 3][Local 3] on lrdn3041.leonardo.local: CUDA_VISIBLE_DEVICES=3
+[Wrapper][Rank 0][Local 0] on lrdn3041.leonardo.local: CUDA_VISIBLE_DEVICES=0
+[Wrapper][Rank 2][Local 2] on lrdn3041.leonardo.local: CUDA_VISIBLE_DEVICES=2
