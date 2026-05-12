@@ -1,0 +1,87 @@
+#!/bin/bash
+# run_app_leonardo_L2
+#
+# Leonardo Booster topology-aware per-rank launcher for RegCM5.
+# Derived from the node introspection files:
+#   - 4x A100-SXM-64GB GPUs per node
+#   - all GPUs have CPU affinity 0-15, NUMA affinity 0
+#   - GPU0/GPU1/GPU2/GPU3 closest NICs: mlx5_0/1/2/3 respectively
+#
+# Usage under srun:
+#   srun ./run_app_leonardo_L2 /path/to/regcmMPICLM45_OPENACC_STDPAR EURR-3_namelist.in
+#
+# Optional controls:
+#   REGCM_ENABLE_NIC_PINNING=0|1     default 0; set 1 to force GPU-local UCX_NET_DEVICES
+#   REGCM_ENABLE_UCX_TUNING=0|1      default 0; set 1 to enable Everett-style UCX rendezvous knobs
+#   REGCM_ENABLE_ACC_POOL=0|1        default 0; set 1 to enable NVHPC OpenACC memory pool knobs
+#   REGCM_ENABLE_NSYS_RANK0=0|1      default 0; set 1 to profile rank 0 only
+
+set -euo pipefail
+
+EXEC=${1:-/leonardo/home/userexternal/ctica000/MS_thesis/RegCM/bin/regcmMPICLM45_OPENACC_STDPAR}
+NAMELIST=${2:-EURR-3_namelist.in}
+
+# Work with both srun and mpirun. On your Leonardo scripts, srun provides SLURM_LOCALID.
+LOCAL_RANK=${SLURM_LOCALID:-${OMPI_COMM_WORLD_LOCAL_RANK:-}}
+GLOBAL_RANK=${SLURM_PROCID:-${OMPI_COMM_WORLD_RANK:-0}}
+
+if [[ -z "${LOCAL_RANK}" ]]; then
+  echo "[run_app_leonardo_L2] ERROR: cannot determine local rank. Run under srun or mpirun." >&2
+  exit 1
+fi
+
+# Leonardo Booster has 4 GPUs per node. Keep exactly one MPI rank per GPU.
+case "${LOCAL_RANK}" in
+  0) GPU=0; CPUSET="0-3";   NUMA_NODE=0; UCX_NET_DEVICES_LOCAL="mlx5_0:1" ;;
+  1) GPU=1; CPUSET="4-7";   NUMA_NODE=0; UCX_NET_DEVICES_LOCAL="mlx5_1:1" ;;
+  2) GPU=2; CPUSET="8-11";  NUMA_NODE=0; UCX_NET_DEVICES_LOCAL="mlx5_2:1" ;;
+  3) GPU=3; CPUSET="12-15"; NUMA_NODE=0; UCX_NET_DEVICES_LOCAL="mlx5_3:1" ;;
+  *)
+    echo "[run_app_leonardo_L2] ERROR: local rank ${LOCAL_RANK} is invalid for 4 GPUs/node." >&2
+    echo "Use --ntasks-per-node=4 on Leonardo Booster." >&2
+    exit 2
+    ;;
+esac
+
+# GPU selection. Because each rank sees only one GPU, OpenACC device number is 0 locally.
+export CUDA_VISIBLE_DEVICES="${GPU}"
+export ACC_DEVICE_TYPE=nvidia
+export ACC_DEVICE_NUM=0
+
+# Thread/runtime settings. RegCM here is primarily MPI+GPU; keep CPU threading modest and explicit.
+export OMP_NUM_THREADS=${OMP_NUM_THREADS:-1}
+export MKL_NUM_THREADS=${MKL_NUM_THREADS:-1}
+export OPENBLAS_NUM_THREADS=${OPENBLAS_NUM_THREADS:-1}
+export ACC_NUM_CORES=${ACC_NUM_CORES:-4}
+
+# Production timing: do not force synchronous CUDA launches unless debugging correctness/crashes.
+unset CUDA_LAUNCH_BLOCKING || true
+
+# Optional: Everett-style NVHPC/OpenACC memory pool. Disabled by default because pool size is not topology-derived.
+if [[ "${REGCM_ENABLE_ACC_POOL:-0}" == "1" ]]; then
+  export NVCOMPILER_ACC_POOL_SIZE=${NVCOMPILER_ACC_POOL_SIZE:-48GB}
+  export NVCOMPILER_ACC_POOL_THRESHOLD=${NVCOMPILER_ACC_POOL_THRESHOLD:-95}
+  export NVCOMPILER_ACC_POOL_ALLOC_MAXSIZE=${NVCOMPILER_ACC_POOL_ALLOC_MAXSIZE:-1500MB}
+fi
+
+# Optional: topology-derived NIC pinning. Keep disabled for the first Level-2 CPU/NUMA-only test.
+if [[ "${REGCM_ENABLE_NIC_PINNING:-0}" == "1" ]]; then
+  export UCX_NET_DEVICES="${UCX_NET_DEVICES_LOCAL}"
+fi
+
+# Optional: Everett-style UCX rendezvous tuning. Do this only after baseline and CPU/NUMA binding are measured.
+if [[ "${REGCM_ENABLE_UCX_TUNING:-0}" == "1" ]]; then
+  export UCX_RNDV_THRESH=${UCX_RNDV_THRESH:-128}
+  export UCX_RNDV_FRAG_MEM_TYPE=${UCX_RNDV_FRAG_MEM_TYPE:-cuda}
+  export UCX_RNDV_FRAG_SIZE=${UCX_RNDV_FRAG_SIZE:-cuda:32M}
+fi
+
+# Optional rank-0 Nsight Systems profiling.
+PRE_APP=""
+if [[ "${REGCM_ENABLE_NSYS_RANK0:-0}" == "1" && "${GLOBAL_RANK}" == "0" ]]; then
+  PRE_APP="nsys profile -t nvtx,openacc,cuda -f true -o regcm_leonardo_%q{SLURM_JOB_ID}_rank%q{SLURM_PROCID}"
+fi
+
+echo "[run_app_leonardo_L2] host=$(hostname) global=${GLOBAL_RANK} local=${LOCAL_RANK} gpu=${GPU} cpuset=${CPUSET} numa=${NUMA_NODE} CUDA_VISIBLE_DEVICES=${CUDA_VISIBLE_DEVICES} UCX_NET_DEVICES=${UCX_NET_DEVICES:-auto}"
+
+exec ${PRE_APP} numactl --physcpubind="${CPUSET}" --membind="${NUMA_NODE}" "${EXEC}" "${NAMELIST}"
