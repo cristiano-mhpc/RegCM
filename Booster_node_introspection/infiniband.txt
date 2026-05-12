@@ -1,0 +1,68 @@
+CA 'mlx5_0'
+	CA type: MT4123
+	Number of ports: 1
+	Firmware version: 20.39.2048
+	Hardware version: 0
+	Node GUID: 0x0800380001c33158
+	System image GUID: 0x0800380001c33158
+	Port 1:
+		State: Active
+		Physical state: LinkUp
+		Rate: 100
+		Base lid: 5347
+		LMC: 0
+		SM lid: 34
+		Capability mask: 0xa651e848
+		Port GUID: 0x0800380001c33158
+		Link layer: InfiniBand
+CA 'mlx5_1'
+	CA type: MT4123
+	Number of ports: 1
+	Firmware version: 20.39.2048
+	Hardware version: 0
+	Node GUID: 0x0800380001c2835a
+	System image GUID: 0x0800380001c2835a
+	Port 1:
+		State: Active
+		Physical state: LinkUp
+		Rate: 100
+		Base lid: 16595
+		LMC: 0
+		SM lid: 34
+		Capability mask: 0xa651e848
+		Port GUID: 0x0800380001c2835a
+		Link layer: InfiniBand
+CA 'mlx5_2'
+	CA type: MT4123
+	Number of ports: 1
+	Firmware version: 20.39.2048
+	Hardware version: 0
+	Node GUID: 0x0800380001c28358
+	System image GUID: 0x0800380001c28358
+	Port 1:
+		State: Active
+		Physical state: LinkUp
+		Rate: 100
+		Base lid: 16594
+		LMC: 0
+		SM lid: 34
+		Capability mask: 0xa651e848
+		Port GUID: 0x0800380001c28358
+		Link layer: InfiniBand
+CA 'mlx5_3'
+	CA type: MT4123
+	Number of ports: 1
+	Firmware version: 20.39.2048
+	Hardware version: 0
+	Node GUID: 0x0800380001c3315a
+	System image GUID: 0x0800380001c3315a
+	Port 1:
+		State: Active
+		Physical state: LinkUp
+		Rate: 100
+		Base lid: 5541
+		LMC: 0
+		SM lid: 34
+		Capability mask: 0xa651e848
+		Port GUID: 0x0800380001c3315a
+		Link layer: InfiniBand

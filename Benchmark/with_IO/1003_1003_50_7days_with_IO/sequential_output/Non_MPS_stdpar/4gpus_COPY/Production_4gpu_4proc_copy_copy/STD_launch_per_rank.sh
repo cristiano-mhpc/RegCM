@@ -14,8 +14,7 @@ fi
 export CUDA_VISIBLE_DEVICES=$RANK
 export ACC_DEVICE_TYPE=nvidia
 export ACC_DEVICE_NUM=0
-
-export BINDIR=/leonardo/home/userexternal/ctica000/MS_thesis/ICTP_Regcm/RegCM/bin
+export BINDIR=/leonardo/home/userexternal/ctica000/MS_thesis/RegCM/bin
 
 echo "[Wrapper][Rank $SLURM_PROCID][Local $SLURM_LOCALID] on $(hostname): CUDA_VISIBLE_DEVICES=$CUDA_VISIBLE_DEVICES"
 #
