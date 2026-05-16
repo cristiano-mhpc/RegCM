@@ -817,6 +817,7 @@ module mod_clm_soilhydrology
     real(rk8), pointer, contiguous :: hk_l(:,:)    ! hydraulic conductivity (mm/s)
 
     integer(ik4)  :: p,c,fc,j          ! do loop indices
+    integer(ik4)  :: cmin, cmax
     integer(ik4)  :: jtop(lbc:ubc)     ! top level at each column
     ! "a" left off diagonal of tridiagonal matrix
     real(rk8) :: amx(lbc:ubc,1:nlevsoi+1)
@@ -1143,6 +1144,24 @@ module mod_clm_soilhydrology
     end do
 
     ! Nodes j=2 to j=nlevsoi-1
+
+    if ( num_hydrologyc > 0 ) then
+      cmin = minval(filter_hydrologyc(1:num_hydrologyc))
+      cmax = maxval(filter_hydrologyc(1:num_hydrologyc))
+      if ( cmin < lbc .or. cmax > ubc ) then
+        write(*,*) 'SoilWater debug: invalid hydrology filter before mid-layer loop'
+        write(*,*) '  lbc, ubc, num_hydrologyc, nlevsoi =', lbc, ubc, num_hydrologyc, nlevsoi
+        write(*,*) '  min(filter_hydrologyc), max(filter_hydrologyc) =', cmin, cmax
+        do fc = 1, num_hydrologyc
+          c = filter_hydrologyc(fc)
+          if ( c < lbc .or. c > ubc ) then
+            write(*,*) '  offending fc, c =', fc, c
+            exit
+          end if
+        end do
+        error stop 'SoilWater invalid filter_hydrologyc bounds'
+      end if
+    end if
 
     do concurrent ( fc = 1:num_hydrologyc, j = 2:nlevsoi - 1 )
       c = filter_hydrologyc(fc)

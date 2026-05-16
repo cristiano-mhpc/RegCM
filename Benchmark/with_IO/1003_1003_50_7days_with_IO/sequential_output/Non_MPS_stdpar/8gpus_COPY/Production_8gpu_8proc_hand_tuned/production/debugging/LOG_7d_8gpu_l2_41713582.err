@@ -1,0 +1,6 @@
+srun: error: slurm_receive_msgs: [[lrdn2061-interconnect-1.leonardo.local]:6818] failed: Socket timed out on send/recv operation
+srun: error: slurm_receive_msgs: [[lrdn2059-interconnect-1.leonardo.local]:6818] failed: Socket timed out on send/recv operation
+srun: error: Task launch for StepId=41713582.0 failed on node lrdn2061: Socket timed out on send/recv operation
+srun: error: Task launch for StepId=41713582.0 failed on node lrdn2059: Socket timed out on send/recv operation
+srun: error: Application launch failed: Socket timed out on send/recv operation
+srun: Job step aborted

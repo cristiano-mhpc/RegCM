@@ -210,6 +210,8 @@ module mod_clm_biogeophysics2
 
     integer(ik4)  :: p,c,g,j,pi,l  ! indices
     integer(ik4)  :: fc,fp         ! lake filtered column and pft indices
+    integer(ik4)  :: debug_c, debug_p
+    logical       :: debug_found
     ! max. evaporation which soil can provide at one time step
     real(rk8) :: egsmax(lbc:ubc)
     real(rk8) :: egirat(lbc:ubc)   ! ratio of topsoil_evap_tot : egsmax
@@ -605,6 +607,39 @@ module mod_clm_biogeophysics2
     ! therefore obtain column-level radiative temperature
 
     call p2c(num_nolakec, filter_nolakec, errsoi_pft, errsoi_col)
+
+    !$acc update host(errsoi_col)
+    debug_found = .false.
+    debug_c = lbc
+    do c = lbc, ubc
+      if ( abs(errsoi_col(c)) > 100.0_rk8 ) then
+        debug_found = .true.
+        debug_c = c
+        exit
+      end if
+    end do
+
+    if ( debug_found ) then
+      !$acc update host(errsoi_pft,pcolumn,eflx_soil_grnd,xmf,xmf_h2osfc,frac_h2osfc,t_h2osfc,t_h2osfc_bef,c_h2osfc,snl,t_soisno,tssbef,fact)
+      debug_p = 0
+      do fp = 1, num_nolakep
+        p = filter_nolakep(fp)
+        if ( pcolumn(p) == debug_c ) then
+          debug_p = p
+          exit
+        end if
+      end do
+      write(*,*) 'Biogeophysics2 debug: large soil balance residual before p2c'
+      write(*,*) '  column, pft, errsoi_col =', debug_c, debug_p, errsoi_col(debug_c)
+      if ( debug_p > 0 ) then
+        write(*,*) '  errsoi_pft, eflx_soil_grnd =', errsoi_pft(debug_p), eflx_soil_grnd(debug_p)
+      end if
+      write(*,*) '  xmf, xmf_h2osfc =', xmf(debug_c), xmf_h2osfc(debug_c)
+      write(*,*) '  frac_h2osfc, c_h2osfc =', frac_h2osfc(debug_c), c_h2osfc(debug_c)
+      write(*,*) '  t_h2osfc, t_h2osfc_bef =', t_h2osfc(debug_c), t_h2osfc_bef(debug_c)
+      write(*,*) '  snl, t_soisno(1), tssbef(1), fact(1) =', &
+              snl(debug_c), t_soisno(debug_c,1), tssbef(debug_c,1), fact(debug_c,1)
+    end if
 
   end subroutine Biogeophysics2
 

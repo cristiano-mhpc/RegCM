@@ -52,5 +52,7 @@ EXEC=/leonardo/home/userexternal/ctica000/MS_thesis/RegCM/bin/regcmMPICLM45_OPEN
 NAMELIST=EURR-3_namelist.in
 
 # For 2 nodes x 4 GPUs/node, this launches 8 MPI ranks total.
-# --cpu-bind=none lets numactl inside the wrapper perform the rank-specific binding.
-srun --mpi=pmix --cpu-bind=none ./run_app_leonardo_L2 "${EXEC}" "${NAMELIST}"
+# Keep Slurm's default MPI plugin selection here. Forcing generic --mpi=pmix
+# caused step-launch timeouts on Leonardo before the wrapper even started.
+# --cpu-bind=none lets numactl inside the wrapper perform rank-specific binding.
+srun --cpu-bind=none ./run_app_leonardo_L2 "${EXEC}" "${NAMELIST}"

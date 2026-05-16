@@ -759,11 +759,21 @@ module mod_clm_balancecheck
     if ( found ) then
       !$acc update host(errsoi_col)
       if (abs(errsoi_col(indexc)) > .10_rk8 .and. syncro_srf%lcount > 2 ) then
+        !$acc update host(cgridcell,clandunit,ctype,snl,h2osno,h2osno_old,qflx_top_soil,qflx_sl_top_soil,qflx_prec_grnd,qflx_evap_grnd,qflx_dew_grnd,qflx_snwcp_liq,qflx_runoff,qflx_drain,qflx_qrgwl)
         write(stderr,f99001) &
           'BalanceCheck: soil balance error',syncro_srf%lcount, &
           indexc,errsoi_col(indexc)
         write(stderr,*)'indexc= ',indexc, &
                 ' errsoi_col= ',errsoi_col(indexc)
+        write(stderr,*)'gridcell, landunit, ctype, snl = ', &
+                cgridcell(indexc), clandunit(indexc), ctype(indexc), snl(indexc)
+        write(stderr,*)'h2osno, h2osno_old = ', h2osno(indexc), h2osno_old(indexc)
+        write(stderr,*)'qflx_top_soil, qflx_sl_top_soil = ', &
+                qflx_top_soil(indexc), qflx_sl_top_soil(indexc)
+        write(stderr,*)'qflx_prec_grnd, qflx_evap_grnd, qflx_dew_grnd = ', &
+                qflx_prec_grnd(indexc), qflx_evap_grnd(indexc), qflx_dew_grnd(indexc)
+        write(stderr,*)'qflx_snwcp_liq, qflx_runoff, qflx_drain, qflx_qrgwl = ', &
+                qflx_snwcp_liq(indexc), qflx_runoff(indexc), qflx_drain(indexc), qflx_qrgwl(indexc)
         call fatal(__FILE__,__LINE__,'clm model is stopping')
       end if
     end if
