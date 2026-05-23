@@ -974,11 +974,10 @@ module mod_clm_soilhydrology
     ! The layer index of the first unsaturated layer, i.e., the
     ! layer right above the water table
 
-    do concurrent ( fc = 1:num_hydrologyc )
+    do fc = 1, num_hydrologyc
       c = filter_hydrologyc(fc)
       jwt(c) = nlevsoi
       ! allow jwt to equal zero when zwt is in top layer
-      !$acc loop seq
       do j = 1,nlevsoi
         if ( zwt(c) <= zi(c,j) ) then
           jwt(c) = j-1
@@ -991,7 +990,6 @@ module mod_clm_soilhydrology
       vwc_zwt(c) = watsat(c,nlevsoi)
       if ( t_soisno(c,jwt(c)+1) < tfrz ) then
         vwc_zwt(c) = vwc_liq(c,nlevsoi)
-        !$acc loop seq
         do j = nlevsoi,nlevgrnd
           if ( zwt(c) <= zi(c,j) ) then
             smp1 = hfus*(tfrz-t_soisno(c,j)) / &

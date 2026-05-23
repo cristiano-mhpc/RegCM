@@ -1,6 +1,6 @@
 #!/bin/bash 
 
-#SBATCH --account=ICT26_MHPC_0
+#SBATCH --account=ICT26_ESP_0
 #SBATCH --out=./production/debugging/LOG_%x_%j.out
 #SBATCH --err=./production/debugging/LOG_%x_%j.err
 #SBATCH --job-name 7d_8gpu_stdpar
@@ -10,7 +10,7 @@
 #SBATCH --mem=0G
 #SBATCH --gres=tmpfs:100g
 #SBATCH --gres=gpu:4
-#SBATCH --time=07:00:00
+#SBATCH --time=05:00:00
 
 
 # improve fault localization, not performance
@@ -18,7 +18,13 @@
 
 # NVCOMPILER_ACC_NOTIFY=3 # makes NVHPC/OpenACC print kernel launch + data movement info
 
-source /leonardo/home/userexternal/ctica000/MS_thesis/RegCM/modules_cuda  
+# source /leonardo/home/userexternal/ctica000/MS_thesis/RegCM/modules_cuda  
+
+source /leonardo_work/ICT26_ESP_0/christian/env/regcm5_leonardo_nvhpc_hpcx.sh
+
+# Runtime safety: CUDA stubs are for linking only, not for execution.
+# Remove them if they accidentally entered LD_LIBRARY_PATH.
+export LD_LIBRARY_PATH="$(echo "${LD_LIBRARY_PATH:-}" | tr ':' '\n' | grep -v '/cuda/.*/lib/stubs' | paste -sd: -)"
 
 # Launch
 srun ./STD_launch_per_rank.sh

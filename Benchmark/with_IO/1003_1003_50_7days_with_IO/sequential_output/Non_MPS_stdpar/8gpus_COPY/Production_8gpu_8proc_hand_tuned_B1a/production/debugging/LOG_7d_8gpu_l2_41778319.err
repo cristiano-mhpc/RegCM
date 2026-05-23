@@ -1,0 +1,24 @@
+ BalanceCheck: soil balance error step =       837 point =   2171233 imbalance =52113.262560 W/m2
+ indexc=       2171233  errsoi_col=     52113.26256018613     
+ -------------- FATAL CALLED ---------------
+  Fatal in file: mod_clm_balancecheck.F90 at line:      767
+ clm model is stopping
+ -------------------------------------------
+ Abort called by computing node             6 at 2026-05-17 11:31:47.957 +0200
+ Execution terminated because of runtime error
+--------------------------------------------------------------------------
+MPI_ABORT was invoked on rank 6 in communicator MPI COMMUNICATOR 3 DUP FROM 0
+with errorcode 1.
+
+NOTE: invoking MPI_ABORT causes Open MPI to kill all MPI processes.
+You may or may not see output from other processes, depending on
+exactly when Open MPI kills them.
+--------------------------------------------------------------------------
+srun: Job step aborted: Waiting up to 122 seconds for job step to finish.
+slurmstepd: error: *** STEP 41778319.0 ON lrdn2793 CANCELLED AT 2026-05-17T11:31:47 ***
+srun: error: lrdn2796: task 6: Exited with exit code 1
+srun: error: lrdn2796: task 7: Killed
+srun: error: lrdn2793: tasks 1-3: Killed
+srun: error: lrdn2796: task 5: Killed
+srun: error: lrdn2796: task 4: Killed
+srun: error: lrdn2793: task 0: Killed

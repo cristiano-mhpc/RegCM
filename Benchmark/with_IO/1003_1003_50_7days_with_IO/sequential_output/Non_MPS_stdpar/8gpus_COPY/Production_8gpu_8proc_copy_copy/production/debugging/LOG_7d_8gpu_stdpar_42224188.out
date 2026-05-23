@@ -1,0 +1,39 @@
+ 
+Spack activated with install: /leonardo/pub/userexternal/ctica000/spack-0.22.2-06/install , modules: /leonardo/pub/userexternal/ctica000/spack-0.22.2-06/modules and cache: /leonardo/pub/userexternal/ctica000/spack-0.22.2-06/cache
+
+Loaded RegCM5 Leonardo NVHPC + HPC-X Spack environment
+REGCM_SPACK_ENV = /leonardo_work/ICT26_ESP_0/christian/spack-envs/regcm5-leonardo-nvhpc-hpcx
+MPI_SHIM        = /leonardo_work/ICT26_ESP_0/christian/externals/hpcx-mpi-2.25.1-ompi-shim
+
+Compiler/MPI wrappers:
+  CC     = nvc
+  CXX    = nvc++
+  FC     = nvfortran
+  F77    = nvfortran
+  MPICC  = mpicc
+  MPIFC  = mpifort
+
+Resolved tools:
+  nvc             -> /leonardo/prod/spack/06/install/0.22/linux-rhel8-icelake/gcc-8.5.0/nvhpc-25.11-ayzlbce6ohpmv72ncfv4ogitmppp2usq/Linux_x86_64/25.11/compilers/bin/nvc
+  nvfortran       -> /leonardo/prod/spack/06/install/0.22/linux-rhel8-icelake/gcc-8.5.0/nvhpc-25.11-ayzlbce6ohpmv72ncfv4ogitmppp2usq/Linux_x86_64/25.11/compilers/bin/nvfortran
+  mpicc           -> /leonardo_work/ICT26_ESP_0/christian/externals/hpcx-mpi-2.25.1-ompi-shim/bin/mpicc
+  mpifort         -> /leonardo_work/ICT26_ESP_0/christian/externals/hpcx-mpi-2.25.1-ompi-shim/bin/mpifort
+  mpirun          -> /leonardo_work/ICT26_ESP_0/christian/externals/hpcx-mpi-2.25.1-ompi-shim/bin/mpirun
+  nc-config       -> /leonardo/pub/userexternal/ctica000/spack-0.22.2-06/install/linux-rhel8-icelake/nvhpc-25.11/netcdf-c-4.9.2-ubl3h57uqcq4yknbtprhrdimzgherplq/bin/nc-config
+  nf-config       -> /leonardo/pub/userexternal/ctica000/spack-0.22.2-06/install/linux-rhel8-icelake/nvhpc-25.11/netcdf-fortran-4.6.1-t5pazgfengikrrt3x6kcwd4yjqbeldx6/bin/nf-config
+  pnetcdf-config  -> /leonardo/pub/userexternal/ctica000/spack-0.22.2-06/install/linux-rhel8-icelake/nvhpc-25.11/parallel-netcdf-1.12.3-mwecvojjtcxgi7spmmyugbual7ouxs5b/bin/pnetcdf-config
+
+Quick checks:
+  nc-config --prefix       -> /leonardo/pub/userexternal/ctica000/spack-0.22.2-06/install/linux-rhel8-icelake/nvhpc-25.11/netcdf-c-4.9.2-ubl3h57uqcq4yknbtprhrdimzgherplq
+  nf-config --prefix       -> /leonardo/pub/userexternal/ctica000/spack-0.22.2-06/install/linux-rhel8-icelake/nvhpc-25.11/netcdf-fortran-4.6.1-t5pazgfengikrrt3x6kcwd4yjqbeldx6
+  pnetcdf-config --prefix  -> /leonardo/pub/userexternal/ctica000/spack-0.22.2-06/install/linux-rhel8-icelake/nvhpc-25.11/parallel-netcdf-1.12.3-mwecvojjtcxgi7spmmyugbual7ouxs5b
+  mpirun --version         -> mpirun (Open MPI) 4.1.9a1
+
+[Wrapper][Rank 0][Local 0] on lrdn3223.leonardo.local: CUDA_VISIBLE_DEVICES=0
+[Wrapper][Rank 2][Local 2] on lrdn3223.leonardo.local: CUDA_VISIBLE_DEVICES=2
+[Wrapper][Rank 1][Local 1] on lrdn3223.leonardo.local: CUDA_VISIBLE_DEVICES=1
+[Wrapper][Rank 3][Local 3] on lrdn3223.leonardo.local: CUDA_VISIBLE_DEVICES=3
+[Wrapper][Rank 5][Local 1] on lrdn3428.leonardo.local: CUDA_VISIBLE_DEVICES=1
+[Wrapper][Rank 6][Local 2] on lrdn3428.leonardo.local: CUDA_VISIBLE_DEVICES=2
+[Wrapper][Rank 7][Local 3] on lrdn3428.leonardo.local: CUDA_VISIBLE_DEVICES=3
+[Wrapper][Rank 4][Local 0] on lrdn3428.leonardo.local: CUDA_VISIBLE_DEVICES=0

@@ -1,0 +1,33 @@
+ BalanceCheck: soil balance error step =       976 point =   2165520 imbalance =************ W/m2
+ indexc=       2165520  errsoi_col=     4545358.931437020     
+ gridcell, landunit, ctype, snl =        424788      1034936            1 
+            0
+ h2osno, h2osno_old =     9.410423756337785         9.401296133930739     
+ qflx_top_soil, qflx_sl_top_soil =     0.000000000000000      
+    0.000000000000000     
+ qflx_prec_grnd, qflx_evap_grnd, qflx_dew_grnd =    8.2273100017118950E-008 
+    0.000000000000000         0.000000000000000     
+ qflx_snwcp_liq, qflx_runoff, qflx_drain, qflx_qrgwl =  
+    0.000000000000000        2.6426084268995645E-014   2.6426084268995645E-014 
+    0.000000000000000     
+ -------------- FATAL CALLED ---------------
+  Fatal in file: mod_clm_balancecheck.F90 at line:      777
+ clm model is stopping
+ -------------------------------------------
+ Abort called by computing node             6 at 2026-05-18 03:50:01.914 +0200
+ Execution terminated because of runtime error
+--------------------------------------------------------------------------
+MPI_ABORT was invoked on rank 6 in communicator MPI COMMUNICATOR 3 DUP FROM 0
+with errorcode 1.
+
+NOTE: invoking MPI_ABORT causes Open MPI to kill all MPI processes.
+You may or may not see output from other processes, depending on
+exactly when Open MPI kills them.
+--------------------------------------------------------------------------
+srun: Job step aborted: Waiting up to 122 seconds for job step to finish.
+slurmstepd: error: *** STEP 41807525.0 ON lrdn1082 CANCELLED AT 2026-05-18T03:50:01 ***
+srun: error: lrdn1083: task 6: Exited with exit code 1
+srun: error: lrdn1083: task 7: Killed
+srun: error: lrdn1082: tasks 1-3: Killed
+srun: error: lrdn1083: tasks 4-5: Killed
+srun: error: lrdn1082: task 0: Killed
