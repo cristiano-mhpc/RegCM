@@ -10,14 +10,15 @@
 #SBATCH --exclusive 
 #SBATCH --gres=tmpfs:100G 
 #SBATCH --gres=gpu:4
-#SBATCH --time=03:30:00
+#SBATCH --time=02:00:00
 
-source /leonardo/home/userexternal/ctica000/MS_thesis/RegCM/modules_cuda  
+# source /leonardo/home/userexternal/ctica000/MS_thesis/RegCM/modules_cuda  
+source /leonardo_work/ICT26_ESP_0/christian/env/regcm5_leonardo_nvhpc245_bundled_cuda.sh
 
 export BINDIR=/leonardo/home/userexternal/ctica000/MS_thesis/RegCM/bin
 
 # Launch
-# srun ./STD_launch_per_rank.sh
-mpirun -np $SLURM_NTASKS $BINDIR/regcmMPIOPENACC_STDPAR_RCEMIP isc24_small.in
+srun ./STD_launch_per_rank.sh
+# mpirun -np $SLURM_NTASKS $BINDIR/regcmMPIOPENACC_STDPAR_RCEMIP isc24_small.in
 
 

@@ -1,0 +1,15 @@
+Failing in Thread:1
+Accelerator Fatal Error: call to cuMemcpyHtoDAsync returned error 1 (CUDA_ERROR_INVALID_VALUE): Invalid value
+ File: /leonardo/home/userexternal/ctica000/MS_thesis/RegCM/Main/clmlib/clm4.5/mod_clm_soilhydrology.F90
+ Function: soilwater:761
+ Line: 1147
+
+srun: error: lrdn2583: task 7: Exited with exit code 1
+slurmstepd: error:  mpi/pmix_v3: _errhandler: lrdn2583 [1]: pmixp_client_v2.c:212: Error handler invoked: status = -25, source = [slurm.pmix.44042329.0:7]
+srun: Job step aborted: Waiting up to 122 seconds for job step to finish.
+slurmstepd: error: *** STEP 44042329.0 ON lrdn0551 CANCELLED AT 2026-06-03T02:04:42 ***
+srun: error: lrdn2583: tasks 5-6: Killed
+srun: error: lrdn0551: tasks 1,3: Killed
+srun: error: lrdn2583: task 4: Killed
+srun: error: lrdn0551: task 2: Killed
+srun: error: lrdn0551: task 0: Killed
