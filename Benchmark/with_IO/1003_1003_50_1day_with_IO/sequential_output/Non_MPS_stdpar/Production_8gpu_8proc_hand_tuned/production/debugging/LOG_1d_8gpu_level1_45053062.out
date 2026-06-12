@@ -1,0 +1,42 @@
+Loading binutils/2.42
+  Loading requirement: zlib-ng/2.1.6-jkgunjc zstd/1.5.6-uq5yyux
+Loading hdf5/1.14.3--hpcx-mpi--2.19--nvhpc--24.5
+  Loading requirement: glibc/2.28--gcc--12.2.0-gi6mmti pkgconf/2.2.0
+Loading netcdf-c/4.9.2--hpcx-mpi--2.19--nvhpc--24.5
+  Loading requirement: bzip2/1.0.8-ib3znej
+    gcc-runtime/12.2.0--gcc--12.2.0-dqfwf7y lz4/1.9.4--gcc--12.2.0-dcavnmi
+    snappy/1.1.10--gcc--12.2.0-gagtosp c-blosc/1.21.5--gcc--12.2.0-buk7w2l
+    libaec/1.0.6--gcc--12.2.0-blqbmai
+    parallel-netcdf/1.12.3--hpcx-mpi--2.19--nvhpc--24.5
+Loaded RegCM5 Leonardo NVHPC 24.5 environment with bundled CUDA
+NVFORTRAN_BIN=/leonardo/prod/spack/06/install/0.22/linux-rhel8-icelake/gcc-8.5.0/nvhpc-24.5-torlmnyzcexnrs6pq4cccabv7ehkv3xy/Linux_x86_64/24.5/compilers/bin/nvfortran
+NVHPC_ROOT=/leonardo/prod/spack/06/install/0.22/linux-rhel8-icelake/gcc-8.5.0/nvhpc-24.5-torlmnyzcexnrs6pq4cccabv7ehkv3xy/Linux_x86_64/24.5
+CUDA_HOME=/leonardo/prod/spack/06/install/0.22/linux-rhel8-icelake/gcc-8.5.0/nvhpc-24.5-torlmnyzcexnrs6pq4cccabv7ehkv3xy/Linux_x86_64/24.5/cuda
+NVHPC_CUDA_HOME=/leonardo/prod/spack/06/install/0.22/linux-rhel8-icelake/gcc-8.5.0/nvhpc-24.5-torlmnyzcexnrs6pq4cccabv7ehkv3xy/Linux_x86_64/24.5/cuda
+
+Tool paths:
+  nvc:       /leonardo/prod/spack/06/install/0.22/linux-rhel8-icelake/gcc-8.5.0/nvhpc-24.5-torlmnyzcexnrs6pq4cccabv7ehkv3xy/Linux_x86_64/24.5/compilers/bin/nvc
+  nvc++:     /leonardo/prod/spack/06/install/0.22/linux-rhel8-icelake/gcc-8.5.0/nvhpc-24.5-torlmnyzcexnrs6pq4cccabv7ehkv3xy/Linux_x86_64/24.5/compilers/bin/nvc++
+  nvfortran: /leonardo/prod/spack/06/install/0.22/linux-rhel8-icelake/gcc-8.5.0/nvhpc-24.5-torlmnyzcexnrs6pq4cccabv7ehkv3xy/Linux_x86_64/24.5/compilers/bin/nvfortran
+  mpicc:     /leonardo/prod/spack/06/install/0.22/linux-rhel8-icelake/gcc-8.5.0/nvhpc-24.5-torlmnyzcexnrs6pq4cccabv7ehkv3xy/Linux_x86_64/24.5/comm_libs/12.4/hpcx/hpcx-2.19/ompi/bin/mpicc
+  mpifort:   /leonardo/prod/spack/06/install/0.22/linux-rhel8-icelake/gcc-8.5.0/nvhpc-24.5-torlmnyzcexnrs6pq4cccabv7ehkv3xy/Linux_x86_64/24.5/comm_libs/12.4/hpcx/hpcx-2.19/ompi/bin/mpifort
+  nvcc:      /leonardo/prod/spack/06/install/0.22/linux-rhel8-icelake/gcc-8.5.0/nvhpc-24.5-torlmnyzcexnrs6pq4cccabv7ehkv3xy/Linux_x86_64/24.5/cuda/bin/nvcc
+  ld:        /leonardo/prod/spack/06/install/0.22/linux-rhel8-icelake/gcc-8.5.0/binutils-2.42-j3w2mvnt64wdeilm35xksl6ckqfyc22w/bin/ld
+===== job info =====
+Mon Jun  8 03:34:35 CEST 2026
+lrdn3284.leonardo.local
+/leonardo/home/userexternal/ctica000/MS_thesis/RegCM/Benchmark/with_IO/1003_1003_50_1day_with_IO/sequential_output/Non_MPS_stdpar/Production_8gpu_8proc_hand_tuned
+SLURM_JOB_ID=45053062
+SLURM_JOB_NODELIST=lrdn[3284,3288]
+SLURM_NNODES=2
+SLURM_NTASKS=8
+SLURM_TASKS_PER_NODE=4(x2)
+SLURM_CPUS_PER_TASK=8
+[run_app_leonardo_L2] host=lrdn3284.leonardo.local global=1 local=1 gpu=1 cpuset=8-15 numa=0 CUDA_VISIBLE_DEVICES=1 UCX_NET_DEVICES=mlx5_1:1
+[run_app_leonardo_L2] host=lrdn3284.leonardo.local global=3 local=3 gpu=3 cpuset=24-31 numa=1 CUDA_VISIBLE_DEVICES=3 UCX_NET_DEVICES=mlx5_3:1
+[run_app_leonardo_L2] host=lrdn3284.leonardo.local global=0 local=0 gpu=0 cpuset=0-7 numa=0 CUDA_VISIBLE_DEVICES=0 UCX_NET_DEVICES=mlx5_0:1
+[run_app_leonardo_L2] host=lrdn3284.leonardo.local global=2 local=2 gpu=2 cpuset=16-23 numa=1 CUDA_VISIBLE_DEVICES=2 UCX_NET_DEVICES=mlx5_2:1
+[run_app_leonardo_L2] host=lrdn3288.leonardo.local global=6 local=2 gpu=2 cpuset=16-23 numa=1 CUDA_VISIBLE_DEVICES=2 UCX_NET_DEVICES=mlx5_2:1
+[run_app_leonardo_L2] host=lrdn3288.leonardo.local global=5 local=1 gpu=1 cpuset=8-15 numa=0 CUDA_VISIBLE_DEVICES=1 UCX_NET_DEVICES=mlx5_1:1
+[run_app_leonardo_L2] host=lrdn3288.leonardo.local global=7 local=3 gpu=3 cpuset=24-31 numa=1 CUDA_VISIBLE_DEVICES=3 UCX_NET_DEVICES=mlx5_3:1
+[run_app_leonardo_L2] host=lrdn3288.leonardo.local global=4 local=0 gpu=0 cpuset=0-7 numa=0 CUDA_VISIBLE_DEVICES=0 UCX_NET_DEVICES=mlx5_0:1

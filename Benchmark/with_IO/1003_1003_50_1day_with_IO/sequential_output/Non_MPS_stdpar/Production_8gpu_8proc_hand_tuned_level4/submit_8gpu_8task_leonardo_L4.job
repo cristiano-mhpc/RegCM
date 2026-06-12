@@ -1,0 +1,61 @@
+#!/bin/bash
+
+#SBATCH --account=ICT26_MHPC_0
+#SBATCH --out=./production/debugging/LOG_%x_%j.out
+#SBATCH --err=./production/debugging/LOG_%x_%j.err
+#SBATCH --job-name=1d_8gpu_level4_ucx_nvhpc_25_11
+#SBATCH --cpus-per-task=8
+#SBATCH --ntasks-per-node=4
+#SBATCH --partition=boost_usr_prod
+#SBATCH --nodes=2
+#SBATCH --mem=0G
+#SBATCH --exclusive
+#SBATCH --gres=tmpfs:100g
+#SBATCH --gres=gpu:4
+#SBATCH --time=01:00:00
+
+set -euo pipefail
+
+# Leonardo environment used by your current working script.
+#
+# source /leonardo/home/userexternal/ctica000/MS_thesis/RegCM/modules_cuda
+
+# source /leonardo_work/ICT26_ESP_0/christian/env/regcm5_leonardo_nvhpc245_bundled_cuda.sh
+
+source /leonardo_work/ICT26_ESP_0/christian/env/regcm5_leonardo_nvhpc_hpcx.sh
+
+# Reproducibility breadcrumbs.
+echo "===== job info ====="
+date
+hostname
+pwd
+echo "SLURM_JOB_ID=${SLURM_JOB_ID}"
+echo "SLURM_JOB_NODELIST=${SLURM_JOB_NODELIST}"
+echo "SLURM_NNODES=${SLURM_NNODES}"
+echo "SLURM_NTASKS=${SLURM_NTASKS}"
+echo "SLURM_TASKS_PER_NODE=${SLURM_TASKS_PER_NODE}"
+echo "SLURM_CPUS_PER_TASK=${SLURM_CPUS_PER_TASK}"
+
+# Production timing: keep debug slowdown disabled.
+unset CUDA_LAUNCH_BLOCKING || true
+unset NVCOMPILER_ACC_NOTIFY || true
+unset NV_ACC_NOTIFY || true
+
+# Match Everett's intent: force OpenMPI over UCX, but do not over-tune UCX yet.
+export OMPI_MCA_pml=ucx
+export OMPI_MCA_osc=ucx
+export OMPI_MCA_btl='^openib,smcuda'
+
+# Staged controls for run_app_leonardo_L2.
+export REGCM_ENABLE_CPU_BINDING=${REGCM_ENABLE_CPU_BINDING:-1}
+export REGCM_ENABLE_NIC_PINNING=${REGCM_ENABLE_NIC_PINNING:-1}
+export REGCM_ENABLE_UCX_TUNING=${REGCM_ENABLE_UCX_TUNING:-1}
+export REGCM_ENABLE_ACC_POOL=${REGCM_ENABLE_ACC_POOL:-1}
+export REGCM_ENABLE_NSYS_RANK0=${REGCM_ENABLE_NSYS_RANK0:-0}
+
+EXEC=/leonardo/home/userexternal/ctica000/MS_thesis/RegCM/bin/regcmMPICLM45_OPENACC_STDPAR
+NAMELIST=EURR-3_namelist.in
+
+# --cpu-bind=none prevents Slurm from adding its own CPU binding.
+# The wrapper may optionally apply numactl binding if REGCM_ENABLE_CPU_BINDING=1.
+srun --cpu-bind=none ./run_app_leonardo_L2 "${EXEC}" "${NAMELIST}"

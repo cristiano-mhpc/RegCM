@@ -1,29 +1,50 @@
-#!/bin/bash 
+#!/bin/bash
 
-#SBATCH --account=ICT26_MHPC_0
+#SBATCH --account=ICT26_ESP_0
 #SBATCH --out=./production/debugging/LOG_%x_%j.out
 #SBATCH --err=./production/debugging/LOG_%x_%j.err
-#SBATCH --job-name 7d_8gpu_stdpar
+#SBATCH --job-name 7d_8gpu_wIO_nvhpc_hpcx  
 #SBATCH --ntasks-per-node=4
 #SBATCH --partition=boost_usr_prod
 #SBATCH --nodes=2
-#SBATCH --mem=0G
 #SBATCH --exclusive 
 #SBATCH --gres=tmpfs:100g
 #SBATCH --gres=gpu:4
 #SBATCH --time=07:00:00
 
+set -euo pipefail
+
+# source /leonardo_work/ICT26_ESP_0/christian/env/regcm5_leonardo_nvhpc245_bundled_cuda.sh
+
+source /leonardo_work/ICT26_ESP_0/christian/env/regcm5_leonardo_nvhpc_hpcx.sh
 
 
-# improve fault localization, not performance
-# CUDA_LAUNCH_BLOCKING=1  # forces GPU calls to be synchronous, so errors are reported closer to the true failing operation  
+echo "=== Job info ==="
+echo "SLURM_JOB_ID=$SLURM_JOB_ID"
+echo "SLURM_JOB_NODELIST=$SLURM_JOB_NODELIST"
+echo "SLURM_NNODES=$SLURM_NNODES"
+echo "SLURM_NTASKS=$SLURM_NTASKS"
+echo "SLURM_NTASKS_PER_NODE=$SLURM_NTASKS_PER_NODE"
+echo
 
-# NVCOMPILER_ACC_NOTIFY=3 # makes NVHPC/OpenACC print kernel launch + data movement info
+echo "=== Toolchain ==="
+which nvfortran
+which nvcc
+which mpifort
+which ld
+nvcc --version
+ld --version | head -3
+echo "CUDA_HOME=$CUDA_HOME"
+echo "NVHPC_CUDA_HOME=$NVHPC_CUDA_HOME"
+echo
 
+echo "=== Binary dependency check ==="
+ldd /leonardo/home/userexternal/ctica000/MS_thesis/RegCM/bin/regcmMPICLM45_OPENACC_STDPAR | egrep 'cuda|cudart|cudafor|nvhpc|netcdf|hdf5|mpi|nvomp' || true
+echo
 
-source /leonardo/home/userexternal/ctica000/MS_thesis/RegCM/modules_cuda  
+echo "=== GPU layout ==="
+nvidia-smi -L
+echo
 
-# Launch
+echo "=== Launching RegCM ==="
 srun ./STD_launch_per_rank.sh
-
-
