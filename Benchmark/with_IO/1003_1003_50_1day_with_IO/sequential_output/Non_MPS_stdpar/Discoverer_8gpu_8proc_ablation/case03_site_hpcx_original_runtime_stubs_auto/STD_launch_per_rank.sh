@@ -1,0 +1,1 @@
+/valhalla/projects/ehpc-ben-2026b06-085/tchristian/work/RegCM/Benchmark/with_IO/1003_1003_50_1day_with_IO/sequential_output/Non_MPS_stdpar/Discoverer_8gpu_8proc/STD_launch_per_rank.sh
