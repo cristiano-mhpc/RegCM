@@ -1,0 +1,246 @@
+#!/bin/bash
+
+#SBATCH --account=ehpc-ben-2026b06-085
+#SBATCH --qos=ehpc-ben-2026b06-085
+#SBATCH --partition=common
+#SBATCH --job-name=discoverer_node_intro_8gpu
+#SBATCH --nodes=1
+#SBATCH --ntasks-per-node=8
+#SBATCH --cpus-per-task=2
+#SBATCH --gres=gpu:8
+#SBATCH --exclusive
+#SBATCH --time=00:10:00
+#SBATCH --output=./introspection/LOG_%x_%j.out
+#SBATCH --error=./introspection/LOG_%x_%j.err
+
+set -euo pipefail
+
+cd "$SLURM_SUBMIT_DIR"
+mkdir -p introspection
+
+REGCM_ROOT=/valhalla/projects/ehpc-ben-2026b06-085/tchristian/work/RegCM
+source "$REGCM_ROOT/environment_loader/regcm5_discoverer_nvhpc25_1_hpcx_cuda12.sh"
+
+run_capture() {
+  local label=$1
+  local outfile=$2
+  shift 2
+
+  {
+    echo
+    echo "===== ${label} ====="
+  } >> topo_info.txt
+
+  "$@" >> topo_info.txt 2>&1 || true
+  "$@" > "$outfile" 2>&1 || true
+}
+
+
+run_mem_unified_probe() {
+  # Probe whether this actual compute node appears capable of running
+  # NVIDIA/NVHPC full CUDA Unified Memory / HMM via -gpu=mem:unified.
+  # This is intentionally verbose: the output is meant for later inspection.
+  local outfile="mem_unified_support.txt"
+
+  {
+    echo "===== NVHPC/CUDA mem:unified full-support probe ====="
+    echo "Host: $(hostname)"
+    echo "Date: $(date)"
+    echo
+
+    echo "===== Kernel version on this allocated node ====="
+    uname -a || true
+    kernel_release="$(uname -r || true)"
+    kernel_base="$(printf '%s\n' "$kernel_release" | sed 's/[-_].*//')"
+    echo "kernel_release=${kernel_release}"
+    echo "kernel_base=${kernel_base}"
+    echo
+
+    version_ge() {
+      # usage: version_ge ACTUAL REQUIRED
+      [ "$(printf '%s\n%s\n' "$2" "$1" | sort -V | head -n 1)" = "$2" ]
+    }
+
+    kernel_series="$(printf '%s\n' "$kernel_base" | cut -d. -f1-2)"
+
+    echo "===== Kernel heuristic for Linux HMM requirement ====="
+    echo "Expected upstream kernel baseline for full CUDA Unified Memory/HMM: 6.1.24+, 6.2.11+, or 6.3+."
+    echo "Note: distro/vendor kernels may backport features, so this is a useful heuristic, not a final proof."
+    if version_ge "$kernel_base" "6.3" || { [ "$kernel_series" = "6.2" ] && version_ge "$kernel_base" "6.2.11"; } || { [ "$kernel_series" = "6.1" ] && version_ge "$kernel_base" "6.1.24"; }; then
+      echo "KERNEL_HEURISTIC=PASS"
+    else
+      echo "KERNEL_HEURISTIC=FAIL_OR_NEEDS_VENDOR_BACKPORT_CHECK"
+    fi
+    echo
+
+    echo "===== NVIDIA driver and GPU capabilities ====="
+    nvidia-smi || true
+    echo
+    nvidia-smi --query-gpu=index,name,driver_version,compute_cap --format=csv || true
+    driver_version="$(nvidia-smi --query-gpu=driver_version --format=csv,noheader 2>/dev/null | head -n 1 | tr -d ' ')"
+    echo "driver_version=${driver_version:-unknown}"
+    if [ -n "${driver_version:-}" ] && version_ge "$driver_version" "535"; then
+      echo "DRIVER_HEURISTIC=PASS_DRIVER_535_OR_NEWER"
+    else
+      echo "DRIVER_HEURISTIC=FAIL_OR_UNKNOWN_DRIVER_LT_535"
+    fi
+    echo
+
+    echo "===== NVIDIA kernel module details ====="
+    echo "Full HMM-style support normally requires a compatible NVIDIA driver stack and open kernel modules."
+    cat /proc/driver/nvidia/version 2>/dev/null || true
+    echo
+    modinfo nvidia 2>/dev/null | egrep -i '^(filename|version|license|description):' || true
+    echo
+    if [ -r /sys/module/nvidia/version ]; then
+      echo "/sys/module/nvidia/version=$(cat /sys/module/nvidia/version)"
+    fi
+    echo
+
+    echo "===== Kernel HMM config/symbol hints ====="
+    if [ -r "/boot/config-$(uname -r)" ]; then
+      egrep 'CONFIG_HMM|CONFIG_DEVICE_PRIVATE|CONFIG_MMU_NOTIFIER' "/boot/config-$(uname -r)" || true
+    elif [ -r /proc/config.gz ]; then
+      zgrep -E 'CONFIG_HMM|CONFIG_DEVICE_PRIVATE|CONFIG_MMU_NOTIFIER' /proc/config.gz || true
+    else
+      echo "No readable kernel config found at /boot/config-$(uname -r) or /proc/config.gz."
+    fi
+    grep -w hmm_range_fault /proc/kallsyms 2>/dev/null | head || true
+    echo
+
+    echo "===== NVHPC compiler availability ====="
+    command -v nvc++ || true
+    command -v nvfortran || true
+    nvc++ --version 2>/dev/null || true
+    echo
+
+    echo "===== Runtime compile-and-run probe for -gpu=mem:unified ====="
+    cat > introspection/mem_unified_probe.cpp <<'EOF'
+#include <cstdio>
+#include <cstdlib>
+#include <cmath>
+
+int main() {
+  const int n = 1 << 20;
+  double *a = static_cast<double*>(std::malloc(n * sizeof(double)));
+  if (!a) {
+    std::fprintf(stderr, "malloc failed\n");
+    return 2;
+  }
+
+  for (int i = 0; i < n; ++i) a[i] = 1.0;
+
+  // Intentionally no OpenACC data region/copy clause here.
+  // With -gpu=mem:unified, this probes whether system-allocated host memory
+  // can be accessed/migrated correctly by the GPU runtime on this node.
+  #pragma acc parallel loop
+  for (int i = 0; i < n; ++i) {
+    a[i] = a[i] + 2.0;
+  }
+
+  double err = 0.0;
+  for (int i = 0; i < n; ++i) err += std::fabs(a[i] - 3.0);
+  std::free(a);
+
+  if (err != 0.0) {
+    std::fprintf(stderr, "verification failed: err=%e\n", err);
+    return 3;
+  }
+
+  std::printf("mem_unified_probe: PASS\n");
+  return 0;
+}
+EOF
+
+    echo "+ nvc++ -acc -gpu=cc90,lineinfo,mem:unified -Minfo=accel introspection/mem_unified_probe.cpp -o introspection/mem_unified_probe"
+    if nvc++ -acc -gpu=cc90,lineinfo,mem:unified -Minfo=accel introspection/mem_unified_probe.cpp -o introspection/mem_unified_probe; then
+      compile_status=0
+    else
+      compile_status=$?
+    fi
+    echo "compile_status=${compile_status}"
+
+    if [ "$compile_status" -eq 0 ]; then
+      echo
+      echo "+ srun --ntasks=1 --gres=gpu:1 introspection/mem_unified_probe"
+      if NVCOMPILER_ACC_NOTIFY=1 srun --ntasks=1 --gres=gpu:1 introspection/mem_unified_probe; then
+        run_status=0
+      else
+        run_status=$?
+      fi
+      echo "run_status=${run_status}"
+      if [ "$run_status" -eq 0 ]; then
+        echo "MEM_UNIFIED_RUNTIME_PROBE=PASS"
+      else
+        echo "MEM_UNIFIED_RUNTIME_PROBE=FAIL"
+      fi
+    else
+      echo "MEM_UNIFIED_RUNTIME_PROBE=NOT_RUN_COMPILE_FAILED"
+    fi
+    echo
+
+    echo "===== Practical interpretation ====="
+    echo "Best sign: KERNEL_HEURISTIC=PASS, DRIVER_HEURISTIC=PASS_DRIVER_535_OR_NEWER, suitable GPU compute capability, and MEM_UNIFIED_RUNTIME_PROBE=PASS."
+    echo "If the compile succeeds but the runtime probe fails, this node likely cannot run NVHPC -gpu=mem:unified full Unified Memory/HMM workloads correctly."
+  } > "$outfile" 2>&1 || true
+
+  {
+    echo
+    echo "===== NVHPC/CUDA mem:unified full-support probe ====="
+    cat "$outfile"
+  } >> topo_info.txt
+}
+
+{
+  echo "===== hostname ====="
+  hostname
+  echo
+  echo "===== date ====="
+  date
+  echo
+  echo "===== Slurm environment ====="
+  echo "SLURM_JOB_ID=${SLURM_JOB_ID:-}"
+  echo "SLURM_JOB_NAME=${SLURM_JOB_NAME:-}"
+  echo "SLURM_JOB_NODELIST=${SLURM_JOB_NODELIST:-}"
+  echo "SLURM_NNODES=${SLURM_NNODES:-}"
+  echo "SLURM_NTASKS=${SLURM_NTASKS:-}"
+  echo "SLURM_NTASKS_PER_NODE=${SLURM_NTASKS_PER_NODE:-}"
+  echo "SLURM_CPUS_PER_TASK=${SLURM_CPUS_PER_TASK:-}"
+  echo "SLURM_GPUS=${SLURM_GPUS:-}"
+  echo "SLURM_GPUS_ON_NODE=${SLURM_GPUS_ON_NODE:-}"
+  echo "CUDA_VISIBLE_DEVICES=${CUDA_VISIBLE_DEVICES:-}"
+  echo "GPU_DEVICE_ORDINAL=${GPU_DEVICE_ORDINAL:-}"
+  echo "NVIDIA_VISIBLE_DEVICES=${NVIDIA_VISIBLE_DEVICES:-}"
+  echo
+  echo "===== module list ====="
+  module list 2>&1 || true
+} > topo_info.txt
+
+{
+  echo "SLURM_JOB_ID=${SLURM_JOB_ID:-}"
+  echo "SLURM_JOB_NAME=${SLURM_JOB_NAME:-}"
+  echo "SLURM_JOB_NODELIST=${SLURM_JOB_NODELIST:-}"
+  echo "SLURM_NNODES=${SLURM_NNODES:-}"
+  echo "SLURM_NTASKS=${SLURM_NTASKS:-}"
+  echo "SLURM_NTASKS_PER_NODE=${SLURM_NTASKS_PER_NODE:-}"
+  echo "SLURM_CPUS_PER_TASK=${SLURM_CPUS_PER_TASK:-}"
+  echo "SLURM_GPUS=${SLURM_GPUS:-}"
+  echo "SLURM_GPUS_ON_NODE=${SLURM_GPUS_ON_NODE:-}"
+  echo "CUDA_VISIBLE_DEVICES=${CUDA_VISIBLE_DEVICES:-}"
+  echo "GPU_DEVICE_ORDINAL=${GPU_DEVICE_ORDINAL:-}"
+  echo "NVIDIA_VISIBLE_DEVICES=${NVIDIA_VISIBLE_DEVICES:-}"
+} > slurm_env.txt
+
+module list > module_list.txt 2>&1 || true
+
+run_capture "nvidia-smi -L" gpu_list.txt nvidia-smi -L
+run_capture "nvidia-smi topo -m" gpu_topology.txt nvidia-smi topo -m
+run_capture "nvidia-smi -q" nvidia_smi_q.txt nvidia-smi -q
+run_capture "numactl --hardware" numa.txt numactl --hardware
+run_capture "lscpu" cpu.txt lscpu
+run_capture "ibstat" infiniband.txt ibstat
+run_capture "ibdev2netdev" ibdev2netdev.txt ibdev2netdev
+run_capture "ucx_info -d" ucx_devices.txt ucx_info -d
+run_capture "ompi_info | grep -i cuda" ompi_cuda.txt bash -lc 'ompi_info | grep -i cuda'
+run_capture "ompi_info | grep -i ucx" ompi_ucx.txt bash -lc 'ompi_info | grep -i ucx'
+run_mem_unified_probe
