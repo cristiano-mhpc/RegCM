@@ -45,7 +45,6 @@ ifeq ($(findstring DCLM45, $(CPPFLAGS)),DCLM45)
   #CPPFLAGS += -DHAMSTER_ALBEDO
 endif
 
-<<<<<<< HEAD
 #CPPFLAGS += -DRCEMIP
 
 space :=
