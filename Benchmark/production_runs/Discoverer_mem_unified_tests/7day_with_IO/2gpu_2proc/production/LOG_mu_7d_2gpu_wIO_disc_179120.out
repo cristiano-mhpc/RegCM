@@ -1,0 +1,119 @@
+Loading nvidia/hpcsdk/nvhpc-hpcx-cuda12/25.1
+  Loading requirement: hpcx
+
+Loaded RegCM5 Discoverer+ NVHPC 25.1 + HPC-X candidate environment
+
+Modules:
+  nvidia/hpcsdk/nvhpc-hpcx-cuda12/25.1
+
+Compiler/MPI wrappers:
+  CC     = nvc
+  CXX    = nvc++
+  FC     = nvfortran
+  F77    = nvfortran
+  MPICC  = mpicc
+  MPIFC  = mpifort
+
+Resolved tools:
+  nvc             -> /opt/software/nvidia/packages/hpc_sdk/Linux_x86_64/25.1/compilers/bin/nvc
+  nvfortran       -> /opt/software/nvidia/packages/hpc_sdk/Linux_x86_64/25.1/compilers/bin/nvfortran
+  mpicc           -> /valhalla/projects/ehpc-ben-2026b06-085/tchristian/software/discoverer-hpcx-2.21-ompi-shim/bin/mpicc
+  mpifort         -> /valhalla/projects/ehpc-ben-2026b06-085/tchristian/software/discoverer-hpcx-2.21-ompi-shim/bin/mpifort
+  mpirun          -> /valhalla/projects/ehpc-ben-2026b06-085/tchristian/software/discoverer-hpcx-2.21-ompi-shim/bin/mpirun
+  nc-config       -> /valhalla/projects/ehpc-ben-2026b06-085/tchristian/software/regcm5-discoverer-nvhpc25.1-hpcx/bin/nc-config
+  nf-config       -> /valhalla/projects/ehpc-ben-2026b06-085/tchristian/software/regcm5-discoverer-nvhpc25.1-hpcx/bin/nf-config
+  pnetcdf-config  -> /valhalla/projects/ehpc-ben-2026b06-085/tchristian/software/regcm5-discoverer-nvhpc25.1-hpcx/bin/pnetcdf-config
+
+Quick checks:
+  MPI_SHIM                 -> /valhalla/projects/ehpc-ben-2026b06-085/tchristian/software/discoverer-hpcx-2.21-ompi-shim
+  MPI shim enabled         -> 1
+  Disable UCC collectives  -> 1
+  OMPI_MCA_coll            -> ^ucc
+  CUDA_HOME                -> /weka/software/nvidia/packages/hpc_sdk/Linux_x86_64/25.1/cuda/12.6
+  NVHPC_CUDA_HOME          -> /weka/software/nvidia/packages/hpc_sdk/Linux_x86_64/25.1/cuda/12.6
+  CUDA target lib          -> /weka/software/nvidia/packages/hpc_sdk/Linux_x86_64/25.1/cuda/12.6/targets/x86_64-linux/lib
+  CUDA stubs policy        -> always
+  CUDA stubs status        -> using /weka/software/nvidia/packages/hpc_sdk/Linux_x86_64/25.1/cuda/12.6/lib64/stubs
+  NVHPC_ROOT               -> /weka/software/nvidia/packages/hpc_sdk/Linux_x86_64/25.1
+  NVHPC_MATH_LIB           -> /weka/software/nvidia/packages/hpc_sdk/Linux_x86_64/25.1/math_libs/lib64
+  HDF5                     -> /valhalla/projects/ehpc-ben-2026b06-085/tchristian/software/regcm5-discoverer-nvhpc25.1-hpcx
+  NETCDF                   -> /valhalla/projects/ehpc-ben-2026b06-085/tchristian/software/regcm5-discoverer-nvhpc25.1-hpcx
+  PNETCDF                  -> /valhalla/projects/ehpc-ben-2026b06-085/tchristian/software/regcm5-discoverer-nvhpc25.1-hpcx
+  I/O stack status         -> NetCDF C/Fortran + PnetCDF detected
+  nc-config --version      -> netCDF 4.9.3
+  nf-config --version      -> netCDF-Fortran 4.6.2
+  pnetcdf-config --version -> PnetCDF 1.14.0
+  mpirun --version         -> mpirun (Open MPI) 4.1.7rc1
+  mpifort --show           -> nvfortran -I/weka/software/nvidia/packages/hpc_sdk/Linux_x86_64/25.1/comm_libs/12.6/hpcx/hpcx-2.21/ompi/include -I/weka/software/nvidia/packages/hpc_sdk/Linux_x86_64/25.1/comm_libs/12.6/hpcx/hpcx-2.21/ompi/lib -L/weka/software/nvidia/packages/hpc_sdk/Linux_x86_64/25.1/comm_libs/12.6/hpcx/hpcx-2.21/ompi/lib -rpath /weka/software/nvidia/packages/hpc_sdk/Linux_x86_64/25.1/comm_libs/12.6/hpcx/hpcx-2.21/ompi/lib -lmpi_usempif08 -lmpi_usempi_ignore_tkr -lmpi_mpifh -lmpi
+
+=== Job info ===
+SLURM_JOB_ID=179120
+SLURM_JOB_NODELIST=dgx2
+SLURM_NNODES=1
+SLURM_NTASKS=2
+SLURM_NTASKS_PER_NODE=2
+SLURM_CPUS_PER_TASK=2
+RUN_DIR=/valhalla/projects/ehpc-ben-2026b06-085/tchristian/work/RegCM/Benchmark/production_runs/Discoverer_mem_unified_tests/7day_with_IO/2gpu_2proc
+
+=== Toolchain ===
+/opt/software/nvidia/packages/hpc_sdk/Linux_x86_64/25.1/compilers/bin/nvfortran
+/opt/software/nvidia/packages/hpc_sdk/Linux_x86_64/25.1/compilers/bin/nvcc
+/valhalla/projects/ehpc-ben-2026b06-085/tchristian/software/discoverer-hpcx-2.21-ompi-shim/bin/mpifort
+/usr/bin/ld
+nvcc: NVIDIA (R) Cuda compiler driver
+Copyright (c) 2005-2024 NVIDIA Corporation
+Built on Tue_Oct_29_23:50:19_PDT_2024
+Cuda compilation tools, release 12.6, V12.6.85
+Build cuda_12.6.r12.6/compiler.35059454_0
+GNU ld version 2.35.2-54.el9
+Copyright (C) 2020 Free Software Foundation, Inc.
+This program is free software; you may redistribute it under the terms of
+the GNU General Public License version 3 or (at your option) a later version.
+This program has absolutely no warranty.
+CUDA_HOME=/weka/software/nvidia/packages/hpc_sdk/Linux_x86_64/25.1/cuda/12.6
+NVHPC_CUDA_HOME=/weka/software/nvidia/packages/hpc_sdk/Linux_x86_64/25.1/cuda/12.6
+MPI_SHIM=/valhalla/projects/ehpc-ben-2026b06-085/tchristian/software/discoverer-hpcx-2.21-ompi-shim
+OMPI_MCA_coll=^ucc
+
+=== Binary dependency check ===
+REGCM_EXE=/valhalla/projects/ehpc-ben-2026b06-085/tchristian/work/RegCM/bin/mem_unified/regcmMPICLM45
+	libnvhpcmanaux.so => /weka/software/nvidia/packages/hpc_sdk/Linux_x86_64/25.1/compilers/lib/libnvhpcmanaux.so (0x00007ff11d91a000)
+	libnetcdff.so.7 => /valhalla/projects/ehpc-ben-2026b06-085/tchristian/software/regcm5-discoverer-nvhpc25.1-hpcx/lib/libnetcdff.so.7 (0x00007ff11d6de000)
+	libnetcdf.so.22 => /valhalla/projects/ehpc-ben-2026b06-085/tchristian/software/regcm5-discoverer-nvhpc25.1-hpcx/lib/libnetcdf.so.22 (0x00007ff11d43e000)
+	libhdf5_hl.so.310 => /valhalla/projects/ehpc-ben-2026b06-085/tchristian/software/regcm5-discoverer-nvhpc25.1-hpcx/lib/libhdf5_hl.so.310 (0x00007ff11d40d000)
+	libhdf5.so.310 => /valhalla/projects/ehpc-ben-2026b06-085/tchristian/software/regcm5-discoverer-nvhpc25.1-hpcx/lib/libhdf5.so.310 (0x00007ff11ceeb000)
+	libsz.so.2 => /valhalla/projects/ehpc-ben-2026b06-085/tchristian/software/regcm5-discoverer-nvhpc25.1-hpcx/lib64/libsz.so.2 (0x00007ff11ced9000)
+	libmpi_usempif08.so.40 => /weka/software/nvidia/packages/hpc_sdk/Linux_x86_64/25.1/comm_libs/12.6/hpcx/hpcx-2.21/ompi/lib/libmpi_usempif08.so.40 (0x00007ff11cc9c000)
+	libmpi_usempi_ignore_tkr.so.40 => /weka/software/nvidia/packages/hpc_sdk/Linux_x86_64/25.1/comm_libs/12.6/hpcx/hpcx-2.21/ompi/lib/libmpi_usempi_ignore_tkr.so.40 (0x00007ff11ca93000)
+	libmpi_mpifh.so.40 => /weka/software/nvidia/packages/hpc_sdk/Linux_x86_64/25.1/comm_libs/12.6/hpcx/hpcx-2.21/ompi/lib/libmpi_mpifh.so.40 (0x00007ff11c81b000)
+	libmpi.so.40 => /weka/software/nvidia/packages/hpc_sdk/Linux_x86_64/25.1/comm_libs/12.6/hpcx/hpcx-2.21/ompi/lib/libmpi.so.40 (0x00007ff11c4e0000)
+	libcudaforwrapsparse12.so => /weka/software/nvidia/packages/hpc_sdk/Linux_x86_64/25.1/compilers/lib/libcudaforwrapsparse12.so (0x00007ff11c2ce000)
+	libnvJitLink.so.12 => /weka/software/nvidia/packages/hpc_sdk/Linux_x86_64/25.1/cuda/12.6/lib64/libnvJitLink.so.12 (0x00007ff107659000)
+	libnvhpcwrapnvtx.so => /weka/software/nvidia/packages/hpc_sdk/Linux_x86_64/25.1/compilers/lib/libnvhpcwrapnvtx.so (0x00007ff10744f000)
+	libcudart.so.12 => /weka/software/nvidia/packages/hpc_sdk/Linux_x86_64/25.1/cuda/12.6/lib64/libcudart.so.12 (0x00007ff10719e000)
+	libcudafor_120.so => /weka/software/nvidia/packages/hpc_sdk/Linux_x86_64/25.1/compilers/lib/libcudafor_120.so (0x00007ff1009a4000)
+	libcudafor.so => /weka/software/nvidia/packages/hpc_sdk/Linux_x86_64/25.1/compilers/lib/libcudafor.so (0x00007ff10078d000)
+	libacchost.so => /weka/software/nvidia/packages/hpc_sdk/Linux_x86_64/25.1/compilers/lib/libacchost.so (0x00007ff100529000)
+	libaccdevaux.so => /weka/software/nvidia/packages/hpc_sdk/Linux_x86_64/25.1/compilers/lib/libaccdevaux.so (0x00007ff10030b000)
+	libaccdevice.so => /weka/software/nvidia/packages/hpc_sdk/Linux_x86_64/25.1/compilers/lib/libaccdevice.so (0x00007ff0fffdc000)
+	libcuda.so.1 => /usr/lib64/libcuda.so.1 (0x00007ff0fd000000)
+	libnvhpcman.so => /weka/software/nvidia/packages/hpc_sdk/Linux_x86_64/25.1/compilers/lib/libnvhpcman.so (0x00007ff0fcdfa000)
+	libcudadevice.so => /weka/software/nvidia/packages/hpc_sdk/Linux_x86_64/25.1/compilers/lib/libcudadevice.so (0x00007ff0fcbe4000)
+	libcudafor2.so => /weka/software/nvidia/packages/hpc_sdk/Linux_x86_64/25.1/compilers/lib/libcudafor2.so (0x00007ff0fc9e1000)
+	libnvf.so => /weka/software/nvidia/packages/hpc_sdk/Linux_x86_64/25.1/compilers/lib/libnvf.so (0x00007ff0fc2d0000)
+	libnvomp.so => /weka/software/nvidia/packages/hpc_sdk/Linux_x86_64/25.1/compilers/lib/libnvomp.so (0x00007ff0fb2cf000)
+	libnvcpumath.so => /weka/software/nvidia/packages/hpc_sdk/Linux_x86_64/25.1/compilers/lib/libnvcpumath.so (0x00007ff0fae61000)
+	libnvc.so => /weka/software/nvidia/packages/hpc_sdk/Linux_x86_64/25.1/compilers/lib/libnvc.so (0x00007ff0fabfd000)
+	libpnetcdf.so.6 => /valhalla/projects/ehpc-ben-2026b06-085/tchristian/software/regcm5-discoverer-nvhpc25.1-hpcx/lib/libpnetcdf.so.6 (0x00007ff0fa322000)
+	libnvhpcatm.so => /weka/software/nvidia/packages/hpc_sdk/Linux_x86_64/25.1/REDIST/compilers/lib/libnvhpcatm.so (0x00007ff0f9f8d000)
+	libopen-rte.so.40 => /valhalla/projects/ehpc-ben-2026b06-085/tchristian/software/discoverer-hpcx-2.21-ompi-shim/lib/libopen-rte.so.40 (0x00007ff0f9ccd000)
+	libopen-pal.so.40 => /valhalla/projects/ehpc-ben-2026b06-085/tchristian/software/discoverer-hpcx-2.21-ompi-shim/lib/libopen-pal.so.40 (0x00007ff0f99b3000)
+
+=== Data check ===
+input/output symlinks, mem:unified binary, local namelist, and /valhalla/projects/ehpc-ben-2026b06-085/tchristian/scratch/EURR3/RCMDATA are present.
+
+=== GPU layout ===
+GPU 0: NVIDIA H200 (UUID: GPU-f9fd4950-5643-f2f4-59aa-ae7e1abe3d10)
+GPU 1: NVIDIA H200 (UUID: GPU-62c8c56f-d7f3-0945-a04d-c4c7ad6fdf7a)
+
+=== Launching RegCM ===

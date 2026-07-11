@@ -1,0 +1,10 @@
+Accelerator Fatal Error: This file was compiled: -acc=gpu -gpu=cc90
+Rebuild this file with -gpu=cc90 to use NVIDIA Tesla GPU 0
+ File: /valhalla/projects/ehpc-ben-2026b06-085/tchristian/work/RegCM/Main/radlib/mod_rad_radiation.F90
+ Function: radinp:1214
+ Line: 3385
+
+slurmstepd: error:  mpi/pmix_v3: _errhandler: dgx2 [0]: pmixp_client_v2.c:211: Error handler invoked: status = -25, source = [slurm.pmix.179049.0:0]
+slurmstepd: error: *** STEP 179049.0 ON dgx2 CANCELLED AT 2026-07-09T03:18:42 ***
+srun: Job step aborted: Waiting up to 32 seconds for job step to finish.
+srun: error: dgx2: task 0: Exited with exit code 1

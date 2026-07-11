@@ -1,0 +1,4 @@
+srun: StepId=179120.0 aborted before step completely launched.
+srun: error: task 0 launch failed: Unspecified error
+srun: error: task 1 launch failed: Unspecified error
+srun: Job step aborted

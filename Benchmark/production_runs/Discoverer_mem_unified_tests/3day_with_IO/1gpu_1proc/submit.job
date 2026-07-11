@@ -1,0 +1,20 @@
+#!/bin/bash
+#SBATCH --partition=common
+#SBATCH --job-name=mu_3d_1gpu_wIO_disc
+#SBATCH --time=02:00:00
+#SBATCH --account=ehpc-ben-2026b06-085
+#SBATCH --qos=ehpc-ben-2026b06-085
+#SBATCH --nodes=1
+#SBATCH --ntasks-per-node=1
+#SBATCH --cpus-per-task=2
+#SBATCH --gres=gpu:1
+#SBATCH --output=./production/LOG_%x_%j.out
+#SBATCH --error=./production/LOG_%x_%j.err
+
+set -euo pipefail
+
+export NVCOMPILER_ACC_NOTIFY=3
+export NVCOMPILER_ACC_TIME=1
+
+cd "$SLURM_SUBMIT_DIR"
+source ../run_discoverer_common.sh
