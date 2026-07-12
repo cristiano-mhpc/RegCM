@@ -1,0 +1,139 @@
+===== NVHPC/CUDA mem:unified full-support probe =====
+Host: dgx1
+Date: Sun Jul 12 05:04:00 PM UTC 2026
+
+===== Kernel version on this allocated node =====
+Linux dgx1 5.14.0-427.42.1.el9_4.x86_64 #1 SMP PREEMPT_DYNAMIC Fri Oct 18 14:35:40 EDT 2024 x86_64 x86_64 x86_64 GNU/Linux
+kernel_release=5.14.0-427.42.1.el9_4.x86_64
+kernel_base=5.14.0
+
+===== Kernel heuristic for Linux HMM requirement =====
+Expected upstream kernel baseline for full CUDA Unified Memory/HMM: 6.1.24+, 6.2.11+, or 6.3+.
+Note: distro/vendor kernels may backport features, so this is a useful heuristic, not a final proof.
+KERNEL_HEURISTIC=FAIL_OR_NEEDS_VENDOR_BACKPORT_CHECK
+
+===== NVIDIA driver and GPU capabilities =====
+Sun Jul 12 17:04:01 2026       
++-----------------------------------------------------------------------------------------+
+| NVIDIA-SMI 565.57.01              Driver Version: 565.57.01      CUDA Version: 12.7     |
+|-----------------------------------------+------------------------+----------------------+
+| GPU  Name                 Persistence-M | Bus-Id          Disp.A | Volatile Uncorr. ECC |
+| Fan  Temp   Perf          Pwr:Usage/Cap |           Memory-Usage | GPU-Util  Compute M. |
+|                                         |                        |               MIG M. |
+|=========================================+========================+======================|
+|   0  NVIDIA H200                    On  |   00000000:1B:00.0 Off |                    0 |
+| N/A   32C    P0             78W /  700W |       1MiB / 143771MiB |      0%      Default |
+|                                         |                        |             Disabled |
++-----------------------------------------+------------------------+----------------------+
+|   1  NVIDIA H200                    On  |   00000000:43:00.0 Off |                    0 |
+| N/A   31C    P0             78W /  700W |       1MiB / 143771MiB |      0%      Default |
+|                                         |                        |             Disabled |
++-----------------------------------------+------------------------+----------------------+
+|   2  NVIDIA H200                    On  |   00000000:52:00.0 Off |                    0 |
+| N/A   39C    P0             81W /  700W |       1MiB / 143771MiB |      0%      Default |
+|                                         |                        |             Disabled |
++-----------------------------------------+------------------------+----------------------+
+|   3  NVIDIA H200                    On  |   00000000:61:00.0 Off |                    0 |
+| N/A   36C    P0             78W /  700W |       1MiB / 143771MiB |      0%      Default |
+|                                         |                        |             Disabled |
++-----------------------------------------+------------------------+----------------------+
+|   4  NVIDIA H200                    On  |   00000000:9D:00.0 Off |                    0 |
+| N/A   29C    P0             77W /  700W |       1MiB / 143771MiB |      0%      Default |
+|                                         |                        |             Disabled |
++-----------------------------------------+------------------------+----------------------+
+|   5  NVIDIA H200                    On  |   00000000:C3:00.0 Off |                    0 |
+| N/A   31C    P0             77W /  700W |       1MiB / 143771MiB |      0%      Default |
+|                                         |                        |             Disabled |
++-----------------------------------------+------------------------+----------------------+
+|   6  NVIDIA H200                    On  |   00000000:D1:00.0 Off |                    0 |
+| N/A   32C    P0             78W /  700W |       1MiB / 143771MiB |      0%      Default |
+|                                         |                        |             Disabled |
++-----------------------------------------+------------------------+----------------------+
+|   7  NVIDIA H200                    On  |   00000000:DF:00.0 Off |                    0 |
+| N/A   32C    P0             77W /  700W |       1MiB / 143771MiB |      0%      Default |
+|                                         |                        |             Disabled |
++-----------------------------------------+------------------------+----------------------+
+                                                                                         
++-----------------------------------------------------------------------------------------+
+| Processes:                                                                              |
+|  GPU   GI   CI        PID   Type   Process name                              GPU Memory |
+|        ID   ID                                                               Usage      |
+|=========================================================================================|
+|  No running processes found                                                             |
++-----------------------------------------------------------------------------------------+
+
+index, name, driver_version, compute_cap
+0, NVIDIA H200, 565.57.01, 9.0
+1, NVIDIA H200, 565.57.01, 9.0
+2, NVIDIA H200, 565.57.01, 9.0
+3, NVIDIA H200, 565.57.01, 9.0
+4, NVIDIA H200, 565.57.01, 9.0
+5, NVIDIA H200, 565.57.01, 9.0
+6, NVIDIA H200, 565.57.01, 9.0
+7, NVIDIA H200, 565.57.01, 9.0
+driver_version=565.57.01
+DRIVER_HEURISTIC=PASS_DRIVER_535_OR_NEWER
+
+===== NVIDIA kernel module details =====
+Full HMM-style support normally requires a compatible NVIDIA driver stack and open kernel modules.
+NVRM version: NVIDIA UNIX Open Kernel Module for x86_64  565.57.01  Release Build  (dvs-builder@U16-A24-9-2)  Thu Oct 10 12:15:00 UTC 2024
+GCC version:  gcc version 11.5.0 20240719 (Red Hat 11.5.0-2) (GCC) 
+
+filename:       /lib/modules/5.14.0-427.42.1.el9_4.x86_64/extra/nvidia.ko.xz
+version:        565.57.01
+license:        Dual MIT/GPL
+
+/sys/module/nvidia/version=565.57.01
+
+===== Kernel HMM config/symbol hints =====
+CONFIG_MMU_NOTIFIER=y
+CONFIG_HMM_MIRROR=y
+CONFIG_DEVICE_PRIVATE=y
+0000000000000000 T hmm_range_fault
+
+===== NVHPC compiler availability =====
+/opt/software/nvidia/packages/hpc_sdk/Linux_x86_64/25.1/compilers/bin/nvc++
+/opt/software/nvidia/packages/hpc_sdk/Linux_x86_64/25.1/compilers/bin/nvfortran
+
+nvc++ 25.1-0 64-bit target on x86-64 Linux -tp sapphirerapids 
+NVIDIA Compilers and Tools
+Copyright (c) 2025, NVIDIA CORPORATION & AFFILIATES.  All rights reserved.
+
+===== Runtime compile-and-run probe for -gpu=mem:unified =====
++ nvc++ -acc -gpu=cc90,lineinfo,mem:unified -Minfo=accel introspection/179509_discoverer_node_intro_8gpu/mem_unified_probe.cpp -o introspection/179509_discoverer_node_intro_8gpu/mem_unified_probe
+main:
+     13, Generating NVIDIA GPU code
+         19, #pragma acc loop gang, vector(128) /* blockIdx.x threadIdx.x */
+     13, Generating implicit copy(a[:1048576]) [if not already present]
+compile_status=0
+
++ srun --ntasks=1 --gres=gpu:1 introspection/179509_discoverer_node_intro_8gpu/mem_unified_probe
+launch CUDA kernel  file=/valhalla/projects/ehpc-ben-2026b06-085/tchristian/work/RegCM/Discoverer_node_introspection/introspection/179509_discoverer_node_intro_8gpu/mem_unified_probe.cpp function=main line=13 device=0 threadid=1 num_gangs=8192 num_workers=1 vector_length=128 grid=8192 block=128
+mem_unified_probe: PASS
+run_status=0
+MEM_UNIFIED_RUNTIME_PROBE=PASS
+
+===== Stricter CUDA pageable host-memory probe =====
+This test avoids OpenACC data clauses and launches a CUDA kernel on a pointer returned by std::malloc.
+It is a stronger probe for CUDA pageable-memory/HMM behavior than the OpenACC test above.
++ nvc++ -cuda -gpu=cc90,lineinfo,mem:unified introspection/179509_discoverer_node_intro_8gpu/cuda_hmm_pageable_probe.cu -o introspection/179509_discoverer_node_intro_8gpu/cuda_hmm_pageable_probe
+"introspection/179509_discoverer_node_intro_8gpu/cuda_hmm_pageable_probe.cu", line 42: warning: CUDA C++ compilation is unsupported in nvc++; nvcc is the recommended CUDA compiler [cuda_compile]
+    add_kernel<<<(n + 255) / 256, 256>>>(a, n);
+              ^
+
+Remark: individual warnings can be suppressed with "--diag_suppress <warning-name>"
+
+cuda_compile_status=0
+
++ srun --ntasks=1 --gres=gpu:1 introspection/179509_discoverer_node_intro_8gpu/cuda_hmm_pageable_probe
+cudaDevAttrPageableMemoryAccess=1
+cudaDevAttrConcurrentManagedAccess=1
+cudaDevAttrManagedMemory=1
+cudaPointerGetAttributes_status=no error
+cuda_hmm_pageable_probe: PASS
+cuda_run_status=0
+CUDA_HMM_PAGEABLE_PROBE=PASS
+
+===== Practical interpretation =====
+Best sign: HMM kernel hints present, DRIVER_HEURISTIC=PASS_DRIVER_535_OR_NEWER, suitable GPU compute capability, MEM_UNIFIED_RUNTIME_PROBE=PASS, and CUDA_HMM_PAGEABLE_PROBE=PASS.
+If the OpenACC probe passes but CUDA_HMM_PAGEABLE_PROBE fails, the compiler/runtime path works but pure pageable host-memory access is not proven.

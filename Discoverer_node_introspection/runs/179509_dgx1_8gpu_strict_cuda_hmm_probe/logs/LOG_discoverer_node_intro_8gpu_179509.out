@@ -1,0 +1,42 @@
+Loading nvidia/hpcsdk/nvhpc-hpcx-cuda12/25.1
+  Loading requirement: hpcx
+
+Loaded RegCM5 Discoverer+ NVHPC 25.1 + HPC-X candidate environment
+
+Modules:
+  nvidia/hpcsdk/nvhpc-hpcx-cuda12/25.1
+
+Compiler/MPI wrappers:
+  CC     = nvc
+  CXX    = nvc++
+  FC     = nvfortran
+  F77    = nvfortran
+  MPICC  = mpicc
+  MPIFC  = mpifort
+
+Resolved tools:
+  nvc             -> /opt/software/nvidia/packages/hpc_sdk/Linux_x86_64/25.1/compilers/bin/nvc
+  nvfortran       -> /opt/software/nvidia/packages/hpc_sdk/Linux_x86_64/25.1/compilers/bin/nvfortran
+  mpicc           -> /valhalla/projects/ehpc-ben-2026b06-085/tchristian/software/discoverer-hpcx-2.21-ompi-shim/bin/mpicc
+  mpifort         -> /valhalla/projects/ehpc-ben-2026b06-085/tchristian/software/discoverer-hpcx-2.21-ompi-shim/bin/mpifort
+  mpirun          -> /valhalla/projects/ehpc-ben-2026b06-085/tchristian/software/discoverer-hpcx-2.21-ompi-shim/bin/mpirun
+  nc-config       ->   nf-config       ->   pnetcdf-config  -> 
+Quick checks:
+  MPI_SHIM                 -> /valhalla/projects/ehpc-ben-2026b06-085/tchristian/software/discoverer-hpcx-2.21-ompi-shim
+  MPI shim enabled         -> 1
+  Disable UCC collectives  -> 1
+  OMPI_MCA_coll            -> ^ucc
+  CUDA_HOME                -> /weka/software/nvidia/packages/hpc_sdk/Linux_x86_64/25.1/cuda/12.6
+  NVHPC_CUDA_HOME          -> /weka/software/nvidia/packages/hpc_sdk/Linux_x86_64/25.1/cuda/12.6
+  CUDA target lib          -> /weka/software/nvidia/packages/hpc_sdk/Linux_x86_64/25.1/cuda/12.6/targets/x86_64-linux/lib
+  CUDA stubs policy        -> always
+  CUDA stubs status        -> using /weka/software/nvidia/packages/hpc_sdk/Linux_x86_64/25.1/cuda/12.6/lib64/stubs
+  NVHPC_ROOT               -> /weka/software/nvidia/packages/hpc_sdk/Linux_x86_64/25.1
+  NVHPC_MATH_LIB           -> /weka/software/nvidia/packages/hpc_sdk/Linux_x86_64/25.1/math_libs/lib64
+  HDF5                     -> /usr
+  NETCDF                   -> unset
+  PNETCDF                  -> unset
+  I/O stack status         -> not configured
+  nc-config --version      ->   nf-config --version      ->   pnetcdf-config --version ->   mpirun --version         -> mpirun (Open MPI) 4.1.7rc1
+  mpifort --show           -> nvfortran -I/weka/software/nvidia/packages/hpc_sdk/Linux_x86_64/25.1/comm_libs/12.6/hpcx/hpcx-2.21/ompi/include -I/weka/software/nvidia/packages/hpc_sdk/Linux_x86_64/25.1/comm_libs/12.6/hpcx/hpcx-2.21/ompi/lib -L/weka/software/nvidia/packages/hpc_sdk/Linux_x86_64/25.1/comm_libs/12.6/hpcx/hpcx-2.21/ompi/lib -rpath /weka/software/nvidia/packages/hpc_sdk/Linux_x86_64/25.1/comm_libs/12.6/hpcx/hpcx-2.21/ompi/lib -lmpi_usempif08 -lmpi_usempi_ignore_tkr -lmpi_mpifh -lmpi
+

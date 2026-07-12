@@ -1,0 +1,5 @@
+Currently Loaded Modulefiles:
+ 1) hpcx <aL>   2) nvidia/hpcsdk/nvhpc-hpcx-cuda12/25.1  
+
+Key:
+<module-tag>  <aL>=auto-loaded  

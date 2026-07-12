@@ -10,12 +10,14 @@
 #SBATCH --gres=gpu:8
 #SBATCH --exclusive
 #SBATCH --time=00:10:00
-#SBATCH --output=./introspection/LOG_%x_%j.out
-#SBATCH --error=./introspection/LOG_%x_%j.err
+#SBATCH --output=/valhalla/projects/ehpc-ben-2026b06-085/tchristian/work/RegCM/Discoverer_node_introspection/introspection/LOG_%x_%j.out
+#SBATCH --error=/valhalla/projects/ehpc-ben-2026b06-085/tchristian/work/RegCM/Discoverer_node_introspection/introspection/LOG_%x_%j.err
 
 set -euo pipefail
 
-cd "$SLURM_SUBMIT_DIR"
+SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+BASE_DIR="$(cd "$SCRIPT_DIR/.." && pwd)"
+cd "$BASE_DIR"
 mkdir -p introspection
 OUT_DIR="introspection/${SLURM_JOB_ID:-manual}_${SLURM_JOB_NAME:-discoverer_node_intro}"
 mkdir -p "$OUT_DIR"
