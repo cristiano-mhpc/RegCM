@@ -17,6 +17,9 @@ set -euo pipefail
 
 cd "$SLURM_SUBMIT_DIR"
 mkdir -p introspection
+OUT_DIR="introspection/${SLURM_JOB_ID:-manual}_${SLURM_JOB_NAME:-discoverer_node_intro}"
+mkdir -p "$OUT_DIR"
+TOPO_INFO="$OUT_DIR/topo_info.txt"
 
 REGCM_ROOT=/valhalla/projects/ehpc-ben-2026b06-085/tchristian/work/RegCM
 source "$REGCM_ROOT/environment_loader/regcm5_discoverer_nvhpc25_1_hpcx_cuda12.sh"
@@ -29,10 +32,10 @@ run_capture() {
   {
     echo
     echo "===== ${label} ====="
-  } >> topo_info.txt
+  } >> "$TOPO_INFO"
 
-  "$@" >> topo_info.txt 2>&1 || true
-  "$@" > "$outfile" 2>&1 || true
+  "$@" >> "$TOPO_INFO" 2>&1 || true
+  "$@" > "$OUT_DIR/$outfile" 2>&1 || true
 }
 
 
@@ -40,7 +43,7 @@ run_mem_unified_probe() {
   # Probe whether this actual compute node appears capable of running
   # NVIDIA/NVHPC full CUDA Unified Memory / HMM via -gpu=mem:unified.
   # This is intentionally verbose: the output is meant for later inspection.
-  local outfile="mem_unified_support.txt"
+  local outfile="$OUT_DIR/mem_unified_support.txt"
 
   {
     echo "===== NVHPC/CUDA mem:unified full-support probe ====="
@@ -115,7 +118,7 @@ run_mem_unified_probe() {
     echo
 
     echo "===== Runtime compile-and-run probe for -gpu=mem:unified ====="
-    cat > introspection/mem_unified_probe.cpp <<'EOF'
+    cat > "$OUT_DIR/mem_unified_probe.cpp" <<'EOF'
 #include <cstdio>
 #include <cstdlib>
 #include <cmath>
@@ -152,8 +155,8 @@ int main() {
 }
 EOF
 
-    echo "+ nvc++ -acc -gpu=cc90,lineinfo,mem:unified -Minfo=accel introspection/mem_unified_probe.cpp -o introspection/mem_unified_probe"
-    if nvc++ -acc -gpu=cc90,lineinfo,mem:unified -Minfo=accel introspection/mem_unified_probe.cpp -o introspection/mem_unified_probe; then
+    echo "+ nvc++ -acc -gpu=cc90,lineinfo,mem:unified -Minfo=accel $OUT_DIR/mem_unified_probe.cpp -o $OUT_DIR/mem_unified_probe"
+    if nvc++ -acc -gpu=cc90,lineinfo,mem:unified -Minfo=accel "$OUT_DIR/mem_unified_probe.cpp" -o "$OUT_DIR/mem_unified_probe"; then
       compile_status=0
     else
       compile_status=$?
@@ -162,8 +165,8 @@ EOF
 
     if [ "$compile_status" -eq 0 ]; then
       echo
-      echo "+ srun --ntasks=1 --gres=gpu:1 introspection/mem_unified_probe"
-      if NVCOMPILER_ACC_NOTIFY=1 srun --ntasks=1 --gres=gpu:1 introspection/mem_unified_probe; then
+      echo "+ srun --ntasks=1 --gres=gpu:1 $OUT_DIR/mem_unified_probe"
+      if NVCOMPILER_ACC_NOTIFY=1 srun --ntasks=1 --gres=gpu:1 "$OUT_DIR/mem_unified_probe"; then
         run_status=0
       else
         run_status=$?
@@ -179,16 +182,117 @@ EOF
     fi
     echo
 
+    echo "===== Stricter CUDA pageable host-memory probe ====="
+    echo "This test avoids OpenACC data clauses and launches a CUDA kernel on a pointer returned by std::malloc."
+    echo "It is a stronger probe for CUDA pageable-memory/HMM behavior than the OpenACC test above."
+    cat > "$OUT_DIR/cuda_hmm_pageable_probe.cu" <<'EOF'
+#include <cstdio>
+#include <cstdlib>
+#include <cuda_runtime.h>
+
+__global__ void add_kernel(double *a, int n) {
+  int i = blockIdx.x * blockDim.x + threadIdx.x;
+  if (i < n) a[i] += 2.0;
+}
+
+int main() {
+  int device = 0;
+  cudaError_t status = cudaSetDevice(device);
+  if (status != cudaSuccess) {
+    std::fprintf(stderr, "cudaSetDevice failed: %s\n", cudaGetErrorString(status));
+    return 2;
+  }
+
+  int pageable = 0;
+  int concurrent_managed = 0;
+  int managed = 0;
+  cudaDeviceGetAttribute(&pageable, cudaDevAttrPageableMemoryAccess, device);
+  cudaDeviceGetAttribute(&concurrent_managed, cudaDevAttrConcurrentManagedAccess, device);
+  cudaDeviceGetAttribute(&managed, cudaDevAttrManagedMemory, device);
+  std::printf("cudaDevAttrPageableMemoryAccess=%d\n", pageable);
+  std::printf("cudaDevAttrConcurrentManagedAccess=%d\n", concurrent_managed);
+  std::printf("cudaDevAttrManagedMemory=%d\n", managed);
+
+  const int n = 1 << 20;
+  double *a = static_cast<double *>(std::malloc(n * sizeof(double)));
+  if (!a) {
+    std::fprintf(stderr, "malloc failed\n");
+    return 3;
+  }
+
+  for (int i = 0; i < n; ++i) a[i] = 1.0;
+
+  cudaPointerAttributes attrs;
+  status = cudaPointerGetAttributes(&attrs, a);
+  std::printf("cudaPointerGetAttributes_status=%s\n", cudaGetErrorString(status));
+  cudaGetLastError();
+
+  add_kernel<<<(n + 255) / 256, 256>>>(a, n);
+  status = cudaGetLastError();
+  if (status != cudaSuccess) {
+    std::fprintf(stderr, "kernel launch failed: %s\n", cudaGetErrorString(status));
+    std::free(a);
+    return 4;
+  }
+
+  status = cudaDeviceSynchronize();
+  if (status != cudaSuccess) {
+    std::fprintf(stderr, "kernel sync failed: %s\n", cudaGetErrorString(status));
+    std::free(a);
+    return 5;
+  }
+
+  double err = 0.0;
+  for (int i = 0; i < n; ++i) err += (a[i] == 3.0) ? 0.0 : 1.0;
+  std::free(a);
+
+  if (err != 0.0) {
+    std::fprintf(stderr, "verification failed: bad_count=%e\n", err);
+    return 6;
+  }
+
+  std::printf("cuda_hmm_pageable_probe: PASS\n");
+  return 0;
+}
+EOF
+
+    echo "+ nvc++ -cuda -gpu=cc90,lineinfo,mem:unified $OUT_DIR/cuda_hmm_pageable_probe.cu -o $OUT_DIR/cuda_hmm_pageable_probe"
+    if nvc++ -cuda -gpu=cc90,lineinfo,mem:unified "$OUT_DIR/cuda_hmm_pageable_probe.cu" -o "$OUT_DIR/cuda_hmm_pageable_probe"; then
+      cuda_compile_status=0
+    else
+      cuda_compile_status=$?
+    fi
+    echo "cuda_compile_status=${cuda_compile_status}"
+
+    if [ "$cuda_compile_status" -eq 0 ]; then
+      echo
+      echo "+ srun --ntasks=1 --gres=gpu:1 $OUT_DIR/cuda_hmm_pageable_probe"
+      if srun --ntasks=1 --gres=gpu:1 "$OUT_DIR/cuda_hmm_pageable_probe"; then
+        cuda_run_status=0
+      else
+        cuda_run_status=$?
+      fi
+      echo "cuda_run_status=${cuda_run_status}"
+      if [ "$cuda_run_status" -eq 0 ]; then
+        echo "CUDA_HMM_PAGEABLE_PROBE=PASS"
+      else
+        echo "CUDA_HMM_PAGEABLE_PROBE=FAIL"
+      fi
+    else
+      echo "CUDA_HMM_PAGEABLE_PROBE=NOT_RUN_COMPILE_FAILED"
+    fi
+    echo
+
     echo "===== Practical interpretation ====="
-    echo "Best sign: KERNEL_HEURISTIC=PASS, DRIVER_HEURISTIC=PASS_DRIVER_535_OR_NEWER, suitable GPU compute capability, and MEM_UNIFIED_RUNTIME_PROBE=PASS."
-    echo "If the compile succeeds but the runtime probe fails, this node likely cannot run NVHPC -gpu=mem:unified full Unified Memory/HMM workloads correctly."
+    echo "Best sign: HMM kernel hints present, DRIVER_HEURISTIC=PASS_DRIVER_535_OR_NEWER, suitable GPU compute capability, MEM_UNIFIED_RUNTIME_PROBE=PASS, and CUDA_HMM_PAGEABLE_PROBE=PASS."
+    echo "If the OpenACC probe passes but CUDA_HMM_PAGEABLE_PROBE fails, the compiler/runtime path works but pure pageable host-memory access is not proven."
   } > "$outfile" 2>&1 || true
 
   {
     echo
     echo "===== NVHPC/CUDA mem:unified full-support probe ====="
     cat "$outfile"
-  } >> topo_info.txt
+  } >> "$TOPO_INFO"
 }
 
 {
@@ -214,7 +318,7 @@ EOF
   echo
   echo "===== module list ====="
   module list 2>&1 || true
-} > topo_info.txt
+} > "$TOPO_INFO"
 
 {
   echo "SLURM_JOB_ID=${SLURM_JOB_ID:-}"
@@ -229,9 +333,9 @@ EOF
   echo "CUDA_VISIBLE_DEVICES=${CUDA_VISIBLE_DEVICES:-}"
   echo "GPU_DEVICE_ORDINAL=${GPU_DEVICE_ORDINAL:-}"
   echo "NVIDIA_VISIBLE_DEVICES=${NVIDIA_VISIBLE_DEVICES:-}"
-} > slurm_env.txt
+} > "$OUT_DIR/slurm_env.txt"
 
-module list > module_list.txt 2>&1 || true
+module list > "$OUT_DIR/module_list.txt" 2>&1 || true
 
 run_capture "nvidia-smi -L" gpu_list.txt nvidia-smi -L
 run_capture "nvidia-smi topo -m" gpu_topology.txt nvidia-smi topo -m

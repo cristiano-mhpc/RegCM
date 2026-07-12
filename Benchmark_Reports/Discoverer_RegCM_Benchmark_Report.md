@@ -6,6 +6,120 @@ This report documents the software environment built and validated for running t
 
 Unless otherwise noted, benchmark timings in this report refer to the production `mem:managed` executable at `bin/regcmMPICLM45`. Ongoing `mem:unified` tests use a separate executable and run tree and are reported separately from the production scaling tables.
 
+### 1.0 Stack Architecture and Dependencies
+
+The diagram below shows the complete stack from the Discoverer+ hardware through the system toolchain, private scientific I/O libraries, RegCM executable, and Slurm launch layer. Solid arrows indicate build-time or link-time dependencies. Dashed arrows indicate environment configuration, runtime selection, or process placement.
+
+```mermaid
+flowchart TB
+    subgraph LAUNCH["Slurm job and process launch"]
+        JOB["Slurm batch job<br/>account and QoS: ehpc-ben-2026b06-085<br/>partition: common"]
+        SRUN["srun --mpi=pmix<br/>8 MPI ranks on one node"]
+        WRAP["Per-rank wrapper<br/>CUDA_VISIBLE_DEVICES = SLURM_LOCALID<br/>ACC_DEVICE_TYPE = nvidia<br/>ACC_DEVICE_NUM = 0"]
+    end
+
+    subgraph APPLICATION["RegCM application"]
+        SRC["RegCM source and configure<br/>--enable-clm45<br/>--enable-openacc-stdpar<br/>GPU target: cc90"]
+        EXE["regcmMPICLM45<br/>MPI + CLM 4.5 + OpenACC/stdpar<br/>production: mem:managed"]
+    end
+
+    subgraph INTEGRATION["Environment integration"]
+        LOADER["Discoverer environment loader<br/>module cleanup, toolchain selection,<br/>and build/runtime search paths"]
+        SHIM["Optional Open MPI shim<br/>clean HPC-X 2.21 Open MPI prefix"]
+        UCC["Collective policy<br/>OMPI_MCA_coll = ^ucc by default"]
+        STUBS["CUDA stub libraries<br/>LIBRARY_PATH and LDFLAGS only<br/>excluded from LD_LIBRARY_PATH"]
+    end
+
+    subgraph PRIVATEIO["Private scientific I/O prefix"]
+        NFF["NetCDF-Fortran 4.6.2<br/>built with mpifort"]
+        NFC["NetCDF-C 4.9.3<br/>NetCDF-4 + PnetCDF enabled"]
+        HDF5["HDF5 1.14.6<br/>parallel + Fortran + high-level API"]
+        PNC["Parallel-NetCDF 1.14.0<br/>C and Fortran interfaces"]
+        AEC["libaec 1.1.3<br/>SZIP-compatible compression"]
+        ZLIB["System zlib<br/>/usr/lib64/libz.so<br/>versioned ZLIB symbols"]
+    end
+
+    subgraph TOOLCHAIN["Discoverer+ NVIDIA programming environment"]
+        MODULE["Module<br/>nvidia/hpcsdk/nvhpc-hpcx-cuda12/25.1"]
+        NVHPC["NVIDIA HPC SDK 25.1<br/>nvc, nvc++, nvfortran"]
+        CUDA["CUDA Toolkit 12.6<br/>CUDA and NVHPC GPU runtimes"]
+        HPCX["HPC-X 2.21<br/>Open MPI 4.1.7rc1<br/>mpicc, mpicxx, mpifort"]
+        PMIX["PMIx integration<br/>Slurm/Open MPI process startup"]
+    end
+
+    subgraph PLATFORM["Discoverer+ compute node"]
+        OS["Operating environment<br/>system libraries"]
+        DRIVER["Real NVIDIA driver<br/>/usr/lib64/libcuda.so.1"]
+        GPU["NVIDIA H200 GPUs<br/>compute capability 9.0"]
+        CPU["Host CPUs and memory<br/>2 CPU cores per MPI rank"]
+    end
+
+    JOB --> SRUN
+    SRUN --> WRAP
+    WRAP --> EXE
+
+    SRC --> EXE
+    LOADER -. "configures build" .-> SRC
+    LOADER -. "configures job environment" .-> JOB
+    LOADER -.-> SHIM
+    LOADER -.-> UCC
+    LOADER -.-> STUBS
+
+    EXE --> NFF
+    EXE --> NFC
+    EXE --> HPCX
+    EXE --> NVHPC
+    EXE --> CUDA
+
+    NFF --> NFC
+    NFC --> HDF5
+    NFC --> PNC
+    HDF5 --> AEC
+    HDF5 --> ZLIB
+    PNC --> ZLIB
+
+    MODULE --> NVHPC
+    MODULE --> CUDA
+    MODULE --> HPCX
+    HPCX --> NVHPC
+    HPCX --> PMIX
+    SHIM -. "selects MPI runtime prefix" .-> HPCX
+    UCC -. "controls collective component" .-> HPCX
+    STUBS -. "satisfies configure/link checks" .-> CUDA
+
+    SRUN -. "starts ranks through PMIx" .-> PMIX
+    WRAP -. "maps one rank to one GPU" .-> GPU
+    WRAP -. "binds host execution" .-> CPU
+    CUDA -. "loads real driver at runtime" .-> DRIVER
+    DRIVER --> GPU
+    OS --> DRIVER
+    OS --> ZLIB
+
+    classDef launch fill:#f4aaaa,stroke:#7a2828,color:#111,stroke-width:1.5px;
+    classDef app fill:#f6c453,stroke:#715200,color:#111,stroke-width:2px;
+    classDef integration fill:#8fbcf4,stroke:#194e86,color:#111,stroke-width:1.5px;
+    classDef io fill:#9bd5a5,stroke:#286238,color:#111,stroke-width:1.5px;
+    classDef tools fill:#bba7e5,stroke:#523882,color:#111,stroke-width:1.5px;
+    classDef platform fill:#d8dde5,stroke:#4b5563,color:#111,stroke-width:1.5px;
+
+    class JOB,SRUN,WRAP launch;
+    class SRC,EXE app;
+    class LOADER,SHIM,UCC,STUBS integration;
+    class NFF,NFC,HDF5,PNC,AEC,ZLIB io;
+    class MODULE,NVHPC,CUDA,HPCX,PMIX tools;
+    class OS,DRIVER,GPU,CPU platform;
+```
+
+The principal scientific I/O dependency chain is:
+
+```text
+RegCM -> NetCDF-Fortran -> NetCDF-C -> HDF5 -> libaec
+                                   |         -> system zlib
+                                   -> Parallel-NetCDF -> system zlib
+```
+
+All MPI-aware components in this chain were built with wrappers from the same HPC-X installation used to build and run RegCM. This avoids mixing MPI ABIs, compiler families, and Fortran runtimes. CUDA stub libraries are available only for configure and link checks; at runtime, the executable resolves the real NVIDIA driver before running kernels on the H200 GPUs.
+
 ### 1.1 Platform
 
 | Item | Configuration |
@@ -405,22 +519,31 @@ The isolated build used NVHPC standard parallelism with unified memory targeting
 
 The 1-day `mem:unified` validation status is:
 
-| GPUs | Job | State | Slurm elapsed | RegCM elapsed | Final model time | Notes |
+| GPUs | Job | State | RegCM elapsed | Avg. RegCM time per simulated day | Final model time | Notes |
 |---:|---:|---|---:|---:|---|---|
-| 1 | `179446` | Pending | n/a | n/a | n/a | New 1-GPU case submitted for single-rank testing |
-| 8 | `179063` | Completed | `00:11:45` | 665.04 s | `2009-09-02 00:00:00 UTC` | Full 1-day run |
+| 1 | `179446` | Failed | n/a | n/a | n/a | Reproduced the `radinp` accelerator fatal error on `dgx2` |
+| 8 | `179063` | Completed | 665.04 s | 665.04 s/day | `2009-09-02 00:00:00 UTC` | Full 1-day run |
 
 The preliminary 7-day `mem:unified` status is:
 
-| GPUs | Job | State | Slurm elapsed | RegCM elapsed | Notes |
+| GPUs | Job | State | RegCM elapsed | Avg. RegCM time per simulated day | Notes |
 |---:|---:|---|---:|---:|---|
-| 2 | `179445` | Pending | n/a | n/a | Rerun submitted after prior Slurm node/launch failures |
-| 4 | `179121` | Completed | `01:52:24` | 6720.56 s | Full 7-day run |
-| 8 | `179253` | Completed | `01:05:48` | 3910.62 s | Full 7-day run |
-| 12 | `179118` | Completed | `00:56:51` | 3379.38 s | Full 7-day run |
-| 14 | `179254` | Completed | `01:04:16` | 3819.20 s | Full 7-day run after increasing walltime to `01:30:00` |
+| 2 | `179445` | Pending | n/a | n/a | Had `NODE_FAIL` attempts on `dgx1` and `dgx2`; pending another restart |
+| 4 | `179121` | Completed | 6720.56 s | 960.08 s/day | Full 7-day run |
+| 8 | `179253` | Completed | 3910.62 s | 558.66 s/day | Full 7-day run |
+| 12 | `179118` | Completed | 3379.38 s | 482.77 s/day | Full 7-day run |
+| 14 | `179254` | Completed | 3819.20 s | 545.60 s/day | Full 7-day run after increasing walltime to `01:30:00` |
 
-The earlier `mem:unified` 2-GPU attempts did not establish a RegCM model failure. They failed through Slurm node failures or pre-launch `srun` errors, so the 2-GPU `mem:unified` result remains unresolved until job `179445` completes.
+The completed 7-day runs common to both memory modes compare as follows:
+
+| GPUs | `mem:managed` job | `mem:managed` RegCM elapsed | `mem:managed` avg. per day | `mem:unified` job | `mem:unified` RegCM elapsed | `mem:unified` avg. per day |
+|---:|---:|---:|---:|---:|---:|---:|
+| 4 | `179057` | 5855.11 s | 836.44 s/day | `179121` | 6720.56 s | 960.08 s/day |
+| 8 | `179001` | 3059.68 s | 437.10 s/day | `179253` | 3910.62 s | 558.66 s/day |
+| 12 | `179058` | 2554.67 s | 364.95 s/day | `179118` | 3379.38 s | 482.77 s/day |
+| 14 | `179059` | 3128.16 s | 446.88 s/day | `179254` | 3819.20 s | 545.60 s/day |
+
+The 1-GPU `mem:unified` run reproduced the same `radinp` accelerator fatal error seen in the `mem:managed` 1-GPU cases. The 2-GPU `mem:unified` attempts have not established a RegCM model failure; they failed through Slurm node failures or pre-launch `srun` errors, so the 2-GPU `mem:unified` result remains unresolved until job `179445` completes.
 
 ## 4. Runtime Investigation and Known Issues
 
@@ -436,7 +559,7 @@ Function: radinp:1214
 Line: 3385
 ```
 
-This was observed on both `dgx1` and `dgx2`. A diagnostic run with `NVCOMPILER_ACC_NOTIFY=3` on `dgx2` passed the same kernel location and continued until the 2-hour walltime limit, showing that the failure is not completely deterministic. That diagnostic stderr file grew to approximately 2.2 GB and was deleted after confirming that it did not contain the fatal signature.
+This was observed on both `dgx1` and `dgx2`. A diagnostic run with `NVCOMPILER_ACC_NOTIFY=3` on `dgx2` passed the same kernel location and continued until the 2-hour walltime limit, showing that the failure is not completely deterministic. That diagnostic stderr file grew to approximately 2.2 GB and was deleted after confirming that it did not contain the fatal signature. The later 1-day, 1-GPU `mem:unified` run `179446` also failed at `radinp`, line 3385, so unified memory did not remove this single-rank failure mode.
 
 The failing configuration uses a single MPI rank and therefore `CPUS DIM1 = 1`, `CPUS DIM2 = 1`. Multi-rank configurations from 2 GPUs upward completed the 3-day run, so the failure appears specific to the single-rank/full-domain execution path or to an intermittent NVHPC/OpenACC/stdpar runtime behavior exposed by that path.
 
@@ -462,7 +585,52 @@ dgx2: gpu:7,gpu_biz:1
 
 The separate `gpu_biz` GRES type is not documented in the local offline Discoverer+ documentation reviewed during this benchmark work. Its intended use should be confirmed with system support before attempting to consume it.
 
-### 4.4 Output Data Management
+### 4.4 Discoverer+ Node Introspection and mem:unified Probe
+
+A Discoverer+ node introspection job was run on `dgx1` to capture the compute-node topology and to probe the practical `mem:unified` runtime path:
+
+| Item | Result |
+|---|---|
+| Job | `179466` |
+| Node | `dgx1` |
+| State | Completed, exit code `0:0` |
+| Elapsed | `00:01:16` |
+| GPUs | 8 x NVIDIA H200, compute capability 9.0 |
+| Driver | NVIDIA `565.57.01` |
+| Kernel | `5.14.0-427.42.1.el9_4.x86_64` |
+| NVIDIA kernel module | Open kernel module, `565.57.01` |
+
+The upstream-version heuristic for full Linux HMM support failed because the node runs a vendor `5.14` kernel rather than an upstream `6.1.24+`, `6.2.11+`, or `6.3+` kernel. However, the actual kernel and driver artifacts showed HMM-related support:
+
+```text
+CONFIG_MMU_NOTIFIER=y
+CONFIG_HMM_MIRROR=y
+CONFIG_DEVICE_PRIVATE=y
+hmm_range_fault present
+DRIVER_HEURISTIC=PASS_DRIVER_535_OR_NEWER
+```
+
+The initial practical NVHPC probe compiled and ran successfully with:
+
+```text
+nvc++ -acc -gpu=cc90,lineinfo,mem:unified -Minfo=accel
+MEM_UNIFIED_RUNTIME_PROBE=PASS
+```
+
+That initial OpenACC probe is useful evidence that the `mem:unified` compile/runtime path works on the allocated node, but the compiler reported an implicit copy for the test array. Therefore, it does not by itself prove pure pageable host-memory demand paging through HMM. A stricter CUDA-level pageable host-memory probe was added afterward to avoid OpenACC data-management inference.
+
+The `dgx1` topology showed 8 H200 GPUs connected pairwise by `NV18`, with GPUs `0-3` associated with NUMA node 0 and GPUs `4-7` associated with NUMA node 1. The node exposed 12 mlx5 NICs in `nvidia-smi topo -m`.
+
+Follow-up introspection jobs with the stricter CUDA pageable-memory probe were submitted:
+
+| Job | Target | Request | State at report update |
+|---:|---|---|---|
+| `179509` | `dgx1` | 8 normal GPUs | Pending |
+| `179510` | `dgx2` | 7 normal GPUs | Pending |
+
+The `dgx2` follow-up uses 7 normal GPUs because Slurm rejected an 8 normal-GPU request on `dgx2`, consistent with the observed `gpu:7,gpu_biz:1` resource shape.
+
+### 4.5 Output Data Management
 
 The benchmark output volume is large:
 
@@ -473,6 +641,6 @@ The benchmark output volume is large:
 
 After validating completion and collecting timings, generated NetCDF files were removed from selected completed and partial output directories to recover storage. The run directories, Slurm logs, namelists, launch scripts, and output symlinks were retained.
 
-### 4.5 Ablation Tests
+### 4.6 Ablation Tests
 
 Earlier single-node, eight-GPU ablation experiments tested loader/runtime variants including the MPI shim, UCC collective disabling, and CUDA stub policy. These did not materially change performance for the tested one-day, eight-GPU case. The current loader retains the conservative validated defaults because they produced a consistent build and runtime environment across the production runs.
