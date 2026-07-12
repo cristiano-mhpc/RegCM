@@ -520,6 +520,13 @@ The separate `gpu_biz` GRES type is not documented in the local offline Discover
 
 A Discoverer+ node introspection job was run on `dgx1` to capture the compute-node topology and to probe the practical `mem:unified` runtime path:
 
+The archived introspection artifacts are stored under:
+
+```text
+Discoverer_node_introspection/runs/179466_dgx1_8gpu_initial_openacc_probe
+Discoverer_node_introspection/runs/179509_dgx1_8gpu_strict_cuda_hmm_probe
+```
+
 | Item | Result |
 |---|---|
 | Job | `179466` |
@@ -548,16 +555,28 @@ nvc++ -acc -gpu=cc90,lineinfo,mem:unified -Minfo=accel
 MEM_UNIFIED_RUNTIME_PROBE=PASS
 ```
 
-That initial OpenACC probe is useful evidence that the `mem:unified` compile/runtime path works on the allocated node, but the compiler reported an implicit copy for the test array. Therefore, it does not by itself prove pure pageable host-memory demand paging through HMM. A stricter CUDA-level pageable host-memory probe was added afterward to avoid OpenACC data-management inference.
+That initial OpenACC probe is useful evidence that the `mem:unified` compile/runtime path works on the allocated node, but the compiler reported an implicit copy for the test array. Therefore, it does not by itself prove pure pageable host-memory demand paging through HMM.
+
+The stricter CUDA-level pageable host-memory probe was then run on `dgx1` in job `179509`. It completed successfully and reported:
+
+```text
+cudaDevAttrPageableMemoryAccess=1
+cudaDevAttrConcurrentManagedAccess=1
+cudaDevAttrManagedMemory=1
+cudaPointerGetAttributes_status=no error
+CUDA_HMM_PAGEABLE_PROBE=PASS
+```
+
+This is stronger evidence that `dgx1` supports pageable host-memory access/HMM-style behavior than the OpenACC probe alone.
 
 The `dgx1` topology showed 8 H200 GPUs connected pairwise by `NV18`, with GPUs `0-3` associated with NUMA node 0 and GPUs `4-7` associated with NUMA node 1. The node exposed 12 mlx5 NICs in `nvidia-smi topo -m`.
 
-Follow-up introspection jobs with the stricter CUDA pageable-memory probe were submitted:
+Follow-up introspection jobs with the stricter CUDA pageable-memory probe were submitted or completed:
 
 | Job | Target | Request | State at report update |
 |---:|---|---|---|
-| `179509` | `dgx1` | 8 normal GPUs | Pending |
-| `179510` | `dgx2` | 7 normal GPUs | Pending |
+| `179509` | `dgx1` | 8 normal GPUs | Completed; strict CUDA pageable-memory probe passed |
+| `179586` | `dgx2` | 7 normal GPUs | Pending |
 
 The `dgx2` follow-up uses 7 normal GPUs because Slurm rejected an 8 normal-GPU request on `dgx2`, consistent with the observed `gpu:7,gpu_biz:1` resource shape.
 
