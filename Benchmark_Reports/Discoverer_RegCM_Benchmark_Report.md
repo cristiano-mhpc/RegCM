@@ -14,44 +14,40 @@ The diagram is intentionally unstyled and uses only ordinary nodes and basic arr
 
 ```mermaid
 flowchart TB
-    SYS["Discoverer+ system: common partition, project QoS, dgx1/dgx2, H200, cc90"]
-    MOD["NVHPC module: HPC SDK 25.1, CUDA 12.6, HPC-X 2.21, Open MPI 4.1.7rc1"]
-    COMP["Compilers and wrappers: nvc, nvc++, nvfortran, mpicc, mpicxx, mpifort"]
-    IO["Private I/O stack: libaec, HDF5, PnetCDF, NetCDF-C, NetCDF-Fortran, system zlib"]
-    LOAD["Environment loader: compiler, MPI, CUDA, and private I/O paths"]
-    BUILD["RegCM build: CLM4.5, OpenACC/stdpar, cc90, mem:managed"]
-    EXE["Production executable: bin/regcmMPICLM45"]
-    DEPS["Runtime libraries: private I/O, HPC-X MPI, NVHPC, CUDA 12.6, real libcuda"]
-    SLURM["Slurm launch: 1 node, 8 ranks, 8 GPUs, 2 CPUs per task, exclusive"]
-    WRAP["Per-rank wrapper: rank-local GPU and OpenMP binding"]
-    APP["RegCM plus CLM4.5: EURR-3, MPI decomposition, GPU execution, NetCDF I/O"]
+    SYS["Discoverer+ system environment<br/>partition: common<br/>account/QoS: ehpc-ben-2026b06-085<br/>nodes: dgx1/dgx2<br/>GPU: H200, cc90"]
 
-    SYS --> MOD
-    MOD --> COMP
-    COMP --> IO
-    IO --> LOAD
-    LOAD --> BUILD
-    BUILD --> EXE
-    EXE --> DEPS
-    DEPS --> SLURM
-    SLURM --> WRAP
-    WRAP --> APP
+    MOD["Base module environment<br/>module load nvidia/hpcsdk/nvhpc-hpcx-cuda12/25.1<br/>NVHPC 25.1<br/>CUDA 12.6<br/>HPC-X 2.21<br/>Open MPI 4.1.7rc1"]
 
-    B1["Build path: environment loader"] -.-> B2["NVHPC and HPC-X module"]
-    B2 -.-> B3["Private I/O stack"]
-    B3 -.-> B4["configure"]
-    B4 -.-> B5["compile and link"]
-    B5 -.-> B6["regcmMPICLM45"]
+    COMP["Compilers and MPI wrappers<br/>nvc / nvc++ / nvfortran<br/>mpicc / mpicxx / mpifort<br/>all from NVHPC + HPC-X stack"]
 
-    R1["Runtime path: sbatch"] --> R2["Slurm allocation"]
-    R2 --> R3["srun with PMIx"]
-    R3 --> R4["Open MPI startup"]
-    R4 --> R5["STD_launch_per_rank.sh"]
-    R5 --> R6["CUDA_VISIBLE_DEVICES equals SLURM_LOCALID"]
-    R6 --> R7["regcmMPICLM45 rank"]
-    R7 --> R8["assigned H200 GPU"]
-    R7 --> R9["NetCDF and HDF5 I/O"]
+    IO["Private scientific I/O stack<br/>prefix: regcm5-discoverer-nvhpc25.1-hpcx<br/>libaec 1.1.3<br/>HDF5 1.14.6<br/>PnetCDF 1.14.0<br/>NetCDF-C 4.9.3<br/>NetCDF-Fortran 4.6.2<br/>system zlib"]
+
+    LOAD["Environment loader<br/>regcm5_discoverer_nvhpc25_1_hpcx_cuda12.sh<br/>sets PATH, LD_LIBRARY_PATH, LIBRARY_PATH, LDFLAGS<br/>sets CUDA_HOME and NVHPC_CUDA_HOME<br/>points configure/link to private I/O stack"]
+
+    BUILD["RegCM production build<br/>./configure --enable-clm45 --enable-openacc-stdpar<br/>flags: -stdpar=gpu -gpu=cc90,lineinfo,mem:managed<br/>executable: bin/regcmMPICLM45"]
+
+    DEPS["Runtime executable dependencies<br/>private NetCDF/HDF5/PnetCDF/libaec<br/>HPC-X Open MPI libraries<br/>NVHPC runtime libraries<br/>CUDA runtime libraries<br/>real libcuda: /usr/lib64/libcuda.so.1"]
+
+    SLURM["Slurm launch<br/>sbatch allocation<br/>srun --mpi=pmix ./STD_launch_per_rank.sh<br/>8 MPI ranks on one node<br/>one rank per H200 GPU"]
+
+    WRAP["Per-rank wrapper<br/>CUDA_VISIBLE_DEVICES=$SLURM_LOCALID<br/>ACC_DEVICE_TYPE=nvidia<br/>ACC_DEVICE_NUM=0<br/>OMP_NUM_THREADS=$SLURM_CPUS_PER_TASK"]
+
+    APP["Running RegCM application<br/>RegCM + CLM4.5<br/>EURR-3 domain<br/>MPI domain decomposition<br/>OpenACC/stdpar GPU execution<br/>NetCDF I/O"]
+
+    SYS --> MOD --> COMP --> IO --> LOAD --> BUILD --> DEPS --> SLURM --> WRAP --> APP
+
+    LOAD --> MOD
+    LOAD --> IO
+    COMP --> BUILD
+    IO --> BUILD
+
+    DEPS --> APP
 ```
+
+- The private scientific I/O stack avoids mixing incompatible public modules with the NVHPC and HPC-X environment.
+- The loader makes the RegCM build and runtime environment reproducible.
+- `srun --mpi=pmix` lets Slurm launch the MPI ranks through PMIx and Open MPI.
+- The wrapper maps each local MPI rank to one GPU using `SLURM_LOCALID`.
 
 #### Plain-Text Stack Outline
 
