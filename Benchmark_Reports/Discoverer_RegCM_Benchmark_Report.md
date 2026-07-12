@@ -6,119 +6,150 @@ This report documents the software environment built and validated for running t
 
 Unless otherwise noted, benchmark timings in this report refer to the production `mem:managed` executable at `bin/regcmMPICLM45`. Ongoing `mem:unified` tests use a separate executable and run tree and are reported separately from the production scaling tables.
 
-### 1.0 Stack Architecture and Dependencies
+### 1.0 RegCM on Discoverer+: Validated Software Stack
 
-The diagram below shows the complete stack from the Discoverer+ hardware through the system toolchain, private scientific I/O libraries, RegCM executable, and Slurm launch layer. Solid arrows indicate build-time or link-time dependencies. Dashed arrows indicate environment configuration, runtime selection, or process placement.
+*NVHPC 25.1 + HPC-X Open MPI + private NetCDF/HDF5/PnetCDF stack + CUDA/NVHPC GPU runtime*
+
+The central column is the validated software stack, ordered from the Discoverer+ environment at the bottom to the running RegCM application at the top. The side panels summarize the build-time and runtime paths without adding generic hardware or operating-system internals.
 
 ```mermaid
 flowchart TB
-    subgraph LAUNCH["Slurm job and process launch"]
-        JOB["Slurm batch job<br/>account and QoS: ehpc-ben-2026b06-085<br/>partition: common"]
-        SRUN["srun --mpi=pmix<br/>8 MPI ranks on one node"]
-        WRAP["Per-rank wrapper<br/>CUDA_VISIBLE_DEVICES = SLURM_LOCALID<br/>ACC_DEVICE_TYPE = nvidia<br/>ACC_DEVICE_NUM = 0"]
+    subgraph MAIN["Validated layered software stack"]
+        direction BT
+
+        SYS["1. Discoverer+ system environment<br/>partition: common | account/QoS: ehpc-ben-2026b06-085<br/>compute nodes: dgx1 / dgx2<br/>NVIDIA H200, compute capability 9.0 | RegCM target: cc90"]
+
+        MOD["2. Base module environment<br/>module purge<br/>module load nvidia/hpcsdk/nvhpc-hpcx-cuda12/25.1<br/>NVHPC 25.1 | CUDA 12.6 | HPC-X 2.21 | Open MPI 4.1.7rc1"]
+
+        COMP["3. Compilers and MPI wrappers<br/>nvc | nvc++ | nvfortran<br/>mpicc | mpicxx | mpifort<br/>MPI wrappers are from HPC-X/Open MPI, not GCC/LLVM Open MPI"]
+
+        IO["4. Private scientific I/O stack<br/>/valhalla/projects/ehpc-ben-2026b06-085/tchristian/software/<br/>regcm5-discoverer-nvhpc25.1-hpcx<br/>libaec 1.1.3 | HDF5 1.14.6 parallel + Fortran + HL<br/>PnetCDF 1.14.0 C + Fortran | NetCDF-C 4.9.3 NetCDF-4 + PnetCDF<br/>NetCDF-Fortran 4.6.2 | system zlib /usr/lib64/libz.so"]
+
+        LOAD["5. Environment loader<br/>/valhalla/projects/ehpc-ben-2026b06-085/tchristian/work/RegCM/<br/>environment_loader/regcm5_discoverer_nvhpc25_1_hpcx_cuda12.sh<br/>sets compilers, MPI wrappers, CUDA_HOME, NVHPC_CUDA_HOME,<br/>PATH, LD_LIBRARY_PATH, LIBRARY_PATH, LDFLAGS, and private I/O paths<br/>MPI shim=1 | disable UCC=1 | CUDA stubs=always | OMPI_MCA_coll=^ucc"]
+
+        BUILD["6. RegCM production build<br/>source: /valhalla/projects/ehpc-ben-2026b06-085/tchristian/work/RegCM<br/>./configure --enable-clm45 --enable-openacc-stdpar<br/>-stdpar=gpu -gpu=cc90,lineinfo,mem:managed<br/>executable: /valhalla/projects/ehpc-ben-2026b06-085/tchristian/work/RegCM/<br/>bin/regcmMPICLM45"]
+
+        DEPS["7. Runtime executable dependencies<br/>private NetCDF-Fortran, NetCDF-C, HDF5, PnetCDF, libaec<br/>system zlib | HPC-X/Open MPI | NVHPC runtime | CUDA 12.6 runtime<br/>real NVIDIA driver: /usr/lib64/libcuda.so.1"]
+
+        SLURM["8. Validated Slurm launch<br/>1 node | 8 MPI ranks | 1 rank per H200 | 2 CPUs/task | exclusive<br/>srun --mpi=pmix ./STD_launch_per_rank.sh"]
+
+        WRAP["9. Per-rank wrapper and binding<br/>CUDA_VISIBLE_DEVICES=SLURM_LOCALID | ACC_DEVICE_TYPE=nvidia<br/>ACC_DEVICE_NUM=0 | OMP_NUM_THREADS=SLURM_CPUS_PER_TASK<br/>OMP_PROC_BIND=true | OMP_PLACES=cores<br/>rank 0 -> GPU 0 | rank 1 -> GPU 1 | ... | rank 7 -> GPU 7"]
+
+        APP["10. RegCM application/runtime<br/>RegCM + CLM4.5 | EURR-3 domain | MPI decomposition<br/>OpenACC/stdpar GPU execution | NetCDF I/O<br/>validated 8-GPU, one-day production run completed successfully"]
+
+        SYS --> MOD --> COMP --> IO --> LOAD --> BUILD --> DEPS --> SLURM --> WRAP --> APP
     end
 
-    subgraph APPLICATION["RegCM application"]
-        SRC["RegCM source and configure<br/>--enable-clm45<br/>--enable-openacc-stdpar<br/>GPU target: cc90"]
-        EXE["regcmMPICLM45<br/>MPI + CLM 4.5 + OpenACC/stdpar<br/>production: mem:managed"]
+    subgraph BUILDPANEL["Panel A: Build-time dependency path"]
+        direction LR
+        B1["environment loader"] -.-> B2["NVHPC + HPC-X module"]
+        B2 -.-> B3["private I/O stack"]
+        B3 -.-> B4["configure"]
+        B4 -.-> B5["compile/link"]
+        B5 -.-> B6["regcmMPICLM45"]
     end
 
-    subgraph INTEGRATION["Environment integration"]
-        LOADER["Discoverer environment loader<br/>module cleanup, toolchain selection,<br/>and build/runtime search paths"]
-        SHIM["Optional Open MPI shim<br/>clean HPC-X 2.21 Open MPI prefix"]
-        UCC["Collective policy<br/>OMPI_MCA_coll = ^ucc by default"]
-        STUBS["CUDA stub libraries<br/>LIBRARY_PATH and LDFLAGS only<br/>excluded from LD_LIBRARY_PATH"]
+    subgraph RUNPANEL["Panel B: Runtime launch path"]
+        direction LR
+        R1["sbatch"] --> R2["Slurm allocation"]
+        R2 --> R3["srun --mpi=pmix"]
+        R3 --> R4["PMIx/Open MPI startup"]
+        R4 --> R5["STD_launch_per_rank.sh"]
+        R5 --> R6["CUDA_VISIBLE_DEVICES=SLURM_LOCALID"]
+        R6 --> R7["regcmMPICLM45 rank"]
+        R7 --> R8["assigned H200 GPU"]
+        R7 --> R9["NetCDF/HDF5 I/O"]
     end
 
-    subgraph PRIVATEIO["Private scientific I/O prefix"]
-        NFF["NetCDF-Fortran 4.6.2<br/>built with mpifort"]
-        NFC["NetCDF-C 4.9.3<br/>NetCDF-4 + PnetCDF enabled"]
-        HDF5["HDF5 1.14.6<br/>parallel + Fortran + high-level API"]
-        PNC["Parallel-NetCDF 1.14.0<br/>C and Fortran interfaces"]
-        AEC["libaec 1.1.3<br/>SZIP-compatible compression"]
-        ZLIB["System zlib<br/>/usr/lib64/libz.so<br/>versioned ZLIB symbols"]
+    subgraph NOTES["Validated integration details"]
+        N1["Public Discoverer+ HDF5/NetCDF modules avoided:<br/>they pull a different compiler/MPI stack.<br/>Private libraries use the same NVHPC + HPC-X wrappers as RegCM."]
+        N2["CUDA stubs are used only for configure/link checks.<br/>At runtime, LD_LIBRARY_PATH resolves the real compute-node libcuda."]
+        N3["Production timings: mem:managed executable.<br/>Experimental mem:unified executable:<br/>/valhalla/projects/ehpc-ben-2026b06-085/tchristian/work/RegCM/<br/>bin/mem_unified/regcmMPICLM45<br/>-stdpar=gpu -gpu=cc90,lineinfo,mem:unified<br/>run tree: Benchmark/production_runs/Discoverer_mem_unified_tests"]
     end
 
-    subgraph TOOLCHAIN["Discoverer+ NVIDIA programming environment"]
-        MODULE["Module<br/>nvidia/hpcsdk/nvhpc-hpcx-cuda12/25.1"]
-        NVHPC["NVIDIA HPC SDK 25.1<br/>nvc, nvc++, nvfortran"]
-        CUDA["CUDA Toolkit 12.6<br/>CUDA and NVHPC GPU runtimes"]
-        HPCX["HPC-X 2.21<br/>Open MPI 4.1.7rc1<br/>mpicc, mpicxx, mpifort"]
-        PMIX["PMIx integration<br/>Slurm/Open MPI process startup"]
-    end
+    LOAD -. "build environment" .-> B1
+    B6 -. "produces" .-> BUILD
+    SLURM --> R1
+    R9 --> APP
 
-    subgraph PLATFORM["Discoverer+ compute node"]
-        OS["Operating environment<br/>system libraries"]
-        DRIVER["Real NVIDIA driver<br/>/usr/lib64/libcuda.so.1"]
-        GPU["NVIDIA H200 GPUs<br/>compute capability 9.0"]
-        CPU["Host CPUs and memory<br/>2 CPU cores per MPI rank"]
-    end
+    DEPS == "dynamic libraries / APIs" ==> IO
+    DEPS == "MPI, NVHPC, CUDA APIs" ==> MOD
+    LOAD == "exports environment" ==> COMP
+    LOAD == "private include/library paths" ==> IO
+    WRAP == "rank/GPU and CPU binding" ==> SYS
 
-    JOB --> SRUN
-    SRUN --> WRAP
-    WRAP --> EXE
+    classDef system fill:#e5e7eb,stroke:#4b5563,color:#111827,stroke-width:1.5px;
+    classDef module fill:#bfdbfe,stroke:#2563eb,color:#102a43,stroke-width:1.5px;
+    classDef compiler fill:#99f6e4,stroke:#0f766e,color:#112f2c,stroke-width:1.5px;
+    classDef library fill:#bbf7d0,stroke:#15803d,color:#13351f,stroke-width:1.5px;
+    classDef loader fill:#fed7aa,stroke:#c2410c,color:#431407,stroke-width:1.5px;
+    classDef regcm fill:#fef08a,stroke:#a16207,color:#422006,stroke-width:1.5px;
+    classDef runtime fill:#fbcfe8,stroke:#be185d,color:#500724,stroke-width:1.5px;
+    classDef application fill:#ddd6fe,stroke:#7c3aed,color:#2e1065,stroke-width:2px;
+    classDef note fill:#fff,stroke:#64748b,color:#1e293b,stroke-dasharray:4 3;
 
-    SRC --> EXE
-    LOADER -. "configures build" .-> SRC
-    LOADER -. "configures job environment" .-> JOB
-    LOADER -.-> SHIM
-    LOADER -.-> UCC
-    LOADER -.-> STUBS
+    class SYS system;
+    class MOD module;
+    class COMP compiler;
+    class IO,R9 library;
+    class LOAD loader;
+    class BUILD,DEPS,B6 regcm;
+    class SLURM,WRAP,R1,R2,R3,R4,R5,R6,R7,R8 runtime;
+    class APP application;
+    class N1,N2,N3 note;
 
-    EXE --> NFF
-    EXE --> NFC
-    EXE --> HPCX
-    EXE --> NVHPC
-    EXE --> CUDA
-
-    NFF --> NFC
-    NFC --> HDF5
-    NFC --> PNC
-    HDF5 --> AEC
-    HDF5 --> ZLIB
-    PNC --> ZLIB
-
-    MODULE --> NVHPC
-    MODULE --> CUDA
-    MODULE --> HPCX
-    HPCX --> NVHPC
-    HPCX --> PMIX
-    SHIM -. "selects MPI runtime prefix" .-> HPCX
-    UCC -. "controls collective component" .-> HPCX
-    STUBS -. "satisfies configure/link checks" .-> CUDA
-
-    SRUN -. "starts ranks through PMIx" .-> PMIX
-    WRAP -. "maps one rank to one GPU" .-> GPU
-    WRAP -. "binds host execution" .-> CPU
-    CUDA -. "loads real driver at runtime" .-> DRIVER
-    DRIVER --> GPU
-    OS --> DRIVER
-    OS --> ZLIB
-
-    classDef launch fill:#f4aaaa,stroke:#7a2828,color:#111,stroke-width:1.5px;
-    classDef app fill:#f6c453,stroke:#715200,color:#111,stroke-width:2px;
-    classDef integration fill:#8fbcf4,stroke:#194e86,color:#111,stroke-width:1.5px;
-    classDef io fill:#9bd5a5,stroke:#286238,color:#111,stroke-width:1.5px;
-    classDef tools fill:#bba7e5,stroke:#523882,color:#111,stroke-width:1.5px;
-    classDef platform fill:#d8dde5,stroke:#4b5563,color:#111,stroke-width:1.5px;
-
-    class JOB,SRUN,WRAP launch;
-    class SRC,EXE app;
-    class LOADER,SHIM,UCC,STUBS integration;
-    class NFF,NFC,HDF5,PNC,AEC,ZLIB io;
-    class MODULE,NVHPC,CUDA,HPCX,PMIX tools;
-    class OS,DRIVER,GPU,CPU platform;
+    linkStyle 9,10,11,12,13,23,24 stroke:#2563eb,stroke-width:2px,stroke-dasharray:6 4;
+    linkStyle 14,15,16,17,18,19,20,21,22,25,26 stroke:#111827,stroke-width:2px;
+    linkStyle 27,28 stroke:#7c3aed,stroke-width:2.5px;
+    linkStyle 29,30,31 stroke:#16a34a,stroke-width:2.5px;
 ```
 
-The principal scientific I/O dependency chain is:
+**Legend**
 
-```text
-RegCM -> NetCDF-Fortran -> NetCDF-C -> HDF5 -> libaec
-                                   |         -> system zlib
-                                   -> Parallel-NetCDF -> system zlib
+| Color | Software category |
+|---|---|
+| Gray | Discoverer+ system environment |
+| Blue | NVIDIA module and base toolchain |
+| Teal | Compilers and MPI wrappers |
+| Green | Private scientific I/O libraries |
+| Orange | Environment loader |
+| Yellow | RegCM build and executable dependencies |
+| Pink | Slurm launch and rank binding |
+| Purple | Running RegCM application |
+
+| Arrow | Meaning |
+|---|---|
+| Dashed blue | Build-time dependency or build product |
+| Solid black | Runtime launch and execution flow |
+| Purple | Dynamic-library or software API dependency |
+| Green | Environment variables, search paths, or resource binding |
+
+The stack is intentionally compiler- and MPI-consistent. HDF5, PnetCDF, NetCDF-C, and NetCDF-Fortran were built with the same NVHPC and HPC-X wrappers used for RegCM. The loader makes CUDA stubs available for configure and linking without placing them in the runtime driver path, so the production executable loads `/usr/lib64/libcuda.so.1` on the compute node.
+
+The `mem:unified` path is shown only as a separate experimental build. It is not mixed with the production `mem:managed` executable or production timing tables.
+
+#### Runtime Launch Sequence
+
+```mermaid
+sequenceDiagram
+    participant U as sbatch
+    participant S as Slurm allocation
+    participant P as srun + PMIx/Open MPI
+    participant W as Per-rank wrapper
+    participant R as regcmMPICLM45 rank
+    participant G as Assigned H200 GPU
+    participant I as Private NetCDF/HDF5 stack
+
+    U->>S: Request 1 exclusive node, 8 GPUs, 8 ranks
+    S->>P: Start srun --mpi=pmix
+    P->>W: Launch one wrapper per MPI rank
+    W->>W: Set CUDA_VISIBLE_DEVICES=SLURM_LOCALID
+    W->>W: Set OpenACC and OpenMP environment
+    W->>R: exec regcmMPICLM45 EURR-3_namelist.in
+    R->>G: OpenACC/stdpar work on rank-local GPU
+    R->>I: Read inputs and write NetCDF output
+    I-->>R: HDF5/PnetCDF-backed I/O completion
 ```
-
-All MPI-aware components in this chain were built with wrappers from the same HPC-X installation used to build and run RegCM. This avoids mixing MPI ABIs, compiler families, and Fortran runtimes. CUDA stub libraries are available only for configure and link checks; at runtime, the executable resolves the real NVIDIA driver before running kernels on the H200 GPUs.
 
 ### 1.1 Platform
 
