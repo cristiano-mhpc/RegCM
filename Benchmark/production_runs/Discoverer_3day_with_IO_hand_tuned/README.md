@@ -49,6 +49,82 @@ export REGCM_ENABLE_UCX_TUNING=1
 export REGCM_ENABLE_ACC_POOL=1
 ```
 
+## Staged Benchmarking Plan
+
+The goal is to identify which topology-aware controls help without running an unnecessarily large toggle matrix. The baseline production results in `../Discoverer_3day_with_IO` remain the reference for comparison.
+
+### Stage 1: Hand-Tuned Baseline
+
+Use the topology-aware wrapper with CPU/NUMA/GPU binding enabled and all extra tuning disabled:
+
+```bash
+export REGCM_ENABLE_CPU_BINDING=1
+export REGCM_ENABLE_NIC_PINNING=auto
+export REGCM_ENABLE_UCX_TUNING=0
+export REGCM_ENABLE_ACC_POOL=0
+```
+
+Planned matrix:
+
+- `2gpu_2proc`
+- `4gpu_4proc`
+- `8gpu_8proc`
+- `12gpu_12proc`
+- `14gpu_14proc`
+
+Initial execution choice: start with only `8gpu_8proc` to validate the wrapper on a full single-node DGX before spending allocation on the full matrix.
+
+Current Stage 1 submission:
+
+| Run | Job | Status at submission |
+|---|---:|---|
+| `8gpu_8proc` | `179592` | `PENDING (Priority)` |
+
+### Stage 2: Single-Toggle Tests
+
+After Stage 1 validates the wrapper, test one tuning feature at a time on representative configurations.
+
+Recommended first targets:
+
+- `8gpu_8proc`: checks whether tuning hurts a full single-node run.
+- `12gpu_12proc`: checks multi-node behavior with 6 ranks per node.
+- `14gpu_14proc`: checks multi-node behavior with 7 ranks per node.
+
+Variants:
+
+| Variant | CPU binding | NIC pinning | UCX tuning | ACC pool |
+|---|---:|---:|---:|---:|
+| `HT-base` | 1 | auto | 0 | 0 |
+| `HT-no-nic` | 1 | 0 | 0 | 0 |
+| `HT-ucx` | 1 | auto | 1 | 0 |
+| `HT-pool` | 1 | auto | 0 | 1 |
+
+`HT-no-nic` is important because manual `UCX_NET_DEVICES` pinning can hurt if Open MPI/UCX would otherwise select better rails automatically.
+
+### Stage 3: Combination Tests
+
+Only run combinations if Stage 2 shows a benefit or neutral behavior. Start with `12gpu_12proc` and `14gpu_14proc` before expanding to other GPU counts.
+
+Candidate variants:
+
+| Variant | CPU binding | NIC pinning | UCX tuning | ACC pool |
+|---|---:|---:|---:|---:|
+| `HT-ucx-pool` | 1 | auto | 1 | 1 |
+| `HT-forced-nic-ucx` | 1 | 1 | 1 | 0 |
+| `HT-all` | 1 | 1 | 1 | 1 |
+
+### Stage 4: Final Selected Matrix
+
+After selecting the best stable configuration, run the final matrix:
+
+- `2gpu_2proc`
+- `4gpu_4proc`
+- `8gpu_8proc`
+- `12gpu_12proc`
+- `14gpu_14proc`
+
+For timing claims, repeat final candidate runs at least twice for `8gpu_8proc`, `12gpu_12proc`, and `14gpu_14proc`, because the 12- and 14-GPU timings are close enough that single-run noise can be misleading.
+
 ## Submission
 
 Submit from the desired run directory:
