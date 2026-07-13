@@ -26,14 +26,16 @@ Each MPI rank controls one GPU. The wrapper maps local ranks to GPU, CPU cores, 
 
 | Local rank | GPU | CPU set | NUMA | HCA |
 |---:|---:|---|---:|---|
-| 0 | 0 | `0-1` | 0 | `mlx5_0:1` |
-| 1 | 1 | `2-3` | 0 | `mlx5_3:1` |
-| 2 | 2 | `4-5` | 0 | `mlx5_4:1` |
-| 3 | 3 | `6-7` | 0 | `mlx5_5:1` |
-| 4 | 4 | `56-57` | 1 | `mlx5_6:1` |
-| 5 | 5 | `58-59` | 1 | `mlx5_9:1` |
-| 6 | 6 | `60-61` | 1 | `mlx5_10:1` |
-| 7 | 7 | `62-63` | 1 | `mlx5_11:1` |
+| 0 | 0 | `+0-1` | 0 | `mlx5_0:1` |
+| 1 | 1 | `+2-3` | 0 | `mlx5_3:1` |
+| 2 | 2 | `+4-5` | 0 | `mlx5_4:1` |
+| 3 | 3 | `+6-7` | 0 | `mlx5_5:1` |
+| 4 | 4 | `+8-9` | 1 | `mlx5_6:1` |
+| 5 | 5 | `+10-11` | 1 | `mlx5_9:1` |
+| 6 | 6 | `+12-13` | 1 | `mlx5_10:1` |
+| 7 | 7 | `+14-15` | 1 | `mlx5_11:1` |
+
+The CPU sets use numactl's cpuset-relative `+` syntax. This is required because Slurm constrains jobs with cgroups, so physical CPU IDs from node introspection may not be visible inside the job cpuset even for exclusive allocations.
 
 NIC pinning defaults to `auto`, which enables `UCX_NET_DEVICES` only for multi-node jobs. To force or disable it:
 

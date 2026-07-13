@@ -14,14 +14,14 @@ fi
 # GPU0-3 are NUMA 0, GPU4-7 are NUMA 1. The listed HCAs are the closest
 # active 400 Gb/s InfiniBand devices for their corresponding GPUs.
 case "$LOCAL_RANK" in
-  0) GPU=0; CPUSET="0-1";   NUMA_NODE=0; UCX_NET_DEVICES_LOCAL="mlx5_0:1"  ;;
-  1) GPU=1; CPUSET="2-3";   NUMA_NODE=0; UCX_NET_DEVICES_LOCAL="mlx5_3:1"  ;;
-  2) GPU=2; CPUSET="4-5";   NUMA_NODE=0; UCX_NET_DEVICES_LOCAL="mlx5_4:1"  ;;
-  3) GPU=3; CPUSET="6-7";   NUMA_NODE=0; UCX_NET_DEVICES_LOCAL="mlx5_5:1"  ;;
-  4) GPU=4; CPUSET="56-57"; NUMA_NODE=1; UCX_NET_DEVICES_LOCAL="mlx5_6:1"  ;;
-  5) GPU=5; CPUSET="58-59"; NUMA_NODE=1; UCX_NET_DEVICES_LOCAL="mlx5_9:1"  ;;
-  6) GPU=6; CPUSET="60-61"; NUMA_NODE=1; UCX_NET_DEVICES_LOCAL="mlx5_10:1" ;;
-  7) GPU=7; CPUSET="62-63"; NUMA_NODE=1; UCX_NET_DEVICES_LOCAL="mlx5_11:1" ;;
+  0) GPU=0; CPUSET="+0-1";   NUMA_NODE=0; UCX_NET_DEVICES_LOCAL="mlx5_0:1"  ;;
+  1) GPU=1; CPUSET="+2-3";   NUMA_NODE=0; UCX_NET_DEVICES_LOCAL="mlx5_3:1"  ;;
+  2) GPU=2; CPUSET="+4-5";   NUMA_NODE=0; UCX_NET_DEVICES_LOCAL="mlx5_4:1"  ;;
+  3) GPU=3; CPUSET="+6-7";   NUMA_NODE=0; UCX_NET_DEVICES_LOCAL="mlx5_5:1"  ;;
+  4) GPU=4; CPUSET="+8-9";   NUMA_NODE=1; UCX_NET_DEVICES_LOCAL="mlx5_6:1"  ;;
+  5) GPU=5; CPUSET="+10-11"; NUMA_NODE=1; UCX_NET_DEVICES_LOCAL="mlx5_9:1"  ;;
+  6) GPU=6; CPUSET="+12-13"; NUMA_NODE=1; UCX_NET_DEVICES_LOCAL="mlx5_10:1" ;;
+  7) GPU=7; CPUSET="+14-15"; NUMA_NODE=1; UCX_NET_DEVICES_LOCAL="mlx5_11:1" ;;
   *)
     echo "[DiscovererTopo] ERROR: local rank $LOCAL_RANK is invalid for one rank per GPU on DGX H200." >&2
     exit 2
