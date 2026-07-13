@@ -88,7 +88,9 @@ This is stronger evidence for pageable host-memory/HMM-style support than the Op
 
 ## Pending Runs
 
-`179586` was submitted for `dgx2` with a 7 normal-GPU request, because an 8 normal-GPU request on `dgx2` was rejected by Slurm. Its output will appear in `introspection/` when the job starts.
+`179586` attempted the `dgx2` 7 normal-GPU probe but failed before introspection because the script derived its base directory from Slurm's spool copy of the batch script. The scripts were patched to use the explicit project introspection root.
+
+`179836` is the resubmitted `dgx2` 7 normal-GPU probe. Its output will appear in `introspection/` when the job starts.
 
 ## Notes
 

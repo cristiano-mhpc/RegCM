@@ -16,8 +16,8 @@
 
 set -euo pipefail
 
-SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
-BASE_DIR="$(cd "$SCRIPT_DIR/.." && pwd)"
+BASE_DIR=/valhalla/projects/ehpc-ben-2026b06-085/tchristian/work/RegCM/Discoverer_node_introspection
+SCRIPT_DIR="$BASE_DIR/scripts"
 cd "$BASE_DIR"
 mkdir -p introspection
 
