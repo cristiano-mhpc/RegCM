@@ -514,31 +514,31 @@ dgx1: gpu:8
 dgx2: gpu:7,gpu_biz:1
 ```
 
-The separate `gpu_biz` GRES type is not documented in the local offline Discoverer+ documentation reviewed during this benchmark work. Its intended use should be confirmed with system support before attempting to consume it.
+The separate `gpu_biz` GRES type is not documented in the local offline Discoverer+ documentation reviewed during this benchmark work. Its intended use should be confirmed with system support before attempting to consume it. A later node-specific introspection job confirmed that an explicit `dgx2` request with `--gres=gpu:7` starts successfully and exposes `CUDA_VISIBLE_DEVICES=0,1,2,3,4,5,6`, while `nvidia-smi` still reports the full 8 H200 devices on the node.
 
 ### 4.4 Discoverer+ Node Introspection and mem:unified Probe
 
-A Discoverer+ node introspection job was run on `dgx1` to capture the compute-node topology and to probe the practical `mem:unified` runtime path:
+Discoverer+ node introspection jobs were run on `dgx1` and `dgx2` to capture compute-node topology and to probe the practical `mem:unified` runtime path:
 
 The archived introspection artifacts are stored under:
 
 ```text
 Discoverer_node_introspection/runs/179466_dgx1_8gpu_initial_openacc_probe
 Discoverer_node_introspection/runs/179509_dgx1_8gpu_strict_cuda_hmm_probe
+Discoverer_node_introspection/runs/179836_dgx2_7gpu_strict_cuda_hmm_probe
 ```
 
 | Item | Result |
 |---|---|
-| Job | `179466` |
-| Node | `dgx1` |
-| State | Completed, exit code `0:0` |
-| Elapsed | `00:01:16` |
+| Initial OpenACC probe job | `179466` on `dgx1`, completed `0:0` in `00:01:16` |
+| Strict `dgx1` probe job | `179509`, completed `0:0` in `00:01:29` |
+| Strict `dgx2` probe job | `179836`, completed `0:0` in `00:01:32` |
 | GPUs | 8 x NVIDIA H200, compute capability 9.0 |
 | Driver | NVIDIA `565.57.01` |
 | Kernel | `5.14.0-427.42.1.el9_4.x86_64` |
 | NVIDIA kernel module | Open kernel module, `565.57.01` |
 
-The upstream-version heuristic for full Linux HMM support failed because the node runs a vendor `5.14` kernel rather than an upstream `6.1.24+`, `6.2.11+`, or `6.3+` kernel. However, the actual kernel and driver artifacts showed HMM-related support:
+The upstream-version heuristic for full Linux HMM support failed because the tested nodes run a vendor `5.14` kernel rather than an upstream `6.1.24+`, `6.2.11+`, or `6.3+` kernel. However, the actual kernel and driver artifacts showed HMM-related support:
 
 ```text
 CONFIG_MMU_NOTIFIER=y
@@ -557,7 +557,7 @@ MEM_UNIFIED_RUNTIME_PROBE=PASS
 
 That initial OpenACC probe is useful evidence that the `mem:unified` compile/runtime path works on the allocated node, but the compiler reported an implicit copy for the test array. Therefore, it does not by itself prove pure pageable host-memory demand paging through HMM.
 
-The stricter CUDA-level pageable host-memory probe was then run on `dgx1` in job `179509`. It completed successfully and reported:
+The stricter CUDA-level pageable host-memory probe was then run on `dgx1` in job `179509` and on `dgx2` in job `179836`. Both completed successfully and reported:
 
 ```text
 cudaDevAttrPageableMemoryAccess=1
@@ -567,18 +567,18 @@ cudaPointerGetAttributes_status=no error
 CUDA_HMM_PAGEABLE_PROBE=PASS
 ```
 
-This is stronger evidence that `dgx1` supports pageable host-memory access/HMM-style behavior than the OpenACC probe alone.
+This is stronger evidence that both visible Discoverer+ GPU nodes support pageable host-memory access/HMM-style behavior than the OpenACC probe alone.
 
-The `dgx1` topology showed 8 H200 GPUs connected pairwise by `NV18`, with GPUs `0-3` associated with NUMA node 0 and GPUs `4-7` associated with NUMA node 1. The node exposed 12 mlx5 NICs in `nvidia-smi topo -m`.
+The `dgx1` topology showed 8 H200 GPUs connected pairwise by `NV18`, with GPUs `0-3` associated with NUMA node 0 and GPUs `4-7` associated with NUMA node 1. The node exposed 12 mlx5 NICs in `nvidia-smi topo -m`. The `dgx2` strict probe used a 7 normal-GPU Slurm allocation and reported `SLURM_GPUS_ON_NODE=7` and `CUDA_VISIBLE_DEVICES=0,1,2,3,4,5,6`.
 
-Follow-up introspection jobs with the stricter CUDA pageable-memory probe were submitted or completed:
+The stricter CUDA pageable-memory probe jobs completed as follows:
 
-| Job | Target | Request | State at report update |
+| Job | Target | Request | Result |
 |---:|---|---|---|
 | `179509` | `dgx1` | 8 normal GPUs | Completed; strict CUDA pageable-memory probe passed |
-| `179836` | `dgx2` | 7 normal GPUs | Pending after resubmission; prior job `179586` failed before introspection due to a script path issue |
+| `179836` | `dgx2` | 7 normal GPUs | Completed; strict CUDA pageable-memory probe passed |
 
-The `dgx2` follow-up uses 7 normal GPUs because Slurm rejected an 8 normal-GPU request on `dgx2`, consistent with the observed `gpu:7,gpu_biz:1` resource shape.
+The `dgx2` follow-up used 7 normal GPUs because Slurm rejected an 8 normal-GPU request on `dgx2`, consistent with the observed `gpu:7,gpu_biz:1` resource shape. The `dgx2` strict probe reported the same positive runtime indicators as `dgx1`: `cudaDevAttrPageableMemoryAccess=1`, `cudaDevAttrConcurrentManagedAccess=1`, `cudaDevAttrManagedMemory=1`, and `CUDA_HMM_PAGEABLE_PROBE=PASS`.
 
 ### 4.5 Output Data Management
 
