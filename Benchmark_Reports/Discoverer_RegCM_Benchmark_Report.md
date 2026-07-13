@@ -576,7 +576,7 @@ Follow-up introspection jobs with the stricter CUDA pageable-memory probe were s
 | Job | Target | Request | State at report update |
 |---:|---|---|---|
 | `179509` | `dgx1` | 8 normal GPUs | Completed; strict CUDA pageable-memory probe passed |
-| `179586` | `dgx2` | 7 normal GPUs | Pending |
+| `179836` | `dgx2` | 7 normal GPUs | Pending after resubmission; prior job `179586` failed before introspection due to a script path issue |
 
 The `dgx2` follow-up uses 7 normal GPUs because Slurm rejected an 8 normal-GPU request on `dgx2`, consistent with the observed `gpu:7,gpu_biz:1` resource shape.
 
