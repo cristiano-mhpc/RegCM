@@ -584,9 +584,9 @@ dgx2: gpu:7,gpu_biz:1
 
 The separate `gpu_biz` GRES type is not documented in the local offline Discoverer+ documentation reviewed during this benchmark work. Its intended use should be confirmed with system support before attempting to consume it. A later node-specific introspection job confirmed that an explicit `dgx2` request with `--gres=gpu:7` starts successfully and exposes `CUDA_VISIBLE_DEVICES=0,1,2,3,4,5,6`, while `nvidia-smi` still reports the full 8 H200 devices on the node.
 
-### 4.4 Discoverer+ Node Introspection and mem:unified Probe
+### 4.4 Discoverer+ Node Introspection
 
-Discoverer+ node introspection jobs were run on `dgx1` and `dgx2` to capture compute-node topology and to probe the practical `mem:unified` runtime path:
+Discoverer+ node introspection jobs were run on `dgx1` and `dgx2` to capture compute-node topology, network layout, and the practical `mem:unified` runtime path:
 
 The archived introspection artifacts are stored under:
 
@@ -596,9 +596,59 @@ Discoverer_node_introspection/runs/179509_dgx1_8gpu_strict_cuda_hmm_probe
 Discoverer_node_introspection/runs/179836_dgx2_7gpu_strict_cuda_hmm_probe
 ```
 
+#### 4.4.1 Compute and Network Hardware
+
 <a id="table-20"></a>
 
-**Table 20. Discoverer+ node introspection and pageable-memory probe summary.**
+**Table 20. Compute and GPU hardware observed in node introspection.**
+
+| Item | `dgx1` introspection | `dgx2` introspection |
+|---|---|---|
+| Reference job | `179466`, completed `0:0` in `00:01:16` | `179836`, completed `0:0` in `00:01:32` |
+| Slurm GPU allocation | `SLURM_GPUS_ON_NODE=8`, `CUDA_VISIBLE_DEVICES=0,1,2,3,4,5,6,7` | `SLURM_GPUS_ON_NODE=7`, `CUDA_VISIBLE_DEVICES=0,1,2,3,4,5,6` |
+| Physical GPUs reported by `nvidia-smi` | 8 x NVIDIA H200 | 8 x NVIDIA H200 |
+| GPU framebuffer memory | 143771 MiB per GPU | 143771 MiB per GPU |
+| NVIDIA driver / CUDA runtime reported by `nvidia-smi` | `565.57.01` / CUDA `12.7` | `565.57.01` / CUDA `12.7` |
+| Host CPU | 2 x Intel Xeon Platinum 8480C | 2 x Intel Xeon Platinum 8480C |
+| CPU cores and hardware threads | 112 cores, 224 hardware threads | 112 cores, 224 hardware threads |
+| NUMA memory | 2 NUMA nodes, about 1.03 TB per NUMA node | 2 NUMA nodes, about 1.03 TB per NUMA node |
+| NUMA CPU layout | node 0: CPUs `0-55,112-167`; node 1: CPUs `56-111,168-223` | node 0: CPUs `0-55,112-167`; node 1: CPUs `56-111,168-223` |
+| GPU/NUMA placement | GPUs `0-3` on NUMA 0, GPUs `4-7` on NUMA 1 | GPUs `0-3` on NUMA 0, GPUs `4-7` on NUMA 1 |
+| Intra-node GPU fabric | all GPU pairs connected as `NV18` | all GPU pairs connected as `NV18` |
+| Allocation-specific note | Full normal 8-GPU allocation available on `dgx1` | Slurm normal-GRES allocation exposed 7 GPUs, while `nvidia-smi` still reported all 8 physical H200 devices |
+
+The CPU and NUMA topology was the same on `dgx1` and `dgx2`: two sockets, 56 cores per socket, SMT enabled, two NUMA domains, and approximately 2 TB total host memory. The GPU topology also matched at the physical-node level: all eight H200 GPUs were connected to one another through `NV18`, with GPUs `0-3` local to NUMA node 0 and GPUs `4-7` local to NUMA node 1. The `dgx2` run was intentionally a 7 normal-GPU Slurm allocation because an 8 normal-GPU request on `dgx2` is not currently satisfiable under the visible GRES shape.
+
+The `nvidia-smi topo -m` NIC legend was also consistent across `dgx1` and `dgx2`, exposing 12 `mlx5` devices. Nine devices were reported Up by `ibdev2netdev`; eight of those were the closest GPU-adjacent HCAs used by the topology-aware launcher, while `mlx5_1` was also Up but not the nearest listed HCA for a GPU in the launcher mapping.
+
+<a id="table-21"></a>
+
+**Table 21. Network devices observed by `ibdev2netdev` on both `dgx1` and `dgx2`.**
+
+| mlx5 device | Net device | State | Topology role observed in `nvidia-smi topo -m` |
+|---|---|---|---|
+| `mlx5_0` | `ibp24s0` | Up | Closest listed HCA for GPU 0 (`PXB`) |
+| `mlx5_1` | `ibs2f0` | Up | NUMA-0 HCA, paired with `mlx5_2` by `PIX` |
+| `mlx5_2` | `ens2f1np1` | Down | NUMA-0 device, paired with `mlx5_1` by `PIX` |
+| `mlx5_3` | `ibp64s0` | Up | Closest listed HCA for GPU 1 (`PXB`) |
+| `mlx5_4` | `ibp79s0` | Up | Closest listed HCA for GPU 2 (`PXB`) |
+| `mlx5_5` | `ibp94s0` | Up | Closest listed HCA for GPU 3 (`PXB`) |
+| `mlx5_6` | `ibp154s0` | Up | Closest listed HCA for GPU 4 (`PXB`) |
+| `mlx5_7` | `ibs8f0` | Down | NUMA-1 HCA, paired with `mlx5_8` by `PIX` |
+| `mlx5_8` | `ens8f1np1` | Down | NUMA-1 device, paired with `mlx5_7` by `PIX` |
+| `mlx5_9` | `ibp192s0` | Up | Closest listed HCA for GPU 5 (`PXB`) |
+| `mlx5_10` | `ibp206s0` | Up | Closest listed HCA for GPU 6 (`PXB`) |
+| `mlx5_11` | `ibp220s0` | Up | Closest listed HCA for GPU 7 (`PXB`) |
+
+This mapping supports the topology-aware hand-tuned launcher: on a full 8-GPU node, the closest active HCAs are `mlx5_0`, `mlx5_3`, `mlx5_4`, `mlx5_5`, `mlx5_6`, `mlx5_9`, `mlx5_10`, and `mlx5_11` for GPUs `0-7`, respectively. Explicit NIC pinning is still treated as an experimental tuning control because Open MPI/UCX may choose better rails automatically for a given job shape.
+
+#### 4.4.2 `mem:unified` Runtime Probe
+
+The memory-mode probe results are reported separately from hardware topology because they validate the compiler/runtime memory path rather than the node interconnect layout.
+
+<a id="table-22"></a>
+
+**Table 22. Discoverer+ pageable-memory and `mem:unified` probe summary.**
 
 | Item | Result |
 |---|---|
@@ -641,13 +691,11 @@ CUDA_HMM_PAGEABLE_PROBE=PASS
 
 This is stronger evidence that both visible Discoverer+ GPU nodes support pageable host-memory access/HMM-style behavior than the OpenACC probe alone.
 
-The `dgx1` topology showed 8 H200 GPUs connected pairwise by `NV18`, with GPUs `0-3` associated with NUMA node 0 and GPUs `4-7` associated with NUMA node 1. The node exposed 12 mlx5 NICs in `nvidia-smi topo -m`. The `dgx2` strict probe used a 7 normal-GPU Slurm allocation and reported `SLURM_GPUS_ON_NODE=7` and `CUDA_VISIBLE_DEVICES=0,1,2,3,4,5,6`.
-
 The stricter CUDA pageable-memory probe jobs completed as follows:
 
-<a id="table-21"></a>
+<a id="table-23"></a>
 
-**Table 21. Discoverer+ pageable-memory probe job outcomes.**
+**Table 23. Discoverer+ pageable-memory probe job outcomes.**
 
 | Job | Target | Request | Result |
 |---:|---|---|---|
@@ -660,9 +708,9 @@ The `dgx2` follow-up used 7 normal GPUs because Slurm rejected an 8 normal-GPU r
 
 The benchmark output volume is large:
 
-<a id="table-22"></a>
+<a id="table-24"></a>
 
-**Table 22. Typical generated NetCDF output volume by run length.**
+**Table 24. Typical generated NetCDF output volume by run length.**
 
 | Run length | Typical complete output size |
 |---|---:|
