@@ -26,6 +26,10 @@ Public Discoverer+ HDF5 and NetCDF modules were avoided because they pull a diff
 
 ### 1.1 Platform
 
+<a id="table-1"></a>
+
+**Table 1. Discoverer+ benchmark platform configuration.**
+
 | Item | Configuration |
 |---|---|
 | System | Discoverer+ |
@@ -49,6 +53,10 @@ module load nvidia/hpcsdk/nvhpc-hpcx-cuda12/25.1
 ```
 
 The module provides the following toolchain:
+
+<a id="table-2"></a>
+
+**Table 2. Compiler, CUDA, and MPI toolchain versions.**
 
 | Component | Version or selection |
 |---|---|
@@ -81,6 +89,10 @@ Installation prefix:
 ```text
 /valhalla/projects/ehpc-ben-2026b06-085/tchristian/software/regcm5-discoverer-nvhpc25.1-hpcx
 ```
+
+<a id="table-3"></a>
+
+**Table 3. Private scientific I/O stack used by RegCM.**
 
 | Library | Version | Important build properties |
 |---|---:|---|
@@ -214,6 +226,10 @@ export OMP_PLACES=cores
 
 The stack was validated with the EURR-3 domain (`1003 x 1003 x 50`) for a one-day simulation with hourly I/O on eight H200 GPUs. Reference job `178785` completed successfully on `dgx1`:
 
+<a id="table-4"></a>
+
+**Table 4. Stack validation summary for one-day 8-GPU execution.**
+
 | Metric | Result |
 |---|---:|
 | RegCM total elapsed time | 534.01 seconds |
@@ -235,6 +251,10 @@ Runtime dependency inspection confirmed that the executable loaded:
 
 Discoverer+ exposes two DGX H200 GPU nodes in the `common` Slurm partition:
 
+<a id="table-5"></a>
+
+**Table 5. Discoverer+ node resources visible to the benchmark account.**
+
 | Item | Configuration |
 |---|---:|
 | Slurm cluster | `disco-plus` |
@@ -248,6 +268,10 @@ Discoverer+ exposes two DGX H200 GPU nodes in the `common` Slurm partition:
 
 The documented intra-node GPU fabric is NVLink 4.0 plus NVSwitch:
 
+<a id="table-6"></a>
+
+**Table 6. Documented intra-node GPU interconnect topology.**
+
 | Item | Configuration |
 |---|---:|
 | NVLink connections | 18 per GPU |
@@ -260,6 +284,10 @@ The documented inter-node network is 10 x ConnectX-7 adapters per node, each cap
 ### 2.2 Domain and Namelist
 
 All production benchmarks used the EURR-3 domain:
+
+<a id="table-7"></a>
+
+**Table 7. EURR-3 model domain and timestep configuration.**
 
 | Parameter | Value |
 |---|---:|
@@ -286,6 +314,10 @@ mdate2 = 2009090800
 ```
 
 The output configuration enabled hourly CORDEX-style I/O:
+
+<a id="table-8"></a>
+
+**Table 8. Production output and NetCDF I/O configuration.**
 
 | Output option | Value |
 |---|---:|
@@ -324,6 +356,10 @@ Each production `mem:managed` run directory uses the same loader, executable, pe
 /valhalla/projects/ehpc-ben-2026b06-085/tchristian/scratch/EURR3/output_from_runs
 ```
 
+<a id="table-9"></a>
+
+**Table 9. Production run matrix and feasibility status.**
+
 | GPUs | MPI layout | Node layout | 3-day status | 7-day status |
 |---:|---|---|---|---|
 | 1 | 1 rank x 1 GPU | 1 node | Failed/intermittent diagnostic timeout | Not used for final 7-day matrix |
@@ -349,6 +385,10 @@ This is consistent with the current visible GRES shape, where `dgx1` exposes 8 n
 
 The one-day eight-GPU validation job established that the software stack, executable, I/O libraries, and runtime loader were usable for a full production-style simulation.
 
+<a id="table-10"></a>
+
+**Table 10. One-day production-style validation timing.**
+
 | GPUs | Job | State | RegCM elapsed | RegCM avg/day | Final model time |
 |---:|---:|---|---:|---:|---|
 | 8 | `178785` | Completed | 534.01 s | 534.01 s/day | `2009-09-02 00:00:00 UTC` |
@@ -356,6 +396,10 @@ The one-day eight-GPU validation job established that the software stack, execut
 ### 3.2 Three-Day Production Results
 
 The full successful 3-day runs produced approximately 204 GiB of NetCDF output each before the output files were deleted to recover storage.
+
+<a id="table-11"></a>
+
+**Table 11. Three-day `mem:managed` production results.**
 
 | GPUs | Job | State | RegCM elapsed | RegCM avg/day | Timelimit | Nodes | Notes |
 |---:|---:|---|---:|---:|---:|---|---|
@@ -372,6 +416,10 @@ The full successful 3-day runs produced approximately 204 GiB of NetCDF output e
 
 Scaling relative to the completed 2-GPU 3-day run:
 
+<a id="table-12"></a>
+
+**Table 12. Three-day `mem:managed` scaling relative to 2 GPUs.**
+
 | GPUs | Completed job | RegCM elapsed seconds | RegCM avg/day | RegCM speedup vs 2 GPUs | RegCM efficiency vs 2 GPUs |
 |---:|---:|---:|---:|---:|---:|
 | 2 | `178819` | 5417.04 | 1805.68 s/day | 1.00x | 100% |
@@ -386,6 +434,10 @@ The 12-GPU case was the fastest completed 3-day run. The 14-GPU case remained va
 
 The full successful 7-day runs produced approximately 424 GiB of NetCDF output each before the output files were deleted to recover storage.
 
+<a id="table-13"></a>
+
+**Table 13. Seven-day `mem:managed` production results.**
+
 | GPUs | Job | State | RegCM elapsed | RegCM avg/day | Timelimit | Nodes | Notes |
 |---:|---:|---|---:|---:|---:|---|---|
 | 2 | `179056` | Timeout | 5334.50 s partial | 1778.17 s/day partial | `02:00:00` | `dgx1` | Reached about `2009-09-04 16:00:00 UTC` |
@@ -395,6 +447,10 @@ The full successful 7-day runs produced approximately 424 GiB of NetCDF output e
 | 14 | `179059` | Completed | 3126.28 s | 446.61 s/day | `01:00:00` | `dgx[1-2]` | Full 7-day run |
 
 Scaling relative to the completed 4-GPU 7-day run:
+
+<a id="table-14"></a>
+
+**Table 14. Seven-day `mem:managed` scaling relative to 4 GPUs.**
 
 | GPUs | Completed job | RegCM elapsed seconds | RegCM avg/day | RegCM speedup vs 4 GPUs | RegCM efficiency vs 4 GPUs |
 |---:|---:|---:|---:|---:|---:|
@@ -423,12 +479,20 @@ The isolated build used NVHPC standard parallelism with unified memory targeting
 
 The 1-day `mem:unified` validation status is:
 
+<a id="table-15"></a>
+
+**Table 15. One-day `mem:unified` validation status.**
+
 | GPUs | Job | State | RegCM elapsed | Avg. RegCM time per simulated day | Final model time | Notes |
 |---:|---:|---|---:|---:|---|---|
 | 1 | `179446` | Failed | n/a | n/a | n/a | Reproduced the `radinp` accelerator fatal error on `dgx2` |
 | 8 | `179063` | Completed | 665.04 s | 665.04 s/day | `2009-09-02 00:00:00 UTC` | Full 1-day run |
 
 The preliminary 7-day `mem:unified` status is:
+
+<a id="table-16"></a>
+
+**Table 16. Preliminary seven-day `mem:unified` status.**
 
 | GPUs | Job | State | RegCM elapsed | Avg. RegCM time per simulated day | Notes |
 |---:|---:|---|---:|---:|---|
@@ -438,9 +502,11 @@ The preliminary 7-day `mem:unified` status is:
 | 12 | `179118` | Completed | 3379.38 s | 482.77 s/day | Full 7-day run |
 | 14 | `179254` | Completed | 3819.20 s | 545.60 s/day | Full 7-day run after increasing walltime to `01:30:00` |
 
-The completed 7-day runs common to both local Discoverer+ memory modes compare as follows. Everett's `mem:unified` values are the AsyncIO days/hour values digitized from `GB200_EURR3.png`; only matching GPU counts are included in the table. The adjacent plot also includes Everett's previous GB200 series from the same chart.
+The completed 7-day runs common to both local Discoverer+ memory modes compare as follows. Everett's `mem:unified` values are the AsyncIO days/hour values digitized from `GB200_EURR3.png`; only matching GPU counts are included in the table. The accompanying plot also includes Everett's previous GB200 series from the same chart.
 
-<img src="Discoverer_Memory_Mode_Days_Per_Hour.svg" alt="Days/hour comparison for local memory modes and Everett AsyncIO" align="right" width="420">
+<a id="table-17"></a>
+
+**Table 17. Seven-day days/hour comparison for local memory modes and Everett AsyncIO.**
 
 | GPUs | `mem:managed` RegCM elapsed | `mem:managed` avg. per day | `mem:managed` days/hour | local `mem:unified` RegCM elapsed | local `mem:unified` avg. per day | local `mem:unified` days/hour | Everett `mem:unified` AsyncIO days/hour |
 |---:|---:|---:|---:|---:|---:|---:|---:|
@@ -449,13 +515,23 @@ The completed 7-day runs common to both local Discoverer+ memory modes compare a
 | 12 | 2554.67 s | 364.95 s/day | 9.86 | 3379.38 s | 482.77 s/day | 7.46 | n/a |
 | 14 | 3128.16 s | 446.88 s/day | 8.06 | 3819.20 s | 545.60 s/day | 6.60 | n/a |
 
-<br clear="right">
+<a id="figure-1"></a>
+
+<p align="center">
+  <img src="Discoverer_Memory_Mode_Days_Per_Hour.svg" alt="Days/hour comparison for local memory modes, Everett previous, and Everett AsyncIO" width="760">
+</p>
+
+<p align="center"><strong>Figure 1. Days/hour comparison for local Discoverer+ memory modes and Everett GB200 results.</strong> Local series use the completed seven-day Discoverer+ runs. Everett's previous and AsyncIO series are approximate values digitized from <code>GB200_EURR3.png</code>.</p>
 
 The 1-GPU `mem:unified` run reproduced the same `radinp` accelerator fatal error seen in the `mem:managed` 1-GPU cases. The 2-GPU `mem:unified` attempts have not established a RegCM model failure; they failed through Slurm node failures or pre-launch `srun` errors, so the 2-GPU `mem:unified` result remains unresolved until job `179445` completes.
 
 ### 3.5 External GB200 EURR-3 Comparison
 
 The file `Benchmark_Reports/GB200_EURR3.png` contains Everett's previous GB200 EURR-3 results and an AsyncIO dataset. The values below are approximate days/hour values digitized from that chart, not timings re-derived from local RegCM logs.
+
+<a id="table-18"></a>
+
+**Table 18. External GB200 EURR-3 comparison digitized from `GB200_EURR3.png`.**
 
 | GPUs | Everett / previous result | AsyncIO result | AsyncIO speedup vs Everett |
 |---:|---:|---:|---:|
@@ -486,6 +562,10 @@ The failing configuration uses a single MPI rank and therefore `CPUS DIM1 = 1`, 
 
 The project QoS imposes a hard job walltime limit of `02:00:00`. This directly affected the slowest production cases:
 
+<a id="table-19"></a>
+
+**Table 19. Benchmark cases affected by the two-hour project walltime limit.**
+
 | Case | Job | Outcome |
 |---|---:|---|
 | 3-day 1-GPU diagnostic | `178949` | Timed out after reaching about 27 model hours |
@@ -515,6 +595,10 @@ Discoverer_node_introspection/runs/179466_dgx1_8gpu_initial_openacc_probe
 Discoverer_node_introspection/runs/179509_dgx1_8gpu_strict_cuda_hmm_probe
 Discoverer_node_introspection/runs/179836_dgx2_7gpu_strict_cuda_hmm_probe
 ```
+
+<a id="table-20"></a>
+
+**Table 20. Discoverer+ node introspection and pageable-memory probe summary.**
 
 | Item | Result |
 |---|---|
@@ -561,6 +645,10 @@ The `dgx1` topology showed 8 H200 GPUs connected pairwise by `NV18`, with GPUs `
 
 The stricter CUDA pageable-memory probe jobs completed as follows:
 
+<a id="table-21"></a>
+
+**Table 21. Discoverer+ pageable-memory probe job outcomes.**
+
 | Job | Target | Request | Result |
 |---:|---|---|---|
 | `179509` | `dgx1` | 8 normal GPUs | Completed; strict CUDA pageable-memory probe passed |
@@ -571,6 +659,10 @@ The `dgx2` follow-up used 7 normal GPUs because Slurm rejected an 8 normal-GPU r
 ### 4.5 Output Data Management
 
 The benchmark output volume is large:
+
+<a id="table-22"></a>
+
+**Table 22. Typical generated NetCDF output volume by run length.**
 
 | Run length | Typical complete output size |
 |---|---:|
