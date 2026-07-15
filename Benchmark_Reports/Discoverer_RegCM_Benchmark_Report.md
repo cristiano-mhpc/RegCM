@@ -467,12 +467,12 @@ The preliminary 7-day `mem:unified` status is:
 
 The completed 7-day runs common to both memory modes compare as follows:
 
-| GPUs | `mem:managed` job | `mem:managed` RegCM elapsed | `mem:managed` avg. per day | `mem:unified` job | `mem:unified` RegCM elapsed | `mem:unified` avg. per day |
-|---:|---:|---:|---:|---:|---:|---:|
-| 4 | `179057` | 5855.11 s | 836.44 s/day | `179121` | 6720.56 s | 960.08 s/day |
-| 8 | `179001` | 3059.68 s | 437.10 s/day | `179253` | 3910.62 s | 558.66 s/day |
-| 12 | `179058` | 2554.67 s | 364.95 s/day | `179118` | 3379.38 s | 482.77 s/day |
-| 14 | `179059` | 3128.16 s | 446.88 s/day | `179254` | 3819.20 s | 545.60 s/day |
+| GPUs | `mem:managed` job | `mem:managed` RegCM elapsed | `mem:managed` avg. per day | `mem:managed` days/hour | `mem:unified` job | `mem:unified` RegCM elapsed | `mem:unified` avg. per day | `mem:unified` days/hour |
+|---:|---:|---:|---:|---:|---:|---:|---:|---:|
+| 4 | `179057` | 5855.11 s | 836.44 s/day | 4.30 | `179121` | 6720.56 s | 960.08 s/day | 3.75 |
+| 8 | `179001` | 3059.68 s | 437.10 s/day | 8.24 | `179253` | 3910.62 s | 558.66 s/day | 6.44 |
+| 12 | `179058` | 2554.67 s | 364.95 s/day | 9.86 | `179118` | 3379.38 s | 482.77 s/day | 7.46 |
+| 14 | `179059` | 3128.16 s | 446.88 s/day | 8.06 | `179254` | 3819.20 s | 545.60 s/day | 6.60 |
 
 The 1-GPU `mem:unified` run reproduced the same `radinp` accelerator fatal error seen in the `mem:managed` 1-GPU cases. The 2-GPU `mem:unified` attempts have not established a RegCM model failure; they failed through Slurm node failures or pre-launch `srun` errors, so the 2-GPU `mem:unified` result remains unresolved until job `179445` completes.
 
