@@ -449,6 +449,17 @@ The completed 7-day runs common to both memory modes compare as follows:
 
 The 1-GPU `mem:unified` run reproduced the same `radinp` accelerator fatal error seen in the `mem:managed` 1-GPU cases. The 2-GPU `mem:unified` attempts have not established a RegCM model failure; they failed through Slurm node failures or pre-launch `srun` errors, so the 2-GPU `mem:unified` result remains unresolved until job `179445` completes.
 
+### 3.5 External GB200 EURR-3 Comparison
+
+The file `Benchmark_Reports/GB200_EURR3.png` contains Everett's previous GB200 EURR-3 results and an AsyncIO dataset. The values below are approximate days/hour values digitized from that chart, not timings re-derived from local RegCM logs.
+
+| GPUs | Everett / previous result | AsyncIO result | AsyncIO speedup vs Everett |
+|---:|---:|---:|---:|
+| 4 | 6.1 days/hour | 7.4 days/hour | 1.21x |
+| 8 | 10.4 days/hour | 12.1 days/hour | 1.16x |
+| 16 | 15.0 days/hour | 19.1 days/hour | 1.27x |
+| 32 | 18.9 days/hour | 23.3 days/hour | 1.23x |
+
 ## 4. Runtime Investigation and Known Issues
 
 ### 4.1 One-GPU Fatal Error
