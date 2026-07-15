@@ -438,7 +438,7 @@ The preliminary 7-day `mem:unified` status is:
 | 12 | `179118` | Completed | 3379.38 s | 482.77 s/day | Full 7-day run |
 | 14 | `179254` | Completed | 3819.20 s | 545.60 s/day | Full 7-day run after increasing walltime to `01:30:00` |
 
-The completed 7-day runs common to both local Discoverer+ memory modes compare as follows. Everett's `mem:unified` values are the AsyncIO days/hour values digitized from `GB200_EURR3.png`; only matching GPU counts are included.
+The completed 7-day runs common to both local Discoverer+ memory modes compare as follows. Everett's `mem:unified` values are the AsyncIO days/hour values digitized from `GB200_EURR3.png`; only matching GPU counts are included in the table. The adjacent plot also includes Everett's previous GB200 series from the same chart.
 
 <img src="Discoverer_Memory_Mode_Days_Per_Hour.svg" alt="Days/hour comparison for local memory modes and Everett AsyncIO" align="right" width="420">
 
