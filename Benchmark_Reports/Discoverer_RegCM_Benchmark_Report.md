@@ -8,48 +8,21 @@ Unless otherwise noted, benchmark timings in this report refer to the production
 
 ### 1.0 RegCM on Discoverer+: Validated Software Stack
 
-*NVHPC 25.1 + HPC-X Open MPI + private NetCDF/HDF5/PnetCDF stack + CUDA/NVHPC GPU runtime*
+The runtime stack is intentionally kept to one compiler/MPI family plus a private scientific I/O stack built with that same family.
 
-The diagram is intentionally unstyled and uses only ordinary nodes and basic arrows for compatibility with GitHub's Mermaid renderer.
+Dependency order:
 
-```mermaid
-flowchart TB
-    SYS["Discoverer+ system environment<br/>partition: common<br/>account/QoS: ehpc-ben-2026b06-085<br/>nodes: dgx1/dgx2<br/>GPU: H200, cc90"]
+1. Discoverer+ compute node: H200 GPUs, `cc90`, real NVIDIA driver library at `/usr/lib64/libcuda.so.1`.
+2. NVIDIA HPC SDK module: `nvidia/hpcsdk/nvhpc-hpcx-cuda12/25.1`, providing NVHPC 25.1, CUDA 12.6, HPC-X 2.21, and Open MPI 4.1.7rc1.
+3. Compiler and MPI wrappers from that module: `nvc`, `nvc++`, `nvfortran`, `mpicc`, `mpicxx`, and `mpifort`.
+4. Private I/O stack built with those wrappers: libaec, HDF5, PnetCDF, NetCDF-C, NetCDF-Fortran, plus system zlib.
+5. RegCM environment loader: `environment_loader/regcm5_discoverer_nvhpc25_1_hpcx_cuda12.sh`, which loads the module and points build/runtime paths to the private I/O stack.
+6. RegCM executable: production `mem:managed` binary at `bin/regcmMPICLM45`; separate experimental `mem:unified` binary at `bin/mem_unified/regcmMPICLM45`.
+7. Slurm launch layer: `sbatch` allocation plus `srun --mpi=pmix` running one MPI rank per GPU.
+8. Per-rank wrapper: sets `CUDA_VISIBLE_DEVICES=$SLURM_LOCALID`, `ACC_DEVICE_TYPE=nvidia`, `ACC_DEVICE_NUM=0`, and OpenMP placement variables.
+9. Running application: RegCM with CLM4.5 on the EURR-3 domain, using MPI decomposition, GPU offload/stdpar execution, and NetCDF I/O.
 
-    MOD["Base module environment<br/>module load nvidia/hpcsdk/nvhpc-hpcx-cuda12/25.1<br/>NVHPC 25.1<br/>CUDA 12.6<br/>HPC-X 2.21<br/>Open MPI 4.1.7rc1"]
-
-    COMP["Compilers and MPI wrappers<br/>nvc / nvc++ / nvfortran<br/>mpicc / mpicxx / mpifort<br/>all from NVHPC + HPC-X stack"]
-
-    IO["Private scientific I/O stack<br/>prefix: regcm5-discoverer-nvhpc25.1-hpcx<br/>libaec 1.1.3<br/>HDF5 1.14.6<br/>PnetCDF 1.14.0<br/>NetCDF-C 4.9.3<br/>NetCDF-Fortran 4.6.2<br/>system zlib"]
-
-    LOAD["Environment loader<br/>regcm5_discoverer_nvhpc25_1_hpcx_cuda12.sh<br/>sets PATH, LD_LIBRARY_PATH, LIBRARY_PATH, LDFLAGS<br/>sets CUDA_HOME and NVHPC_CUDA_HOME<br/>points configure/link to private I/O stack"]
-
-    BUILD["RegCM production build<br/>./configure --enable-clm45 --enable-openacc-stdpar<br/>flags: -stdpar=gpu -gpu=cc90,lineinfo,mem:managed<br/>executable: bin/regcmMPICLM45"]
-
-    DEPS["Runtime executable dependencies<br/>private NetCDF/HDF5/PnetCDF/libaec<br/>HPC-X Open MPI libraries<br/>NVHPC runtime libraries<br/>CUDA runtime libraries<br/>real libcuda: /usr/lib64/libcuda.so.1"]
-
-    SLURM["Slurm launch<br/>sbatch allocation<br/>srun --mpi=pmix ./STD_launch_per_rank.sh<br/>8 MPI ranks on one node<br/>one rank per H200 GPU"]
-
-    WRAP["Per-rank wrapper<br/>CUDA_VISIBLE_DEVICES=$SLURM_LOCALID<br/>ACC_DEVICE_TYPE=nvidia<br/>ACC_DEVICE_NUM=0<br/>OMP_NUM_THREADS=$SLURM_CPUS_PER_TASK"]
-
-    APP["Running RegCM application<br/>RegCM + CLM4.5<br/>EURR-3 domain<br/>MPI domain decomposition<br/>OpenACC/stdpar GPU execution<br/>NetCDF I/O"]
-
-    SYS --> MOD --> COMP --> IO --> LOAD --> BUILD --> DEPS --> SLURM --> WRAP --> APP
-
-    LOAD --> MOD
-    LOAD --> IO
-    COMP --> BUILD
-    IO --> BUILD
-
-    DEPS --> APP
-```
-
-- The private scientific I/O stack avoids mixing incompatible public modules with the NVHPC and HPC-X environment.
-- The loader makes the RegCM build and runtime environment reproducible.
-- `srun --mpi=pmix` lets Slurm launch the MPI ranks through PMIx and Open MPI.
-- The wrapper maps each local MPI rank to one GPU using `SLURM_LOCALID`.
-
-Public Discoverer+ HDF5 and NetCDF modules were avoided because they pull a different compiler/MPI stack. The private libraries were built with the same NVHPC and HPC-X wrappers used for RegCM. Production timings refer to the `mem:managed` executable. The separate experimental `mem:unified` executable and run tree are documented later in this report.
+Public Discoverer+ HDF5 and NetCDF modules were avoided because they pull a different compiler/MPI stack. The private libraries were built with the same NVHPC and HPC-X wrappers used for RegCM.
 
 ### 1.1 Platform
 
