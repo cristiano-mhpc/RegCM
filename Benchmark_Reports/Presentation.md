@@ -1,5 +1,12 @@
 # RegCM on Discoverer+: Software Stack and Benchmark Report
 
+<style>
+table {
+  margin-left: auto;
+  margin-right: auto;
+}
+</style>
+
 ## 1. Software Stack
 
 This report documents the software environment built and validated for running the GPU-enabled RegCM model on the Discoverer+ system. The stack uses the NVIDIA HPC SDK supplied by Discoverer+ together with a private, compiler- and MPI-compatible scientific I/O stack.
@@ -24,26 +31,7 @@ Dependency order:
 
 Public Discoverer+ HDF5 and NetCDF modules were avoided because they pull a different compiler/MPI stack. The private libraries were built with the same NVHPC and HPC-X wrappers used for RegCM.
 
-### 1.2 Platform
-
-<a id="table-1"></a>
-
-**Table 1. Discoverer+ benchmark platform configuration.**
-
-| Item | Configuration |
-|---|---|
-| System | Discoverer+ |
-| Slurm partition | `common` |
-| Project account | `ehpc-ben-2026b06-085` |
-| Project QoS | `ehpc-ben-2026b06-085` |
-| GPU | NVIDIA H200 |
-| GPU compute capability | 9.0 |
-| RegCM GPU target | `cc90` |
-| Project maximum walltime | `02:00:00` per job |
-
-The H200 architecture was verified on a compute node. RegCM's NVHPC GPU architecture setting was therefore changed from `ccnative` to `cc90` in `configure.ac` and the generated `configure` script.
-
-### 1.3 Compiler, CUDA, and MPI
+### 1.2 Compiler, CUDA, and MPI
 
 The base programming environment is loaded with:
 
@@ -54,9 +42,9 @@ module load nvidia/hpcsdk/nvhpc-hpcx-cuda12/25.1
 
 The module provides the following toolchain:
 
-<a id="table-2"></a>
+<a id="table-1"></a>
 
-**Table 2. Compiler, CUDA, and MPI toolchain versions.**
+**Table 1. Compiler, CUDA, and MPI toolchain versions.**
 
 | Component | Version or selection |
 |---|---|
@@ -78,7 +66,7 @@ The CUDA installation used at build and runtime is:
 
 The loader explicitly sets both `CUDA_HOME` and `NVHPC_CUDA_HOME` to this location.
 
-### 1.4 Private Scientific I/O Stack
+### 1.3 Private Scientific I/O Stack
 
 The public Discoverer+ HDF5 and NetCDF modules were not used because the available modules pull compiler and MPI dependencies based on LLVM/GCC Open MPI. Mixing those modules with NVHPC and HPC-X would produce an inconsistent compiler/MPI stack.
 
@@ -90,9 +78,9 @@ Installation prefix:
 /valhalla/projects/ehpc-ben-2026b06-085/tchristian/software/regcm5-discoverer-nvhpc25.1-hpcx
 ```
 
-<a id="table-3"></a>
+<a id="table-2"></a>
 
-**Table 3. Private scientific I/O stack used by RegCM.**
+**Table 2. Private scientific I/O stack used by RegCM.**
 
 | Library | Version | Important build properties |
 |---|---:|---|
@@ -112,6 +100,25 @@ environment_loader/build_regcm5_discoverer_deps.sh
 ```
 
 The private stack build completed successfully in Slurm job `178394`.
+
+### 1.4 Platform
+
+<a id="table-3"></a>
+
+**Table 3. Discoverer+ benchmark platform configuration.**
+
+| Item | Configuration |
+|---|---|
+| System | Discoverer+ |
+| Slurm partition | `common` |
+| Project account | `ehpc-ben-2026b06-085` |
+| Project QoS | `ehpc-ben-2026b06-085` |
+| GPU | NVIDIA H200 |
+| GPU compute capability | 9.0 |
+| RegCM GPU target | `cc90` |
+| Project maximum walltime | `02:00:00` per job |
+
+The H200 architecture was verified on a compute node. RegCM's NVHPC GPU architecture setting was therefore changed from `ccnative` to `cc90` in `configure.ac` and the generated `configure` script.
 
 ### 1.5 RegCM Build
 
@@ -420,7 +427,26 @@ Key observations from Table 10:
 
 This mapping supports the topology-aware hand-tuned launcher: on a full 8-GPU node, the closest active HCAs are `mlx5_0`, `mlx5_3`, `mlx5_4`, `mlx5_5`, `mlx5_6`, `mlx5_9`, `mlx5_10`, and `mlx5_11` for GPUs `0-7`, respectively. Explicit NIC pinning is still treated as an experimental tuning control because Open MPI/UCX may choose better rails automatically for a given job shape.
 
-#### 4.3.2 `mem:unified` Runtime Probe
+#### 4.3.2 Topology-Aware Hand Tuning Strategy
+
+The hand-tuned runs were designed to test whether RegCM5 benefits from making the launch layout match the observed node topology rather than relying only on Slurm's default rank placement.
+
+Strategy:
+
+- Use the introspection results to bind each local MPI rank to one GPU, nearby CPU cores, the matching NUMA domain, and, when enabled, the nearest active HCA.
+- Keep the first hand-tuned pass conservative: CPU/NUMA/GPU binding enabled, NIC pinning set to `auto`, UCX tuning disabled, and the OpenACC pool disabled.
+- Validate the approach on the full single-node 8-GPU case first, because all GPU-to-GPU communication stays inside the NVSwitch/NVLink fabric and avoids multi-node network variability.
+- Run single-toggle Stage 2 tests for 8 GPUs: one variant enabling UCX tuning and one variant enabling the OpenACC pool.
+- Treat explicit NIC pinning as a multi-node experiment, because on a single-node 8-GPU run `REGCM_ENABLE_NIC_PINNING=auto` does not force `UCX_NET_DEVICES`.
+- Use 12- and 14-GPU cases later to evaluate whether topology-aware CPU/GPU placement and HCA selection help when the run crosses from intra-node NVLink/NVSwitch communication to inter-node fabric communication.
+
+Connection to introspection:
+
+- The GPU/NUMA split in Table 10 determines the CPU binding: GPUs `0-3` map to NUMA 0 and GPUs `4-7` map to NUMA 1.
+- The HCA mapping in Table 11 defines the candidate NIC assignment for each local rank in multi-node runs.
+- The `dgx2` 7 normal-GPU GRES shape limits feasible full-node normal-GPU experiments and explains why 16 normal GPUs are not currently available as a symmetric 8+8 run.
+
+#### 4.3.3 `mem:unified` Runtime Probe
 
 The memory-mode probe results are reported separately from hardware topology because they validate the compiler/runtime memory path rather than the node interconnect layout.
 
@@ -481,3 +507,25 @@ The stricter CUDA pageable-memory probe jobs completed as follows:
 | `179836` | `dgx2` | 7 normal GPUs | Completed; strict CUDA pageable-memory probe passed |
 
 The `dgx2` follow-up used 7 normal GPUs because Slurm rejected an 8 normal-GPU request on `dgx2`, consistent with the observed `gpu:7,gpu_biz:1` resource shape. The `dgx2` strict probe reported the same positive runtime indicators as `dgx1`: `cudaDevAttrPageableMemoryAccess=1`, `cudaDevAttrConcurrentManagedAccess=1`, `cudaDevAttrManagedMemory=1`, and `CUDA_HMM_PAGEABLE_PROBE=PASS`.
+
+## 5. Why `mem:unified` May Be Slower for RegCM5
+
+The Discoverer+ probes show that pageable host-memory access and HMM-style behavior are available on the nodes. That does not guarantee that `mem:unified` will outperform `mem:managed` for a large production code such as RegCM5. In the current 7-day EURR-3 runs, local `mem:unified` is consistently slower than local `mem:managed`.
+
+Plausible explanations and checks:
+
+- Page migration overhead: `mem:unified` can fault and migrate pages on demand when CPU and GPU access patterns are not already resident in the right memory space. Verify with Nsight Systems Unified Memory traces, CUDA page-fault counters, and kernel timelines showing stalls around migration events.
+- CPU/GPU ping-pong on shared arrays: RegCM5 has large state arrays touched by physics, dynamics, I/O, and coupling code. If the CPU touches data between GPU kernels, pages can bounce between host and device. Verify by profiling sections around physics/I/O boundaries and checking whether host-side loops or NetCDF packing routines access arrays immediately before or after GPU kernels.
+- Less predictable data placement than `mem:managed`: `mem:managed` can still benefit from NVHPC/OpenACC data-region behavior and explicit managed allocation semantics. `mem:unified` may expose more demand-driven placement decisions. Verify by comparing NVHPC `-Minfo=accel` output and runtime OpenACC data movement diagnostics between the two builds.
+- I/O interaction with pageable/unified memory: hourly NetCDF output may force host visibility of large fields. If output staging touches GPU-resident data, unified-memory migrations can become part of the I/O path. Verify with runs that reduce or disable selected output streams, and compare days/hour plus page-fault activity.
+- Kernel launch and memory-access granularity: RegCM5 contains many kernels over large 3D fields. If access patterns are sparse, strided, or fragmented, unified-memory page movement can be inefficient relative to managed placement. Verify with Nsight Compute memory throughput, achieved occupancy, and memory transaction metrics for representative radiation, dynamics, and land-surface kernels.
+- MPI rank decomposition effects: one rank per GPU means each rank owns a subdomain. Halo exchange, packing/unpacking, and boundary updates may touch memory from both CPU and GPU paths. Verify by profiling MPI phases and halo packing regions separately, especially for 12- and 14-GPU multi-node runs.
+- Compiler optimization differences: changing from `mem:managed` to `mem:unified` can alter generated data-management code or assumptions around pointer accessibility. Verify by comparing compiler optimization reports, kernel counts, and key kernel runtimes between binaries built from the same source and flags except for the memory mode.
+
+Recommended verification path:
+
+1. Profile a short 8-GPU run in both memory modes with Nsight Systems and collect Unified Memory events, page faults, and GPU idle gaps.
+2. Repeat with hourly output disabled or reduced to separate compute effects from I/O-driven migration.
+3. Profile one representative multi-node case, preferably 12 GPUs, to check whether MPI packing and halo exchange amplify the `mem:unified` penalty.
+4. Compare NVHPC `-Minfo=accel` and OpenACC runtime diagnostics for the same source revision and identical non-memory-mode flags.
+5. If page faults dominate, test targeted data-region or prefetch changes on the hottest arrays rather than changing the whole application memory mode.
