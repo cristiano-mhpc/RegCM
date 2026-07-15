@@ -275,25 +275,11 @@ Large NetCDF output files were deleted after validation to recover project stora
 
 ### 3.1 Seven-Day Production Results
 
-The full successful 7-day runs produced approximately 424 GiB of NetCDF output each before the output files were deleted to recover storage.
+Scaling relative to the completed 4-GPU 7-day run:
 
 <a id="table-8"></a>
 
-**Table 8. Seven-day `mem:managed` production results.**
-
-| GPUs | Job | State | RegCM elapsed | RegCM avg/day | Timelimit | Nodes | Notes |
-|---:|---:|---|---:|---:|---:|---|---|
-| 2 | `179056` | Timeout | 5334.50 s partial | 1778.17 s/day partial | `02:00:00` | `dgx1` | Reached about `2009-09-04 16:00:00 UTC` |
-| 4 | `179057` | Completed | 5852.88 s | 836.13 s/day | `02:00:00` | `dgx2` | Full 7-day run |
-| 8 | `179001` | Completed | 3057.76 s | 436.82 s/day | `01:15:00` | `dgx1` | Full 7-day run |
-| 12 | `179058` | Completed | 2552.77 s | 364.68 s/day | `01:00:00` | `dgx[1-2]` | Full 7-day run |
-| 14 | `179059` | Completed | 3126.28 s | 446.61 s/day | `01:00:00` | `dgx[1-2]` | Full 7-day run |
-
-Scaling relative to the completed 4-GPU 7-day run:
-
-<a id="table-9"></a>
-
-**Table 9. Seven-day `mem:managed` scaling relative to 4 GPUs.**
+**Table 8. Seven-day `mem:managed` scaling relative to 4 GPUs.**
 
 | GPUs | Completed job | RegCM elapsed seconds | RegCM avg/day | RegCM speedup vs 4 GPUs | RegCM efficiency vs 4 GPUs |
 |---:|---:|---:|---:|---:|---:|
@@ -322,9 +308,9 @@ The isolated build used NVHPC standard parallelism with unified memory targeting
 
 The completed 7-day runs common to both local Discoverer+ memory modes compare as follows. Everett's `mem:unified` values are the AsyncIO days/hour values digitized from `GB200_EURR3.png`; only matching GPU counts are included in the table. The accompanying plot also includes Everett's previous GB200 series from the same chart.
 
-<a id="table-10"></a>
+<a id="table-9"></a>
 
-**Table 10. Seven-day days/hour comparison for local memory modes and Everett AsyncIO.**
+**Table 9. Seven-day days/hour comparison for local memory modes and Everett AsyncIO.**
 
 | GPUs | `mem:managed` RegCM elapsed | `mem:managed` avg. per day | `mem:managed` days/hour | local `mem:unified` RegCM elapsed | local `mem:unified` avg. per day | local `mem:unified` days/hour | Everett `mem:unified` AsyncIO days/hour |
 |---:|---:|---:|---:|---:|---:|---:|---:|
@@ -384,9 +370,9 @@ Discoverer_node_introspection/runs/179836_dgx2_7gpu_strict_cuda_hmm_probe
 
 #### 4.3.1 Compute and Network Hardware
 
-<a id="table-11"></a>
+<a id="table-10"></a>
 
-**Table 11. Compute and GPU hardware observed in node introspection.**
+**Table 10. Compute and GPU hardware observed in node introspection.**
 
 | Item | `dgx1` introspection | `dgx2` introspection |
 |---|---|---|
@@ -403,13 +389,19 @@ Discoverer_node_introspection/runs/179836_dgx2_7gpu_strict_cuda_hmm_probe
 | Intra-node GPU fabric | all GPU pairs connected as `NV18` | all GPU pairs connected as `NV18` |
 | Allocation-specific note | Full normal 8-GPU allocation available on `dgx1` | Slurm normal-GRES allocation exposed 7 GPUs, while `nvidia-smi` still reported all 8 physical H200 devices |
 
-The CPU and NUMA topology was the same on `dgx1` and `dgx2`: two sockets, 56 cores per socket, SMT enabled, two NUMA domains, and approximately 2 TB total host memory. The GPU topology also matched at the physical-node level: all eight H200 GPUs were connected to one another through `NV18`, with GPUs `0-3` local to NUMA node 0 and GPUs `4-7` local to NUMA node 1. The `dgx2` run was intentionally a 7 normal-GPU Slurm allocation because an 8 normal-GPU request on `dgx2` is not currently satisfiable under the visible GRES shape.
+Key observations from Table 10:
 
-The `nvidia-smi topo -m` NIC legend was also consistent across `dgx1` and `dgx2`, exposing 12 `mlx5` devices. Nine devices were reported Up by `ibdev2netdev`; eight of those were the closest GPU-adjacent HCAs used by the topology-aware launcher, while `mlx5_1` was also Up but not the nearest listed HCA for a GPU in the launcher mapping.
+- `dgx1` and `dgx2` have the same CPU/NUMA topology: two sockets, 56 cores per socket, SMT enabled, two NUMA domains, and about 2 TB total host memory.
+- Both nodes expose the same physical GPU topology: eight H200 GPUs connected to one another through `NV18`.
+- GPUs `0-3` are local to NUMA node 0, while GPUs `4-7` are local to NUMA node 1.
+- The `dgx2` introspection used a 7 normal-GPU Slurm allocation because an 8 normal-GPU request on `dgx2` is not currently satisfiable under the visible GRES shape.
+- The `nvidia-smi topo -m` NIC legend was consistent across both nodes, exposing 12 `mlx5` devices.
+- `ibdev2netdev` reported nine devices Up; eight of those were the closest GPU-adjacent HCAs used by the topology-aware launcher.
+- `mlx5_1` was also Up, but it was not the nearest listed HCA for a GPU in the launcher mapping.
 
-<a id="table-12"></a>
+<a id="table-11"></a>
 
-**Table 12. Network devices observed by `ibdev2netdev` on both `dgx1` and `dgx2`.**
+**Table 11. Network devices observed by `ibdev2netdev` on both `dgx1` and `dgx2`.**
 
 | mlx5 device | Net device | State | Topology role observed in `nvidia-smi topo -m` |
 |---|---|---|---|
@@ -432,9 +424,9 @@ This mapping supports the topology-aware hand-tuned launcher: on a full 8-GPU no
 
 The memory-mode probe results are reported separately from hardware topology because they validate the compiler/runtime memory path rather than the node interconnect layout.
 
-<a id="table-13"></a>
+<a id="table-12"></a>
 
-**Table 13. Discoverer+ pageable-memory and `mem:unified` probe summary.**
+**Table 12. Discoverer+ pageable-memory and `mem:unified` probe summary.**
 
 | Item | Result |
 |---|---|
@@ -479,9 +471,9 @@ This is stronger evidence that both visible Discoverer+ GPU nodes support pageab
 
 The stricter CUDA pageable-memory probe jobs completed as follows:
 
-<a id="table-14"></a>
+<a id="table-13"></a>
 
-**Table 14. Discoverer+ pageable-memory probe job outcomes.**
+**Table 13. Discoverer+ pageable-memory probe job outcomes.**
 
 | Job | Target | Request | Result |
 |---:|---|---|---|
