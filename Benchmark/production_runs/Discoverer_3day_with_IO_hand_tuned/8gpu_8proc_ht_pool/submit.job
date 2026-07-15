@@ -1,0 +1,23 @@
+#!/bin/bash
+#SBATCH --partition=common
+#SBATCH --job-name=prod_3d_ht_pool_8gpu_wIO_disc
+#SBATCH --time=00:35:00
+#SBATCH --account=ehpc-ben-2026b06-085
+#SBATCH --qos=ehpc-ben-2026b06-085
+#SBATCH --nodes=1
+#SBATCH --ntasks-per-node=8
+#SBATCH --cpus-per-task=2
+#SBATCH --gres=gpu:8
+#SBATCH --exclusive
+#SBATCH --output=./production/LOG_%x_%j.out
+#SBATCH --error=./production/LOG_%x_%j.err
+
+set -euo pipefail
+
+export REGCM_ENABLE_CPU_BINDING=1
+export REGCM_ENABLE_NIC_PINNING=auto
+export REGCM_ENABLE_UCX_TUNING=0
+export REGCM_ENABLE_ACC_POOL=1
+
+cd "$SLURM_SUBMIT_DIR"
+source ../run_discoverer_hand_tuned_common.sh

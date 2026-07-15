@@ -76,11 +76,11 @@ Planned matrix:
 
 Initial execution choice: start with only `8gpu_8proc` to validate the wrapper on a full single-node DGX before spending allocation on the full matrix.
 
-Current Stage 1 submission:
+Current Stage 1 result:
 
 | Run | Job | Status at submission |
 |---|---:|---|
-| `8gpu_8proc` | `179592` | `PENDING (Priority)` |
+| `8gpu_8proc` | `179837` | `COMPLETED`, RegCM elapsed `1474.89 s` (`491.63 s/day`) |
 
 ### Stage 2: Single-Toggle Tests
 
@@ -102,6 +102,13 @@ Variants:
 | `HT-pool` | 1 | auto | 0 | 1 |
 
 `HT-no-nic` is important because manual `UCX_NET_DEVICES` pinning can hurt if Open MPI/UCX would otherwise select better rails automatically.
+
+For single-node `8gpu_8proc`, `HT-no-nic` is equivalent to `HT-base` because `REGCM_ENABLE_NIC_PINNING=auto` enables explicit `UCX_NET_DEVICES` only for multi-node jobs. The first 8-GPU Stage 2 submissions therefore cover the two meaningful single-node toggles:
+
+| Run | Variant | Job | Status at submission |
+|---|---|---:|---|
+| `8gpu_8proc_ht_ucx` | `HT-ucx` | `180346` | `PENDING (Priority)` |
+| `8gpu_8proc_ht_pool` | `HT-pool` | `180347` | `PENDING (Priority)` |
 
 ### Stage 3: Combination Tests
 
@@ -144,5 +151,7 @@ Each run writes to a unique scratch target:
 - `production_3day_hand_tuned_2gpu/output`
 - `production_3day_hand_tuned_4gpu/output`
 - `production_3day_hand_tuned_8gpu/output`
+- `production_3day_hand_tuned_8gpu_ht_ucx/output`
+- `production_3day_hand_tuned_8gpu_ht_pool/output`
 - `production_3day_hand_tuned_12gpu/output`
 - `production_3day_hand_tuned_14gpu/output`
