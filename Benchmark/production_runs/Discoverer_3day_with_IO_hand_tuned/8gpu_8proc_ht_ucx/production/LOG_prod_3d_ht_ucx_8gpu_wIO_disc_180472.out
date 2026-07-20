@@ -1,0 +1,150 @@
+Loading nvidia/hpcsdk/nvhpc-hpcx-cuda12/25.1
+  Loading requirement: hpcx
+
+Loaded RegCM5 Discoverer+ NVHPC 25.1 + HPC-X candidate environment
+
+Modules:
+  nvidia/hpcsdk/nvhpc-hpcx-cuda12/25.1
+
+Compiler/MPI wrappers:
+  CC     = nvc
+  CXX    = nvc++
+  FC     = nvfortran
+  F77    = nvfortran
+  MPICC  = mpicc
+  MPIFC  = mpifort
+
+Resolved tools:
+  nvc             -> /opt/software/nvidia/packages/hpc_sdk/Linux_x86_64/25.1/compilers/bin/nvc
+  nvfortran       -> /opt/software/nvidia/packages/hpc_sdk/Linux_x86_64/25.1/compilers/bin/nvfortran
+  mpicc           -> /valhalla/projects/ehpc-ben-2026b06-085/tchristian/software/discoverer-hpcx-2.21-ompi-shim/bin/mpicc
+  mpifort         -> /valhalla/projects/ehpc-ben-2026b06-085/tchristian/software/discoverer-hpcx-2.21-ompi-shim/bin/mpifort
+  mpirun          -> /valhalla/projects/ehpc-ben-2026b06-085/tchristian/software/discoverer-hpcx-2.21-ompi-shim/bin/mpirun
+  nc-config       -> /valhalla/projects/ehpc-ben-2026b06-085/tchristian/software/regcm5-discoverer-nvhpc25.1-hpcx/bin/nc-config
+  nf-config       -> /valhalla/projects/ehpc-ben-2026b06-085/tchristian/software/regcm5-discoverer-nvhpc25.1-hpcx/bin/nf-config
+  pnetcdf-config  -> /valhalla/projects/ehpc-ben-2026b06-085/tchristian/software/regcm5-discoverer-nvhpc25.1-hpcx/bin/pnetcdf-config
+
+Quick checks:
+  MPI_SHIM                 -> /valhalla/projects/ehpc-ben-2026b06-085/tchristian/software/discoverer-hpcx-2.21-ompi-shim
+  MPI shim enabled         -> 1
+  Disable UCC collectives  -> 1
+  OMPI_MCA_coll            -> ^ucc
+  CUDA_HOME                -> /weka/software/nvidia/packages/hpc_sdk/Linux_x86_64/25.1/cuda/12.6
+  NVHPC_CUDA_HOME          -> /weka/software/nvidia/packages/hpc_sdk/Linux_x86_64/25.1/cuda/12.6
+  CUDA target lib          -> /weka/software/nvidia/packages/hpc_sdk/Linux_x86_64/25.1/cuda/12.6/targets/x86_64-linux/lib
+  CUDA stubs policy        -> always
+  CUDA stubs status        -> using /weka/software/nvidia/packages/hpc_sdk/Linux_x86_64/25.1/cuda/12.6/lib64/stubs
+  NVHPC_ROOT               -> /weka/software/nvidia/packages/hpc_sdk/Linux_x86_64/25.1
+  NVHPC_MATH_LIB           -> /weka/software/nvidia/packages/hpc_sdk/Linux_x86_64/25.1/math_libs/lib64
+  HDF5                     -> /valhalla/projects/ehpc-ben-2026b06-085/tchristian/software/regcm5-discoverer-nvhpc25.1-hpcx
+  NETCDF                   -> /valhalla/projects/ehpc-ben-2026b06-085/tchristian/software/regcm5-discoverer-nvhpc25.1-hpcx
+  PNETCDF                  -> /valhalla/projects/ehpc-ben-2026b06-085/tchristian/software/regcm5-discoverer-nvhpc25.1-hpcx
+  I/O stack status         -> NetCDF C/Fortran + PnetCDF detected
+  nc-config --version      -> netCDF 4.9.3
+  nf-config --version      -> netCDF-Fortran 4.6.2
+  pnetcdf-config --version -> PnetCDF 1.14.0
+  mpirun --version         -> mpirun (Open MPI) 4.1.7rc1
+  mpifort --show           -> nvfortran -I/weka/software/nvidia/packages/hpc_sdk/Linux_x86_64/25.1/comm_libs/12.6/hpcx/hpcx-2.21/ompi/include -I/weka/software/nvidia/packages/hpc_sdk/Linux_x86_64/25.1/comm_libs/12.6/hpcx/hpcx-2.21/ompi/lib -L/weka/software/nvidia/packages/hpc_sdk/Linux_x86_64/25.1/comm_libs/12.6/hpcx/hpcx-2.21/ompi/lib -rpath /weka/software/nvidia/packages/hpc_sdk/Linux_x86_64/25.1/comm_libs/12.6/hpcx/hpcx-2.21/ompi/lib -lmpi_usempif08 -lmpi_usempi_ignore_tkr -lmpi_mpifh -lmpi
+
+=== Job info ===
+SLURM_JOB_ID=180472
+SLURM_JOB_NODELIST=dgx1
+SLURM_NNODES=1
+SLURM_NTASKS=8
+SLURM_NTASKS_PER_NODE=8
+SLURM_CPUS_PER_TASK=2
+RUN_DIR=/valhalla/projects/ehpc-ben-2026b06-085/tchristian/work/RegCM/Benchmark/production_runs/Discoverer_3day_with_IO_hand_tuned/8gpu_8proc_ht_ucx
+
+=== Hand-tuned controls ===
+REGCM_ENABLE_CPU_BINDING=1
+REGCM_ENABLE_NIC_PINNING=auto
+REGCM_ENABLE_UCX_TUNING=1
+REGCM_ENABLE_ACC_POOL=0
+
+=== Toolchain ===
+/opt/software/nvidia/packages/hpc_sdk/Linux_x86_64/25.1/compilers/bin/nvfortran
+/opt/software/nvidia/packages/hpc_sdk/Linux_x86_64/25.1/compilers/bin/nvcc
+/valhalla/projects/ehpc-ben-2026b06-085/tchristian/software/discoverer-hpcx-2.21-ompi-shim/bin/mpifort
+/usr/bin/ld
+nvcc: NVIDIA (R) Cuda compiler driver
+Copyright (c) 2005-2024 NVIDIA Corporation
+Built on Tue_Oct_29_23:50:19_PDT_2024
+Cuda compilation tools, release 12.6, V12.6.85
+Build cuda_12.6.r12.6/compiler.35059454_0
+GNU ld version 2.35.2-54.el9
+Copyright (C) 2020 Free Software Foundation, Inc.
+This program is free software; you may redistribute it under the terms of
+the GNU General Public License version 3 or (at your option) a later version.
+This program has absolutely no warranty.
+CUDA_HOME=/weka/software/nvidia/packages/hpc_sdk/Linux_x86_64/25.1/cuda/12.6
+NVHPC_CUDA_HOME=/weka/software/nvidia/packages/hpc_sdk/Linux_x86_64/25.1/cuda/12.6
+MPI_SHIM=/valhalla/projects/ehpc-ben-2026b06-085/tchristian/software/discoverer-hpcx-2.21-ompi-shim
+OMPI_MCA_coll=^ucc
+
+=== Binary dependency check ===
+	libnvhpcmanaux.so => /weka/software/nvidia/packages/hpc_sdk/Linux_x86_64/25.1/compilers/lib/libnvhpcmanaux.so (0x00007f0e1cb86000)
+	libnetcdff.so.7 => /valhalla/projects/ehpc-ben-2026b06-085/tchristian/software/regcm5-discoverer-nvhpc25.1-hpcx/lib/libnetcdff.so.7 (0x00007f0e1c94a000)
+	libnetcdf.so.22 => /valhalla/projects/ehpc-ben-2026b06-085/tchristian/software/regcm5-discoverer-nvhpc25.1-hpcx/lib/libnetcdf.so.22 (0x00007f0e1c6aa000)
+	libhdf5_hl.so.310 => /valhalla/projects/ehpc-ben-2026b06-085/tchristian/software/regcm5-discoverer-nvhpc25.1-hpcx/lib/libhdf5_hl.so.310 (0x00007f0e1c679000)
+	libhdf5.so.310 => /valhalla/projects/ehpc-ben-2026b06-085/tchristian/software/regcm5-discoverer-nvhpc25.1-hpcx/lib/libhdf5.so.310 (0x00007f0e1c157000)
+	libsz.so.2 => /valhalla/projects/ehpc-ben-2026b06-085/tchristian/software/regcm5-discoverer-nvhpc25.1-hpcx/lib64/libsz.so.2 (0x00007f0e1c145000)
+	libmpi_usempif08.so.40 => /weka/software/nvidia/packages/hpc_sdk/Linux_x86_64/25.1/comm_libs/12.6/hpcx/hpcx-2.21/ompi/lib/libmpi_usempif08.so.40 (0x00007f0e1bf08000)
+	libmpi_usempi_ignore_tkr.so.40 => /weka/software/nvidia/packages/hpc_sdk/Linux_x86_64/25.1/comm_libs/12.6/hpcx/hpcx-2.21/ompi/lib/libmpi_usempi_ignore_tkr.so.40 (0x00007f0e1bcff000)
+	libmpi_mpifh.so.40 => /weka/software/nvidia/packages/hpc_sdk/Linux_x86_64/25.1/comm_libs/12.6/hpcx/hpcx-2.21/ompi/lib/libmpi_mpifh.so.40 (0x00007f0e1ba87000)
+	libmpi.so.40 => /weka/software/nvidia/packages/hpc_sdk/Linux_x86_64/25.1/comm_libs/12.6/hpcx/hpcx-2.21/ompi/lib/libmpi.so.40 (0x00007f0e1b74c000)
+	libcudaforwrapsparse12.so => /weka/software/nvidia/packages/hpc_sdk/Linux_x86_64/25.1/compilers/lib/libcudaforwrapsparse12.so (0x00007f0e1b53a000)
+	libnvJitLink.so.12 => /weka/software/nvidia/packages/hpc_sdk/Linux_x86_64/25.1/cuda/12.6/lib64/libnvJitLink.so.12 (0x00007f0e068c5000)
+	libnvhpcwrapnvtx.so => /weka/software/nvidia/packages/hpc_sdk/Linux_x86_64/25.1/compilers/lib/libnvhpcwrapnvtx.so (0x00007f0e066bb000)
+	libcudart.so.12 => /weka/software/nvidia/packages/hpc_sdk/Linux_x86_64/25.1/cuda/12.6/lib64/libcudart.so.12 (0x00007f0e0640a000)
+	libcudafor_120.so => /weka/software/nvidia/packages/hpc_sdk/Linux_x86_64/25.1/compilers/lib/libcudafor_120.so (0x00007f0dffc10000)
+	libcudafor.so => /weka/software/nvidia/packages/hpc_sdk/Linux_x86_64/25.1/compilers/lib/libcudafor.so (0x00007f0dff9f9000)
+	libacchost.so => /weka/software/nvidia/packages/hpc_sdk/Linux_x86_64/25.1/compilers/lib/libacchost.so (0x00007f0dff795000)
+	libaccdevaux.so => /weka/software/nvidia/packages/hpc_sdk/Linux_x86_64/25.1/compilers/lib/libaccdevaux.so (0x00007f0dff577000)
+	libaccdevice.so => /weka/software/nvidia/packages/hpc_sdk/Linux_x86_64/25.1/compilers/lib/libaccdevice.so (0x00007f0dff248000)
+	libcuda.so.1 => /usr/lib64/libcuda.so.1 (0x00007f0dfc200000)
+	libnvhpcman.so => /weka/software/nvidia/packages/hpc_sdk/Linux_x86_64/25.1/compilers/lib/libnvhpcman.so (0x00007f0dfbffa000)
+	libcudadevice.so => /weka/software/nvidia/packages/hpc_sdk/Linux_x86_64/25.1/compilers/lib/libcudadevice.so (0x00007f0dfbde4000)
+	libcudafor2.so => /weka/software/nvidia/packages/hpc_sdk/Linux_x86_64/25.1/compilers/lib/libcudafor2.so (0x00007f0dfbbe1000)
+	libnvf.so => /weka/software/nvidia/packages/hpc_sdk/Linux_x86_64/25.1/compilers/lib/libnvf.so (0x00007f0dfb4d0000)
+	libnvomp.so => /weka/software/nvidia/packages/hpc_sdk/Linux_x86_64/25.1/compilers/lib/libnvomp.so (0x00007f0dfa4cf000)
+	libnvcpumath.so => /weka/software/nvidia/packages/hpc_sdk/Linux_x86_64/25.1/compilers/lib/libnvcpumath.so (0x00007f0dfa061000)
+	libnvc.so => /weka/software/nvidia/packages/hpc_sdk/Linux_x86_64/25.1/compilers/lib/libnvc.so (0x00007f0df9dfd000)
+	libpnetcdf.so.6 => /valhalla/projects/ehpc-ben-2026b06-085/tchristian/software/regcm5-discoverer-nvhpc25.1-hpcx/lib/libpnetcdf.so.6 (0x00007f0df9522000)
+	libnvhpcatm.so => /weka/software/nvidia/packages/hpc_sdk/Linux_x86_64/25.1/REDIST/compilers/lib/libnvhpcatm.so (0x00007f0df918d000)
+	libopen-rte.so.40 => /valhalla/projects/ehpc-ben-2026b06-085/tchristian/software/discoverer-hpcx-2.21-ompi-shim/lib/libopen-rte.so.40 (0x00007f0df8ecd000)
+	libopen-pal.so.40 => /valhalla/projects/ehpc-ben-2026b06-085/tchristian/software/discoverer-hpcx-2.21-ompi-shim/lib/libopen-pal.so.40 (0x00007f0df8bb3000)
+
+=== Data check ===
+input/output symlinks, local namelist, and /valhalla/projects/ehpc-ben-2026b06-085/tchristian/scratch/EURR3/RCMDATA are present.
+
+=== GPU layout ===
+GPU 0: NVIDIA H200 (UUID: GPU-5649b894-3fdd-1bab-aa4b-9f0eebde0b27)
+GPU 1: NVIDIA H200 (UUID: GPU-530e53d5-dd47-5918-708a-92f6226b92d5)
+GPU 2: NVIDIA H200 (UUID: GPU-08d45570-836a-9517-5453-ede8509067c7)
+GPU 3: NVIDIA H200 (UUID: GPU-f2c59e82-a754-7c00-943b-87683b6d90bc)
+GPU 4: NVIDIA H200 (UUID: GPU-cc3ee720-86b1-f6d6-2433-9614db20c37c)
+GPU 5: NVIDIA H200 (UUID: GPU-e602ffaa-f3b2-0588-5730-ceff65977d6b)
+GPU 6: NVIDIA H200 (UUID: GPU-ac5b7477-6096-f45d-8dd9-61a2047c3819)
+GPU 7: NVIDIA H200 (UUID: GPU-f7af1b74-f977-4d65-0429-e08fae4bcb11)
+
+=== Launching RegCM with topology-aware wrapper ===
+[DiscovererTopo][Rank 1][Local 1] host=dgx1 gpu=1 cpuset=+2-3 numa=0 CUDA_VISIBLE_DEVICES=1 ACC_DEVICE_NUM=0 UCX_NET_DEVICES=auto REGCM_EXE=/valhalla/projects/ehpc-ben-2026b06-085/tchristian/work/RegCM/bin/regcmMPICLM45
+[DiscovererTopo][Rank 0][Local 0] host=dgx1 gpu=0 cpuset=+0-1 numa=0 CUDA_VISIBLE_DEVICES=0 ACC_DEVICE_NUM=0 UCX_NET_DEVICES=auto REGCM_EXE=/valhalla/projects/ehpc-ben-2026b06-085/tchristian/work/RegCM/bin/regcmMPICLM45
+[DiscovererTopo][Rank 4][Local 4] host=dgx1 gpu=4 cpuset=+8-9 numa=1 CUDA_VISIBLE_DEVICES=4 ACC_DEVICE_NUM=0 UCX_NET_DEVICES=auto REGCM_EXE=/valhalla/projects/ehpc-ben-2026b06-085/tchristian/work/RegCM/bin/regcmMPICLM45
+[DiscovererTopo][Rank 5][Local 5] host=dgx1 gpu=5 cpuset=+10-11 numa=1 CUDA_VISIBLE_DEVICES=5 ACC_DEVICE_NUM=0 UCX_NET_DEVICES=auto REGCM_EXE=/valhalla/projects/ehpc-ben-2026b06-085/tchristian/work/RegCM/bin/regcmMPICLM45
+[DiscovererTopo][Rank 6][Local 6] host=dgx1 gpu=6 cpuset=+12-13 numa=1 CUDA_VISIBLE_DEVICES=6 ACC_DEVICE_NUM=0 UCX_NET_DEVICES=auto REGCM_EXE=/valhalla/projects/ehpc-ben-2026b06-085/tchristian/work/RegCM/bin/regcmMPICLM45
+[DiscovererTopo][Rank 2][Local 2] host=dgx1 gpu=2 cpuset=+4-5 numa=0 CUDA_VISIBLE_DEVICES=2 ACC_DEVICE_NUM=0 UCX_NET_DEVICES=auto REGCM_EXE=/valhalla/projects/ehpc-ben-2026b06-085/tchristian/work/RegCM/bin/regcmMPICLM45
+[DiscovererTopo][Rank 3][Local 3] host=dgx1 gpu=3 cpuset=+6-7 numa=0 CUDA_VISIBLE_DEVICES=3 ACC_DEVICE_NUM=0 UCX_NET_DEVICES=auto REGCM_EXE=/valhalla/projects/ehpc-ben-2026b06-085/tchristian/work/RegCM/bin/regcmMPICLM45
+[DiscovererTopo][Rank 7][Local 7] host=dgx1 gpu=7 cpuset=+14-15 numa=1 CUDA_VISIBLE_DEVICES=7 ACC_DEVICE_NUM=0 UCX_NET_DEVICES=auto REGCM_EXE=/valhalla/projects/ehpc-ben-2026b06-085/tchristian/work/RegCM/bin/regcmMPICLM45
+[1784226169.961005] [dgx1:3388891:0]        mm_posix.c:238  UCX  ERROR   open(file_name=/proc/3388886/fd/228 flags=0x0) failed: Permission denied
+[1784226169.961209] [dgx1:3388891:0]        mm_posix.c:238  UCX  ERROR   open(file_name=/proc/3388886/fd/228 flags=0x0) failed: Permission denied
+[1784226169.961908] [dgx1:3388891:0]        mm_posix.c:238  UCX  ERROR   open(file_name=/proc/3388886/fd/228 flags=0x0) failed: Permission denied
+[1784226169.973371] [dgx1:3388890:0]        mm_posix.c:238  UCX  ERROR   open(file_name=/proc/3388886/fd/228 flags=0x0) failed: Permission denied
+[1784226169.973527] [dgx1:3388890:0]        mm_posix.c:238  UCX  ERROR   open(file_name=/proc/3388886/fd/228 flags=0x0) failed: Permission denied
+[1784226169.974276] [dgx1:3388890:0]        mm_posix.c:238  UCX  ERROR   open(file_name=/proc/3388886/fd/228 flags=0x0) failed: Permission denied
+[1784226169.982977] [dgx1:3388888:0]        mm_posix.c:238  UCX  ERROR   open(file_name=/proc/3388886/fd/228 flags=0x0) failed: Permission denied
+[1784226169.983164] [dgx1:3388888:0]        mm_posix.c:238  UCX  ERROR   open(file_name=/proc/3388886/fd/228 flags=0x0) failed: Permission denied
+[1784226169.983887] [dgx1:3388888:0]        mm_posix.c:238  UCX  ERROR   open(file_name=/proc/3388886/fd/228 flags=0x0) failed: Permission denied
+[1784226169.999908] [dgx1:3388889:0]        mm_posix.c:238  UCX  ERROR   open(file_name=/proc/3388886/fd/228 flags=0x0) failed: Permission denied
+[1784226170.000118] [dgx1:3388889:0]        mm_posix.c:238  UCX  ERROR   open(file_name=/proc/3388886/fd/228 flags=0x0) failed: Permission denied
+[1784226170.000836] [dgx1:3388889:0]        mm_posix.c:238  UCX  ERROR   open(file_name=/proc/3388886/fd/228 flags=0x0) failed: Permission denied

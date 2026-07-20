@@ -1,0 +1,311 @@
+[dgx1:3388886:0:3388886]       ud_ep.c:278  Fatal: UD endpoint 0xc78bd60 to <no debug data>: unhandled timeout error
+==== backtrace (tid:3388886) ====
+ 0 0x00000000000286c0 uct_ud_iface_send_completion()  ???:0
+ 1 0x000000000005f2d7 ucs_callbackq_add_safe()  ???:0
+ 2 0x000000000004a42a ucp_worker_progress()  ???:0
+ 3 0x00000000000183bc hmca_bcol_ucx_p2p_progress()  ???:0
+ 4 0x000000000001a338 hmca_bcol_ucx_p2p_init_query()  ???:0
+ 5 0x00000000000b51d3 hmca_bcol_base_init()  ???:0
+ 6 0x0000000000063aa3 hmca_coll_ml_init_query()  ???:0
+ 7 0x00000000000ac295 hcoll_init_with_opts()  ???:0
+ 8 0x00000000000053d8 mca_coll_hcoll_comm_query()  /proj/scratch/qa/library_builds/Linux_x86_64/rel_nv_lib_hpcx_cuda12_x86_64/work/rebuild_ompi/ompi/build/ompi/mca/coll/hcoll/../../../../../ompi/mca/coll/hcoll/coll_hcoll_module.c:301
+ 9 0x0000000000084375 query_2_0_0()  /proj/scratch/qa/library_builds/Linux_x86_64/rel_nv_lib_hpcx_cuda12_x86_64/work/rebuild_ompi/ompi/build/ompi/mca/coll/../../../../ompi/mca/coll/base/coll_base_comm_select.c:540
+10 0x0000000000084375 query()  /proj/scratch/qa/library_builds/Linux_x86_64/rel_nv_lib_hpcx_cuda12_x86_64/work/rebuild_ompi/ompi/build/ompi/mca/coll/../../../../ompi/mca/coll/base/coll_base_comm_select.c:523
+11 0x0000000000084375 check_one_component()  /proj/scratch/qa/library_builds/Linux_x86_64/rel_nv_lib_hpcx_cuda12_x86_64/work/rebuild_ompi/ompi/build/ompi/mca/coll/../../../../ompi/mca/coll/base/coll_base_comm_select.c:486
+12 0x0000000000084375 check_components()  /proj/scratch/qa/library_builds/Linux_x86_64/rel_nv_lib_hpcx_cuda12_x86_64/work/rebuild_ompi/ompi/build/ompi/mca/coll/../../../../ompi/mca/coll/base/coll_base_comm_select.c:406
+13 0x00000000000848e2 mca_coll_base_comm_select()  /proj/scratch/qa/library_builds/Linux_x86_64/rel_nv_lib_hpcx_cuda12_x86_64/work/rebuild_ompi/ompi/build/ompi/mca/coll/../../../../ompi/mca/coll/base/coll_base_comm_select.c:114
+14 0x00000000000e09f6 ompi_mpi_init()  /proj/scratch/qa/library_builds/Linux_x86_64/rel_nv_lib_hpcx_cuda12_x86_64/work/rebuild_ompi/ompi/build/ompi/../../ompi/runtime/ompi_mpi_init.c:958
+15 0x0000000000075920 PMPI_Init_thread()  /proj/scratch/qa/library_builds/Linux_x86_64/rel_nv_lib_hpcx_cuda12_x86_64/work/rebuild_ompi/ompi/build/ompi/mpi/c/profile/pinit_thread.c:67
+16 0x000000000004add0 ompi_init_thread_f()  /proj/scratch/qa/library_builds/Linux_x86_64/rel_nv_lib_hpcx_cuda12_x86_64/work/rebuild_ompi/ompi/build/ompi/mpi/fortran/mpif-h/profile/pinit_thread_f.c:76
+17 0x0000000000ab7667 MAIN_()  /valhalla/projects/ehpc-ben-2026b06-085/tchristian/work/RegCM/Main/regcm.F90:59
+18 0x000000000044c531 main()  ???:0
+19 0x00000000000295d0 __libc_start_call_main()  ???:0
+20 0x0000000000029680 __libc_start_main_alias_2()  :0
+21 0x000000000044c425 _start()  ???:0
+=================================
+[dgx1:3388886] *** Process received signal ***
+[dgx1:3388886] Signal: Aborted (6)
+[dgx1:3388886] Signal code:  (-6)
+[dgx1:3388886] [ 0] /usr/lib64/libc.so.6(+0x3e730)[0x7f996603e730]
+[dgx1:3388886] [ 1] /usr/lib64/libc.so.6(+0x8ba6c)[0x7f996608ba6c]
+[dgx1:3388886] [ 2] /usr/lib64/libc.so.6(raise+0x16)[0x7f996603e686]
+[dgx1:3388886] [ 3] /usr/lib64/libc.so.6(abort+0xd3)[0x7f9966028833]
+[dgx1:3388886] [ 4] /lib64/libucs.so.0(+0x5e5db)[0x7f995ecc15db]
+[dgx1:3388886] [ 5] /lib64/libucs.so.0(ucs_fatal_error_format+0x111)[0x7f995ecc16f1]
+[dgx1:3388886] [ 6] /lib64/ucx/libuct_ib.so.0(+0x286c0)[0x7f995e2c66c0]
+[dgx1:3388886] [ 7] /lib64/libucs.so.0(+0x5f2d7)[0x7f995ecc22d7]
+[dgx1:3388886] [ 8] /lib64/libucp.so.0(ucp_worker_progress+0x5a)[0x7f9963fba42a]
+[dgx1:3388886] [ 9] /opt/mellanox/hcoll/lib/hcoll/hmca_bcol_ucx_p2p.so(hmca_bcol_ucx_p2p_progress+0x2c)[0x7f995414d3bc]
+[dgx1:3388886] [10] /opt/mellanox/hcoll/lib/hcoll/hmca_bcol_ucx_p2p.so(hmca_bcol_ucx_p2p_init_query+0x638)[0x7f995414f338]
+[dgx1:3388886] [11] /opt/mellanox/hcoll/lib/libhcoll.so.1(hmca_bcol_base_init+0x43)[0x7f9957f821d3]
+[dgx1:3388886] [12] /opt/mellanox/hcoll/lib/libhcoll.so.1(hmca_coll_ml_init_query+0x73)[0x7f9957f30aa3]
+[dgx1:3388886] [13] /opt/mellanox/hcoll/lib/libhcoll.so.1(hcoll_init_with_opts+0x375)[0x7f9957f79295]
+[dgx1:3388886] [14] /weka/software/nvidia/packages/hpc_sdk/Linux_x86_64/25.1/comm_libs/12.6/hpcx/hpcx-2.21/ompi/lib/openmpi/mca_coll_hcoll.so(mca_coll_hcoll_comm_query+0x498)[0x7f9747df53d8]
+[dgx1:3388886] [15] /weka/software/nvidia/packages/hpc_sdk/Linux_x86_64/25.1/comm_libs/12.6/hpcx/hpcx-2.21/ompi/lib/libmpi.so.40(+0x84375)[0x7f9987dfb375]
+[dgx1:3388886] [16] /weka/software/nvidia/packages/hpc_sdk/Linux_x86_64/25.1/comm_libs/12.6/hpcx/hpcx-2.21/ompi/lib/libmpi.so.40(mca_coll_base_comm_select+0x72)[0x7f9987dfb8e2]
+[dgx1:3388886] [17] /weka/software/nvidia/packages/hpc_sdk/Linux_x86_64/25.1/comm_libs/12.6/hpcx/hpcx-2.21/ompi/lib/libmpi.so.40(ompi_mpi_init+0xe76)[0x7f9987e579f6]
+[dgx1:3388886] [18] /weka/software/nvidia/packages/hpc_sdk/Linux_x86_64/25.1/comm_libs/12.6/hpcx/hpcx-2.21/ompi/lib/libmpi.so.40(PMPI_Init_thread+0x40)[0x7f9987dec920]
+[dgx1:3388886] [19] /weka/software/nvidia/packages/hpc_sdk/Linux_x86_64/25.1/comm_libs/12.6/hpcx/hpcx-2.21/ompi/lib/libmpi_mpifh.so.40(MPI_INIT_THREAD+0x30)[0x7f99880fcdd0]
+[dgx1:3388886] [20] /valhalla/projects/ehpc-ben-2026b06-085/tchristian/work/RegCM/bin/regcmMPICLM45(MAIN_+0x27)[0xab7667]
+[dgx1:3388886] [21] /valhalla/projects/ehpc-ben-2026b06-085/tchristian/work/RegCM/bin/regcmMPICLM45(main+0x31)[0x44c531]
+[dgx1:3388886] [22] /usr/lib64/libc.so.6(+0x295d0)[0x7f99660295d0]
+[dgx1:3388886] [23] /usr/lib64/libc.so.6(__libc_start_main+0x80)[0x7f9966029680]
+[dgx1:3388886] [24] /valhalla/projects/ehpc-ben-2026b06-085/tchristian/work/RegCM/bin/regcmMPICLM45(_start+0x25)[0x44c425]
+[dgx1:3388886] *** End of error message ***
+[dgx1:3388891:0:3388891] Caught signal 7 (Bus error: nonexistent physical address)
+[dgx1:3388890:0:3388890] Caught signal 7 (Bus error: nonexistent physical address)
+[dgx1:3388888:0:3388888] Caught signal 7 (Bus error: nonexistent physical address)
+[dgx1:3388889:0:3388889] Caught signal 7 (Bus error: nonexistent physical address)
+==== backtrace (tid:3388890) ====
+ 0 0x000000000006141c ucs_callbackq_cleanup()  ???:0
+ 1 0x000000000006158a ucs_callbackq_cleanup()  ???:0
+ 2 0x000000000003e730 __GI___sigaction()  :0
+ 3 0x000000000001e05e uct_mm_ep_cleanup_remote_segs()  ???:0
+ 4 0x000000000001e22d uct_mm_ep_t_new()  ???:0
+ 5 0x000000000001ad4a uct_ep_create()  ???:0
+ 6 0x00000000000a2a0b ucp_wireup_init_lanes()  ???:0
+ 7 0x000000000003603e ucp_ep_create_to_worker_addr()  ???:0
+ 8 0x000000000003724b ucp_worker_mem_type_eps_create()  ???:0
+ 9 0x00000000000377a8 ucp_ep_create()  ???:0
+10 0x00000000000193ce ucx_send_nb.constprop.0()  ???:0
+11 0x000000000001a273 hmca_bcol_ucx_p2p_init_query()  ???:0
+12 0x00000000000b51d3 hmca_bcol_base_init()  ???:0
+13 0x0000000000063aa3 hmca_coll_ml_init_query()  ???:0
+14 0x00000000000ac295 hcoll_init_with_opts()  ???:0
+15 0x00000000000053d8 mca_coll_hcoll_comm_query()  /proj/scratch/qa/library_builds/Linux_x86_64/rel_nv_lib_hpcx_cuda12_x86_64/work/rebuild_ompi/ompi/build/ompi/mca/coll/hcoll/../../../../../ompi/mca/coll/hcoll/coll_hcoll_module.c:301
+16 0x0000000000084375 query_2_0_0()  /proj/scratch/qa/library_builds/Linux_x86_64/rel_nv_lib_hpcx_cuda12_x86_64/work/rebuild_ompi/ompi/build/ompi/mca/coll/../../../../ompi/mca/coll/base/coll_base_comm_select.c:540
+17 0x0000000000084375 query()  /proj/scratch/qa/library_builds/Linux_x86_64/rel_nv_lib_hpcx_cuda12_x86_64/work/rebuild_ompi/ompi/build/ompi/mca/coll/../../../../ompi/mca/coll/base/coll_base_comm_select.c:523
+18 0x0000000000084375 check_one_component()  /proj/scratch/qa/library_builds/Linux_x86_64/rel_nv_lib_hpcx_cuda12_x86_64/work/rebuild_ompi/ompi/build/ompi/mca/coll/../../../../ompi/mca/coll/base/coll_base_comm_select.c:486
+19 0x0000000000084375 check_components()  /proj/scratch/qa/library_builds/Linux_x86_64/rel_nv_lib_hpcx_cuda12_x86_64/work/rebuild_ompi/ompi/build/ompi/mca/coll/../../../../ompi/mca/coll/base/coll_base_comm_select.c:406
+20 0x00000000000848e2 mca_coll_base_comm_select()  /proj/scratch/qa/library_builds/Linux_x86_64/rel_nv_lib_hpcx_cuda12_x86_64/work/rebuild_ompi/ompi/build/ompi/mca/coll/../../../../ompi/mca/coll/base/coll_base_comm_select.c:114
+21 0x00000000000e09f6 ompi_mpi_init()  /proj/scratch/qa/library_builds/Linux_x86_64/rel_nv_lib_hpcx_cuda12_x86_64/work/rebuild_ompi/ompi/build/ompi/../../ompi/runtime/ompi_mpi_init.c:958
+22 0x0000000000075920 PMPI_Init_thread()  /proj/scratch/qa/library_builds/Linux_x86_64/rel_nv_lib_hpcx_cuda12_x86_64/work/rebuild_ompi/ompi/build/ompi/mpi/c/profile/pinit_thread.c:67
+23 0x000000000004add0 ompi_init_thread_f()  /proj/scratch/qa/library_builds/Linux_x86_64/rel_nv_lib_hpcx_cuda12_x86_64/work/rebuild_ompi/ompi/build/ompi/mpi/fortran/mpif-h/profile/pinit_thread_f.c:76
+==== backtrace (tid:3388891) ====
+ 0 0x000000000006141c ucs_callbackq_cleanup()  ???:0
+ 1 0x000000000006158a ucs_callbackq_cleanup()  ???:0
+ 2 0x000000000003e730 __GI___sigaction()  :0
+ 3 0x000000000001e05e uct_mm_ep_cleanup_remote_segs()  ???:0
+ 4 0x000000000001e22d uct_mm_ep_t_new()  ???:0
+ 5 0x000000000001ad4a uct_ep_create()  ???:0
+ 6 0x00000000000a2a0b ucp_wireup_init_lanes()  ???:0
+ 7 0x000000000003603e ucp_ep_create_to_worker_addr()  ???:0
+ 8 0x000000000003724b ucp_worker_mem_type_eps_create()  ???:0
+ 9 0x00000000000377a8 ucp_ep_create()  ???:0
+10 0x00000000000193ce ucx_send_nb.constprop.0()  ???:0
+11 0x000000000001a273 hmca_bcol_ucx_p2p_init_query()  ???:0
+12 0x00000000000b51d3 hmca_bcol_base_init()  ???:0
+13 0x0000000000063aa3 hmca_coll_ml_init_query()  ???:0
+14 0x00000000000ac295 hcoll_init_with_opts()  ???:0
+15 0x00000000000053d8 mca_coll_hcoll_comm_query()  /proj/scratch/qa/library_builds/Linux_x86_64/rel_nv_lib_hpcx_cuda12_x86_64/work/rebuild_ompi/ompi/build/ompi/mca/coll/hcoll/../../../../../ompi/mca/coll/hcoll/coll_hcoll_module.c:301
+16 0x0000000000084375 query_2_0_0()  /proj/scratch/qa/library_builds/Linux_x86_64/rel_nv_lib_hpcx_cuda12_x86_64/work/rebuild_ompi/ompi/build/ompi/mca/coll/../../../../ompi/mca/coll/base/coll_base_comm_select.c:540
+17 0x0000000000084375 query()  /proj/scratch/qa/library_builds/Linux_x86_64/rel_nv_lib_hpcx_cuda12_x86_64/work/rebuild_ompi/ompi/build/ompi/mca/coll/../../../../ompi/mca/coll/base/coll_base_comm_select.c:523
+18 0x0000000000084375 check_one_component()  /proj/scratch/qa/library_builds/Linux_x86_64/rel_nv_lib_hpcx_cuda12_x86_64/work/rebuild_ompi/ompi/build/ompi/mca/coll/../../../../ompi/mca/coll/base/coll_base_comm_select.c:486
+19 0x0000000000084375 check_components()  /proj/scratch/qa/library_builds/Linux_x86_64/rel_nv_lib_hpcx_cuda12_x86_64/work/rebuild_ompi/ompi/build/ompi/mca/coll/../../../../ompi/mca/coll/base/coll_base_comm_select.c:406
+20 0x00000000000848e2 mca_coll_base_comm_select()  /proj/scratch/qa/library_builds/Linux_x86_64/rel_nv_lib_hpcx_cuda12_x86_64/work/rebuild_ompi/ompi/build/ompi/mca/coll/../../../../ompi/mca/coll/base/coll_base_comm_select.c:114
+21 0x00000000000e09f6 ompi_mpi_init()  /proj/scratch/qa/library_builds/Linux_x86_64/rel_nv_lib_hpcx_cuda12_x86_64/work/rebuild_ompi/ompi/build/ompi/../../ompi/runtime/ompi_mpi_init.c:958
+22 0x0000000000075920 PMPI_Init_thread()  /proj/scratch/qa/library_builds/Linux_x86_64/rel_nv_lib_hpcx_cuda12_x86_64/work/rebuild_ompi/ompi/build/ompi/mpi/c/profile/pinit_thread.c:67
+23 0x000000000004add0 ompi_init_thread_f()  /proj/scratch/qa/library_builds/Linux_x86_64/rel_nv_lib_hpcx_cuda12_x86_64/work/rebuild_ompi/ompi/build/ompi/mpi/fortran/mpif-h/profile/pinit_thread_f.c:76
+24 0x0000000000ab7667 MAIN_()  /valhalla/projects/ehpc-ben-2026b06-085/tchristian/work/RegCM/Main/regcm.F90:59
+25 0x000000000044c531 main()  ???:0
+26 0x00000000000295d0 __libc_start_call_main()  ???:0
+27 0x0000000000029680 __libc_start_main_alias_2()  :0
+28 0x000000000044c425 _start()  ???:0
+=================================
+[dgx1:3388891] *** Process received signal ***
+[dgx1:3388891] Signal: Bus error (7)
+[dgx1:3388891] Signal code:  (-6)
+[dgx1:3388891] Failing at address: 0x15e10033b5db
+[dgx1:3388891] [ 0] /usr/lib64/libc.so.6(+0x3e730)[0x7f016783e730]
+[dgx1:3388891] [ 1] /lib64/libuct.so.0(+0x1e05e)[0x7f016582905e]
+[dgx1:3388891] [ 2] /lib64/libuct.so.0(uct_mm_ep_t_new+0x5d)[0x7f016582922d]
+24 0x0000000000ab7667 MAIN_()  /valhalla/projects/ehpc-ben-2026b06-085/tchristian/work/RegCM/Main/regcm.F90:59
+25 0x000000000044c531 main()  ???:0
+26 0x00000000000295d0 __libc_start_call_main()  ???:0
+27 0x0000000000029680 __libc_start_main_alias_2()  :0
+28 0x000000000044c425 _start()  ???:0
+=================================
+[dgx1:3388890] *** Process received signal ***
+[dgx1:3388890] Signal: Bus error (7)
+[dgx1:3388890] Signal code:  (-6)
+[dgx1:3388890] Failing at address: 0x15e10033b5da
+[dgx1:3388891] [ 3] /lib64/libuct.so.0(uct_ep_create+0x3a)[0x7f0165825d4a]
+[dgx1:3388891] [ 4] /lib64/libucp.so.0(ucp_wireup_init_lanes+0x6fb)[0x7f01658eca0b]
+[dgx1:3388891] [ 5] /lib64/libucp.so.0(ucp_ep_create_to_worker_addr+0x8e)[0x7f016588003e]
+[dgx1:3388891] [ 6] /lib64/libucp.so.0(+0x3724b)[0x7f016588124b]
+[dgx1:3388891] [ 7] /lib64/libucp.so.0(ucp_ep_create+0x318)[0x7f01658817a8]
+[dgx1:3388891] [ 8] /opt/mellanox/hcoll/lib/hcoll/hmca_bcol_ucx_p2p.so(+0x193ce)[0x7f0151a273ce]
+[dgx1:3388891] [ 9] /opt/mellanox/hcoll/lib/hcoll/hmca_bcol_ucx_p2p.so(hmca_bcol_ucx_p2p_init_query+0x573)[0x7f0151a28273]
+[dgx1:3388891] [10] /opt/mellanox/hcoll/lib/libhcoll.so.1(hmca_bcol_base_init+0x43)[0x7f01580ec1d3]
+[dgx1:3388891] [11] /opt/mellanox/hcoll/lib/libhcoll.so.1(hmca_coll_ml_init_query+0x73)[0x7f015809aaa3]
+[dgx1:3388890] [ 0] /usr/lib64/libc.so.6(+0x3e730)[0x7fea1be3e730]
+[dgx1:3388890] [ 1] /lib64/libuct.so.0(+0x1e05e)[0x7fea19cc805e]
+[dgx1:3388890] [ 2] /lib64/libuct.so.0(uct_mm_ep_t_new+0x5d)[0x7fea19cc822d]
+[dgx1:3388891] [12] /opt/mellanox/hcoll/lib/libhcoll.so.1(hcoll_init_with_opts+0x375)[0x7f01580e3295]
+[dgx1:3388891] [13] /weka/software/nvidia/packages/hpc_sdk/Linux_x86_64/25.1/comm_libs/12.6/hpcx/hpcx-2.21/ompi/lib/openmpi/mca_coll_hcoll.so(mca_coll_hcoll_comm_query+0x498)[0x7f01517893d8]
+[dgx1:3388891] [14] /weka/software/nvidia/packages/hpc_sdk/Linux_x86_64/25.1/comm_libs/12.6/hpcx/hpcx-2.21/ompi/lib/libmpi.so.40(+0x84375)[0x7f01896d7375]
+[dgx1:3388891] [15] /weka/software/nvidia/packages/hpc_sdk/Linux_x86_64/25.1/comm_libs/12.6/hpcx/hpcx-2.21/ompi/lib/libmpi.so.40(mca_coll_base_comm_select+0x72)[0x7f01896d78e2]
+[dgx1:3388891] [16] /weka/software/nvidia/packages/hpc_sdk/Linux_x86_64/25.1/comm_libs/12.6/hpcx/hpcx-2.21/ompi/lib/libmpi.so.40(ompi_mpi_init+0xe76)[0x7f01897339f6]
+[dgx1:3388890] [ 3] /lib64/libuct.so.0(uct_ep_create+0x3a)[0x7fea19cc4d4a]
+[dgx1:3388890] [ 4] /lib64/libucp.so.0(ucp_wireup_init_lanes+0x6fb)[0x7fea19d8ba0b]
+[dgx1:3388890] [ 5] /lib64/libucp.so.0(ucp_ep_create_to_worker_addr+0x8e)[0x7fea19d1f03e]
+[dgx1:3388890] [ 6] /lib64/libucp.so.0(+0x3724b)[0x7fea19d2024b]
+[dgx1:3388891] [17] /weka/software/nvidia/packages/hpc_sdk/Linux_x86_64/25.1/comm_libs/12.6/hpcx/hpcx-2.21/ompi/lib/libmpi.so.40(PMPI_Init_thread+0x40)[0x7f01896c8920]
+[dgx1:3388890] [ 7] /lib64/libucp.so.0(ucp_ep_create+0x318)[0x7fea19d207a8]
+[dgx1:3388890] [ 8] /opt/mellanox/hcoll/lib/hcoll/hmca_bcol_ucx_p2p.so(+0x193ce)[0x7fea05ff73ce]
+[dgx1:3388890] [ 9] /opt/mellanox/hcoll/lib/hcoll/hmca_bcol_ucx_p2p.so(hmca_bcol_ucx_p2p_init_query+0x573)[0x7fea05ff8273]
+[dgx1:3388890] [10] /opt/mellanox/hcoll/lib/libhcoll.so.1(hmca_bcol_base_init+0x43)[0x7fea05cf21d3]
+[dgx1:3388890] [11] /opt/mellanox/hcoll/lib/libhcoll.so.1(hmca_coll_ml_init_query+0x73)[0x7fea05ca0aa3]
+[dgx1:3388890] [12] /opt/mellanox/hcoll/lib/libhcoll.so.1(hcoll_init_with_opts+0x375)[0x7fea05ce9295]
+[dgx1:3388890] [13] /weka/software/nvidia/packages/hpc_sdk/Linux_x86_64/25.1/comm_libs/12.6/hpcx/hpcx-2.21/ompi/lib/openmpi/mca_coll_hcoll.so(mca_coll_hcoll_comm_query+0x498)[0x7fea05d753d8]
+[dgx1:3388890] [14] /weka/software/nvidia/packages/hpc_sdk/Linux_x86_64/25.1/comm_libs/12.6/hpcx/hpcx-2.21/ompi/lib/libmpi.so.40(+0x84375)[0x7fea3db74375]
+[dgx1:3388890] [15] /weka/software/nvidia/packages/hpc_sdk/Linux_x86_64/25.1/comm_libs/12.6/hpcx/hpcx-2.21/ompi/lib/libmpi.so.40(mca_coll_base_comm_select+0x72)[0x7fea3db748e2]
+[dgx1:3388891] [18] /weka/software/nvidia/packages/hpc_sdk/Linux_x86_64/25.1/comm_libs/12.6/hpcx/hpcx-2.21/ompi/lib/libmpi_mpifh.so.40(MPI_INIT_THREAD+0x30)[0x7f01899d8dd0]
+[dgx1:3388890] [16] /weka/software/nvidia/packages/hpc_sdk/Linux_x86_64/25.1/comm_libs/12.6/hpcx/hpcx-2.21/ompi/lib/libmpi.so.40(ompi_mpi_init+0xe76)[0x7fea3dbd09f6]
+[dgx1:3388890] [17] /weka/software/nvidia/packages/hpc_sdk/Linux_x86_64/25.1/comm_libs/12.6/hpcx/hpcx-2.21/ompi/lib/libmpi.so.40(PMPI_Init_thread+0x40)[0x7fea3db65920]
+[dgx1:3388891] [19] /valhalla/projects/ehpc-ben-2026b06-085/tchristian/work/RegCM/bin/regcmMPICLM45(MAIN_+0x27)[0xab7667]
+[dgx1:3388891] [20] /valhalla/projects/ehpc-ben-2026b06-085/tchristian/work/RegCM/bin/regcmMPICLM45(main+0x31)[0x44c531]
+[dgx1:3388891] [21] /usr/lib64/libc.so.6(+0x295d0)[0x7f01678295d0]
+[dgx1:3388891] [22] /usr/lib64/libc.so.6(__libc_start_main+0x80)[0x7f0167829680]
+[dgx1:3388890] [18] /weka/software/nvidia/packages/hpc_sdk/Linux_x86_64/25.1/comm_libs/12.6/hpcx/hpcx-2.21/ompi/lib/libmpi_mpifh.so.40(MPI_INIT_THREAD+0x30)[0x7fea3de75dd0]
+[dgx1:3388891] [23] /valhalla/projects/ehpc-ben-2026b06-085/tchristian/work/RegCM/bin/regcmMPICLM45(_start+0x25)[0x44c425]
+[dgx1:3388891] *** End of error message ***
+[dgx1:3388890] [19] /valhalla/projects/ehpc-ben-2026b06-085/tchristian/work/RegCM/bin/regcmMPICLM45(MAIN_+0x27)[0xab7667]
+[dgx1:3388890] [20] /valhalla/projects/ehpc-ben-2026b06-085/tchristian/work/RegCM/bin/regcmMPICLM45(main+0x31)[0x44c531]
+[dgx1:3388890] [21] /usr/lib64/libc.so.6(+0x295d0)[0x7fea1be295d0]
+[dgx1:3388890] [22] /usr/lib64/libc.so.6(__libc_start_main+0x80)[0x7fea1be29680]
+[dgx1:3388890] [23] /valhalla/projects/ehpc-ben-2026b06-085/tchristian/work/RegCM/bin/regcmMPICLM45(_start+0x25)[0x44c425]
+[dgx1:3388890] *** End of error message ***
+==== backtrace (tid:3388889) ====
+ 0 0x000000000006141c ucs_callbackq_cleanup()  ???:0
+ 1 0x000000000006158a ucs_callbackq_cleanup()  ???:0
+ 2 0x000000000003e730 __GI___sigaction()  :0
+ 3 0x000000000001e05e uct_mm_ep_cleanup_remote_segs()  ???:0
+ 4 0x000000000001e22d uct_mm_ep_t_new()  ???:0
+ 5 0x000000000001ad4a uct_ep_create()  ???:0
+ 6 0x00000000000a2a0b ucp_wireup_init_lanes()  ???:0
+ 7 0x000000000003603e ucp_ep_create_to_worker_addr()  ???:0
+ 8 0x000000000003724b ucp_worker_mem_type_eps_create()  ???:0
+ 9 0x00000000000377a8 ucp_ep_create()  ???:0
+10 0x000000000001995a ucx_recv_nb.constprop.0()  ???:0
+11 0x000000000001a2ab hmca_bcol_ucx_p2p_init_query()  ???:0
+12 0x00000000000b51d3 hmca_bcol_base_init()  ???:0
+13 0x0000000000063aa3 hmca_coll_ml_init_query()  ???:0
+14 0x00000000000ac295 hcoll_init_with_opts()  ???:0
+15 0x00000000000053d8 mca_coll_hcoll_comm_query()  /proj/scratch/qa/library_builds/Linux_x86_64/rel_nv_lib_hpcx_cuda12_x86_64/work/rebuild_ompi/ompi/build/ompi/mca/coll/hcoll/../../../../../ompi/mca/coll/hcoll/coll_hcoll_module.c:301
+16 0x0000000000084375 query_2_0_0()  /proj/scratch/qa/library_builds/Linux_x86_64/rel_nv_lib_hpcx_cuda12_x86_64/work/rebuild_ompi/ompi/build/ompi/mca/coll/../../../../ompi/mca/coll/base/coll_base_comm_select.c:540
+17 0x0000000000084375 query()  /proj/scratch/qa/library_builds/Linux_x86_64/rel_nv_lib_hpcx_cuda12_x86_64/work/rebuild_ompi/ompi/build/ompi/mca/coll/../../../../ompi/mca/coll/base/coll_base_comm_select.c:523
+18 0x0000000000084375 check_one_component()  /proj/scratch/qa/library_builds/Linux_x86_64/rel_nv_lib_hpcx_cuda12_x86_64/work/rebuild_ompi/ompi/build/ompi/mca/coll/../../../../ompi/mca/coll/base/coll_base_comm_select.c:486
+19 0x0000000000084375 check_components()  /proj/scratch/qa/library_builds/Linux_x86_64/rel_nv_lib_hpcx_cuda12_x86_64/work/rebuild_ompi/ompi/build/ompi/mca/coll/../../../../ompi/mca/coll/base/coll_base_comm_select.c:406
+20 0x00000000000848e2 mca_coll_base_comm_select()  /proj/scratch/qa/library_builds/Linux_x86_64/rel_nv_lib_hpcx_cuda12_x86_64/work/rebuild_ompi/ompi/build/ompi/mca/coll/../../../../ompi/mca/coll/base/coll_base_comm_select.c:114
+21 0x00000000000e09f6 ompi_mpi_init()  /proj/scratch/qa/library_builds/Linux_x86_64/rel_nv_lib_hpcx_cuda12_x86_64/work/rebuild_ompi/ompi/build/ompi/../../ompi/runtime/ompi_mpi_init.c:958
+22 0x0000000000075920 PMPI_Init_thread()  /proj/scratch/qa/library_builds/Linux_x86_64/rel_nv_lib_hpcx_cuda12_x86_64/work/rebuild_ompi/ompi/build/ompi/mpi/c/profile/pinit_thread.c:67
+23 0x000000000004add0 ompi_init_thread_f()  /proj/scratch/qa/library_builds/Linux_x86_64/rel_nv_lib_hpcx_cuda12_x86_64/work/rebuild_ompi/ompi/build/ompi/mpi/fortran/mpif-h/profile/pinit_thread_f.c:76
+24 0x0000000000ab7667 MAIN_()  /valhalla/projects/ehpc-ben-2026b06-085/tchristian/work/RegCM/Main/regcm.F90:59
+25 0x000000000044c531 main()  ???:0
+26 0x00000000000295d0 __libc_start_call_main()  ???:0
+27 0x0000000000029680 __libc_start_main_alias_2()  :0
+28 0x000000000044c425 _start()  ???:0
+=================================
+[dgx1:3388889] *** Process received signal ***
+[dgx1:3388889] Signal: Bus error (7)
+[dgx1:3388889] Signal code:  (-6)
+[dgx1:3388889] Failing at address: 0x15e10033b5d9
+[dgx1:3388889] [ 0] /usr/lib64/libc.so.6(+0x3e730)[0x7ff16a83e730]
+[dgx1:3388889] [ 1] /lib64/libuct.so.0(+0x1e05e)[0x7ff16884b05e]
+[dgx1:3388889] [ 2] /lib64/libuct.so.0(uct_mm_ep_t_new+0x5d)[0x7ff16884b22d]
+[dgx1:3388889] [ 3] /lib64/libuct.so.0(uct_ep_create+0x3a)[0x7ff168847d4a]
+[dgx1:3388889] [ 4] /lib64/libucp.so.0(ucp_wireup_init_lanes+0x6fb)[0x7ff16890ea0b]
+[dgx1:3388889] [ 5] /lib64/libucp.so.0(ucp_ep_create_to_worker_addr+0x8e)[0x7ff1688a203e]
+[dgx1:3388889] [ 6] /lib64/libucp.so.0(+0x3724b)[0x7ff1688a324b]
+[dgx1:3388889] [ 7] /lib64/libucp.so.0(ucp_ep_create+0x318)[0x7ff1688a37a8]
+[dgx1:3388889] [ 8] /opt/mellanox/hcoll/lib/hcoll/hmca_bcol_ucx_p2p.so(+0x1995a)[0x7ff158a4495a]
+[dgx1:3388889] [ 9] /opt/mellanox/hcoll/lib/hcoll/hmca_bcol_ucx_p2p.so(hmca_bcol_ucx_p2p_init_query+0x5ab)[0x7ff158a452ab]
+[dgx1:3388889] [10] /opt/mellanox/hcoll/lib/libhcoll.so.1(hmca_bcol_base_init+0x43)[0x7ff15bf821d3]
+[dgx1:3388889] [11] /opt/mellanox/hcoll/lib/libhcoll.so.1(hmca_coll_ml_init_query+0x73)[0x7ff15bf30aa3]
+[dgx1:3388889] [12] /opt/mellanox/hcoll/lib/libhcoll.so.1(hcoll_init_with_opts+0x375)[0x7ff15bf79295]
+[dgx1:3388889] [13] /weka/software/nvidia/packages/hpc_sdk/Linux_x86_64/25.1/comm_libs/12.6/hpcx/hpcx-2.21/ompi/lib/openmpi/mca_coll_hcoll.so(mca_coll_hcoll_comm_query+0x498)[0x7ff1587983d8]
+[dgx1:3388889] [14] /weka/software/nvidia/packages/hpc_sdk/Linux_x86_64/25.1/comm_libs/12.6/hpcx/hpcx-2.21/ompi/lib/libmpi.so.40(+0x84375)[0x7ff18c6f3375]
+[dgx1:3388889] [15] /weka/software/nvidia/packages/hpc_sdk/Linux_x86_64/25.1/comm_libs/12.6/hpcx/hpcx-2.21/ompi/lib/libmpi.so.40(mca_coll_base_comm_select+0x72)[0x7ff18c6f38e2]
+[dgx1:3388889] [16] /weka/software/nvidia/packages/hpc_sdk/Linux_x86_64/25.1/comm_libs/12.6/hpcx/hpcx-2.21/ompi/lib/libmpi.so.40(ompi_mpi_init+0xe76)[0x7ff18c74f9f6]
+[dgx1:3388889] [17] /weka/software/nvidia/packages/hpc_sdk/Linux_x86_64/25.1/comm_libs/12.6/hpcx/hpcx-2.21/ompi/lib/libmpi.so.40(PMPI_Init_thread+0x40)[0x7ff18c6e4920]
+[dgx1:3388889] [18] /weka/software/nvidia/packages/hpc_sdk/Linux_x86_64/25.1/comm_libs/12.6/hpcx/hpcx-2.21/ompi/lib/libmpi_mpifh.so.40(MPI_INIT_THREAD+0x30)[0x7ff18c9f4dd0]
+[dgx1:3388889] [19] /valhalla/projects/ehpc-ben-2026b06-085/tchristian/work/RegCM/bin/regcmMPICLM45(MAIN_+0x27)[0xab7667]
+[dgx1:3388889] [20] /valhalla/projects/ehpc-ben-2026b06-085/tchristian/work/RegCM/bin/regcmMPICLM45(main+0x31)[0x44c531]
+[dgx1:3388889] [21] /usr/lib64/libc.so.6(+0x295d0)[0x7ff16a8295d0]
+[dgx1:3388889] [22] /usr/lib64/libc.so.6(__libc_start_main+0x80)[0x7ff16a829680]
+[dgx1:3388889] [23] /valhalla/projects/ehpc-ben-2026b06-085/tchristian/work/RegCM/bin/regcmMPICLM45(_start+0x25)[0x44c425]
+[dgx1:3388889] *** End of error message ***
+==== backtrace (tid:3388888) ====
+ 0 0x000000000006141c ucs_callbackq_cleanup()  ???:0
+ 1 0x000000000006158a ucs_callbackq_cleanup()  ???:0
+ 2 0x000000000003e730 __GI___sigaction()  :0
+ 3 0x000000000001e05e uct_mm_ep_cleanup_remote_segs()  ???:0
+ 4 0x000000000001e22d uct_mm_ep_t_new()  ???:0
+ 5 0x000000000001ad4a uct_ep_create()  ???:0
+ 6 0x00000000000a2a0b ucp_wireup_init_lanes()  ???:0
+ 7 0x000000000003603e ucp_ep_create_to_worker_addr()  ???:0
+ 8 0x000000000003724b ucp_worker_mem_type_eps_create()  ???:0
+ 9 0x00000000000377a8 ucp_ep_create()  ???:0
+10 0x000000000001995a ucx_recv_nb.constprop.0()  ???:0
+11 0x000000000001a2ab hmca_bcol_ucx_p2p_init_query()  ???:0
+12 0x00000000000b51d3 hmca_bcol_base_init()  ???:0
+13 0x0000000000063aa3 hmca_coll_ml_init_query()  ???:0
+14 0x00000000000ac295 hcoll_init_with_opts()  ???:0
+15 0x00000000000053d8 mca_coll_hcoll_comm_query()  /proj/scratch/qa/library_builds/Linux_x86_64/rel_nv_lib_hpcx_cuda12_x86_64/work/rebuild_ompi/ompi/build/ompi/mca/coll/hcoll/../../../../../ompi/mca/coll/hcoll/coll_hcoll_module.c:301
+16 0x0000000000084375 query_2_0_0()  /proj/scratch/qa/library_builds/Linux_x86_64/rel_nv_lib_hpcx_cuda12_x86_64/work/rebuild_ompi/ompi/build/ompi/mca/coll/../../../../ompi/mca/coll/base/coll_base_comm_select.c:540
+17 0x0000000000084375 query()  /proj/scratch/qa/library_builds/Linux_x86_64/rel_nv_lib_hpcx_cuda12_x86_64/work/rebuild_ompi/ompi/build/ompi/mca/coll/../../../../ompi/mca/coll/base/coll_base_comm_select.c:523
+18 0x0000000000084375 check_one_component()  /proj/scratch/qa/library_builds/Linux_x86_64/rel_nv_lib_hpcx_cuda12_x86_64/work/rebuild_ompi/ompi/build/ompi/mca/coll/../../../../ompi/mca/coll/base/coll_base_comm_select.c:486
+19 0x0000000000084375 check_components()  /proj/scratch/qa/library_builds/Linux_x86_64/rel_nv_lib_hpcx_cuda12_x86_64/work/rebuild_ompi/ompi/build/ompi/mca/coll/../../../../ompi/mca/coll/base/coll_base_comm_select.c:406
+20 0x00000000000848e2 mca_coll_base_comm_select()  /proj/scratch/qa/library_builds/Linux_x86_64/rel_nv_lib_hpcx_cuda12_x86_64/work/rebuild_ompi/ompi/build/ompi/mca/coll/../../../../ompi/mca/coll/base/coll_base_comm_select.c:114
+21 0x00000000000e09f6 ompi_mpi_init()  /proj/scratch/qa/library_builds/Linux_x86_64/rel_nv_lib_hpcx_cuda12_x86_64/work/rebuild_ompi/ompi/build/ompi/../../ompi/runtime/ompi_mpi_init.c:958
+22 0x0000000000075920 PMPI_Init_thread()  /proj/scratch/qa/library_builds/Linux_x86_64/rel_nv_lib_hpcx_cuda12_x86_64/work/rebuild_ompi/ompi/build/ompi/mpi/c/profile/pinit_thread.c:67
+23 0x000000000004add0 ompi_init_thread_f()  /proj/scratch/qa/library_builds/Linux_x86_64/rel_nv_lib_hpcx_cuda12_x86_64/work/rebuild_ompi/ompi/build/ompi/mpi/fortran/mpif-h/profile/pinit_thread_f.c:76
+24 0x0000000000ab7667 MAIN_()  /valhalla/projects/ehpc-ben-2026b06-085/tchristian/work/RegCM/Main/regcm.F90:59
+25 0x000000000044c531 main()  ???:0
+26 0x00000000000295d0 __libc_start_call_main()  ???:0
+27 0x0000000000029680 __libc_start_main_alias_2()  :0
+28 0x000000000044c425 _start()  ???:0
+=================================
+[dgx1:3388888] *** Process received signal ***
+[dgx1:3388888] Signal: Bus error (7)
+[dgx1:3388888] Signal code:  (-6)
+[dgx1:3388888] Failing at address: 0x15e10033b5d8
+[dgx1:3388888] [ 0] /usr/lib64/libc.so.6(+0x3e730)[0x7fe4a463e730]
+[dgx1:3388888] [ 1] /lib64/libuct.so.0(+0x1e05e)[0x7fe4a252305e]
+[dgx1:3388888] [ 2] /lib64/libuct.so.0(uct_mm_ep_t_new+0x5d)[0x7fe4a252322d]
+[dgx1:3388888] [ 3] /lib64/libuct.so.0(uct_ep_create+0x3a)[0x7fe4a251fd4a]
+[dgx1:3388888] [ 4] /lib64/libucp.so.0(ucp_wireup_init_lanes+0x6fb)[0x7fe4a25e6a0b]
+[dgx1:3388888] [ 5] /lib64/libucp.so.0(ucp_ep_create_to_worker_addr+0x8e)[0x7fe4a257a03e]
+[dgx1:3388888] [ 6] /lib64/libucp.so.0(+0x3724b)[0x7fe4a257b24b]
+[dgx1:3388888] [ 7] /lib64/libucp.so.0(ucp_ep_create+0x318)[0x7fe4a257b7a8]
+[dgx1:3388888] [ 8] /opt/mellanox/hcoll/lib/hcoll/hmca_bcol_ucx_p2p.so(+0x1995a)[0x7fe28661995a]
+[dgx1:3388888] [ 9] /opt/mellanox/hcoll/lib/hcoll/hmca_bcol_ucx_p2p.so(hmca_bcol_ucx_p2p_init_query+0x5ab)[0x7fe28661a2ab]
+[dgx1:3388888] [10] /opt/mellanox/hcoll/lib/libhcoll.so.1(hmca_bcol_base_init+0x43)[0x7fe496d471d3]
+[dgx1:3388888] [11] /opt/mellanox/hcoll/lib/libhcoll.so.1(hmca_coll_ml_init_query+0x73)[0x7fe496cf5aa3]
+[dgx1:3388888] [12] /opt/mellanox/hcoll/lib/libhcoll.so.1(hcoll_init_with_opts+0x375)[0x7fe496d3e295]
+[dgx1:3388888] [13] /weka/software/nvidia/packages/hpc_sdk/Linux_x86_64/25.1/comm_libs/12.6/hpcx/hpcx-2.21/ompi/lib/openmpi/mca_coll_hcoll.so(mca_coll_hcoll_comm_query+0x498)[0x7fe2863af3d8]
+[dgx1:3388888] [14] /weka/software/nvidia/packages/hpc_sdk/Linux_x86_64/25.1/comm_libs/12.6/hpcx/hpcx-2.21/ompi/lib/libmpi.so.40(+0x84375)[0x7fe4c63ca375]
+[dgx1:3388888] [15] /weka/software/nvidia/packages/hpc_sdk/Linux_x86_64/25.1/comm_libs/12.6/hpcx/hpcx-2.21/ompi/lib/libmpi.so.40(mca_coll_base_comm_select+0x72)[0x7fe4c63ca8e2]
+[dgx1:3388888] [16] /weka/software/nvidia/packages/hpc_sdk/Linux_x86_64/25.1/comm_libs/12.6/hpcx/hpcx-2.21/ompi/lib/libmpi.so.40(ompi_mpi_init+0xe76)[0x7fe4c64269f6]
+[dgx1:3388888] [17] /weka/software/nvidia/packages/hpc_sdk/Linux_x86_64/25.1/comm_libs/12.6/hpcx/hpcx-2.21/ompi/lib/libmpi.so.40(PMPI_Init_thread+0x40)[0x7fe4c63bb920]
+[dgx1:3388888] [18] /weka/software/nvidia/packages/hpc_sdk/Linux_x86_64/25.1/comm_libs/12.6/hpcx/hpcx-2.21/ompi/lib/libmpi_mpifh.so.40(MPI_INIT_THREAD+0x30)[0x7fe4c66cbdd0]
+[dgx1:3388888] [19] /valhalla/projects/ehpc-ben-2026b06-085/tchristian/work/RegCM/bin/regcmMPICLM45(MAIN_+0x27)[0xab7667]
+[dgx1:3388888] [20] /valhalla/projects/ehpc-ben-2026b06-085/tchristian/work/RegCM/bin/regcmMPICLM45(main+0x31)[0x44c531]
+[dgx1:3388888] [21] /usr/lib64/libc.so.6(+0x295d0)[0x7fe4a46295d0]
+[dgx1:3388888] [22] /usr/lib64/libc.so.6(__libc_start_main+0x80)[0x7fe4a4629680]
+[dgx1:3388888] [23] /valhalla/projects/ehpc-ben-2026b06-085/tchristian/work/RegCM/bin/regcmMPICLM45(_start+0x25)[0x44c425]
+[dgx1:3388888] *** End of error message ***
+slurmstepd: error:  mpi/pmix_v3: _errhandler: dgx1 [0]: pmixp_client_v2.c:211: Error handler invoked: status = -25, source = [slurm.pmix.180472.0:2]
+srun: Job step aborted: Waiting up to 32 seconds for job step to finish.
+slurmstepd: error: *** STEP 180472.0 ON dgx1 CANCELLED AT 2026-07-16T18:22:50 ***
+srun: error: dgx1: task 2: Aborted (core dumped)
+slurmstepd: error:  mpi/pmix_v3: _errhandler: dgx1 [0]: pmixp_client_v2.c:211: Error handler invoked: status = -25, source = [slurm.pmix.180472.0:6]
+srun: error: dgx1: task 6: Bus error (core dumped)
+srun: error: dgx1: task 7: Bus error (core dumped)
+srun: error: dgx1: task 4: Bus error (core dumped)
+srun: error: dgx1: task 5: Bus error (core dumped)
+slurmstepd: error:  mpi/pmix_v3: _errhandler: dgx1 [0]: pmixp_client_v2.c:211: Error handler invoked: status = -25, source = [slurm.pmix.180472.0:0]
+srun: error: dgx1: task 1: Killed
+srun: error: dgx1: task 0: Killed
+srun: error: dgx1: task 3: Killed

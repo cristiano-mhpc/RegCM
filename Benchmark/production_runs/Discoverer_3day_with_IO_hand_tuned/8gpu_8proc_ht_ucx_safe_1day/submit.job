@@ -1,7 +1,7 @@
 #!/bin/bash
 #SBATCH --partition=common
-#SBATCH --job-name=prod_3d_ht_ucx_8gpu_wIO_disc
-#SBATCH --time=01:00:00
+#SBATCH --job-name=prod_1d_ht_ucx_safe_8gpu_wIO_disc
+#SBATCH --time=00:25:00
 #SBATCH --account=ehpc-ben-2026b06-085
 #SBATCH --qos=ehpc-ben-2026b06-085
 #SBATCH --nodes=1

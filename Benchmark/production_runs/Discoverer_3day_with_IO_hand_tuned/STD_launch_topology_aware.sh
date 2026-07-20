@@ -47,9 +47,13 @@ fi
 if [ "${REGCM_ENABLE_UCX_TUNING:-0}" = "1" ]; then
   export OMPI_MCA_pml=${OMPI_MCA_pml:-ucx}
   export OMPI_MCA_osc=${OMPI_MCA_osc:-ucx}
-  export UCX_RNDV_THRESH=${UCX_RNDV_THRESH:-128}
-  export UCX_RNDV_FRAG_MEM_TYPE=${UCX_RNDV_FRAG_MEM_TYPE:-cuda}
-  export UCX_RNDV_FRAG_SIZE=${UCX_RNDV_FRAG_SIZE:-cuda:32M}
+  if [ "${SLURM_NNODES:-1}" -eq 1 ]; then
+    # Single-node DGX H200 runs should stay on shared-memory/CUDA IPC paths.
+    # The previous unconstrained UCX profile hit mm_posix/UD setup failures.
+    export UCX_TLS=${UCX_TLS:-self,sysv,cuda_copy,cuda_ipc}
+  else
+    export UCX_TLS=${UCX_TLS:-self,sysv,cuda_copy,cuda_ipc,rc}
+  fi
 fi
 
 if [ "${REGCM_ENABLE_ACC_POOL:-0}" = "1" ]; then
@@ -61,7 +65,7 @@ fi
 export BINDIR=/valhalla/projects/ehpc-ben-2026b06-085/tchristian/work/RegCM/bin
 export REGCM_EXE=${REGCM_EXE:-$BINDIR/regcmMPICLM45}
 
-echo "[DiscovererTopo][Rank ${GLOBAL_RANK}][Local ${LOCAL_RANK}] host=$(hostname) gpu=${GPU} cpuset=${CPUSET} numa=${NUMA_NODE} CUDA_VISIBLE_DEVICES=${CUDA_VISIBLE_DEVICES} ACC_DEVICE_NUM=${ACC_DEVICE_NUM} UCX_NET_DEVICES=${UCX_NET_DEVICES:-auto} REGCM_EXE=${REGCM_EXE}"
+echo "[DiscovererTopo][Rank ${GLOBAL_RANK}][Local ${LOCAL_RANK}] host=$(hostname) gpu=${GPU} cpuset=${CPUSET} numa=${NUMA_NODE} CUDA_VISIBLE_DEVICES=${CUDA_VISIBLE_DEVICES} ACC_DEVICE_NUM=${ACC_DEVICE_NUM} UCX_NET_DEVICES=${UCX_NET_DEVICES:-auto} UCX_TLS=${UCX_TLS:-auto} REGCM_EXE=${REGCM_EXE}"
 
 if [ "${REGCM_ENABLE_CPU_BINDING:-1}" = "1" ] && command -v numactl >/dev/null 2>&1; then
   exec numactl --physcpubind="$CPUSET" --membind="$NUMA_NODE" "$REGCM_EXE" EURR-3_namelist.in
