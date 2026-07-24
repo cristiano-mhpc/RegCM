@@ -1,0 +1,50 @@
+#!/bin/bash
+
+#SBATCH --account=ICT26_ESP_0
+#SBATCH --out=./production/newest/LOG_%x_%j.out
+#SBATCH --err=./production/newest/LOG_%x_%j.err
+#SBATCH --job-name=1d_8gpu_wIO_test
+#SBATCH --ntasks-per-node=4
+#SBATCH --partition=boost_usr_prod
+#SBATCH --nodes=2
+#SBATCH --exclusive
+#SBATCH --gres=tmpfs:100g
+#SBATCH --gres=gpu:4
+#SBATCH --time=00:30:00
+
+set -euo pipefail
+
+source /leonardo/home/userexternal/ctica000/MS_thesis/RegCM/environment_loaders/regcm5_leonardo_nvhpc_hpcx.sh
+
+export REGCM_EXE=/leonardo/home/userexternal/ctica000/MS_thesis/RegCM/Main/regcm
+export OPAL_PREFIX="$MPI_SHIM"
+
+echo "=== Job info ==="
+echo "SLURM_JOB_ID=$SLURM_JOB_ID"
+echo "SLURM_JOB_NODELIST=$SLURM_JOB_NODELIST"
+echo "SLURM_NNODES=$SLURM_NNODES"
+echo "SLURM_NTASKS=$SLURM_NTASKS"
+echo "SLURM_NTASKS_PER_NODE=$SLURM_NTASKS_PER_NODE"
+echo
+
+echo "=== Toolchain ==="
+command -v nvfortran
+command -v nvcc
+command -v mpifort
+command -v ld
+nvcc --version
+ld --version | head -3
+echo "CUDA_HOME=$CUDA_HOME"
+echo "NVHPC_CUDA_HOME=$NVHPC_CUDA_HOME"
+echo
+
+echo "=== Binary dependency check ==="
+ldd "$REGCM_EXE" | egrep 'cuda|cudart|cudafor|nvhpc|netcdf|hdf5|mpi|nvomp' || true
+echo
+
+echo "=== GPU layout ==="
+nvidia-smi -L
+echo
+
+echo "=== Launching RegCM ==="
+srun ./STD_launch_per_rank.sh

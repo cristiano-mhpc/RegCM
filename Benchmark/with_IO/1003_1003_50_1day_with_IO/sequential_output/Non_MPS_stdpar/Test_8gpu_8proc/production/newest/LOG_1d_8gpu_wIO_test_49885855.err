@@ -1,0 +1,186 @@
+--------------------------------------------------------------------------
+Sorry!  You were supposed to get help about:
+    opal_init:startup:internal-failure
+But I couldn't open the help file:
+    /proj/nv/libraries/Linux_x86_64/25.11/hpcx-13/289927-rel-1/comm_libs/13.0/hpcx/hpcx-2.25.1/ompi/share/openmpi/help-opal-runtime.txt: No such file or directory.  Sorry!
+--------------------------------------------------------------------------
+--------------------------------------------------------------------------
+Sorry!  You were supposed to get help about:
+    orte_init:startup:internal-failure
+But I couldn't open the help file:
+    /proj/nv/libraries/Linux_x86_64/25.11/hpcx-13/289927-rel-1/comm_libs/13.0/hpcx/hpcx-2.25.1/ompi/share/openmpi/help-orte-runtime: No such file or directory.  Sorry!
+--------------------------------------------------------------------------
+--------------------------------------------------------------------------
+Sorry!  You were supposed to get help about:
+    mpi_init:startup:internal-failure
+But I couldn't open the help file:
+    /proj/nv/libraries/Linux_x86_64/25.11/hpcx-13/289927-rel-1/comm_libs/13.0/hpcx/hpcx-2.25.1/ompi/share/openmpi/help-mpi-runtime.txt: No such file or directory.  Sorry!
+--------------------------------------------------------------------------
+*** An error occurred in MPI_Init_thread
+*** on a NULL communicator
+*** MPI_ERRORS_ARE_FATAL (processes in this communicator will now abort,
+***    and potentially your MPI job)
+[lrdn2991.leonardo.local:2210113] Local abort before MPI_INIT completed completed successfully, but am not able to aggregate error messages, and not able to guarantee that all other processes were killed!
+--------------------------------------------------------------------------
+Sorry!  You were supposed to get help about:
+    opal_init:startup:internal-failure
+But I couldn't open the help file:
+    /proj/nv/libraries/Linux_x86_64/25.11/hpcx-13/289927-rel-1/comm_libs/13.0/hpcx/hpcx-2.25.1/ompi/share/openmpi/help-opal-runtime.txt: No such file or directory.  Sorry!
+--------------------------------------------------------------------------
+--------------------------------------------------------------------------
+Sorry!  You were supposed to get help about:
+    orte_init:startup:internal-failure
+But I couldn't open the help file:
+    /proj/nv/libraries/Linux_x86_64/25.11/hpcx-13/289927-rel-1/comm_libs/13.0/hpcx/hpcx-2.25.1/ompi/share/openmpi/help-orte-runtime: No such file or directory.  Sorry!
+--------------------------------------------------------------------------
+--------------------------------------------------------------------------
+Sorry!  You were supposed to get help about:
+    mpi_init:startup:internal-failure
+But I couldn't open the help file:
+    /proj/nv/libraries/Linux_x86_64/25.11/hpcx-13/289927-rel-1/comm_libs/13.0/hpcx/hpcx-2.25.1/ompi/share/openmpi/help-mpi-runtime.txt: No such file or directory.  Sorry!
+--------------------------------------------------------------------------
+*** An error occurred in MPI_Init_thread
+*** on a NULL communicator
+*** MPI_ERRORS_ARE_FATAL (processes in this communicator will now abort,
+***    and potentially your MPI job)
+[lrdn2991.leonardo.local:2210112] Local abort before MPI_INIT completed completed successfully, but am not able to aggregate error messages, and not able to guarantee that all other processes were killed!
+--------------------------------------------------------------------------
+Sorry!  You were supposed to get help about:
+    opal_init:startup:internal-failure
+But I couldn't open the help file:
+    /proj/nv/libraries/Linux_x86_64/25.11/hpcx-13/289927-rel-1/comm_libs/13.0/hpcx/hpcx-2.25.1/ompi/share/openmpi/help-opal-runtime.txt: No such file or directory.  Sorry!
+--------------------------------------------------------------------------
+--------------------------------------------------------------------------
+Sorry!  You were supposed to get help about:
+    orte_init:startup:internal-failure
+But I couldn't open the help file:
+    /proj/nv/libraries/Linux_x86_64/25.11/hpcx-13/289927-rel-1/comm_libs/13.0/hpcx/hpcx-2.25.1/ompi/share/openmpi/help-orte-runtime: No such file or directory.  Sorry!
+--------------------------------------------------------------------------
+--------------------------------------------------------------------------
+Sorry!  You were supposed to get help about:
+    opal_init:startup:internal-failure
+But I couldn't open the help file:
+    /proj/nv/libraries/Linux_x86_64/25.11/hpcx-13/289927-rel-1/comm_libs/13.0/hpcx/hpcx-2.25.1/ompi/share/openmpi/help-opal-runtime.txt: No such file or directory.  Sorry!
+--------------------------------------------------------------------------
+--------------------------------------------------------------------------
+Sorry!  You were supposed to get help about:
+    mpi_init:startup:internal-failure
+But I couldn't open the help file:
+    /proj/nv/libraries/Linux_x86_64/25.11/hpcx-13/289927-rel-1/comm_libs/13.0/hpcx/hpcx-2.25.1/ompi/share/openmpi/help-mpi-runtime.txt: No such file or directory.  Sorry!
+--------------------------------------------------------------------------
+*** An error occurred in MPI_Init_thread
+*** on a NULL communicator
+*** MPI_ERRORS_ARE_FATAL (processes in this communicator will now abort,
+***    and potentially your MPI job)
+--------------------------------------------------------------------------
+Sorry!  You were supposed to get help about:
+    orte_init:startup:internal-failure
+But I couldn't open the help file:
+    /proj/nv/libraries/Linux_x86_64/25.11/hpcx-13/289927-rel-1/comm_libs/13.0/hpcx/hpcx-2.25.1/ompi/share/openmpi/help-orte-runtime: No such file or directory.  Sorry!
+--------------------------------------------------------------------------
+--------------------------------------------------------------------------
+Sorry!  You were supposed to get help about:
+    mpi_init:startup:internal-failure
+But I couldn't open the help file:
+    /proj/nv/libraries/Linux_x86_64/25.11/hpcx-13/289927-rel-1/comm_libs/13.0/hpcx/hpcx-2.25.1/ompi/share/openmpi/help-mpi-runtime.txt: No such file or directory.  Sorry!
+--------------------------------------------------------------------------
+*** An error occurred in MPI_Init_thread
+*** on a NULL communicator
+*** MPI_ERRORS_ARE_FATAL (processes in this communicator will now abort,
+***    and potentially your MPI job)
+[lrdn2991.leonardo.local:2210115] Local abort before MPI_INIT completed completed successfully, but am not able to aggregate error messages, and not able to guarantee that all other processes were killed!
+[lrdn2991.leonardo.local:2210114] Local abort before MPI_INIT completed completed successfully, but am not able to aggregate error messages, and not able to guarantee that all other processes were killed!
+srun: error: lrdn2991: tasks 0-3: Exited with exit code 1
+--------------------------------------------------------------------------
+Sorry!  You were supposed to get help about:
+    opal_init:startup:internal-failure
+But I couldn't open the help file:
+    /proj/nv/libraries/Linux_x86_64/25.11/hpcx-13/289927-rel-1/comm_libs/13.0/hpcx/hpcx-2.25.1/ompi/share/openmpi/help-opal-runtime.txt: No such file or directory.  Sorry!
+--------------------------------------------------------------------------
+--------------------------------------------------------------------------
+Sorry!  You were supposed to get help about:
+    orte_init:startup:internal-failure
+But I couldn't open the help file:
+    /proj/nv/libraries/Linux_x86_64/25.11/hpcx-13/289927-rel-1/comm_libs/13.0/hpcx/hpcx-2.25.1/ompi/share/openmpi/help-orte-runtime: No such file or directory.  Sorry!
+--------------------------------------------------------------------------
+--------------------------------------------------------------------------
+Sorry!  You were supposed to get help about:
+    mpi_init:startup:internal-failure
+But I couldn't open the help file:
+    /proj/nv/libraries/Linux_x86_64/25.11/hpcx-13/289927-rel-1/comm_libs/13.0/hpcx/hpcx-2.25.1/ompi/share/openmpi/help-mpi-runtime.txt: No such file or directory.  Sorry!
+--------------------------------------------------------------------------
+*** An error occurred in MPI_Init_thread
+*** on a NULL communicator
+*** MPI_ERRORS_ARE_FATAL (processes in this communicator will now abort,
+***    and potentially your MPI job)
+[lrdn3254.leonardo.local:734949] Local abort before MPI_INIT completed completed successfully, but am not able to aggregate error messages, and not able to guarantee that all other processes were killed!
+--------------------------------------------------------------------------
+Sorry!  You were supposed to get help about:
+    opal_init:startup:internal-failure
+But I couldn't open the help file:
+    /proj/nv/libraries/Linux_x86_64/25.11/hpcx-13/289927-rel-1/comm_libs/13.0/hpcx/hpcx-2.25.1/ompi/share/openmpi/help-opal-runtime.txt: No such file or directory.  Sorry!
+--------------------------------------------------------------------------
+--------------------------------------------------------------------------
+Sorry!  You were supposed to get help about:
+    orte_init:startup:internal-failure
+But I couldn't open the help file:
+    /proj/nv/libraries/Linux_x86_64/25.11/hpcx-13/289927-rel-1/comm_libs/13.0/hpcx/hpcx-2.25.1/ompi/share/openmpi/help-orte-runtime: No such file or directory.  Sorry!
+--------------------------------------------------------------------------
+--------------------------------------------------------------------------
+Sorry!  You were supposed to get help about:
+    mpi_init:startup:internal-failure
+But I couldn't open the help file:
+    /proj/nv/libraries/Linux_x86_64/25.11/hpcx-13/289927-rel-1/comm_libs/13.0/hpcx/hpcx-2.25.1/ompi/share/openmpi/help-mpi-runtime.txt: No such file or directory.  Sorry!
+--------------------------------------------------------------------------
+*** An error occurred in MPI_Init_thread
+*** on a NULL communicator
+*** MPI_ERRORS_ARE_FATAL (processes in this communicator will now abort,
+***    and potentially your MPI job)
+[lrdn3254.leonardo.local:734951] Local abort before MPI_INIT completed completed successfully, but am not able to aggregate error messages, and not able to guarantee that all other processes were killed!
+--------------------------------------------------------------------------
+Sorry!  You were supposed to get help about:
+    opal_init:startup:internal-failure
+But I couldn't open the help file:
+    /proj/nv/libraries/Linux_x86_64/25.11/hpcx-13/289927-rel-1/comm_libs/13.0/hpcx/hpcx-2.25.1/ompi/share/openmpi/help-opal-runtime.txt: No such file or directory.  Sorry!
+--------------------------------------------------------------------------
+--------------------------------------------------------------------------
+Sorry!  You were supposed to get help about:
+    orte_init:startup:internal-failure
+But I couldn't open the help file:
+    /proj/nv/libraries/Linux_x86_64/25.11/hpcx-13/289927-rel-1/comm_libs/13.0/hpcx/hpcx-2.25.1/ompi/share/openmpi/help-orte-runtime: No such file or directory.  Sorry!
+--------------------------------------------------------------------------
+--------------------------------------------------------------------------
+Sorry!  You were supposed to get help about:
+    mpi_init:startup:internal-failure
+But I couldn't open the help file:
+    /proj/nv/libraries/Linux_x86_64/25.11/hpcx-13/289927-rel-1/comm_libs/13.0/hpcx/hpcx-2.25.1/ompi/share/openmpi/help-mpi-runtime.txt: No such file or directory.  Sorry!
+--------------------------------------------------------------------------
+*** An error occurred in MPI_Init_thread
+*** on a NULL communicator
+*** MPI_ERRORS_ARE_FATAL (processes in this communicator will now abort,
+***    and potentially your MPI job)
+[lrdn3254.leonardo.local:734952] Local abort before MPI_INIT completed completed successfully, but am not able to aggregate error messages, and not able to guarantee that all other processes were killed!
+--------------------------------------------------------------------------
+Sorry!  You were supposed to get help about:
+    opal_init:startup:internal-failure
+But I couldn't open the help file:
+    /proj/nv/libraries/Linux_x86_64/25.11/hpcx-13/289927-rel-1/comm_libs/13.0/hpcx/hpcx-2.25.1/ompi/share/openmpi/help-opal-runtime.txt: No such file or directory.  Sorry!
+--------------------------------------------------------------------------
+--------------------------------------------------------------------------
+Sorry!  You were supposed to get help about:
+    orte_init:startup:internal-failure
+But I couldn't open the help file:
+    /proj/nv/libraries/Linux_x86_64/25.11/hpcx-13/289927-rel-1/comm_libs/13.0/hpcx/hpcx-2.25.1/ompi/share/openmpi/help-orte-runtime: No such file or directory.  Sorry!
+--------------------------------------------------------------------------
+--------------------------------------------------------------------------
+Sorry!  You were supposed to get help about:
+    mpi_init:startup:internal-failure
+But I couldn't open the help file:
+    /proj/nv/libraries/Linux_x86_64/25.11/hpcx-13/289927-rel-1/comm_libs/13.0/hpcx/hpcx-2.25.1/ompi/share/openmpi/help-mpi-runtime.txt: No such file or directory.  Sorry!
+--------------------------------------------------------------------------
+*** An error occurred in MPI_Init_thread
+*** on a NULL communicator
+*** MPI_ERRORS_ARE_FATAL (processes in this communicator will now abort,
+***    and potentially your MPI job)
+[lrdn3254.leonardo.local:734950] Local abort before MPI_INIT completed completed successfully, but am not able to aggregate error messages, and not able to guarantee that all other processes were killed!
+srun: error: lrdn3254: tasks 4-7: Exited with exit code 1

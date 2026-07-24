@@ -1,0 +1,119 @@
+ 
+Spack activated with install: /leonardo/pub/userexternal/ctica000/spack-0.22.2-06/install , modules: /leonardo/pub/userexternal/ctica000/spack-0.22.2-06/modules and cache: /leonardo/pub/userexternal/ctica000/spack-0.22.2-06/cache
+Loading binutils/2.42
+  Loading requirement: zlib-ng/2.1.6-jkgunjc zstd/1.5.6-uq5yyux
+Loading cuda/12.2
+  Loading requirement: libiconv/1.17-nhc3mhm xz/5.4.6-xxxg42c
+    libxml2/2.10.3-zbbe7lm
+CUDA_HOME=/leonardo/prod/spack/06/install/0.22/linux-rhel8-icelake/gcc-8.5.0/cuda-12.2.0-o6rr2unwsp4e4av6ukobro6plj7ceeos
+NVHPC_CUDA_HOME=/leonardo/prod/spack/06/install/0.22/linux-rhel8-icelake/gcc-8.5.0/cuda-12.2.0-o6rr2unwsp4e4av6ukobro6plj7ceeos
+NVHPC_ROOT=/leonardo/prod/spack/06/install/0.22/linux-rhel8-icelake/gcc-8.5.0/nvhpc-25.11-ayzlbce6ohpmv72ncfv4ogitmppp2usq/Linux_x86_64/25.11
+nvcc: NVIDIA (R) Cuda compiler driver
+Copyright (c) 2005-2023 NVIDIA Corporation
+Built on Tue_Jun_13_19:16:58_PDT_2023
+Cuda compilation tools, release 12.2, V12.2.91
+Build cuda_12.2.r12.2/compiler.32965470_0
+
+Loaded RegCM5 Leonardo NVHPC + HPC-X Spack environment
+REGCM_SPACK_ENV = /leonardo_work/ICT26_ESP_0/christian/spack-envs/regcm5-leonardo-nvhpc-hpcx
+REGCM_SPACK_VIEW = /leonardo_work/ICT26_ESP_0/christian/spack-envs/regcm5-leonardo-nvhpc-hpcx/.spack-env/view
+MPI_SHIM        = /leonardo_work/ICT26_ESP_0/christian/externals/hpcx-mpi-2.25.1-ompi-shim
+
+Compiler/MPI wrappers:
+  CC     = nvc
+  CXX    = nvc++
+  FC     = nvfortran
+  F77    = nvfortran
+  MPICC  = mpicc
+  MPIFC  = mpifort
+
+Resolved tools:
+  nvc             -> /leonardo/prod/spack/06/install/0.22/linux-rhel8-icelake/gcc-8.5.0/nvhpc-25.11-ayzlbce6ohpmv72ncfv4ogitmppp2usq/Linux_x86_64/25.11/compilers/bin/nvc
+  nvfortran       -> /leonardo/prod/spack/06/install/0.22/linux-rhel8-icelake/gcc-8.5.0/nvhpc-25.11-ayzlbce6ohpmv72ncfv4ogitmppp2usq/Linux_x86_64/25.11/compilers/bin/nvfortran
+  mpicc           -> /leonardo_work/ICT26_ESP_0/christian/externals/hpcx-mpi-2.25.1-ompi-shim/bin/mpicc
+  mpifort         -> /leonardo_work/ICT26_ESP_0/christian/externals/hpcx-mpi-2.25.1-ompi-shim/bin/mpifort
+  mpirun          -> /leonardo_work/ICT26_ESP_0/christian/externals/hpcx-mpi-2.25.1-ompi-shim/bin/mpirun
+  nc-config       -> /leonardo_work/ICT26_ESP_0/christian/spack-envs/regcm5-leonardo-nvhpc-hpcx/.spack-env/view/bin/nc-config
+  nf-config       -> /leonardo_work/ICT26_ESP_0/christian/spack-envs/regcm5-leonardo-nvhpc-hpcx/.spack-env/view/bin/nf-config
+  pnetcdf-config  -> /leonardo_work/ICT26_ESP_0/christian/spack-envs/regcm5-leonardo-nvhpc-hpcx/.spack-env/view/bin/pnetcdf-config
+
+Quick checks:
+  nc-config --prefix       -> /leonardo/pub/userexternal/ctica000/spack-0.22.2-06/install/linux-rhel8-icelake/nvhpc-25.11/netcdf-c-4.9.2-ubl3h57uqcq4yknbtprhrdimzgherplq
+  nf-config --prefix       -> /leonardo/pub/userexternal/ctica000/spack-0.22.2-06/install/linux-rhel8-icelake/nvhpc-25.11/netcdf-fortran-4.6.1-t5pazgfengikrrt3x6kcwd4yjqbeldx6
+  pnetcdf-config --prefix  -> /leonardo/pub/userexternal/ctica000/spack-0.22.2-06/install/linux-rhel8-icelake/nvhpc-25.11/parallel-netcdf-1.12.3-mwecvojjtcxgi7spmmyugbual7ouxs5b
+  mpirun --version         -> mpirun (Open MPI) 4.1.9a1
+
+=== Job info ===
+SLURM_JOB_ID=49885855
+SLURM_JOB_NODELIST=lrdn[2991,3254]
+SLURM_NNODES=2
+SLURM_NTASKS=8
+SLURM_NTASKS_PER_NODE=4
+
+=== Toolchain ===
+/leonardo/prod/spack/06/install/0.22/linux-rhel8-icelake/gcc-8.5.0/nvhpc-25.11-ayzlbce6ohpmv72ncfv4ogitmppp2usq/Linux_x86_64/25.11/compilers/bin/nvfortran
+/leonardo/prod/spack/06/install/0.22/linux-rhel8-icelake/gcc-8.5.0/cuda-12.2.0-o6rr2unwsp4e4av6ukobro6plj7ceeos/bin/nvcc
+/leonardo_work/ICT26_ESP_0/christian/externals/hpcx-mpi-2.25.1-ompi-shim/bin/mpifort
+/leonardo/prod/spack/06/install/0.22/linux-rhel8-icelake/gcc-8.5.0/binutils-2.42-j3w2mvnt64wdeilm35xksl6ckqfyc22w/bin/ld
+nvcc: NVIDIA (R) Cuda compiler driver
+Copyright (c) 2005-2023 NVIDIA Corporation
+Built on Tue_Jun_13_19:16:58_PDT_2023
+Cuda compilation tools, release 12.2, V12.2.91
+Build cuda_12.2.r12.2/compiler.32965470_0
+GNU ld (GNU Binutils) 2.42
+Copyright (C) 2024 Free Software Foundation, Inc.
+This program is free software; you may redistribute it under the terms of
+CUDA_HOME=/leonardo/prod/spack/06/install/0.22/linux-rhel8-icelake/gcc-8.5.0/cuda-12.2.0-o6rr2unwsp4e4av6ukobro6plj7ceeos
+NVHPC_CUDA_HOME=/leonardo/prod/spack/06/install/0.22/linux-rhel8-icelake/gcc-8.5.0/cuda-12.2.0-o6rr2unwsp4e4av6ukobro6plj7ceeos
+
+=== Binary dependency check ===
+	libnvhpcmanaux.so => /leonardo/prod/spack/06/install/0.22/linux-rhel8-icelake/gcc-8.5.0/nvhpc-25.11-ayzlbce6ohpmv72ncfv4ogitmppp2usq/Linux_x86_64/25.11/compilers/lib/libnvhpcmanaux.so (0x0000145bbbfbc000)
+	libnetcdff.so.7 => /leonardo_work/ICT26_ESP_0/christian/spack-envs/regcm5-leonardo-nvhpc-hpcx/.spack-env/view/lib/libnetcdff.so.7 (0x0000145bbbb69000)
+	libnetcdf.so.19 => /leonardo_work/ICT26_ESP_0/christian/spack-envs/regcm5-leonardo-nvhpc-hpcx/.spack-env/view/lib/libnetcdf.so.19 (0x0000145bbb73d000)
+	libmpi_usempif08.so.40 => /leonardo_work/ICT26_ESP_0/christian/externals/hpcx-mpi-2.25.1-ompi-shim/lib/libmpi_usempif08.so.40 (0x0000145bbb180000)
+	libmpi_usempi_ignore_tkr.so.40 => /leonardo_work/ICT26_ESP_0/christian/externals/hpcx-mpi-2.25.1-ompi-shim/lib/libmpi_usempi_ignore_tkr.so.40 (0x0000145bbaf77000)
+	libmpi_mpifh.so.40 => /leonardo_work/ICT26_ESP_0/christian/externals/hpcx-mpi-2.25.1-ompi-shim/lib/libmpi_mpifh.so.40 (0x0000145bbacff000)
+	libmpi.so.40 => /leonardo_work/ICT26_ESP_0/christian/externals/hpcx-mpi-2.25.1-ompi-shim/lib/libmpi.so.40 (0x0000145bba9c4000)
+	libcudaforwrapsparse12.so => /leonardo/prod/spack/06/install/0.22/linux-rhel8-icelake/gcc-8.5.0/nvhpc-25.11-ayzlbce6ohpmv72ncfv4ogitmppp2usq/Linux_x86_64/25.11/compilers/lib/libcudaforwrapsparse12.so (0x0000145bba7b2000)
+	libcusparse.so.12 => /leonardo/prod/spack/06/install/0.22/linux-rhel8-icelake/gcc-8.5.0/cuda-12.2.0-o6rr2unwsp4e4av6ukobro6plj7ceeos/lib64/libcusparse.so.12 (0x0000145baaa6b000)
+	libnvJitLink.so.12 => /leonardo/prod/spack/06/install/0.22/linux-rhel8-icelake/gcc-8.5.0/cuda-12.2.0-o6rr2unwsp4e4av6ukobro6plj7ceeos/lib64/libnvJitLink.so.12 (0x0000145ba785c000)
+	libnvhpcwrapnvtx.so => /leonardo/prod/spack/06/install/0.22/linux-rhel8-icelake/gcc-8.5.0/nvhpc-25.11-ayzlbce6ohpmv72ncfv4ogitmppp2usq/Linux_x86_64/25.11/compilers/lib/libnvhpcwrapnvtx.so (0x0000145ba7652000)
+	libcudart.so.12 => /leonardo/prod/spack/06/install/0.22/linux-rhel8-icelake/gcc-8.5.0/cuda-12.2.0-o6rr2unwsp4e4av6ukobro6plj7ceeos/lib64/libcudart.so.12 (0x0000145ba73a9000)
+	libcudafor_120.so => /leonardo/prod/spack/06/install/0.22/linux-rhel8-icelake/gcc-8.5.0/nvhpc-25.11-ayzlbce6ohpmv72ncfv4ogitmppp2usq/Linux_x86_64/25.11/compilers/lib/libcudafor_120.so (0x0000145ba4b71000)
+	libcudafor.so => /leonardo/prod/spack/06/install/0.22/linux-rhel8-icelake/gcc-8.5.0/nvhpc-25.11-ayzlbce6ohpmv72ncfv4ogitmppp2usq/Linux_x86_64/25.11/compilers/lib/libcudafor.so (0x0000145ba495c000)
+	libacchost.so => /leonardo/prod/spack/06/install/0.22/linux-rhel8-icelake/gcc-8.5.0/nvhpc-25.11-ayzlbce6ohpmv72ncfv4ogitmppp2usq/Linux_x86_64/25.11/compilers/lib/libacchost.so (0x0000145ba46f3000)
+	libaccdevaux118.so => /leonardo/prod/spack/06/install/0.22/linux-rhel8-icelake/gcc-8.5.0/nvhpc-25.11-ayzlbce6ohpmv72ncfv4ogitmppp2usq/Linux_x86_64/25.11/compilers/lib/libaccdevaux118.so (0x0000145ba44d1000)
+	libaccdevice.so => /leonardo/prod/spack/06/install/0.22/linux-rhel8-icelake/gcc-8.5.0/nvhpc-25.11-ayzlbce6ohpmv72ncfv4ogitmppp2usq/Linux_x86_64/25.11/compilers/lib/libaccdevice.so (0x0000145ba419b000)
+	libcuda.so.1 => /lib64/libcuda.so.1 (0x0000145ba252d000)
+	libcudadevice.so => /leonardo/prod/spack/06/install/0.22/linux-rhel8-icelake/gcc-8.5.0/nvhpc-25.11-ayzlbce6ohpmv72ncfv4ogitmppp2usq/Linux_x86_64/25.11/compilers/lib/libcudadevice.so (0x0000145ba2113000)
+	libcudafor2.so => /leonardo/prod/spack/06/install/0.22/linux-rhel8-icelake/gcc-8.5.0/nvhpc-25.11-ayzlbce6ohpmv72ncfv4ogitmppp2usq/Linux_x86_64/25.11/compilers/lib/libcudafor2.so (0x0000145ba1f10000)
+	libnvf.so => /leonardo/prod/spack/06/install/0.22/linux-rhel8-icelake/gcc-8.5.0/nvhpc-25.11-ayzlbce6ohpmv72ncfv4ogitmppp2usq/Linux_x86_64/25.11/compilers/lib/libnvf.so (0x0000145ba1808000)
+	libnvomp.so => /leonardo/prod/spack/06/install/0.22/linux-rhel8-icelake/gcc-8.5.0/nvhpc-25.11-ayzlbce6ohpmv72ncfv4ogitmppp2usq/Linux_x86_64/25.11/compilers/lib/libnvomp.so (0x0000145ba0807000)
+	libnvhpcatm.so => /leonardo/prod/spack/06/install/0.22/linux-rhel8-icelake/gcc-8.5.0/nvhpc-25.11-ayzlbce6ohpmv72ncfv4ogitmppp2usq/Linux_x86_64/25.11/compilers/lib/libnvhpcatm.so (0x0000145ba05fc000)
+	libnvcpumath-avx512.so => /leonardo/prod/spack/06/install/0.22/linux-rhel8-icelake/gcc-8.5.0/nvhpc-25.11-ayzlbce6ohpmv72ncfv4ogitmppp2usq/Linux_x86_64/25.11/compilers/lib/libnvcpumath-avx512.so (0x0000145b9ff6d000)
+	libnvc.so => /leonardo/prod/spack/06/install/0.22/linux-rhel8-icelake/gcc-8.5.0/nvhpc-25.11-ayzlbce6ohpmv72ncfv4ogitmppp2usq/Linux_x86_64/25.11/compilers/lib/libnvc.so (0x0000145b9fd09000)
+	libgcc_s.so.1 => /leonardo_work/ICT26_ESP_0/christian/spack-envs/regcm5-leonardo-nvhpc-hpcx/.spack-env/view/lib/libgcc_s.so.1 (0x0000145bbc3af000)
+	libpnetcdf.so.4 => /leonardo/pub/userexternal/ctica000/spack-0.22.2-06/install/linux-rhel8-icelake/nvhpc-25.11/parallel-netcdf-1.12.3-mwecvojjtcxgi7spmmyugbual7ouxs5b/lib/libpnetcdf.so.4 (0x0000145b9ee29000)
+	libhdf5_hl.so.310 => /leonardo/pub/userexternal/ctica000/spack-0.22.2-06/install/linux-rhel8-icelake/nvhpc-25.11/hdf5-1.14.3-j7ftuxf5gpbxqrxsemdplnn4mzj5ehzb/lib/libhdf5_hl.so.310 (0x0000145b9ebfa000)
+	libhdf5.so.310 => /leonardo/pub/userexternal/ctica000/spack-0.22.2-06/install/linux-rhel8-icelake/nvhpc-25.11/hdf5-1.14.3-j7ftuxf5gpbxqrxsemdplnn4mzj5ehzb/lib/libhdf5.so.310 (0x0000145b9e486000)
+	libopen-rte.so.40 => /leonardo_work/ICT26_ESP_0/christian/externals/hpcx-mpi-2.25.1-ompi-shim/lib/libopen-rte.so.40 (0x0000145b9dab2000)
+	libopen-pal.so.40 => /leonardo_work/ICT26_ESP_0/christian/externals/hpcx-mpi-2.25.1-ompi-shim/lib/libopen-pal.so.40 (0x0000145b9d798000)
+	libatomic.so.1 => /leonardo_work/ICT26_ESP_0/christian/spack-envs/regcm5-leonardo-nvhpc-hpcx/.spack-env/view/lib/libatomic.so.1 (0x0000145bbc37f000)
+	libnvcpumath-avx.so => /leonardo/prod/spack/06/install/0.22/linux-rhel8-icelake/gcc-8.5.0/nvhpc-25.11-ayzlbce6ohpmv72ncfv4ogitmppp2usq/Linux_x86_64/25.11/compilers/lib/libnvcpumath-avx.so (0x0000145b9d125000)
+	libnvcpumath.so => /leonardo/prod/spack/06/install/0.22/linux-rhel8-icelake/gcc-8.5.0/nvhpc-25.11-ayzlbce6ohpmv72ncfv4ogitmppp2usq/Linux_x86_64/25.11/compilers/lib/libnvcpumath.so (0x0000145b9ccb6000)
+
+=== GPU layout ===
+GPU 0: NVIDIA A100-SXM-64GB (UUID: GPU-2c01c2fc-1c93-ddd0-1bad-cf963b660e7f)
+GPU 1: NVIDIA A100-SXM-64GB (UUID: GPU-caaa67da-a317-f857-95ea-7ffa27b7f66f)
+GPU 2: NVIDIA A100-SXM-64GB (UUID: GPU-b53c306f-012f-e526-0358-dfa30b9ae35e)
+GPU 3: NVIDIA A100-SXM-64GB (UUID: GPU-c79ea94b-b96e-5c4c-24a0-2857365c7680)
+
+=== Launching RegCM ===
+[Wrapper][Rank 0][Local 0] host=lrdn2991.leonardo.local CUDA_VISIBLE_DEVICES=0 ACC_DEVICE_NUM=0
+[Wrapper][Rank 3][Local 3] host=lrdn2991.leonardo.local CUDA_VISIBLE_DEVICES=3 ACC_DEVICE_NUM=0
+[Wrapper][Rank 1][Local 1] host=lrdn2991.leonardo.local CUDA_VISIBLE_DEVICES=1 ACC_DEVICE_NUM=0
+[Wrapper][Rank 2][Local 2] host=lrdn2991.leonardo.local CUDA_VISIBLE_DEVICES=2 ACC_DEVICE_NUM=0
+[Wrapper][Rank 5][Local 1] host=lrdn3254.leonardo.local CUDA_VISIBLE_DEVICES=1 ACC_DEVICE_NUM=0
+[Wrapper][Rank 6][Local 2] host=lrdn3254.leonardo.local CUDA_VISIBLE_DEVICES=2 ACC_DEVICE_NUM=0
+[Wrapper][Rank 7][Local 3] host=lrdn3254.leonardo.local CUDA_VISIBLE_DEVICES=3 ACC_DEVICE_NUM=0
+[Wrapper][Rank 4][Local 0] host=lrdn3254.leonardo.local CUDA_VISIBLE_DEVICES=0 ACC_DEVICE_NUM=0
