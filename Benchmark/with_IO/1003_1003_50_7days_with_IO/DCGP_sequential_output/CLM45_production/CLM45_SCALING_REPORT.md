@@ -377,14 +377,17 @@ performance, but the run is not a clean scheduler-level completion.
 
 ### 11.2 Strong-scaling indicators
 
-Using the valid 200-rank internal time as the reference:
+Using the valid 200-rank internal time as the reference, throughput is defined
+as seven simulated days divided by the internal elapsed time in wall-clock
+hours. Its inverse is the elapsed compute seconds required per simulated day.
+These are elapsed-time metrics, not node-hour or core-hour cost metrics.
 
-| Ranks | Internal time (s) | Speedup vs. 200 | Parallel efficiency vs. 200 |
-|---:|---:|---:|---:|
-| 200 | 68798.394 | 1.0000 | 100.00% |
-| 400 | 29893.698 | 2.3014 | 115.07% |
-| 800 | 14533.082 | 4.7339 | 118.35% |
-| 1600 | 8053.3583 | 8.5428 | 106.79% |
+| Ranks | Internal time (s) | Speedup vs. 200 | Parallel efficiency vs. 200 | Simulation days/compute hour | Compute seconds/simulation day |
+|---:|---:|---:|---:|---:|---:|
+| 200 | 68798.394 | 1.0000 | 100.00% | 0.3663 | 9828.3420 |
+| 400 | 29893.698 | 2.3014 | 115.07% | 0.8430 | 4270.5283 |
+| 800 | 14533.082 | 4.7339 | 118.35% | 1.7340 | 2076.1546 |
+| 1600 | 8053.3583 | 8.5428 | 106.79% | 3.1291 | 1150.4798 |
 
 The apparent superlinear efficiency at 400 and 800 ranks should not be read as
 pure compute scaling. This benchmark includes sequential output, filesystem
