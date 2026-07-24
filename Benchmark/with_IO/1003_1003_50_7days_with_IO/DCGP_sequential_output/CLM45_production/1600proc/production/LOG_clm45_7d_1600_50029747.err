@@ -1,0 +1,189 @@
+slurmstepd: error:  mpi/pmix_v3: pmixp_coll_tree_reset_if_to: lrdn4338 [15]: pmixp_coll_tree.c:1318: 0x1521603b4330: collective timeout seq=1
+slurmstepd: error:  mpi/pmix_v3: pmixp_coll_log: lrdn4338 [15]: pmixp_coll.c:286: Dumping collective state
+slurmstepd: error:  mpi/pmix_v3: pmixp_coll_tree_log: lrdn4338 [15]: pmixp_coll_tree.c:1337: 0x1521603b4330: COLL_FENCE_TREE state seq=1 contribs: loc=1/prnt=0/child=0
+slurmstepd: error:  mpi/pmix_v3: pmixp_coll_tree_log: lrdn4338 [15]: pmixp_coll_tree.c:1339: my peerid: 15:lrdn4338
+slurmstepd: error:  mpi/pmix_v3: pmixp_coll_tree_log: lrdn4338 [15]: pmixp_coll_tree.c:1342: root host: 0:lrdn3686
+slurmstepd: error:  mpi/pmix_v3: pmixp_coll_tree_log: lrdn4338 [15]: pmixp_coll_tree.c:1346: prnt host: 0:lrdn3686
+slurmstepd: error:  mpi/pmix_v3: pmixp_coll_tree_log: lrdn4338 [15]: pmixp_coll_tree.c:1347: prnt contrib:
+slurmstepd: error:  mpi/pmix_v3: pmixp_coll_tree_log: lrdn4338 [15]: pmixp_coll_tree.c:1349: 	 [0:lrdn3686] false
+slurmstepd: error:  mpi/pmix_v3: pmixp_coll_tree_log: lrdn4338 [15]: pmixp_coll_tree.c:1392: status: coll=COLL_UPFWD upfw=COLL_SND_DONE dfwd=COLL_SND_NONE
+slurmstepd: error:  mpi/pmix_v3: pmixp_coll_tree_log: lrdn4338 [15]: pmixp_coll_tree.c:1394: dfwd status: dfwd_cb_cnt=0, dfwd_cb_wait=0
+slurmstepd: error:  mpi/pmix_v3: pmixp_coll_tree_log: lrdn4338 [15]: pmixp_coll_tree.c:1397: bufs (offset/size): upfw 88/16415, dfwd 69/16415
+slurmstepd: error:  mpi/pmix_v3: pmixp_coll_tree_reset_if_to: lrdn3686 [0]: pmixp_coll_tree.c:1318: 0x14f6ac00d630: collective timeout seq=1
+slurmstepd: error:  mpi/pmix_v3: pmixp_coll_log: lrdn3686 [0]: pmixp_coll.c:286: Dumping collective state
+slurmstepd: error:  mpi/pmix_v3: pmixp_coll_tree_log: lrdn3686 [0]: pmixp_coll_tree.c:1337: 0x14f6ac00d630: COLL_FENCE_TREE state seq=1 contribs: loc=0/prnt=0/child=8
+slurmstepd: error:  mpi/pmix_v3: pmixp_coll_tree_log: lrdn3686 [0]: pmixp_coll_tree.c:1339: my peerid: 0:lrdn3686
+slurmstepd: error:  mpi/pmix_v3: pmixp_coll_tree_log: lrdn3686 [0]: pmixp_coll_tree.c:1342: root host: 0:lrdn3686
+slurmstepd: error:  mpi/pmix_v3: pmixp_coll_tree_log: lrdn3686 [0]: pmixp_coll_tree.c:1356: child contribs [15]:
+slurmstepd: error:  mpi/pmix_v3: pmixp_coll_tree_log: lrdn3686 [0]: pmixp_coll_tree.c:1383: 	 done contrib: lrdn[3931,4131,4169,4208,4256,4277,4317,4338]
+slurmstepd: error:  mpi/pmix_v3: pmixp_coll_tree_log: lrdn3686 [0]: pmixp_coll_tree.c:1385: 	 wait contrib: lrdn[3737,3754,3804,3870,3886,3976,4010]
+slurmstepd: error:  mpi/pmix_v3: pmixp_coll_tree_log: lrdn3686 [0]: pmixp_coll_tree.c:1392: status: coll=COLL_COLLECT upfw=COLL_SND_NONE dfwd=COLL_SND_NONE
+slurmstepd: error:  mpi/pmix_v3: pmixp_coll_tree_log: lrdn3686 [0]: pmixp_coll_tree.c:1394: dfwd status: dfwd_cb_cnt=0, dfwd_cb_wait=0
+slurmstepd: error:  mpi/pmix_v3: pmixp_coll_tree_log: lrdn3686 [0]: pmixp_coll_tree.c:1397: bufs (offset/size): upfw 221/16415, dfwd 69/16415
+slurmstepd: error:  mpi/pmix_v3: pmixp_coll_tree_reset_if_to: lrdn4317 [14]: pmixp_coll_tree.c:1318: 0x14756c8c11f0: collective timeout seq=1
+slurmstepd: error:  mpi/pmix_v3: pmixp_coll_log: lrdn4317 [14]: pmixp_coll.c:286: Dumping collective state
+slurmstepd: error:  mpi/pmix_v3: pmixp_coll_tree_log: lrdn4317 [14]: pmixp_coll_tree.c:1337: 0x14756c8c11f0: COLL_FENCE_TREE state seq=1 contribs: loc=1/prnt=0/child=0
+slurmstepd: error:  mpi/pmix_v3: pmixp_coll_tree_log: lrdn4317 [14]: pmixp_coll_tree.c:1339: my peerid: 14:lrdn4317
+slurmstepd: error:  mpi/pmix_v3: pmixp_coll_tree_log: lrdn4317 [14]: pmixp_coll_tree.c:1342: root host: 0:lrdn3686
+slurmstepd: error:  mpi/pmix_v3: pmixp_coll_tree_log: lrdn4317 [14]: pmixp_coll_tree.c:1346: prnt host: 0:lrdn3686
+slurmstepd: error:  mpi/pmix_v3: pmixp_coll_tree_log: lrdn4317 [14]: pmixp_coll_tree.c:1347: prnt contrib:
+slurmstepd: error:  mpi/pmix_v3: pmixp_coll_tree_log: lrdn4317 [14]: pmixp_coll_tree.c:1349: 	 [0:lrdn3686] false
+slurmstepd: error:  mpi/pmix_v3: pmixp_coll_tree_log: lrdn4317 [14]: pmixp_coll_tree.c:1392: status: coll=COLL_UPFWD upfw=COLL_SND_DONE dfwd=COLL_SND_NONE
+slurmstepd: error:  mpi/pmix_v3: pmixp_coll_tree_log: lrdn4317 [14]: pmixp_coll_tree.c:1394: dfwd status: dfwd_cb_cnt=0, dfwd_cb_wait=0
+slurmstepd: error:  mpi/pmix_v3: pmixp_coll_tree_log: lrdn4317 [14]: pmixp_coll_tree.c:1397: bufs (offset/size): upfw 88/16415, dfwd 69/16415
+slurmstepd: error:  mpi/pmix_v3: pmixp_coll_tree_reset_if_to: lrdn4277 [13]: pmixp_coll_tree.c:1318: 0x14eb7c85cf70: collective timeout seq=1
+slurmstepd: error:  mpi/pmix_v3: pmixp_coll_log: lrdn4277 [13]: pmixp_coll.c:286: Dumping collective state
+slurmstepd: error:  mpi/pmix_v3: pmixp_coll_tree_log: lrdn4277 [13]: pmixp_coll_tree.c:1337: 0x14eb7c85cf70: COLL_FENCE_TREE state seq=1 contribs: loc=1/prnt=0/child=0
+slurmstepd: error:  mpi/pmix_v3: pmixp_coll_tree_log: lrdn4277 [13]: pmixp_coll_tree.c:1339: my peerid: 13:lrdn4277
+slurmstepd: error:  mpi/pmix_v3: pmixp_coll_tree_log: lrdn4277 [13]: pmixp_coll_tree.c:1342: root host: 0:lrdn3686
+slurmstepd: error:  mpi/pmix_v3: pmixp_coll_tree_log: lrdn4277 [13]: pmixp_coll_tree.c:1346: prnt host: 0:lrdn3686
+slurmstepd: error:  mpi/pmix_v3: pmixp_coll_tree_log: lrdn4277 [13]: pmixp_coll_tree.c:1347: prnt contrib:
+slurmstepd: error:  mpi/pmix_v3: pmixp_coll_tree_log: lrdn4277 [13]: pmixp_coll_tree.c:1349: 	 [0:lrdn3686] false
+slurmstepd: error:  mpi/pmix_v3: pmixp_coll_tree_log: lrdn4277 [13]: pmixp_coll_tree.c:1392: status: coll=COLL_UPFWD upfw=COLL_SND_DONE dfwd=COLL_SND_NONE
+slurmstepd: error:  mpi/pmix_v3: pmixp_coll_tree_log: lrdn4277 [13]: pmixp_coll_tree.c:1394: dfwd status: dfwd_cb_cnt=0, dfwd_cb_wait=0
+slurmstepd: error:  mpi/pmix_v3: pmixp_coll_tree_log: lrdn4277 [13]: pmixp_coll_tree.c:1397: bufs (offset/size): upfw 88/16415, dfwd 69/16415
+slurmstepd: error:  mpi/pmix_v3: pmixp_coll_tree_reset_if_to: lrdn4256 [12]: pmixp_coll_tree.c:1318: 0x1540d8814730: collective timeout seq=1
+slurmstepd: error:  mpi/pmix_v3: pmixp_coll_log: lrdn4256 [12]: pmixp_coll.c:286: Dumping collective state
+slurmstepd: error:  mpi/pmix_v3: pmixp_coll_tree_log: lrdn4256 [12]: pmixp_coll_tree.c:1337: 0x1540d8814730: COLL_FENCE_TREE state seq=1 contribs: loc=1/prnt=0/child=0
+slurmstepd: error:  mpi/pmix_v3: pmixp_coll_tree_log: lrdn4256 [12]: pmixp_coll_tree.c:1339: my peerid: 12:lrdn4256
+slurmstepd: error:  mpi/pmix_v3: pmixp_coll_tree_log: lrdn4256 [12]: pmixp_coll_tree.c:1342: root host: 0:lrdn3686
+slurmstepd: error:  mpi/pmix_v3: pmixp_coll_tree_log: lrdn4256 [12]: pmixp_coll_tree.c:1346: prnt host: 0:lrdn3686
+slurmstepd: error:  mpi/pmix_v3: pmixp_coll_tree_log: lrdn4256 [12]: pmixp_coll_tree.c:1347: prnt contrib:
+slurmstepd: error:  mpi/pmix_v3: pmixp_coll_tree_log: lrdn4256 [12]: pmixp_coll_tree.c:1349: 	 [0:lrdn3686] false
+slurmstepd: error:  mpi/pmix_v3: pmixp_coll_tree_log: lrdn4256 [12]: pmixp_coll_tree.c:1392: status: coll=COLL_UPFWD upfw=COLL_SND_DONE dfwd=COLL_SND_NONE
+slurmstepd: error:  mpi/pmix_v3: pmixp_coll_tree_log: lrdn4256 [12]: pmixp_coll_tree.c:1394: dfwd status: dfwd_cb_cnt=0, dfwd_cb_wait=0
+slurmstepd: error:  mpi/pmix_v3: pmixp_coll_tree_log: lrdn4256 [12]: pmixp_coll_tree.c:1397: bufs (offset/size): upfw 88/16415, dfwd 69/16415
+slurmstepd: error:  mpi/pmix_v3: pmixp_coll_tree_reset_if_to: lrdn4208 [11]: pmixp_coll_tree.c:1318: 0x14cb9c790140: collective timeout seq=1
+slurmstepd: error:  mpi/pmix_v3: pmixp_coll_log: lrdn4208 [11]: pmixp_coll.c:286: Dumping collective state
+slurmstepd: error:  mpi/pmix_v3: pmixp_coll_tree_log: lrdn4208 [11]: pmixp_coll_tree.c:1337: 0x14cb9c790140: COLL_FENCE_TREE state seq=1 contribs: loc=1/prnt=0/child=0
+slurmstepd: error:  mpi/pmix_v3: pmixp_coll_tree_log: lrdn4208 [11]: pmixp_coll_tree.c:1339: my peerid: 11:lrdn4208
+slurmstepd: error:  mpi/pmix_v3: pmixp_coll_tree_log: lrdn4208 [11]: pmixp_coll_tree.c:1342: root host: 0:lrdn3686
+slurmstepd: error:  mpi/pmix_v3: pmixp_coll_tree_log: lrdn4208 [11]: pmixp_coll_tree.c:1346: prnt host: 0:lrdn3686
+slurmstepd: error:  mpi/pmix_v3: pmixp_coll_tree_log: lrdn4208 [11]: pmixp_coll_tree.c:1347: prnt contrib:
+slurmstepd: error:  mpi/pmix_v3: pmixp_coll_tree_log: lrdn4208 [11]: pmixp_coll_tree.c:1349: 	 [0:lrdn3686] false
+slurmstepd: error:  mpi/pmix_v3: pmixp_coll_tree_log: lrdn4208 [11]: pmixp_coll_tree.c:1392: status: coll=COLL_UPFWD upfw=COLL_SND_DONE dfwd=COLL_SND_NONE
+slurmstepd: error:  mpi/pmix_v3: pmixp_coll_tree_log: lrdn4208 [11]: pmixp_coll_tree.c:1394: dfwd status: dfwd_cb_cnt=0, dfwd_cb_wait=0
+slurmstepd: error:  mpi/pmix_v3: pmixp_coll_tree_log: lrdn4208 [11]: pmixp_coll_tree.c:1397: bufs (offset/size): upfw 88/16415, dfwd 69/16415
+slurmstepd: error:  mpi/pmix_v3: pmixp_coll_tree_reset_if_to: lrdn4169 [10]: pmixp_coll_tree.c:1318: 0x145a5c88dff0: collective timeout seq=1
+slurmstepd: error:  mpi/pmix_v3: pmixp_coll_log: lrdn4169 [10]: pmixp_coll.c:286: Dumping collective state
+slurmstepd: error:  mpi/pmix_v3: pmixp_coll_tree_log: lrdn4169 [10]: pmixp_coll_tree.c:1337: 0x145a5c88dff0: COLL_FENCE_TREE state seq=1 contribs: loc=1/prnt=0/child=0
+slurmstepd: error:  mpi/pmix_v3: pmixp_coll_tree_log: lrdn4169 [10]: pmixp_coll_tree.c:1339: my peerid: 10:lrdn4169
+slurmstepd: error:  mpi/pmix_v3: pmixp_coll_tree_log: lrdn4169 [10]: pmixp_coll_tree.c:1342: root host: 0:lrdn3686
+slurmstepd: error:  mpi/pmix_v3: pmixp_coll_tree_log: lrdn4169 [10]: pmixp_coll_tree.c:1346: prnt host: 0:lrdn3686
+slurmstepd: error:  mpi/pmix_v3: pmixp_coll_tree_log: lrdn4169 [10]: pmixp_coll_tree.c:1347: prnt contrib:
+slurmstepd: error:  mpi/pmix_v3: pmixp_coll_tree_log: lrdn4169 [10]: pmixp_coll_tree.c:1349: 	 [0:lrdn3686] false
+slurmstepd: error:  mpi/pmix_v3: pmixp_coll_tree_log: lrdn4169 [10]: pmixp_coll_tree.c:1392: status: coll=COLL_UPFWD upfw=COLL_SND_DONE dfwd=COLL_SND_NONE
+slurmstepd: error:  mpi/pmix_v3: pmixp_coll_tree_log: lrdn4169 [10]: pmixp_coll_tree.c:1394: dfwd status: dfwd_cb_cnt=0, dfwd_cb_wait=0
+slurmstepd: error:  mpi/pmix_v3: pmixp_coll_tree_log: lrdn4169 [10]: pmixp_coll_tree.c:1397: bufs (offset/size): upfw 88/16415, dfwd 69/16415
+slurmstepd: error:  mpi/pmix_v3: pmixp_coll_tree_reset_if_to: lrdn4131 [9]: pmixp_coll_tree.c:1318: 0x147114350e40: collective timeout seq=1
+slurmstepd: error:  mpi/pmix_v3: pmixp_coll_log: lrdn4131 [9]: pmixp_coll.c:286: Dumping collective state
+slurmstepd: error:  mpi/pmix_v3: pmixp_coll_tree_log: lrdn4131 [9]: pmixp_coll_tree.c:1337: 0x147114350e40: COLL_FENCE_TREE state seq=1 contribs: loc=1/prnt=0/child=0
+slurmstepd: error:  mpi/pmix_v3: pmixp_coll_tree_log: lrdn4131 [9]: pmixp_coll_tree.c:1339: my peerid: 9:lrdn4131
+slurmstepd: error:  mpi/pmix_v3: pmixp_coll_tree_log: lrdn4131 [9]: pmixp_coll_tree.c:1342: root host: 0:lrdn3686
+slurmstepd: error:  mpi/pmix_v3: pmixp_coll_tree_log: lrdn4131 [9]: pmixp_coll_tree.c:1346: prnt host: 0:lrdn3686
+slurmstepd: error:  mpi/pmix_v3: pmixp_coll_tree_log: lrdn4131 [9]: pmixp_coll_tree.c:1347: prnt contrib:
+slurmstepd: error:  mpi/pmix_v3: pmixp_coll_tree_log: lrdn4131 [9]: pmixp_coll_tree.c:1349: 	 [0:lrdn3686] false
+slurmstepd: error:  mpi/pmix_v3: pmixp_coll_tree_log: lrdn4131 [9]: pmixp_coll_tree.c:1392: status: coll=COLL_UPFWD upfw=COLL_SND_DONE dfwd=COLL_SND_NONE
+slurmstepd: error:  mpi/pmix_v3: pmixp_coll_tree_log: lrdn4131 [9]: pmixp_coll_tree.c:1394: dfwd status: dfwd_cb_cnt=0, dfwd_cb_wait=0
+slurmstepd: error:  mpi/pmix_v3: pmixp_coll_tree_log: lrdn4131 [9]: pmixp_coll_tree.c:1397: bufs (offset/size): upfw 88/16415, dfwd 69/16415
+slurmstepd: error:  mpi/pmix_v3: pmixp_coll_tree_reset_if_to: lrdn3931 [6]: pmixp_coll_tree.c:1318: 0x153a8c350410: collective timeout seq=1
+slurmstepd: error:  mpi/pmix_v3: pmixp_coll_log: lrdn3931 [6]: pmixp_coll.c:286: Dumping collective state
+slurmstepd: error:  mpi/pmix_v3: pmixp_coll_tree_log: lrdn3931 [6]: pmixp_coll_tree.c:1337: 0x153a8c350410: COLL_FENCE_TREE state seq=1 contribs: loc=1/prnt=0/child=0
+slurmstepd: error:  mpi/pmix_v3: pmixp_coll_tree_log: lrdn3931 [6]: pmixp_coll_tree.c:1339: my peerid: 6:lrdn3931
+slurmstepd: error:  mpi/pmix_v3: pmixp_coll_tree_log: lrdn3931 [6]: pmixp_coll_tree.c:1342: root host: 0:lrdn3686
+slurmstepd: error:  mpi/pmix_v3: pmixp_coll_tree_log: lrdn3931 [6]: pmixp_coll_tree.c:1346: prnt host: 0:lrdn3686
+slurmstepd: error:  mpi/pmix_v3: pmixp_coll_tree_log: lrdn3931 [6]: pmixp_coll_tree.c:1347: prnt contrib:
+slurmstepd: error:  mpi/pmix_v3: pmixp_coll_tree_log: lrdn3931 [6]: pmixp_coll_tree.c:1349: 	 [0:lrdn3686] false
+slurmstepd: error:  mpi/pmix_v3: pmixp_coll_tree_log: lrdn3931 [6]: pmixp_coll_tree.c:1392: status: coll=COLL_UPFWD upfw=COLL_SND_DONE dfwd=COLL_SND_NONE
+slurmstepd: error:  mpi/pmix_v3: pmixp_coll_tree_log: lrdn3931 [6]: pmixp_coll_tree.c:1394: dfwd status: dfwd_cb_cnt=0, dfwd_cb_wait=0
+slurmstepd: error:  mpi/pmix_v3: pmixp_coll_tree_log: lrdn3931 [6]: pmixp_coll_tree.c:1397: bufs (offset/size): upfw 88/16415, dfwd 69/16415
+slurmstepd: error:  mpi/pmix_v3: pmixp_coll_tree_reset_if_to: lrdn3870 [4]: pmixp_coll_tree.c:1318: 0x14d7b0350790: collective timeout seq=1
+slurmstepd: error:  mpi/pmix_v3: pmixp_coll_log: lrdn3870 [4]: pmixp_coll.c:286: Dumping collective state
+slurmstepd: error:  mpi/pmix_v3: pmixp_coll_tree_log: lrdn3870 [4]: pmixp_coll_tree.c:1337: 0x14d7b0350790: COLL_FENCE_TREE state seq=1 contribs: loc=1/prnt=0/child=0
+slurmstepd: error:  mpi/pmix_v3: pmixp_coll_tree_log: lrdn3870 [4]: pmixp_coll_tree.c:1339: my peerid: 4:lrdn3870
+slurmstepd: error:  mpi/pmix_v3: pmixp_coll_tree_log: lrdn3870 [4]: pmixp_coll_tree.c:1342: root host: 0:lrdn3686
+slurmstepd: error:  mpi/pmix_v3: pmixp_coll_tree_log: lrdn3870 [4]: pmixp_coll_tree.c:1346: prnt host: 0:lrdn3686
+slurmstepd: error:  mpi/pmix_v3: pmixp_coll_tree_log: lrdn3870 [4]: pmixp_coll_tree.c:1347: prnt contrib:
+slurmstepd: error:  mpi/pmix_v3: pmixp_coll_tree_log: lrdn3870 [4]: pmixp_coll_tree.c:1349: 	 [0:lrdn3686] false
+slurmstepd: error:  mpi/pmix_v3: pmixp_coll_tree_log: lrdn3870 [4]: pmixp_coll_tree.c:1392: status: coll=COLL_UPFWD upfw=COLL_SND_DONE dfwd=COLL_SND_NONE
+slurmstepd: error:  mpi/pmix_v3: pmixp_coll_tree_log: lrdn3870 [4]: pmixp_coll_tree.c:1394: dfwd status: dfwd_cb_cnt=0, dfwd_cb_wait=0
+slurmstepd: error:  mpi/pmix_v3: pmixp_coll_tree_log: lrdn3870 [4]: pmixp_coll_tree.c:1397: bufs (offset/size): upfw 88/16415, dfwd 69/16415
+slurmstepd: error:  mpi/pmix_v3: pmixp_coll_tree_reset_if_to: lrdn3804 [3]: pmixp_coll_tree.c:1318: 0x146614351630: collective timeout seq=1
+slurmstepd: error:  mpi/pmix_v3: pmixp_coll_log: lrdn3804 [3]: pmixp_coll.c:286: Dumping collective state
+slurmstepd: error:  mpi/pmix_v3: pmixp_coll_tree_log: lrdn3804 [3]: pmixp_coll_tree.c:1337: 0x146614351630: COLL_FENCE_TREE state seq=1 contribs: loc=1/prnt=0/child=0
+slurmstepd: error:  mpi/pmix_v3: pmixp_coll_tree_log: lrdn3804 [3]: pmixp_coll_tree.c:1339: my peerid: 3:lrdn3804
+slurmstepd: error:  mpi/pmix_v3: pmixp_coll_tree_log: lrdn3804 [3]: pmixp_coll_tree.c:1342: root host: 0:lrdn3686
+slurmstepd: error:  mpi/pmix_v3: pmixp_coll_tree_log: lrdn3804 [3]: pmixp_coll_tree.c:1346: prnt host: 0:lrdn3686
+slurmstepd: error:  mpi/pmix_v3: pmixp_coll_tree_log: lrdn3804 [3]: pmixp_coll_tree.c:1347: prnt contrib:
+slurmstepd: error:  mpi/pmix_v3: pmixp_coll_tree_log: lrdn3804 [3]: pmixp_coll_tree.c:1349: 	 [0:lrdn3686] false
+slurmstepd: error:  mpi/pmix_v3: pmixp_coll_tree_log: lrdn3804 [3]: pmixp_coll_tree.c:1392: status: coll=COLL_UPFWD upfw=COLL_SND_DONE dfwd=COLL_SND_NONE
+slurmstepd: error:  mpi/pmix_v3: pmixp_coll_tree_log: lrdn3804 [3]: pmixp_coll_tree.c:1394: dfwd status: dfwd_cb_cnt=0, dfwd_cb_wait=0
+slurmstepd: error:  mpi/pmix_v3: pmixp_coll_tree_log: lrdn3804 [3]: pmixp_coll_tree.c:1397: bufs (offset/size): upfw 88/16415, dfwd 69/16415
+slurmstepd: error:  mpi/pmix_v3: pmixp_coll_tree_reset_if_to: lrdn3976 [7]: pmixp_coll_tree.c:1318: 0x15521834e290: collective timeout seq=1
+slurmstepd: error:  mpi/pmix_v3: pmixp_coll_tree_reset_if_to: lrdn4010 [8]: pmixp_coll_tree.c:1318: 0x1533b434e230: collective timeout seq=1
+slurmstepd: error:  mpi/pmix_v3: pmixp_coll_log: lrdn3976 [7]: pmixp_coll.c:286: Dumping collective state
+slurmstepd: error:  mpi/pmix_v3: pmixp_coll_tree_log: lrdn3976 [7]: pmixp_coll_tree.c:1337: 0x15521834e290: COLL_FENCE_TREE state seq=1 contribs: loc=1/prnt=0/child=0
+slurmstepd: error:  mpi/pmix_v3: pmixp_coll_tree_log: lrdn3976 [7]: pmixp_coll_tree.c:1339: my peerid: 7:lrdn3976
+slurmstepd: error:  mpi/pmix_v3: pmixp_coll_tree_log: lrdn3976 [7]: pmixp_coll_tree.c:1342: root host: 0:lrdn3686
+slurmstepd: error:  mpi/pmix_v3: pmixp_coll_tree_log: lrdn3976 [7]: pmixp_coll_tree.c:1346: prnt host: 0:lrdn3686
+slurmstepd: error:  mpi/pmix_v3: pmixp_coll_tree_log: lrdn3976 [7]: pmixp_coll_tree.c:1347: prnt contrib:
+slurmstepd: error:  mpi/pmix_v3: pmixp_coll_tree_log: lrdn3976 [7]: pmixp_coll_tree.c:1349: 	 [0:lrdn3686] false
+slurmstepd: error:  mpi/pmix_v3: pmixp_coll_tree_log: lrdn3976 [7]: pmixp_coll_tree.c:1392: status: coll=COLL_UPFWD upfw=COLL_SND_DONE dfwd=COLL_SND_NONE
+slurmstepd: error:  mpi/pmix_v3: pmixp_coll_tree_log: lrdn3976 [7]: pmixp_coll_tree.c:1394: dfwd status: dfwd_cb_cnt=0, dfwd_cb_wait=0
+slurmstepd: error:  mpi/pmix_v3: pmixp_coll_tree_log: lrdn3976 [7]: pmixp_coll_tree.c:1397: bufs (offset/size): upfw 88/16415, dfwd 69/16415
+slurmstepd: error:  mpi/pmix_v3: pmixp_coll_log: lrdn4010 [8]: pmixp_coll.c:286: Dumping collective state
+slurmstepd: error:  mpi/pmix_v3: pmixp_coll_tree_log: lrdn4010 [8]: pmixp_coll_tree.c:1337: 0x1533b434e230: COLL_FENCE_TREE state seq=1 contribs: loc=1/prnt=0/child=0
+slurmstepd: error:  mpi/pmix_v3: pmixp_coll_tree_log: lrdn4010 [8]: pmixp_coll_tree.c:1339: my peerid: 8:lrdn4010
+slurmstepd: error:  mpi/pmix_v3: pmixp_coll_tree_log: lrdn4010 [8]: pmixp_coll_tree.c:1342: root host: 0:lrdn3686
+slurmstepd: error:  mpi/pmix_v3: pmixp_coll_tree_log: lrdn4010 [8]: pmixp_coll_tree.c:1346: prnt host: 0:lrdn3686
+slurmstepd: error:  mpi/pmix_v3: pmixp_coll_tree_log: lrdn4010 [8]: pmixp_coll_tree.c:1347: prnt contrib:
+slurmstepd: error:  mpi/pmix_v3: pmixp_coll_tree_log: lrdn4010 [8]: pmixp_coll_tree.c:1349: 	 [0:lrdn3686] false
+slurmstepd: error:  mpi/pmix_v3: pmixp_coll_tree_log: lrdn4010 [8]: pmixp_coll_tree.c:1392: status: coll=COLL_UPFWD upfw=COLL_SND_DONE dfwd=COLL_SND_NONE
+slurmstepd: error:  mpi/pmix_v3: pmixp_coll_tree_log: lrdn4010 [8]: pmixp_coll_tree.c:1394: dfwd status: dfwd_cb_cnt=0, dfwd_cb_wait=0
+slurmstepd: error:  mpi/pmix_v3: pmixp_coll_tree_log: lrdn4010 [8]: pmixp_coll_tree.c:1397: bufs (offset/size): upfw 88/16415, dfwd 69/16415
+slurmstepd: error:  mpi/pmix_v3: pmixp_coll_tree_reset_if_to: lrdn3886 [5]: pmixp_coll_tree.c:1318: 0x14cc8c363cf0: collective timeout seq=1
+slurmstepd: error:  mpi/pmix_v3: pmixp_coll_log: lrdn3886 [5]: pmixp_coll.c:286: Dumping collective state
+slurmstepd: error:  mpi/pmix_v3: pmixp_coll_tree_log: lrdn3886 [5]: pmixp_coll_tree.c:1337: 0x14cc8c363cf0: COLL_FENCE_TREE state seq=1 contribs: loc=1/prnt=0/child=0
+slurmstepd: error:  mpi/pmix_v3: pmixp_coll_tree_log: lrdn3886 [5]: pmixp_coll_tree.c:1339: my peerid: 5:lrdn3886
+slurmstepd: error:  mpi/pmix_v3: pmixp_coll_tree_log: lrdn3886 [5]: pmixp_coll_tree.c:1342: root host: 0:lrdn3686
+slurmstepd: error:  mpi/pmix_v3: pmixp_coll_tree_log: lrdn3886 [5]: pmixp_coll_tree.c:1346: prnt host: 0:lrdn3686
+slurmstepd: error:  mpi/pmix_v3: pmixp_coll_tree_log: lrdn3886 [5]: pmixp_coll_tree.c:1347: prnt contrib:
+slurmstepd: error:  mpi/pmix_v3: pmixp_coll_tree_log: lrdn3886 [5]: pmixp_coll_tree.c:1349: 	 [0:lrdn3686] false
+slurmstepd: error:  mpi/pmix_v3: pmixp_coll_tree_log: lrdn3886 [5]: pmixp_coll_tree.c:1392: status: coll=COLL_UPFWD upfw=COLL_SND_DONE dfwd=COLL_SND_NONE
+slurmstepd: error:  mpi/pmix_v3: pmixp_coll_tree_log: lrdn3886 [5]: pmixp_coll_tree.c:1394: dfwd status: dfwd_cb_cnt=0, dfwd_cb_wait=0
+slurmstepd: error:  mpi/pmix_v3: pmixp_coll_tree_log: lrdn3886 [5]: pmixp_coll_tree.c:1397: bufs (offset/size): upfw 88/16415, dfwd 69/16415
+slurmstepd: error:  mpi/pmix_v3: pmixp_coll_tree_reset_if_to: lrdn3737 [1]: pmixp_coll_tree.c:1318: 0x147e083507e0: collective timeout seq=1
+slurmstepd: error:  mpi/pmix_v3: pmixp_coll_log: lrdn3737 [1]: pmixp_coll.c:286: Dumping collective state
+slurmstepd: error:  mpi/pmix_v3: pmixp_coll_tree_log: lrdn3737 [1]: pmixp_coll_tree.c:1337: 0x147e083507e0: COLL_FENCE_TREE state seq=1 contribs: loc=1/prnt=0/child=0
+slurmstepd: error:  mpi/pmix_v3: pmixp_coll_tree_log: lrdn3737 [1]: pmixp_coll_tree.c:1339: my peerid: 1:lrdn3737
+slurmstepd: error:  mpi/pmix_v3: pmixp_coll_tree_log: lrdn3737 [1]: pmixp_coll_tree.c:1342: root host: 0:lrdn3686
+slurmstepd: error:  mpi/pmix_v3: pmixp_coll_tree_log: lrdn3737 [1]: pmixp_coll_tree.c:1346: prnt host: 0:lrdn3686
+slurmstepd: error:  mpi/pmix_v3: pmixp_coll_tree_log: lrdn3737 [1]: pmixp_coll_tree.c:1347: prnt contrib:
+slurmstepd: error:  mpi/pmix_v3: pmixp_coll_tree_log: lrdn3737 [1]: pmixp_coll_tree.c:1349: 	 [0:lrdn3686] false
+slurmstepd: error:  mpi/pmix_v3: pmixp_coll_tree_log: lrdn3737 [1]: pmixp_coll_tree.c:1392: status: coll=COLL_UPFWD upfw=COLL_SND_DONE dfwd=COLL_SND_NONE
+slurmstepd: error:  mpi/pmix_v3: pmixp_coll_tree_log: lrdn3737 [1]: pmixp_coll_tree.c:1394: dfwd status: dfwd_cb_cnt=0, dfwd_cb_wait=0
+slurmstepd: error:  mpi/pmix_v3: pmixp_coll_tree_log: lrdn3737 [1]: pmixp_coll_tree.c:1397: bufs (offset/size): upfw 88/16415, dfwd 69/16415
+slurmstepd: error:  mpi/pmix_v3: pmixp_coll_tree_reset_if_to: lrdn3754 [2]: pmixp_coll_tree.c:1318: 0x1513e0350690: collective timeout seq=1
+slurmstepd: error:  mpi/pmix_v3: pmixp_coll_log: lrdn3754 [2]: pmixp_coll.c:286: Dumping collective state
+slurmstepd: error:  mpi/pmix_v3: pmixp_coll_tree_log: lrdn3754 [2]: pmixp_coll_tree.c:1337: 0x1513e0350690: COLL_FENCE_TREE state seq=1 contribs: loc=1/prnt=0/child=0
+slurmstepd: error:  mpi/pmix_v3: pmixp_coll_tree_log: lrdn3754 [2]: pmixp_coll_tree.c:1339: my peerid: 2:lrdn3754
+slurmstepd: error:  mpi/pmix_v3: pmixp_coll_tree_log: lrdn3754 [2]: pmixp_coll_tree.c:1342: root host: 0:lrdn3686
+slurmstepd: error:  mpi/pmix_v3: pmixp_coll_tree_log: lrdn3754 [2]: pmixp_coll_tree.c:1346: prnt host: 0:lrdn3686
+slurmstepd: error:  mpi/pmix_v3: pmixp_coll_tree_log: lrdn3754 [2]: pmixp_coll_tree.c:1347: prnt contrib:
+slurmstepd: error:  mpi/pmix_v3: pmixp_coll_tree_log: lrdn3754 [2]: pmixp_coll_tree.c:1349: 	 [0:lrdn3686] false
+slurmstepd: error:  mpi/pmix_v3: pmixp_coll_tree_log: lrdn3754 [2]: pmixp_coll_tree.c:1392: status: coll=COLL_UPFWD upfw=COLL_SND_DONE dfwd=COLL_SND_NONE
+slurmstepd: error:  mpi/pmix_v3: pmixp_coll_tree_log: lrdn3754 [2]: pmixp_coll_tree.c:1394: dfwd status: dfwd_cb_cnt=0, dfwd_cb_wait=0
+slurmstepd: error:  mpi/pmix_v3: pmixp_coll_tree_log: lrdn3754 [2]: pmixp_coll_tree.c:1397: bufs (offset/size): upfw 88/16415, dfwd 69/16415
+slurmstepd: error:  mpi/pmix_v3: pmixp_coll_tree_reset_if_to: lrdn3686 [0]: pmixp_coll_tree.c:1318: 0x14f6ac00d630: collective timeout seq=2
+slurmstepd: error:  mpi/pmix_v3: pmixp_coll_log: lrdn3686 [0]: pmixp_coll.c:286: Dumping collective state
+slurmstepd: error:  mpi/pmix_v3: pmixp_coll_tree_log: lrdn3686 [0]: pmixp_coll_tree.c:1337: 0x14f6ac00d630: COLL_FENCE_TREE state seq=2 contribs: loc=1/prnt=0/child=11
+slurmstepd: error:  mpi/pmix_v3: pmixp_coll_tree_log: lrdn3686 [0]: pmixp_coll_tree.c:1339: my peerid: 0:lrdn3686
+slurmstepd: error:  mpi/pmix_v3: pmixp_coll_tree_log: lrdn3686 [0]: pmixp_coll_tree.c:1342: root host: 0:lrdn3686
+slurmstepd: error:  mpi/pmix_v3: pmixp_coll_tree_log: lrdn3686 [0]: pmixp_coll_tree.c:1356: child contribs [15]:
+slurmstepd: error:  mpi/pmix_v3: pmixp_coll_tree_log: lrdn3686 [0]: pmixp_coll_tree.c:1383: 	 done contrib: lrdn[3737,3754,3804,3870,3886,3931,3976,4131,4169,4208,4277]
+slurmstepd: error:  mpi/pmix_v3: pmixp_coll_tree_log: lrdn3686 [0]: pmixp_coll_tree.c:1385: 	 wait contrib: lrdn[4010,4256,4317,4338]
+slurmstepd: error:  mpi/pmix_v3: pmixp_coll_tree_log: lrdn3686 [0]: pmixp_coll_tree.c:1392: status: coll=COLL_COLLECT upfw=COLL_SND_NONE dfwd=COLL_SND_NONE
+slurmstepd: error:  mpi/pmix_v3: pmixp_coll_tree_log: lrdn3686 [0]: pmixp_coll_tree.c:1394: dfwd status: dfwd_cb_cnt=0, dfwd_cb_wait=0
+slurmstepd: error:  mpi/pmix_v3: pmixp_coll_tree_log: lrdn3686 [0]: pmixp_coll_tree.c:1397: bufs (offset/size): upfw 297/16415, dfwd 69/16415
+slurmstepd: error: *** JOB 50029747 ON lrdn3686 CANCELLED AT 2026-07-21T15:34:18 ***
+srun: Job step aborted: Waiting up to 122 seconds for job step to finish.

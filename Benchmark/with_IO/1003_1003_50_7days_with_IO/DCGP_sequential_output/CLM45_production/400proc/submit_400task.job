@@ -1,0 +1,36 @@
+#!/usr/bin/env bash
+
+#SBATCH --account=ICT26_MHPC
+#SBATCH --partition=dcgp_usr_prod
+#SBATCH --job-name=clm45_7d_400
+#SBATCH --nodes=4
+#SBATCH --ntasks-per-node=100
+#SBATCH --cpus-per-task=1
+#SBATCH --exclusive
+#SBATCH --mem=0
+#SBATCH --gres=tmpfs:10g
+#SBATCH --time=12:00:00
+#SBATCH --output=/leonardo/home/userexternal/ctica000/MS_thesis/RegCM/Benchmark/with_IO/1003_1003_50_7days_with_IO/DCGP_sequential_output/CLM45_production/400proc/production/LOG_%x_%j.out
+#SBATCH --error=/leonardo/home/userexternal/ctica000/MS_thesis/RegCM/Benchmark/with_IO/1003_1003_50_7days_with_IO/DCGP_sequential_output/CLM45_production/400proc/production/LOG_%x_%j.err
+
+set -euo pipefail
+
+readonly RUN_ROOT=/leonardo/home/userexternal/ctica000/MS_thesis/RegCM/Benchmark/with_IO/1003_1003_50_7days_with_IO/DCGP_sequential_output/CLM45_production
+readonly RUN_DIR="$RUN_ROOT/400proc"
+readonly ENV_LOADER=/leonardo/home/userexternal/ctica000/MS_thesis/RegCM/environment_loaders/regcm5_leonardo_nvhpc_hpcx.sh
+
+source "$ENV_LOADER"
+export OPAL_PREFIX="$MPI_SHIM"
+export OMPI_MCA_opal_warn_on_missing_libcuda=0
+cd "$RUN_DIR"
+
+[[ -r input/EURR-3_DOMAIN000.nc ]] || { printf 'Missing domain input.\n' >&2; exit 1; }
+[[ -r input/EURR-3_ICBC.2009100100.nc ]] || { printf 'Missing ICBC input.\n' >&2; exit 1; }
+[[ -r input/EURR-3_CLM45_surface.nc ]] || { printf 'Missing CLM45 surface input.\n' >&2; exit 1; }
+[[ -d output && -w output ]] || { printf 'Output directory is unavailable or not writable.\n' >&2; exit 1; }
+shopt -s nullglob
+outputs=(output/*)
+(( ${#outputs[@]} == 0 )) || { printf 'Refusing to overwrite a non-empty output directory.\n' >&2; exit 1; }
+
+ulimit -s unlimited
+srun --mpi=pmix_v3 --ntasks=400 --ntasks-per-node=100 --kill-on-bad-exit=1 "$RUN_ROOT/run_regcm_rank.sh"
