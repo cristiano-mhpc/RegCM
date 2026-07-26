@@ -525,13 +525,49 @@ The completed 7-day runs common to both local Discoverer+ memory modes compare a
 
 The 1-GPU `mem:unified` run reproduced the same `radinp` accelerator fatal error seen in the `mem:managed` 1-GPU cases. The 2-GPU `mem:unified` attempts have not established a RegCM model failure; they failed through Slurm node failures or pre-launch `srun` errors, so the 2-GPU `mem:unified` result remains unresolved until job `179445` completes.
 
-### 3.5 External GB200 EURR-3 Comparison
+### 3.5 CPU Reference: Leonardo DCGP
 
-The file `Benchmark_Reports/GB200_EURR3.png` contains Everett's previous GB200 EURR-3 results and an AsyncIO dataset. The values below are approximate days/hour values digitized from that chart, not timings re-derived from local RegCM logs.
+A separate CPU-only CLM4.5 MPI strong-scaling campaign was run on Leonardo DCGP and is documented in:
+
+```text
+Benchmark_Reports/Leonardo_CLM45_SCALING_REPORT.md
+```
+
+This CPU reference is useful context for the GPU benchmark, but it is not a strict apples-to-apples comparison. The Discoverer+ GPU runs and Leonardo CPU runs differ in hardware, executable, memory/accelerator model, simulation month, and output cadence.
 
 <a id="table-18"></a>
 
-**Table 18. External GB200 EURR-3 comparison digitized from `GB200_EURR3.png`.**
+**Table 18. Scope differences between the Discoverer+ GPU and Leonardo CPU benchmark campaigns.**
+
+| Item | Discoverer+ GPU runs | Leonardo CPU runs |
+|---|---|---|
+| Platform | Discoverer+ DGX H200 | Leonardo DCGP |
+| Execution model | GPU-enabled OpenACC/stdpar plus MPI | CPU-only CLM4.5 MPI |
+| Simulation window | `2009-09-01` to `2009-09-08` for 7-day runs | `2009-10-01` to `2009-10-08` |
+| ATM/RAD/SRF output frequency | Hourly | Daily |
+| Main timing metric | RegCM elapsed seconds and seconds/day | Internal RegCM timing files and seconds/day |
+
+The clean Leonardo CPU results were:
+
+<a id="table-19"></a>
+
+**Table 19. Clean Leonardo DCGP CPU-only seven-day CLM4.5 scaling results.**
+
+| MPI ranks | Nodes | State | Internal RegCM time | RegCM avg/day | Speedup vs 200 ranks | Efficiency vs 200 ranks |
+|---:|---:|---|---:|---:|---:|---:|
+| 200 | 2 | Completed | 68798.394 s | 9828.3420 s/day | 1.0000x | 100.00% |
+| 400 | 4 | Completed | 29893.698 s | 4270.5283 s/day | 2.3014x | 115.07% |
+| 800 | 8 | Completed | 14533.082 s | 2076.1546 s/day | 4.7339x | 118.35% |
+
+Additional Leonardo CPU points were informative but not clean benchmark completions: the 1200-rank configuration failed reproducibly near simulation day four with a CLM urban longwave-radiation `NaN`, and the 1600-rank configuration completed the model output but stalled during PMIx finalization. The best scalar comparison metric between campaigns is RegCM/internal elapsed seconds per simulated day, with the caveat that Discoverer+ wrote hourly output while Leonardo wrote daily ATM/RAD/SRF output.
+
+### 3.6 External GB200 EURR-3 Comparison
+
+The file `Benchmark_Reports/GB200_EURR3.png` contains Everett's previous GB200 EURR-3 results and an AsyncIO dataset. The values below are approximate days/hour values digitized from that chart, not timings re-derived from local RegCM logs.
+
+<a id="table-20"></a>
+
+**Table 20. External GB200 EURR-3 comparison digitized from `GB200_EURR3.png`.**
 
 | GPUs | Everett / previous result | AsyncIO result | AsyncIO speedup vs Everett |
 |---:|---:|---:|---:|
@@ -562,9 +598,9 @@ The failing configuration uses a single MPI rank and therefore `CPUS DIM1 = 1`, 
 
 The project QoS imposes a hard job walltime limit of `02:00:00`. This directly affected the slowest production cases:
 
-<a id="table-19"></a>
+<a id="table-21"></a>
 
-**Table 19. Benchmark cases affected by the two-hour project walltime limit.**
+**Table 21. Benchmark cases affected by the two-hour project walltime limit.**
 
 | Case | Job | Outcome |
 |---|---:|---|
@@ -598,9 +634,9 @@ Discoverer_node_introspection/runs/179836_dgx2_7gpu_strict_cuda_hmm_probe
 
 #### 4.4.1 Compute and Network Hardware
 
-<a id="table-20"></a>
+<a id="table-22"></a>
 
-**Table 20. Compute and GPU hardware observed in node introspection.**
+**Table 22. Compute and GPU hardware observed in node introspection.**
 
 | Item | `dgx1` introspection | `dgx2` introspection |
 |---|---|---|
@@ -621,9 +657,9 @@ The CPU and NUMA topology was the same on `dgx1` and `dgx2`: two sockets, 56 cor
 
 The `nvidia-smi topo -m` NIC legend was also consistent across `dgx1` and `dgx2`, exposing 12 `mlx5` devices. Nine devices were reported Up by `ibdev2netdev`; eight of those were the closest GPU-adjacent HCAs used by the topology-aware launcher, while `mlx5_1` was also Up but not the nearest listed HCA for a GPU in the launcher mapping.
 
-<a id="table-21"></a>
+<a id="table-23"></a>
 
-**Table 21. Network devices observed by `ibdev2netdev` on both `dgx1` and `dgx2`.**
+**Table 23. Network devices observed by `ibdev2netdev` on both `dgx1` and `dgx2`.**
 
 | mlx5 device | Net device | State | Topology role observed in `nvidia-smi topo -m` |
 |---|---|---|---|
@@ -646,9 +682,9 @@ This mapping supports the topology-aware hand-tuned launcher: on a full 8-GPU no
 
 The memory-mode probe results are reported separately from hardware topology because they validate the compiler/runtime memory path rather than the node interconnect layout.
 
-<a id="table-22"></a>
+<a id="table-24"></a>
 
-**Table 22. Discoverer+ pageable-memory and `mem:unified` probe summary.**
+**Table 24. Discoverer+ pageable-memory and `mem:unified` probe summary.**
 
 | Item | Result |
 |---|---|
@@ -693,9 +729,9 @@ This is stronger evidence that both visible Discoverer+ GPU nodes support pageab
 
 The stricter CUDA pageable-memory probe jobs completed as follows:
 
-<a id="table-23"></a>
+<a id="table-25"></a>
 
-**Table 23. Discoverer+ pageable-memory probe job outcomes.**
+**Table 25. Discoverer+ pageable-memory probe job outcomes.**
 
 | Job | Target | Request | Result |
 |---:|---|---|---|
@@ -708,9 +744,9 @@ The `dgx2` follow-up used 7 normal GPUs because Slurm rejected an 8 normal-GPU r
 
 The benchmark output volume is large:
 
-<a id="table-24"></a>
+<a id="table-26"></a>
 
-**Table 24. Typical generated NetCDF output volume by run length.**
+**Table 26. Typical generated NetCDF output volume by run length.**
 
 | Run length | Typical complete output size |
 |---|---:|
