@@ -48,14 +48,14 @@
   <polyline points="122.7,313.1 208.0,279.5 293.3,266.8 336.0,277.5" fill="none" stroke="#e97132" stroke-width="4" stroke-linejoin="round" stroke-linecap="round"/>
   <polyline points="122.7,283.8 208.0,230.0 378.7,172.5 720.0,123.8" fill="none" stroke="#7f7f7f" stroke-width="4" stroke-linejoin="round" stroke-linecap="round"/>
   <polyline points="122.7,267.5 208.0,208.8 378.7,121.3 720.0,68.8" fill="none" stroke="#2ca02c" stroke-width="4" stroke-linejoin="round" stroke-linecap="round"/>
-  <polyline points="80.0,355.4 122.7,349.5 208.0,338.3" fill="none" stroke="#9467bd" stroke-width="4" stroke-linejoin="round" stroke-linecap="round" stroke-dasharray="8 5"/>
+  <polyline points="80.0,355.4 122.7,349.5 208.0,338.3 378.7,99.3" fill="none" stroke="#9467bd" stroke-width="4" stroke-linejoin="round" stroke-linecap="round" stroke-dasharray="8 5"/>
 
   <g stroke="#ffffff" stroke-width="1.5">
     <circle cx="122.7" cy="306.3" r="5.5" fill="#156082"/><circle cx="208.0" cy="257.0" r="5.5" fill="#156082"/><circle cx="293.3" cy="236.8" r="5.5" fill="#156082"/><circle cx="336.0" cy="259.3" r="5.5" fill="#156082"/>
     <circle cx="122.7" cy="313.1" r="5.5" fill="#e97132"/><circle cx="208.0" cy="279.5" r="5.5" fill="#e97132"/><circle cx="293.3" cy="266.8" r="5.5" fill="#e97132"/><circle cx="336.0" cy="277.5" r="5.5" fill="#e97132"/>
     <circle cx="122.7" cy="283.8" r="5.5" fill="#7f7f7f"/><circle cx="208.0" cy="230.0" r="5.5" fill="#7f7f7f"/><circle cx="378.7" cy="172.5" r="5.5" fill="#7f7f7f"/><circle cx="720.0" cy="123.8" r="5.5" fill="#7f7f7f"/>
     <circle cx="122.7" cy="267.5" r="5.5" fill="#2ca02c"/><circle cx="208.0" cy="208.8" r="5.5" fill="#2ca02c"/><circle cx="378.7" cy="121.3" r="5.5" fill="#2ca02c"/><circle cx="720.0" cy="68.8" r="5.5" fill="#2ca02c"/>
-    <circle cx="80.0" cy="355.4" r="5.5" fill="#9467bd"/><circle cx="122.7" cy="349.5" r="5.5" fill="#9467bd"/><circle cx="208.0" cy="338.3" r="5.5" fill="#9467bd"/>
+    <circle cx="80.0" cy="355.4" r="5.5" fill="#9467bd"/><circle cx="122.7" cy="349.5" r="5.5" fill="#9467bd"/><circle cx="208.0" cy="338.3" r="5.5" fill="#9467bd"/><circle cx="378.7" cy="99.3" r="5.5" fill="#9467bd"/>
   </g>
 
   <g font-family="Arial, sans-serif" font-size="14" fill="#333333">

@@ -521,7 +521,7 @@ The completed 7-day runs common to both local Discoverer+ memory modes compare a
   <img src="Discoverer_Memory_Mode_Days_Per_Hour.png" alt="Days/hour comparison for local memory modes, Leonardo CPU DCGP, Everett previous, and Everett AsyncIO" width="760">
 </p>
 
-<p align="center"><strong>Figure 1. Days/hour comparison for local Discoverer+ memory modes, Leonardo CPU DCGP, and Everett GB200 results.</strong> Local GPU series use the completed seven-day Discoverer+ runs and are plotted by GPU count. The Leonardo CPU reference is plotted by CPU node count, with 100 MPI/CPU cores used per DCGP node, using clean 200-, 400-, and 800-rank results on 2, 4, and 8 DCGP nodes. Everett's previous and AsyncIO series are approximate values digitized from <code>GB200_EURR3.png</code>.</p>
+<p align="center"><strong>Figure 1. Days/hour comparison for local Discoverer+ memory modes, Leonardo CPU DCGP, and Everett GB200 results.</strong> Local GPU series use the completed seven-day Discoverer+ runs and are plotted by GPU count. The Leonardo CPU reference is plotted by CPU node count, with 100 MPI/CPU cores used per DCGP node, using clean 200-, 400-, and 800-rank results plus the qualified 1600-rank model-timing result on 2, 4, 8, and 16 DCGP nodes. Everett's previous and AsyncIO series are approximate values digitized from <code>GB200_EURR3.png</code>.</p>
 
 The 1-GPU `mem:unified` run reproduced the same `radinp` accelerator fatal error seen in the `mem:managed` 1-GPU cases. The 2-GPU `mem:unified` attempts have not established a RegCM model failure; they failed through Slurm node failures or pre-launch `srun` errors, so the 2-GPU `mem:unified` result remains unresolved until job `179445` completes.
 
@@ -551,15 +551,16 @@ The clean Leonardo CPU results were:
 
 <a id="table-19"></a>
 
-**Table 19. Clean Leonardo DCGP CPU-only seven-day CLM4.5 scaling results.**
+**Table 19. Leonardo DCGP CPU-only seven-day CLM4.5 scaling results.**
 
 | MPI ranks | Nodes | State | Internal RegCM time | RegCM avg/day | Speedup vs 200 ranks | Efficiency vs 200 ranks |
 |---:|---:|---|---:|---:|---:|---:|
 | 200 | 2 | Completed | 68798.394 s | 9828.3420 s/day | 1.0000x | 100.00% |
 | 400 | 4 | Completed | 29893.698 s | 4270.5283 s/day | 2.3014x | 115.07% |
 | 800 | 8 | Completed | 14533.082 s | 2076.1546 s/day | 4.7339x | 118.35% |
+| 1600 | 16 | Provisional | 8053.3583 s | 1150.4798 s/day | 8.5428x | 106.79% |
 
-Additional Leonardo CPU points were informative but not clean benchmark completions: the 1200-rank configuration failed reproducibly near simulation day four with a CLM urban longwave-radiation `NaN`, and the 1600-rank configuration completed the model output but stalled during PMIx finalization. The best scalar comparison metric between campaigns is RegCM/internal elapsed seconds per simulated day, with the caveat that Discoverer+ wrote hourly output while Leonardo wrote daily ATM/RAD/SRF output.
+The 1600-rank point is a qualified model-timing result: the model completed all seven simulated days and reported `02:14:13.3583`, but the Slurm step stalled during PMIx finalization and was cancelled after `02:20:53`. It should not be treated as a clean scheduler-level completion. The 1200-rank configuration failed reproducibly near simulation day four with a CLM urban longwave-radiation `NaN`. The best scalar comparison metric between campaigns is RegCM/internal elapsed seconds per simulated day, with the caveat that Discoverer+ wrote hourly output while Leonardo wrote daily ATM/RAD/SRF output.
 
 ### 3.6 External GB200 EURR-3 Comparison
 
