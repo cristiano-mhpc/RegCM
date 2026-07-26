@@ -518,7 +518,7 @@ The completed 7-day runs common to both local Discoverer+ memory modes compare a
 <a id="figure-1"></a>
 
 <p align="center">
-  <img src="Discoverer_Memory_Mode_Days_Per_Hour.png" alt="Days/hour comparison for local memory modes, Leonardo CPU DCGP, Everett previous, and Everett AsyncIO" width="760">
+  <img src="Discoverer_Memory_Mode_Days_Per_Hour_v2.png" alt="Days/hour comparison for local memory modes, Leonardo CPU DCGP, Everett previous, and Everett AsyncIO" width="760">
 </p>
 
 <p align="center"><strong>Figure 1. Days/hour comparison for local Discoverer+ memory modes, Leonardo CPU DCGP, and Everett GB200 results.</strong> Local GPU series use the completed seven-day Discoverer+ runs and are plotted by GPU count. The Leonardo CPU reference is plotted by CPU node count, with 100 MPI/CPU cores used per DCGP node, using clean 200-, 400-, and 800-rank results plus the qualified 1600-rank model-timing result on 2, 4, 8, and 16 DCGP nodes. Everett's previous and AsyncIO series are approximate values digitized from <code>GB200_EURR3.png</code>.</p>
