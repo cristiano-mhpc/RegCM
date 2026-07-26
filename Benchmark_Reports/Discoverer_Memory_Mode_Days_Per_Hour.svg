@@ -59,15 +59,15 @@
   </g>
 
   <g font-family="Arial, sans-serif" font-size="14" fill="#333333">
-    <line x1="95" y1="450" x2="135" y2="450" stroke="#156082" stroke-width="4" stroke-linecap="round"/><circle cx="115" cy="450" r="5.5" fill="#156082"/>
-    <text x="145" y="455">local mem:managed</text>
-    <line x1="305" y1="450" x2="345" y2="450" stroke="#e97132" stroke-width="4" stroke-linecap="round"/><circle cx="325" cy="450" r="5.5" fill="#e97132"/>
-    <text x="355" y="455">local mem:unified</text>
-    <line x1="515" y1="450" x2="555" y2="450" stroke="#7f7f7f" stroke-width="4" stroke-linecap="round"/><circle cx="535" cy="450" r="5.5" fill="#7f7f7f"/>
-    <text x="565" y="455">Everett previous</text>
-    <line x1="305" y1="476" x2="345" y2="476" stroke="#2ca02c" stroke-width="4" stroke-linecap="round"/><circle cx="325" cy="476" r="5.5" fill="#2ca02c"/>
-    <text x="355" y="481">Everett mem:unified AsyncIO</text>
-    <line x1="515" y1="476" x2="555" y2="476" stroke="#9467bd" stroke-width="4" stroke-linecap="round" stroke-dasharray="8 5"/><circle cx="535" cy="476" r="5.5" fill="#9467bd"/>
-    <text x="565" y="481">Leonardo CPU DCGP</text>
+    <line x1="35" y1="450" x2="75" y2="450" stroke="#156082" stroke-width="4" stroke-linecap="round"/><circle cx="55" cy="450" r="5.5" fill="#156082"/>
+    <text x="85" y="455">local mem:managed</text>
+    <line x1="285" y1="450" x2="325" y2="450" stroke="#e97132" stroke-width="4" stroke-linecap="round"/><circle cx="305" cy="450" r="5.5" fill="#e97132"/>
+    <text x="335" y="455">local mem:unified</text>
+    <line x1="545" y1="450" x2="585" y2="450" stroke="#7f7f7f" stroke-width="4" stroke-linecap="round"/><circle cx="565" cy="450" r="5.5" fill="#7f7f7f"/>
+    <text x="595" y="455">Everett previous</text>
+    <line x1="125" y1="476" x2="165" y2="476" stroke="#2ca02c" stroke-width="4" stroke-linecap="round"/><circle cx="145" cy="476" r="5.5" fill="#2ca02c"/>
+    <text x="175" y="481">Everett mem:unified AsyncIO</text>
+    <line x1="505" y1="476" x2="545" y2="476" stroke="#9467bd" stroke-width="4" stroke-linecap="round" stroke-dasharray="8 5"/><circle cx="525" cy="476" r="5.5" fill="#9467bd"/>
+    <text x="555" y="481">Leonardo CPU DCGP (100 cores/node)</text>
   </g>
 </svg>
