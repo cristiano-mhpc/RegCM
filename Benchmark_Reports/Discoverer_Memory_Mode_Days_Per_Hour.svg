@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="860" height="500" viewBox="0 0 860 500" role="img" aria-labelledby="title desc">
   <title id="title">RegCM EURR-3 days/hour comparison</title>
-  <desc id="desc">Comparison of local Discoverer+ mem:managed and mem:unified results with Everett previous and Everett AsyncIO GB200 results.</desc>
+  <desc id="desc">Comparison of local Discoverer+ mem:managed and mem:unified results with Everett previous and Everett AsyncIO GB200 results, plus Leonardo DCGP CPU reference points.</desc>
   <rect width="860" height="500" fill="#ffffff"/>
   <text x="430" y="34" text-anchor="middle" font-family="Arial, sans-serif" font-size="24" fill="#333333">RegCM EURR-3 Days/Hour Comparison</text>
 
@@ -26,32 +26,36 @@
 
   <g font-family="Arial, sans-serif" font-size="13" fill="#555555">
     <line x1="80.0" y1="360" x2="80.0" y2="366" stroke="#333333"/>
-    <text x="80.0" y="386" text-anchor="middle">4</text>
-    <line x1="171.4" y1="360" x2="171.4" y2="366" stroke="#333333"/>
-    <text x="171.4" y="386" text-anchor="middle">8</text>
-    <line x1="262.9" y1="360" x2="262.9" y2="366" stroke="#333333"/>
-    <text x="262.9" y="386" text-anchor="middle">12</text>
-    <line x1="308.6" y1="360" x2="308.6" y2="366" stroke="#333333"/>
-    <text x="308.6" y="386" text-anchor="middle">14</text>
-    <line x1="354.3" y1="360" x2="354.3" y2="366" stroke="#333333"/>
-    <text x="354.3" y="386" text-anchor="middle">16</text>
+    <text x="80.0" y="386" text-anchor="middle">2</text>
+    <line x1="122.7" y1="360" x2="122.7" y2="366" stroke="#333333"/>
+    <text x="122.7" y="386" text-anchor="middle">4</text>
+    <line x1="208.0" y1="360" x2="208.0" y2="366" stroke="#333333"/>
+    <text x="208.0" y="386" text-anchor="middle">8</text>
+    <line x1="293.3" y1="360" x2="293.3" y2="366" stroke="#333333"/>
+    <text x="293.3" y="386" text-anchor="middle">12</text>
+    <line x1="336.0" y1="360" x2="336.0" y2="366" stroke="#333333"/>
+    <text x="336.0" y="386" text-anchor="middle">14</text>
+    <line x1="378.7" y1="360" x2="378.7" y2="366" stroke="#333333"/>
+    <text x="378.7" y="386" text-anchor="middle">16</text>
     <line x1="720.0" y1="360" x2="720.0" y2="366" stroke="#333333"/>
     <text x="720.0" y="386" text-anchor="middle">32</text>
   </g>
 
-  <text x="400" y="426" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" fill="#333333">GPUs / MPI ranks</text>
+  <text x="400" y="426" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" fill="#333333">GPUs / CPU nodes</text>
   <text x="22" y="210" text-anchor="middle" transform="rotate(-90 22 210)" font-family="Arial, sans-serif" font-size="16" fill="#333333">Simulated days per hour</text>
 
-  <polyline points="80.0,306.3 171.4,257.0 262.9,236.8 308.6,259.3" fill="none" stroke="#156082" stroke-width="4" stroke-linejoin="round" stroke-linecap="round"/>
-  <polyline points="80.0,313.1 171.4,279.5 262.9,266.8 308.6,277.5" fill="none" stroke="#e97132" stroke-width="4" stroke-linejoin="round" stroke-linecap="round"/>
-  <polyline points="80.0,283.8 171.4,230.0 354.3,172.5 720.0,123.8" fill="none" stroke="#7f7f7f" stroke-width="4" stroke-linejoin="round" stroke-linecap="round"/>
-  <polyline points="80.0,267.5 171.4,208.8 354.3,121.3 720.0,68.8" fill="none" stroke="#2ca02c" stroke-width="4" stroke-linejoin="round" stroke-linecap="round"/>
+  <polyline points="122.7,306.3 208.0,257.0 293.3,236.8 336.0,259.3" fill="none" stroke="#156082" stroke-width="4" stroke-linejoin="round" stroke-linecap="round"/>
+  <polyline points="122.7,313.1 208.0,279.5 293.3,266.8 336.0,277.5" fill="none" stroke="#e97132" stroke-width="4" stroke-linejoin="round" stroke-linecap="round"/>
+  <polyline points="122.7,283.8 208.0,230.0 378.7,172.5 720.0,123.8" fill="none" stroke="#7f7f7f" stroke-width="4" stroke-linejoin="round" stroke-linecap="round"/>
+  <polyline points="122.7,267.5 208.0,208.8 378.7,121.3 720.0,68.8" fill="none" stroke="#2ca02c" stroke-width="4" stroke-linejoin="round" stroke-linecap="round"/>
+  <polyline points="80.0,355.4 122.7,349.5 208.0,338.3" fill="none" stroke="#9467bd" stroke-width="4" stroke-linejoin="round" stroke-linecap="round" stroke-dasharray="8 5"/>
 
   <g stroke="#ffffff" stroke-width="1.5">
-    <circle cx="80.0" cy="306.3" r="5.5" fill="#156082"/><circle cx="171.4" cy="257.0" r="5.5" fill="#156082"/><circle cx="262.9" cy="236.8" r="5.5" fill="#156082"/><circle cx="308.6" cy="259.3" r="5.5" fill="#156082"/>
-    <circle cx="80.0" cy="313.1" r="5.5" fill="#e97132"/><circle cx="171.4" cy="279.5" r="5.5" fill="#e97132"/><circle cx="262.9" cy="266.8" r="5.5" fill="#e97132"/><circle cx="308.6" cy="277.5" r="5.5" fill="#e97132"/>
-    <circle cx="80.0" cy="283.8" r="5.5" fill="#7f7f7f"/><circle cx="171.4" cy="230.0" r="5.5" fill="#7f7f7f"/><circle cx="354.3" cy="172.5" r="5.5" fill="#7f7f7f"/><circle cx="720.0" cy="123.8" r="5.5" fill="#7f7f7f"/>
-    <circle cx="80.0" cy="267.5" r="5.5" fill="#2ca02c"/><circle cx="171.4" cy="208.8" r="5.5" fill="#2ca02c"/><circle cx="354.3" cy="121.3" r="5.5" fill="#2ca02c"/><circle cx="720.0" cy="68.8" r="5.5" fill="#2ca02c"/>
+    <circle cx="122.7" cy="306.3" r="5.5" fill="#156082"/><circle cx="208.0" cy="257.0" r="5.5" fill="#156082"/><circle cx="293.3" cy="236.8" r="5.5" fill="#156082"/><circle cx="336.0" cy="259.3" r="5.5" fill="#156082"/>
+    <circle cx="122.7" cy="313.1" r="5.5" fill="#e97132"/><circle cx="208.0" cy="279.5" r="5.5" fill="#e97132"/><circle cx="293.3" cy="266.8" r="5.5" fill="#e97132"/><circle cx="336.0" cy="277.5" r="5.5" fill="#e97132"/>
+    <circle cx="122.7" cy="283.8" r="5.5" fill="#7f7f7f"/><circle cx="208.0" cy="230.0" r="5.5" fill="#7f7f7f"/><circle cx="378.7" cy="172.5" r="5.5" fill="#7f7f7f"/><circle cx="720.0" cy="123.8" r="5.5" fill="#7f7f7f"/>
+    <circle cx="122.7" cy="267.5" r="5.5" fill="#2ca02c"/><circle cx="208.0" cy="208.8" r="5.5" fill="#2ca02c"/><circle cx="378.7" cy="121.3" r="5.5" fill="#2ca02c"/><circle cx="720.0" cy="68.8" r="5.5" fill="#2ca02c"/>
+    <circle cx="80.0" cy="355.4" r="5.5" fill="#9467bd"/><circle cx="122.7" cy="349.5" r="5.5" fill="#9467bd"/><circle cx="208.0" cy="338.3" r="5.5" fill="#9467bd"/>
   </g>
 
   <g font-family="Arial, sans-serif" font-size="14" fill="#333333">
@@ -63,5 +67,7 @@
     <text x="565" y="455">Everett previous</text>
     <line x1="305" y1="476" x2="345" y2="476" stroke="#2ca02c" stroke-width="4" stroke-linecap="round"/><circle cx="325" cy="476" r="5.5" fill="#2ca02c"/>
     <text x="355" y="481">Everett mem:unified AsyncIO</text>
+    <line x1="515" y1="476" x2="555" y2="476" stroke="#9467bd" stroke-width="4" stroke-linecap="round" stroke-dasharray="8 5"/><circle cx="535" cy="476" r="5.5" fill="#9467bd"/>
+    <text x="565" y="481">Leonardo CPU DCGP</text>
   </g>
 </svg>

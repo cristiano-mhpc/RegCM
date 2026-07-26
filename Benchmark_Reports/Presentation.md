@@ -439,12 +439,29 @@ Strategy:
 - Run single-toggle Stage 2 tests for 8 GPUs: one variant enabling UCX tuning and one variant enabling the OpenACC pool.
 - Treat explicit NIC pinning as a multi-node experiment, because on a single-node 8-GPU run `REGCM_ENABLE_NIC_PINNING=auto` does not force `UCX_NET_DEVICES`.
 - Use 12- and 14-GPU cases later to evaluate whether topology-aware CPU/GPU placement and HCA selection help when the run crosses from intra-node NVLink/NVSwitch communication to inter-node fabric communication.
+- After UCX proved unhelpful for single-node 8-GPU, shift the promising single-node strategy to OpenACC pool sizing plus looser NUMA-domain binding rather than strict two-core CPU pinning.
 
 Connection to introspection:
 
 - The GPU/NUMA split in Table 10 determines the CPU binding: GPUs `0-3` map to NUMA 0 and GPUs `4-7` map to NUMA 1.
 - The HCA mapping in Table 11 defines the candidate NIC assignment for each local rank in multi-node runs.
 - The `dgx2` 7 normal-GPU GRES shape limits feasible full-node normal-GPU experiments and explains why 16 normal GPUs are not currently available as a symmetric 8+8 run.
+
+Current validation result:
+
+- The loose NUMA-domain plus OpenACC pool 1-day run completed in `510.46 s`, compared with `534.01 s` for the original 1-day 8-GPU baseline.
+- This is about `4.4%` faster and is the first hand-tuned single-node variant to beat the baseline.
+- The same configuration completed a 3-day validation as job `182773` in `1319.02 s` (`439.67 s/day`).
+- The 3-day result is about `3.9%` faster than the original 3-day 8-GPU baseline (`1371.81 s`) and about `10.6%` faster than the strict Stage 1 hand-tuned run (`1474.89 s`).
+
+One-node isolation sweep update:
+
+- ACC-pool-only rerun, job `182876`: timed out at 25 minutes, so pool alone with only `2` CPUs/task is not competitive.
+- NUMA-pool with `8` CPUs/task, job `182877`: completed in `508.45 s`.
+- NUMA-pool with `OMP_NUM_THREADS=1`, job `182878`: completed in `507.37 s`.
+- NUMA-pool with `OMP_NUM_THREADS=4`, job `182879`: completed in `504.53 s`, the fastest 1-day hand-tuned result so far.
+
+The sweep indicates that NUMA locality plus the OpenACC pool is the main requirement, while `OMP_NUM_THREADS=4` gives the best observed 1-day result. This is about `5.5%` faster than the original 1-day baseline (`534.01 s`) and about `1.2%` faster than the prior NUMA-pool best (`510.46 s`). A 3-day repeat of the `OMP_NUM_THREADS=4` configuration was submitted as job `183021`.
 
 #### 4.3.3 `mem:unified` Runtime Probe
 
