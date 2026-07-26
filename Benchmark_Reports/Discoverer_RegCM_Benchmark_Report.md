@@ -518,10 +518,10 @@ The completed 7-day runs common to both local Discoverer+ memory modes compare a
 <a id="figure-1"></a>
 
 <p align="center">
-  <img src="Discoverer_Memory_Mode_Days_Per_Hour_v2.png" alt="Days/hour comparison for local memory modes, Leonardo CPU DCGP, Everett previous, and Everett AsyncIO" width="760">
+  <img src="Discoverer_Memory_Mode_Days_Per_Hour_v2.png" alt="Days/hour comparison for local memory modes, Leonardo CPU and A100 GPU references, Everett previous, and Everett AsyncIO" width="760">
 </p>
 
-<p align="center"><strong>Figure 1. Days/hour comparison for local Discoverer+ memory modes, Leonardo CPU DCGP, and Everett GB200 results.</strong> Local GPU series use the completed seven-day Discoverer+ runs and are plotted by GPU count. The Leonardo CPU reference is plotted by CPU node count, with 100 MPI/CPU cores used per DCGP node, using clean 200-, 400-, and 800-rank results plus the qualified 1600-rank model-timing result on 2, 4, 8, and 16 DCGP nodes. Everett's previous and AsyncIO series are approximate values digitized from <code>GB200_EURR3.png</code>.</p>
+<p align="center"><strong>Figure 1. Days/hour comparison for local Discoverer+ memory modes, Leonardo CPU and A100 GPU references, and Everett GB200 results.</strong> Local GPU series use the completed seven-day Discoverer+ runs and are plotted by GPU count. The Leonardo CPU reference is plotted by CPU node count, with 100 MPI/CPU cores used per DCGP node. Leonardo A100 points use 4, 8, 16, and 32 GPUs. Everett's previous and AsyncIO series are approximate values digitized from <code>GB200_EURR3.png</code>.</p>
 
 The 1-GPU `mem:unified` run reproduced the same `radinp` accelerator fatal error seen in the `mem:managed` 1-GPU cases. The 2-GPU `mem:unified` attempts have not established a RegCM model failure; they failed through Slurm node failures or pre-launch `srun` errors, so the 2-GPU `mem:unified` result remains unresolved until job `179445` completes.
 
@@ -562,13 +562,38 @@ The clean Leonardo CPU results were:
 
 The 1600-rank point is a qualified model-timing result: the model completed all seven simulated days and reported `02:14:13.3583`, but the Slurm step stalled during PMIx finalization and was cancelled after `02:20:53`. It should not be treated as a clean scheduler-level completion. The 1200-rank configuration failed reproducibly near simulation day four with a CLM urban longwave-radiation `NaN`. The best scalar comparison metric between campaigns is RegCM/internal elapsed seconds per simulated day, with the caveat that Discoverer+ wrote hourly output while Leonardo wrote daily ATM/RAD/SRF output.
 
-### 3.6 External GB200 EURR-3 Comparison
+### 3.6 Leonardo A100 GPU Reference
 
-The file `Benchmark_Reports/GB200_EURR3.png` contains Everett's previous GB200 EURR-3 results and an AsyncIO dataset. The values below are approximate days/hour values digitized from that chart, not timings re-derived from local RegCM logs.
+A separate seven-day GPU strong-scaling campaign was run on Leonardo Booster nodes with NVIDIA A100 GPUs. The full report is documented in:
+
+```text
+Benchmark_Reports/Leonardo_GPU_scaling_report.md
+```
+
+The Leonardo GPU campaign used one MPI rank per GPU and four ranks per node. It used the same nominal EURR-3 grid and seven-day October integration as the Leonardo CPU reference, with hourly ATM/RAD/SRF output and sequential NetCDF output.
 
 <a id="table-20"></a>
 
-**Table 20. External GB200 EURR-3 comparison digitized from `GB200_EURR3.png`.**
+**Table 20. Leonardo A100 seven-day GPU scaling results.**
+
+| GPUs | Nodes | State | RegCM elapsed | RegCM avg/day | Days/hour | Speedup vs 4 GPUs | Efficiency vs 4 GPUs |
+|---:|---:|---|---:|---:|---:|---:|---:|
+| 4 | 1 | Completed | 14042.8682 s | 2006.12 s/day | 1.7945 | 1.0000x | 100.00% |
+| 8 | 2 | Completed | 5428.5812 s | 775.51 s/day | 4.6421 | 2.5868x | 129.34% |
+| 16 | 4 | Completed | 3415.7813 s | 487.97 s/day | 7.3775 | 4.1112x | 102.78% |
+| 32 | 8 | Completed | 2855.8972 s | 407.99 s/day | 8.8238 | 4.9171x | 61.46% |
+
+The 8-GPU result is superlinear relative to the 4-GPU baseline, likely reflecting a smaller per-rank working set and cache/memory effects; the experiment does not isolate the cause. Scaling begins to plateau at 32 GPUs. The Leonardo executable targeted A100 `cc80` and used `-acc -stdpar=gpu -gpu=cc80,lineinfo,mem:managed,rdc`. It also used a serial fallback for the CLM urban loop after the GPU-offloaded version produced CUDA error 719, so these results should not be treated as a direct hardware comparison with the Discoverer+ H200 runs.
+
+The Leonardo A100 report also records a nonfatal UCX API compatibility warning. It did not prevent successful completion, but its stream destination should be clarified alongside the report's statement that final-run stderr was empty.
+
+### 3.7 External GB200 EURR-3 Comparison
+
+The file `Benchmark_Reports/GB200_EURR3.png` contains Everett's previous GB200 EURR-3 results and an AsyncIO dataset. The values below are approximate days/hour values digitized from that chart, not timings re-derived from local RegCM logs.
+
+<a id="table-21"></a>
+
+**Table 21. External GB200 EURR-3 comparison digitized from `GB200_EURR3.png`.**
 
 | GPUs | Everett / previous result | AsyncIO result | AsyncIO speedup vs Everett |
 |---:|---:|---:|---:|
@@ -599,9 +624,9 @@ The failing configuration uses a single MPI rank and therefore `CPUS DIM1 = 1`, 
 
 The project QoS imposes a hard job walltime limit of `02:00:00`. This directly affected the slowest production cases:
 
-<a id="table-21"></a>
+<a id="table-22"></a>
 
-**Table 21. Benchmark cases affected by the two-hour project walltime limit.**
+**Table 22. Benchmark cases affected by the two-hour project walltime limit.**
 
 | Case | Job | Outcome |
 |---|---:|---|
@@ -635,9 +660,9 @@ Discoverer_node_introspection/runs/179836_dgx2_7gpu_strict_cuda_hmm_probe
 
 #### 4.4.1 Compute and Network Hardware
 
-<a id="table-22"></a>
+<a id="table-23"></a>
 
-**Table 22. Compute and GPU hardware observed in node introspection.**
+**Table 23. Compute and GPU hardware observed in node introspection.**
 
 | Item | `dgx1` introspection | `dgx2` introspection |
 |---|---|---|
@@ -658,9 +683,9 @@ The CPU and NUMA topology was the same on `dgx1` and `dgx2`: two sockets, 56 cor
 
 The `nvidia-smi topo -m` NIC legend was also consistent across `dgx1` and `dgx2`, exposing 12 `mlx5` devices. Nine devices were reported Up by `ibdev2netdev`; eight of those were the closest GPU-adjacent HCAs used by the topology-aware launcher, while `mlx5_1` was also Up but not the nearest listed HCA for a GPU in the launcher mapping.
 
-<a id="table-23"></a>
+<a id="table-24"></a>
 
-**Table 23. Network devices observed by `ibdev2netdev` on both `dgx1` and `dgx2`.**
+**Table 24. Network devices observed by `ibdev2netdev` on both `dgx1` and `dgx2`.**
 
 | mlx5 device | Net device | State | Topology role observed in `nvidia-smi topo -m` |
 |---|---|---|---|
@@ -683,9 +708,9 @@ This mapping supports the topology-aware hand-tuned launcher: on a full 8-GPU no
 
 The memory-mode probe results are reported separately from hardware topology because they validate the compiler/runtime memory path rather than the node interconnect layout.
 
-<a id="table-24"></a>
+<a id="table-25"></a>
 
-**Table 24. Discoverer+ pageable-memory and `mem:unified` probe summary.**
+**Table 25. Discoverer+ pageable-memory and `mem:unified` probe summary.**
 
 | Item | Result |
 |---|---|
@@ -730,9 +755,9 @@ This is stronger evidence that both visible Discoverer+ GPU nodes support pageab
 
 The stricter CUDA pageable-memory probe jobs completed as follows:
 
-<a id="table-25"></a>
+<a id="table-26"></a>
 
-**Table 25. Discoverer+ pageable-memory probe job outcomes.**
+**Table 26. Discoverer+ pageable-memory probe job outcomes.**
 
 | Job | Target | Request | Result |
 |---:|---|---|---|
@@ -745,9 +770,9 @@ The `dgx2` follow-up used 7 normal GPUs because Slurm rejected an 8 normal-GPU r
 
 The benchmark output volume is large:
 
-<a id="table-26"></a>
+<a id="table-27"></a>
 
-**Table 26. Typical generated NetCDF output volume by run length.**
+**Table 27. Typical generated NetCDF output volume by run length.**
 
 | Run length | Typical complete output size |
 |---|---:|
