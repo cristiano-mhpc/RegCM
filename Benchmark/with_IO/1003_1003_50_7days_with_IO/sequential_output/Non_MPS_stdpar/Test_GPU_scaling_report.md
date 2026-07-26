@@ -267,12 +267,32 @@ efficiency(N) = speedup(N) / (N / 4)
 The primary comparison uses RegCM's `Total elapsed seconds of run` value and
 therefore includes model computation and the requested sequential NetCDF I/O.
 
-| GPUs | Model time (s) | Speedup vs. 4 GPUs | Parallel efficiency | Time per simulated day (s) | Simulation speed |
-| ---: | ---: | ---: | ---: | ---: | ---: |
-| 4 | 14042.8682 | 1.0000 | 100.00% | 2006.12 | 43.07x real time |
-| 8 | 5428.5812 | 2.5868 | 129.34% | 775.51 | 111.41x real time |
-| 16 | 3415.7813 | 4.1112 | 102.78% | 487.97 | 177.06x real time |
-| 32 | 2855.8972 | 4.9171 | 61.46% | 407.99 | 211.77x real time |
+| GPUs | Model time (s) | Speedup vs. 4 GPUs | Parallel efficiency | Simulation speed |
+| ---: | ---: | ---: | ---: | ---: |
+| 4 | 14042.8682 | 1.0000 | 100.00% | 43.07x real time |
+| 8 | 5428.5812 | 2.5868 | 129.34% | 111.41x real time |
+| 16 | 3415.7813 | 4.1112 | 102.78% | 177.06x real time |
+| 32 | 2855.8972 | 4.9171 | 61.46% | 211.77x real time |
+
+### Throughput and Compute Time per Simulated Day
+
+Throughput and its inverse are calculated from RegCM's model elapsed time:
+
+```text
+throughput (simulated days/hour) = 7 * 3600 / model_time_seconds
+compute time (seconds/simulated day) = model_time_seconds / 7
+compute time (hours/simulated day) = 1 / throughput
+```
+
+| GPUs | Throughput (simulated days/hour) | Compute time (seconds/simulated day) | Compute time (hours/simulated day) |
+| ---: | ---: | ---: | ---: |
+| 4 | 1.7945 | 2006.12 | 0.5573 |
+| 8 | 4.6421 | 775.51 | 0.2154 |
+| 16 | 7.3775 | 487.97 | 0.1355 |
+| 32 | 8.8238 | 407.99 | 0.1133 |
+
+Here, compute time means model elapsed wall-clock time for the full allocation,
+not the GPU-hour allocation cost reported below.
 
 Slurm elapsed time was only 7.42-8.22 seconds longer than RegCM's measured time
 for every configuration. Startup and shutdown overhead outside the model timer
