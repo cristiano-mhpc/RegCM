@@ -766,13 +766,32 @@ The stricter CUDA pageable-memory probe jobs completed as follows:
 
 The `dgx2` follow-up used 7 normal GPUs because Slurm rejected an 8 normal-GPU request on `dgx2`, consistent with the observed `gpu:7,gpu_biz:1` resource shape. The `dgx2` strict probe reported the same positive runtime indicators as `dgx1`: `cudaDevAttrPageableMemoryAccess=1`, `cudaDevAttrConcurrentManagedAccess=1`, `cudaDevAttrManagedMemory=1`, and `CUDA_HMM_PAGEABLE_PROBE=PASS`.
 
-### 4.5 Output Data Management
+### 4.5 Controlled Asynchronous NetCDF I/O
 
-The benchmark output volume is large:
+A controlled six-arm, seven-day experiment tested the optional pthread-backed asynchronous NetCDF implementation on eight H200 GPUs on `dgx1`. Every arm used the same instrumented `mem:managed` executable, eight MPI ranks, one OpenMP thread per rank, serial NetCDF output, input data, namelist, and GPU mapping. Jobs `182781-182786` ran sequentially to avoid inter-run contention.
 
 <a id="table-27"></a>
 
-**Table 27. Typical generated NetCDF output volume by run length.**
+**Table 27. Seven-day, eight-GPU asynchronous-I/O battery.**
+
+| Configuration | Async output buffer | Boundary prefetch | RegCM elapsed | Reduction vs control | Days/hour |
+|---|---:|---:|---:|---:|---:|
+| Synchronous control | 0 GiB | 0 | 3112.341 s | baseline | 8.10 |
+| Deferred writes only | 4 GiB | 0 | 2799.777 s | 10.04% | 9.00 |
+| Prefetch 1 | 4 GiB | 1 | 2797.323 s | 10.12% | 9.01 |
+| Prefetch 15 | 4 GiB | 15 | 2782.433 s | 10.60% | 9.06 |
+| Prefetch 20 | 4 GiB | 20 | 2780.474 s | 10.66% | 9.06 |
+| 3 GiB, prefetch 15 | 3 GiB | 15 | 2805.567 s | 9.86% | 8.98 |
+
+All jobs completed successfully with empty error logs. Runtime diagnostics reported the expected disabled control and active asynchronous workers with `first_error=0`. Deferred writes produced nearly all of the improvement. Prefetch 20 was nominally fastest, but only 0.69% faster than writes-only; single measurements in fixed order do not establish that small difference as repeatable.
+
+### 4.6 Output Data Management
+
+The benchmark output volume is large:
+
+<a id="table-28"></a>
+
+**Table 28. Typical generated NetCDF output volume by run length.**
 
 | Run length | Typical complete output size |
 |---|---:|
@@ -781,6 +800,8 @@ The benchmark output volume is large:
 
 After validating completion and collecting timings, generated NetCDF files were removed from selected completed and partial output directories to recover storage. The run directories, Slurm logs, namelists, launch scripts, and output symlinks were retained.
 
-### 4.6 Ablation Tests
+The asynchronous-I/O battery generated 198 NetCDF files, 33 per arm, and occupied approximately 2.5 TB. After its results and runtime diagnostics were recorded, those files were deleted. The battery output tree decreased to 220 KB and available `/valhalla` capacity increased from 934 GB to 3.4 TB; all run metadata and Slurm logs remain available.
+
+### 4.7 Ablation Tests
 
 Earlier single-node, eight-GPU ablation experiments tested loader/runtime variants including the MPI shim, UCC collective disabling, and CUDA stub policy. These did not materially change performance for the tested one-day, eight-GPU case. The current loader retains the conservative validated defaults because they produced a consistent build and runtime environment across the production runs.

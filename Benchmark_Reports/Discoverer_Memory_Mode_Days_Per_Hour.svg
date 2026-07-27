@@ -41,7 +41,7 @@
     <text x="720.0" y="386" text-anchor="middle">32</text>
   </g>
 
-  <text x="400" y="426" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" fill="#333333">GPUs / CPU nodes</text>
+  <text x="400" y="426" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" fill="#333333">GPUs / DCGP nodes</text>
   <text x="22" y="210" text-anchor="middle" transform="rotate(-90 22 210)" font-family="Arial, sans-serif" font-size="16" fill="#333333">Simulated days per hour</text>
 
   <polyline points="122.7,306.3 208.0,257.0 293.3,236.8 336.0,259.3" fill="none" stroke="#156082" stroke-width="4" stroke-linejoin="round" stroke-linecap="round"/>

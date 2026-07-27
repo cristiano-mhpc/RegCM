@@ -453,6 +453,9 @@ Current validation result:
 - This is about `4.4%` faster and is the first hand-tuned single-node variant to beat the baseline.
 - The same configuration completed a 3-day validation as job `182773` in `1319.02 s` (`439.67 s/day`).
 - The 3-day result is about `3.9%` faster than the original 3-day 8-GPU baseline (`1371.81 s`) and about `10.6%` faster than the strict Stage 1 hand-tuned run (`1474.89 s`).
+- The `OMP_NUM_THREADS=4` follow-up completed a 3-day validation as job `183021` in `1313.09 s` (`437.70 s/day`, `8.22 days/hour`).
+- This is the fastest validated 3-day single-node result so far: about `4.3%` faster than the original 3-day 8-GPU baseline and about `0.45%` faster than the previous NUMA-pool 3-day result.
+- A 7-day validation of the same configuration was submitted as job `183194`; the comparison target is the original 7-day 8-GPU baseline job `179001` at `3057.76 s`.
 
 One-node isolation sweep update:
 
@@ -461,7 +464,7 @@ One-node isolation sweep update:
 - NUMA-pool with `OMP_NUM_THREADS=1`, job `182878`: completed in `507.37 s`.
 - NUMA-pool with `OMP_NUM_THREADS=4`, job `182879`: completed in `504.53 s`, the fastest 1-day hand-tuned result so far.
 
-The sweep indicates that NUMA locality plus the OpenACC pool is the main requirement, while `OMP_NUM_THREADS=4` gives the best observed 1-day result. This is about `5.5%` faster than the original 1-day baseline (`534.01 s`) and about `1.2%` faster than the prior NUMA-pool best (`510.46 s`). A 3-day repeat of the `OMP_NUM_THREADS=4` configuration was submitted as job `183021`.
+The sweep indicates that NUMA locality plus the OpenACC pool is the main requirement, while `OMP_NUM_THREADS=4` gives the best observed 1-day and validated 3-day results. The 1-day run is about `5.5%` faster than the original 1-day baseline (`534.01 s`) and about `1.2%` faster than the prior NUMA-pool best (`510.46 s`). The 3-day validation completed as job `183021` in `1313.09 s`.
 
 #### 4.3.3 `mem:unified` Runtime Probe
 
@@ -524,6 +527,25 @@ The stricter CUDA pageable-memory probe jobs completed as follows:
 | `179836` | `dgx2` | 7 normal GPUs | Completed; strict CUDA pageable-memory probe passed |
 
 The `dgx2` follow-up used 7 normal GPUs because Slurm rejected an 8 normal-GPU request on `dgx2`, consistent with the observed `gpu:7,gpu_biz:1` resource shape. The `dgx2` strict probe reported the same positive runtime indicators as `dgx1`: `cudaDevAttrPageableMemoryAccess=1`, `cudaDevAttrConcurrentManagedAccess=1`, `cudaDevAttrManagedMemory=1`, and `CUDA_HMM_PAGEABLE_PROBE=PASS`.
+
+#### 4.3.4 Controlled Asynchronous NetCDF I/O
+
+A sequential six-arm, seven-day battery on eight H200 GPUs isolated deferred NetCDF writes, boundary prefetch depth, and output-buffer size. All jobs completed successfully on `dgx1` with empty error logs and valid asynchronous-worker diagnostics.
+
+<a id="table-14"></a>
+
+**Table 14. Seven-day, eight-GPU asynchronous-I/O battery.**
+
+| Configuration | RegCM elapsed | Reduction vs control | Days/hour |
+|---|---:|---:|---:|
+| Synchronous control | 3112.341 s | baseline | 8.10 |
+| Deferred writes only | 2799.777 s | 10.04% | 9.00 |
+| Prefetch 1 | 2797.323 s | 10.12% | 9.01 |
+| Prefetch 15 | 2782.433 s | 10.60% | 9.06 |
+| Prefetch 20 | 2780.474 s | 10.66% | 9.06 |
+| 3 GiB, prefetch 15 | 2805.567 s | 9.86% | 8.98 |
+
+Deferred writes account for nearly all of the gain. The nominally fastest prefetch-20 arm was only 0.69% faster than writes-only, so repeated order-balanced measurements would be needed to resolve differences among async settings. After validation, 198 generated NetCDF files occupying approximately 2.5 TB were removed; all logs and run metadata were retained, and available `/valhalla` capacity rose from 934 GB to 3.4 TB.
 
 ## 5. Why `mem:unified` May Be Slower for RegCM5
 
