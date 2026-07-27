@@ -51,6 +51,21 @@ The validated output path is serial NetCDF. PnetCDF builds bypass the principal 
 
 The primary implementation is in `Share/mod_async_netcdf.F90` and `Share/regcm_async_netcdf_thread.c`. Output routing is in `Share/mod_ncstream.F90`; boundary scheduling and reads are in `Main/mod_bdycod.F90` and `Main/mod_ncio.F90`; timestep and shutdown orchestration is in `Main/mod_regcm_interface.F90`.
 
+### Build-to-Runtime Flow
+
+<p align="center">
+  <img src="async_io_build_runtime_flow.svg" alt="RegCM asynchronous NetCDF flow from configure and compilation through runtime output overlap, boundary prefetch, and final queue draining" width="1000">
+</p>
+
+<p align="center"><strong>Figure 1. RegCM asynchronous NetCDF build-to-runtime flow.</strong> The async-enabled binary still provides a synchronous runtime control. A positive output buffer activates the worker; output writes use the normal FIFO queue, while speculative boundary reads use the priority queue.</p>
+
+Read the diagram from top to bottom:
+
+1. The configure option decides whether pthread-backed async support is compiled and linked.
+2. The same async-capable executable becomes either the synchronous control or an active async run based on runtime environment variables and namelist compatibility.
+3. During the model loop, output and boundary reads share the worker, memory pool, and NetCDF serialization gate, but boundary reads receive queue priority.
+4. Finalization drains all queued operations before timing and validation are complete; this prevents apparent speedups that merely move unfinished writes past the measured interval.
+
 ## Matrix
 
 | Run | `RCM_ASYNC_OUTPUT_GB` | `RCM_BDYIN_PREFETCH_STEPS` | Purpose |

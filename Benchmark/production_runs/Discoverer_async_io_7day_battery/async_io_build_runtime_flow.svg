@@ -1,0 +1,170 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="1130" viewBox="0 0 1200 1130" role="img" aria-labelledby="title desc">
+  <title id="title">RegCM asynchronous NetCDF build-to-runtime flow</title>
+  <desc id="desc">A four-phase learning diagram showing configure and compilation, runtime activation, deferred output and boundary prefetch, and final queue draining.</desc>
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#40566b"/>
+    </marker>
+    <style>
+      .title { font: 700 28px Arial, sans-serif; fill: #17324d; }
+      .phase { font: 700 19px Arial, sans-serif; fill: #ffffff; }
+      .box-title { font: 700 16px Arial, sans-serif; fill: #17324d; }
+      .body { font: 14px Arial, sans-serif; fill: #263746; }
+      .small { font: 13px Arial, sans-serif; fill: #425466; }
+      .label { font: 700 13px Arial, sans-serif; fill: #40566b; }
+      .arrow { fill: none; stroke: #40566b; stroke-width: 2.5; marker-end: url(#arrow); }
+      .dash { fill: none; stroke: #64788b; stroke-width: 2; stroke-dasharray: 7 5; marker-end: url(#arrow); }
+    </style>
+  </defs>
+
+  <rect width="1200" height="1130" fill="#f7fafc"/>
+  <text x="600" y="42" text-anchor="middle" class="title">RegCM Async NetCDF: Build to Runtime</text>
+
+  <!-- Phase 1: build -->
+  <rect x="30" y="70" width="1140" height="220" rx="14" fill="#e8f1f8" stroke="#7aa6c2" stroke-width="2"/>
+  <rect x="30" y="70" width="150" height="34" rx="12" fill="#246b8e"/>
+  <text x="105" y="93" text-anchor="middle" class="phase">1. BUILD</text>
+
+  <rect x="60" y="125" width="220" height="90" rx="10" fill="#ffffff" stroke="#6d94ad" stroke-width="2"/>
+  <text x="170" y="151" text-anchor="middle" class="box-title">Configure</text>
+  <text x="170" y="177" text-anchor="middle" class="body">--enable-async-netcdf</text>
+  <text x="170" y="199" text-anchor="middle" class="small">Compile-time opt-in</text>
+
+  <rect x="340" y="125" width="220" height="90" rx="10" fill="#ffffff" stroke="#6d94ad" stroke-width="2"/>
+  <text x="450" y="151" text-anchor="middle" class="box-title">Configure checks</text>
+  <text x="450" y="177" text-anchor="middle" class="body">Find pthread.h</text>
+  <text x="450" y="199" text-anchor="middle" class="small">Define ASYNC_NETCDF; link -pthread</text>
+
+  <rect x="620" y="125" width="250" height="90" rx="10" fill="#ffffff" stroke="#6d94ad" stroke-width="2"/>
+  <text x="745" y="151" text-anchor="middle" class="box-title">Compile and link</text>
+  <text x="745" y="177" text-anchor="middle" class="body">Fortran queue and buffer module</text>
+  <text x="745" y="199" text-anchor="middle" class="small">C pthread worker and synchronization</text>
+
+  <rect x="930" y="125" width="210" height="90" rx="10" fill="#dff4e7" stroke="#4c9a68" stroke-width="2"/>
+  <text x="1035" y="151" text-anchor="middle" class="box-title">Async-capable binary</text>
+  <text x="1035" y="177" text-anchor="middle" class="body">Same executable supports</text>
+  <text x="1035" y="199" text-anchor="middle" class="small">runtime sync and async tests</text>
+
+  <path d="M 280 170 L 340 170" class="arrow"/>
+  <path d="M 560 170 L 620 170" class="arrow"/>
+  <path d="M 870 170 L 930 170" class="arrow"/>
+
+  <rect x="60" y="235" width="500" height="34" rx="8" fill="#fff7dc" stroke="#d8ae3f"/>
+  <text x="310" y="257" text-anchor="middle" class="small">Without the configure flag: synchronous/no-op stubs, no pthread worker</text>
+
+  <!-- Phase 2: launch -->
+  <rect x="30" y="320" width="1140" height="220" rx="14" fill="#f0ebf8" stroke="#9a80be" stroke-width="2"/>
+  <rect x="30" y="320" width="185" height="34" rx="12" fill="#71539b"/>
+  <text x="122" y="343" text-anchor="middle" class="phase">2. LAUNCH</text>
+
+  <rect x="60" y="380" width="275" height="120" rx="10" fill="#ffffff" stroke="#9278b5" stroke-width="2"/>
+  <text x="198" y="406" text-anchor="middle" class="box-title">Runtime controls</text>
+  <text x="78" y="432" class="body">RCM_ASYNC_OUTPUT_GB</text>
+  <text x="78" y="454" class="body">RCM_BDYIN_PREFETCH_STEPS</text>
+  <text x="78" y="476" class="small">OMP threads and CPUs per rank</text>
+
+  <rect x="385" y="380" width="290" height="120" rx="10" fill="#ffffff" stroke="#9278b5" stroke-width="2"/>
+  <text x="530" y="406" text-anchor="middle" class="box-title">Namelist constraints</text>
+  <text x="403" y="432" class="body">parallel input = true</text>
+  <text x="403" y="454" class="body">parallel output = false</text>
+  <text x="403" y="476" class="small">Validated path: serial output</text>
+
+  <polygon points="790,375 900,440 790,505 680,440" fill="#ffffff" stroke="#9278b5" stroke-width="2"/>
+  <text x="790" y="428" text-anchor="middle" class="box-title">Output buffer</text>
+  <text x="790" y="449" text-anchor="middle" class="body">positive?</text>
+
+  <rect x="955" y="370" width="180" height="58" rx="10" fill="#f5f5f5" stroke="#7f8c8d" stroke-width="2"/>
+  <text x="1045" y="394" text-anchor="middle" class="box-title">No: synchronous</text>
+  <text x="1045" y="415" text-anchor="middle" class="small">Worker disabled</text>
+
+  <rect x="955" y="452" width="180" height="65" rx="10" fill="#dff4e7" stroke="#4c9a68" stroke-width="2"/>
+  <text x="1045" y="476" text-anchor="middle" class="box-title">Yes: initialize</text>
+  <text x="1045" y="497" text-anchor="middle" class="small">Worker plus buffer pool</text>
+
+  <path d="M 335 440 L 385 440" class="arrow"/>
+  <path d="M 675 440 L 680 440" class="arrow"/>
+  <path d="M 900 416 L 955 399" class="arrow"/>
+  <text x="920" y="395" class="label">NO</text>
+  <path d="M 900 464 L 955 484" class="arrow"/>
+  <text x="919" y="486" class="label">YES</text>
+  <path d="M 1045 517 C 1045 550, 472 545, 472 625" class="dash"/>
+
+  <!-- Phase 3: runtime -->
+  <rect x="30" y="570" width="1140" height="350" rx="14" fill="#e8f6f2" stroke="#65a995" stroke-width="2"/>
+  <rect x="30" y="570" width="200" height="34" rx="12" fill="#287c68"/>
+  <text x="130" y="593" text-anchor="middle" class="phase">3. RUNTIME</text>
+
+  <rect x="60" y="635" width="220" height="115" rx="10" fill="#ffffff" stroke="#55a08d" stroke-width="2"/>
+  <text x="170" y="661" text-anchor="middle" class="box-title">Foreground model</text>
+  <text x="170" y="687" text-anchor="middle" class="body">Compute timestep</text>
+  <text x="170" y="709" text-anchor="middle" class="body">Produce output fields</text>
+  <text x="170" y="731" text-anchor="middle" class="small">Continue after enqueue</text>
+
+  <rect x="340" y="625" width="265" height="135" rx="10" fill="#ffffff" stroke="#55a08d" stroke-width="2"/>
+  <text x="472" y="651" text-anchor="middle" class="box-title">Shared async service</text>
+  <text x="472" y="677" text-anchor="middle" class="body">One pthread per active process</text>
+  <text x="472" y="699" text-anchor="middle" class="body">Pinned host-memory pool</text>
+  <text x="472" y="721" text-anchor="middle" class="body">NetCDF serialization gate</text>
+  <text x="472" y="743" text-anchor="middle" class="small">Byte cap provides backpressure</text>
+
+  <rect x="665" y="625" width="220" height="135" rx="10" fill="#e8f1f8" stroke="#5790b2" stroke-width="2"/>
+  <text x="775" y="651" text-anchor="middle" class="box-title">Deferred output path</text>
+  <text x="775" y="677" text-anchor="middle" class="body">Copy into host buffer</text>
+  <text x="775" y="699" text-anchor="middle" class="body">Queue write, sync, close</text>
+  <text x="775" y="721" text-anchor="middle" class="body">Worker writes FIFO</text>
+  <text x="775" y="743" text-anchor="middle" class="small">Model overlaps disk I/O</text>
+
+  <rect x="945" y="625" width="195" height="135" rx="10" fill="#fff1dc" stroke="#cf9639" stroke-width="2"/>
+  <text x="1042" y="651" text-anchor="middle" class="box-title">Boundary prefetch</text>
+  <text x="1042" y="677" text-anchor="middle" class="body">Detect next boundary</text>
+  <text x="1042" y="699" text-anchor="middle" class="body">Queue local reads early</text>
+  <text x="1042" y="721" text-anchor="middle" class="body">Read queue has priority</text>
+  <text x="1042" y="743" text-anchor="middle" class="small">One future boundary slot</text>
+
+  <path d="M 280 692 L 340 692" class="arrow"/>
+  <path d="M 605 675 L 665 675" class="arrow"/>
+  <path d="M 605 716 C 730 810, 880 810, 945 716" class="arrow"/>
+
+  <rect x="90" y="805" width="300" height="72" rx="10" fill="#ffffff" stroke="#55a08d" stroke-width="2"/>
+  <text x="240" y="831" text-anchor="middle" class="box-title">If output buffer fills</text>
+  <text x="240" y="855" text-anchor="middle" class="body">Producer waits until worker frees bytes</text>
+
+  <rect x="450" y="805" width="300" height="72" rx="10" fill="#ffffff" stroke="#55a08d" stroke-width="2"/>
+  <text x="600" y="831" text-anchor="middle" class="box-title">At boundary time</text>
+  <text x="600" y="855" text-anchor="middle" class="body">Consume prefetched data or wait</text>
+
+  <rect x="810" y="805" width="300" height="72" rx="10" fill="#ffffff" stroke="#55a08d" stroke-width="2"/>
+  <text x="960" y="831" text-anchor="middle" class="box-title">If speculative read fails</text>
+  <text x="960" y="855" text-anchor="middle" class="body">Fall back to synchronous boundary read</text>
+
+  <path d="M 472 760 C 430 780, 350 790, 300 805" class="dash"/>
+  <path d="M 1042 760 C 970 780, 750 790, 660 805" class="dash"/>
+  <path d="M 1042 760 L 1000 805" class="dash"/>
+
+  <!-- Phase 4: completion -->
+  <rect x="30" y="950" width="1140" height="145" rx="14" fill="#fcebea" stroke="#bf746e" stroke-width="2"/>
+  <rect x="30" y="950" width="230" height="34" rx="12" fill="#a64f49"/>
+  <text x="145" y="973" text-anchor="middle" class="phase">4. COMPLETE</text>
+
+  <rect x="70" y="1005" width="235" height="62" rx="10" fill="#ffffff" stroke="#b86d67" stroke-width="2"/>
+  <text x="188" y="1030" text-anchor="middle" class="box-title">Flush and drain queues</text>
+  <text x="188" y="1052" text-anchor="middle" class="small">Include this in elapsed time</text>
+
+  <rect x="365" y="1005" width="205" height="62" rx="10" fill="#ffffff" stroke="#b86d67" stroke-width="2"/>
+  <text x="468" y="1030" text-anchor="middle" class="box-title">Close NetCDF files</text>
+  <text x="468" y="1052" text-anchor="middle" class="small">Surface delayed errors</text>
+
+  <rect x="630" y="1005" width="205" height="62" rx="10" fill="#ffffff" stroke="#b86d67" stroke-width="2"/>
+  <text x="733" y="1030" text-anchor="middle" class="box-title">Stop and join worker</text>
+  <text x="733" y="1052" text-anchor="middle" class="small">Free pinned-memory pool</text>
+
+  <rect x="895" y="1005" width="235" height="62" rx="10" fill="#ffffff" stroke="#b86d67" stroke-width="2"/>
+  <text x="1012" y="1030" text-anchor="middle" class="box-title">Validate diagnostics</text>
+  <text x="1012" y="1052" text-anchor="middle" class="small">worker active; first_error = 0</text>
+
+  <path d="M 305 1036 L 365 1036" class="arrow"/>
+  <path d="M 570 1036 L 630 1036" class="arrow"/>
+  <path d="M 835 1036 L 895 1036" class="arrow"/>
+
+  <text x="600" y="1118" text-anchor="middle" class="small">Performance goal: hide serial NetCDF latency without changing scientific output or restart integrity.</text>
+</svg>
