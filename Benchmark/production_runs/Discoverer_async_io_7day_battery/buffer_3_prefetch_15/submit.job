@@ -1,0 +1,21 @@
+#!/bin/bash
+#SBATCH --partition=common
+#SBATCH --job-name=aio7_b3pf15_8gpu
+#SBATCH --time=01:15:00
+#SBATCH --account=ehpc-ben-2026b06-085
+#SBATCH --qos=ehpc-ben-2026b06-085
+#SBATCH --nodelist=dgx1
+#SBATCH --nodes=1
+#SBATCH --ntasks-per-node=8
+#SBATCH --cpus-per-task=2
+#SBATCH --gres=gpu:8
+#SBATCH --exclusive
+#SBATCH --output=./production/LOG_%x_%j.out
+#SBATCH --error=./production/LOG_%x_%j.err
+
+set -euo pipefail
+cd "$SLURM_SUBMIT_DIR"
+export OMP_NUM_THREADS=1
+export RCM_ASYNC_OUTPUT_GB=3
+export RCM_BDYIN_PREFETCH_STEPS=15
+source ../run_discoverer_common.sh
