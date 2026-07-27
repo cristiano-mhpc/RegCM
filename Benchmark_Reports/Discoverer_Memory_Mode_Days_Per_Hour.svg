@@ -1,7 +1,7 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="860" height="500" viewBox="0 0 860 500" role="img" aria-labelledby="title desc">
+<svg xmlns="http://www.w3.org/2000/svg" width="860" height="535" viewBox="0 0 860 535" role="img" aria-labelledby="title desc">
   <title id="title">RegCM EURR-3 days/hour comparison</title>
   <desc id="desc">Comparison of local Discoverer+ memory modes, the best local eight-GPU asynchronous-I/O result on Discoverer+ node dgx1, Leonardo DCGP CPU and A100 GPU reference points, and Everett GB200 results.</desc>
-  <rect width="860" height="500" fill="#ffffff"/>
+  <rect width="860" height="535" fill="#ffffff"/>
   <text x="430" y="34" text-anchor="middle" font-family="Arial, sans-serif" font-size="24" fill="#333333">RegCM EURR-3 Days/Hour Comparison</text>
 
   <line x1="80" y1="360" x2="720" y2="360" stroke="#333333" stroke-width="1.5"/>
@@ -64,19 +64,19 @@
   <text x="220" y="240" font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="#007f7f">9.06</text>
 
   <g font-family="Arial, sans-serif" font-size="13" fill="#333333">
-    <line x1="15" y1="450" x2="50" y2="450" stroke="#156082" stroke-width="4" stroke-linecap="round"/><circle cx="32.5" cy="450" r="5.5" fill="#156082"/>
-    <text x="58" y="455">local mem:managed</text>
-    <line x1="210" y1="450" x2="245" y2="450" stroke="#e97132" stroke-width="4" stroke-linecap="round"/><circle cx="227.5" cy="450" r="5.5" fill="#e97132"/>
-    <text x="253" y="455">local mem:unified</text>
-    <polygon points="424.5,443 431.5,450 424.5,457 417.5,450" fill="#00a6a6"/>
-    <text x="440" y="455">Discoverer+ dgx1 AsyncIO</text>
-    <line x1="655" y1="450" x2="690" y2="450" stroke="#7f7f7f" stroke-width="4" stroke-linecap="round"/><circle cx="672.5" cy="450" r="5.5" fill="#7f7f7f"/>
-    <text x="698" y="455">Everett previous</text>
-    <line x1="15" y1="476" x2="50" y2="476" stroke="#2ca02c" stroke-width="4" stroke-linecap="round"/><circle cx="32.5" cy="476" r="5.5" fill="#2ca02c"/>
-    <text x="58" y="481">Everett mem:unified AsyncIO</text>
-    <line x1="285" y1="476" x2="320" y2="476" stroke="#9467bd" stroke-width="4" stroke-linecap="round" stroke-dasharray="8 5"/><circle cx="302.5" cy="476" r="5.5" fill="#9467bd"/>
-    <text x="328" y="481">Leonardo CPU DCGP (100 cores/node)</text>
-    <line x1="650" y1="476" x2="685" y2="476" stroke="#d62728" stroke-width="4" stroke-linecap="round" stroke-dasharray="3 5"/><circle cx="667.5" cy="476" r="5.5" fill="#d62728"/>
-    <text x="693" y="481">Leonardo A100 GPUs</text>
+    <line x1="35" y1="450" x2="70" y2="450" stroke="#156082" stroke-width="4" stroke-linecap="round"/><circle cx="52.5" cy="450" r="5.5" fill="#156082"/>
+    <text x="78" y="455">Discoverer+ mem:managed</text>
+    <line x1="315" y1="450" x2="350" y2="450" stroke="#e97132" stroke-width="4" stroke-linecap="round"/><circle cx="332.5" cy="450" r="5.5" fill="#e97132"/>
+    <text x="358" y="455">Discoverer+ mem:unified</text>
+    <polygon points="637.5,443 644.5,450 637.5,457 630.5,450" fill="#00a6a6"/>
+    <text x="653" y="455">Discoverer+ dgx1 AsyncIO</text>
+    <line x1="175" y1="480" x2="210" y2="480" stroke="#7f7f7f" stroke-width="4" stroke-linecap="round"/><circle cx="192.5" cy="480" r="5.5" fill="#7f7f7f"/>
+    <text x="218" y="485">Everett mem:unified no AsyncIO</text>
+    <line x1="455" y1="480" x2="490" y2="480" stroke="#2ca02c" stroke-width="4" stroke-linecap="round"/><circle cx="472.5" cy="480" r="5.5" fill="#2ca02c"/>
+    <text x="498" y="485">Everett mem:unified AsyncIO</text>
+    <line x1="110" y1="510" x2="145" y2="510" stroke="#9467bd" stroke-width="4" stroke-linecap="round" stroke-dasharray="8 5"/><circle cx="127.5" cy="510" r="5.5" fill="#9467bd"/>
+    <text x="153" y="515">Leonardo CPU DCGP (100 cores/node)</text>
+    <line x1="565" y1="510" x2="600" y2="510" stroke="#d62728" stroke-width="4" stroke-linecap="round" stroke-dasharray="3 5"/><circle cx="582.5" cy="510" r="5.5" fill="#d62728"/>
+    <text x="608" y="515">Leonardo A100 GPUs</text>
   </g>
 </svg>
