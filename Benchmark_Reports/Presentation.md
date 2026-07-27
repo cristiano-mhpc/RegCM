@@ -313,7 +313,7 @@ The isolated build used NVHPC standard parallelism with unified memory targeting
 -stdpar=gpu -gpu=cc90,lineinfo,mem:unified -Minfo=accel
 ```
 
-The completed 7-day runs common to both local Discoverer+ memory modes compare as follows. Everett's `mem:unified` values are the AsyncIO days/hour values digitized from `GB200_EURR3.png`; only matching GPU counts are included in the table. The accompanying plot also includes Everett's previous GB200 series from the same chart.
+The completed 7-day runs common to both local Discoverer+ memory modes compare as follows. Everett's `mem:unified` values are the AsyncIO days/hour values digitized from `GB200_EURR3.png`; only matching GPU counts are included in the table. The accompanying plot also includes Everett's previous GB200 series and the best local async-I/O result, 9.06 days/hour at eight GPUs from job `182785`.
 
 <a id="table-9"></a>
 
@@ -329,10 +329,10 @@ The completed 7-day runs common to both local Discoverer+ memory modes compare a
 <a id="figure-1"></a>
 
 <p align="center">
-  <img src="Discoverer_Memory_Mode_Days_Per_Hour.svg" alt="Days/hour comparison for local memory modes, Everett previous, and Everett AsyncIO" width="760">
+  <img src="Discoverer_Memory_Mode_Days_Per_Hour.svg" alt="Days/hour comparison for local memory modes, the best local eight-GPU async-I/O result, Everett previous, and Everett AsyncIO" width="760">
 </p>
 
-<p align="center"><strong>Figure 1. Days/hour comparison for local Discoverer+ memory modes and Everett GB200 results.</strong> Local series use the completed seven-day Discoverer+ runs. Everett's previous and AsyncIO series are approximate values digitized from <code>GB200_EURR3.png</code>.</p>
+<p align="center"><strong>Figure 1. Days/hour comparison for local Discoverer+ memory modes, local async I/O, and Everett GB200 results.</strong> The teal diamond is the best local async-I/O battery result, 9.06 days/hour at eight GPUs. Other local series use the completed seven-day Discoverer+ scaling runs. Everett's previous and AsyncIO series are approximate values digitized from <code>GB200_EURR3.png</code>.</p>
 
 ## 4. Runtime Investigation and Known Issues
 

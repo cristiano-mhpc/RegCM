@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="860" height="500" viewBox="0 0 860 500" role="img" aria-labelledby="title desc">
   <title id="title">RegCM EURR-3 days/hour comparison</title>
-  <desc id="desc">Comparison of local Discoverer+ memory modes, Leonardo DCGP CPU and A100 GPU reference points, and Everett GB200 results.</desc>
+  <desc id="desc">Comparison of local Discoverer+ memory modes, the best local eight-GPU asynchronous-I/O result, Leonardo DCGP CPU and A100 GPU reference points, and Everett GB200 results.</desc>
   <rect width="860" height="500" fill="#ffffff"/>
   <text x="430" y="34" text-anchor="middle" font-family="Arial, sans-serif" font-size="24" fill="#333333">RegCM EURR-3 Days/Hour Comparison</text>
 
@@ -58,20 +58,25 @@
     <circle cx="122.7" cy="267.5" r="5.5" fill="#2ca02c"/><circle cx="208.0" cy="208.8" r="5.5" fill="#2ca02c"/><circle cx="378.7" cy="121.3" r="5.5" fill="#2ca02c"/><circle cx="720.0" cy="68.8" r="5.5" fill="#2ca02c"/>
     <circle cx="80.0" cy="355.4" r="5.5" fill="#9467bd"/><circle cx="122.7" cy="349.5" r="5.5" fill="#9467bd"/><circle cx="208.0" cy="338.3" r="5.5" fill="#9467bd"/><circle cx="378.7" cy="320.9" r="5.5" fill="#9467bd"/>
     <circle cx="122.7" cy="337.6" r="5.5" fill="#d62728"/><circle cx="208.0" cy="302.0" r="5.5" fill="#d62728"/><circle cx="378.7" cy="267.8" r="5.5" fill="#d62728"/><circle cx="720.0" cy="249.7" r="5.5" fill="#d62728"/>
+    <polygon points="208.0,239.8 215.0,246.8 208.0,253.8 201.0,246.8" fill="#00a6a6"/>
   </g>
 
-  <g font-family="Arial, sans-serif" font-size="14" fill="#333333">
-    <line x1="35" y1="450" x2="75" y2="450" stroke="#156082" stroke-width="4" stroke-linecap="round"/><circle cx="55" cy="450" r="5.5" fill="#156082"/>
-    <text x="85" y="455">local mem:managed</text>
-    <line x1="285" y1="450" x2="325" y2="450" stroke="#e97132" stroke-width="4" stroke-linecap="round"/><circle cx="305" cy="450" r="5.5" fill="#e97132"/>
-    <text x="335" y="455">local mem:unified</text>
-    <line x1="545" y1="450" x2="585" y2="450" stroke="#7f7f7f" stroke-width="4" stroke-linecap="round"/><circle cx="565" cy="450" r="5.5" fill="#7f7f7f"/>
-    <text x="595" y="455">Everett previous</text>
-    <line x1="25" y1="476" x2="65" y2="476" stroke="#2ca02c" stroke-width="4" stroke-linecap="round"/><circle cx="45" cy="476" r="5.5" fill="#2ca02c"/>
-    <text x="75" y="481">Everett mem:unified AsyncIO</text>
-    <line x1="300" y1="476" x2="340" y2="476" stroke="#9467bd" stroke-width="4" stroke-linecap="round" stroke-dasharray="8 5"/><circle cx="320" cy="476" r="5.5" fill="#9467bd"/>
-    <text x="350" y="481">Leonardo CPU DCGP (100 cores/node)</text>
-    <line x1="650" y1="476" x2="690" y2="476" stroke="#d62728" stroke-width="4" stroke-linecap="round" stroke-dasharray="3 5"/><circle cx="670" cy="476" r="5.5" fill="#d62728"/>
-    <text x="700" y="481">Leonardo A100 GPUs</text>
+  <text x="220" y="240" font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="#007f7f">9.06</text>
+
+  <g font-family="Arial, sans-serif" font-size="13" fill="#333333">
+    <line x1="15" y1="450" x2="50" y2="450" stroke="#156082" stroke-width="4" stroke-linecap="round"/><circle cx="32.5" cy="450" r="5.5" fill="#156082"/>
+    <text x="58" y="455">local mem:managed</text>
+    <line x1="210" y1="450" x2="245" y2="450" stroke="#e97132" stroke-width="4" stroke-linecap="round"/><circle cx="227.5" cy="450" r="5.5" fill="#e97132"/>
+    <text x="253" y="455">local mem:unified</text>
+    <polygon points="424.5,443 431.5,450 424.5,457 417.5,450" fill="#00a6a6"/>
+    <text x="440" y="455">local best AsyncIO (8 GPUs)</text>
+    <line x1="655" y1="450" x2="690" y2="450" stroke="#7f7f7f" stroke-width="4" stroke-linecap="round"/><circle cx="672.5" cy="450" r="5.5" fill="#7f7f7f"/>
+    <text x="698" y="455">Everett previous</text>
+    <line x1="15" y1="476" x2="50" y2="476" stroke="#2ca02c" stroke-width="4" stroke-linecap="round"/><circle cx="32.5" cy="476" r="5.5" fill="#2ca02c"/>
+    <text x="58" y="481">Everett mem:unified AsyncIO</text>
+    <line x1="285" y1="476" x2="320" y2="476" stroke="#9467bd" stroke-width="4" stroke-linecap="round" stroke-dasharray="8 5"/><circle cx="302.5" cy="476" r="5.5" fill="#9467bd"/>
+    <text x="328" y="481">Leonardo CPU DCGP (100 cores/node)</text>
+    <line x1="650" y1="476" x2="685" y2="476" stroke="#d62728" stroke-width="4" stroke-linecap="round" stroke-dasharray="3 5"/><circle cx="667.5" cy="476" r="5.5" fill="#d62728"/>
+    <text x="693" y="481">Leonardo A100 GPUs</text>
   </g>
 </svg>
