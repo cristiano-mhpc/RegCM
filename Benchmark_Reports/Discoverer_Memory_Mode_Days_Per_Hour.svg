@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="860" height="500" viewBox="0 0 860 500" role="img" aria-labelledby="title desc">
   <title id="title">RegCM EURR-3 days/hour comparison</title>
-  <desc id="desc">Comparison of local Discoverer+ memory modes, the best local eight-GPU asynchronous-I/O result, Leonardo DCGP CPU and A100 GPU reference points, and Everett GB200 results.</desc>
+  <desc id="desc">Comparison of local Discoverer+ memory modes, the best local eight-GPU asynchronous-I/O result on Discoverer+ node dgx1, Leonardo DCGP CPU and A100 GPU reference points, and Everett GB200 results.</desc>
   <rect width="860" height="500" fill="#ffffff"/>
   <text x="430" y="34" text-anchor="middle" font-family="Arial, sans-serif" font-size="24" fill="#333333">RegCM EURR-3 Days/Hour Comparison</text>
 
@@ -69,7 +69,7 @@
     <line x1="210" y1="450" x2="245" y2="450" stroke="#e97132" stroke-width="4" stroke-linecap="round"/><circle cx="227.5" cy="450" r="5.5" fill="#e97132"/>
     <text x="253" y="455">local mem:unified</text>
     <polygon points="424.5,443 431.5,450 424.5,457 417.5,450" fill="#00a6a6"/>
-    <text x="440" y="455">local best AsyncIO (8 GPUs)</text>
+    <text x="440" y="455">Discoverer+ dgx1 AsyncIO</text>
     <line x1="655" y1="450" x2="690" y2="450" stroke="#7f7f7f" stroke-width="4" stroke-linecap="round"/><circle cx="672.5" cy="450" r="5.5" fill="#7f7f7f"/>
     <text x="698" y="455">Everett previous</text>
     <line x1="15" y1="476" x2="50" y2="476" stroke="#2ca02c" stroke-width="4" stroke-linecap="round"/><circle cx="32.5" cy="476" r="5.5" fill="#2ca02c"/>

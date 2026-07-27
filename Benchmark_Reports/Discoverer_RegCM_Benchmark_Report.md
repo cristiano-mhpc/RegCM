@@ -502,7 +502,7 @@ The preliminary 7-day `mem:unified` status is:
 | 12 | `179118` | Completed | 3379.38 s | 482.77 s/day | Full 7-day run |
 | 14 | `179254` | Completed | 3819.20 s | 545.60 s/day | Full 7-day run after increasing walltime to `01:30:00` |
 
-The completed 7-day runs common to both local Discoverer+ memory modes compare as follows. Everett's `mem:unified` values are the AsyncIO days/hour values digitized from `GB200_EURR3.png`; only matching GPU counts are included in the table. The accompanying plot also includes Everett's previous GB200 series and the best local async-I/O result, 9.06 days/hour at eight GPUs from job `182785`.
+The completed 7-day runs common to both local Discoverer+ memory modes compare as follows. Everett's `mem:unified` values are the AsyncIO days/hour values digitized from `GB200_EURR3.png`; only matching GPU counts are included in the table. The accompanying plot also includes Everett's previous GB200 series and the best local async-I/O result, 9.06 days/hour at eight GPUs on Discoverer+ node `dgx1` from job `182785`.
 
 <a id="table-17"></a>
 
@@ -518,10 +518,10 @@ The completed 7-day runs common to both local Discoverer+ memory modes compare a
 <a id="figure-1"></a>
 
 <p align="center">
-  <img src="Discoverer_Memory_Mode_Days_Per_Hour_v2.png" alt="Days/hour comparison for local memory modes, the best local eight-GPU async-I/O result, Leonardo CPU and A100 GPU references, Everett previous, and Everett AsyncIO" width="760">
+  <img src="Discoverer_Memory_Mode_Days_Per_Hour_v2.png" alt="Days/hour comparison for local memory modes, the best local eight-GPU async-I/O result on Discoverer+ node dgx1, Leonardo CPU and A100 GPU references, Everett previous, and Everett AsyncIO" width="760">
 </p>
 
-<p align="center"><strong>Figure 1. Days/hour comparison for local Discoverer+ memory modes, local async I/O, Leonardo references, and Everett GB200 results.</strong> The teal diamond is the best local async-I/O battery result, 9.06 days/hour at eight GPUs. Other local GPU series use the completed seven-day Discoverer+ scaling runs. The Leonardo CPU reference is plotted by CPU node count, with 100 MPI/CPU cores used per DCGP node. Leonardo A100 points use 4, 8, 16, and 32 GPUs. Everett's previous and AsyncIO series are approximate values digitized from <code>GB200_EURR3.png</code>.</p>
+<p align="center"><strong>Figure 1. Days/hour comparison for local Discoverer+ memory modes, local async I/O, Leonardo references, and Everett GB200 results.</strong> The teal diamond is the best local async-I/O battery result, 9.06 days/hour at eight GPUs on Discoverer+ node <code>dgx1</code>. Other local GPU series use the completed seven-day Discoverer+ scaling runs. The Leonardo CPU reference is plotted by CPU node count, with 100 MPI/CPU cores used per DCGP node. Leonardo A100 points use 4, 8, 16, and 32 GPUs. Everett's previous and AsyncIO series are approximate values digitized from <code>GB200_EURR3.png</code>.</p>
 
 The 1-GPU `mem:unified` run reproduced the same `radinp` accelerator fatal error seen in the `mem:managed` 1-GPU cases. The 2-GPU `mem:unified` attempts have not established a RegCM model failure; they failed through Slurm node failures or pre-launch `srun` errors, so the 2-GPU `mem:unified` result remains unresolved until job `179445` completes.
 
@@ -769,6 +769,14 @@ The `dgx2` follow-up used 7 normal GPUs because Slurm rejected an 8 normal-GPU r
 ### 4.5 Controlled Asynchronous NetCDF I/O
 
 A controlled six-arm, seven-day experiment tested the optional pthread-backed asynchronous NetCDF implementation on eight H200 GPUs on `dgx1`. Every arm used the same instrumented `mem:managed` executable, eight MPI ranks, one OpenMP thread per rank, serial NetCDF output, input data, namelist, and GPU mapping. Jobs `182781-182786` ran sequentially to avoid inter-run contention.
+
+<a id="figure-2"></a>
+
+<p align="center">
+  <img src="../Benchmark/production_runs/Discoverer_async_io_7day_battery/async_io_build_runtime_flow.svg" alt="RegCM asynchronous NetCDF flow from configure and compilation through runtime output overlap, boundary prefetch, and final queue draining" width="900">
+</p>
+
+<p align="center"><strong>Figure 2. RegCM asynchronous NetCDF build-to-runtime flow.</strong> Async support is compiled into an optional pthread-backed binary path and activated at runtime by a positive output-buffer setting. Deferred output uses the normal FIFO queue; speculative boundary reads use the priority queue; normal completion drains both queues before timing and validation end.</p>
 
 <a id="table-27"></a>
 

@@ -545,6 +545,12 @@ The largest architectural change was the optional pthread-backed NetCDF worker. 
 
 The design deliberately preserves synchronous behavior by default and requires `--enable-async-netcdf` plus a positive `RCM_ASYNC_OUTPUT_GB` value.
 
+<p align="center">
+  <img src="../Benchmark/production_runs/Discoverer_async_io_7day_battery/async_io_build_runtime_flow.svg" alt="RegCM asynchronous NetCDF flow from configure and compilation through runtime output overlap, boundary prefetch, and final queue draining" width="900">
+</p>
+
+<p align="center"><strong>RegCM asynchronous NetCDF architecture overview.</strong> The diagram summarizes the current local implementation from configure-time opt-in through worker initialization, deferred output, prioritized boundary prefetch, and drain-and-join finalization.</p>
+
 ### 2. Unified Memory and Page Migration
 
 Many fixes address data movement rather than floating-point work:
