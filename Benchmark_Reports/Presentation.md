@@ -313,7 +313,7 @@ The isolated build used NVHPC standard parallelism with unified memory targeting
 -stdpar=gpu -gpu=cc90,lineinfo,mem:unified -Minfo=accel
 ```
 
-The completed 7-day runs common to both local Discoverer+ memory modes compare as follows. Everett's `mem:unified` values are the AsyncIO days/hour values digitized from `GB200_EURR3.png`; only matching GPU counts are included in the table. The accompanying plot also includes Everett's previous GB200 series and the best local async-I/O result, 9.06 days/hour at eight GPUs on Discoverer+ node `dgx1` from job `182785`.
+The completed 7-day runs common to both local Discoverer+ memory modes compare as follows. Everett's `mem:unified` values are the AsyncIO days/hour values digitized from `GB200_EURR3.png`; only matching GPU counts are included in the table. The accompanying plot also includes Everett's previous GB200 series and the best local async-I/O result, `9.44` days/hour at eight GPUs on Discoverer+ node `dgx1` from job `183367`, using the OMP4 NUMA-pool configuration.
 
 <a id="table-9"></a>
 
@@ -332,7 +332,7 @@ The completed 7-day runs common to both local Discoverer+ memory modes compare a
   <img src="Discoverer_Memory_Mode_Days_Per_Hour_v2.png" alt="Days/hour comparison for local memory modes, the best local eight-GPU async-I/O result on Discoverer+ node dgx1, Everett previous, and Everett AsyncIO" width="760">
 </p>
 
-<p align="center"><strong>Figure 1. Days/hour comparison for local Discoverer+ memory modes, local async I/O, and Everett GB200 results.</strong> The teal diamond is the best local async-I/O battery result, 9.06 days/hour at eight GPUs on Discoverer+ node <code>dgx1</code>. Other local series use the completed seven-day Discoverer+ scaling runs. Everett's previous and AsyncIO series are approximate values digitized from <code>GB200_EURR3.png</code>.</p>
+<p align="center"><strong>Figure 1. Days/hour comparison for local Discoverer+ memory modes, local async I/O, and Everett GB200 results.</strong> The teal diamond is the best local async-I/O result, 9.44 days/hour at eight GPUs on Discoverer+ node <code>dgx1</code> from job <code>183367</code>, using OMP4 NUMA placement and deferred writes. Other local series use the completed seven-day Discoverer+ scaling runs. Everett's previous and AsyncIO series are approximate values digitized from <code>GB200_EURR3.png</code>.</p>
 
 ## 4. Runtime Investigation and Known Issues
 
