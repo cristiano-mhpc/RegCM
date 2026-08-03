@@ -329,7 +329,7 @@ The completed 7-day runs common to both local Discoverer+ memory modes compare a
 <a id="figure-1"></a>
 
 <p align="center">
-  <img src="Discoverer_Memory_Mode_Days_Per_Hour.svg" alt="Days/hour comparison for local memory modes, the best local eight-GPU async-I/O result on Discoverer+ node dgx1, Everett previous, and Everett AsyncIO" width="760">
+  <img src="Discoverer_Memory_Mode_Days_Per_Hour_v2.png" alt="Days/hour comparison for local memory modes, the best local eight-GPU async-I/O result on Discoverer+ node dgx1, Everett previous, and Everett AsyncIO" width="760">
 </p>
 
 <p align="center"><strong>Figure 1. Days/hour comparison for local Discoverer+ memory modes, local async I/O, and Everett GB200 results.</strong> The teal diamond is the best local async-I/O battery result, 9.06 days/hour at eight GPUs on Discoverer+ node <code>dgx1</code>. Other local series use the completed seven-day Discoverer+ scaling runs. Everett's previous and AsyncIO series are approximate values digitized from <code>GB200_EURR3.png</code>.</p>
@@ -456,6 +456,7 @@ Current validation result:
 - The `OMP_NUM_THREADS=4` follow-up completed a 3-day validation as job `183021` in `1313.09 s` (`437.70 s/day`, `8.22 days/hour`).
 - This is the fastest validated 3-day single-node result so far: about `4.3%` faster than the original 3-day 8-GPU baseline and about `0.45%` faster than the previous NUMA-pool 3-day result.
 - A 7-day validation of the same configuration was submitted as job `183194`; the comparison target is the original 7-day 8-GPU baseline job `179001` at `3057.76 s`.
+- Job `183194` completed successfully in `2918.93 s` (`416.99 s/day`, `8.63 days/hour`), about `4.5%` faster than the 7-day baseline. Stderr was empty and the final RegCM success marker was present.
 
 One-node isolation sweep update:
 
@@ -554,6 +555,12 @@ A sequential six-arm, seven-day battery on eight H200 GPUs isolated deferred Net
 | 3 GiB, prefetch 15 | 2805.567 s | 9.86% | 8.98 |
 
 Deferred writes account for nearly all of the gain. The nominally fastest prefetch-20 arm was only 0.69% faster than writes-only, so repeated order-balanced measurements would be needed to resolve differences among async settings. After validation, 198 generated NetCDF files occupying approximately 2.5 TB were removed; all logs and run metadata were retained, and available `/valhalla` capacity rose from 934 GB to 3.4 TB.
+
+The earlier AsyncIO battery used `OMP_NUM_THREADS=1` and two CPUs per rank, while the current best sequential result uses loose NUMA placement, the OpenACC pool, `OMP_NUM_THREADS=4`, and 14 CPUs per rank. The matched 3-day combined test completed as a dependency chain: synchronous control job `183249` at `1309.901 s`, deferred writes-only job `183250` at `1190.750 s`, and deferred writes plus prefetch-20 job `183251` at `1186.942 s`. Relative to the matched control, writes-only improved runtime by `9.10%`; prefetch-20 improved it by `9.39%`. Prefetch-20 was only `0.32%` faster than writes-only, so deferred writes are the robust performance finding and prefetch depth remains unresolved.
+
+The next long-run candidate is a 7-day writes-only validation using the same OMP4 NUMA-pool configuration. Numerical output comparison against the synchronous control remains required before treating asynchronous I/O as production-ready.
+
+The 7-day writes-only validation completed as job `183367` with the same OMP4 NUMA-pool configuration, a 4 GiB deferred-write buffer, and no boundary prefetch. It took `2669.570 s` (`9.44 simulated days/hour`), which is `8.54%` faster than job `183194` (`2918.93 s`) and `12.70%` faster than the original 7-day 8-GPU baseline (`3057.76 s`). Stderr was empty and the final success marker was present.
 
 ## 5. Why `mem:unified` May Be Slower for RegCM5
 
