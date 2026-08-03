@@ -793,6 +793,20 @@ A controlled six-arm, seven-day experiment tested the optional pthread-backed as
 
 All jobs completed successfully with empty error logs. Runtime diagnostics reported the expected disabled control and active asynchronous workers with `first_error=0`. Deferred writes produced nearly all of the improvement. Prefetch 20 was nominally fastest, but only 0.69% faster than writes-only; single measurements in fixed order do not establish that small difference as repeatable.
 
+#### 4.5.1 Matched OMP4 NUMA-Pool AsyncIO Validation
+
+The preceding battery used `OMP_NUM_THREADS=1` and two CPUs per rank, so it was not a direct comparison with the later best sequential compute configuration. A matched three-day battery was therefore run on one `dgx1` node with eight H200 GPUs, eight MPI ranks, loose GPU-local NUMA placement, the 72 GiB OpenACC pool, `OMP_NUM_THREADS=4`, and 14 CPUs per rank. The async-capable `mem:managed` executable was used for both the synchronous control and async arms.
+
+| Configuration | Job | Async output buffer | Boundary prefetch | RegCM elapsed | Reduction vs matched control | Days/hour |
+|---|---:|---:|---:|---:|---:|---:|
+| Synchronous OMP4 NUMA control | `183249` | 0 GiB | 0 | `1309.901 s` | baseline | `8.24` |
+| Deferred writes only | `183250` | 4 GiB | 0 | `1190.750 s` | `9.10%` | `9.07` |
+| Deferred writes plus prefetch 20 | `183251` | 4 GiB | 20 | `1186.942 s` | `9.39%` | `9.10` |
+
+All three jobs completed successfully with empty error logs and `first_error=0` on active async workers. Deferred writes are the robust improvement. Prefetch 20 was only `0.32%` faster than writes-only, which is too small to select confidently from one sequential chain.
+
+A seven-day writes-only validation of the same eight-GPU OMP4 NUMA-pool configuration then completed as job `183367` in `2669.570 s` (`9.44 simulated days/hour`). This was `8.54%` faster than the matched sequential OMP4 NUMA result, job `183194` at `2918.93 s`, and `12.70%` faster than the original seven-day eight-GPU baseline, job `179001` at `3057.76 s`. The run reached `2009-09-08 00:00 UTC`, had empty stderr, and printed the successful-end marker. Generated NetCDF outputs were removed after validation; logs and markers were retained.
+
 ### 4.6 Output Data Management
 
 The benchmark output volume is large:
