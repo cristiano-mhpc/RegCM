@@ -502,7 +502,7 @@ The preliminary 7-day `mem:unified` status is:
 | 12 | `179118` | Completed | 3379.38 s | 482.77 s/day | Full 7-day run |
 | 14 | `179254` | Completed | 3819.20 s | 545.60 s/day | Full 7-day run after increasing walltime to `01:30:00` |
 
-The completed 7-day runs common to both local Discoverer+ memory modes compare as follows. Everett's `mem:unified` values are the AsyncIO days/hour values digitized from `GB200_EURR3.png`; only matching GPU counts are included in the table. The accompanying plot also includes Everett's previous GB200 series and the best local async-I/O result, `9.44` days/hour at eight GPUs on Discoverer+ node `dgx1` from job `183367`, using the OMP4 NUMA-pool configuration.
+The completed 7-day runs common to both local Discoverer+ memory modes compare as follows. Everett's `mem:unified` values are the AsyncIO days/hour values digitized from `GB200_EURR3.png`; only matching GPU counts are included in the table. The accompanying plot also includes local AsyncIO validation points: `5.45` days/hour at four GPUs from the 3-day job `185112` and `9.44` days/hour at eight GPUs from the 7-day job `183367`, both using the OMP4 NUMA-pool configuration. Because the local AsyncIO points use different validation horizons, they are shown as operational results rather than a strict same-duration scaling series.
 
 <a id="table-17"></a>
 
@@ -518,10 +518,10 @@ The completed 7-day runs common to both local Discoverer+ memory modes compare a
 <a id="figure-1"></a>
 
 <p align="center">
-  <img src="Discoverer_Memory_Mode_Days_Per_Hour_v2.png" alt="Days/hour comparison for local memory modes, the best local eight-GPU async-I/O result on Discoverer+ node dgx1, Leonardo CPU and A100 GPU references, Everett previous, and Everett AsyncIO" width="760">
+  <img src="Discoverer_Memory_Mode_Days_Per_Hour_v2.png" alt="Days/hour comparison for local memory modes, validated four- and eight-GPU AsyncIO results on Discoverer+ node dgx1, Leonardo CPU and A100 GPU references, Everett previous, and Everett AsyncIO" width="760">
 </p>
 
-<p align="center"><strong>Figure 1. Days/hour comparison for local Discoverer+ memory modes, local async I/O, Leonardo references, and Everett GB200 results.</strong> The teal diamond is the best local async-I/O result, 9.44 days/hour at eight GPUs on Discoverer+ node <code>dgx1</code> from job <code>183367</code>, using OMP4 NUMA placement and deferred writes. Other local GPU series use the completed seven-day Discoverer+ scaling runs. The Leonardo CPU reference is plotted by CPU node count, with 100 MPI/CPU cores used per DCGP node. Leonardo A100 points use 4, 8, 16, and 32 GPUs. Everett's previous and AsyncIO series are approximate values digitized from <code>GB200_EURR3.png</code>.</p>
+<p align="center"><strong>Figure 1. Days/hour comparison for local Discoverer+ memory modes, local AsyncIO, Leonardo references, and Everett GB200 results.</strong> The teal diamonds show validated local AsyncIO results: 5.45 days/hour at four GPUs from the 3-day job <code>185112</code> and 9.44 days/hour at eight GPUs from the 7-day job <code>183367</code>, both using OMP4 NUMA placement and deferred writes. The two local AsyncIO points use different validation horizons and are not a strict same-duration scaling curve. Other local GPU series use the completed seven-day Discoverer+ scaling runs. The Leonardo CPU reference is plotted by CPU node count, with 100 MPI/CPU cores used per DCGP node. Leonardo A100 points use 4, 8, 16, and 32 GPUs. Everett's previous and AsyncIO series are approximate values digitized from <code>GB200_EURR3.png</code>.</p>
 
 The 1-GPU `mem:unified` run reproduced the same `radinp` accelerator fatal error seen in the `mem:managed` 1-GPU cases. The 2-GPU `mem:unified` attempts have not established a RegCM model failure; they failed through Slurm node failures or pre-launch `srun` errors, so the 2-GPU `mem:unified` result remains unresolved until job `179445` completes.
 
@@ -804,6 +804,8 @@ The preceding battery used `OMP_NUM_THREADS=1` and two CPUs per rank, so it was 
 | Deferred writes plus prefetch 20 | `183251` | 4 GiB | 20 | `1186.942 s` | `9.39%` | `9.10` |
 
 All three jobs completed successfully with empty error logs and `first_error=0` on active async workers. Deferred writes are the robust improvement. Prefetch 20 was only `0.32%` faster than writes-only, which is too small to select confidently from one sequential chain.
+
+The same 3-day AsyncIO OMP4 NUMA-pool configuration was screened at four GPUs as job `185112`. It used four MPI ranks on `dgx1`, completed in `1980.594 s` (`5.45 simulated days/hour`), reported `enabled=T`, `worker_running=T`, `buffer_gib=4.000`, and `first_error=0`, and had empty stderr. Its exclusive allocation charged eight physical GPUs even though four ranks used four GPUs; this allocation behavior is why exclusive mode was removed from the later 12/14-GPU scripts.
 
 A seven-day writes-only validation of the same eight-GPU OMP4 NUMA-pool configuration then completed as job `183367` in `2669.570 s` (`9.44 simulated days/hour`). This was `8.54%` faster than the matched sequential OMP4 NUMA result, job `183194` at `2918.93 s`, and `12.70%` faster than the original seven-day eight-GPU baseline, job `179001` at `3057.76 s`. The run reached `2009-09-08 00:00 UTC`, had empty stderr, and printed the successful-end marker. Generated NetCDF outputs were removed after validation; logs and markers were retained.
 
